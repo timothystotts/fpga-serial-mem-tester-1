@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="fpga_serial_mem_tester_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="fpga_serial_mem_tester_tb" />
+            <top_module name="glbl" />
+            <top_module name="lcd_text_functions_pkg" />
+            <top_module name="led_pwm_driver_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="200000000001fs"></ZoomEndTime>
+      <Cursor1Time time="200000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="201"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="164" />
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/CLK100MHZ">
+      <obj_property name="ElementShortName">CLK100MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/i_resetn">
+      <obj_property name="ElementShortName">i_resetn</obj_property>
+      <obj_property name="ObjectShortName">i_resetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_pmod_sf3_sck">
+      <obj_property name="ElementShortName">eo_pmod_sf3_sck</obj_property>
+      <obj_property name="ObjectShortName">eo_pmod_sf3_sck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_pmod_sf3_ssn">
+      <obj_property name="ElementShortName">eo_pmod_sf3_ssn</obj_property>
+      <obj_property name="ObjectShortName">eo_pmod_sf3_ssn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eio_pmod_sf3_mosi_dq0">
+      <obj_property name="ElementShortName">eio_pmod_sf3_mosi_dq0</obj_property>
+      <obj_property name="ObjectShortName">eio_pmod_sf3_mosi_dq0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eio_pmod_sf3_miso_dq1">
+      <obj_property name="ElementShortName">eio_pmod_sf3_miso_dq1</obj_property>
+      <obj_property name="ObjectShortName">eio_pmod_sf3_miso_dq1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eio_pmod_sf3_wrpn_dq2">
+      <obj_property name="ElementShortName">eio_pmod_sf3_wrpn_dq2</obj_property>
+      <obj_property name="ObjectShortName">eio_pmod_sf3_wrpn_dq2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eio_pmod_sf3_hldn_dq3">
+      <obj_property name="ElementShortName">eio_pmod_sf3_hldn_dq3</obj_property>
+      <obj_property name="ObjectShortName">eio_pmod_sf3_hldn_dq3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led0_b">
+      <obj_property name="ElementShortName">eo_led0_b</obj_property>
+      <obj_property name="ObjectShortName">eo_led0_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led1_b">
+      <obj_property name="ElementShortName">eo_led1_b</obj_property>
+      <obj_property name="ObjectShortName">eo_led1_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led2_b">
+      <obj_property name="ElementShortName">eo_led2_b</obj_property>
+      <obj_property name="ObjectShortName">eo_led2_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led3_b">
+      <obj_property name="ElementShortName">eo_led3_b</obj_property>
+      <obj_property name="ObjectShortName">eo_led3_b</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led0_r">
+      <obj_property name="ElementShortName">eo_led0_r</obj_property>
+      <obj_property name="ObjectShortName">eo_led0_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led1_r">
+      <obj_property name="ElementShortName">eo_led1_r</obj_property>
+      <obj_property name="ObjectShortName">eo_led1_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led2_r">
+      <obj_property name="ElementShortName">eo_led2_r</obj_property>
+      <obj_property name="ObjectShortName">eo_led2_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led3_r">
+      <obj_property name="ElementShortName">eo_led3_r</obj_property>
+      <obj_property name="ObjectShortName">eo_led3_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led0_g">
+      <obj_property name="ElementShortName">eo_led0_g</obj_property>
+      <obj_property name="ObjectShortName">eo_led0_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led1_g">
+      <obj_property name="ElementShortName">eo_led1_g</obj_property>
+      <obj_property name="ObjectShortName">eo_led1_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led2_g">
+      <obj_property name="ElementShortName">eo_led2_g</obj_property>
+      <obj_property name="ObjectShortName">eo_led2_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led3_g">
+      <obj_property name="ElementShortName">eo_led3_g</obj_property>
+      <obj_property name="ObjectShortName">eo_led3_g</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led4">
+      <obj_property name="ElementShortName">eo_led4</obj_property>
+      <obj_property name="ObjectShortName">eo_led4</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led5">
+      <obj_property name="ElementShortName">eo_led5</obj_property>
+      <obj_property name="ObjectShortName">eo_led5</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led6">
+      <obj_property name="ElementShortName">eo_led6</obj_property>
+      <obj_property name="ObjectShortName">eo_led6</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_led7">
+      <obj_property name="ElementShortName">eo_led7</obj_property>
+      <obj_property name="ObjectShortName">eo_led7</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_sw0">
+      <obj_property name="ElementShortName">ei_sw0</obj_property>
+      <obj_property name="ObjectShortName">ei_sw0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_sw1">
+      <obj_property name="ElementShortName">ei_sw1</obj_property>
+      <obj_property name="ObjectShortName">ei_sw1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_sw2">
+      <obj_property name="ElementShortName">ei_sw2</obj_property>
+      <obj_property name="ObjectShortName">ei_sw2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_sw3">
+      <obj_property name="ElementShortName">ei_sw3</obj_property>
+      <obj_property name="ObjectShortName">ei_sw3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_bt0">
+      <obj_property name="ElementShortName">ei_bt0</obj_property>
+      <obj_property name="ObjectShortName">ei_bt0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_bt1">
+      <obj_property name="ElementShortName">ei_bt1</obj_property>
+      <obj_property name="ObjectShortName">ei_bt1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_bt2">
+      <obj_property name="ElementShortName">ei_bt2</obj_property>
+      <obj_property name="ObjectShortName">ei_bt2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_bt3">
+      <obj_property name="ElementShortName">ei_bt3</obj_property>
+      <obj_property name="ObjectShortName">ei_bt3</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_pmod_cls_ssn">
+      <obj_property name="ElementShortName">eo_pmod_cls_ssn</obj_property>
+      <obj_property name="ObjectShortName">eo_pmod_cls_ssn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_pmod_cls_sck">
+      <obj_property name="ElementShortName">eo_pmod_cls_sck</obj_property>
+      <obj_property name="ObjectShortName">eo_pmod_cls_sck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_pmod_cls_dq0">
+      <obj_property name="ElementShortName">eo_pmod_cls_dq0</obj_property>
+      <obj_property name="ObjectShortName">eo_pmod_cls_dq0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_pmod_cls_dq1">
+      <obj_property name="ElementShortName">ei_pmod_cls_dq1</obj_property>
+      <obj_property name="ObjectShortName">ei_pmod_cls_dq1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/eo_uart_tx">
+      <obj_property name="ElementShortName">eo_uart_tx</obj_property>
+      <obj_property name="ObjectShortName">eo_uart_tx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/ei_uart_rx">
+      <obj_property name="ElementShortName">ei_uart_rx</obj_property>
+      <obj_property name="ObjectShortName">ei_uart_rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_mmcm_locked">
+      <obj_property name="ElementShortName">s_mmcm_locked</obj_property>
+      <obj_property name="ObjectShortName">s_mmcm_locked</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_clk_40mhz">
+      <obj_property name="ElementShortName">s_clk_40mhz</obj_property>
+      <obj_property name="ObjectShortName">s_clk_40mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_rst_40mhz">
+      <obj_property name="ElementShortName">s_rst_40mhz</obj_property>
+      <obj_property name="ObjectShortName">s_rst_40mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_clk_7_37mhz">
+      <obj_property name="ElementShortName">s_clk_7_37mhz</obj_property>
+      <obj_property name="ObjectShortName">s_clk_7_37mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_rst_7_37mhz">
+      <obj_property name="ElementShortName">s_rst_7_37mhz</obj_property>
+      <obj_property name="ObjectShortName">s_rst_7_37mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_ce_2_5mhz">
+      <obj_property name="ElementShortName">s_ce_2_5mhz</obj_property>
+      <obj_property name="ObjectShortName">s_ce_2_5mhz</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_ce_div">
+      <obj_property name="ElementShortName">s_sf3_ce_div</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_ce_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sc_aux_reset_in">
+      <obj_property name="ElementShortName">sc_aux_reset_in</obj_property>
+      <obj_property name="ObjectShortName">sc_aux_reset_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sc_mb_debug_sys_rst">
+      <obj_property name="ElementShortName">sc_mb_debug_sys_rst</obj_property>
+      <obj_property name="ObjectShortName">sc_mb_debug_sys_rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_20_periph_reset">
+      <obj_property name="ElementShortName">s_20_periph_reset[0:0]</obj_property>
+      <obj_property name="ObjectShortName">s_20_periph_reset[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_737_periph_reset">
+      <obj_property name="ElementShortName">s_737_periph_reset[0:0]</obj_property>
+      <obj_property name="ObjectShortName">s_737_periph_reset[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_sck_o">
+      <obj_property name="ElementShortName">sio_sf3_sck_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_sck_t">
+      <obj_property name="ElementShortName">sio_sf3_sck_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_sck_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_ssn_o">
+      <obj_property name="ElementShortName">sio_sf3_ssn_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_ssn_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_ssn_t">
+      <obj_property name="ElementShortName">sio_sf3_ssn_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_ssn_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_mosi_dq0_o">
+      <obj_property name="ElementShortName">sio_sf3_mosi_dq0_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_mosi_dq0_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_mosi_dq0_i">
+      <obj_property name="ElementShortName">sio_sf3_mosi_dq0_i</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_mosi_dq0_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_mosi_dq0_t">
+      <obj_property name="ElementShortName">sio_sf3_mosi_dq0_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_mosi_dq0_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_miso_dq1_o">
+      <obj_property name="ElementShortName">sio_sf3_miso_dq1_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_miso_dq1_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_miso_dq1_i">
+      <obj_property name="ElementShortName">sio_sf3_miso_dq1_i</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_miso_dq1_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_miso_dq1_t">
+      <obj_property name="ElementShortName">sio_sf3_miso_dq1_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_miso_dq1_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_wrpn_dq2_o">
+      <obj_property name="ElementShortName">sio_sf3_wrpn_dq2_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_wrpn_dq2_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_wrpn_dq2_i">
+      <obj_property name="ElementShortName">sio_sf3_wrpn_dq2_i</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_wrpn_dq2_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_wrpn_dq2_t">
+      <obj_property name="ElementShortName">sio_sf3_wrpn_dq2_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_wrpn_dq2_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_hldn_dq3_o">
+      <obj_property name="ElementShortName">sio_sf3_hldn_dq3_o</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_hldn_dq3_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_hldn_dq3_i">
+      <obj_property name="ElementShortName">sio_sf3_hldn_dq3_i</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_hldn_dq3_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/sio_sf3_hldn_dq3_t">
+      <obj_property name="ElementShortName">sio_sf3_hldn_dq3_t</obj_property>
+      <obj_property name="ObjectShortName">sio_sf3_hldn_dq3_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_command_ready">
+      <obj_property name="ElementShortName">s_sf3_command_ready</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_address_of_cmd">
+      <obj_property name="ElementShortName">s_sf3_address_of_cmd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_address_of_cmd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_cmd_erase_subsector">
+      <obj_property name="ElementShortName">s_sf3_cmd_erase_subsector</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_cmd_erase_subsector</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_cmd_page_program">
+      <obj_property name="ElementShortName">s_sf3_cmd_page_program</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_cmd_page_program</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_cmd_random_read">
+      <obj_property name="ElementShortName">s_sf3_cmd_random_read</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_cmd_random_read</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_len_random_read">
+      <obj_property name="ElementShortName">s_sf3_len_random_read[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_len_random_read[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_wr_data_stream">
+      <obj_property name="ElementShortName">s_sf3_wr_data_stream[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_wr_data_stream[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_wr_data_valid">
+      <obj_property name="ElementShortName">s_sf3_wr_data_valid</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_wr_data_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_wr_data_ready">
+      <obj_property name="ElementShortName">s_sf3_wr_data_ready</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_wr_data_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_rd_data_stream">
+      <obj_property name="ElementShortName">s_sf3_rd_data_stream[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_rd_data_stream[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_rd_data_valid">
+      <obj_property name="ElementShortName">s_sf3_rd_data_valid</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_rd_data_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_reg_status">
+      <obj_property name="ElementShortName">s_sf3_reg_status[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_reg_status[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_reg_flag">
+      <obj_property name="ElementShortName">s_sf3_reg_flag[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_reg_flag[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_upd_pr_state">
+      <obj_property name="ElementShortName">s_cls_upd_pr_state</obj_property>
+      <obj_property name="ObjectShortName">s_cls_upd_pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_upd_nx_state">
+      <obj_property name="ElementShortName">s_cls_upd_nx_state</obj_property>
+      <obj_property name="ObjectShortName">s_cls_upd_nx_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_i">
+      <obj_property name="ElementShortName">s_cls_i</obj_property>
+      <obj_property name="ObjectShortName">s_cls_i</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_command_ready">
+      <obj_property name="ElementShortName">s_cls_command_ready</obj_property>
+      <obj_property name="ObjectShortName">s_cls_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_sf3_command_ready">
+      <obj_property name="ElementShortName">s_cls_sf3_command_ready</obj_property>
+      <obj_property name="ObjectShortName">s_cls_sf3_command_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_wr_clear_display">
+      <obj_property name="ElementShortName">s_cls_wr_clear_display</obj_property>
+      <obj_property name="ObjectShortName">s_cls_wr_clear_display</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_wr_text_line1">
+      <obj_property name="ElementShortName">s_cls_wr_text_line1</obj_property>
+      <obj_property name="ObjectShortName">s_cls_wr_text_line1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_wr_text_line2">
+      <obj_property name="ElementShortName">s_cls_wr_text_line2</obj_property>
+      <obj_property name="ObjectShortName">s_cls_wr_text_line2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_pattern_1char">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_pattern_1char[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_pattern_1char[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_address_8char">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_address_8char[63:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_address_8char[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_sf3mode_3char">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_sf3mode_3char[23:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_sf3mode_3char[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_8char">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_8char[63:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_8char[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char0">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char0[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char1">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char1[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char2">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char2[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char3">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char3[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char4">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char4[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char4[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char5">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char5[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char5[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char6">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char6[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char6[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_errcntdec_char7">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_errcntdec_char7[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_errcntdec_char7[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_line1">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_line1[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_line1[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_cls_txt_ascii_line2">
+      <obj_property name="ElementShortName">s_cls_txt_ascii_line2[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cls_txt_ascii_line2[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uartfeed_pr_state">
+      <obj_property name="ElementShortName">s_uartfeed_pr_state</obj_property>
+      <obj_property name="ObjectShortName">s_uartfeed_pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uartfeed_nx_state">
+      <obj_property name="ElementShortName">s_uartfeed_nx_state</obj_property>
+      <obj_property name="ObjectShortName">s_uartfeed_nx_state</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_dat_ascii_line">
+      <obj_property name="ElementShortName">s_uart_dat_ascii_line[279:0]</obj_property>
+      <obj_property name="ObjectShortName">s_uart_dat_ascii_line[279:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_tx_go">
+      <obj_property name="ElementShortName">s_uart_tx_go</obj_property>
+      <obj_property name="ObjectShortName">s_uart_tx_go</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_txdata">
+      <obj_property name="ElementShortName">s_uart_txdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_uart_txdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_txvalid">
+      <obj_property name="ElementShortName">s_uart_txvalid</obj_property>
+      <obj_property name="ObjectShortName">s_uart_txvalid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_txready">
+      <obj_property name="ElementShortName">s_uart_txready</obj_property>
+      <obj_property name="ObjectShortName">s_uart_txready</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_k_val">
+      <obj_property name="ElementShortName">s_uart_k_val</obj_property>
+      <obj_property name="ObjectShortName">s_uart_k_val</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_uart_k_aux">
+      <obj_property name="ElementShortName">s_uart_k_aux</obj_property>
+      <obj_property name="ObjectShortName">s_uart_k_aux</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_sck_o">
+      <obj_property name="ElementShortName">so_pmod_cls_sck_o</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_sck_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_sck_t">
+      <obj_property name="ElementShortName">so_pmod_cls_sck_t</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_sck_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_ssn_o">
+      <obj_property name="ElementShortName">so_pmod_cls_ssn_o</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_ssn_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_ssn_t">
+      <obj_property name="ElementShortName">so_pmod_cls_ssn_t</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_ssn_t</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_mosi_o">
+      <obj_property name="ElementShortName">so_pmod_cls_mosi_o</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_mosi_o</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/so_pmod_cls_mosi_t">
+      <obj_property name="ElementShortName">so_pmod_cls_mosi_t</obj_property>
+      <obj_property name="ObjectShortName">so_pmod_cls_mosi_t</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/si_switches">
+      <obj_property name="ElementShortName">si_switches[3:0]</obj_property>
+      <obj_property name="ObjectShortName">si_switches[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sw_deb">
+      <obj_property name="ElementShortName">s_sw_deb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sw_deb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/si_buttons">
+      <obj_property name="ElementShortName">si_buttons[3:0]</obj_property>
+      <obj_property name="ObjectShortName">si_buttons[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_btns_deb">
+      <obj_property name="ElementShortName">s_btns_deb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_btns_deb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_t">
+      <obj_property name="ElementShortName">s_t</obj_property>
+      <obj_property name="ObjectShortName">s_t</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_experi_pr_state">
+      <obj_property name="ElementShortName">s_experi_pr_state</obj_property>
+      <obj_property name="ObjectShortName">s_experi_pr_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_experi_nx_state">
+      <obj_property name="ElementShortName">s_experi_nx_state</obj_property>
+      <obj_property name="ObjectShortName">s_experi_nx_state</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_dat_wr_cntidx_val">
+      <obj_property name="ElementShortName">s_sf3_dat_wr_cntidx_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_dat_wr_cntidx_val</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_dat_wr_cntidx_aux">
+      <obj_property name="ElementShortName">s_sf3_dat_wr_cntidx_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_dat_wr_cntidx_aux</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_dat_rd_cntidx_val">
+      <obj_property name="ElementShortName">s_sf3_dat_rd_cntidx_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_dat_rd_cntidx_val</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_dat_rd_cntidx_aux">
+      <obj_property name="ElementShortName">s_sf3_dat_rd_cntidx_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_dat_rd_cntidx_aux</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_test_pass_val">
+      <obj_property name="ElementShortName">s_sf3_test_pass_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_test_pass_val</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_test_pass_aux">
+      <obj_property name="ElementShortName">s_sf3_test_pass_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_test_pass_aux</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_test_done_val">
+      <obj_property name="ElementShortName">s_sf3_test_done_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_test_done_val</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_test_done_aux">
+      <obj_property name="ElementShortName">s_sf3_test_done_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_test_done_aux</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_val">
+      <obj_property name="ElementShortName">s_sf3_err_count_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_val</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_aux">
+      <obj_property name="ElementShortName">s_sf3_err_count_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_aux</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_start_val">
+      <obj_property name="ElementShortName">s_sf3_pattern_start_val[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_start_val[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_start_aux">
+      <obj_property name="ElementShortName">s_sf3_pattern_start_aux[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_start_aux[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_incr_val">
+      <obj_property name="ElementShortName">s_sf3_pattern_incr_val[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_incr_val[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_incr_aux">
+      <obj_property name="ElementShortName">s_sf3_pattern_incr_aux[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_incr_aux[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_track_val">
+      <obj_property name="ElementShortName">s_sf3_pattern_track_val[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_track_val[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_pattern_track_aux">
+      <obj_property name="ElementShortName">s_sf3_pattern_track_aux[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_pattern_track_aux[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_addr_start_val">
+      <obj_property name="ElementShortName">s_sf3_addr_start_val[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_addr_start_val[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_addr_start_aux">
+      <obj_property name="ElementShortName">s_sf3_addr_start_aux[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_addr_start_aux[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_start_at_zero_val">
+      <obj_property name="ElementShortName">s_sf3_start_at_zero_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_start_at_zero_val</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_start_at_zero_aux">
+      <obj_property name="ElementShortName">s_sf3_start_at_zero_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_start_at_zero_aux</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_i_val">
+      <obj_property name="ElementShortName">s_sf3_i_val</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_i_val</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_i_aux">
+      <obj_property name="ElementShortName">s_sf3_i_aux</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_i_aux</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide7">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide7</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide7</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide6">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide6</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide6</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide5">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide5</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide5</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide4">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide4</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide4</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide3">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide3</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide3</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide2">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide2</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide2</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide1">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide1</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide1</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_divide0">
+      <obj_property name="ElementShortName">s_sf3_err_count_divide0</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_divide0</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit7">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit7[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit7[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit6">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit6[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit6[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit5">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit5[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit5[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit4">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit4[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit4[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit3">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit3[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit2">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit2[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit1">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_sf3_err_count_digit0">
+      <obj_property name="ElementShortName">s_sf3_err_count_digit0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_sf3_err_count_digit0[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_color_led_red_value">
+      <obj_property name="ElementShortName">s_color_led_red_value[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_color_led_red_value[3:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_color_led_green_value">
+      <obj_property name="ElementShortName">s_color_led_green_value[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_color_led_green_value[3:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_color_led_blue_value">
+      <obj_property name="ElementShortName">s_color_led_blue_value[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_color_led_blue_value[3:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/fpga_serial_mem_tester_tb/u_fpga_serial_mem_tester/s_basic_led_lumin_value">
+      <obj_property name="ElementShortName">s_basic_led_lumin_value[3:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_basic_led_lumin_value[3:0][7:0]</obj_property>
+   </wvobject>
+</wave_config>
