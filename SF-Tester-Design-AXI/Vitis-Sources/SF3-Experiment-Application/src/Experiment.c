@@ -33,7 +33,7 @@
  * Timothy Stotts (timothystotts08@gmail.com)
  *
  * @copyright
- * (c) 2019 Copyright Timothy Stotts
+ * (c) 2020 Copyright Timothy Stotts
  *
  * This program is free software; distributed under the terms of the MIT
  * License.

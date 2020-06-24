@@ -273,7 +273,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal so_pmod_cls_mosi_o : std_logic;
 	signal so_pmod_cls_mosi_t : std_logic;
 
-	-- button inputs debounced
+	-- switch inputs debounced
 	signal si_switches : std_logic_vector(3 downto 0);
 	signal s_sw_deb    : std_logic_vector(3 downto 0);
 
