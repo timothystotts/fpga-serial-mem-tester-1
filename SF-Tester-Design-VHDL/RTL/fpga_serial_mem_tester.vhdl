@@ -32,6 +32,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library UNISIM;
+use UNISIM.vcomponents.all;
+
+library UNIMACRO;
+use UNIMACRO.vcomponents.all;
+
 library work;
 use work.lcd_text_functions_pkg.all;
 use work.led_pwm_driver_pkg.all;
@@ -97,57 +103,6 @@ architecture rtl of fpga_serial_mem_tester is
 	-- Frequency of the clk_out1 clock output
 	constant c_FCLK : natural := 40_000_000;
 
-	-- Clocking Wizard IP module
-	-- (provides MMCM functions)
-	component clk_wiz_0
-		port
-		(    -- Clock in ports
-			 -- Clock out ports
-			clk_out1 : out std_logic;
-			clk_out2 : out std_logic;
-			-- Status and control signals
-			resetn  : in  std_logic;
-			locked  : out std_logic;
-			clk_in1 : in  std_logic
-		);
-	end component;
-
-	-- Processing System Reset IP module
-	-- (for 20 MHz clock for general purpose)
-	-- (provides synchronous reset functions)
-	COMPONENT proc_sys_reset_0
-		PORT (
-			slowest_sync_clk     : IN  STD_LOGIC;
-			ext_reset_in         : IN  STD_LOGIC;
-			aux_reset_in         : IN  STD_LOGIC;
-			mb_debug_sys_rst     : IN  STD_LOGIC;
-			dcm_locked           : IN  STD_LOGIC;
-			mb_reset             : OUT STD_LOGIC;
-			bus_struct_reset     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			peripheral_reset     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			peripheral_aresetn   : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
-		);
-	END COMPONENT;
-
-	-- Processing System Reset IP module
-	-- (for 7.37 MHz clock for TX ONLY UART function)
-	-- (provides synchronous reset functions)
-	COMPONENT proc_sys_reset_1
-		PORT (
-			slowest_sync_clk     : IN  STD_LOGIC;
-			ext_reset_in         : IN  STD_LOGIC;
-			aux_reset_in         : IN  STD_LOGIC;
-			mb_debug_sys_rst     : IN  STD_LOGIC;
-			dcm_locked           : IN  STD_LOGIC;
-			mb_reset             : OUT STD_LOGIC;
-			bus_struct_reset     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			peripheral_reset     : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			interconnect_aresetn : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-			peripheral_aresetn   : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
-		);
-	END COMPONENT;
-
 	-- MMCM and Processor System Reset signals for PLL clock generation from the
 	-- Clocking Wizard and Synchronous Reset generation from the Processor System
 	-- Reset module.
@@ -158,10 +113,22 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_rst_7_37mhz       : std_logic;
 	signal s_ce_2_5mhz         : std_logic;
 	signal s_sf3_ce_div        : std_logic;
-	signal sc_aux_reset_in     : std_logic;
-	signal sc_mb_debug_sys_rst : std_logic;
-	signal s_20_periph_reset   : std_logic_vector(0 downto 0);
-	signal s_737_periph_reset  : std_logic_vector(0 downto 0);
+
+	-- Extra MMCM signals for full port map to the MMCM primative, where
+	-- these signals will remain disconnected.
+	signal s_clk_ignore_clk0b     : std_logic;
+	signal s_clk_ignore_clk1b     : std_logic;
+	signal s_clk_ignore_clk2      : std_logic;
+	signal s_clk_ignore_clk2b     : std_logic;
+	signal s_clk_ignore_clk3      : std_logic;
+	signal s_clk_ignore_clk3b     : std_logic;
+	signal s_clk_ignore_clk4      : std_logic;
+	signal s_clk_ignore_clk5      : std_logic;
+	signal s_clk_ignore_clk6      : std_logic;
+	signal s_clk_ignore_clkfboutb : std_logic;
+	signal s_clk_clkfbout         : std_logic;
+	signal s_clk_pwrdwn           : std_logic;
+	signal s_clk_resetin          : std_logic;
 
 	-- Definitions of the Quad SPI driver to pass to the SF3 driver
 	constant c_quad_spi_tx_fifo_count_bits : natural := 9;
@@ -389,55 +356,90 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_uart_txready        : std_logic;
 
 begin
-	-- Clocking Wizard module with MMCM. Two clocks are generated from the 100 MHz
-	-- input: 20 MHz to operate the SF3 and CLS, and 7.37 MHz to operate the TX UART.
-	u_clk_wiz_0 : clk_wiz_0
+	s_clk_pwrdwn  <= '0';
+	s_clk_resetin <= not i_resetn;
+
+	-- MMCME2_BASE: Base Mixed Mode Clock Manager
+	--              Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	MMCME2_BASE_inst : MMCME2_BASE
+		generic map (
+			BANDWIDTH       => "OPTIMIZED", -- Jitter programming (OPTIMIZED, HIGH, LOW)
+			CLKFBOUT_MULT_F => 43.5,      -- Multiply value for all CLKOUT (2.000-64.000).
+			CLKFBOUT_PHASE  => 0.0,         -- Phase offset in degrees of CLKFB (-360.000-360.000).
+			CLKIN1_PERIOD   => 10.0,        -- Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
+			                                -- CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for each CLKOUT (1-128)
+			CLKOUT1_DIVIDE   => 118,
+			CLKOUT2_DIVIDE   => 1,
+			CLKOUT3_DIVIDE   => 1,
+			CLKOUT4_DIVIDE   => 1,
+			CLKOUT5_DIVIDE   => 1,
+			CLKOUT6_DIVIDE   => 1,
+			CLKOUT0_DIVIDE_F => 21.750, -- Divide amount for CLKOUT0 (1.000-128.000).
+			                            -- CLKOUT0_DUTY_CYCLE - CLKOUT6_DUTY_CYCLE: Duty cycle for each CLKOUT (0.01-0.99).
+			CLKOUT0_DUTY_CYCLE => 0.5,
+			CLKOUT1_DUTY_CYCLE => 0.5,
+			CLKOUT2_DUTY_CYCLE => 0.5,
+			CLKOUT3_DUTY_CYCLE => 0.5,
+			CLKOUT4_DUTY_CYCLE => 0.5,
+			CLKOUT5_DUTY_CYCLE => 0.5,
+			CLKOUT6_DUTY_CYCLE => 0.5,
+			-- CLKOUT0_PHASE - CLKOUT6_PHASE: Phase offset for each CLKOUT (-360.000-360.000).
+			CLKOUT0_PHASE   => 0.0,
+			CLKOUT1_PHASE   => 0.0,
+			CLKOUT2_PHASE   => 0.0,
+			CLKOUT3_PHASE   => 0.0,
+			CLKOUT4_PHASE   => 0.0,
+			CLKOUT5_PHASE   => 0.0,
+			CLKOUT6_PHASE   => 0.0,
+			CLKOUT4_CASCADE => FALSE, -- Cascade CLKOUT4 counter with CLKOUT6 (FALSE, TRUE)
+			DIVCLK_DIVIDE   => 5,     -- Master division value (1-106)
+			REF_JITTER1     => 0.010, -- Reference input jitter in UI (0.000-0.999).
+			STARTUP_WAIT    => FALSE  -- Delays DONE until MMCM is locked (FALSE, TRUE)
+		)
 		port map (
-			-- Clock out ports  
-			clk_out1 => s_clk_40mhz,
-			clk_out2 => s_clk_7_37mhz,
-			-- Status and control signals                
-			resetn => i_resetn,
-			locked => s_mmcm_locked,
-			-- Clock in ports
-			clk_in1 => CLK100MHZ
+			-- Clock Outputs: 1-bit (each) output: User configurable clock outputs
+			CLKOUT0  => s_clk_40mhz,             -- 1-bit output: CLKOUT0
+			CLKOUT0B => s_clk_ignore_clk0b,      -- 1-bit output: Inverted CLKOUT0
+			CLKOUT1  => s_clk_7_37mhz,           -- 1-bit output: CLKOUT1
+			CLKOUT1B => s_clk_ignore_clk1b,      -- 1-bit output: Inverted CLKOUT1
+			CLKOUT2  => s_clk_ignore_clk2,       -- 1-bit output: CLKOUT2
+			CLKOUT2B => s_clk_ignore_clk2b,      -- 1-bit output: Inverted CLKOUT2
+			CLKOUT3  => s_clk_ignore_clk3,       -- 1-bit output: CLKOUT3
+			CLKOUT3B => s_clk_ignore_clk3b,      -- 1-bit output: Inverted CLKOUT3
+			CLKOUT4  => s_clk_ignore_clk4,       -- 1-bit output: CLKOUT4
+			CLKOUT5  => s_clk_ignore_clk5,       -- 1-bit output: CLKOUT5
+			CLKOUT6  => s_clk_ignore_clk6,       -- 1-bit output: CLKOUT6
+			                                     -- Feedback Clocks: 1-bit (each) output: Clock feedback ports
+			CLKFBOUT  => s_clk_clkfbout,         -- 1-bit output: Feedback clock
+			CLKFBOUTB => s_clk_ignore_clkfboutb, -- 1-bit output: Inverted CLKFBOUT
+			                                     -- Status Ports: 1-bit (each) output: MMCM status ports
+			LOCKED => s_mmcm_locked,             -- 1-bit output: LOCK
+			                                     -- Clock Inputs: 1-bit (each) input: Clock input
+			CLKIN1 => CLK100MHZ,                 -- 1-bit input: Clock
+			                                     -- Control Ports: 1-bit (each) input: MMCM control ports
+			PWRDWN => s_clk_pwrdwn,              -- 1-bit input: Power-down
+			RST    => s_clk_resetin,             -- 1-bit input: Reset
+			                                     -- Feedback Clocks: 1-bit (each) input: Clock feedback ports
+			CLKFBIN => s_clk_clkfbout            -- 1-bit input: Feedback clock
+		);
+	-- End of MMCME2_BASE_inst instantiation
+
+	-- Reset Synchronization for 20 MHz clock
+	u_reset_sync_20mhz : entity work.arty_reset_synchronizer(rtl)
+		port map(
+			i_clk_mhz     => s_clk_40mhz,
+			i_rstn_global => i_resetn,
+			o_rst_mhz     => s_rst_40mhz
 		);
 
-	-- Wiring between the Clocking Wizard and the Processor System Reset being used
-	-- to provide extended synchronous reset to the custom FPGA design.
-	sc_aux_reset_in     <= '0';
-	sc_mb_debug_sys_rst <= '0';
-	s_rst_7_37mhz       <= s_737_periph_reset(0);
-	s_rst_40mhz         <= s_20_periph_reset(0);
-
-	-- Process System Reset module for 20 MHz clock.
-	u_proc_sys_reset_0 : proc_sys_reset_0
-		PORT MAP (
-			slowest_sync_clk     => s_clk_40mhz,
-			ext_reset_in         => i_resetn,
-			aux_reset_in         => sc_aux_reset_in,
-			mb_debug_sys_rst     => sc_mb_debug_sys_rst,
-			dcm_locked           => s_mmcm_locked,
-			mb_reset             => open,
-			bus_struct_reset     => open,
-			peripheral_reset     => s_20_periph_reset,
-			interconnect_aresetn => open,
-			peripheral_aresetn   => open
-		);
-
-	-- Process System Reset module for 7.37 MHz clock.
-	u_proc_sys_reset_1 : proc_sys_reset_1
-		port map (
-			slowest_sync_clk     => s_clk_7_37mhz,
-			ext_reset_in         => i_resetn,
-			aux_reset_in         => sc_aux_reset_in,
-			mb_debug_sys_rst     => sc_mb_debug_sys_rst,
-			dcm_locked           => s_mmcm_locked,
-			mb_reset             => open,
-			bus_struct_reset     => open,
-			peripheral_reset     => s_737_periph_reset,
-			interconnect_aresetn => open,
-			peripheral_aresetn   => open
+	-- Reset Synchronization for 20 MHz clock
+	u_reset_sync_7_37mhz : entity work.arty_reset_synchronizer(rtl)
+		port map(
+			i_clk_mhz     => s_clk_7_37mhz,
+			i_rstn_global => i_resetn,
+			o_rst_mhz     => s_rst_7_37mhz
 		);
 
 	-- Color and Basic LED operation by 8-bit scalar per filament
