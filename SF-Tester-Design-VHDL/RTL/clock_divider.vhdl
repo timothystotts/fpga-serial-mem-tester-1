@@ -21,13 +21,17 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \module clock_divider
+-- \file clock_divider.vhdl
 --
 -- \brief A clock divider to divide a MMCM clock by a large divisor, plus
 -- synchronized reset in divide clock domain.
 --
--- \description When utilizing this module within a Xilinx Vivado RTL design,
--- Vivado requires the usage of create_generated_clock TCL XDC constraint.
+-- \description Generates a single clock cycle synchronous reset and generates
+-- a divided-down clock for usage of clock edge sensitivity.
+--
+-- Note that this module requires the usage of TCL command
+-- \ref create_generated_clock to indicate to the Xilinx synthesis tool that
+-- this module implements a clock divider.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -35,63 +39,82 @@ use ieee.numeric_std.all;
 
 library work;
 --------------------------------------------------------------------------------
-entity clock_divider is -- CLKDIV8
+entity clock_divider is
 	generic(
 		par_clk_divisor : natural := 1000
-	);
+		);
 	port(
-		i_clk_mhz : in  std_logic; -- the MMCM clock input (MHz)
-		i_rst_mhz : in  std_logic; -- the MMCM clock synchronous reset input
-		o_clk_div : out std_logic; -- the divided clock signal
-		o_rst_div : out std_logic  -- reset signal synchronous to the divided
-	                               -- clock
-	);
+		o_clk_div : out std_logic;
+		o_rst_div : out std_logic;
+		i_clk_mhz : in std_logic;
+		i_rst_mhz : in std_logic
+		);
 end entity clock_divider;
 --------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
 architecture rtl of clock_divider is
-	constant c_clk_max   : natural := (par_clk_divisor / 2) - 1;
+	-- A constant representing the counter maximum which is an even division of the
+	-- source clock, per paramter \ref par_clk_divisor .
+	constant c_clk_max : natural := (par_clk_divisor / 2) - 1;
+
+	-- Clock division count, that counts from 0 to \ref c_clk_max and back again
+	-- to run the divided clock output at an even division \par_clk_divisor of
+	-- the source clock.
 	signal s_clk_div_cnt : natural range 0 to c_clk_max;
-	signal s_clk_div_ce  : std_logic;
-	signal s_clk_out     : std_logic;
-	signal s_rst_out     : std_logic;
+
+	-- A clock enable at the source clock frequency which issues the periodic
+	-- toggle of the divided clock.
+	signal s_clk_div_ce : std_logic;
+
+	-- Signals for the divided clock and reset.
+	signal s_clk_out : std_logic;
+	signal s_rst_out : std_logic;
 begin
-	-- Divided clock enable generator for half period of divided clock
-	p_clk_div_cnt : process(i_clk_mhz, i_rst_mhz)
-	begin
-		if rising_edge(i_clk_mhz) then
-			if (i_rst_mhz = '1') then
+
+-- The even clock frequency division is operated by a clock enable signal to
+-- indicate the upstream clock cycle for changing the edge of the downstream
+-- clock waveform.
+p_clk_div_cnt: process(i_clk_mhz)
+begin
+	if rising_edge(i_clk_mhz) then
+		if (i_rst_mhz = '1') then
+			s_clk_div_cnt <= 0;
+			s_clk_div_ce <= '1';
+		else
+			if (s_clk_div_cnt = c_clk_max) then
 				s_clk_div_cnt <= 0;
-				s_clk_div_ce  <= '1';
+				s_clk_div_ce <= '1';
 			else
-				if (s_clk_div_cnt = c_clk_max) then
-					s_clk_div_cnt <= 0;
-					s_clk_div_ce  <= '1';
-				else
-					s_clk_div_cnt <= s_clk_div_cnt + 1;
-					s_clk_div_ce  <= '0';
-				end if;
+				s_clk_div_cnt <= s_clk_div_cnt + 1;
+				s_clk_div_ce <= '0';
 			end if;
 		end if;
-	end process p_clk_div_cnt;
+	end if;
+end process p_clk_div_cnt;
 
-	-- Divided clock signal and synchronous reset signal generator
-	p_clk_div_out : process(i_clk_mhz, i_rst_mhz)
-	begin
-		if rising_edge(i_clk_mhz) then
-			if (i_rst_mhz = '1') then
-				s_rst_out <= '1';
-				s_clk_out <= '0';
-			else
-				if (s_clk_div_ce = '1') then
-					s_rst_out <= s_rst_out and (not s_clk_out);
-					s_clk_out <= not s_clk_out;
-				end if;
+-- While the upstream clock is executing with reset held, this process will
+-- hold the clock at zero and the reset at active one. When the upstream reset
+-- signal is released, the downstream clock will have one positive edge with
+-- this reset output held active one, and then on the falling edge of the
+-- downstream clock, the reset will change from active one to inactive low.
+p_clk_div_out: process(i_clk_mhz)
+begin
+	if rising_edge(i_clk_mhz) then
+		if (i_rst_mhz = '1') then
+			s_rst_out <= '1';
+			s_clk_out <= '0';
+		else
+			if (s_clk_div_ce = '1') then
+				s_rst_out <= s_rst_out and (not s_clk_out);
+				s_clk_out <= not s_clk_out;
 			end if;
 		end if;
-	end process p_clk_div_out;
+	end if;
+end process p_clk_div_out;
 
-	-- Direct outputs
-	o_clk_div <= s_clk_out;
-	o_rst_div <= s_rst_out;
+o_clk_div <= s_clk_out;
+o_rst_div <= s_rst_out;
+
 end architecture rtl;
 --------------------------------------------------------------------------------

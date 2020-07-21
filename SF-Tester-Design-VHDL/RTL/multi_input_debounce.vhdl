@@ -1,33 +1,21 @@
 --------------------------------------------------------------------------------
--- MIT License
---
--- Copyright (c) 2020 Timothy Stotts
---
--- Permission is hereby granted, free of charge, to any person obtaining a copy
--- of this software and associated documentation files (the "Software"), to deal
--- in the Software without restriction, including without limitation the rights
--- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
--- copies of the Software, and to permit persons to whom the Software is
--- furnished to do so, subject to the following conditions:
---
--- The above copyright notice and this permission notice shall be included in
--- all copies or substantial portions of the Software.
---
--- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
--- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
--- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
--- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
--- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
--- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
--- SOFTWARE.
---------------------------------------------------------------------------------
 -- \file multi_input_debounce.vhdl
 --
+-- \brief A 4-button multiple input debouncer and filter allowing only one
+-- button to be depressed at a time.
+--
+-- \description A solution component of Exercise 9.9 added to the SF3 Experiment.
+--
+-- \copyright (c) 2019 Timothy Stotts as self-employment unbilled consulting
+-- studies; rights for the author to reuse in employment designs or instruction
+-- as a coding starting point. The copyright of derivative works will transfer
+-- to employer.
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 -- \module multi_input_debounce
 --
--- \brief This FSM is a full 4-button (or switch) multual-exclusion debouncer,
--- level output, with synchronizers to prevent metastable FSM state, without
--- embedded one-shot, with 1 millisecond debounce.
+-- \brief This FSM is the full 4-button mutual-exclusive debouncer, level
+-- output, without embedded one-shot, with 1 millisecond debounce.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -99,7 +87,7 @@ begin
 	end process p_fsm_timer1;
 
 	-- FSM state register:
-	p_fsm_state : process(i_clk_mhz, i_rst_mhz)
+	p_fsm_state : process(i_clk_mhz)
 	begin
 		if rising_edge(i_clk_mhz) then
 			if (i_rst_mhz = '1') then

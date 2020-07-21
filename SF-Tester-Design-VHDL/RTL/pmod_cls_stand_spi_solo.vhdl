@@ -25,7 +25,7 @@
 --
 -- \brief A SPI interface to Digilent Inc. PMOD CLS lcd display operating in
 -- SPI Mode 0. The design only enables clearing the display, or writing a full
--- sixteen character line to one of the two lines of the display.
+-- sixteen character line of one of the two lines of the display at a time.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -37,16 +37,16 @@ entity pmod_cls_stand_spi_solo is
 	generic(
 		-- Disable or enable fast FSM delays for simulation instead of impelementation.
 		parm_fast_simulation : integer := 0;
-		-- Ratio of i_ext_spi_clk_x to SPI sck bus output.
-		parm_ext_spi_clk_ratio : natural := 32;
 		-- Actual frequency in Hz of \ref i_ext_spi_clk_4x
-		parm_FCLK : natural := 2_500_000;
+		parm_FCLK : natural := 20_000_000;
+		-- Clock enable frequency in Hz of \ref i_ext_spi_clk_4x with i_spi_ce_4x
+		parm_FCLK_ce : natural := 2_500_000;
 		-- LOG2 of the TX FIFO max count
-		parm_tx_len_bits : natural := 10;
+		parm_tx_len_bits : natural := 11;
 		-- LOG2 of max Wait Cycles count between end of TX and start of RX
-		parm_wait_cyc_bits : natural := 5;
+		parm_wait_cyc_bits : natural := 2;
 		-- LOG2 of the RX FIFO max count
-		parm_rx_len_bits : natural := 10
+		parm_rx_len_bits : natural := 11
 	);
 	port(
 		-- system clock and synchronous reset
@@ -85,8 +85,8 @@ architecture moore_fsm_recursive of pmod_cls_stand_spi_solo is
 
 	-- Boot time should be in hundreds of milliseconds as the PMOD CLS
 	-- datasheet does not indicate boot-up time of the PMOD CLS microcontroller.
-	constant c_t_pmodcls_boot_fast_sim : natural := parm_FCLK / parm_ext_spi_clk_ratio * 4 / 1000 * 2;
-	constant c_t_pmodcls_boot          : natural := parm_FCLK / parm_ext_spi_clk_ratio * 4 / 1000 * 800;
+	constant c_t_pmodcls_boot_fast_sim : natural := parm_FCLK_ce / 1000 * 2;
+	constant c_t_pmodcls_boot          : natural := parm_FCLK_ce / 1000 * 800;
 	constant c_tmax                    : natural := c_t_pmodcls_boot - 1;
 
 	signal s_t : natural range 0 to c_tmax;
@@ -257,31 +257,22 @@ begin
 				-- loading of the last byte, command the SPI operation to start.
 				o_command_ready     <= '0';
 				o_tx_data           <= s_cls_cmd_tx_aux((s_cls_cmd_len_aux * 8 - 1) downto ((s_cls_cmd_len_aux - 1) * 8));
+				o_tx_enqueue        <= i_tx_ready;
 				o_tx_len            <= std_logic_vector(to_unsigned(s_cls_cmd_txlen_aux, o_tx_len'length));
 				o_rx_len            <= (others => '0');
 				o_wait_cyc          <= (others => '0');
 				o_rx_dequeue        <= '0';
+				o_go_stand          <= '1' when ((s_cls_cmd_len_aux <= 1) and (i_tx_ready = '1')) else '0';
 				s_cls_cmd_tx_val    <= s_cls_cmd_tx_aux;
+				s_cls_cmd_len_val   <= (s_cls_cmd_len_aux - 1) when (i_tx_ready = '1') else s_cls_cmd_len_aux;
 				s_cls_dat_len_val   <= s_cls_dat_len_aux;
 				s_cls_dat_tx_val    <= s_cls_dat_tx_aux;
 				s_cls_cmd_txlen_val <= s_cls_cmd_txlen_aux;
 				s_cls_dat_txlen_val <= s_cls_dat_txlen_aux;
 
-				if (i_tx_ready = '1') then
-					o_tx_enqueue      <= '1';
-					s_cls_cmd_len_val <= (s_cls_cmd_len_aux - 1);
-
-					if (s_cls_cmd_len_aux > 1) then
-						o_go_stand         <= '0';
-						s_cls_drv_nx_state <= ST_CLS_CMD_RUN;
-					else
-						o_go_stand         <= '1';
-						s_cls_drv_nx_state <= ST_CLS_CMD_WAIT;
-					end if;
+				if ((s_cls_cmd_len_aux <= 1) and (i_tx_ready = '1')) then
+					s_cls_drv_nx_state <= ST_CLS_CMD_WAIT;
 				else
-					o_tx_enqueue       <= '0';
-					s_cls_cmd_len_val  <= s_cls_cmd_len_aux;
-					o_go_stand         <= '0';
 					s_cls_drv_nx_state <= ST_CLS_CMD_RUN;
 				end if;
 
@@ -304,7 +295,7 @@ begin
 				s_cls_dat_txlen_val <= s_cls_dat_txlen_aux;
 
 				if (i_spi_idle = '1') then
-					if (s_cls_dat_len_aux > 0) then
+					if (s_cls_dat_txlen_aux > 0) then
 						s_cls_drv_nx_state <= ST_CLS_DAT_RUN;
 					else
 						s_cls_drv_nx_state <= ST_CLS_IDLE;
@@ -319,31 +310,22 @@ begin
 				-- loading of the last byte, command the SPI operation to start.
 				o_command_ready     <= '0';
 				o_tx_data           <= s_cls_dat_tx_aux((s_cls_dat_len_aux * 8 - 1) downto ((s_cls_dat_len_aux - 1) * 8));
+				o_tx_enqueue <= i_tx_ready;
 				o_tx_len            <= std_logic_vector(to_unsigned(s_cls_dat_txlen_aux, o_tx_len'length));
 				o_rx_len            <= (others => '0');
 				o_wait_cyc          <= (others => '0');
 				o_rx_dequeue        <= '0';
+				o_go_stand          <= '1' when ((s_cls_dat_len_aux <= 1) and (i_tx_ready = '1')) else '0';
 				s_cls_cmd_len_val   <= s_cls_cmd_len_aux;
+				s_cls_dat_len_val   <= (s_cls_dat_len_aux - 1) when (i_tx_ready = '1') else s_cls_dat_len_aux;
 				s_cls_cmd_tx_val    <= s_cls_cmd_tx_aux;
 				s_cls_dat_tx_val    <= s_cls_dat_tx_aux;
 				s_cls_cmd_txlen_val <= s_cls_cmd_txlen_aux;
 				s_cls_dat_txlen_val <= s_cls_dat_txlen_aux;
 
-				if (i_tx_ready = '1') then
-					o_tx_enqueue      <= '1';
-					s_cls_dat_len_val <= (s_cls_dat_len_aux - 1);
-
-					if (s_cls_dat_len_aux > 1) then
-						o_go_stand         <= '0';
-						s_cls_drv_nx_state <= ST_CLS_DAT_RUN;
-					else
-						o_go_stand         <= '1';
-						s_cls_drv_nx_state <= ST_CLS_DAT_WAIT;
-					end if;
+				if ((s_cls_dat_len_aux <= 1) and (i_tx_ready = '1')) then
+					s_cls_drv_nx_state <= ST_CLS_DAT_WAIT;
 				else
-					o_tx_enqueue       <= '0';
-					s_cls_dat_len_val  <= s_cls_dat_len_aux;
-					o_go_stand         <= '0';
 					s_cls_drv_nx_state <= ST_CLS_DAT_RUN;
 				end if;
 

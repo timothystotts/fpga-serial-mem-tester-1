@@ -169,8 +169,8 @@ architecture rtl of fpga_serial_mem_tester is
 	constant c_quad_spi_wait_count_bits    : natural := 9;
 
 	-- Definitions of the Standard SPI driver to pass to the CLS driver
-	constant c_stand_spi_tx_fifo_count_bits : natural := 5;
-	constant c_stand_spi_rx_fifo_count_bits : natural := 5;
+	constant c_stand_spi_tx_fifo_count_bits : natural := 11;
+	constant c_stand_spi_rx_fifo_count_bits : natural := 11;
 	constant c_stand_spi_wait_count_bits    : natural := 2;
 
 	-- SPI signals to external tri-state
@@ -256,22 +256,13 @@ architecture rtl of fpga_serial_mem_tester is
 
 	constant c_uart_k_preset : natural := 34;
 
-	-- UART TX signals for UART TX update FSM
-	signal s_uart_dat_ascii_line : std_logic_vector((35*8-1) downto 0);
-	signal s_uart_tx_go          : std_logic;
-	signal s_uart_txdata         : std_logic_vector(7 downto 0);
-	signal s_uart_txvalid        : std_logic;
-	signal s_uart_txready        : std_logic;
-	signal s_uart_k_val          : natural range 0 to 63;
-	signal s_uart_k_aux          : natural range 0 to 63;
-
 	-- Signals for inferring tri-state buffer for CLS SPI bus outputs.
 	signal so_pmod_cls_sck_o  : std_logic;
 	signal so_pmod_cls_sck_t  : std_logic;
-	signal so_pmod_cls_ssn_o  : std_logic;
-	signal so_pmod_cls_ssn_t  : std_logic;
-	signal so_pmod_cls_mosi_o : std_logic;
-	signal so_pmod_cls_mosi_t : std_logic;
+	signal so_pmod_cls_csn_o  : std_logic;
+	signal so_pmod_cls_csn_t  : std_logic;
+	signal so_pmod_cls_copi_o : std_logic;
+	signal so_pmod_cls_copi_t : std_logic;
 
 	-- switch inputs debounced
 	signal si_switches : std_logic_vector(3 downto 0);
@@ -322,7 +313,7 @@ architecture rtl of fpga_serial_mem_tester is
 	constant c_tester_patterh_incrval_d  : unsigned(7 downto 0) := x"17";
 
 	constant c_sf3_tester_ce_div_ratio : natural := 2;
-	
+
 	function fn_set_t_max(fclk : natural; div_ratio : natural; fast_sim : integer)
 		return natural is
 	begin
@@ -386,6 +377,13 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_color_led_green_value : t_led_color_values((4 - 1) downto 0);
 	signal s_color_led_blue_value  : t_led_color_values((4 - 1) downto 0);
 	signal s_basic_led_lumin_value : t_led_color_values((4 - 1) downto 0);
+
+	-- UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed .
+	signal s_uart_dat_ascii_line : std_logic_vector((35*8-1) downto 0);
+	signal s_uart_tx_go          : std_logic;
+	signal s_uart_txdata         : std_logic_vector(7 downto 0);
+	signal s_uart_txvalid        : std_logic;
+	signal s_uart_txready        : std_logic;
 
 begin
 	-- Clocking Wizard module with MMCM. Two clocks are generated from the 100 MHz
@@ -532,8 +530,8 @@ begin
 
 	-- Tri-state outputs of PMOD CLS custom driver.
 	eo_pmod_cls_sck <= so_pmod_cls_sck_o  when so_pmod_cls_sck_t = '0' else 'Z';
-	eo_pmod_cls_ssn <= so_pmod_cls_ssn_o  when so_pmod_cls_ssn_t = '0' else 'Z';
-	eo_pmod_cls_dq0 <= so_pmod_cls_mosi_o when so_pmod_cls_mosi_t = '0' else 'Z';
+	eo_pmod_cls_ssn <= so_pmod_cls_csn_o  when so_pmod_cls_csn_t = '0' else 'Z';
+	eo_pmod_cls_dq0 <= so_pmod_cls_copi_o when so_pmod_cls_copi_t = '0' else 'Z';
 
 	-- Instance of the PMOD CLS driver for 16x2 character LCD display for purposes
 	-- of an output display.
@@ -541,22 +539,23 @@ begin
 		generic map (
 			parm_fast_simulation   => parm_fast_simulation,
 			parm_FCLK              => c_FCLK,
-			parm_ext_spi_clk_ratio => (c_FCLK / 625000),
+			parm_FCLK_ce           => (c_FCLK / 8),
+			parm_ext_spi_clk_ratio => (c_FCLK / 625_000),
 			parm_tx_len_bits       => c_stand_spi_tx_fifo_count_bits,
 			parm_wait_cyc_bits     => c_stand_spi_wait_count_bits,
 			parm_rx_len_bits       => c_stand_spi_rx_fifo_count_bits
 		)
 		port map (
-			i_clk_mhz              => s_clk_40mhz,
-			i_rst_mhz              => s_rst_40mhz,
+			i_clk_40mhz            => s_clk_40mhz,
+			i_rst_40mhz            => s_rst_40mhz,
 			i_ce_2_5mhz            => s_ce_2_5mhz,
 			eo_sck_t               => so_pmod_cls_sck_t,
 			eo_sck_o               => so_pmod_cls_sck_o,
-			eo_ssn_t               => so_pmod_cls_ssn_t,
-			eo_ssn_o               => so_pmod_cls_ssn_o,
-			eo_mosi_t              => so_pmod_cls_mosi_t,
-			eo_mosi_o              => so_pmod_cls_mosi_o,
-			ei_miso                => ei_pmod_cls_dq1,
+			eo_csn_t               => so_pmod_cls_csn_t,
+			eo_csn_o               => so_pmod_cls_csn_o,
+			eo_copi_t              => so_pmod_cls_copi_t,
+			eo_copi_o              => so_pmod_cls_copi_o,
+			ei_cipo                => ei_pmod_cls_dq1,
 			o_command_ready        => s_cls_command_ready,
 			i_cmd_wr_clear_display => s_cls_wr_clear_display,
 			i_cmd_wr_text_line1    => s_cls_wr_text_line1,
@@ -779,7 +778,7 @@ begin
 		s_sf3_wr_data_valid  <= '0';
 
 		case (s_tester_pr_state) is
-			when ST_WAIT_BUTTON_DEP =>
+			when ST_WAIT_BUTTON_DEP              =>
 				s_sf3_len_random_read     <= (others => '0');
 				s_sf3_cmd_random_read     <= '0';
 				s_sf3_cmd_page_program    <= '0';
@@ -1568,13 +1567,11 @@ begin
 
 	u_uart_tx_only : entity work.uart_tx_only(moore_fsm_recursive)
 		generic map (
-			parm_BAUD           => 115200,
-			parm_tx_len_bits    => 8,
-			parm_tx_avail_ready => (128 - 34)
+			parm_BAUD           => 115200
 		)
 		port map (
-			i_clk_mhz     => s_clk_40mhz,
-			i_rst_mhz     => s_rst_40mhz,
+			i_clk_40mhz   => s_clk_40mhz,
+			i_rst_40mhz   => s_rst_40mhz,
 			i_clk_7_37mhz => s_clk_7_37mhz,
 			i_rst_7_37mhz => s_rst_7_37mhz,
 			eo_uart_tx    => eo_uart_tx,
@@ -1583,73 +1580,16 @@ begin
 			o_tx_ready    => s_uart_txready
 		);
 
-	-- UART TX machine, the 34 bytes of \ref s_uart_dat_ascii_line
-	-- are feed into the UART TX ONLY FIFO upon every pulse of the
-	-- \ref s_uart_tx_go signal. The UART TX ONLY FIFO machine will
-	-- automatically dequeue any bytes present in the queue and quickly
-	-- transmit them, one-at-a-time at the \ref parm_BAUD baudrate.
-
-	-- UART TX machine, synchronous state and auxiliary counting register.
-	p_uartfeed_fsm_state_aux : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			if (s_rst_40mhz = '1') then
-				s_uartfeed_pr_state <= ST_UARTFEED_IDLE;
-				s_uart_k_aux        <= 0;
-			else
-				s_uartfeed_pr_state <= s_uartfeed_nx_state;
-				s_uart_k_aux        <= s_uart_k_val;
-			end if;
-		end if;
-	end process p_uartfeed_fsm_state_aux;
-
-	-- UART TX machine, combinatorial next state and auxiliary counting register.
-	p_uartfeed_fsm_nx_out : process(s_uartfeed_pr_state, s_uart_k_aux,
-			s_uart_tx_go, s_uart_dat_ascii_line, s_uart_txready)
-	begin
-		case (s_uartfeed_pr_state) is
-			when ST_UARTFEED_DATA =>
-				-- Enqueue the \ref c_uart_k_preset count of bytes from signal
-				-- \ref s_uart_dat_ascii_line. Then transition to the WAIT state.
-				s_uart_txdata  <= s_uart_dat_ascii_line(((8 * s_uart_k_aux) - 1) downto (8 * (s_uart_k_aux - 1)));
-				s_uart_txvalid <= '1';
-				s_uart_k_val   <= s_uart_k_aux - 1;
-
-				if (s_uart_k_aux <= 1) then
-					s_uartfeed_nx_state <= ST_UARTFEED_WAIT;
-				else
-					s_uartfeed_nx_state <= ST_UARTFEED_DATA;
-				end if;
-
-			when ST_UARTFEED_WAIT =>
-				-- Wait for the \ref s_uart_tx_go pulse to be idle, and then
-				-- transition to the IDLE state.
-				s_uart_txdata  <= x"00";
-				s_uart_txvalid <= '0';
-				s_uart_k_val   <= s_uart_k_aux;
-
-				if (s_uart_tx_go = '0') then
-					s_uartfeed_nx_state <= ST_UARTFEED_IDLE;
-				else
-					s_uartfeed_nx_state <= ST_UARTFEED_WAIT;
-				end if;
-
-			when others => -- ST_UARTFEED_IDLE
-				           -- IDLE the FSM while waiting for a pulse on s_uart_tx_go.
-				           -- The value of \ref s_uart_txready is also checked as to
-				           -- not overflow the UART TX buffer. If both signals are a
-				           -- TRUE value, then transition to enqueueing data.
-				s_uart_txdata  <= x"00";
-				s_uart_txvalid <= '0';
-				s_uart_k_val   <= c_uart_k_preset;
-
-				if ((s_uart_tx_go = '1') and (s_uart_txready = '1')) then
-					s_uartfeed_nx_state <= ST_UARTFEED_DATA;
-				else
-					s_uartfeed_nx_state <= ST_UARTFEED_IDLE;
-				end if;
-		end case;
-	end process p_uartfeed_fsm_nx_out;
+	u_uart_tx_feed : entity work.uart_tx_feed(rtl)
+		port map (
+			i_clk_40mhz      => s_clk_40mhz,
+			i_rst_40mhz      => s_rst_40mhz,
+			o_tx_data        => s_uart_txdata,
+			o_tx_valid       => s_uart_txvalid,
+			i_tx_ready       => s_uart_txready,
+			i_tx_go          => s_uart_tx_go,
+			i_dat_ascii_line => s_uart_dat_ascii_line
+		);
 
 end architecture rtl;
 --------------------------------------------------------------------------------

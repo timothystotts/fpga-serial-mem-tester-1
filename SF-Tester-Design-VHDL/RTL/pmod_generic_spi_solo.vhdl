@@ -21,15 +21,21 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \file pmod_generic_spi_solo.vhdl
+-- \filepmod_generic_spi_solo.vhdl
 --
 -- \brief A custom SPI driver for generic usage, implementing only Standard
 -- SPI operating in Mode 0, without Extended data transfer of more than the
--- standard MOSI and MISO data signals.
+-- standard COPI and CIPO data signals.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+
+library UNISIM;
+use UNISIM.vcomponents.all;
+
+library UNIMACRO;
+use UNIMACRO.vcomponents.all;
 
 library work;
 --------------------------------------------------------------------------------
@@ -38,21 +44,21 @@ entity pmod_generic_spi_solo is
 		-- Ratio of i_ext_spi_clk_x to SPI sck bus output.
 		parm_ext_spi_clk_ratio : natural := 32;
 		-- LOG2 of the TX FIFO max count
-		parm_tx_len_bits : natural := 10;
+		parm_tx_len_bits : natural := 11;
 		-- LOG2 of max Wait Cycles count between end of TX and start of RX
-		parm_wait_cyc_bits : natural := 5;
+		parm_wait_cyc_bits : natural := 2;
 		-- LOG2 of the RX FIFO max count
-		parm_rx_len_bits : natural := 10
+		parm_rx_len_bits : natural := 11
 	);
 	port(
 		-- SPI bus outputs and input totop-level
 		eo_sck_o  : out std_logic;
 		eo_sck_t  : out std_logic;
-		eo_ssn_o  : out std_logic;
-		eo_ssn_t  : out std_logic;
-		eo_mosi_o : out std_logic;
-		eo_mosi_t : out std_logic;
-		ei_miso_i : in  std_logic;
+		eo_csn_o  : out std_logic;
+		eo_csn_t  : out std_logic;
+		eo_copi_o : out std_logic;
+		eo_copi_t : out std_logic;
+		ei_cipo_i : in  std_logic;
 		-- SPI state machine clock at 4x the SPI bus clock speed, with
 		-- synchronous reset
 		i_ext_spi_clk_x : in std_logic;
@@ -79,38 +85,6 @@ end entity pmod_generic_spi_solo;
 
 --------------------------------------------------------------------------------
 architecture moore_fsm_recursive of pmod_generic_spi_solo is
-	-- RX FIFOcomponent
-	COMPONENT fifo_generator_0
-		PORT (
-			clk        : IN  STD_LOGIC;
-			srst       : IN  STD_LOGIC;
-			din        : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_en      : IN  STD_LOGIC;
-			rd_en      : IN  STD_LOGIC;
-			dout       : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			full       : OUT STD_LOGIC;
-			empty      : OUT STD_LOGIC;
-			valid      : OUT STD_LOGIC;
-			data_count : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
-		);
-	END COMPONENT;
-
-	-- TX FIFOcomponent
-	COMPONENT fifo_generator_1
-		PORT (
-			clk        : IN  STD_LOGIC;
-			srst       : IN  STD_LOGIC;
-			din        : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_en      : IN  STD_LOGIC;
-			rd_en      : IN  STD_LOGIC;
-			dout       : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			full       : OUT STD_LOGIC;
-			empty      : OUT STD_LOGIC;
-			valid      : OUT STD_LOGIC;
-			data_count : OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
-		);
-	END COMPONENT;
-
 	-- SPI FSM statedeclarations
 	type t_spi_state is (ST_STAND_IDLE, ST_STAND_START_D, ST_STAND_START_S,
 			ST_STAND_TX, ST_STAND_WAIT, ST_STAND_RX, ST_STAND_STOP_S,
@@ -178,24 +152,34 @@ architecture moore_fsm_recursive of pmod_generic_spi_solo is
 	signal s_spi_idle : std_logic;
 
 	-- Mapping for FIFORX
-	signal s_data_fifo_rx_in    : std_logic_vector(7 downto 0);
-	signal s_data_fifo_rx_out   : std_logic_vector(7 downto 0);
-	signal s_data_fifo_rx_re    : std_logic;
-	signal s_data_fifo_rx_we    : std_logic;
-	signal s_data_fifo_rx_full  : std_logic;
-	signal s_data_fifo_rx_empty : std_logic;
-	signal s_data_fifo_rx_valid : std_logic;
-	signal s_data_fifo_rx_count : std_logic_vector((parm_rx_len_bits - 1) downto 0);
+	signal s_data_fifo_rx_in          : std_logic_vector(7 downto 0);
+	signal s_data_fifo_rx_out         : std_logic_vector(7 downto 0);
+	signal s_data_fifo_rx_re          : std_logic;
+	signal s_data_fifo_rx_we          : std_logic;
+	signal s_data_fifo_rx_full        : std_logic;
+	signal s_data_fifo_rx_empty       : std_logic;
+	signal s_data_fifo_rx_valid       : std_logic;
+	signal s_data_fifo_rx_rdcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_rx_wrcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_rx_almostfull  : std_logic;
+	signal s_data_fifo_rx_almostempty : std_logic;
+	signal s_data_fifo_rx_wrerr       : std_logic;
+	signal s_data_fifo_rx_rderr       : std_logic;
 
 	-- Mapping for FIFOTX
-	signal s_data_fifo_tx_in    : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_out   : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_re    : std_logic;
-	signal s_data_fifo_tx_we    : std_logic;
-	signal s_data_fifo_tx_full  : std_logic;
-	signal s_data_fifo_tx_empty : std_logic;
-	signal s_data_fifo_tx_valid : std_logic;
-	signal s_data_fifo_tx_count : std_logic_vector((parm_tx_len_bits - 1) downto 0);
+	signal s_data_fifo_tx_in          : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_out         : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_re          : std_logic;
+	signal s_data_fifo_tx_we          : std_logic;
+	signal s_data_fifo_tx_full        : std_logic;
+	signal s_data_fifo_tx_empty       : std_logic;
+	signal s_data_fifo_tx_valid       : std_logic;
+	signal s_data_fifo_tx_rdcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_wrcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_almostfull  : std_logic;
+	signal s_data_fifo_tx_almostempty : std_logic;
+	signal s_data_fifo_tx_wrerr       : std_logic;
+	signal s_data_fifo_tx_rderr       : std_logic;
 
 	signal v_phase_counter : natural range 0 to (parm_ext_spi_clk_ratio - 1);
 
@@ -216,39 +200,117 @@ begin
 	s_data_fifo_rx_re <= i_rx_dequeue and s_spi_ce_4x;
 	o_rx_data         <= s_data_fifo_rx_out;
 
-	u_fifo_rx_0 : fifo_generator_0
-		port map(
-			clk        => i_ext_spi_clk_x,
-			srst       => i_srst,
-			din        => s_data_fifo_rx_in,
-			wr_en      => s_data_fifo_rx_we,
-			rd_en      => s_data_fifo_rx_re,
-			dout       => s_data_fifo_rx_out,
-			full       => s_data_fifo_rx_full,
-			empty      => s_data_fifo_rx_empty,
-			valid      => s_data_fifo_rx_valid,
-			data_count => s_data_fifo_rx_count
-		);
+	p_gen_fifo_rx_valid : process(i_ext_spi_clk_x)
+	begin
+		if rising_edge(i_ext_spi_clk_x) then
+			s_data_fifo_rx_valid <= s_data_fifo_rx_re;
+		end if;
+	end process p_gen_fifo_rx_valid;
 
-	-- Mapping of the TX FIFO to external control and transmission of datafor
-	-- writingoperations
+	-- FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
+	--                  Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	-- Note -  This Unimacro model assumes the port directions to be "downto". 
+	--         Simulation of this model with "to" in the port directions could lead to erroneous results.
+
+	-----------------------------------------------------------------
+	-- DATA_WIDTH | FIFO_SIZE | FIFO Depth | RDCOUNT/WRCOUNT Width --
+	-- ===========|===========|============|=======================--
+	--   37-72    |  "36Kb"   |     512    |         9-bit         --
+	--   19-36    |  "36Kb"   |    1024    |        10-bit         --
+	--   19-36    |  "18Kb"   |     512    |         9-bit         --
+	--   10-18    |  "36Kb"   |    2048    |        11-bit         --
+	--   10-18    |  "18Kb"   |    1024    |        10-bit         --
+	--    5-9     |  "36Kb"   |    4096    |        12-bit         --
+	--    5-9     |  "18Kb"   |    2048    |        11-bit         --
+	--    1-4     |  "36Kb"   |    8192    |        13-bit         --
+	--    1-4     |  "18Kb"   |    4096    |        12-bit         --
+	-----------------------------------------------------------------
+
+	u_fifo_rx_0 : FIFO_SYNC_MACRO
+		generic map (
+			DEVICE              => "7SERIES", -- Target Device: "VIRTEX5, "VIRTEX6", "7SERIES" 
+			ALMOST_FULL_OFFSET  => "0000" & x"80",   -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET => "0000" & x"80",   -- Sets the almost empty threshold
+			DATA_WIDTH          => 8,         -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
+			FIFO_SIZE           => "18Kb")    -- Target BRAM, "18Kb" or "36Kb" 
+		port map (
+			ALMOSTEMPTY => s_data_fifo_rx_almostempty, -- 1-bit output almost empty
+			ALMOSTFULL  => s_data_fifo_rx_almostfull,  -- 1-bit output almost full
+			DO          => s_data_fifo_rx_out,         -- Output data, width defined by DATA_WIDTH parameter
+			EMPTY       => s_data_fifo_rx_empty,       -- 1-bit output empty
+			FULL        => s_data_fifo_rx_full,        -- 1-bit output full
+			RDCOUNT     => s_data_fifo_rx_rdcount,     -- Output read count, width determined by FIFO depth
+			RDERR       => s_data_fifo_rx_rderr,       -- 1-bit output read error
+			WRCOUNT     => s_data_fifo_rx_wrcount,     -- Output write count, width determined by FIFO depth
+			WRERR       => s_data_fifo_rx_wrerr,       -- 1-bit output write error
+			CLK         => i_ext_spi_clk_x,            -- 1-bit input clock
+			DI          => s_data_fifo_rx_in,          -- Input data, width defined by DATA_WIDTH parameter
+			RDEN        => s_data_fifo_rx_re,          -- 1-bit input read enable
+			RST         => i_srst,                     -- 1-bit input reset
+			WREN        => s_data_fifo_rx_we           -- 1-bit input write enable
+		);
+	-- End of u_fifo_rx_0 instantiation
+
+	-- Mapping of the TX FIFO to external control and transmission of data for
+	-- writing operations
 	s_data_fifo_tx_in <= i_tx_data;
 	s_data_fifo_tx_we <= i_tx_enqueue and s_spi_ce_4x;
-	o_tx_ready        <= (not s_data_fifo_tx_full) and s_spi_ce_4x;
+	o_tx_ready        <= not s_data_fifo_tx_full and s_spi_ce_4x;
 
-	u_fifo_tx_0 : fifo_generator_1
-		port map(
-			clk        => i_ext_spi_clk_x,
-			srst       => i_srst,
-			din        => s_data_fifo_tx_in,
-			wr_en      => s_data_fifo_tx_we,
-			rd_en      => s_data_fifo_tx_re,
-			dout       => s_data_fifo_tx_out,
-			full       => s_data_fifo_tx_full,
-			empty      => s_data_fifo_tx_empty,
-			valid      => s_data_fifo_tx_valid,
-			data_count => s_data_fifo_tx_count
+	p_gen_fifo_tx_valid : process(i_ext_spi_clk_x)
+	begin
+		if rising_edge(i_ext_spi_clk_x) then
+			s_data_fifo_tx_valid <= s_data_fifo_tx_re;
+		end if;
+	end process p_gen_fifo_tx_valid;
+
+	-- FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
+	--                  Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	-- Note -  This Unimacro model assumes the port directions to be "downto". 
+	--         Simulation of this model with "to" in the port directions could lead to erroneous results.
+
+	-----------------------------------------------------------------
+	-- DATA_WIDTH | FIFO_SIZE | FIFO Depth | RDCOUNT/WRCOUNT Width --
+	-- ===========|===========|============|=======================--
+	--   37-72    |  "36Kb"   |     512    |         9-bit         --
+	--   19-36    |  "36Kb"   |    1024    |        10-bit         --
+	--   19-36    |  "18Kb"   |     512    |         9-bit         --
+	--   10-18    |  "36Kb"   |    2048    |        11-bit         --
+	--   10-18    |  "18Kb"   |    1024    |        10-bit         --
+	--    5-9     |  "36Kb"   |    4096    |        12-bit         --
+	--    5-9     |  "18Kb"   |    2048    |        11-bit         --
+	--    1-4     |  "36Kb"   |    8192    |        13-bit         --
+	--    1-4     |  "18Kb"   |    4096    |        12-bit         --
+	-----------------------------------------------------------------
+
+	u_fifo_tx_0 : FIFO_SYNC_MACRO
+		generic map (
+			DEVICE              => "7SERIES", -- Target Device: "VIRTEX5, "VIRTEX6", "7SERIES" 
+			ALMOST_FULL_OFFSET  => "000" & x"80",   -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET => "000" & x"80",   -- Sets the almost empty threshold
+			DATA_WIDTH          => 8,         -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
+			FIFO_SIZE           => "18Kb")    -- Target BRAM, "18Kb" or "36Kb" 
+		port map (
+			ALMOSTEMPTY => s_data_fifo_tx_almostempty, -- 1-bit output almost empty
+			ALMOSTFULL  => s_data_fifo_tx_almostfull,  -- 1-bit output almost full
+			DO          => s_data_fifo_tx_out,         -- Output data, width defined by DATA_WIDTH parameter
+			EMPTY       => s_data_fifo_tx_empty,       -- 1-bit output empty
+			FULL        => s_data_fifo_tx_full,        -- 1-bit output full
+			RDCOUNT     => s_data_fifo_tx_rdcount,     -- Output read count, width determined by FIFO depth
+			RDERR       => s_data_fifo_tx_rderr,       -- 1-bit output read error
+			WRCOUNT     => s_data_fifo_tx_wrcount,     -- Output write count, width determined by FIFO depth
+			WRERR       => s_data_fifo_tx_wrerr,       -- 1-bit output write error
+			CLK         => i_ext_spi_clk_x,            -- 1-bit input clock
+			DI          => s_data_fifo_tx_in,          -- Input data, width defined by DATA_WIDTH parameter
+			RDEN        => s_data_fifo_tx_re,          -- 1-bit input read enable
+			RST         => i_srst,                     -- 1-bit input reset
+			WREN        => s_data_fifo_tx_we           -- 1-bit input write enable
 		);
+	-- End of FIFO_SYNC_MACRO_inst instantiation
 
 	-- spi clock for SCK output, generatedclock
 	-- requires create_generated_clock constraint inXDC
@@ -437,7 +499,7 @@ begin
 	end process p_spi_fsm_state;
 
 	-- SPI bus control state machine assignments for combinatorial assignmentto
-	-- SPI bus outputs, timing of slave select, transmission of TXdata,
+	-- SPI bus outputs, timing of chip select, transmission of TXdata,
 	-- holding for wait cycles, and timing for RX data where RX data iscaptured
 	-- in a different synchronous state machine delayed from the state ofthis
 	-- machine.
@@ -453,17 +515,17 @@ begin
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- no chipselect
-				eo_ssn_o <= '1';
-				eo_ssn_t <= '0';
-				-- zero value forMOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '1';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TXFIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is notidle
 				s_spi_idle <= '0';
 
-				-- time the slave not selected starttime
+				-- time the chip not selected starttime
 				if (s_t = c_t_stand_wait_ss - c_t_inc) then
 					s_spi_nx_state <= ST_STAND_START_S;
 				else
@@ -474,24 +536,19 @@ begin
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- assert chip select
-				eo_ssn_o <= '0';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '0';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
-				s_data_fifo_tx_re <= '0';
+				s_data_fifo_tx_re <= s_spi_clk_ce3 when ((s_t = c_t_stand_wait_ss - c_t_inc) and 
+					(s_data_fifo_tx_empty = '0')) else '0';
 				-- machine is not idle
 				s_spi_idle <= '0';
 
-				-- time the slave not selected start time
+				-- time the chip selected start time
 				if (s_t = c_t_stand_wait_ss - c_t_inc) then
-					if (s_data_fifo_tx_empty = '0') then
-						s_data_fifo_tx_re <= s_spi_clk_ce3;
-					else
-						s_data_fifo_tx_re <= '0';
-					end if;
-
 					s_spi_nx_state <= ST_STAND_TX;
 				else
 					s_spi_nx_state <= ST_STAND_START_S;
@@ -502,22 +559,22 @@ begin
 				eo_sck_o <= s_spi_clk_1x;
 				eo_sck_t <= '0';
 				-- assert chip select
-				eo_ssn_o <= '0';
-				eo_ssn_t <= '0';
-				-- data value for MOSI
-				if (s_t < 8 * s_tx_len_aux) then
-					eo_mosi_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
-				else
-					eo_mosi_o <= '0';
-				end if;
-				eo_mosi_t <= '0';
+				eo_csn_o <= '0';
+				eo_csn_t <= '0';
+				-- data value for COPI
+				eo_copi_o <= s_data_fifo_tx_out(7 - (s_t mod 8)) when (s_t < 8 * s_tx_len_aux) else '0';
+				eo_copi_t <= '0';
 
 				-- machine is not idle
 				s_spi_idle <= '0';
 
+				-- read byte by byte from the TX FIFO
+				-- only if on last bit, dequeue another byte
+				s_data_fifo_tx_re <= s_spi_clk_ce2 when ((s_t /= (8 * s_tx_len_aux) - c_t_inc) and
+					(s_t mod 8 = 7) and (s_data_fifo_tx_empty = '0')) else '0';
+
 				-- If every bit from the FIFO according to i_tx_len value captured
 				-- in s_tx_len_aux, then move to either WAIT, RX, or STOP.
-
 				if (s_t = (8 * s_tx_len_aux) - c_t_inc) then
 					if (s_rx_len_aux > 0) then
 						if (s_wait_cyc_aux > 0) then
@@ -528,20 +585,7 @@ begin
 					else
 						s_spi_nx_state <= ST_STAND_STOP_S;
 					end if;
-
-					s_data_fifo_tx_re <= '0';
 				else
-					-- only if on last bit, dequeue another byte
-					if (s_t mod 8 = 7) then
-						if (s_data_fifo_tx_empty = '0') then
-							s_data_fifo_tx_re <= s_spi_clk_ce2;
-						else
-							s_data_fifo_tx_re <= '0';
-						end if;
-					else
-						s_data_fifo_tx_re <= '0';
-					end if;
-
 					s_spi_nx_state <= ST_STAND_TX;
 				end if;
 
@@ -550,11 +594,11 @@ begin
 				eo_sck_o <= s_spi_clk_1x;
 				eo_sck_t <= '0';
 				-- assert chip select
-				eo_ssn_o <= '0';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '0';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is not idle
@@ -571,11 +615,11 @@ begin
 				eo_sck_o <= s_spi_clk_1x;
 				eo_sck_t <= '0';
 				-- assert chip select
-				eo_ssn_o <= '0';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '0';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is not idle
@@ -592,16 +636,17 @@ begin
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- assert chip select
-				eo_ssn_o <= '0';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '0';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is not idle
 				s_spi_idle <= '0';
 
+				-- the chip selected stop time
 				if (s_t = c_t_stand_wait_ss - c_t_inc) then
 					s_spi_nx_state <= ST_STAND_STOP_D;
 				else
@@ -613,16 +658,17 @@ begin
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- no chip select
-				eo_ssn_o <= '1';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '1';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is not idle
 				s_spi_idle <= '0';
 
+				-- the chip not selected stop time
 				if (s_t = c_t_stand_wait_ss - c_t_inc) then
 					s_spi_nx_state <= ST_STAND_IDLE;
 				else
@@ -634,11 +680,11 @@ begin
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- no chip select
-				eo_ssn_o <= '1';
-				eo_ssn_t <= '0';
-				-- zero value for MOSI
-				eo_mosi_o <= '0';
-				eo_mosi_t <= '0';
+				eo_csn_o <= '1';
+				eo_csn_t <= '0';
+				-- zero value for COPI
+				eo_copi_o <= '0';
+				eo_copi_t <= '0';
 				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
 				-- machine is idle
@@ -669,25 +715,14 @@ begin
 			else
 				if (s_spi_clk_ce3 = '1') then
 					if (s_spi_pr_state_delayed3 = ST_STAND_RX) then
-						-- input current byte to enqueue
-
-						if (s_t_delayed3 < (8 * s_rx_len_aux)) then
-							s_data_fifo_rx_in <= s_data_fifo_rx_in(6 downto 0) & ei_miso_i;
-						else
-							s_data_fifo_rx_in <= x"00";
-						end if;
-
+						-- input current byte to enqueue, one bit at a time, shifting
+						s_data_fifo_rx_in <= s_data_fifo_rx_in(6 downto 0) & ei_cipo_i when
+							(s_t_delayed3 < (8 * s_rx_len_aux)) else x"00";
+						
 						-- only if on last bit, enqueue another byte
-						if (s_t_delayed3 mod 8 = 7) then
-							-- only if RX FIFO is not full, enqueue another byte
-							if (s_data_fifo_rx_full = '0') then
-								s_data_fifo_rx_we <= '1';
-							else
-								s_data_fifo_rx_we <= '0';
-							end if;
-						else
-							s_data_fifo_rx_we <= '0';
-						end if;
+						-- only if RX FIFO is not full, enqueue another byte
+						s_data_fifo_rx_we <= '1' when ((s_t_delayed3 mod 8 = 7) and
+							(s_data_fifo_rx_full = '0')) else '0';
 					else
 						s_data_fifo_rx_we <= '0';
 						s_data_fifo_rx_in <= x"00";

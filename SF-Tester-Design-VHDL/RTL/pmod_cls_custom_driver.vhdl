@@ -23,10 +23,10 @@
 --------------------------------------------------------------------------------
 -- \file pmod_cls_custom_driver.vhdl
 --
--- \brief A wrapper for the single Slave Select, Standard SPI modules
+-- \brief A wrapper for the single Chip Select, Standard SPI modules
 --        \ref pmod_cls_stand_spi_solo and \ref pmod_generic_spi_solo ,
---        implementing a custom single-mode operation of the PMOD CLS
---        peripheral board by Digilent Inc.
+--        implementing a custom single-mode operation of the PMOD CLS by
+--        Digilent Inc.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -39,29 +39,31 @@ entity pmod_cls_custom_driver is
 		-- Disable or enable fast FSM delays for simulation instead of impelementation.
 		parm_fast_simulation : integer := 0;
 		-- Actual frequency in Hz of \ref i_clk_2_5mhz
-		parm_FCLK : natural := 2_500_000;
+		parm_FCLK : natural := 20_000_000;
+		-- Clock enable frequency in Hz of \ref i_ext_spi_clk_4x with i_spi_ce_4x
+		parm_FCLK_ce : natural := 2_500_000;
 		-- Ratio of i_ext_spi_clk_x to SPI sck bus output
 		parm_ext_spi_clk_ratio : natural := 32;
 		-- LOG2 of the TX FIFO max count
-		parm_tx_len_bits : natural := 5;
+		parm_tx_len_bits : natural := 11;
 		-- LOG2 of max Wait Cycles count between end of TX and start of RX
 		parm_wait_cyc_bits : natural := 2;
 		-- LOG2 of the RX FIFO max count
-		parm_rx_len_bits : natural := 5
+		parm_rx_len_bits : natural := 11
 	);
 	port(
 		-- Clock and reset, with clock at X*4 times the frequency of the SPI bus
-		i_clk_mhz   : in std_logic;
-		i_rst_mhz   : in std_logic;
+		i_clk_40mhz : in std_logic;
+		i_rst_40mhz : in std_logic;
 		i_ce_2_5mhz : in std_logic; -- clock enable at 4 times the frequency of the SPI bus
 		                            -- Outputs and inputs from the single SPI peripheral
 		eo_sck_t  : out std_logic;
 		eo_sck_o  : out std_logic;
-		eo_ssn_t  : out std_logic;
-		eo_ssn_o  : out std_logic;
-		eo_mosi_t : out std_logic;
-		eo_mosi_o : out std_logic;
-		ei_miso   : in  std_logic;
+		eo_csn_t  : out std_logic;
+		eo_csn_o  : out std_logic;
+		eo_copi_t : out std_logic;
+		eo_copi_o : out std_logic;
+		ei_cipo   : in  std_logic;
 		-- Command ready indication and three possible commands with data to
 		-- the driver
 		o_command_ready        : out std_logic;
@@ -94,42 +96,42 @@ architecture rtl of pmod_cls_custom_driver is
 	-- optimal timing closure and glitch minimization.
 	signal sio_cls_sck_fsm_o  : std_logic;
 	signal sio_cls_sck_fsm_t  : std_logic;
-	signal sio_cls_ssn_fsm_o  : std_logic;
-	signal sio_cls_ssn_fsm_t  : std_logic;
-	signal sio_cls_mosi_fsm_o : std_logic;
-	signal sio_cls_mosi_fsm_t : std_logic;
+	signal sio_cls_csn_fsm_o  : std_logic;
+	signal sio_cls_csn_fsm_t  : std_logic;
+	signal sio_cls_copi_fsm_o : std_logic;
+	signal sio_cls_copi_fsm_t : std_logic;
 
 	-- CLS SPI input synchronizer signals, where the synchronizer is used to
 	-- mitigate metastability.
-	signal sio_cls_miso_meta_i : std_logic;
-	signal sio_cls_miso_sync_i : std_logic;
+	signal sio_cls_cipo_meta_i : std_logic;
+	signal sio_cls_cipo_sync_i : std_logic;
 begin
 
 	-- Register the SPI output an extra 4x-SPI-clock clock cycle for better
 	-- timing closure and glitch mitigation.
-	p_reg_spi_fsm_out : process(i_clk_mhz)
+	p_reg_spi_fsm_out : process(i_clk_40mhz)
 	begin
-		if rising_edge(i_clk_mhz) then
+		if rising_edge(i_clk_40mhz) then
 			if (i_ce_2_5mhz = '1') then
 				eo_sck_o <= sio_cls_sck_fsm_o;
 				eo_sck_t <= sio_cls_sck_fsm_t;
 
-				eo_ssn_o <= sio_cls_ssn_fsm_o;
-				eo_ssn_t <= sio_cls_ssn_fsm_t;
+				eo_csn_o <= sio_cls_csn_fsm_o;
+				eo_csn_t <= sio_cls_csn_fsm_t;
 
-				eo_mosi_o <= sio_cls_mosi_fsm_o;
-				eo_mosi_t <= sio_cls_mosi_fsm_t;
+				eo_copi_o <= sio_cls_copi_fsm_o;
+				eo_copi_t <= sio_cls_copi_fsm_t;
 			end if;
 		end if;
 	end process p_reg_spi_fsm_out;
 
 	-- Double-register the SPI input at 4x-SPI-clock cycle to prevent metastability.
-	p_sync_spi_in : process(i_clk_mhz)
+	p_sync_spi_in : process(i_clk_40mhz)
 	begin
-		if rising_edge(i_clk_mhz) then
+		if rising_edge(i_clk_40mhz) then
 			if (i_ce_2_5mhz = '1') then
-				sio_cls_miso_sync_i <= sio_cls_miso_meta_i;
-				sio_cls_miso_meta_i <= ei_miso;
+				sio_cls_cipo_sync_i <= sio_cls_cipo_meta_i;
+				sio_cls_cipo_meta_i <= ei_cipo;
 			end if;
 		end if;
 	end process p_sync_spi_in;
@@ -137,16 +139,16 @@ begin
 	-- Single mode driver to operate the PMOD CLS via a stand-alone SPI driver.
 	u_pmod_cls_stand_spi_solo : entity work.pmod_cls_stand_spi_solo(moore_fsm_recursive)
 		generic map (
-			parm_fast_simulation   => parm_fast_simulation,
-			parm_FCLK              => parm_FCLK,
-			parm_ext_spi_clk_ratio => parm_ext_spi_clk_ratio,
-			parm_tx_len_bits       => parm_tx_len_bits,
-			parm_wait_cyc_bits     => parm_wait_cyc_bits,
-			parm_rx_len_bits       => parm_rx_len_bits
+			parm_fast_simulation => parm_fast_simulation,
+			parm_FCLK            => parm_FCLK,
+			parm_FCLK_ce         => parm_FCLK_ce,
+			parm_tx_len_bits     => parm_tx_len_bits,
+			parm_wait_cyc_bits   => parm_wait_cyc_bits,
+			parm_rx_len_bits     => parm_rx_len_bits
 		)
 		port map (
-			i_ext_spi_clk_x        => i_clk_mhz,
-			i_srst                 => i_rst_mhz,
+			i_ext_spi_clk_x        => i_clk_40mhz,
+			i_srst                 => i_rst_40mhz,
 			i_spi_ce_4x            => i_ce_2_5mhz,
 			o_go_stand             => s_cls_go_stand,
 			i_spi_idle             => s_cls_spi_idle,
@@ -168,7 +170,7 @@ begin
 			i_dat_ascii_line2      => i_dat_ascii_line2
 		);
 
-	-- Stand-alone SPI bus driver for a single bus-slave.
+	-- Stand-alone SPI bus driver for a single bus-peripheral.
 	u_pmod_generic_spi_solo : entity work.pmod_generic_spi_solo(moore_fsm_recursive)
 		generic map (
 			parm_ext_spi_clk_ratio => parm_ext_spi_clk_ratio,
@@ -179,13 +181,13 @@ begin
 		port map (
 			eo_sck_o        => sio_cls_sck_fsm_o,
 			eo_sck_t        => sio_cls_sck_fsm_t,
-			eo_ssn_o        => sio_cls_ssn_fsm_o,
-			eo_ssn_t        => sio_cls_ssn_fsm_t,
-			eo_mosi_o       => sio_cls_mosi_fsm_o,
-			eo_mosi_t       => sio_cls_mosi_fsm_t,
-			ei_miso_i       => sio_cls_miso_sync_i,
-			i_ext_spi_clk_x => i_clk_mhz,
-			i_srst          => i_rst_mhz,
+			eo_csn_o        => sio_cls_csn_fsm_o,
+			eo_csn_t        => sio_cls_csn_fsm_t,
+			eo_copi_o       => sio_cls_copi_fsm_o,
+			eo_copi_t       => sio_cls_copi_fsm_t,
+			ei_cipo_i       => sio_cls_cipo_sync_i,
+			i_ext_spi_clk_x => i_clk_40mhz,
+			i_srst          => i_rst_40mhz,
 			i_spi_ce_4x     => i_ce_2_5mhz,
 			i_go_stand      => s_cls_go_stand,
 			o_spi_idle      => s_cls_spi_idle,

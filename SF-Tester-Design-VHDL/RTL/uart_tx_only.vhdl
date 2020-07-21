@@ -25,23 +25,28 @@
 --
 -- \brief A simplified UART function to drive TX characters on a UART board
 --        connection, independent of any RX function (presumed to be ingored).
---        Maximum baudrate is 115200.
+--        Maximum baudrate is 115200; input clock is 7.37 MHz to support division
+--        to modem clock rates.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library UNISIM;
+use UNISIM.vcomponents.all;
+
+library UNIMACRO;
+use UNIMACRO.vcomponents.all;
+
 library work;
 --------------------------------------------------------------------------------
 entity uart_tx_only is
 	generic(
-		parm_BAUD           : natural := 115200;
-		parm_tx_len_bits    : natural := 8;
-		parm_tx_avail_ready : natural := 128 - 34
+		parm_BAUD : natural := 115200
 	);
 	port(
-		i_clk_mhz   : in  std_logic;
-		i_rst_mhz   : in  std_logic;
+		i_clk_40mhz   : in  std_logic;
+		i_rst_40mhz   : in  std_logic;
 		i_clk_7_37mhz : in  std_logic;
 		i_rst_7_37mhz : in  std_logic;
 		eo_uart_tx    : out std_logic;
@@ -54,25 +59,6 @@ end entity uart_tx_only;
 
 --------------------------------------------------------------------------------
 architecture moore_fsm_recursive of uart_tx_only is
-	COMPONENT fifo_generator_2
-		PORT (
-			rst           : IN  STD_LOGIC;
-			wr_clk        : IN  STD_LOGIC;
-			rd_clk        : IN  STD_LOGIC;
-			din           : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_en         : IN  STD_LOGIC;
-			rd_en         : IN  STD_LOGIC;
-			dout          : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			full          : OUT STD_LOGIC;
-			empty         : OUT STD_LOGIC;
-			valid         : OUT STD_LOGIC;
-			rd_data_count : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_data_count : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_rst_busy   : OUT STD_LOGIC;
-			rd_rst_busy   : OUT STD_LOGIC
-		);
-	END COMPONENT;
-
 	-- State machine states.
 	type t_uarttxonly_fsm_state is (ST_IDLE, ST_START, ST_DATA, ST_STOP);
 
@@ -96,15 +82,19 @@ architecture moore_fsm_recursive of uart_tx_only is
 	signal s_ce_baud_1x : std_logic;
 
 	-- Mapping for FIFO TX.
-	signal s_data_fifo_tx_in       : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_out      : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_re       : std_logic;
-	signal s_data_fifo_tx_we       : std_logic;
-	signal s_data_fifo_tx_full     : std_logic;
-	signal s_data_fifo_tx_empty    : std_logic;
-	signal s_data_fifo_tx_valid    : std_logic;
-	signal s_data_fifo_tx_wr_count : std_logic_vector((parm_tx_len_bits - 1) downto 0);
-	signal s_data_fifo_tx_rd_count : std_logic_vector((parm_tx_len_bits - 1) downto 0);
+	signal s_data_fifo_tx_in          : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_out         : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_re          : std_logic;
+	signal s_data_fifo_tx_we          : std_logic;
+	signal s_data_fifo_tx_full        : std_logic;
+	signal s_data_fifo_tx_empty       : std_logic;
+	signal s_data_fifo_tx_valid       : std_logic;
+	signal s_data_fifo_tx_wr_count    : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_rd_count    : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_almostempty : std_logic;
+	signal s_data_fifo_tx_almostfull  : std_logic;
+	signal s_data_fifo_tx_rd_err      : std_logic;
+	signal s_data_fifo_tx_wr_err      : std_logic;
 begin
 	-- clock for 1x times the baud rate: no oversampling for TX ONLY
 	-- requires create_generated_clock constraint in XDC
@@ -113,7 +103,7 @@ begin
 			par_ce_divisor => (4 * 16 * 115200 / parm_BAUD)
 		)
 		port map(
-			o_ce_div => s_ce_baud_1x,
+			o_ce_div  => s_ce_baud_1x,
 			i_clk_mhz => i_clk_7_37mhz,
 			i_rst_mhz => i_rst_7_37mhz,
 			i_ce_mhz  => '1'
@@ -123,25 +113,62 @@ begin
 	-- The FIFO must implement read-ahead output on rd_en.
 	s_data_fifo_tx_in <= i_tx_data;
 	s_data_fifo_tx_we <= i_tx_valid;
-	o_tx_ready        <= '1' when ((s_data_fifo_tx_full = '0') and (unsigned(s_data_fifo_tx_wr_count) <= parm_tx_avail_ready)) else '0';
+	o_tx_ready        <= '1' when ((s_data_fifo_tx_full = '0') and (s_data_fifo_tx_almostfull = '0')) else '0';
 
-	u_fifo_uart_tx_0 : fifo_generator_2
-		port map(
-			rst           => i_rst_mhz,
-			wr_clk        => i_clk_mhz,
-			rd_clk        => i_clk_7_37mhz,
-			din           => s_data_fifo_tx_in,
-			wr_en         => s_data_fifo_tx_we,
-			rd_en         => s_data_fifo_tx_re,
-			dout          => s_data_fifo_tx_out,
-			full          => s_data_fifo_tx_full,
-			empty         => s_data_fifo_tx_empty,
-			valid         => s_data_fifo_tx_valid,
-			rd_data_count => s_data_fifo_tx_rd_count,
-			wr_data_count => s_data_fifo_tx_wr_count,
-			wr_rst_busy   => open,
-			rd_rst_busy   => open
+	p_gen_fifo_tx_valid : process(i_clk_7_37mhz)
+	begin
+		if rising_edge(i_clk_7_37mhz) then
+			s_data_fifo_tx_valid <= s_data_fifo_tx_re;
+		end if;
+	end process p_gen_fifo_tx_valid;
+
+	-- FIFO_DUALCLOCK_MACRO: Dual-Clock First-In, First-Out (FIFO) RAM Buffer
+	--                       Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	-- Note -  This Unimacro model assumes the port directions to be "downto". 
+	--         Simulation of this model with "to" in the port directions could lead to erroneous results.
+
+	-----------------------------------------------------------------
+	-- DATA_WIDTH | FIFO_SIZE | FIFO Depth | RDCOUNT/WRCOUNT Width --
+	-- ===========|===========|============|=======================--
+	--   37-72    |  "36Kb"   |     512    |         9-bit         --
+	--   19-36    |  "36Kb"   |    1024    |        10-bit         --
+	--   19-36    |  "18Kb"   |     512    |         9-bit         --
+	--   10-18    |  "36Kb"   |    2048    |        11-bit         --
+	--   10-18    |  "18Kb"   |    1024    |        10-bit         --
+	--    5-9     |  "36Kb"   |    4096    |        12-bit         --
+	--    5-9     |  "18Kb"   |    2048    |        11-bit         --
+	--    1-4     |  "36Kb"   |    8192    |        13-bit         --
+	--    1-4     |  "18Kb"   |    4096    |        12-bit         --
+	-----------------------------------------------------------------
+
+	u_fifo_uart_tx_0 : FIFO_DUALCLOCK_MACRO
+		generic map (
+			DEVICE                  => "7SERIES",     -- Target Device: "VIRTEX5", "VIRTEX6", "7SERIES" 
+			ALMOST_FULL_OFFSET      => "000" & x"22", -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET     => "111" & x"de", -- Sets the almost empty threshold
+			DATA_WIDTH              => 8,             -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
+			FIFO_SIZE               => "18Kb",        -- Target BRAM, "18Kb" or "36Kb" 
+			FIRST_WORD_FALL_THROUGH => TRUE)          -- Sets the FIFO FWFT to TRUE or FALSE
+		port map (
+			ALMOSTEMPTY => s_data_fifo_tx_almostempty, -- 1-bit output almost empty
+			ALMOSTFULL  => s_data_fifo_tx_almostfull,  -- 1-bit output almost full
+			DO          => s_data_fifo_tx_out,         -- Output data, width defined by DATA_WIDTH parameter
+			EMPTY       => s_data_fifo_tx_empty,       -- 1-bit output empty
+			FULL        => s_data_fifo_tx_full,        -- 1-bit output full
+			RDCOUNT     => s_data_fifo_tx_rd_count,    -- Output read count, width determined by FIFO depth
+			RDERR       => s_data_fifo_tx_rd_err,      -- 1-bit output read error
+			WRCOUNT     => s_data_fifo_tx_wr_count,    -- Output write count, width determined by FIFO depth
+			WRERR       => s_data_fifo_tx_wr_err,      -- 1-bit output write error
+			DI          => s_data_fifo_tx_in,          -- Input data, width defined by DATA_WIDTH parameter
+			RDCLK       => i_clk_7_37mhz,              -- 1-bit input read clock
+			RDEN        => s_data_fifo_tx_re,          -- 1-bit input read enable
+			RST         => i_rst_7_37mhz,              -- 1-bit input reset
+			WRCLK       => i_clk_40mhz,                -- 1-bit input write clock
+			WREN        => s_data_fifo_tx_we           -- 1-bit input write enable
 		);
+	-- End of u_fifo_uart_tx_0 instantiation
 
 	-- FSM register and auxiliary registers
 	p_uarttxonly_fsm_state_aux : process(i_clk_7_37mhz)
