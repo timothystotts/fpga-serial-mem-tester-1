@@ -228,11 +228,16 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_i : natural range 0 to c_cls_i_max;
 
 	-- Signals for controlling the PMOD CLS custom driver.
-	signal s_cls_command_ready             : std_logic;
-	signal s_cls_sf3_command_ready         : std_logic;
-	signal s_cls_wr_clear_display          : std_logic;
-	signal s_cls_wr_text_line1             : std_logic;
-	signal s_cls_wr_text_line2             : std_logic;
+	signal s_cls_command_ready     : std_logic;
+	signal s_cls_sf3_command_ready : std_logic;
+	signal s_cls_wr_clear_display  : std_logic;
+	signal s_cls_wr_text_line1     : std_logic;
+	signal s_cls_wr_text_line2     : std_logic;
+	signal s_cls_txt_ascii_line1   : std_logic_vector((16*8-1) downto 0);
+	signal s_cls_txt_ascii_line2   : std_logic_vector((16*8-1) downto 0);
+	signal s_cls_feed_is_idle      : std_logic;
+
+	-- Signals for text ASCII
 	signal s_cls_txt_ascii_pattern_1char   : std_logic_vector(7 downto 0);
 	signal s_cls_txt_ascii_address_8char   : std_logic_vector((8*8-1) downto 0);
 	signal s_cls_txt_ascii_sf3mode_3char   : std_logic_vector((3*8-1) downto 0);
@@ -245,8 +250,6 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_txt_ascii_errcntdec_char5 : std_logic_vector(7 downto 0);
 	signal s_cls_txt_ascii_errcntdec_char6 : std_logic_vector(7 downto 0);
 	signal s_cls_txt_ascii_errcntdec_char7 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_line1           : std_logic_vector((16*8-1) downto 0);
-	signal s_cls_txt_ascii_line2           : std_logic_vector((16*8-1) downto 0);
 
 	-- UART TX update FSM state declarations
 	type t_uarttx_feed_state is (ST_UARTFEED_IDLE, ST_UARTFEED_DATA, ST_UARTFEED_WAIT);
@@ -1450,116 +1453,21 @@ begin
 	-- Assembly of UART text line.
 	s_uart_dat_ascii_line <= (s_cls_txt_ascii_line1 & x"20" & s_cls_txt_ascii_line2 & x"0D" & x"0A");
 
-	-- Timer (strategy #1) for timing the PMOD CLS display update
-	p_fsm_timer_run_display_update : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			if (s_rst_40mhz = '1') then
-				s_cls_i <= 0;
-			elsif (s_ce_2_5mhz = '1') then
-				if (s_cls_upd_pr_state /= s_cls_upd_nx_state) then
-					s_cls_i <= 0;
-				elsif (s_cls_i /= c_cls_i_max) then
-					s_cls_i <= s_cls_i + 1;
-				end if;
-			end if;
-		end if;
-	end process p_fsm_timer_run_display_update;
-
-	-- FSM state transition for timing the PMOD CLS display udpate
-	p_fsm_state_run_display_update : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			if (s_rst_40mhz = '1') then
-				s_cls_upd_pr_state <= ST_CLS_IDLE;
-			elsif (s_ce_2_5mhz = '1') then
-				s_cls_upd_pr_state <= s_cls_upd_nx_state;
-			end if;
-		end if;
-	end process p_fsm_state_run_display_update;
-
-	-- FSM combinatorial logic for timing the PMOD CLS display udpate
-	p_fsm_comb_run_display_update : process(s_cls_upd_pr_state,
-			s_cls_command_ready, s_cls_i)
-	begin
-		case (s_cls_upd_pr_state) is
-			when ST_CLS_CLEAR => -- Step CLEAR: clear the display
-				                 -- and then pause until display ready and
-				                 -- minimum of \ref c_cls_i_one_ms time delay.
-				if (s_cls_i <= c_cls_i_step) then
-					s_cls_wr_clear_display <= '1';
-				else
-					s_cls_wr_clear_display <= '0';
-				end if;
-
-				s_cls_wr_text_line1 <= '0';
-				s_cls_wr_text_line2 <= '0';
-
-				if ((s_cls_i >= c_cls_i_one_ms) and (s_cls_command_ready = '1')) then
-					s_cls_upd_nx_state <= ST_CLS_LINE1;
-				else
-					s_cls_upd_nx_state <= ST_CLS_CLEAR;
-				end if;
-
-			when ST_CLS_LINE1 => -- Step LINE1: write the top line of the LCD
-				                 -- and then pause until display ready and
-				                 -- minimum of \ref c_cls_i_one_ms time delay.
-				s_cls_wr_clear_display <= '0';
-
-				if (s_cls_i <= c_cls_i_step) then
-					s_cls_wr_text_line1 <= '1';
-				else
-					s_cls_wr_text_line1 <= '0';
-				end if;
-
-				s_cls_wr_text_line2 <= '0';
-
-				if ((s_cls_i >= c_cls_i_one_ms) and (s_cls_command_ready = '1')) then
-					s_cls_upd_nx_state <= ST_CLS_LINE2;
-				else
-					s_cls_upd_nx_state <= ST_CLS_LINE1;
-				end if;
-
-			when ST_CLS_LINE2 => -- Step LINE2: write the bottom line of the LCD
-				                 -- and then pause until display ready and
-				                 -- minimum of \ref c_cls_i_one_ms time delay.
-				s_cls_wr_clear_display <= '0';
-				s_cls_wr_text_line1    <= '0';
-
-				if (s_cls_i <= c_cls_i_step) then
-					s_cls_wr_text_line2 <= '1';
-				else
-					s_cls_wr_text_line2 <= '0';
-				end if;
-
-				if ((s_cls_i >= c_cls_i_one_ms) and (s_cls_command_ready = '1')) then
-					s_cls_upd_nx_state <= ST_CLS_IDLE;
-				else
-					s_cls_upd_nx_state <= ST_CLS_LINE2;
-				end if;
-
-			when others => -- ST_CLS_IDLE
-				           -- Step IDLE, wait until display ready to write again
-				           -- and minimum of \ref c_cls_i_subsecond time has elapsed.
-				s_cls_wr_clear_display <= '0';
-				s_cls_wr_text_line1    <= '0';
-				s_cls_wr_text_line2    <= '0';
-
-				if (parm_fast_simulation = 0) then
-					if ((s_cls_i >= c_cls_i_subsecond) and (s_cls_command_ready = '1')) then
-						s_cls_upd_nx_state <= ST_CLS_CLEAR;
-					else
-						s_cls_upd_nx_state <= ST_CLS_IDLE;
-					end if;
-				else
-					if ((s_cls_i >= c_cls_i_subsecond_fast) and (s_cls_command_ready = '1')) then
-						s_cls_upd_nx_state <= ST_CLS_CLEAR;
-					else
-						s_cls_upd_nx_state <= ST_CLS_IDLE;
-					end if;
-				end if;
-		end case;
-	end process p_fsm_comb_run_display_update;
+	-- LCD Update FSM
+	u_lcd_text_feed : entity work.lcd_text_feed(rtl)
+		generic map (
+			parm_fast_simulation => parm_fast_simulation
+		)
+		port map (
+			i_clk_40mhz            => s_clk_40mhz,
+			i_rst_40mhz            => s_rst_40mhz,
+			i_ce_2_5mhz            => s_ce_2_5mhz,
+			i_lcd_command_ready    => s_cls_command_ready,
+			o_lcd_wr_clear_display => s_cls_wr_clear_display,
+			o_lcd_wr_text_line1    => s_cls_wr_text_line1,
+			o_lcd_wr_text_line2    => s_cls_wr_text_line2,
+			o_lcd_feed_is_idle     => s_cls_feed_is_idle
+		);
 
 	-- TX ONLY UART function to print the two lines of the PMOD CLS output as a
 	-- single line on the dumb terminal, at the same rate as the PMOD CLS updates.
@@ -1567,7 +1475,7 @@ begin
 
 	u_uart_tx_only : entity work.uart_tx_only(moore_fsm_recursive)
 		generic map (
-			parm_BAUD           => 115200
+			parm_BAUD => 115200
 		)
 		port map (
 			i_clk_40mhz   => s_clk_40mhz,
