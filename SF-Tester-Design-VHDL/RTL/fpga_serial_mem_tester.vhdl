@@ -41,6 +41,7 @@ use UNIMACRO.vcomponents.all;
 library work;
 use work.lcd_text_functions_pkg.all;
 use work.led_pwm_driver_pkg.all;
+use work.sf_tester_fsm_pkg.all;
 --------------------------------------------------------------------------------
 entity fpga_serial_mem_tester is
 	generic(
@@ -106,13 +107,13 @@ architecture rtl of fpga_serial_mem_tester is
 	-- MMCM and Processor System Reset signals for PLL clock generation from the
 	-- Clocking Wizard and Synchronous Reset generation from the Processor System
 	-- Reset module.
-	signal s_mmcm_locked       : std_logic;
-	signal s_clk_40mhz         : std_logic;
-	signal s_rst_40mhz         : std_logic;
-	signal s_clk_7_37mhz       : std_logic;
-	signal s_rst_7_37mhz       : std_logic;
-	signal s_ce_2_5mhz         : std_logic;
-	signal s_sf3_ce_div        : std_logic;
+	signal s_mmcm_locked : std_logic;
+	signal s_clk_40mhz   : std_logic;
+	signal s_rst_40mhz   : std_logic;
+	signal s_clk_7_37mhz : std_logic;
+	signal s_rst_7_37mhz : std_logic;
+	signal s_ce_2_5mhz   : std_logic;
+	signal s_sf3_ce_div  : std_logic;
 
 	-- Extra MMCM signals for full port map to the MMCM primative, where
 	-- these signals will remain disconnected.
@@ -204,19 +205,6 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_txt_ascii_line2   : std_logic_vector((16*8-1) downto 0);
 	signal s_cls_feed_is_idle      : std_logic;
 
-	-- Signals for text ASCII
-	signal s_cls_txt_ascii_pattern_1char   : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_address_8char   : std_logic_vector((8*8-1) downto 0);
-	signal s_cls_txt_ascii_sf3mode_3char   : std_logic_vector((3*8-1) downto 0);
-	signal s_cls_txt_ascii_errcntdec_8char : std_logic_vector(8*8-1 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char0 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char1 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char2 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char3 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char4 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char5 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char6 : std_logic_vector(7 downto 0);
-	signal s_cls_txt_ascii_errcntdec_char7 : std_logic_vector(7 downto 0);
 
 	-- UART TX update FSM state declarations
 	type t_uarttx_feed_state is (ST_UARTFEED_IDLE, ST_UARTFEED_DATA, ST_UARTFEED_WAIT);
@@ -242,105 +230,17 @@ architecture rtl of fpga_serial_mem_tester is
 	signal si_buttons : std_logic_vector(3 downto 0);
 	signal s_btns_deb : std_logic_vector(3 downto 0);
 
-	-- system control of N25Q state machine
-	--constant c_max_possible_byte_count  : natural := 67_108_864; -- 512 Mbit
-	constant c_max_possible_byte_count  : natural := 33_554_432; -- 256 Mbit
-	constant c_total_iteration_count    : natural := 32;
-	constant c_per_iteration_byte_count : natural :=
-		c_max_possible_byte_count / c_total_iteration_count;
-	constant c_last_starting_byte_addr : natural :=
-		c_per_iteration_byte_count * (c_total_iteration_count - 1);
-
-	type t_tester_state is (ST_WAIT_BUTTON_DEP, ST_WAIT_BUTTON0_REL,
-			ST_WAIT_BUTTON1_REL, ST_WAIT_BUTTON2_REL, ST_WAIT_BUTTON3_REL,
-			ST_SET_PATTERN_A, ST_SET_PATTERN_B, ST_SET_PATTERN_C, ST_SET_PATTERN_D,
-			ST_SET_START_ADDR_A, ST_SET_START_WAIT_A,
-			ST_SET_START_ADDR_B, ST_SET_START_WAIT_B,
-			ST_SET_START_ADDR_C, ST_SET_START_WAIT_C,
-			ST_SET_START_ADDR_D, ST_SET_START_WAIT_D,
-			ST_CMD_ERASE_START, ST_CMD_ERASE_WAIT, ST_CMD_ERASE_NEXT,
-			ST_CMD_ERASE_DONE, ST_CMD_PAGE_START, ST_CMD_PAGE_BYTE, ST_CMD_PAGE_WAIT,
-			ST_CMD_PAGE_NEXT, ST_CMD_PAGE_DONE, ST_CMD_READ_START, ST_CMD_READ_BYTE,
-			ST_CMD_READ_WAIT, ST_CMD_READ_NEXT, ST_CMD_READ_DONE, ST_DISPLAY_FINAL
-		);
-
-	constant c_sf3_subsector_addr_incr : natural := 4096;
-	constant c_sf3_page_addr_incr      : natural := 256;
-
-	constant c_tester_subsector_cnt_per_iter : natural := 8192 / c_total_iteration_count;
-	constant c_tester_page_cnt_per_iter      : natural := 131072 / c_total_iteration_count;
-
-	constant c_tester_pattern_startval_a : unsigned(7 downto 0) := x"00";
-	constant c_tester_patterh_incrval_a  : unsigned(7 downto 0) := x"01";
-
-	constant c_tester_pattern_startval_b : unsigned(7 downto 0) := x"08";
-	constant c_tester_patterh_incrval_b  : unsigned(7 downto 0) := x"07";
-
-	constant c_tester_pattern_startval_c : unsigned(7 downto 0) := x"10";
-	constant c_tester_patterh_incrval_c  : unsigned(7 downto 0) := x"0F";
-
-	constant c_tester_pattern_startval_d : unsigned(7 downto 0) := x"18";
-	constant c_tester_patterh_incrval_d  : unsigned(7 downto 0) := x"17";
-
+	-- SF3 division down from 40 MHz
 	constant c_sf3_tester_ce_div_ratio : natural := 2;
 
-	function fn_set_t_max(fclk : natural; div_ratio : natural; fast_sim : integer)
-		return natural is
-	begin
-		if (fast_sim = 0) then
-			return fclk / div_ratio * 3 - 1;
-		else
-			return fclk / div_ratio * 3 / 1000 - 1;
-		end if;
-	end function fn_set_t_max;
-
-	-- Maximum count is three seconds c_FCLK / c_sf3_tester_ce_div_ratio * 3 - 1;
-	constant c_t_max : natural := fn_set_t_max(c_FCLK, c_sf3_tester_ce_div_ratio, parm_fast_simulation);
-
-	signal s_t : natural range 0 to c_t_max;
-
-	signal s_tester_pr_state       : t_tester_state;
-	signal s_tester_nx_state       : t_tester_state;
-	signal s_sf3_dat_wr_cntidx_val : natural range 0 to 255;
-	signal s_sf3_dat_wr_cntidx_aux : natural range 0 to 255;
-	signal s_sf3_dat_rd_cntidx_val : natural range 0 to 255;
-	signal s_sf3_dat_rd_cntidx_aux : natural range 0 to 255;
-	signal s_sf3_test_pass_val     : std_logic;
-	signal s_sf3_test_pass_aux     : std_logic;
-	signal s_sf3_test_done_val     : std_logic;
-	signal s_sf3_test_done_aux     : std_logic;
-	signal s_sf3_err_count_val     : natural range 0 to c_max_possible_byte_count;
-	signal s_sf3_err_count_aux     : natural range 0 to c_max_possible_byte_count;
-
-	signal s_sf3_pattern_start_val : std_logic_vector(7 downto 0);
-	signal s_sf3_pattern_start_aux : std_logic_vector(7 downto 0);
-	signal s_sf3_pattern_incr_val  : std_logic_vector(7 downto 0);
-	signal s_sf3_pattern_incr_aux  : std_logic_vector(7 downto 0);
-	signal s_sf3_pattern_track_val : std_logic_vector(7 downto 0);
-	signal s_sf3_pattern_track_aux : std_logic_vector(7 downto 0);
-	signal s_sf3_addr_start_val    : std_logic_vector(31 downto 0);
-	signal s_sf3_addr_start_aux    : std_logic_vector(31 downto 0);
-	signal s_sf3_start_at_zero_val : std_logic;
-	signal s_sf3_start_at_zero_aux : std_logic;
-	signal s_sf3_i_val             : natural range 0 to c_tester_page_cnt_per_iter;
-	signal s_sf3_i_aux             : natural range 0 to c_tester_page_cnt_per_iter;
-
-	signal s_sf3_err_count_divide7 : natural range 0 to 9;
-	signal s_sf3_err_count_divide6 : natural range 0 to 9;
-	signal s_sf3_err_count_divide5 : natural range 0 to 9;
-	signal s_sf3_err_count_divide4 : natural range 0 to 9;
-	signal s_sf3_err_count_divide3 : natural range 0 to 9;
-	signal s_sf3_err_count_divide2 : natural range 0 to 9;
-	signal s_sf3_err_count_divide1 : natural range 0 to 9;
-	signal s_sf3_err_count_divide0 : natural range 0 to 9;
-	signal s_sf3_err_count_digit7  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit6  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit5  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit4  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit3  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit2  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit1  : std_logic_vector(3 downto 0);
-	signal s_sf3_err_count_digit0  : std_logic_vector(3 downto 0);
+	-- SF3 Tester FSM state outputs
+	signal s_sf3_tester_pr_state : t_tester_state;
+	signal s_sf3_addr_start      : std_logic_vector(31 downto 0);
+	signal s_sf3_pattern_start   : std_logic_vector(7 downto 0);
+	signal s_sf3_pattern_incr    : std_logic_vector(7 downto 0);
+	signal s_sf3_error_count     : natural range 0 to c_max_possible_byte_count;
+	signal s_sf3_test_pass       : std_logic;
+	signal s_sf3_test_done       : std_logic;
 
 	-- LED color palletes
 	signal s_color_led_red_value   : t_led_color_values((4 - 1) downto 0);
@@ -349,7 +249,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_basic_led_lumin_value : t_led_color_values((4 - 1) downto 0);
 
 	-- UART TX signals to connect \ref uart_tx_only and \ref uart_tx_feed .
-	signal s_uart_dat_ascii_line : std_logic_vector((35*8-1) downto 0);
+	signal s_uart_txt_ascii_line : std_logic_vector((35*8-1) downto 0);
 	signal s_uart_tx_go          : std_logic;
 	signal s_uart_txdata         : std_logic_vector(7 downto 0);
 	signal s_uart_txvalid        : std_logic;
@@ -366,7 +266,7 @@ begin
 	MMCME2_BASE_inst : MMCME2_BASE
 		generic map (
 			BANDWIDTH       => "OPTIMIZED", -- Jitter programming (OPTIMIZED, HIGH, LOW)
-			CLKFBOUT_MULT_F => 43.5,      -- Multiply value for all CLKOUT (2.000-64.000).
+			CLKFBOUT_MULT_F => 43.5,        -- Multiply value for all CLKOUT (2.000-64.000).
 			CLKFBOUT_PHASE  => 0.0,         -- Phase offset in degrees of CLKFB (-360.000-360.000).
 			CLKIN1_PERIOD   => 10.0,        -- Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
 			                                -- CLKOUT0_DIVIDE - CLKOUT6_DIVIDE: Divide amount for each CLKOUT (1-128)
@@ -617,7 +517,6 @@ begin
 		);
 
 	-- PMOD SF3 Quad SPI tri-state inout connections for QSPI bus
-
 	eo_pmod_sf3_sck <= sio_sf3_sck_o when sio_sf3_sck_t = '0' else 'Z';
 
 	eo_pmod_sf3_ssn <= sio_sf3_ssn_o when sio_sf3_ssn_t = '0' else 'Z';
@@ -634,826 +533,91 @@ begin
 	eio_pmod_sf3_hldn_dq3 <= sio_sf3_hldn_dq3_o when sio_sf3_hldn_dq3_t = '0' else 'Z';
 	sio_sf3_hldn_dq3_i    <= eio_pmod_sf3_hldn_dq3;
 
-	-- timer strategy #1 for the PMOD experiment FSM
-	p_tester_timer : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			if (s_rst_40mhz = '1') then
-				s_t <= 0;
-			elsif (s_sf3_ce_div = '1') then
-				if (s_tester_pr_state /= s_tester_nx_state) then
-					s_t <= 0;
-				elsif (s_t < c_t_max) then
-					s_t <= s_t + 1;
-				end if;
-			end if;
-		end if;
-	end process p_tester_timer;
-
-	-- state and auxiliary registers for the PMOD experiment FSM
-	p_tester_fsm_state : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			if (s_rst_40mhz = '1') then
-				s_tester_pr_state <= ST_WAIT_BUTTON_DEP;
-
-				s_sf3_dat_wr_cntidx_aux <= 0;
-				s_sf3_dat_rd_cntidx_aux <= 0;
-				s_sf3_test_pass_aux     <= '0';
-				s_sf3_test_done_aux     <= '0';
-				s_sf3_err_count_aux     <= 0;
-				s_sf3_pattern_start_aux <= std_logic_vector(c_tester_pattern_startval_a);
-				s_sf3_pattern_incr_aux  <= std_logic_vector(c_tester_patterh_incrval_a);
-				s_sf3_pattern_track_aux <= x"00";
-				s_sf3_addr_start_aux    <= x"00000000";
-				s_sf3_start_at_zero_aux <= '1';
-				s_sf3_i_aux             <= 0;
-
-			elsif (s_sf3_ce_div = '1') then
-				s_tester_pr_state <= s_tester_nx_state;
-
-				s_sf3_dat_wr_cntidx_aux <= s_sf3_dat_wr_cntidx_val;
-				s_sf3_dat_rd_cntidx_aux <= s_sf3_dat_rd_cntidx_val;
-				s_sf3_test_pass_aux     <= s_sf3_test_pass_val;
-				s_sf3_test_done_aux     <= s_sf3_test_done_val;
-				s_sf3_err_count_aux     <= s_sf3_err_count_val;
-				s_sf3_pattern_start_aux <= s_sf3_pattern_start_val;
-				s_sf3_pattern_incr_aux  <= s_sf3_pattern_incr_val;
-				s_sf3_pattern_track_aux <= s_sf3_pattern_track_val;
-				s_sf3_addr_start_aux    <= s_sf3_addr_start_val;
-				s_sf3_start_at_zero_aux <= s_sf3_start_at_zero_val;
-				s_sf3_i_aux             <= s_sf3_i_val;
-			end if;
-		end if;
-	end process p_tester_fsm_state;
-
-	-- Basic LED outputs to indicate test passed or failed
-	s_basic_led_lumin_value(0) <= x"FF" when s_sf3_test_pass_aux = '1' else x"00";
-	s_basic_led_lumin_value(1) <= x"FF" when s_sf3_test_done_aux = '1' else x"00";
-	s_basic_led_lumin_value(2) <= x"00";
-	s_basic_led_lumin_value(3) <= x"00";
-
-	-- Color LED stage output indication for the PMOD experieent FSM progress
-	-- and current state group.
-	p_tester_fsm_progress : process(s_tester_pr_state)
-	begin
-		s_color_led_red_value   <= (x"00", x"00", x"00", x"00");
-		s_color_led_green_value <= (x"00", x"00", x"00", x"00");
-		s_color_led_blue_value  <= (x"00", x"00", x"00", x"00");
-
-		case (s_tester_pr_state) is
-			when ST_WAIT_BUTTON0_REL | ST_SET_PATTERN_A |
-				ST_SET_START_ADDR_A | ST_SET_START_WAIT_A =>
-				s_color_led_green_value(0) <= x"FF";
-
-			when ST_WAIT_BUTTON1_REL | ST_SET_PATTERN_B |
-				ST_SET_START_ADDR_B | ST_SET_START_WAIT_B =>
-				s_color_led_green_value(1) <= x"FF";
-
-			when ST_WAIT_BUTTON2_REL | ST_SET_PATTERN_C |
-				ST_SET_START_ADDR_C | ST_SET_START_WAIT_C =>
-				s_color_led_green_value(2) <= x"FF";
-
-			when ST_WAIT_BUTTON3_REL | ST_SET_PATTERN_D |
-				ST_SET_START_ADDR_D | ST_SET_START_WAIT_D =>
-				s_color_led_green_value(3) <= x"FF";
-
-			when ST_CMD_ERASE_START | ST_CMD_ERASE_WAIT |
-				ST_CMD_ERASE_NEXT | ST_CMD_ERASE_DONE =>
-				s_color_led_red_value(0)   <= x"80";
-				s_color_led_green_value(0) <= x"80";
-				s_color_led_blue_value(0)  <= x"80";
-
-			when ST_CMD_PAGE_START | ST_CMD_PAGE_BYTE | ST_CMD_PAGE_WAIT |
-				ST_CMD_PAGE_NEXT | ST_CMD_PAGE_DONE =>
-				s_color_led_red_value(1)   <= x"80";
-				s_color_led_green_value(1) <= x"80";
-				s_color_led_blue_value(1)  <= x"80";
-
-			when ST_CMD_READ_START | ST_CMD_READ_BYTE | ST_CMD_READ_WAIT |
-				ST_CMD_READ_NEXT | ST_CMD_READ_DONE =>
-				s_color_led_red_value(2)   <= x"80";
-				s_color_led_green_value(2) <= x"80";
-				s_color_led_blue_value(2)  <= x"80";
-
-			when ST_DISPLAY_FINAL =>
-				s_color_led_red_value(3)   <= x"80";
-				s_color_led_green_value(3) <= x"80";
-				s_color_led_blue_value(3)  <= x"80";
-
-			when others => -- ST_WAIT_BUTTON_DEP =>
-				s_color_led_red_value <= (x"FF", x"FF", x"FF", x"FF");
-		end case;
-	end process p_tester_fsm_progress;
-
-	-- combinatorial logic for the PMOD experieent FSM
-	p_tester_fsm_comb : process(
-			s_tester_pr_state,
-			s_btns_deb, s_sw_deb,
-			s_sf3_wr_data_ready,
-			s_sf3_command_ready,
-			s_sf3_rd_data_valid,
-			s_sf3_rd_data_stream,
-			s_sf3_dat_wr_cntidx_aux,
-			s_sf3_dat_rd_cntidx_aux,
-			s_sf3_test_pass_aux,
-			s_sf3_test_done_aux,
-			s_sf3_err_count_aux,
-			s_sf3_pattern_start_aux,
-			s_sf3_pattern_incr_aux,
-			s_sf3_pattern_track_aux,
-			s_sf3_addr_start_aux,
-			s_sf3_start_at_zero_aux,
-			s_sf3_i_aux,
-			s_t)
-	begin
-		s_sf3_dat_wr_cntidx_val <= s_sf3_dat_wr_cntidx_aux;
-		s_sf3_dat_rd_cntidx_val <= s_sf3_dat_rd_cntidx_aux;
-		s_sf3_test_pass_val     <= s_sf3_test_pass_aux;
-		s_sf3_test_done_val     <= s_sf3_test_done_aux;
-		s_sf3_err_count_val     <= s_sf3_err_count_aux;
-		s_sf3_pattern_start_val <= s_sf3_pattern_start_aux;
-		s_sf3_pattern_incr_val  <= s_sf3_pattern_incr_aux;
-		s_sf3_pattern_track_val <= s_sf3_pattern_track_aux;
-		s_sf3_addr_start_val    <= s_sf3_addr_start_aux;
-		s_sf3_start_at_zero_val <= s_sf3_start_at_zero_aux;
-		s_sf3_i_val             <= s_sf3_i_aux;
-
-		s_sf3_wr_data_stream <= x"00";
-		s_sf3_wr_data_valid  <= '0';
-
-		case (s_tester_pr_state) is
-			when ST_WAIT_BUTTON_DEP              =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (to_integer(unsigned(s_sf3_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_sf3_test_done_val <= '0';
-
-					if ((s_btns_deb(0) = '1') or (s_sw_deb(0) = '1')) then
-						s_tester_nx_state <= ST_WAIT_BUTTON0_REL;
-					elsif ((s_btns_deb(1) = '1') or (s_sw_deb(1) = '1'))then
-						s_tester_nx_state <= ST_WAIT_BUTTON1_REL;
-					elsif ((s_btns_deb(2) = '1') or (s_sw_deb(2) = '1')) then
-						s_tester_nx_state <= ST_WAIT_BUTTON2_REL;
-					elsif ((s_btns_deb(3) = '1') or (s_sw_deb(3) = '1')) then
-						s_tester_nx_state <= ST_WAIT_BUTTON3_REL;
-					else
-						s_tester_nx_state <= ST_WAIT_BUTTON_DEP;
-					end if;
-				else
-					s_sf3_test_done_val <= '1';
-					s_tester_nx_state   <= ST_WAIT_BUTTON_DEP;
-				end if;
-
-			when ST_WAIT_BUTTON0_REL =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_btns_deb(0) = '0') then
-					s_tester_nx_state <= ST_SET_PATTERN_A;
-				else
-					s_tester_nx_state <= ST_WAIT_BUTTON0_REL;
-				end if;
-
-			when ST_WAIT_BUTTON1_REL =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_btns_deb(1) = '0') then
-					s_tester_nx_state <= ST_SET_PATTERN_B;
-				else
-					s_tester_nx_state <= ST_WAIT_BUTTON1_REL;
-				end if;
-
-			when ST_WAIT_BUTTON2_REL =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_btns_deb(2) = '0') then
-					s_tester_nx_state <= ST_SET_PATTERN_C;
-				else
-					s_tester_nx_state <= ST_WAIT_BUTTON2_REL;
-				end if;
-
-			when ST_WAIT_BUTTON3_REL =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_btns_deb(0) = '0') then
-					s_tester_nx_state <= ST_SET_PATTERN_D;
-				else
-					s_tester_nx_state <= ST_WAIT_BUTTON3_REL;
-				end if;
-
-			when ST_SET_PATTERN_A =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				s_sf3_pattern_start_val <= std_logic_vector(c_tester_pattern_startval_a);
-				s_sf3_pattern_incr_val  <= std_logic_vector(c_tester_patterh_incrval_a);
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_SET_START_ADDR_A;
-				else
-					s_tester_nx_state <= ST_SET_PATTERN_A;
-				end if;
-
-			when ST_SET_PATTERN_B =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				s_sf3_pattern_start_val <= std_logic_vector(c_tester_pattern_startval_b);
-				s_sf3_pattern_incr_val  <= std_logic_vector(c_tester_patterh_incrval_b);
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_SET_START_ADDR_B;
-				else
-					s_tester_nx_state <= ST_SET_PATTERN_B;
-				end if;
-
-
-			when ST_SET_PATTERN_C =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				s_sf3_pattern_start_val <= std_logic_vector(c_tester_pattern_startval_c);
-				s_sf3_pattern_incr_val  <= std_logic_vector(c_tester_patterh_incrval_c);
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_SET_START_ADDR_C;
-				else
-					s_tester_nx_state <= ST_SET_PATTERN_C;
-				end if;
-
-			when ST_SET_PATTERN_D =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				s_sf3_pattern_start_val <= std_logic_vector(c_tester_pattern_startval_d);
-				s_sf3_pattern_incr_val  <= std_logic_vector(c_tester_patterh_incrval_d);
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_SET_START_ADDR_D;
-				else
-					s_tester_nx_state <= ST_SET_PATTERN_D;
-				end if;
-
-			when ST_SET_START_ADDR_A =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-				s_sf3_start_at_zero_val   <= '0';
-				s_sf3_i_val               <= 0;
-
-				-- Increment the address for the next iteration
-				if (s_sf3_start_at_zero_aux = '1') then
-					s_sf3_addr_start_val <= x"00000000";
-					s_sf3_test_done_val  <= '0';
-					s_tester_nx_state    <= ST_SET_START_WAIT_A;
-				elsif (to_integer(unsigned(s_sf3_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_sf3_addr_start_val <= std_logic_vector(
-							unsigned(s_sf3_addr_start_aux) + c_per_iteration_byte_count);
-					s_sf3_test_done_val <= '0';
-					s_tester_nx_state   <= ST_SET_START_WAIT_A;
-				else
-					s_sf3_test_done_val <= '1';
-					s_tester_nx_state   <= ST_WAIT_BUTTON_DEP;
-				end if;
-
-			when ST_SET_START_ADDR_B =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-				s_sf3_start_at_zero_val   <= '0';
-				s_sf3_i_val               <= 0;
-
-				-- Increment the address for the next iteration
-				if (s_sf3_start_at_zero_aux = '1') then
-					s_sf3_addr_start_val <= x"00000000";
-					s_sf3_test_done_val  <= '0';
-					s_tester_nx_state    <= ST_SET_START_WAIT_B;
-				elsif (to_integer(unsigned(s_sf3_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_sf3_addr_start_val <= std_logic_vector(
-							unsigned(s_sf3_addr_start_aux) + c_per_iteration_byte_count);
-					s_sf3_test_done_val <= '0';
-					s_tester_nx_state   <= ST_SET_START_WAIT_B;
-				else
-					s_sf3_test_done_val <= '1';
-					s_tester_nx_state   <= ST_WAIT_BUTTON_DEP;
-				end if;
-
-			when ST_SET_START_ADDR_C =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-				s_sf3_start_at_zero_val   <= '0';
-				s_sf3_i_val               <= 0;
-
-				-- Increment the address for the next iteration
-				if (s_sf3_start_at_zero_aux = '1') then
-					s_sf3_addr_start_val <= x"00000000";
-					s_sf3_test_done_val  <= '0';
-					s_tester_nx_state    <= ST_SET_START_WAIT_C;
-				elsif (to_integer(unsigned(s_sf3_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_sf3_addr_start_val <= std_logic_vector(
-							unsigned(s_sf3_addr_start_aux) + c_per_iteration_byte_count);
-					s_sf3_test_done_val <= '0';
-					s_tester_nx_state   <= ST_SET_START_WAIT_C;
-				else
-					s_sf3_test_done_val <= '1';
-					s_tester_nx_state   <= ST_WAIT_BUTTON_DEP;
-				end if;
-
-			when ST_SET_START_ADDR_D =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-				s_sf3_start_at_zero_val   <= '0';
-				s_sf3_i_val               <= 0;
-
-				-- Increment the address for the next iteration
-				if (s_sf3_start_at_zero_aux = '1') then
-					s_sf3_addr_start_val <= x"00000000";
-					s_sf3_test_done_val  <= '0';
-					s_tester_nx_state    <= ST_SET_START_WAIT_D;
-				elsif (to_integer(unsigned(s_sf3_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_sf3_addr_start_val <= std_logic_vector(
-							unsigned(s_sf3_addr_start_aux) + c_per_iteration_byte_count);
-					s_sf3_test_done_val <= '0';
-					s_tester_nx_state   <= ST_SET_START_WAIT_D;
-				else
-					s_sf3_test_done_val <= '1';
-					s_tester_nx_state   <= ST_WAIT_BUTTON_DEP;
-				end if;
-
-			when ST_SET_START_WAIT_A =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_t = c_t_max / 2) then
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				else
-					s_tester_nx_state <= ST_SET_START_WAIT_A;
-				end if;
-
-			when ST_SET_START_WAIT_B =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_t = c_t_max / 2) then
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				else
-					s_tester_nx_state <= ST_SET_START_WAIT_B;
-				end if;
-
-			when ST_SET_START_WAIT_C =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_t = c_t_max / 2) then
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				else
-					s_tester_nx_state <= ST_SET_START_WAIT_C;
-				end if;
-
-			when ST_SET_START_WAIT_D =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= (others => '0');
-
-				if (s_t = c_t_max / 2) then
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				else
-					s_tester_nx_state <= ST_SET_START_WAIT_D;
-				end if;
-
-			when ST_CMD_ERASE_START =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '1';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_subsector_addr_incr));
-
-				if (s_sf3_command_ready = '0') then
-					s_tester_nx_state <= ST_CMD_ERASE_WAIT;
-				else
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				end if;
-
-			when ST_CMD_ERASE_WAIT =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_subsector_addr_incr));
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_CMD_ERASE_NEXT;
-				else
-					s_tester_nx_state <= ST_CMD_ERASE_WAIT;
-				end if;
-
-			when ST_CMD_ERASE_NEXT =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= s_sf3_i_aux + 1;
-
-				if (s_sf3_i_aux < (c_tester_subsector_cnt_per_iter - 1)) then
-					s_tester_nx_state <= ST_CMD_ERASE_START;
-				else
-					s_tester_nx_state <= ST_CMD_ERASE_DONE;
-				end if;
-
-			when ST_CMD_ERASE_DONE =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= 0;
-				s_sf3_pattern_track_val   <= s_sf3_pattern_start_aux;
-
-				s_tester_nx_state <= ST_CMD_PAGE_START;
-
-			when ST_CMD_PAGE_START =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '1';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-				s_sf3_dat_wr_cntidx_val <= 0;
-
-				if (s_sf3_command_ready = '0') then
-					s_tester_nx_state <= ST_CMD_PAGE_BYTE;
-				else
-					s_tester_nx_state <= ST_CMD_PAGE_START;
-				end if;
-
-			when ST_CMD_PAGE_BYTE =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-
-				if (s_sf3_wr_data_ready = '1') then
-					-- Assign this iterations byte value
-					s_sf3_wr_data_stream <= s_sf3_pattern_track_aux;
-					s_sf3_wr_data_valid  <= '1';
-
-					-- Calculate the next iterations byte value
-					s_sf3_pattern_track_val <= std_logic_vector(
-							unsigned(s_sf3_pattern_track_aux) +
-							unsigned(s_sf3_pattern_incr_aux));
-
-					-- Increment counter for next byte
-					if (s_sf3_dat_wr_cntidx_aux < 255) then
-						s_sf3_dat_wr_cntidx_val <= s_sf3_dat_wr_cntidx_aux + 1;
-					end if;
-
-					-- Check current bytes counter for next FSM state
-					if (s_sf3_dat_wr_cntidx_aux = 255) then
-						-- Wrote bytes 0 through 255, totaling at a page lenth
-						-- of 256 bytes. Now advance to the WAIT state.
-						s_tester_nx_state <= ST_CMD_PAGE_WAIT;
-					else
-						s_tester_nx_state <= ST_CMD_PAGE_BYTE;
-					end if;
-				else
-					s_sf3_wr_data_stream <= x"00";
-					s_sf3_wr_data_valid  <= '0';
-					s_tester_nx_state    <= ST_CMD_PAGE_BYTE;
-				end if;
-
-			when ST_CMD_PAGE_WAIT =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_CMD_PAGE_NEXT;
-				else
-					s_tester_nx_state <= ST_CMD_PAGE_WAIT;
-				end if;
-
-			when ST_CMD_PAGE_NEXT =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= s_sf3_i_aux + 1;
-
-				if (s_sf3_i_aux < (c_tester_page_cnt_per_iter - 1)) then
-					s_tester_nx_state <= ST_CMD_PAGE_START;
-				else
-					s_tester_nx_state <= ST_CMD_PAGE_DONE;
-				end if;
-
-			when ST_CMD_PAGE_DONE =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= 0;
-				s_sf3_pattern_track_val   <= s_sf3_pattern_start_aux;
-
-				s_tester_nx_state <= ST_CMD_READ_START;
-
-			when ST_CMD_READ_START =>
-				s_sf3_len_random_read <= std_logic_vector(
-						to_unsigned(c_sf3_page_addr_incr, s_sf3_len_random_read'length));
-				s_sf3_cmd_random_read     <= '1';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-				s_sf3_dat_rd_cntidx_val <= 0;
-
-				if (s_sf3_command_ready = '0') then
-					s_tester_nx_state <= ST_CMD_READ_BYTE;
-				else
-					s_tester_nx_state <= ST_CMD_READ_START;
-				end if;
-
-			when ST_CMD_READ_BYTE =>
-				s_sf3_len_random_read <= std_logic_vector(
-						to_unsigned(c_sf3_page_addr_incr, s_sf3_len_random_read'length));
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-
-				if (s_sf3_rd_data_valid = '1') then
-					-- Compare this iterations byte value
-					if (s_sf3_rd_data_stream /= s_sf3_pattern_track_aux) then
-						s_sf3_err_count_val <= s_sf3_err_count_aux + 1;
-					else
-						-- FIXME: this is to show errors that did not occur to test the error reporting on the LCD and USB=UART
-						s_sf3_err_count_val <= s_sf3_err_count_aux + 0;
-					end if;
-
-					-- Calculate the next iterations byte value
-					s_sf3_pattern_track_val <= std_logic_vector(
-							unsigned(s_sf3_pattern_track_aux) +
-							unsigned(s_sf3_pattern_incr_aux));
-
-					-- Increment counter for next byte
-					if (s_sf3_dat_rd_cntidx_aux < 255) then
-						s_sf3_dat_rd_cntidx_val <= s_sf3_dat_rd_cntidx_aux + 1;
-					end if;
-
-					-- Check current bytes counter for next FSM state
-					if (s_sf3_dat_rd_cntidx_aux = 255) then
-						-- Wrote bytes 0 through 255, totaling at a page lenth
-						-- of 256 bytes. Now advance to the WAIT state.
-						s_tester_nx_state <= ST_CMD_READ_WAIT;
-					else
-						s_tester_nx_state <= ST_CMD_READ_BYTE;
-					end if;
-				else
-					s_tester_nx_state <= ST_CMD_READ_BYTE;
-				end if;
-
-			when ST_CMD_READ_WAIT =>
-				s_sf3_len_random_read <= std_logic_vector(
-						to_unsigned(c_sf3_page_addr_incr, s_sf3_len_random_read'length));
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= std_logic_vector(
-						unsigned(s_sf3_addr_start_aux) +
-						(s_sf3_i_aux * c_sf3_page_addr_incr));
-
-				if (s_sf3_command_ready = '1') then
-					s_tester_nx_state <= ST_CMD_READ_NEXT;
-				else
-					s_tester_nx_state <= ST_CMD_READ_WAIT;
-				end if;
-
-			when ST_CMD_READ_NEXT =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= s_sf3_i_aux + 1;
-
-				if (s_sf3_i_aux < (c_tester_page_cnt_per_iter - 1)) then
-					s_tester_nx_state <= ST_CMD_READ_START;
-				else
-					s_tester_nx_state <= ST_CMD_READ_DONE;
-				end if;
-
-			when ST_CMD_READ_DONE =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-				s_sf3_i_val               <= 0;
-				s_sf3_pattern_track_val   <= s_sf3_pattern_start_aux;
-
-				s_tester_nx_state <= ST_DISPLAY_FINAL;
-
-			when others => -- ST_DISPLAY_FINAL =>
-				s_sf3_len_random_read     <= (others => '0');
-				s_sf3_cmd_random_read     <= '0';
-				s_sf3_cmd_page_program    <= '0';
-				s_sf3_cmd_erase_subsector <= '0';
-				s_sf3_address_of_cmd      <= x"00000000";
-
-				if (s_sf3_err_count_aux = 0) then
-					s_sf3_test_pass_val <= '1';
-				else
-					s_sf3_test_pass_val <= '0';
-				end if;
-
-				if (s_t = c_t_max) then
-					s_tester_nx_state <= ST_WAIT_BUTTON_DEP;
-				else
-					s_tester_nx_state <= ST_DISPLAY_FINAL;
-				end if;
-		end case;
-	end process p_tester_fsm_comb;
-
-	-- Assembly of LCD 16x2 text lines
-	s_cls_txt_ascii_pattern_1char <=
-		x"41" when ((unsigned(s_sf3_pattern_start_aux) = c_tester_pattern_startval_a) and (unsigned(s_sf3_pattern_incr_aux) = c_tester_patterh_incrval_a)) else
-		x"42" when ((unsigned(s_sf3_pattern_start_aux) = c_tester_pattern_startval_b) and (unsigned(s_sf3_pattern_incr_aux) = c_tester_patterh_incrval_b)) else
-		x"43" when ((unsigned(s_sf3_pattern_start_aux) = c_tester_pattern_startval_c) and (unsigned(s_sf3_pattern_incr_aux) = c_tester_patterh_incrval_c)) else
-		x"44" when ((unsigned(s_sf3_pattern_start_aux) = c_tester_pattern_startval_d) and (unsigned(s_sf3_pattern_incr_aux) = c_tester_patterh_incrval_d)) else
-		x"2A";
-
-	s_cls_txt_ascii_address_8char <=
-		ascii_of_hdigit(s_sf3_addr_start_aux(31 downto 28)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(27 downto 24)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(23 downto 20)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(19 downto 16)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(15 downto 12)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(11 downto 8)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(7 downto 4)) &
-		ascii_of_hdigit(s_sf3_addr_start_aux(3 downto 0));
-
-	s_cls_txt_ascii_line1 <= (x"53" & x"46" & x"33" & x"20" &
-			x"50" & s_cls_txt_ascii_pattern_1char & x"20" & x"68" &
-			s_cls_txt_ascii_address_8char);
-
-	p_sf3mode_3char : process (s_tester_pr_state)
-	begin
-		case(s_tester_pr_state) is
-			when ST_WAIT_BUTTON0_REL | ST_SET_PATTERN_A
-				| ST_WAIT_BUTTON1_REL | ST_SET_PATTERN_B
-				| ST_WAIT_BUTTON2_REL | ST_SET_PATTERN_C
-				| ST_WAIT_BUTTON3_REL | ST_SET_PATTERN_D
-				| ST_SET_START_ADDR_A | ST_SET_START_WAIT_A
-				| ST_SET_START_ADDR_B | ST_SET_START_WAIT_B
-				| ST_SET_START_ADDR_C | ST_SET_START_WAIT_C
-				| ST_SET_START_ADDR_D | ST_SET_START_WAIT_D =>
-				-- text: "GO "
-				s_cls_txt_ascii_sf3mode_3char <= (x"47" & x"4F" & x"20");
-			when ST_CMD_ERASE_START | ST_CMD_ERASE_WAIT |
-				ST_CMD_ERASE_NEXT | ST_CMD_ERASE_DONE =>
-				-- text: "ERS"
-				s_cls_txt_ascii_sf3mode_3char <= (x"45" & x"52" & x"53");
-			when ST_CMD_PAGE_START | ST_CMD_PAGE_BYTE | ST_CMD_PAGE_WAIT |
-				ST_CMD_PAGE_NEXT | ST_CMD_PAGE_DONE =>
-				-- text: "PRO"
-				s_cls_txt_ascii_sf3mode_3char <= (x"50" & x"52" & x"4F");
-			when ST_CMD_READ_START | ST_CMD_READ_BYTE | ST_CMD_READ_WAIT |
-				ST_CMD_READ_NEXT | ST_CMD_READ_DONE =>
-				-- text: "TST"
-				s_cls_txt_ascii_sf3mode_3char <= (x"54" & x"53" & x"54");
-			when ST_DISPLAY_FINAL =>
-				-- text: "END"
-				s_cls_txt_ascii_sf3mode_3char <= (x"45" & x"4E" & x"44");
-			when others => -- ST_WAIT_BUTTON_DEP =>
-				           -- text: "GO ""
-				s_cls_txt_ascii_sf3mode_3char <= (x"47" & x"4F" & x"20");
-		end case;
-	end process p_sf3mode_3char;
-
-	s_cls_txt_ascii_errcntdec_8char <=
-		s_cls_txt_ascii_errcntdec_char7 &
-		s_cls_txt_ascii_errcntdec_char6 &
-		s_cls_txt_ascii_errcntdec_char5 &
-		s_cls_txt_ascii_errcntdec_char4 &
-		s_cls_txt_ascii_errcntdec_char3 &
-		s_cls_txt_ascii_errcntdec_char2 &
-		s_cls_txt_ascii_errcntdec_char1 &
-		s_cls_txt_ascii_errcntdec_char0;
-
-	-- Registering the error count digits to close timing delays if clock is
-	-- selected as 80 MHz instead of 20 MHz;
-	p_reg_errcnt_digits : process(s_clk_40mhz)
-	begin
-		if rising_edge(s_clk_40mhz) then
-			s_sf3_err_count_divide7 <= s_sf3_err_count_aux / 10000000 mod 10;
-			s_sf3_err_count_digit7  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide7, 4));
-
-			s_sf3_err_count_divide6 <= s_sf3_err_count_aux / 1000000 mod 10;
-			s_sf3_err_count_digit6  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide6, 4));
-
-			s_sf3_err_count_divide5 <= s_sf3_err_count_aux / 100000 mod 10;
-			s_sf3_err_count_digit5  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide5, 4));
-
-			s_sf3_err_count_divide4 <= s_sf3_err_count_aux / 10000 mod 10;
-			s_sf3_err_count_digit4  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide4, 4));
-
-			s_sf3_err_count_divide3 <= s_sf3_err_count_aux / 1000 mod 10;
-			s_sf3_err_count_digit3  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide3, 4));
-
-			s_sf3_err_count_divide2 <= s_sf3_err_count_aux / 100 mod 10;
-			s_sf3_err_count_digit2  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide2, 4));
-
-			s_sf3_err_count_divide1 <= s_sf3_err_count_aux / 10 mod 10;
-			s_sf3_err_count_digit1  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide1, 4));
-
-			s_sf3_err_count_divide0 <= s_sf3_err_count_aux mod 10;
-			s_sf3_err_count_digit0  <= std_logic_vector(to_unsigned(s_sf3_err_count_divide0, 4));
-
-			s_cls_txt_ascii_errcntdec_char7 <= ascii_of_hdigit(s_sf3_err_count_digit7);
-			s_cls_txt_ascii_errcntdec_char6 <= ascii_of_hdigit(s_sf3_err_count_digit6);
-			s_cls_txt_ascii_errcntdec_char5 <= ascii_of_hdigit(s_sf3_err_count_digit5);
-			s_cls_txt_ascii_errcntdec_char4 <= ascii_of_hdigit(s_sf3_err_count_digit4);
-			s_cls_txt_ascii_errcntdec_char3 <= ascii_of_hdigit(s_sf3_err_count_digit3);
-			s_cls_txt_ascii_errcntdec_char2 <= ascii_of_hdigit(s_sf3_err_count_digit2);
-			s_cls_txt_ascii_errcntdec_char1 <= ascii_of_hdigit(s_sf3_err_count_digit1);
-			s_cls_txt_ascii_errcntdec_char0 <= ascii_of_hdigit(s_sf3_err_count_digit0);
-		end if;
-	end process p_reg_errcnt_digits;
-
-	s_cls_txt_ascii_line2 <= (s_cls_txt_ascii_sf3mode_3char & x"20" &
-			x"45" & x"52" & x"52" & x"20" & s_cls_txt_ascii_errcntdec_8char);
-
-	-- Assembly of UART text line.
-	s_uart_dat_ascii_line <= (s_cls_txt_ascii_line1 & x"20" & s_cls_txt_ascii_line2 & x"0D" & x"0A");
+	-- SF3 Tester FSM
+	u_sf_tester_fsm : entity work.sf_tester_fsm(rtl)
+		generic map (
+			parm_fast_simulation         => parm_fast_simulation,
+			parm_FCLK                    => c_FCLK,
+			parm_sf3_tester_ce_div_ratio => c_sf3_tester_ce_div_ratio,
+			parm_pattern_startval_a      => c_tester_pattern_startval_a,
+			parm_pattern_incrval_a       => c_tester_pattern_incrval_a,
+			parm_pattern_startval_b      => c_tester_pattern_startval_b,
+			parm_pattern_incrval_b       => c_tester_pattern_incrval_b,
+			parm_pattern_startval_c      => c_tester_pattern_startval_c,
+			parm_pattern_incrval_c       => c_tester_pattern_incrval_c,
+			parm_pattern_startval_d      => c_tester_pattern_startval_d,
+			parm_pattern_incrval_d       => c_tester_pattern_incrval_d,
+			parm_max_possible_byte_count => c_max_possible_byte_count
+		)
+		port map (
+			i_clk_40mhz               => s_clk_40mhz,
+			i_rst_40mhz               => s_rst_40mhz,
+			i_ce_div                  => s_sf3_ce_div,
+			i_sf3_command_ready       => s_sf3_command_ready,
+			i_sf3_rd_data_valid       => s_sf3_rd_data_valid,
+			i_sf3_rd_data_stream      => s_sf3_rd_data_stream,
+			i_sf3_wr_data_ready       => s_sf3_wr_data_ready,
+			o_sf3_wr_data_stream      => s_sf3_wr_data_stream,
+			o_sf3_wr_data_valid       => s_sf3_wr_data_valid,
+			o_sf3_len_random_read     => s_sf3_len_random_read,
+			o_sf3_cmd_random_read     => s_sf3_cmd_random_read,
+			o_sf3_cmd_page_program    => s_sf3_cmd_page_program,
+			o_sf3_cmd_erase_subsector => s_sf3_cmd_erase_subsector,
+			o_sf3_address_of_cmd      => s_sf3_address_of_cmd,
+			i_buttons_debounced       => s_btns_deb,
+			i_switches_debounced      => s_sw_deb,
+			o_tester_pr_state         => s_sf3_tester_pr_state,
+			o_addr_start              => s_sf3_addr_start,
+			o_pattern_start           => s_sf3_pattern_start,
+			o_pattern_incr            => s_sf3_pattern_incr,
+			o_error_count             => s_sf3_error_count,
+			o_test_pass               => s_sf3_test_pass,
+			o_test_done               => s_sf3_test_done
+		);
+
+	-- LED Palette Updater
+	u_led_palette_updater : entity work.led_palette_updater(rtl)
+		generic map (
+			parm_color_led_count => 4,
+			parm_basic_led_count => 4
+		)
+		port map (
+			i_clk                   => s_clk_40mhz,
+			i_srst                  => s_rst_40mhz,
+			o_color_led_red_value   => s_color_led_red_value,
+			o_color_led_green_value => s_color_led_green_value,
+			o_color_led_blue_value  => s_color_led_blue_value,
+			o_basic_led_lumin_value => s_basic_led_lumin_value,
+			i_test_pass             => s_sf3_test_pass,
+			i_test_done             => s_sf3_test_done,
+			i_tester_pr_state       => s_sf3_tester_pr_state
+		);
+
+	-- SF3 Testing to ASCII outputs
+	u_sf_testing_to_ascii : entity work.sf_testing_to_ascii(rtl)
+		generic map (
+			parm_pattern_startval_a      => c_tester_pattern_startval_a,
+			parm_pattern_incrval_a       => c_tester_pattern_incrval_a,
+			parm_pattern_startval_b      => c_tester_pattern_startval_b,
+			parm_pattern_incrval_b       => c_tester_pattern_incrval_b,
+			parm_pattern_startval_c      => c_tester_pattern_startval_c,
+			parm_pattern_incrval_c       => c_tester_pattern_incrval_c,
+			parm_pattern_startval_d      => c_tester_pattern_startval_d,
+			parm_pattern_incrval_d       => c_tester_pattern_incrval_d,
+			parm_max_possible_byte_count => c_max_possible_byte_count
+		)
+		port map (
+			i_clk_40mhz       => s_clk_40mhz,
+			i_rst_40mhz       => s_rst_40mhz,
+			i_addr_start      => s_sf3_addr_start,
+			i_pattern_start   => s_sf3_pattern_start,
+			i_pattern_incr    => s_sf3_pattern_incr,
+			i_error_count     => s_sf3_error_count,
+			i_tester_pr_state => s_sf3_tester_pr_state,
+			o_lcd_ascii_line1 => s_cls_txt_ascii_line1,
+			o_lcd_ascii_line2 => s_cls_txt_ascii_line2,
+			o_term_ascii_line => s_uart_txt_ascii_line
+		);
 
 	-- LCD Update FSM
 	u_lcd_text_feed : entity work.lcd_text_feed(rtl)
@@ -1498,7 +662,7 @@ begin
 			o_tx_valid       => s_uart_txvalid,
 			i_tx_ready       => s_uart_txready,
 			i_tx_go          => s_uart_tx_go,
-			i_dat_ascii_line => s_uart_dat_ascii_line
+			i_dat_ascii_line => s_uart_txt_ascii_line
 		);
 
 end architecture rtl;
