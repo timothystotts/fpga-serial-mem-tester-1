@@ -21,9 +21,9 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \file led_palette_pulser.vhdl
+-- \file led_palette_updater.vhdl
 --
--- \brief A simple pulser to generate palette values for \ref led_pwm_driver.vhdl
+-- \brief A simple updater to generate palette values for \ref led_pwm_driver.vhdl
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -43,12 +43,12 @@ entity led_palette_updater is
 		-- clock and reset
 		i_clk  : in std_logic;
 		i_srst : in std_logic;
-		--pallete input values
+		-- pallete output values
 		o_color_led_red_value   : out t_led_color_values((parm_color_led_count - 1) downto 0);
 		o_color_led_green_value : out t_led_color_values((parm_color_led_count - 1) downto 0);
 		o_color_led_blue_value  : out t_led_color_values((parm_color_led_count - 1) downto 0);
 		o_basic_led_lumin_value : out t_led_color_values((parm_basic_led_count - 1) downto 0);
-		-- SF Tester FSM status inputs
+		-- SF Tester FSM state and status inputs
 		i_test_pass       : in std_logic;
 		i_test_done       : in std_logic;
 		i_tester_pr_state : in t_tester_state
@@ -65,7 +65,7 @@ begin
 	o_basic_led_lumin_value(2) <= x"00";
 	o_basic_led_lumin_value(3) <= x"00";
 
-	-- Color LED stage output indication for the PMOD experieent FSM progress
+	-- Color LED stage output indication for the PMOD SF Tester FSM progress
 	-- and current state group.
 	p_tester_fsm_progress : process(i_tester_pr_state)
 	begin

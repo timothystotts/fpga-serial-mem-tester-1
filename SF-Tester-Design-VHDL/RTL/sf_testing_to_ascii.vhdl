@@ -21,10 +21,10 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \file adxl362_readings_to_ascii.vhdl
+-- \file sf_testing_to_ascii.vhdl
 --
--- \brief A combinatorial block to convert ADXL362 Readings to ASCII text
--- representations.
+-- \brief A combinatorial block to convert SF3 Testing Status and State to
+-- ASCII output for LCD and UART.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -97,10 +97,13 @@ architecture rtl of sf_testing_to_ascii is
 	signal s_sf3_err_count_digit1  : std_logic_vector(3 downto 0);
 	signal s_sf3_err_count_digit0  : std_logic_vector(3 downto 0);
 
+	-- Signals of the final two lines of text
 	signal s_txt_ascii_line1 : std_logic_vector((16*8-1) downto 0);
 	signal s_txt_ascii_line2 : std_logic_vector((16*8-1) downto 0);
 begin
 	-- Assembly of LCD 16x2 text lines
+
+	-- The single character to display if the pattern matches A, B, C, or D.
 	s_txt_ascii_pattern_1char <=
 		x"41" when ((unsigned(i_pattern_start) = parm_pattern_startval_a) and (unsigned(i_pattern_incr) = parm_pattern_incrval_a)) else
 		x"42" when ((unsigned(i_pattern_start) = parm_pattern_startval_b) and (unsigned(i_pattern_incr) = parm_pattern_incrval_b)) else
@@ -108,6 +111,7 @@ begin
 		x"44" when ((unsigned(i_pattern_start) = parm_pattern_startval_d) and (unsigned(i_pattern_incr) = parm_pattern_incrval_d)) else
 		x"2A";
 
+	-- The hexadecimal display value of the Test Starting Address on the text display
 	s_txt_ascii_address_8char <=
 		ascii_of_hdigit(i_addr_start(31 downto 28)) &
 		ascii_of_hdigit(i_addr_start(27 downto 24)) &
@@ -118,10 +122,13 @@ begin
 		ascii_of_hdigit(i_addr_start(7 downto 4)) &
 		ascii_of_hdigit(i_addr_start(3 downto 0));
 
+	-- Assembly of Line1 of the LCD display
 	s_txt_ascii_line1 <= (x"53" & x"46" & x"33" & x"20" &
 			x"50" & s_txt_ascii_pattern_1char & x"20" & x"68" &
 			s_txt_ascii_address_8char);
 
+	-- The operational mode of tester_pr_state is converted to a 3-character
+	-- display value that indicates the current FSM state.
 	p_sf3mode_3char : process (i_tester_pr_state)
 	begin
 		case(i_tester_pr_state) is
@@ -156,18 +163,9 @@ begin
 		end case;
 	end process p_sf3mode_3char;
 
-	s_txt_ascii_errcntdec_8char <=
-		s_txt_ascii_errcntdec_char7 &
-		s_txt_ascii_errcntdec_char6 &
-		s_txt_ascii_errcntdec_char5 &
-		s_txt_ascii_errcntdec_char4 &
-		s_txt_ascii_errcntdec_char3 &
-		s_txt_ascii_errcntdec_char2 &
-		s_txt_ascii_errcntdec_char1 &
-		s_txt_ascii_errcntdec_char0;
-
-	-- Registering the error count digits to close timing delays if clock is
-	-- selected as 80 MHz instead of 20 MHz;
+	-- Registering the error count digits to close timing delays.
+	-- This process converts the Error Count input into a 8-digit decimal ASCII
+	-- number.
 	p_reg_errcnt_digits : process(i_clk_40mhz)
 	begin
 		if rising_edge(i_clk_40mhz) then
@@ -206,10 +204,22 @@ begin
 		end if;
 	end process p_reg_errcnt_digits;
 
+	-- Assembly of the 8-digit error count ASCII value
+	s_txt_ascii_errcntdec_8char <=
+		s_txt_ascii_errcntdec_char7 &
+		s_txt_ascii_errcntdec_char6 &
+		s_txt_ascii_errcntdec_char5 &
+		s_txt_ascii_errcntdec_char4 &
+		s_txt_ascii_errcntdec_char3 &
+		s_txt_ascii_errcntdec_char2 &
+		s_txt_ascii_errcntdec_char1 &
+		s_txt_ascii_errcntdec_char0;
+
+	-- Assembly of Line2 of the LCD display
 	s_txt_ascii_line2 <= (s_txt_ascii_sf3mode_3char & x"20" &
 			x"45" & x"52" & x"52" & x"20" & s_txt_ascii_errcntdec_8char);
 
-	-- Assembly of UART text line.
+	-- Assembly of UART text line and output
 	o_term_ascii_line <= (s_txt_ascii_line1 & std_logic_vector'(x"20") & s_txt_ascii_line2 & std_logic_vector'(x"0D") & std_logic_vector'(x"0A"));
 
 	-- Output of LCD text lines

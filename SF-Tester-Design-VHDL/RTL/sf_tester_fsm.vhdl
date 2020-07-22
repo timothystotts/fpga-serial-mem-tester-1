@@ -32,16 +32,20 @@ use ieee.numeric_std.all;
 library work;
 --------------------------------------------------------------------------------
 package sf_tester_fsm_pkg is
+	-- Function to determine the maximum value of timer T based upon whether
+	-- the module is operating with fast simulation, or is synthesized to target.
+	-- If simulating, the return is 3 milliseconds. If synthesized, the return is
+	-- 3 seconds.
 	function fn_set_t_max(fclk : natural; div_ratio : natural; fast_sim : integer)
 		return natural;
 
+	-- The Tester FSM states definition
 	type t_tester_state is (ST_WAIT_BUTTON_DEP, ST_WAIT_BUTTON0_REL,
 			ST_WAIT_BUTTON1_REL, ST_WAIT_BUTTON2_REL, ST_WAIT_BUTTON3_REL,
 			ST_SET_PATTERN_A, ST_SET_PATTERN_B, ST_SET_PATTERN_C, ST_SET_PATTERN_D,
-			ST_SET_START_ADDR_A, ST_SET_START_WAIT_A,
-			ST_SET_START_ADDR_B, ST_SET_START_WAIT_B,
-			ST_SET_START_ADDR_C, ST_SET_START_WAIT_C,
-			ST_SET_START_ADDR_D, ST_SET_START_WAIT_D,
+			ST_SET_START_ADDR_A, ST_SET_START_ADDR_B, ST_SET_START_ADDR_C, 
+			ST_SET_START_ADDR_D, ST_SET_START_WAIT_A, ST_SET_START_WAIT_B,
+			ST_SET_START_WAIT_C, ST_SET_START_WAIT_D,
 			ST_CMD_ERASE_START, ST_CMD_ERASE_WAIT, ST_CMD_ERASE_NEXT,
 			ST_CMD_ERASE_DONE, ST_CMD_PAGE_START, ST_CMD_PAGE_BYTE, ST_CMD_PAGE_WAIT,
 			ST_CMD_PAGE_NEXT, ST_CMD_PAGE_DONE, ST_CMD_READ_START, ST_CMD_READ_BYTE,
@@ -63,6 +67,8 @@ package sf_tester_fsm_pkg is
 	constant c_tester_subsector_cnt_per_iter : natural := 8192 / c_total_iteration_count;
 	constant c_tester_page_cnt_per_iter      : natural := 131072 / c_total_iteration_count;
 
+	-- Testing patterns, the starting byte value and the byte increment value, causing
+	-- either a sequential counting pattern or a pseudo-random counting pattern.
 	constant c_tester_pattern_startval_a : unsigned(7 downto 0) := x"00";
 	constant c_tester_pattern_incrval_a  : unsigned(7 downto 0) := x"01";
 
@@ -82,9 +88,9 @@ package body sf_tester_fsm_pkg is
 		return natural is
 	begin
 		if (fast_sim = 0) then
-			return fclk / div_ratio * 3 - 1;
+			return fclk / div_ratio * 3 - 1; -- three second delay count
 		else
-			return fclk / div_ratio * 3 / 1000 - 1;
+			return fclk / div_ratio * 3 / 1000 - 1; -- three millisecond delay count
 		end if;
 	end function fn_set_t_max;
 end package body;
@@ -100,9 +106,15 @@ use work.sf_tester_fsm_pkg.all;
 --------------------------------------------------------------------------------
 entity sf_tester_fsm is
 	generic(
+		-- define as non-zero for a fast simulation that is faster than
+		-- synthesis timing for the purpose of displaying SPI bus with a visual
+		-- testbench.
 		parm_fast_simulation         : natural := 0;
+		-- Frequency of the clock
 		parm_FCLK                    : natural := 40_000_000;
+		-- Ratio of the clock enable to the clock
 		parm_sf3_tester_ce_div_ratio : natural := 2;
+		-- Patterns A, B, C, D
 		parm_pattern_startval_a      : unsigned(7 downto 0);
 		parm_pattern_incrval_a       : unsigned(7 downto 0);
 		parm_pattern_startval_b      : unsigned(7 downto 0);
@@ -111,6 +123,7 @@ entity sf_tester_fsm is
 		parm_pattern_incrval_c       : unsigned(7 downto 0);
 		parm_pattern_startval_d      : unsigned(7 downto 0);
 		parm_pattern_incrval_d       : unsigned(7 downto 0);
+		-- Maximum byte count of the memory being operated
 		parm_max_possible_byte_count : natural
 	);
 	port(
@@ -130,11 +143,10 @@ entity sf_tester_fsm is
 		o_sf3_cmd_page_program    : out std_logic;
 		o_sf3_cmd_erase_subsector : out std_logic;
 		o_sf3_address_of_cmd      : out std_logic_vector(31 downto 0);
-
 		-- interface to user I/O
 		i_buttons_debounced  : in std_logic_vector(3 downto 0);
 		i_switches_debounced : in std_logic_vector(3 downto 0);
-		-- state outputst
+		-- state and status outputs
 		o_tester_pr_state : out t_tester_state;
 		o_addr_start      : out std_logic_vector(31 downto 0);
 		o_pattern_start   : out std_logic_vector(7 downto 0);
@@ -151,10 +163,14 @@ architecture rtl of sf_tester_fsm is
 	-- Maximum count is three seconds c_FCLK / c_sf3_tester_ce_div_ratio * 3 - 1;
 	constant c_t_max : natural := fn_set_t_max(parm_FCLK, parm_sf3_tester_ce_div_ratio, parm_fast_simulation);
 
+	-- Timer variable
 	signal s_t : natural range 0 to c_t_max;
 
+	-- Tester state value
 	signal s_tester_pr_state   : t_tester_state;
 	signal s_tester_nx_state   : t_tester_state;
+
+	-- Tester auxiliary registers
 	signal s_dat_wr_cntidx_val : natural range 0 to 255;
 	signal s_dat_wr_cntidx_aux : natural range 0 to 255;
 	signal s_dat_rd_cntidx_val : natural range 0 to 255;
@@ -165,7 +181,6 @@ architecture rtl of sf_tester_fsm is
 	signal s_test_done_aux     : std_logic;
 	signal s_err_count_val     : natural range 0 to parm_max_possible_byte_count;
 	signal s_err_count_aux     : natural range 0 to parm_max_possible_byte_count;
-
 	signal s_pattern_start_val   : std_logic_vector(7 downto 0);
 	signal s_pattern_start_aux   : std_logic_vector(7 downto 0);
 	signal s_pattern_incr_val    : std_logic_vector(7 downto 0);
@@ -188,7 +203,7 @@ begin
 	o_test_pass       <= s_test_pass_aux;
 	o_test_done       <= s_test_done_aux;
 
-	-- timer strategy #1 for the PMOD experiment FSM
+	-- Timer strategy #1 for the serial flash tester FSM
 	p_tester_timer : process(i_clk_40mhz)
 	begin
 		if rising_edge(i_clk_40mhz) then
@@ -204,7 +219,7 @@ begin
 		end if;
 	end process p_tester_timer;
 
-	-- state and auxiliary registers for the PMOD experiment FSM
+	-- State and auxiliary registers for the serial flash tester FSM
 	p_tester_fsm_state : process(i_clk_40mhz)
 	begin
 		if rising_edge(i_clk_40mhz) then
@@ -241,7 +256,7 @@ begin
 		end if;
 	end process p_tester_fsm_state;
 
-	-- combinatorial logic for the PMOD experieent FSM
+	-- Combinatorial logic for the serial flash tester FSM
 	p_tester_fsm_comb : process(
 			s_tester_pr_state,
 			i_buttons_debounced, i_switches_debounced,
@@ -262,6 +277,7 @@ begin
 			s_i_aux,
 			s_t)
 	begin
+		-- Default auxiliary register no-change values for briefer code
 		s_dat_wr_cntidx_val <= s_dat_wr_cntidx_aux;
 		s_dat_rd_cntidx_val <= s_dat_rd_cntidx_aux;
 		s_test_pass_val     <= s_test_pass_aux;
@@ -274,11 +290,15 @@ begin
 		s_start_at_zero_val <= s_start_at_zero_aux;
 		s_i_val             <= s_i_aux;
 
+		-- Default data writing values as zero and not writing
 		o_sf3_wr_data_stream <= x"00";
 		o_sf3_wr_data_valid  <= '0';
 
 		case (s_tester_pr_state) is
+
 			when ST_WAIT_BUTTON_DEP              =>
+				-- Wait for a button depress or a switch position before 
+				-- performing the next test iteration
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -288,13 +308,13 @@ begin
 				if (to_integer(unsigned(s_addr_start_aux)) < c_last_starting_byte_addr) then
 					s_test_done_val <= '0';
 
-					if ((i_buttons_debounced(0) = '1') or (i_switches_debounced(0) = '1')) then
+					if ((i_buttons_debounced = "0001") or (i_switches_debounced = "0001")) then
 						s_tester_nx_state <= ST_WAIT_BUTTON0_REL;
-					elsif ((i_buttons_debounced(1) = '1') or (i_switches_debounced(1) = '1'))then
+					elsif ((i_buttons_debounced = "0010") or (i_switches_debounced = "0010")) then
 						s_tester_nx_state <= ST_WAIT_BUTTON1_REL;
-					elsif ((i_buttons_debounced(2) = '1') or (i_switches_debounced(2) = '1')) then
+					elsif ((i_buttons_debounced = "0100") or (i_switches_debounced = "0100")) then
 						s_tester_nx_state <= ST_WAIT_BUTTON2_REL;
-					elsif ((i_buttons_debounced(3) = '1') or (i_switches_debounced(3) = '1')) then
+					elsif ((i_buttons_debounced = "1000") or (i_switches_debounced = "1000")) then
 						s_tester_nx_state <= ST_WAIT_BUTTON3_REL;
 					else
 						s_tester_nx_state <= ST_WAIT_BUTTON_DEP;
@@ -305,58 +325,72 @@ begin
 				end if;
 
 			when ST_WAIT_BUTTON0_REL =>
+				-- Button 0 or Switch 0 was selected.
+				-- Choose the pattern as A and transition when no buttons are
+				-- depressed.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
 				o_sf3_cmd_erase_subsector <= '0';
 				o_sf3_address_of_cmd      <= (others => '0');
 
-				if (i_buttons_debounced(0) = '0') then
+				if (i_buttons_debounced = "0000") then
 					s_tester_nx_state <= ST_SET_PATTERN_A;
 				else
 					s_tester_nx_state <= ST_WAIT_BUTTON0_REL;
 				end if;
 
 			when ST_WAIT_BUTTON1_REL =>
+				-- Button 1 or Switch 1 was selected.
+				-- Choose the pattern as B and transition when no buttons are
+				-- depressed.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
 				o_sf3_cmd_erase_subsector <= '0';
 				o_sf3_address_of_cmd      <= (others => '0');
 
-				if (i_buttons_debounced(1) = '0') then
+				if (i_buttons_debounced = "0000") then
 					s_tester_nx_state <= ST_SET_PATTERN_B;
 				else
 					s_tester_nx_state <= ST_WAIT_BUTTON1_REL;
 				end if;
 
 			when ST_WAIT_BUTTON2_REL =>
+				-- Button 2 or Switch 2 was selected.
+				-- Choose the pattern as C and transition when no buttons are
+				-- depressed.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
 				o_sf3_cmd_erase_subsector <= '0';
 				o_sf3_address_of_cmd      <= (others => '0');
 
-				if (i_buttons_debounced(2) = '0') then
+				if (i_buttons_debounced = "0000") then
 					s_tester_nx_state <= ST_SET_PATTERN_C;
 				else
 					s_tester_nx_state <= ST_WAIT_BUTTON2_REL;
 				end if;
 
 			when ST_WAIT_BUTTON3_REL =>
+				-- Button 3 or Switch 3 was selected.
+				-- Choose the pattern as D and transition when no buttons are
+				-- depressed.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
 				o_sf3_cmd_erase_subsector <= '0';
 				o_sf3_address_of_cmd      <= (others => '0');
 
-				if (i_buttons_debounced(0) = '0') then
+				if (i_buttons_debounced = "0000") then
 					s_tester_nx_state <= ST_SET_PATTERN_D;
 				else
 					s_tester_nx_state <= ST_WAIT_BUTTON3_REL;
 				end if;
 
 			when ST_SET_PATTERN_A =>
+				-- Set the Pattern as A and transition when the SF3 driver is
+				-- ready for a command.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -373,6 +407,8 @@ begin
 				end if;
 
 			when ST_SET_PATTERN_B =>
+				-- Set the Pattern as B and transition when the SF3 driver is
+				-- ready for a command.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -390,6 +426,8 @@ begin
 
 
 			when ST_SET_PATTERN_C =>
+				-- Set the Pattern as C and transition when the SF3 driver is
+				-- ready for a command.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -406,6 +444,8 @@ begin
 				end if;
 
 			when ST_SET_PATTERN_D =>
+				-- Set the Pattern as D and transition when the SF3 driver is
+				-- ready for a command.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -422,6 +462,9 @@ begin
 				end if;
 
 			when ST_SET_START_ADDR_A =>
+				-- If not first iteration of erase/program/test-read cycle,
+				-- increment the starting address and then transition to a
+				-- wait state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -446,6 +489,9 @@ begin
 				end if;
 
 			when ST_SET_START_ADDR_B =>
+				-- If not first iteration of erase/program/test-read cycle,
+				-- increment the starting address and then transition to a
+				-- wait state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -470,6 +516,9 @@ begin
 				end if;
 
 			when ST_SET_START_ADDR_C =>
+				-- If not first iteration of erase/program/test-read cycle,
+				-- increment the starting address and then transition to a
+				-- wait state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -494,6 +543,9 @@ begin
 				end if;
 
 			when ST_SET_START_ADDR_D =>
+				-- If not first iteration of erase/program/test-read cycle,
+				-- increment the starting address and then transition to a
+				-- wait state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -518,6 +570,9 @@ begin
 				end if;
 
 			when ST_SET_START_WAIT_A =>
+				-- Wait for half of the 3 second timer and transition to the
+				-- Erase command. Pause in this state for purpose of lighting
+				-- LED to indicate pattern A is starting.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -531,6 +586,9 @@ begin
 				end if;
 
 			when ST_SET_START_WAIT_B =>
+				-- Wait for half of the 3 second timer and transition to the
+				-- Erase command. Pause in this state for purpose of lighting
+				-- LED to indicate pattern B is starting.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -544,6 +602,9 @@ begin
 				end if;
 
 			when ST_SET_START_WAIT_C =>
+				-- Wait for half of the 3 second timer and transition to the
+				-- Erase command. Pause in this state for purpose of lighting
+				-- LED to indicate pattern C is starting.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -557,6 +618,9 @@ begin
 				end if;
 
 			when ST_SET_START_WAIT_D =>
+				-- Wait for half of the 3 second timer and transition to the
+				-- Erase command. Pause in this state for purpose of lighting
+				-- LED to indicate pattern D is starting.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -570,6 +634,9 @@ begin
 				end if;
 
 			when ST_CMD_ERASE_START =>
+				-- Issue an Erase Subsector Command at the starting address
+				-- of this iteration. Wait to transition when the SF3 driver
+				-- indicates command not ready.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -585,6 +652,9 @@ begin
 				end if;
 
 			when ST_CMD_ERASE_WAIT =>
+				-- Wait for the Erase Command to end and the SF3 driver to
+				-- indicate command ready again. Then transition to incrementing
+				-- the next Subsector Address to erase.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -600,6 +670,10 @@ begin
 				end if;
 
 			when ST_CMD_ERASE_NEXT =>
+				-- If auxiliary register I has counted to the number of
+				-- Subsectors after the starting address, transition to the
+				-- Erase Done state, otherwise increment I and transition again
+				-- to the Erase Start state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -614,6 +688,9 @@ begin
 				end if;
 
 			when ST_CMD_ERASE_DONE =>
+				-- Erase iterations have completed. Reset the starting value
+				-- of the pattern in preparation of programming the pages of
+				-- all Subsectors erased.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -625,6 +702,9 @@ begin
 				s_tester_nx_state <= ST_CMD_PAGE_START;
 
 			when ST_CMD_PAGE_START =>
+				-- Issue an Program Page Command at the starting address
+				-- of this iteration. Wait to transition when the SF3 driver
+				-- indicates command not ready.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '1';
@@ -641,6 +721,9 @@ begin
 				end if;
 
 			when ST_CMD_PAGE_BYTE =>
+				-- Increment according to the selected pattern and stream a
+				-- total of Page size bytes (256) unique values to the FIFO of
+				-- the SF3 driver for writing to the currently addressed page.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -679,6 +762,9 @@ begin
 				end if;
 
 			when ST_CMD_PAGE_WAIT =>
+				-- Wait for the Page Program Command to end and the SF3 driver to
+				-- indicate command ready again. Then transition to incrementing
+				-- the next Page Address to program.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -694,6 +780,10 @@ begin
 				end if;
 
 			when ST_CMD_PAGE_NEXT =>
+				-- If auxiliary register I has counted to the number of
+				-- Pages after the starting address, transition to the
+				-- Page Done state, otherwise increment I and transition again
+				-- to the Page Start state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -708,6 +798,9 @@ begin
 				end if;
 
 			when ST_CMD_PAGE_DONE =>
+				-- Page Program iterations have completed. Reset the starting value
+				-- of the pattern in preparation of reading the pages of
+				-- all Subsectors erased and programmed.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -719,6 +812,9 @@ begin
 				s_tester_nx_state <= ST_CMD_READ_START;
 
 			when ST_CMD_READ_START =>
+				-- Issue an Random Read Command at the starting address
+				-- of this iteration. Wait to transition when the SF3 driver
+				-- indicates command not ready.
 				o_sf3_len_random_read <= std_logic_vector(
 						to_unsigned(c_sf3_page_addr_incr, o_sf3_len_random_read'length));
 				o_sf3_cmd_random_read     <= '1';
@@ -736,6 +832,12 @@ begin
 				end if;
 
 			when ST_CMD_READ_BYTE =>
+				-- Increment according to the selected pattern and stream a
+				-- total of Page size bytes (256) unique values from the FIFO of
+				-- the SF3 driver for checking of the currently addressed page
+				-- byte read. Compare the value of the incrementing pattern with
+				-- the value of the byte read. If they do not match, increment
+				-- the error count auxiliary register.
 				o_sf3_len_random_read <= std_logic_vector(
 						to_unsigned(c_sf3_page_addr_incr, o_sf3_len_random_read'length));
 				o_sf3_cmd_random_read     <= '0';
@@ -777,6 +879,10 @@ begin
 				end if;
 
 			when ST_CMD_READ_WAIT =>
+				-- Wait for the Random Read Command to end and the SF3 driver to
+				-- indicate command ready again. Then transition to incrementing
+				-- the next Page Address to random read and test with pattern
+				-- comparison.
 				o_sf3_len_random_read <= std_logic_vector(
 						to_unsigned(c_sf3_page_addr_incr, o_sf3_len_random_read'length));
 				o_sf3_cmd_random_read     <= '0';
@@ -793,6 +899,10 @@ begin
 				end if;
 
 			when ST_CMD_READ_NEXT =>
+				-- If auxiliary register I has counted to the number of
+				-- pages after the starting address, transition to the
+				-- Read Done state, otherwise increment I and transition again
+				-- to the Read Start state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -807,6 +917,8 @@ begin
 				end if;
 
 			when ST_CMD_READ_DONE =>
+				-- Random Read iterations have completed. Reset the starting value
+				-- of the pattern. Transition to the Display Final state.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
@@ -818,6 +930,10 @@ begin
 				s_tester_nx_state <= ST_DISPLAY_FINAL;
 
 			when others => -- ST_DISPLAY_FINAL =>
+				-- Compare the auxiliary register error count to zero and set
+				-- the auxiliary register test done to either true or false.
+				-- Wait for the timer to reach its maximum (3 seconds) and then
+				-- transition to the Wait for Button or Switch.
 				o_sf3_len_random_read     <= (others => '0');
 				o_sf3_cmd_random_read     <= '0';
 				o_sf3_cmd_page_program    <= '0';
