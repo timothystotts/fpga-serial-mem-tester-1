@@ -33,6 +33,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library UNISIM;
+use UNISIM.vcomponents.all;
+
+library UNIMACRO;
+use UNIMACRO.vcomponents.all;
+
 library work;
 --------------------------------------------------------------------------------
 entity pmod_generic_qspi_solo is
@@ -71,14 +77,14 @@ entity pmod_generic_qspi_solo is
 		-- SPI machine external interface to top-level
 		eio_sck_o      : out std_logic;
 		eio_sck_t      : out std_logic;
-		eio_ssn_o      : out std_logic;
-		eio_ssn_t      : out std_logic;
-		eio_mosi_dq0_o : out std_logic;
-		eio_mosi_dq0_i : in  std_logic;
-		eio_mosi_dq0_t : out std_logic;
-		eio_miso_dq1_o : out std_logic;
-		eio_miso_dq1_i : in  std_logic;
-		eio_miso_dq1_t : out std_logic;
+		eio_csn_o      : out std_logic;
+		eio_csn_t      : out std_logic;
+		eio_copi_dq0_o : out std_logic;
+		eio_copi_dq0_i : in  std_logic;
+		eio_copi_dq0_t : out std_logic;
+		eio_cipo_dq1_o : out std_logic;
+		eio_cipo_dq1_i : in  std_logic;
+		eio_cipo_dq1_t : out std_logic;
 		eio_wrpn_dq2_o : out std_logic;
 		eio_wrpn_dq2_i : in  std_logic;
 		eio_wrpn_dq2_t : out std_logic;
@@ -89,36 +95,6 @@ entity pmod_generic_qspi_solo is
 end entity pmod_generic_qspi_solo;
 --------------------------------------------------------------------------------
 architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
-	COMPONENT fifo_generator_3
-		PORT (
-			clk        : IN  STD_LOGIC;
-			srst       : IN  STD_LOGIC;
-			din        : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_en      : IN  STD_LOGIC;
-			rd_en      : IN  STD_LOGIC;
-			dout       : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			full       : OUT STD_LOGIC;
-			empty      : OUT STD_LOGIC;
-			valid      : OUT STD_LOGIC;
-			data_count : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
-		);
-	END COMPONENT;
-
-	COMPONENT fifo_generator_4
-		PORT (
-			clk        : IN  STD_LOGIC;
-			srst       : IN  STD_LOGIC;
-			din        : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
-			wr_en      : IN  STD_LOGIC;
-			rd_en      : IN  STD_LOGIC;
-			dout       : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-			full       : OUT STD_LOGIC;
-			empty      : OUT STD_LOGIC;
-			valid      : OUT STD_LOGIC;
-			data_count : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
-		);
-	END COMPONENT;
-
 	-- SPI FSM state declarations
 	type t_spi_state is (
 			-- Enhanced SPI with single MOSI, MISO states
@@ -205,17 +181,27 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	signal s_data_fifo_rx_empty         : std_logic;
 	signal s_data_fifo_rx_valid         : std_logic;
 	signal s_data_fifo_rx_valid_stretch : std_logic;
-	signal s_data_fifo_rx_count         : std_logic_vector((parm_rx_len_bits - 1) downto 0);
+	signal s_data_fifo_rx_rdcount       : std_logic_vector(10 downto 0);
+	signal s_data_fifo_rx_wrcount       : std_logic_vector(10 downto 0);
+	signal s_data_fifo_rx_almostfull    : std_logic;
+	signal s_data_fifo_rx_almostempty   : std_logic;
+	signal s_data_fifo_rx_wrerr         : std_logic;
+	signal s_data_fifo_rx_rderr         : std_logic;
 
 	-- Mapping for FIFO TX
-	signal s_data_fifo_tx_in    : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_out   : std_logic_vector(7 downto 0);
-	signal s_data_fifo_tx_re    : std_logic;
-	signal s_data_fifo_tx_we    : std_logic;
-	signal s_data_fifo_tx_full  : std_logic;
-	signal s_data_fifo_tx_empty : std_logic;
-	signal s_data_fifo_tx_valid : std_logic;
-	signal s_data_fifo_tx_count : std_logic_vector((parm_tx_len_bits - 1) downto 0);
+	signal s_data_fifo_tx_in          : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_out         : std_logic_vector(7 downto 0);
+	signal s_data_fifo_tx_re          : std_logic;
+	signal s_data_fifo_tx_we          : std_logic;
+	signal s_data_fifo_tx_full        : std_logic;
+	signal s_data_fifo_tx_empty       : std_logic;
+	signal s_data_fifo_tx_valid       : std_logic;
+	signal s_data_fifo_tx_rdcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_wrcount     : std_logic_vector(10 downto 0);
+	signal s_data_fifo_tx_almostfull  : std_logic;
+	signal s_data_fifo_tx_almostempty : std_logic;
+	signal s_data_fifo_tx_wrerr       : std_logic;
+	signal s_data_fifo_tx_rderr       : std_logic;
 
 	signal v_phase_counter : natural range 0 to (parm_ext_spi_clk_ratio - 1);
 
@@ -244,19 +230,58 @@ begin
 			i_x   => s_data_fifo_rx_valid
 		);
 
-	u_fifo_rx_0 : fifo_generator_3
-		PORT MAP (
-			clk        => i_ext_spi_clk_x,
-			srst       => i_srst,
-			din        => s_data_fifo_rx_in,
-			wr_en      => s_data_fifo_rx_we,
-			rd_en      => s_data_fifo_rx_re,
-			dout       => s_data_fifo_rx_out,
-			full       => s_data_fifo_rx_full,
-			empty      => s_data_fifo_rx_empty,
-			valid      => s_data_fifo_rx_valid,
-			data_count => s_data_fifo_rx_count
+	p_gen_fifo_rx_valid : process(i_ext_spi_clk_x)
+	begin
+		if rising_edge(i_ext_spi_clk_x) then
+			s_data_fifo_rx_valid <= s_data_fifo_rx_re;
+		end if;
+	end process p_gen_fifo_rx_valid;
+
+	-- FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
+	--                  Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	-- Note -  This Unimacro model assumes the port directions to be "downto". 
+	--         Simulation of this model with "to" in the port directions could lead to erroneous results.
+
+	-----------------------------------------------------------------
+	-- DATA_WIDTH | FIFO_SIZE | FIFO Depth | RDCOUNT/WRCOUNT Width --
+	-- ===========|===========|============|=======================--
+	--   37-72    |  "36Kb"   |     512    |         9-bit         --
+	--   19-36    |  "36Kb"   |    1024    |        10-bit         --
+	--   19-36    |  "18Kb"   |     512    |         9-bit         --
+	--   10-18    |  "36Kb"   |    2048    |        11-bit         --
+	--   10-18    |  "18Kb"   |    1024    |        10-bit         --
+	--    5-9     |  "36Kb"   |    4096    |        12-bit         --
+	--    5-9     |  "18Kb"   |    2048    |        11-bit         --
+	--    1-4     |  "36Kb"   |    8192    |        13-bit         --
+	--    1-4     |  "18Kb"   |    4096    |        12-bit         --
+	-----------------------------------------------------------------
+
+	u_fifo_rx_0 : FIFO_SYNC_MACRO
+		generic map (
+			DEVICE              => "7SERIES",      -- Target Device: "VIRTEX5, "VIRTEX6", "7SERIES" 
+			ALMOST_FULL_OFFSET  => "0000" & x"80", -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET => "0000" & x"80", -- Sets the almost empty threshold
+			DATA_WIDTH          => 8,              -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
+			FIFO_SIZE           => "18Kb")         -- Target BRAM, "18Kb" or "36Kb" 
+		port map (
+			ALMOSTEMPTY => s_data_fifo_rx_almostempty, -- 1-bit output almost empty
+			ALMOSTFULL  => s_data_fifo_rx_almostfull,  -- 1-bit output almost full
+			DO          => s_data_fifo_rx_out,         -- Output data, width defined by DATA_WIDTH parameter
+			EMPTY       => s_data_fifo_rx_empty,       -- 1-bit output empty
+			FULL        => s_data_fifo_rx_full,        -- 1-bit output full
+			RDCOUNT     => s_data_fifo_rx_rdcount,     -- Output read count, width determined by FIFO depth
+			RDERR       => s_data_fifo_rx_rderr,       -- 1-bit output read error
+			WRCOUNT     => s_data_fifo_rx_wrcount,     -- Output write count, width determined by FIFO depth
+			WRERR       => s_data_fifo_rx_wrerr,       -- 1-bit output write error
+			CLK         => i_ext_spi_clk_x,            -- 1-bit input clock
+			DI          => s_data_fifo_rx_in,          -- Input data, width defined by DATA_WIDTH parameter
+			RDEN        => s_data_fifo_rx_re,          -- 1-bit input read enable
+			RST         => i_srst,                     -- 1-bit input reset
+			WREN        => s_data_fifo_rx_we           -- 1-bit input write enable
 		);
+	-- End of u_fifo_rx_0 instantiation
 
 	-- Mapping of the TX FIFO to external control and transmission of data for
 	-- PAGE PROGRAM operations
@@ -264,19 +289,58 @@ begin
 	s_data_fifo_tx_we <= i_tx_enqueue and s_spi_ce_4x;
 	o_tx_ready        <= (not s_data_fifo_tx_full) and s_spi_ce_4x;
 
-	u_fifo_tx_0 : fifo_generator_4
-		PORT MAP (
-			clk        => i_ext_spi_clk_x,
-			srst       => i_srst,
-			din        => s_data_fifo_tx_in,
-			wr_en      => s_data_fifo_tx_we,
-			rd_en      => s_data_fifo_tx_re,
-			dout       => s_data_fifo_tx_out,
-			full       => s_data_fifo_tx_full,
-			empty      => s_data_fifo_tx_empty,
-			valid      => s_data_fifo_tx_valid,
-			data_count => s_data_fifo_tx_count
+	--p_gen_fifo_tx_valid : process(i_ext_spi_clk_x)
+	--begin
+	--	if rising_edge(i_ext_spi_clk_x) then
+	--		s_data_fifo_tx_valid <= s_data_fifo_tx_re;
+	--	end if;
+	--end process p_gen_fifo_tx_valid;
+
+	-- FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
+	--                  Artix-7
+	-- Xilinx HDL Language Template, version 2019.1
+
+	-- Note -  This Unimacro model assumes the port directions to be "downto". 
+	--         Simulation of this model with "to" in the port directions could lead to erroneous results.
+
+	-----------------------------------------------------------------
+	-- DATA_WIDTH | FIFO_SIZE | FIFO Depth | RDCOUNT/WRCOUNT Width --
+	-- ===========|===========|============|=======================--
+	--   37-72    |  "36Kb"   |     512    |         9-bit         --
+	--   19-36    |  "36Kb"   |    1024    |        10-bit         --
+	--   19-36    |  "18Kb"   |     512    |         9-bit         --
+	--   10-18    |  "36Kb"   |    2048    |        11-bit         --
+	--   10-18    |  "18Kb"   |    1024    |        10-bit         --
+	--    5-9     |  "36Kb"   |    4096    |        12-bit         --
+	--    5-9     |  "18Kb"   |    2048    |        11-bit         --
+	--    1-4     |  "36Kb"   |    8192    |        13-bit         --
+	--    1-4     |  "18Kb"   |    4096    |        12-bit         --
+	-----------------------------------------------------------------
+
+	u_fifo_tx_0 : FIFO_SYNC_MACRO
+		generic map (
+			DEVICE              => "7SERIES",     -- Target Device: "VIRTEX5, "VIRTEX6", "7SERIES" 
+			ALMOST_FULL_OFFSET  => "000" & x"80", -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET => "000" & x"80", -- Sets the almost empty threshold
+			DATA_WIDTH          => 8,             -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
+			FIFO_SIZE           => "18Kb")        -- Target BRAM, "18Kb" or "36Kb" 
+		port map (
+			ALMOSTEMPTY => s_data_fifo_tx_almostempty, -- 1-bit output almost empty
+			ALMOSTFULL  => s_data_fifo_tx_almostfull,  -- 1-bit output almost full
+			DO          => s_data_fifo_tx_out,         -- Output data, width defined by DATA_WIDTH parameter
+			EMPTY       => s_data_fifo_tx_empty,       -- 1-bit output empty
+			FULL        => s_data_fifo_tx_full,        -- 1-bit output full
+			RDCOUNT     => s_data_fifo_tx_rdcount,     -- Output read count, width determined by FIFO depth
+			RDERR       => s_data_fifo_tx_rderr,       -- 1-bit output read error
+			WRCOUNT     => s_data_fifo_tx_wrcount,     -- Output write count, width determined by FIFO depth
+			WRERR       => s_data_fifo_tx_wrerr,       -- 1-bit output write error
+			CLK         => i_ext_spi_clk_x,            -- 1-bit input clock
+			DI          => s_data_fifo_tx_in,          -- Input data, width defined by DATA_WIDTH parameter
+			RDEN        => s_data_fifo_tx_re,          -- 1-bit input read enable
+			RST         => i_srst,                     -- 1-bit input reset
+			WREN        => s_data_fifo_tx_we           -- 1-bit input write enable
 		);
+	-- End of FIFO_SYNC_MACRO_inst instantiation
 
 	-- spi clock for SCK output, generated clock
 	-- requires create_generated_clock constraint in XDC
@@ -472,7 +536,7 @@ begin
 			s_data_fifo_tx_empty, s_spi_clk_ce2, s_spi_clk_ce3,
 			s_data_fifo_rx_full,
 			s_data_fifo_tx_out,
-			eio_mosi_dq0_i, eio_miso_dq1_i, eio_wrpn_dq2_i, eio_hldn_dq3_i,
+			eio_copi_dq0_i, eio_cipo_dq1_i, eio_wrpn_dq2_i, eio_hldn_dq3_i,
 			i_tx_len, i_rx_len, i_wait_cyc)
 	begin
 		-- default to not idle indication
@@ -490,14 +554,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- no chip select
-				eio_ssn_o <= '1';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '1';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -517,14 +581,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -547,20 +611,20 @@ begin
 			when ST_TX_STAND =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 
 				-- output currently dequeued byte
 				if (s_t < 8 * unsigned(s_tx_len_aux)) then
 					-- output current byte from fifo MSbit first
-					eio_mosi_dq0_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
+					eio_copi_dq0_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
 				else
-					eio_mosi_dq0_o <= '0';
+					eio_copi_dq0_o <= '0';
 				end if;
 
-				eio_mosi_dq0_t <= '0';
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_copi_dq0_t <= '0';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
 				eio_hldn_dq3_o <= '1';
@@ -596,14 +660,14 @@ begin
 			when ST_WAIT_STAND =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -620,14 +684,14 @@ begin
 			when ST_RX_STAND =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -648,14 +712,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -675,14 +739,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- assert chip select
-				eio_ssn_o <= '1';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '1';
+				eio_csn_t <= '0';
 				-- zero MOSI
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
 				-- High-Z MISO
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
@@ -702,14 +766,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- no chip select
-				eio_ssn_o <= '1';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '1';
+				eio_csn_t <= '0';
 				-- High-Z DQ0
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -729,14 +793,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- High-Z DQ0
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -759,26 +823,26 @@ begin
 			when ST_TX_QUADIO =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 
 				-- output currently dequeued byte
 				if (s_t < 8 * unsigned(s_tx_len_aux)) then
 					-- output current byte nibble from fifo MSbit first
 					eio_hldn_dq3_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
 					eio_wrpn_dq2_o <= s_data_fifo_tx_out(6 - (s_t mod 8));
-					eio_miso_dq1_o <= s_data_fifo_tx_out(5 - (s_t mod 8));
-					eio_mosi_dq0_o <= s_data_fifo_tx_out(4 - (s_t mod 8));
+					eio_cipo_dq1_o <= s_data_fifo_tx_out(5 - (s_t mod 8));
+					eio_copi_dq0_o <= s_data_fifo_tx_out(4 - (s_t mod 8));
 				else
 					eio_hldn_dq3_o <= '0';
 					eio_wrpn_dq2_o <= '0';
-					eio_miso_dq1_o <= '0';
-					eio_mosi_dq0_o <= '0';
+					eio_cipo_dq1_o <= '0';
+					eio_copi_dq0_o <= '0';
 				end if;
 
 				-- Keep DQ3:DQ0 as not High-Z, but direct output instead
-				eio_mosi_dq0_t <= '0';
-				eio_miso_dq1_t <= '0';
+				eio_copi_dq0_t <= '0';
+				eio_cipo_dq1_t <= '0';
 				eio_wrpn_dq2_t <= '0';
 				eio_hldn_dq3_t <= '0';
 
@@ -812,14 +876,14 @@ begin
 			when ST_WAIT_QUADIO =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- High-Z DQ0
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -837,14 +901,14 @@ begin
 			when ST_RX_QUADIO =>
 				-- run clock
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- High-Z DQ0 to input from the peripheral chip
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -865,14 +929,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- assert chip select
-				eio_ssn_o <= '0';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '0';
+				eio_csn_t <= '0';
 				-- High-Z DQ0
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -892,14 +956,14 @@ begin
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
 				-- deassert chip select
-				eio_ssn_o <= '1';
-				eio_ssn_t <= '0';
+				eio_csn_o <= '1';
+				eio_csn_t <= '0';
 				-- High-Z DQ0
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
 				-- High-Z DQ1
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				-- High-Z DQ2
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
@@ -918,12 +982,12 @@ begin
 				s_spi_idle     <= '1';
 				eio_sck_o      <= '0';
 				eio_sck_t      <= '0';
-				eio_ssn_o      <= '1';
-				eio_ssn_t      <= '0';
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '1';
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_csn_o      <= '1';
+				eio_csn_t      <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '1';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '1';
 				eio_hldn_dq3_o <= '1';
@@ -943,12 +1007,12 @@ begin
 				s_spi_idle     <= '1';
 				eio_sck_o      <= '0';
 				eio_sck_t      <= '0';
-				eio_ssn_o      <= '1';
-				eio_ssn_t      <= '0';
-				eio_mosi_dq0_o <= '0';
-				eio_mosi_dq0_t <= '0';
-				eio_miso_dq1_o <= '0';
-				eio_miso_dq1_t <= '1';
+				eio_csn_o      <= '1';
+				eio_csn_t      <= '0';
+				eio_copi_dq0_o <= '0';
+				eio_copi_dq0_t <= '0';
+				eio_cipo_dq1_o <= '0';
+				eio_cipo_dq1_t <= '1';
 				eio_wrpn_dq2_o <= '1';
 				eio_wrpn_dq2_t <= '0';
 				eio_hldn_dq3_o <= '1';
@@ -992,7 +1056,7 @@ begin
 							-- input current byte to RX fifo MSbit first
 							-- FIXME: change this to a shift register instead of
 							-- multiplexer for a more efficient implementation.
-							s_data_fifo_rx_in(7 - (s_t_delayed3 mod 8)) <= eio_miso_dq1_i;
+							s_data_fifo_rx_in(7 - (s_t_delayed3 mod 8)) <= eio_cipo_dq1_i;
 						else
 							s_data_fifo_rx_in(7 downto 0) <= x"00";
 						end if;
@@ -1017,8 +1081,8 @@ begin
 							-- multiplexer for a more efficient implementation.
 							s_data_fifo_rx_in(7 - (s_t_delayed3 mod 8)) <= eio_hldn_dq3_i;
 							s_data_fifo_rx_in(6 - (s_t_delayed3 mod 8)) <= eio_wrpn_dq2_i;
-							s_data_fifo_rx_in(5 - (s_t_delayed3 mod 8)) <= eio_miso_dq1_i;
-							s_data_fifo_rx_in(4 - (s_t_delayed3 mod 8)) <= eio_mosi_dq0_i;
+							s_data_fifo_rx_in(5 - (s_t_delayed3 mod 8)) <= eio_cipo_dq1_i;
+							s_data_fifo_rx_in(4 - (s_t_delayed3 mod 8)) <= eio_copi_dq0_i;
 						else
 							s_data_fifo_rx_in(7 downto 0) <= x"00";
 						end if;

@@ -49,7 +49,7 @@ set_property -dict {PACKAGE_PIN B8 IOSTANDARD LVCMOS33} [get_ports ei_bt3]
 #set_property -dict { PACKAGE_PIN K16   IOSTANDARD LVCMOS33 } [get_ports { ja[7] }]; #IO_25_15 Sch=ja[10]
 
 ## Pmod Header JB
-set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports eo_pmod_cls_ssn]
+set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports eo_pmod_cls_csn]
 set_property -dict {PACKAGE_PIN E16 IOSTANDARD LVCMOS33} [get_ports eo_pmod_cls_dq0]
 set_property -dict {PACKAGE_PIN D15 IOSTANDARD LVCMOS33} [get_ports ei_pmod_cls_dq1]
 set_property -dict {PACKAGE_PIN C15 IOSTANDARD LVCMOS33} [get_ports eo_pmod_cls_sck]
@@ -59,9 +59,9 @@ set_property -dict {PACKAGE_PIN C15 IOSTANDARD LVCMOS33} [get_ports eo_pmod_cls_
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { jb[7] }]; #IO_L24N_T3_RS0_15 Sch=jb_n[4]
 
 ## Pmod Header JC
-set_property -dict {PACKAGE_PIN U12 IOSTANDARD LVCMOS33} [get_ports eo_pmod_sf3_ssn]
-set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports eio_pmod_sf3_mosi_dq0]
-set_property -dict {PACKAGE_PIN V10 IOSTANDARD LVCMOS33} [get_ports eio_pmod_sf3_miso_dq1]
+set_property -dict {PACKAGE_PIN U12 IOSTANDARD LVCMOS33} [get_ports eo_pmod_sf3_csn]
+set_property -dict {PACKAGE_PIN V12 IOSTANDARD LVCMOS33} [get_ports eio_pmod_sf3_copi_dq0]
+set_property -dict {PACKAGE_PIN V10 IOSTANDARD LVCMOS33} [get_ports eio_pmod_sf3_cipo_dq1]
 set_property -dict {PACKAGE_PIN V11 IOSTANDARD LVCMOS33} [get_ports eo_pmod_sf3_sck]
 #set_property -dict { PACKAGE_PIN U14   IOSTANDARD LVCMOS33 } [get_ports { jc[4] }]; #IO_L22P_T3_A05_D21_14 Sch=jc_p[3]
 #set_property -dict { PACKAGE_PIN V14   IOSTANDARD LVCMOS33 } [get_ports { jc[5] }]; #IO_L22N_T3_A04_D20_14 Sch=jc_n[3]

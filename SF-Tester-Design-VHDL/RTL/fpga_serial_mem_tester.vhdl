@@ -53,9 +53,9 @@ entity fpga_serial_mem_tester is
 		i_resetn  : in std_logic;
 		-- PMOD SF3 Quad SPI
 		eo_pmod_sf3_sck       : out   std_logic;
-		eo_pmod_sf3_ssn       : out   std_logic;
-		eio_pmod_sf3_mosi_dq0 : inout std_logic;
-		eio_pmod_sf3_miso_dq1 : inout std_logic;
+		eo_pmod_sf3_csn       : out   std_logic;
+		eio_pmod_sf3_copi_dq0 : inout std_logic;
+		eio_pmod_sf3_cipo_dq1 : inout std_logic;
 		eio_pmod_sf3_wrpn_dq2 : inout std_logic;
 		eio_pmod_sf3_hldn_dq3 : inout std_logic;
 		-- blue LEDs of the multicolor
@@ -89,7 +89,7 @@ entity fpga_serial_mem_tester is
 		ei_bt2 : in std_logic;
 		ei_bt3 : in std_logic;
 		-- PMOD CLS SPI bus 4-wire
-		eo_pmod_cls_ssn : out std_logic;
+		eo_pmod_cls_csn : out std_logic;
 		eo_pmod_cls_sck : out std_logic;
 		eo_pmod_cls_dq0 : out std_logic;
 		ei_pmod_cls_dq1 : in  std_logic;
@@ -144,14 +144,14 @@ architecture rtl of fpga_serial_mem_tester is
 	-- SPI signals to external tri-state
 	signal sio_sf3_sck_o      : std_logic;
 	signal sio_sf3_sck_t      : std_logic;
-	signal sio_sf3_ssn_o      : std_logic;
-	signal sio_sf3_ssn_t      : std_logic;
-	signal sio_sf3_mosi_dq0_o : std_logic;
-	signal sio_sf3_mosi_dq0_i : std_logic;
-	signal sio_sf3_mosi_dq0_t : std_logic;
-	signal sio_sf3_miso_dq1_o : std_logic;
-	signal sio_sf3_miso_dq1_i : std_logic;
-	signal sio_sf3_miso_dq1_t : std_logic;
+	signal sio_sf3_csn_o      : std_logic;
+	signal sio_sf3_csn_t      : std_logic;
+	signal sio_sf3_copi_dq0_o : std_logic;
+	signal sio_sf3_copi_dq0_i : std_logic;
+	signal sio_sf3_copi_dq0_t : std_logic;
+	signal sio_sf3_cipo_dq1_o : std_logic;
+	signal sio_sf3_cipo_dq1_i : std_logic;
+	signal sio_sf3_cipo_dq1_t : std_logic;
 	signal sio_sf3_wrpn_dq2_o : std_logic;
 	signal sio_sf3_wrpn_dq2_i : std_logic;
 	signal sio_sf3_wrpn_dq2_t : std_logic;
@@ -435,7 +435,7 @@ begin
 
 	-- Tri-state outputs of PMOD CLS custom driver.
 	eo_pmod_cls_sck <= so_pmod_cls_sck_o  when so_pmod_cls_sck_t = '0' else 'Z';
-	eo_pmod_cls_ssn <= so_pmod_cls_csn_o  when so_pmod_cls_csn_t = '0' else 'Z';
+	eo_pmod_cls_csn <= so_pmod_cls_csn_o  when so_pmod_cls_csn_t = '0' else 'Z';
 	eo_pmod_cls_dq0 <= so_pmod_cls_copi_o when so_pmod_cls_copi_t = '0' else 'Z';
 
 	-- Instance of the PMOD CLS driver for 16x2 character LCD display for purposes
@@ -487,14 +487,14 @@ begin
 			i_ce_mhz_div          => s_sf3_ce_div,
 			eio_sck_o             => sio_sf3_sck_o,
 			eio_sck_t             => sio_sf3_sck_t,
-			eio_ssn_o             => sio_sf3_ssn_o,
-			eio_ssn_t             => sio_sf3_ssn_t,
-			eio_mosi_dq0_o        => sio_sf3_mosi_dq0_o,
-			eio_mosi_dq0_i        => sio_sf3_mosi_dq0_i,
-			eio_mosi_dq0_t        => sio_sf3_mosi_dq0_t,
-			eio_miso_dq1_o        => sio_sf3_miso_dq1_o,
-			eio_miso_dq1_i        => sio_sf3_miso_dq1_i,
-			eio_miso_dq1_t        => sio_sf3_miso_dq1_t,
+			eio_csn_o             => sio_sf3_csn_o,
+			eio_csn_t             => sio_sf3_csn_t,
+			eio_copi_dq0_o        => sio_sf3_copi_dq0_o,
+			eio_copi_dq0_i        => sio_sf3_copi_dq0_i,
+			eio_copi_dq0_t        => sio_sf3_copi_dq0_t,
+			eio_cipo_dq1_o        => sio_sf3_cipo_dq1_o,
+			eio_cipo_dq1_i        => sio_sf3_cipo_dq1_i,
+			eio_cipo_dq1_t        => sio_sf3_cipo_dq1_t,
 			eio_wrpn_dq2_o        => sio_sf3_wrpn_dq2_o,
 			eio_wrpn_dq2_i        => sio_sf3_wrpn_dq2_i,
 			eio_wrpn_dq2_t        => sio_sf3_wrpn_dq2_t,
@@ -519,13 +519,13 @@ begin
 	-- PMOD SF3 Quad SPI tri-state inout connections for QSPI bus
 	eo_pmod_sf3_sck <= sio_sf3_sck_o when sio_sf3_sck_t = '0' else 'Z';
 
-	eo_pmod_sf3_ssn <= sio_sf3_ssn_o when sio_sf3_ssn_t = '0' else 'Z';
+	eo_pmod_sf3_csn <= sio_sf3_csn_o when sio_sf3_csn_t = '0' else 'Z';
 
-	eio_pmod_sf3_mosi_dq0 <= sio_sf3_mosi_dq0_o when sio_sf3_mosi_dq0_t = '0' else 'Z';
-	sio_sf3_mosi_dq0_i    <= eio_pmod_sf3_mosi_dq0;
+	eio_pmod_sf3_copi_dq0 <= sio_sf3_copi_dq0_o when sio_sf3_copi_dq0_t = '0' else 'Z';
+	sio_sf3_copi_dq0_i    <= eio_pmod_sf3_copi_dq0;
 
-	eio_pmod_sf3_miso_dq1 <= sio_sf3_miso_dq1_o when sio_sf3_miso_dq1_t = '0' else 'Z';
-	sio_sf3_miso_dq1_i    <= eio_pmod_sf3_miso_dq1;
+	eio_pmod_sf3_cipo_dq1 <= sio_sf3_cipo_dq1_o when sio_sf3_cipo_dq1_t = '0' else 'Z';
+	sio_sf3_cipo_dq1_i    <= eio_pmod_sf3_cipo_dq1;
 
 	eio_pmod_sf3_wrpn_dq2 <= sio_sf3_wrpn_dq2_o when sio_sf3_wrpn_dq2_t = '0' else 'Z';
 	sio_sf3_wrpn_dq2_i    <= eio_pmod_sf3_wrpn_dq2;

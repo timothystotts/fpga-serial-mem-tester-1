@@ -259,12 +259,12 @@ begin
 	s_data_fifo_tx_we <= i_tx_enqueue and s_spi_ce_4x;
 	o_tx_ready        <= not s_data_fifo_tx_full and s_spi_ce_4x;
 
-	p_gen_fifo_tx_valid : process(i_ext_spi_clk_x)
-	begin
-		if rising_edge(i_ext_spi_clk_x) then
-			s_data_fifo_tx_valid <= s_data_fifo_tx_re;
-		end if;
-	end process p_gen_fifo_tx_valid;
+	--p_gen_fifo_tx_valid : process(i_ext_spi_clk_x)
+	--begin
+	--	if rising_edge(i_ext_spi_clk_x) then
+	--		s_data_fifo_tx_valid <= s_data_fifo_tx_re;
+	--	end if;
+	--end process p_gen_fifo_tx_valid;
 
 	-- FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer
 	--                  Artix-7

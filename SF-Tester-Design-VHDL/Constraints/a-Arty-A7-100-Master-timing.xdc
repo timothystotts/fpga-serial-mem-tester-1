@@ -117,18 +117,18 @@ set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [g
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_cls_dq0]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_cls_sck]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_cls_sck]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_cls_ssn]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_cls_ssn]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_cls_csn]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_cls_csn]
 
 ## Pmod Header JC
 ## The inputs of PMOD SF3 are all synchronized into the design at the MMCM 40 MHz clock.
 ## A virtual clock is used to allow the tool to automatically compute jitter and other metrics.
 set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_hldn_dq3]
 set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_hldn_dq3]
-set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_miso_dq1]
-set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_miso_dq1]
-set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_mosi_dq0]
-set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_mosi_dq0]
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_cipo_dq1]
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_cipo_dq1]
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_copi_dq0]
+set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_copi_dq0]
 set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay 10.000 [get_ports eio_pmod_sf3_wrpn_dq2]
 set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [get_ports eio_pmod_sf3_wrpn_dq2]
 
@@ -136,16 +136,16 @@ set_input_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 15.000 [ge
 ## A virtual clock is used to allow the tool to automatically compute jitter and other metrics.
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_hldn_dq3]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_hldn_dq3]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_miso_dq1]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_miso_dq1]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_mosi_dq0]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_mosi_dq0]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_cipo_dq1]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_cipo_dq1]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_copi_dq0]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_copi_dq0]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eio_pmod_sf3_wrpn_dq2]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eio_pmod_sf3_wrpn_dq2]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_sf3_sck]
 set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_sf3_sck]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_sf3_ssn]
-set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_sf3_ssn]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -min -add_delay -0.200 [get_ports eo_pmod_sf3_csn]
+set_output_delay -clock [get_clocks wiz_40mhz_virt_in] -max -add_delay 3.500 [get_ports eo_pmod_sf3_csn]
 
 ## Pmod Header JD
 

@@ -57,14 +57,14 @@ entity pmod_sf3_custom_driver is
 		-- SPI machine external interface to top-level
 		eio_sck_o      : out std_logic;
 		eio_sck_t      : out std_logic;
-		eio_ssn_o      : out std_logic;
-		eio_ssn_t      : out std_logic;
-		eio_mosi_dq0_o : out std_logic;
-		eio_mosi_dq0_i : in  std_logic;
-		eio_mosi_dq0_t : out std_logic;
-		eio_miso_dq1_o : out std_logic;
-		eio_miso_dq1_i : in  std_logic;
-		eio_miso_dq1_t : out std_logic;
+		eio_csn_o      : out std_logic;
+		eio_csn_t      : out std_logic;
+		eio_copi_dq0_o : out std_logic;
+		eio_copi_dq0_i : in  std_logic;
+		eio_copi_dq0_t : out std_logic;
+		eio_cipo_dq1_o : out std_logic;
+		eio_cipo_dq1_i : in  std_logic;
+		eio_cipo_dq1_t : out std_logic;
 		eio_wrpn_dq2_o : out std_logic;
 		eio_wrpn_dq2_i : in  std_logic;
 		eio_wrpn_dq2_t : out std_logic;
@@ -98,10 +98,10 @@ architecture rtl of pmod_sf3_custom_driver is
 	signal sio_sck_out_o : std_logic;
 	signal sio_sck_out_t : std_logic;
 
-	signal sio_ssn_fsm_o : std_logic;
-	signal sio_ssn_fsm_t : std_logic;
-	signal sio_ssn_out_o : std_logic;
-	signal sio_ssn_out_t : std_logic;
+	signal sio_csn_fsm_o : std_logic;
+	signal sio_csn_fsm_t : std_logic;
+	signal sio_csn_out_o : std_logic;
+	signal sio_csn_out_t : std_logic;
 
 	signal sio_dq0_fsm_o : std_logic;
 	signal sio_dq0_fsm_t : std_logic;
@@ -164,14 +164,14 @@ begin
 				eio_sck_o <= sio_sck_fsm_o;
 				eio_sck_t <= sio_sck_fsm_t;
 
-				eio_ssn_o <= sio_ssn_fsm_o;
-				eio_ssn_t <= sio_ssn_fsm_t;
+				eio_csn_o <= sio_csn_fsm_o;
+				eio_csn_t <= sio_csn_fsm_t;
 
-				eio_mosi_dq0_o <= sio_dq0_fsm_o;
-				eio_mosi_dq0_t <= sio_dq0_fsm_t;
+				eio_copi_dq0_o <= sio_dq0_fsm_o;
+				eio_copi_dq0_t <= sio_dq0_fsm_t;
 
-				eio_miso_dq1_o <= sio_dq1_fsm_o;
-				eio_miso_dq1_t <= sio_dq1_fsm_t;
+				eio_cipo_dq1_o <= sio_dq1_fsm_o;
+				eio_cipo_dq1_t <= sio_dq1_fsm_t;
 
 				eio_wrpn_dq2_o <= sio_dq2_fsm_o;
 				eio_wrpn_dq2_t <= sio_dq2_fsm_t;
@@ -188,10 +188,10 @@ begin
 		if rising_edge(i_clk_mhz) then
 			if (i_ce_mhz_div = '1') then
 				sio_dq0_sync_i <= sio_dq0_meta_i;
-				sio_dq0_meta_i <= eio_mosi_dq0_i;
+				sio_dq0_meta_i <= eio_copi_dq0_i;
 
 				sio_dq1_sync_i <= sio_dq1_meta_i;
-				sio_dq1_meta_i <= eio_miso_dq1_i;
+				sio_dq1_meta_i <= eio_cipo_dq1_i;
 
 				sio_dq2_sync_i <= sio_dq2_meta_i;
 				sio_dq2_meta_i <= eio_wrpn_dq2_i;
@@ -270,14 +270,14 @@ begin
 			o_rx_avail      => s_rx_avail,
 			eio_sck_o       => sio_sck_fsm_o,
 			eio_sck_t       => sio_sck_fsm_t,
-			eio_ssn_o       => sio_ssn_fsm_o,
-			eio_ssn_t       => sio_ssn_fsm_t,
-			eio_mosi_dq0_o  => sio_dq0_fsm_o,
-			eio_mosi_dq0_i  => sio_dq0_sync_i,
-			eio_mosi_dq0_t  => sio_dq0_fsm_t,
-			eio_miso_dq1_o  => sio_dq1_fsm_o,
-			eio_miso_dq1_i  => sio_dq1_sync_i,
-			eio_miso_dq1_t  => sio_dq1_fsm_t,
+			eio_csn_o       => sio_csn_fsm_o,
+			eio_csn_t       => sio_csn_fsm_t,
+			eio_copi_dq0_o  => sio_dq0_fsm_o,
+			eio_copi_dq0_i  => sio_dq0_sync_i,
+			eio_copi_dq0_t  => sio_dq0_fsm_t,
+			eio_cipo_dq1_o  => sio_dq1_fsm_o,
+			eio_cipo_dq1_i  => sio_dq1_sync_i,
+			eio_cipo_dq1_t  => sio_dq1_fsm_t,
 			eio_wrpn_dq2_o  => sio_dq2_fsm_o,
 			eio_wrpn_dq2_i  => sio_dq2_sync_i,
 			eio_wrpn_dq2_t  => sio_dq2_fsm_t,
