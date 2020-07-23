@@ -81,7 +81,7 @@ standard terminology in engineering is a priority.
 ![SF3 Custom Driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-QSPI-FSM.svg)
 
 #### Generic QSPI Extended SPI Single Chip protocol bus driver, used by the SF3 driver
-![Generic Standard SPI Single Chip bus driver](https://github.com/timothystotts/fpga-serial-acl-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-QSPI-quad-FSM.svg)
+![Generic Standard SPI Single Chip bus driver](https://github.com/timothystotts/fpga-serial-acl-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SPI-quad-FSM.svg)
 
 #### CLS Custom Driver Ports diagram of the HDL designs:
 ![CLS Custom Driver Ports](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-ports.svg)
