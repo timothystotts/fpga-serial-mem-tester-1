@@ -50,6 +50,44 @@ standard terminology in engineering is a priority.
 ./SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf
 
 [Serial Flash Sector Tester Design Diagrams info](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf)
-
 #### Target device assembly: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/img_serial-flash-tester-assembled-20200722.jpg)
+
+#### Block diagram architecture of the HDL design:
+![SF3 Tester Architecture Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-Architecture%201.svg)
+
+#### Top Port diagram architecture of the HDL design:
+![SF3 Tester Top Ports Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-Top-Ports.svg)
+
+#### Tester FSM diagram of the HDL design:
+![SF3 Tester FSM Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-Tester-FSM.svg)
+
+#### LCD FSM diagram of the HDL design:
+![LCD FSM Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-LCD-FSM.svg)
+
+#### UART Feed FSM diagram of the HDL design:
+![UART Feed FSM Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-UARTfeed.svg)
+
+#### UART TX ONLY FSM diagram of the HDL design:
+![UART Feed FSM Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-UART-Tx-FSM.svg)
+
+#### 4-input Multi-Debouncer for 4 exclusve inputs, such as switches or buttons, of the HDL design:
+![4-bit Multi-Debouncer](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-multi-debounce.svg)
+
+#### SF3 Custom Driver Ports diagram of the HDL design:
+![SF3 Custom Driver Ports](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-ports.svg)
+
+#### Pmod SF3 Extended SPI custom driver FSM for operating the QSPI Extended SPI driver to configure and operate the functions of the N25Q Flash chip of the Pmod SF3:
+![SF3 Custom Driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-QSPI-FSM.svg)
+
+#### Generic QSPI Extended SPI Single Chip protocol bus driver, used by the SF3 driver
+![Generic Standard SPI Single Chip bus driver](https://github.com/timothystotts/fpga-serial-acl-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-QSPI-quad-FSM.svg)
+
+#### CLS Custom Driver Ports diagram of the HDL designs:
+![CLS Custom Driver Ports](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-ports.svg)
+
+#### Pmod CLS Standard SPI custom driver FSM for operating the standard SPI driver to send text line refreshes to the ATmega48 microcontroller chip of the Pmod CLS:
+![CLS Custom Driver readings driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-driver-FSM.svg)
+
+#### Generic Standard SPI Single Slave protocol bus driver, used by the the CLS driver
+![Generic Standard SPI Single Slave bus driver](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF3-Tester-Design-Documents/SF-Tester-Design-Diagrams-SPI-generic-FSM.svg)
