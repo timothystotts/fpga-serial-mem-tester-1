@@ -327,7 +327,7 @@ begin
 	-- End of MMCME2_BASE_inst instantiation
 
 	-- Reset Synchronization for 20 MHz clock
-	u_reset_sync_20mhz : entity work.arty_reset_synchronizer(rtl)
+	u_reset_sync_40mhz : entity work.arty_reset_synchronizer(rtl)
 		port map(
 			i_clk_mhz     => s_clk_40mhz,
 			i_rstn_global => i_resetn,
