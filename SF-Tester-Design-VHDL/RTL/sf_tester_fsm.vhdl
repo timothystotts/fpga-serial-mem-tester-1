@@ -305,9 +305,9 @@ begin
 				o_sf3_cmd_erase_subsector <= '0';
 				o_sf3_address_of_cmd      <= (others => '0');
 
-				if (to_integer(unsigned(s_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_test_done_val <= '0';
+				s_test_done_val <= '0' when (to_integer(unsigned(s_addr_start_aux)) < c_last_starting_byte_addr) else '1';
 
+				if (to_integer(unsigned(s_addr_start_aux)) < c_last_starting_byte_addr) then
 					if ((i_buttons_debounced = "0001") or (i_switches_debounced = "0001")) then
 						s_tester_nx_state <= ST_WAIT_BUTTON0_REL;
 					elsif ((i_buttons_debounced = "0010") or (i_switches_debounced = "0010")) then
@@ -320,7 +320,6 @@ begin
 						s_tester_nx_state <= ST_WAIT_BUTTON_DEP;
 					end if;
 				else
-					s_test_done_val   <= '1';
 					s_tester_nx_state <= ST_WAIT_BUTTON_DEP;
 				end if;
 
@@ -479,8 +478,7 @@ begin
 					s_test_done_val   <= '0';
 					s_tester_nx_state <= ST_SET_START_WAIT_A;
 				elsif (to_integer(unsigned(s_addr_start_aux)) < c_last_starting_byte_addr) then
-					s_addr_start_val <= std_logic_vector(
-							unsigned(s_addr_start_aux) + c_per_iteration_byte_count);
+					s_addr_start_val <= std_logic_vector(unsigned(s_addr_start_aux) + c_per_iteration_byte_count);
 					s_test_done_val   <= '0';
 					s_tester_nx_state <= ST_SET_START_WAIT_A;
 				else
