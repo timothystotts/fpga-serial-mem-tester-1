@@ -89,5 +89,5 @@ standard terminology in engineering is a priority.
 #### Pmod CLS Standard SPI custom driver FSM for operating the standard SPI driver to send text line refreshes to the ATmega48 microcontroller chip of the Pmod CLS:
 ![CLS Custom Driver readings driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-driver-FSM.svg)
 
-#### Generic Standard SPI Single Slave protocol bus driver, used by the the CLS driver
+#### Generic Standard SPI Single Chip protocol bus driver, used by the the CLS driver
 ![Generic Standard SPI Single Slave bus driver](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SPI-generic-FSM.svg)
