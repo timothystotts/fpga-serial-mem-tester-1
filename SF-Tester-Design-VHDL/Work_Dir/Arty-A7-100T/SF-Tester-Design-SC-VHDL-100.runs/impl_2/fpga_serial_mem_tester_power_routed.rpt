@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date             : Wed Jul 22 21:30:12 2020
+| Date             : Fri Jul 24 17:50:41 2020
 | Host             : l2study running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file fpga_serial_mem_tester_power_routed.rpt -pb fpga_serial_mem_tester_power_summary_routed.pb -rpx fpga_serial_mem_tester_power_routed.rpx
 | Design           : fpga_serial_mem_tester
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |       12 |       --- |             --- |
-| Slice Logic    |     0.002 |     6808 |       --- |             --- |
-|   LUT as Logic |     0.002 |     3432 |     63400 |            5.41 |
-|   CARRY4       |    <0.001 |      588 |     15850 |            3.71 |
-|   Register     |    <0.001 |     1730 |    126800 |            1.36 |
-|   F7/F8 Muxes  |    <0.001 |        8 |     63400 |            0.01 |
-|   Others       |     0.000 |       50 |       --- |             --- |
-| Signals        |     0.001 |     4977 |       --- |             --- |
+| Slice Logic    |     0.002 |     6662 |       --- |             --- |
+|   LUT as Logic |     0.002 |     3325 |     63400 |            5.24 |
+|   CARRY4       |    <0.001 |      578 |     15850 |            3.65 |
+|   Register     |    <0.001 |     1718 |    126800 |            1.35 |
+|   F7/F8 Muxes  |    <0.001 |        2 |     63400 |           <0.01 |
+|   Others       |     0.000 |       54 |       --- |             --- |
+| Signals        |     0.001 |     4863 |       --- |             --- |
 | Block RAM      |    <0.001 |        2 |       135 |            1.48 |
 | MMCM           |     0.112 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |       16 |       240 |            6.67 |
@@ -146,12 +146,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------------+-----------+
-| Name                       | Power (W) |
-+----------------------------+-----------+
-| fpga_serial_mem_tester     |     0.121 |
-|   u_led_pwm_driver         |     0.004 |
-|   u_pmod_sf3_custom_driver |     0.001 |
-+----------------------------+-----------+
++------------------------+-----------+
+| Name                   | Power (W) |
++------------------------+-----------+
+| fpga_serial_mem_tester |     0.121 |
+|   u_led_pwm_driver     |     0.004 |
++------------------------+-----------+
 
 
