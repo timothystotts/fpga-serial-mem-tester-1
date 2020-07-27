@@ -54,7 +54,7 @@
 #include "xintc.h"
 #include "xgpio.h"
 /* Project includes. */
-#include "PmodSF3_freertos.h"
+#include "PmodSF3.h"
 #include "PWM.h"
 #include "led_pwm.h"
 #include "Experiment.h"
@@ -97,7 +97,7 @@ static const uint32_t sf3_subsector_addr_incr = 4096;
 static const uint32_t sf3_page_addr_incr = 256;
 static const uint32_t experi_subsector_cnt_per_iter = 8192 / total_iteration_count; // 256 Mbit
 static const uint32_t experi_page_cnt_per_iter = 131072 / total_iteration_count; // 256 Mbit
-static const uint32_t cnt_t_max = 40 * 3;
+static const uint32_t cnt_t_max = 100 * 3;
 
 typedef struct EXPERIMENT_DATA_TAG {
 	/* Driver objects */
@@ -134,7 +134,7 @@ typedef struct EXPERIMENT_DATA_TAG {
 } t_experiment_data;
 
 t_experiment_data experiData; // Global as that the object is always in scope, including interrupt handler.
-PmodSF3_freertos sf3Device;
+PmodSF3 sf3Device;
 
 /*------------------ Private Module Functions Prototypes ----*/
 static void Experiment_InitData(t_experiment_data* expData);
@@ -153,13 +153,13 @@ static void Experiment_iterationTimer(t_experiment_data* expData);
 void Experiment_prvSf3Task( void *pvParameters )
 {
 	const TickType_t x10millisecond = pdMS_TO_TICKS( DELAY_1_SECOND / 100 );
-	const TickType_t x05millisecond = pdMS_TO_TICKS( DELAY_1_SECOND / 200 );
+	//const TickType_t x05millisecond = pdMS_TO_TICKS( DELAY_1_SECOND / 200 );
 	XStatus Status;
 
 	/* Initialize the PMOD SF3 driver targeted at FreeRTOS (instead of the regular
 	 * PMOD SF3 driver targeted at standalone.
 	 */
-	Status = SF3_freertos_begin(&(sf3Device),
+	Status = SF3_begin_freertos(&(sf3Device),
 			XPAR_PMODSF3_0_AXI_LITE_SPI_BASEADDR,
 			XPAR_INTC_0_PMODSF3_0_VEC_ID,
 			XPAR_MICROBLAZE_0_AXI_INTC_PMODSF3_0_QSPI_INTERRUPT_INTR);
@@ -543,14 +543,14 @@ static void Experiment_operateFSM(t_experiment_data* expData) {
 	case ST_CMD_ERASE_START:
 		expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_subsector_addr_incr);
 
-		Status = SF3_freertos_FlashWriteEnable(&sf3Device);
+		Status = SF3_FlashWriteEnable(&sf3Device);
 
 		if (Status != XST_SUCCESS) {
 			snprintf(expData->comString, PRINTF_BUF_SZ, "WEN Fail");
 			xQueueSend(xQueuePrint, expData->comString, 0UL);
 		}
 
-		Status = SF3_freertos_SectorErase(&sf3Device, expData->sf3_address_of_cmd);
+		Status = SF3_SectorErase(&sf3Device, expData->sf3_address_of_cmd);
 
 		if (Status != XST_SUCCESS) {
 			snprintf(expData->comString, PRINTF_BUF_SZ, "Ers Fail %08lx", expData->sf3_address_of_cmd);
@@ -573,7 +573,7 @@ static void Experiment_operateFSM(t_experiment_data* expData) {
 	case ST_CMD_PAGE_START:
 		expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_page_addr_incr);
 
-		Status = SF3_freertos_FlashWriteEnable(&sf3Device);
+		Status = SF3_FlashWriteEnable(&sf3Device);
 
 		if (Status != XST_SUCCESS) {
 			snprintf(expData->comString, PRINTF_BUF_SZ, "WEN Fail");
@@ -586,7 +586,7 @@ static void Experiment_operateFSM(t_experiment_data* expData) {
 			expData->sf3_pattern_track_val += expData->sf3_pattern_incr_val;
 		}
 		WriteBufferPtr = &(expData->WriteBuffer[0]);
-		Status = SF3_freertos_FlashWrite(&sf3Device, expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_PAGE_PROGRAM, &(WriteBufferPtr));
+		Status = SF3_FlashWrite(&sf3Device, expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_PAGE_PROGRAM, &(WriteBufferPtr));
 
 		if (Status != XST_SUCCESS) {
 			snprintf(expData->comString, PRINTF_BUF_SZ, "PRO Fail %08lx", expData->sf3_address_of_cmd);
@@ -616,7 +616,7 @@ static void Experiment_operateFSM(t_experiment_data* expData) {
 		}
 		ReadBufferPtr = &(expData->ReadBuffer[0]);
 
-		Status = SF3_freertos_FlashRead(&(sf3Device), expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_RANDOM_READ, &(ReadBufferPtr));
+		Status = SF3_FlashRead(&(sf3Device), expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_RANDOM_READ, &(ReadBufferPtr));
 
 		if (Status != XST_SUCCESS) {
 			snprintf(expData->comString, PRINTF_BUF_SZ, "RD  Fail %08lx", expData->sf3_address_of_cmd);
@@ -663,10 +663,10 @@ static void Experiment_iterationTimer(t_experiment_data* expData) {
 	if (expData->operatingMode != expData->operatingModePrev) {
 		expData->cnt_t = 0;
 	} else {
-		expData->cnt_t = (expData->cnt_t + 1) % cnt_t_max; /* 3 seconds of counting on 25ms timer */
+		expData->cnt_t = (expData->cnt_t + 1) % cnt_t_max; /* 3 seconds of counting on 10 ms timer */
 	}
 
-	expData->cnt_t_freerun = (expData->cnt_t_freerun + 1) % cnt_t_max; /* 3 seconds of counting on 25ms timer */
+	expData->cnt_t_freerun = (expData->cnt_t_freerun + 1) % cnt_t_max; /* 3 seconds of counting on 10 ms timer */
 
 	/* Track operating mode history (only one step back) */
 	expData->operatingModePrev = expData->operatingMode;

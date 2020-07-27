@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Jun 16 20:59:42 2020
+-- Date        : Mon Jul 27 12:39:10 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top system_ilmb_bram_if_cntlr_4 -prefix
---               system_ilmb_bram_if_cntlr_4_ system_ilmb_bram_if_cntlr_4_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_bram_if_cntlr_4/system_ilmb_bram_if_cntlr_4_stub.vhdl
 -- Design      : system_ilmb_bram_if_cntlr_4
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100ticsg324-1L

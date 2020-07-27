@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Jun 16 21:02:13 2020
+-- Date        : Mon Jul 27 12:38:20 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top system_dlmb_bram_if_cntlr_4 -prefix
---               system_dlmb_bram_if_cntlr_4_ system_dlmb_bram_if_cntlr_4_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_dlmb_bram_if_cntlr_4/system_dlmb_bram_if_cntlr_4_sim_netlist.vhdl
 -- Design      : system_dlmb_bram_if_cntlr_4
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -144,6 +144,8 @@ entity system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is 2;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is

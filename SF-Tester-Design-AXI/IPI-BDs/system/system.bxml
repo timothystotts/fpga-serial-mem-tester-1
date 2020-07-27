@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1592428808"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1592428808"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1592428808"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1592428808"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1595867473"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1595867473"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1595867473"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1595867473"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_clk_wiz_0_0\system_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -32,6 +32,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\system_microblaze_0_axi_periph_0\system_microblaze_0_axi_periph_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -182,16 +183,16 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_PmodSF3_0_9\system_PmodSF3_0_9.xci" Type="IP">
-        <Instance HierarchyPath="PmodSF3_0"/>
+      <File Name="ip\system_PmodCLS_0_6\system_PmodCLS_0_6.xci" Type="IP">
+        <Instance HierarchyPath="PmodCLS_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_PmodCLS_0_6\system_PmodCLS_0_6.xci" Type="IP">
-        <Instance HierarchyPath="PmodCLS_0"/>
+      <File Name="ip\system_PmodSF3_0_10\system_PmodSF3_0_10.xci" Type="IP">
+        <Instance HierarchyPath="PmodSF3_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Jun 16 20:54:46 2020
+// Date        : Mon Jul 27 12:33:39 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top system_rst_mig_7series_0_83M_0 -prefix
-//               system_rst_mig_7series_0_83M_0_ system_rst_mig_7series_0_83M_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_rst_mig_7series_0_83M_0/system_rst_mig_7series_0_83M_0_stub.v
 // Design      : system_rst_mig_7series_0_83M_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100ticsg324-1L

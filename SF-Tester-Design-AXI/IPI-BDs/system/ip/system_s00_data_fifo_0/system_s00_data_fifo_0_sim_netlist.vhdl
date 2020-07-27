@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Wed Jun 17 16:48:51 2020
+-- Date        : Mon Jul 27 12:43:10 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top system_s00_data_fifo_0 -prefix
---               system_s00_data_fifo_0_ system_s00_data_fifo_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_sim_netlist.vhdl
 -- Design      : system_s00_data_fifo_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -145,6 +145,8 @@ entity system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo is
   attribute C_FAMILY of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "artix7";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "axi_data_fifo_v2_1_20_axi_data_fifo";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
   attribute P_AXI4 : integer;

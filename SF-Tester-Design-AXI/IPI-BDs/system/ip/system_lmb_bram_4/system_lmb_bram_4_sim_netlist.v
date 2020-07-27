@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Jun 16 21:01:17 2020
+// Date        : Mon Jul 27 12:40:10 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top system_lmb_bram_4 -prefix
-//               system_lmb_bram_4_ system_lmb_bram_4_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_lmb_bram_4/system_lmb_bram_4_sim_netlist.v
 // Design      : system_lmb_bram_4
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -225,6 +225,7 @@ module system_lmb_bram_4
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module system_lmb_bram_4_blk_mem_gen_generic_cstr
    (douta,
     doutb,
@@ -768,6 +769,7 @@ module system_lmb_bram_4_blk_mem_gen_generic_cstr
         .web(web[1]));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module system_lmb_bram_4_blk_mem_gen_prim_width
    (douta,
     doutb,
@@ -2971,6 +2973,7 @@ module system_lmb_bram_4_blk_mem_gen_prim_width__parameterized9
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper" *) 
 module system_lmb_bram_4_blk_mem_gen_prim_wrapper
    (douta,
     doutb,
@@ -11626,6 +11629,7 @@ module system_lmb_bram_4_blk_mem_gen_prim_wrapper__parameterized9
         .WEBWE({1'b0,1'b0,1'b0,1'b0,web,web,web,web}));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module system_lmb_bram_4_blk_mem_gen_top
    (douta,
     doutb,
@@ -11721,7 +11725,7 @@ endmodule
 (* C_WEA_WIDTH = "4" *) (* C_WEB_WIDTH = "4" *) (* C_WRITE_DEPTH_A = "32768" *) 
 (* C_WRITE_DEPTH_B = "32768" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) (* C_XDEVICEFAMILY = "artix7" *) 
-(* downgradeipidentifiedwarnings = "yes" *) 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module system_lmb_bram_4_blk_mem_gen_v8_4_4
    (clka,
     rsta,
@@ -12007,6 +12011,7 @@ module system_lmb_bram_4_blk_mem_gen_v8_4_4
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
 module system_lmb_bram_4_blk_mem_gen_v8_4_4_synth
    (douta,
     doutb,

@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Jun 16 21:00:39 2020
+// Date        : Mon Jul 27 12:40:07 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top system_microblaze_0_5 -prefix
-//               system_microblaze_0_5_ system_microblaze_0_5_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_microblaze_0_5/system_microblaze_0_5_stub.v
 // Design      : system_microblaze_0_5
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100ticsg324-1L
