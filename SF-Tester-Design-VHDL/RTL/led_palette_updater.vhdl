@@ -97,8 +97,8 @@ begin
 				o_color_led_blue_value(0)  <= x"80";
 
             when ST_CMD_ERASE_DONE =>
-                o_color_led_red_value(0)   <= x"FF";
-				o_color_led_green_value(0) <= x"60";
+                o_color_led_red_value(0)   <= x"70";
+				o_color_led_green_value(0) <= x"10";
 				o_color_led_blue_value(0)  <= x"00";
 				
 			when ST_CMD_PAGE_START | ST_CMD_PAGE_BYTE | ST_CMD_PAGE_WAIT |
@@ -108,8 +108,8 @@ begin
 				o_color_led_blue_value(1)  <= x"80";
 
             when ST_CMD_PAGE_DONE =>
-                o_color_led_red_value(1)   <= x"FF";
-				o_color_led_green_value(1) <= x"70";
+                o_color_led_red_value(1)   <= x"70";
+				o_color_led_green_value(1) <= x"10";
 				o_color_led_blue_value(1)  <= x"00";
 				
 			when ST_CMD_READ_START | ST_CMD_READ_BYTE | ST_CMD_READ_WAIT |
@@ -119,8 +119,8 @@ begin
 				o_color_led_blue_value(2)  <= x"80";
 
             when ST_CMD_READ_DONE =>
-                o_color_led_red_value(2)   <= x"FF";
-				o_color_led_green_value(2) <= x"80";
+                o_color_led_red_value(2)   <= x"70";
+				o_color_led_green_value(2) <= x"10";
 				o_color_led_blue_value(2)  <= x"00";
 				
 			when ST_DISPLAY_FINAL =>

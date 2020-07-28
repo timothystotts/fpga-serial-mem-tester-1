@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
-| Date         : Fri Jul 24 17:49:59 2020
-| Host         : l2study running 64-bit Ubuntu 18.04.4 LTS
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Mon Jul 27 22:40:05 2020
+| Host         : J1STUDY running 64-bit major release  (build 9200)
 | Command      : report_drc -file fpga_serial_mem_tester_drc_opted.rpt -pb fpga_serial_mem_tester_drc_opted.pb -rpx fpga_serial_mem_tester_drc_opted.rpx
 | Design       : fpga_serial_mem_tester
 | Device       : xc7a100ticsg324-1L
