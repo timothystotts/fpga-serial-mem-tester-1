@@ -33,12 +33,13 @@ library work;
 --------------------------------------------------------------------------------
 entity lcd_text_feed is
 	generic(
-		parm_fast_simulation : integer := 0
+		parm_fast_simulation : integer := 0;
+		parm_FCLK_ce : natural
 	);
 	port(
 		i_clk_40mhz            : in  std_logic;
 		i_rst_40mhz            : in  std_logic;
-		i_ce_2_5mhz            : in  std_logic;
+		i_ce_mhz               : in  std_logic;
 		i_lcd_command_ready    : in  std_logic;
 		o_lcd_wr_clear_display : out std_logic;
 		o_lcd_wr_text_line1    : out std_logic;
@@ -67,9 +68,9 @@ architecture rtl of lcd_text_feed is
 	-- Write Line 2
 	-- Wait 0.198 seconds
 	-- Repeat the above.
-	constant c_i_one_ms         : natural := 2500;
-	constant c_i_subsecond_fast : natural := (2500000 / 100) - (2 * c_i_one_ms);
-	constant c_i_subsecond      : natural := (2500000 / 5) - (2 * c_i_one_ms);
+	constant c_i_one_ms         : natural := (parm_FCLK_ce / 1000);
+	constant c_i_subsecond_fast : natural := (parm_FCLK_ce / 100) - (2 * c_i_one_ms);
+	constant c_i_subsecond      : natural := (parm_FCLK_ce / 5) - (2 * c_i_one_ms);
 	constant c_i_max            : natural := c_i_subsecond;
 
 	signal s_i : natural range 0 to c_i_max;
@@ -80,7 +81,7 @@ begin
 		if rising_edge(i_clk_40mhz) then
 			if (i_rst_40mhz = '1') then
 				s_i <= 0;
-			elsif (i_ce_2_5mhz = '1') then
+			elsif (i_ce_mhz = '1') then
 				if (s_lcd_upd_pr_state /= s_lcd_upd_nx_state) then
 					s_i <= 0;
 				elsif (s_i /= c_i_max) then
@@ -96,7 +97,7 @@ begin
 		if rising_edge(i_clk_40mhz) then
 			if (i_rst_40mhz = '1') then
 				s_lcd_upd_pr_state <= ST_LCD_PAUSE;
-			elsif (i_ce_2_5mhz = '1') then
+			elsif (i_ce_mhz = '1') then
 				s_lcd_upd_pr_state <= s_lcd_upd_nx_state;
 			end if;
 		end if;

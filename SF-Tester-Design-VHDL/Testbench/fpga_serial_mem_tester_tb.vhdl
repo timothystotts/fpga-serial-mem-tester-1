@@ -45,9 +45,9 @@ architecture simultation of fpga_serial_mem_tester_tb is
 			i_resetn  : in std_logic;
 			-- PMOD SF3 Quad SPI
 			eo_pmod_sf3_sck       : out   std_logic;
-			eo_pmod_sf3_ssn       : out   std_logic;
-			eio_pmod_sf3_mosi_dq0 : inout std_logic;
-			eio_pmod_sf3_miso_dq1 : inout std_logic;
+			eo_pmod_sf3_csn       : out   std_logic;
+			eio_pmod_sf3_copi_dq0 : inout std_logic;
+			eio_pmod_sf3_cipo_dq1 : inout std_logic;
 			eio_pmod_sf3_wrpn_dq2 : inout std_logic;
 			eio_pmod_sf3_hldn_dq3 : inout std_logic;
 			-- blue LEDs of the multicolor
@@ -81,7 +81,7 @@ architecture simultation of fpga_serial_mem_tester_tb is
 			ei_bt2 : in std_logic;
 			ei_bt3 : in std_logic;
 			-- PMOD CLS SPI bus 4-wire
-			eo_pmod_cls_ssn : out std_logic;
+			eo_pmod_cls_csn : out std_logic;
 			eo_pmod_cls_sck : out std_logic;
 			eo_pmod_cls_dq0 : out std_logic;
 			ei_pmod_cls_dq1 : in  std_logic;
@@ -109,9 +109,9 @@ architecture simultation of fpga_serial_mem_tester_tb is
 	signal s_clk          : std_logic;
 	signal s_rst          : std_logic;
 	signal s_sf3_sck      : std_logic;
-	signal s_sf3_ssn      : std_logic;
-	signal s_sf3_mosi_dq0 : std_logic;
-	signal s_sf3_miso_dq1 : std_logic;
+	signal s_sf3_csn      : std_logic;
+	signal s_sf3_copi_dq0 : std_logic;
+	signal s_sf3_cipo_dq1 : std_logic;
 	signal s_sf3_wrpn_dq2 : std_logic;
 	signal s_sf3_hldn_dq3 : std_logic;
 	signal s_led0_b       : std_logic;
@@ -139,20 +139,20 @@ architecture simultation of fpga_serial_mem_tester_tb is
 	signal s_sw2          : std_logic;
 	signal s_sw3          : std_logic;
 	signal s_cls_sck      : std_logic;
-	signal s_cls_ssn      : std_logic;
-	signal s_cls_mosi     : std_logic;
-	signal s_cls_miso     : std_logic;
+	signal s_cls_csn      : std_logic;
+	signal s_cls_copi     : std_logic;
+	signal s_cls_cipo     : std_logic;
 	signal s_uart_tx      : std_logic;
 	signal s_uart_rx      : std_logic;
 begin
 	-- N25Q flash part model
 	--u_n25q_part : N25Qxxx_wrapper
 	--	port map(
-	--		S => s_sf3_ssn,
+	--		S => s_sf3_csn,
 	--		Clow => s_sf3_sck,
 	--		HOLD_DQ3 => s_sf3_hldn_dq3,
-	--		DQ0 => s_sf3_mosi_dq0,
-	--		DQ1 => s_sf3_miso_dq1,
+	--		DQ0 => s_sf3_copi_dq0,
+	--		DQ1 => s_sf3_cipo_dq1,
 	--		Vpp_W_DQ2 => s_wrpn_dq2);
 
 	-- UUT: unit under test
@@ -164,9 +164,9 @@ begin
 			CLK100MHZ             => s_clk,
 			i_resetn              => s_rst,
 			eo_pmod_sf3_sck       => s_sf3_sck,
-			eo_pmod_sf3_ssn       => s_sf3_ssn,
-			eio_pmod_sf3_mosi_dq0 => s_sf3_mosi_dq0,
-			eio_pmod_sf3_miso_dq1 => s_sf3_miso_dq1,
+			eo_pmod_sf3_csn       => s_sf3_csn,
+			eio_pmod_sf3_copi_dq0 => s_sf3_copi_dq0,
+			eio_pmod_sf3_cipo_dq1 => s_sf3_cipo_dq1,
 			eio_pmod_sf3_wrpn_dq2 => s_sf3_wrpn_dq2,
 			eio_pmod_sf3_hldn_dq3 => s_sf3_hldn_dq3,
 			eo_led0_b             => s_led0_b,
@@ -193,10 +193,10 @@ begin
 			ei_sw1                => s_sw1,
 			ei_sw2                => s_sw2,
 			ei_sw3                => s_sw3,
-			eo_pmod_cls_ssn       => s_cls_ssn,
+			eo_pmod_cls_csn       => s_cls_csn,
 			eo_pmod_cls_sck       => s_cls_sck,
-			eo_pmod_cls_dq0       => s_cls_mosi,
-			ei_pmod_cls_dq1       => s_cls_miso,
+			eo_pmod_cls_dq0       => s_cls_copi,
+			ei_pmod_cls_dq1       => s_cls_cipo,
 			eo_uart_tx            => s_uart_tx,
 			ei_uart_rx            => s_uart_rx
 		);
@@ -210,7 +210,7 @@ begin
 	s_sw1      <= '0';
 	s_sw2      <= '0';
 	s_sw3      <= '0';
-	s_cls_miso <= '0';
+	s_cls_cipo <= '0';
 	s_uart_rx  <= '1';
 
 	-- Simulated data response of N25Q just to show visiual data on the waveform
@@ -223,7 +223,7 @@ begin
 	-- the N25Q driver without a real memory model. For a full automated
 	-- testbench, it will be necessary to create a cheap or realistic memory
 	-- model with either ideal or datasheet-oriented timing of the signals.
-	-- Consider having the event on signals s_quadio_highz and s_sf3_ssn instead.
+	-- Consider having the event on signals s_quadio_highz and s_sf3_csn instead.
 	p_extend_seq_dat : process
 		variable v_seq       : unsigned(7 downto 0) := x"00";
 		variable v_cnt_msb   : natural range 0 to 7 := 0;
@@ -231,42 +231,42 @@ begin
 	begin
 		s_sf3_hldn_dq3 <= 'Z';
 		s_sf3_wrpn_dq2 <= 'Z';
-		s_sf3_miso_dq1 <= 'Z';
-		s_sf3_mosi_dq0 <= 'Z';
+		s_sf3_cipo_dq1 <= 'Z';
+		s_sf3_copi_dq0 <= 'Z';
 
 		loop_forever : loop
-			wait on s_sf3_ssn, s_sf3_sck;
+			wait on s_sf3_csn, s_sf3_sck;
 
 			-- on the falling edge of SCK, setup and hold a reply value on the
 			-- SPI quad i/o to simulate answers back from the SPI Flash
 			if s_sf3_sck'event and (s_sf3_sck = '0') then
-				if (s_sf3_ssn = '0') then
+				if (s_sf3_csn = '0') then
 					wait for 10 ns;
 
 					if (v_cnt_msb > 0) then
 						v_cnt_msb := v_cnt_msb - 1;
 						if (v_track_cmd = '0') then
-							s_sf3_miso_dq1 <= std_logic(v_seq(v_cnt_msb));
+							s_sf3_cipo_dq1 <= std_logic(v_seq(v_cnt_msb));
 						else
-							s_sf3_miso_dq1 <= 'Z';
+							s_sf3_cipo_dq1 <= 'Z';
 						end if;
 					else
 						v_cnt_msb      := 7;
 						v_track_cmd    := '0';
 						v_seq          := v_seq + unsigned'(x"01");
-						s_sf3_miso_dq1 <= std_logic(v_seq(v_cnt_msb));
+						s_sf3_cipo_dq1 <= std_logic(v_seq(v_cnt_msb));
 					end if;
 				end if;
 			-- on the event of s_sf3_sck 4x clock or change of slave select, test if
 			-- necessary to High-Z the Quad I/O bus.
-			elsif s_sf3_sck'event or s_sf3_ssn'event then
-				if (s_sf3_ssn = '1') then
+			elsif s_sf3_sck'event or s_sf3_csn'event then
+				if (s_sf3_csn = '1') then
 					wait for 10 ns;
 
 					s_sf3_hldn_dq3 <= 'Z';
 					s_sf3_wrpn_dq2 <= 'Z';
-					s_sf3_miso_dq1 <= 'Z';
-					s_sf3_mosi_dq0 <= 'Z';
+					s_sf3_cipo_dq1 <= 'Z';
+					s_sf3_copi_dq0 <= 'Z';
 					v_track_cmd    := '1';
 					-- start one nibble before 0x00 as to simulate a working Flash
 					-- chip response for a Quad I/O READ command reponse with a

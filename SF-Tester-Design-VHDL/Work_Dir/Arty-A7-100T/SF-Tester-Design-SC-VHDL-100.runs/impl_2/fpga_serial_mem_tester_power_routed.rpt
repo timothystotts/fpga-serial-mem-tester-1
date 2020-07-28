@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Mon Jul 27 22:41:30 2020
+| Date             : Tue Jul 28 16:14:21 2020
 | Host             : J1STUDY running 64-bit major release  (build 9200)
 | Command          : report_power -file fpga_serial_mem_tester_power_routed.rpt -pb fpga_serial_mem_tester_power_summary_routed.pb -rpx fpga_serial_mem_tester_power_routed.rpx
 | Design           : fpga_serial_mem_tester
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.204        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.120        |
+| Dynamic (W)              | 0.119        |
 | Device Static (W)        | 0.084        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 99.1         |
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |       12 |       --- |             --- |
-| Slice Logic    |     0.002 |     6700 |       --- |             --- |
-|   LUT as Logic |     0.001 |     3367 |     63400 |            5.31 |
-|   CARRY4       |    <0.001 |      578 |     15850 |            3.65 |
-|   Register     |    <0.001 |     1706 |    126800 |            1.35 |
+| Slice Logic    |     0.002 |     6725 |       --- |             --- |
+|   LUT as Logic |     0.001 |     3383 |     63400 |            5.34 |
+|   CARRY4       |    <0.001 |      576 |     15850 |            3.63 |
+|   Register     |    <0.001 |     1711 |    126800 |            1.35 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
 |   Others       |     0.000 |       54 |       --- |             --- |
-| Signals        |     0.001 |     4907 |       --- |             --- |
+| Signals        |     0.001 |     4923 |       --- |             --- |
 | Block RAM      |    <0.001 |        2 |       135 |            1.48 |
 | MMCM           |     0.112 |        1 |         6 |           16.67 |
 | DSPs           |    <0.001 |       16 |       240 |            6.67 |
@@ -132,8 +132,8 @@ Table of Contents
 | Clock         | Domain                                                                             | Constraint (ns) |
 +---------------+------------------------------------------------------------------------------------+-----------------+
 | CLKFBIN       | CLKFBIN                                                                            |            50.0 |
+| genclk50khz   | u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/u_spi_1x_clock_divider/o_clk_div  |         20000.0 |
 | genclk5mhz    | u_pmod_sf3_custom_driver/u_pmod_generic_qspi_solo/u_spi_1x_clock_divider/o_clk_div |           200.0 |
-| genclk625khz  | u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/u_spi_1x_clock_divider/o_clk_div  |          1600.0 |
 | s_clk_40mhz   | s_clk_40mhz                                                                        |            25.0 |
 | s_clk_7_37mhz | s_clk_7_37mhz                                                                      |           135.6 |
 | sys_clk_pin   | CLK100MHZ                                                                          |            10.0 |
@@ -149,7 +149,7 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| fpga_serial_mem_tester |     0.120 |
+| fpga_serial_mem_tester |     0.119 |
 |   u_led_pwm_driver     |     0.003 |
 +------------------------+-----------+
 

@@ -55,7 +55,7 @@ entity pmod_cls_custom_driver is
 		-- Clock and reset, with clock at X*4 times the frequency of the SPI bus
 		i_clk_40mhz : in std_logic;
 		i_rst_40mhz : in std_logic;
-		i_ce_2_5mhz : in std_logic; -- clock enable at 4 times the frequency of the SPI bus
+		i_ce_mhz    : in std_logic; -- clock enable at 4 times the frequency of the SPI bus
 		                            -- Outputs and inputs from the single SPI peripheral
 		eo_sck_t  : out std_logic;
 		eo_sck_o  : out std_logic;
@@ -112,7 +112,7 @@ begin
 	p_reg_spi_fsm_out : process(i_clk_40mhz)
 	begin
 		if rising_edge(i_clk_40mhz) then
-			if (i_ce_2_5mhz = '1') then
+			if (i_ce_mhz = '1') then
 				eo_sck_o <= sio_cls_sck_fsm_o;
 				eo_sck_t <= sio_cls_sck_fsm_t;
 
@@ -129,7 +129,7 @@ begin
 	p_sync_spi_in : process(i_clk_40mhz)
 	begin
 		if rising_edge(i_clk_40mhz) then
-			if (i_ce_2_5mhz = '1') then
+			if (i_ce_mhz = '1') then
 				sio_cls_cipo_sync_i <= sio_cls_cipo_meta_i;
 				sio_cls_cipo_meta_i <= ei_cipo;
 			end if;
@@ -149,7 +149,7 @@ begin
 		port map (
 			i_ext_spi_clk_x        => i_clk_40mhz,
 			i_srst                 => i_rst_40mhz,
-			i_spi_ce_4x            => i_ce_2_5mhz,
+			i_spi_ce_4x            => i_ce_mhz,
 			o_go_stand             => s_cls_go_stand,
 			i_spi_idle             => s_cls_spi_idle,
 			o_tx_len               => s_cls_tx_len,
@@ -188,7 +188,7 @@ begin
 			ei_cipo_i       => sio_cls_cipo_sync_i,
 			i_ext_spi_clk_x => i_clk_40mhz,
 			i_srst          => i_rst_40mhz,
-			i_spi_ce_4x     => i_ce_2_5mhz,
+			i_spi_ce_4x     => i_ce_mhz,
 			i_go_stand      => s_cls_go_stand,
 			o_spi_idle      => s_cls_spi_idle,
 			i_tx_len        => s_cls_tx_len,
