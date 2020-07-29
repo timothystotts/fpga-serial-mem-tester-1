@@ -306,24 +306,45 @@ static void Experiment_updateLedsDisplayMode(t_experiment_data* expData)
 				0);
 		break;
 
-	case ST_CMD_ERASE_START: /* no break */ case ST_CMD_ERASE_DONE:
+	case ST_CMD_ERASE_START:
 		Experiment_SetLedUpdate(expData, 0, 0x80, 0x80, 0x80);
 		Experiment_SetLedUpdate(expData, 1, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 2, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
 		break;
 
-	case ST_CMD_PAGE_START: /* no break */ case ST_CMD_PAGE_DONE:
+	case ST_CMD_ERASE_DONE:
+		Experiment_SetLedUpdate(expData, 0, 0x70, 0x10, 0x00);
+		Experiment_SetLedUpdate(expData, 1, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 2, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
+		break;
+
+	case ST_CMD_PAGE_START:
 		Experiment_SetLedUpdate(expData, 0, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 1, 0x80, 0x80, 0x80);
 		Experiment_SetLedUpdate(expData, 2, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
 		break;
 
-	case ST_CMD_READ_START: /* no break */ case ST_CMD_READ_DONE:
+	case ST_CMD_PAGE_DONE:
+		Experiment_SetLedUpdate(expData, 0, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 1, 0x70, 0x10, 0x00);
+		Experiment_SetLedUpdate(expData, 2, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
+		break;
+
+	case ST_CMD_READ_START:
 		Experiment_SetLedUpdate(expData, 0, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 1, 0, 0, 0);
 		Experiment_SetLedUpdate(expData, 2, 0x80, 0x80, 0x80);
+		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
+		break;
+
+	case ST_CMD_READ_DONE:
+		Experiment_SetLedUpdate(expData, 0, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 1, 0, 0, 0);
+		Experiment_SetLedUpdate(expData, 2, 0x70, 0x10, 0x00);
 		Experiment_SetLedUpdate(expData, 3, 0, 0, 0);
 		break;
 
@@ -567,81 +588,100 @@ static void Experiment_operateFSM(t_experiment_data* expData) {
 	case ST_CMD_ERASE_DONE:
 		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
 		expData->sf3_i_val = 0;
-		expData->operatingMode = ST_CMD_PAGE_START;
+
+		if (expData->cnt_t >= cnt_t_max - 1) {
+			expData->operatingMode = ST_CMD_PAGE_START;
+		} else {
+			expData->operatingMode = ST_CMD_ERASE_DONE;
+		}
 		break;
 
 	case ST_CMD_PAGE_START:
-		expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_page_addr_incr);
+		for (int j = 0; j < 32; ++j) {
+			expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_page_addr_incr);
 
-		Status = SF3_FlashWriteEnable(&sf3Device);
+			Status = SF3_FlashWriteEnable(&sf3Device);
 
-		if (Status != XST_SUCCESS) {
-			snprintf(expData->comString, PRINTF_BUF_SZ, "WEN Fail");
-			xQueueSend(xQueuePrint, expData->comString, 0UL);
+			if (Status != XST_SUCCESS) {
+				snprintf(expData->comString, PRINTF_BUF_SZ, "WEN Fail");
+				xQueueSend(xQueuePrint, expData->comString, 0UL);
+			}
+
+			for(int iByte = 0; iByte < SF3_PAGE_SIZE; ++iByte)
+			{
+				expData->WriteBuffer[iByte + SF3_WRITE_EXTRA_BYTES] = expData->sf3_pattern_track_val;
+				expData->sf3_pattern_track_val += expData->sf3_pattern_incr_val;
+			}
+			WriteBufferPtr = &(expData->WriteBuffer[0]);
+			Status = SF3_FlashWrite(&sf3Device, expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_PAGE_PROGRAM, &(WriteBufferPtr));
+
+			if (Status != XST_SUCCESS) {
+				snprintf(expData->comString, PRINTF_BUF_SZ, "PRO Fail %08lx", expData->sf3_address_of_cmd);
+				xQueueSend(xQueuePrint, expData->comString, 0UL);
+			}
+
+			expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
+			expData->sf3_i_val += 1;
+			if (expData->sf3_i_val < experi_page_cnt_per_iter)
+				expData->operatingMode = ST_CMD_PAGE_START;
+			else
+				expData->operatingMode = ST_CMD_PAGE_DONE;
 		}
-
-		for(int iByte = 0; iByte < SF3_PAGE_SIZE; ++iByte)
-		{
-			expData->WriteBuffer[iByte + SF3_WRITE_EXTRA_BYTES] = expData->sf3_pattern_track_val;
-			expData->sf3_pattern_track_val += expData->sf3_pattern_incr_val;
-		}
-		WriteBufferPtr = &(expData->WriteBuffer[0]);
-		Status = SF3_FlashWrite(&sf3Device, expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_PAGE_PROGRAM, &(WriteBufferPtr));
-
-		if (Status != XST_SUCCESS) {
-			snprintf(expData->comString, PRINTF_BUF_SZ, "PRO Fail %08lx", expData->sf3_address_of_cmd);
-			xQueueSend(xQueuePrint, expData->comString, 0UL);
-		}
-
-		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
-		expData->sf3_i_val += 1;
-		if (expData->sf3_i_val < experi_page_cnt_per_iter)
-			expData->operatingMode = ST_CMD_PAGE_START;
-		else
-			expData->operatingMode = ST_CMD_PAGE_DONE;
 		break;
 
 	case ST_CMD_PAGE_DONE:
 		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
 		expData->sf3_i_val = 0;
-		expData->operatingMode = ST_CMD_READ_START;
+
+		if (expData->cnt_t >= cnt_t_max - 1) {
+			expData->operatingMode = ST_CMD_READ_START;
+		} else {
+			expData->operatingMode = ST_CMD_PAGE_DONE;
+		}
 		break;
 
 	case ST_CMD_READ_START:
-		expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_page_addr_incr);
+		for (int j = 0; j < 32; ++j) {
+			expData->sf3_address_of_cmd = expData->sf3_addr_start_val + (expData->sf3_i_val * sf3_page_addr_incr);
 
-		for(int iByte = 0; iByte < SF3_PAGE_SIZE + SF3_READ_MIN_EXTRA_BYTES; ++iByte)
-		{
-			expData->ReadBuffer[iByte + SF3_READ_MIN_EXTRA_BYTES] = 0x00;
+			for(int iByte = 0; iByte < SF3_PAGE_SIZE + SF3_READ_MIN_EXTRA_BYTES; ++iByte)
+			{
+				expData->ReadBuffer[iByte + SF3_READ_MIN_EXTRA_BYTES] = 0x00;
+			}
+			ReadBufferPtr = &(expData->ReadBuffer[0]);
+
+			Status = SF3_FlashRead(&(sf3Device), expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_RANDOM_READ, &(ReadBufferPtr));
+
+			if (Status != XST_SUCCESS) {
+				snprintf(expData->comString, PRINTF_BUF_SZ, "RD  Fail %08lx", expData->sf3_address_of_cmd);
+				xQueueSend(xQueuePrint, expData->comString, 0UL);
+			}
+
+			expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
+			for(int iByte = 0; iByte < SF3_PAGE_SIZE; ++iByte)
+			{
+				expData->sf3_err_count_val += (expData->ReadBuffer[iByte + SF3_READ_MIN_EXTRA_BYTES] == expData->sf3_pattern_track_val) ? 0 : 1;
+				expData->sf3_pattern_track_val += expData->sf3_pattern_incr_val;
+			}
+
+			expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
+			expData->sf3_i_val += 1;
+			if (expData->sf3_i_val < experi_page_cnt_per_iter)
+				expData->operatingMode = ST_CMD_READ_START;
+			else
+				expData->operatingMode = ST_CMD_READ_DONE;
 		}
-		ReadBufferPtr = &(expData->ReadBuffer[0]);
-
-		Status = SF3_FlashRead(&(sf3Device), expData->sf3_address_of_cmd, SF3_PAGE_SIZE, SF3_COMMAND_RANDOM_READ, &(ReadBufferPtr));
-
-		if (Status != XST_SUCCESS) {
-			snprintf(expData->comString, PRINTF_BUF_SZ, "RD  Fail %08lx", expData->sf3_address_of_cmd);
-			xQueueSend(xQueuePrint, expData->comString, 0UL);
-		}
-
-		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
-		for(int iByte = 0; iByte < SF3_PAGE_SIZE; ++iByte)
-		{
-			expData->sf3_err_count_val += (expData->ReadBuffer[iByte + SF3_READ_MIN_EXTRA_BYTES] == expData->sf3_pattern_track_val) ? 0 : 1;
-			expData->sf3_pattern_track_val += expData->sf3_pattern_incr_val;
-		}
-
-		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
-		expData->sf3_i_val += 1;
-		if (expData->sf3_i_val < experi_page_cnt_per_iter)
-			expData->operatingMode = ST_CMD_READ_START;
-		else
-			expData->operatingMode = ST_CMD_READ_DONE;
 		break;
 
 	case ST_CMD_READ_DONE:
 		expData->sf3_pattern_track_val = expData->sf3_pattern_start_val;
 		expData->sf3_i_val = 0;
-		expData->operatingMode = ST_DISPLAY_FINAL;
+
+		if (expData->cnt_t >= cnt_t_max - 1) {
+			expData->operatingMode = ST_DISPLAY_FINAL;
+		} else {
+			expData->operatingMode = ST_CMD_READ_DONE;
+		}
 		break;
 
 	case ST_DISPLAY_FINAL:
