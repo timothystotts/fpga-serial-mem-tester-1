@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-//Date        : Wed Jun 17 17:19:56 2020
+//Date        : Mon Jul 27 12:30:26 2020
 //Host        : J1STUDY running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
@@ -1801,7 +1801,7 @@ module s00_couplers_imp_1LZPV07
         .s_axi_wvalid(s00_couplers_to_s00_data_fifo_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=37,numReposBlks=24,numNonXlnxBlks=4,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=40,da_board_cnt=2,da_clkrst_cnt=20,da_mb_cnt=5,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=37,numReposBlks=24,numNonXlnxBlks=4,numHierBlks=13,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=41,da_board_cnt=2,da_clkrst_cnt=21,da_mb_cnt=5,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (ddr3_sdram_addr,
     ddr3_sdram_ba,
@@ -2631,7 +2631,7 @@ module system
         .ext_spi_clk(clk_wiz_0_clk_out4),
         .s_axi_aclk(microblaze_0_Clk),
         .s_axi_aresetn(rst_mig_7series_0_83M_peripheral_aresetn));
-  system_PmodSF3_0_9 PmodSF3_0
+  system_PmodSF3_0_10 PmodSF3_0
        (.AXI_LITE_araddr(microblaze_0_axi_periph_M05_AXI_ARADDR[6:0]),
         .AXI_LITE_arready(microblaze_0_axi_periph_M05_AXI_ARREADY),
         .AXI_LITE_arvalid(microblaze_0_axi_periph_M05_AXI_ARVALID),

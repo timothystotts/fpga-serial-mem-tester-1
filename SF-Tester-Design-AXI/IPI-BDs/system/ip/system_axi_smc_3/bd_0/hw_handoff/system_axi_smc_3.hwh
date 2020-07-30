@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jun 17 17:20:05 2020" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 27 12:31:10 2020" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:arty-a7-100:part0:1.0" DEVICE="7a100ti" NAME="bd_45a3" PACKAGE="csg324" SPEEDGRADE="-1L"/>
 

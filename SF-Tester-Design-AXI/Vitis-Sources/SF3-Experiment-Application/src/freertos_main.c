@@ -55,14 +55,12 @@
 /* Project includes. */
 #include "intc.h"
 #include "PmodCLS.h"
-#include "PmodSF3_freertos.h"
+#include "PmodSF3.h"
 #include "PWM.h"
 #include "led_pwm.h"
 #include "Experiment.h"
 
 /*-----------------------------------------------------------*/
-/* Global Pmod devices */
-PmodSF3_freertos sf3Device;
 
 /* Task handles for controlling real-time tasks */
 static TaskHandle_t xLedTask;

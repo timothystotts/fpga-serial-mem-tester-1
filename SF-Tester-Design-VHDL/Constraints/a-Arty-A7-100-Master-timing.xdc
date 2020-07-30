@@ -12,7 +12,7 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 # generated clock and still constrain related logic according to the generated
 # clock.
 create_generated_clock -name genclk5mhz -source [get_pins MMCME2_BASE_inst/CLKOUT0] -divide_by 8 [get_pins u_pmod_sf3_custom_driver/u_pmod_generic_qspi_solo/u_spi_1x_clock_divider/s_clk_out_reg/Q]
-create_generated_clock -name genclk625khz -source [get_pins MMCME2_BASE_inst/CLKOUT0] -divide_by 64 [get_pins u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/u_spi_1x_clock_divider/s_clk_out_reg/Q]
+create_generated_clock -name genclk50khz -source [get_pins MMCME2_BASE_inst/CLKOUT0] -divide_by 800 [get_pins u_pmod_cls_custom_driver/u_pmod_generic_spi_solo/u_spi_1x_clock_divider/s_clk_out_reg/Q]
 
 # The following are input and output virtual clocks for constaining the estimated input
 # and output delays of the top ports of the FPGA design. By constraining with virtual

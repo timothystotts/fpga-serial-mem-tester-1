@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Jun 16 20:54:45 2020
+// Date        : Mon Jul 27 12:32:36 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top system_clk_wiz_0_0 -prefix
-//               system_clk_wiz_0_0_ system_clk_wiz_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_sim_netlist.v
 // Design      : system_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -47,6 +47,7 @@ module system_clk_wiz_0_0
         .resetn(resetn));
 endmodule
 
+(* ORIG_REF_NAME = "system_clk_wiz_0_0_clk_wiz" *) 
 module system_clk_wiz_0_0_system_clk_wiz_0_0_clk_wiz
    (clk_out1,
     clk_out2,

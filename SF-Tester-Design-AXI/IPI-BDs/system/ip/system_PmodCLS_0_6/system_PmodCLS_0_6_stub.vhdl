@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Wed Jun 17 17:22:55 2020
+-- Date        : Mon Jul 27 12:42:00 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               w:/wa/Stotts-Portfolio.git/SF3-Experiment-AXI/IPI-BDs/system/ip/system_PmodCLS_0_6/system_PmodCLS_0_6_stub.vhdl
+--               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_PmodCLS_0_6/system_PmodCLS_0_6_stub.vhdl
 -- Design      : system_PmodCLS_0_6
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100ticsg324-1L

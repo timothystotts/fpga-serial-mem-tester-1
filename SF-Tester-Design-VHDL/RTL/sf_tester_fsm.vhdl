@@ -697,7 +697,11 @@ begin
 				s_i_val                   <= 0;
 				s_pattern_track_val       <= s_pattern_start_aux;
 
-				s_tester_nx_state <= ST_CMD_PAGE_START;
+                if (s_t = c_t_max) then -- allow a few seconds of idle for easier SPY capture of the Erase command
+				    s_tester_nx_state <= ST_CMD_PAGE_START;
+				else
+				    s_tester_nx_state <= ST_CMD_ERASE_DONE;
+				end if;
 
 			when ST_CMD_PAGE_START =>
 				-- Issue an Program Page Command at the starting address
@@ -807,7 +811,11 @@ begin
 				s_i_val                   <= 0;
 				s_pattern_track_val       <= s_pattern_start_aux;
 
-				s_tester_nx_state <= ST_CMD_READ_START;
+                if (s_t = c_t_max) then -- allow a few seconds of idle for easier SPY capture of the Page command
+				    s_tester_nx_state <= ST_CMD_READ_START;
+				else
+				    s_tester_nx_state <= ST_CMD_PAGE_DONE;
+				end if;
 
 			when ST_CMD_READ_START =>
 				-- Issue an Random Read Command at the starting address
@@ -925,8 +933,12 @@ begin
 				s_i_val                   <= 0;
 				s_pattern_track_val       <= s_pattern_start_aux;
 
-				s_tester_nx_state <= ST_DISPLAY_FINAL;
-
+                if (s_t = c_t_max) then -- allow a few seconds of idle for easier SPY capture of the Read command
+				    s_tester_nx_state <= ST_DISPLAY_FINAL;
+                else
+                    s_tester_nx_state <= ST_CMD_READ_DONE;
+                end if;
+                
 			when others => -- ST_DISPLAY_FINAL =>
 				-- Compare the auxiliary register error count to zero and set
 				-- the auxiliary register test done to either true or false.

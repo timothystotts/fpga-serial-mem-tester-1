@@ -78,7 +78,7 @@ end entity led_pwm_driver;
 --------------------------------------------------------------------------------
 architecture rtl of led_pwm_driver is
 	constant c_pwm_period_ms                    : natural   := parm_FCLK / 1000 * parm_pwm_period_milliseconds;
-	constant c_pwm_color_max_duty_cycle         : natural   := c_pwm_period_ms * 8 / 10;
+	constant c_pwm_color_max_duty_cycle         : natural   := c_pwm_period_ms * 5 / 10;
 	constant c_pwm_color_max_duty_cycle_ratioed : natural   := c_pwm_color_max_duty_cycle / 256;
 	constant c_pwm_basic_max_duty_cycle         : natural   := c_pwm_period_ms * 9 / 10;
 	constant c_pwm_basic_max_duty_cycle_ratioed : natural   := c_pwm_basic_max_duty_cycle / 256;

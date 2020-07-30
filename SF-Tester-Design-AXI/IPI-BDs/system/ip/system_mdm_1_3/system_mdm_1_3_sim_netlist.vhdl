@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Tue Jun 16 21:01:54 2020
+-- Date        : Mon Jul 27 12:41:32 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top system_mdm_1_3 -prefix
---               system_mdm_1_3_ system_mdm_1_3_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_mdm_1_3/system_mdm_1_3_sim_netlist.vhdl
 -- Design      : system_mdm_1_3
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -42,6 +42,8 @@ entity system_mdm_1_3_MB_BSCANE2 is
     Dbg_TDO_0 : in STD_LOGIC;
     \Use_Serial_Unified_Completion.completion_status_reg[15]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_BSCANE2 : entity is "MB_BSCANE2";
 end system_mdm_1_3_MB_BSCANE2;
 
 architecture STRUCTURE of system_mdm_1_3_MB_BSCANE2 is
@@ -170,6 +172,8 @@ entity system_mdm_1_3_MB_BUFG is
     Dbg_Clk_0 : out STD_LOGIC;
     DRCK : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_BUFG : entity is "MB_BUFG";
 end system_mdm_1_3_MB_BUFG;
 
 architecture STRUCTURE of system_mdm_1_3_MB_BUFG is
@@ -240,6 +244,8 @@ entity system_mdm_1_3_MB_FDC_1 is
     Debug_SYS_Rst : in STD_LOGIC;
     Ext_NM_BRK : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_FDC_1 : entity is "MB_FDC_1";
 end system_mdm_1_3_MB_FDC_1;
 
 architecture STRUCTURE of system_mdm_1_3_MB_FDC_1 is
@@ -854,6 +860,8 @@ entity system_mdm_1_3_MB_FDRE_1 is
     Dbg_Shift_0_3 : in STD_LOGIC;
     Dbg_Shift_0_4 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_FDRE_1 : entity is "MB_FDRE_1";
 end system_mdm_1_3_MB_FDRE_1;
 
 architecture STRUCTURE of system_mdm_1_3_MB_FDRE_1 is
@@ -899,6 +907,8 @@ entity system_mdm_1_3_MB_LUT1 is
     Ext_JTAG_TDI : out STD_LOGIC;
     I0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_LUT1 : entity is "MB_LUT1";
 end system_mdm_1_3_MB_LUT1;
 
 architecture STRUCTURE of system_mdm_1_3_MB_LUT1 is
@@ -938,6 +948,8 @@ entity system_mdm_1_3_MB_SRL16E is
     \Use_E2.BSCANE2_I_i_4_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     config_TDO_2 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MB_SRL16E : entity is "MB_SRL16E";
 end system_mdm_1_3_MB_SRL16E;
 
 architecture STRUCTURE of system_mdm_1_3_MB_SRL16E is
@@ -1177,6 +1189,8 @@ entity system_mdm_1_3_JTAG_CONTROL is
     \Use_Serial_Unified_Completion.count_reg[5]_2\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \shift_Count_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_JTAG_CONTROL : entity is "JTAG_CONTROL";
 end system_mdm_1_3_JTAG_CONTROL;
 
 architecture STRUCTURE of system_mdm_1_3_JTAG_CONTROL is
@@ -2710,6 +2724,8 @@ entity system_mdm_1_3_MDM_Core is
     AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     \Use_Serial_Unified_Completion.count_reg[5]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MDM_Core : entity is "MDM_Core";
 end system_mdm_1_3_MDM_Core;
 
 architecture STRUCTURE of system_mdm_1_3_MDM_Core is
@@ -4884,6 +4900,8 @@ entity system_mdm_1_3_MDM is
   attribute C_USE_CROSS_TRIGGER of system_mdm_1_3_MDM : entity is 0;
   attribute C_USE_UART : integer;
   attribute C_USE_UART of system_mdm_1_3_MDM : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_mdm_1_3_MDM : entity is "MDM";
 end system_mdm_1_3_MDM;
 
 architecture STRUCTURE of system_mdm_1_3_MDM is

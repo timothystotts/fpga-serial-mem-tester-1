@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Tue Jun 16 20:56:19 2020
+// Date        : Mon Jul 27 12:35:14 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top system_axi_ethernetlite_0_0 -prefix
-//               system_axi_ethernetlite_0_0_ system_axi_ethernetlite_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_axi_ethernetlite_0_0/system_axi_ethernetlite_0_0_sim_netlist.v
 // Design      : system_axi_ethernetlite_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,6 +12,183 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "system_axi_ethernetlite_0_0,axi_ethernetlite,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_ethernetlite,Vivado 2020.1" *) 
+(* NotValidForBitStream *)
+module system_axi_ethernetlite_0_0
+   (s_axi_aclk,
+    s_axi_aresetn,
+    ip2intc_irpt,
+    s_axi_awaddr,
+    s_axi_awvalid,
+    s_axi_awready,
+    s_axi_wdata,
+    s_axi_wstrb,
+    s_axi_wvalid,
+    s_axi_wready,
+    s_axi_bresp,
+    s_axi_bvalid,
+    s_axi_bready,
+    s_axi_araddr,
+    s_axi_arvalid,
+    s_axi_arready,
+    s_axi_rdata,
+    s_axi_rresp,
+    s_axi_rvalid,
+    s_axi_rready,
+    phy_tx_clk,
+    phy_rx_clk,
+    phy_crs,
+    phy_dv,
+    phy_rx_data,
+    phy_col,
+    phy_rx_er,
+    phy_rst_n,
+    phy_tx_en,
+    phy_tx_data,
+    phy_mdio_i,
+    phy_mdio_o,
+    phy_mdio_t,
+    phy_mdc);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 83333333, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *) input s_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SUGGESTED_PRIORITY HIGH, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 83333333, ID_WIDTH 0, ADDR_WIDTH 13, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 32, MAX_BURST_LENGTH 1, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [12:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]s_axi_wstrb;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input s_axi_wvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output s_axi_wready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]s_axi_bresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output s_axi_bvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input s_axi_bready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [12:0]s_axi_araddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input s_axi_arvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output s_axi_arready;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]s_axi_rdata;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]s_axi_rresp;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TX_CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME MII, BOARD.ASSOCIATED_PARAM MII_BOARD_INTERFACE" *) input phy_tx_clk;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_CLK" *) input phy_rx_clk;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII CRS" *) input phy_crs;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_DV" *) input phy_dv;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RXD" *) input [3:0]phy_rx_data;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII COL" *) input phy_col;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_ER" *) input phy_rx_er;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RST_N" *) output phy_rst_n;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TX_EN" *) output phy_tx_en;
+  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TXD" *) output [3:0]phy_tx_data;
+  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_I" *) (* x_interface_parameter = "XIL_INTERFACENAME MDIO, BOARD.ASSOCIATED_PARAM MDIO_BOARD_INTERFACE, CAN_DEBUG false" *) input phy_mdio_i;
+  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_O" *) output phy_mdio_o;
+  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_T" *) output phy_mdio_t;
+  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDC" *) output phy_mdc;
+
+  wire ip2intc_irpt;
+  wire phy_col;
+  wire phy_crs;
+  wire phy_dv;
+  wire phy_mdc;
+  wire phy_mdio_i;
+  wire phy_mdio_o;
+  wire phy_mdio_t;
+  wire phy_rst_n;
+  (* IBUF_LOW_PWR *) wire phy_rx_clk;
+  wire [3:0]phy_rx_data;
+  wire phy_rx_er;
+  (* IBUF_LOW_PWR *) wire phy_tx_clk;
+  wire [3:0]phy_tx_data;
+  wire phy_tx_en;
+  wire s_axi_aclk;
+  wire [12:0]s_axi_araddr;
+  wire s_axi_aresetn;
+  wire s_axi_arready;
+  wire s_axi_arvalid;
+  wire [12:0]s_axi_awaddr;
+  wire s_axi_awready;
+  wire s_axi_awvalid;
+  wire s_axi_bready;
+  wire [1:0]s_axi_bresp;
+  wire s_axi_bvalid;
+  wire [31:0]s_axi_rdata;
+  wire s_axi_rready;
+  wire [1:0]s_axi_rresp;
+  wire s_axi_rvalid;
+  wire [31:0]s_axi_wdata;
+  wire s_axi_wready;
+  wire [3:0]s_axi_wstrb;
+  wire s_axi_wvalid;
+  wire NLW_U0_s_axi_rlast_UNCONNECTED;
+  wire [0:0]NLW_U0_s_axi_bid_UNCONNECTED;
+  wire [0:0]NLW_U0_s_axi_rid_UNCONNECTED;
+
+  (* C_DUPLEX = "1" *) 
+  (* C_FAMILY = "artix7" *) 
+  (* C_INCLUDE_GLOBAL_BUFFERS = "1" *) 
+  (* C_INCLUDE_INTERNAL_LOOPBACK = "0" *) 
+  (* C_INCLUDE_MDIO = "1" *) 
+  (* C_INSTANCE = "axi_ethernetlite_inst" *) 
+  (* C_RX_PING_PONG = "1" *) 
+  (* C_SELECT_XPM = "1" *) 
+  (* C_S_AXI_ACLK_PERIOD_PS = "12000" *) 
+  (* C_S_AXI_ADDR_WIDTH = "13" *) 
+  (* C_S_AXI_DATA_WIDTH = "32" *) 
+  (* C_S_AXI_ID_WIDTH = "1" *) 
+  (* C_S_AXI_PROTOCOL = "AXI4LITE" *) 
+  (* C_TX_PING_PONG = "1" *) 
+  (* downgradeipidentifiedwarnings = "yes" *) 
+  system_axi_ethernetlite_0_0_axi_ethernetlite U0
+       (.ip2intc_irpt(ip2intc_irpt),
+        .phy_col(phy_col),
+        .phy_crs(phy_crs),
+        .phy_dv(phy_dv),
+        .phy_mdc(phy_mdc),
+        .phy_mdio_i(phy_mdio_i),
+        .phy_mdio_o(phy_mdio_o),
+        .phy_mdio_t(phy_mdio_t),
+        .phy_rst_n(phy_rst_n),
+        .phy_rx_clk(phy_rx_clk),
+        .phy_rx_data(phy_rx_data),
+        .phy_rx_er(phy_rx_er),
+        .phy_tx_clk(phy_tx_clk),
+        .phy_tx_data(phy_tx_data),
+        .phy_tx_en(phy_tx_en),
+        .s_axi_aclk(s_axi_aclk),
+        .s_axi_araddr(s_axi_araddr),
+        .s_axi_arburst({1'b0,1'b0}),
+        .s_axi_arcache({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_aresetn(s_axi_aresetn),
+        .s_axi_arid(1'b0),
+        .s_axi_arlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_arready(s_axi_arready),
+        .s_axi_arsize({1'b0,1'b0,1'b0}),
+        .s_axi_arvalid(s_axi_arvalid),
+        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awburst({1'b0,1'b0}),
+        .s_axi_awcache({1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_awid(1'b0),
+        .s_axi_awlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s_axi_awready(s_axi_awready),
+        .s_axi_awsize({1'b0,1'b0,1'b0}),
+        .s_axi_awvalid(s_axi_awvalid),
+        .s_axi_bid(NLW_U0_s_axi_bid_UNCONNECTED[0]),
+        .s_axi_bready(s_axi_bready),
+        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bvalid(s_axi_bvalid),
+        .s_axi_rdata(s_axi_rdata),
+        .s_axi_rid(NLW_U0_s_axi_rid_UNCONNECTED[0]),
+        .s_axi_rlast(NLW_U0_s_axi_rlast_UNCONNECTED),
+        .s_axi_rready(s_axi_rready),
+        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rvalid(s_axi_rvalid),
+        .s_axi_wdata(s_axi_wdata),
+        .s_axi_wlast(1'b1),
+        .s_axi_wready(s_axi_wready),
+        .s_axi_wstrb(s_axi_wstrb),
+        .s_axi_wvalid(s_axi_wvalid));
+endmodule
+
+(* ORIG_REF_NAME = "MacAddrRAM" *) 
 module system_axi_ethernetlite_0_0_MacAddrRAM
    (\emac_rx_rd_data_d1_reg[3] ,
     Q,
@@ -46,6 +223,7 @@ module system_axi_ethernetlite_0_0_MacAddrRAM
         .s_axi_aclk(s_axi_aclk));
 endmodule
 
+(* ORIG_REF_NAME = "async_fifo_fg" *) 
 module system_axi_ethernetlite_0_0_async_fifo_fg
    (full,
     wr_rst_busy,
@@ -680,7 +858,8 @@ endmodule
 (* C_INCLUDE_INTERNAL_LOOPBACK = "0" *) (* C_INCLUDE_MDIO = "1" *) (* C_INSTANCE = "axi_ethernetlite_inst" *) 
 (* C_RX_PING_PONG = "1" *) (* C_SELECT_XPM = "1" *) (* C_S_AXI_ACLK_PERIOD_PS = "12000" *) 
 (* C_S_AXI_ADDR_WIDTH = "13" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* C_S_AXI_ID_WIDTH = "1" *) 
-(* C_S_AXI_PROTOCOL = "AXI4LITE" *) (* C_TX_PING_PONG = "1" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* C_S_AXI_PROTOCOL = "AXI4LITE" *) (* C_TX_PING_PONG = "1" *) (* ORIG_REF_NAME = "axi_ethernetlite" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module system_axi_ethernetlite_0_0_axi_ethernetlite
    (s_axi_aclk,
     s_axi_aresetn,
@@ -1308,6 +1487,7 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .wr_clk(phy_rx_clk_core));
 endmodule
 
+(* ORIG_REF_NAME = "axi_ethernetlite_v3_0_20_emac" *) 
 module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
    (prmry_in,
     dout,
@@ -1902,6 +2082,7 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
         .R(TX_n_10));
 endmodule
 
+(* ORIG_REF_NAME = "axi_interface" *) 
 module system_axi_ethernetlite_0_0_axi_interface
    (s_axi_wready,
     s_axi_bvalid,
@@ -3673,6 +3854,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .O(\xpm_mem_gen.xpm_memory_inst_1_i_5_n_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "cdc_sync" *) 
 module system_axi_ethernetlite_0_0_cdc_sync
    (scndry_out,
     SS,
@@ -4201,6 +4383,7 @@ module system_axi_ethernetlite_0_0_cdc_sync__parameterized2
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "cntr5bit" *) 
 module system_axi_ethernetlite_0_0_cntr5bit
    (ifgp1_zero,
     Q,
@@ -4414,6 +4597,7 @@ module system_axi_ethernetlite_0_0_cntr5bit_9
         .S(zero_i_reg_0));
 endmodule
 
+(* ORIG_REF_NAME = "crcgenrx" *) 
 module system_axi_ethernetlite_0_0_crcgenrx
    (Q,
     crcokdelay,
@@ -5002,6 +5186,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .O(crcokdelay_i_9_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "crcgentx" *) 
 module system_axi_ethernetlite_0_0_crcgentx
    (Q,
     \nibData_reg[30] ,
@@ -5032,6 +5217,7 @@ module system_axi_ethernetlite_0_0_crcgentx
         .txCrcEn_reg(txCrcEn_reg));
 endmodule
 
+(* ORIG_REF_NAME = "crcnibshiftreg" *) 
 module system_axi_ethernetlite_0_0_crcnibshiftreg
    (Q,
     \nibData_reg[30]_0 ,
@@ -5580,6 +5766,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "defer_state" *) 
 module system_axi_ethernetlite_0_0_defer_state
    (Q,
     E,
@@ -5727,6 +5914,7 @@ module system_axi_ethernetlite_0_0_defer_state
         .O(\FSM_sequential_thisState_reg[1]_0 [0]));
 endmodule
 
+(* ORIG_REF_NAME = "deferral" *) 
 module system_axi_ethernetlite_0_0_deferral
    (Q,
     zero_i_reg,
@@ -5797,6 +5985,7 @@ module system_axi_ethernetlite_0_0_deferral
         .zero_i_reg_0(zero_i_reg));
 endmodule
 
+(* ORIG_REF_NAME = "emac_dpram" *) 
 module system_axi_ethernetlite_0_0_emac_dpram
    (rx_pong_data_out,
     s_axi_aclk,
@@ -7471,6 +7660,7 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
         .web(web));
 endmodule
 
+(* ORIG_REF_NAME = "ld_arith_reg" *) 
 module system_axi_ethernetlite_0_0_ld_arith_reg
    (\PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1_0 ,
     \tx_packet_length_reg[11] ,
@@ -8322,6 +8512,7 @@ module system_axi_ethernetlite_0_0_ld_arith_reg__parameterized1
         .O(din));
 endmodule
 
+(* ORIG_REF_NAME = "mdio_if" *) 
 module system_axi_ethernetlite_0_0_mdio_if
    (\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 ,
     phy_mdio_o,
@@ -9544,6 +9735,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .R(prmry_in));
 endmodule
 
+(* ORIG_REF_NAME = "mux_onehot_f" *) 
 module system_axi_ethernetlite_0_0_mux_onehot_f
    (D,
     \txNibbleCnt_pad_reg[4] ,
@@ -9670,6 +9862,7 @@ module system_axi_ethernetlite_0_0_mux_onehot_f
         .S({\NLW_GEN.DATA_WIDTH_GEN[3].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_CARRY4_S_UNCONNECTED [3:2],\emac_tx_wr_data_d1_reg[3]_0 ,\emac_tx_wr_data_d1_reg[3] }));
 endmodule
 
+(* ORIG_REF_NAME = "ram16x4" *) 
 module system_axi_ethernetlite_0_0_ram16x4
    (\emac_rx_rd_data_d1_reg[3] ,
     Q,
@@ -9767,6 +9960,7 @@ module system_axi_ethernetlite_0_0_ram16x4
         .WE(mac_addr_ram_we));
 endmodule
 
+(* ORIG_REF_NAME = "receive" *) 
 module system_axi_ethernetlite_0_0_receive
    (D,
     \emac_rx_rd_data_d1_reg[1]_0 ,
@@ -10077,6 +10271,7 @@ module system_axi_ethernetlite_0_0_receive
         .R(SS));
 endmodule
 
+(* ORIG_REF_NAME = "rx_intrfce" *) 
 module system_axi_ethernetlite_0_0_rx_intrfce
    (dout,
     empty,
@@ -10236,6 +10431,7 @@ module system_axi_ethernetlite_0_0_rx_intrfce
         .wr_clk(wr_clk));
 endmodule
 
+(* ORIG_REF_NAME = "rx_statemachine" *) 
 module system_axi_ethernetlite_0_0_rx_statemachine
    (crcokr1,
     rxCrcRst,
@@ -11421,182 +11617,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .O(wea));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "system_axi_ethernetlite_0_0,axi_ethernetlite,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_ethernetlite,Vivado 2020.1" *) 
-(* NotValidForBitStream *)
-module system_axi_ethernetlite_0_0
-   (s_axi_aclk,
-    s_axi_aresetn,
-    ip2intc_irpt,
-    s_axi_awaddr,
-    s_axi_awvalid,
-    s_axi_awready,
-    s_axi_wdata,
-    s_axi_wstrb,
-    s_axi_wvalid,
-    s_axi_wready,
-    s_axi_bresp,
-    s_axi_bvalid,
-    s_axi_bready,
-    s_axi_araddr,
-    s_axi_arvalid,
-    s_axi_arready,
-    s_axi_rdata,
-    s_axi_rresp,
-    s_axi_rvalid,
-    s_axi_rready,
-    phy_tx_clk,
-    phy_rx_clk,
-    phy_crs,
-    phy_dv,
-    phy_rx_data,
-    phy_col,
-    phy_rx_er,
-    phy_rst_n,
-    phy_tx_en,
-    phy_tx_data,
-    phy_mdio_i,
-    phy_mdio_o,
-    phy_mdio_t,
-    phy_mdc);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 83333333, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *) input s_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SUGGESTED_PRIORITY HIGH, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 83333333, ID_WIDTH 0, ADDR_WIDTH 13, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 32, MAX_BURST_LENGTH 1, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [12:0]s_axi_awaddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WSTRB" *) input [3:0]s_axi_wstrb;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WVALID" *) input s_axi_wvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WREADY" *) output s_axi_wready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BRESP" *) output [1:0]s_axi_bresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BVALID" *) output s_axi_bvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI BREADY" *) input s_axi_bready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [12:0]s_axi_araddr;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARVALID" *) input s_axi_arvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI ARREADY" *) output s_axi_arready;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RDATA" *) output [31:0]s_axi_rdata;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]s_axi_rresp;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TX_CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME MII, BOARD.ASSOCIATED_PARAM MII_BOARD_INTERFACE" *) input phy_tx_clk;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_CLK" *) input phy_rx_clk;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII CRS" *) input phy_crs;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_DV" *) input phy_dv;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RXD" *) input [3:0]phy_rx_data;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII COL" *) input phy_col;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_ER" *) input phy_rx_er;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RST_N" *) output phy_rst_n;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TX_EN" *) output phy_tx_en;
-  (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TXD" *) output [3:0]phy_tx_data;
-  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_I" *) (* x_interface_parameter = "XIL_INTERFACENAME MDIO, BOARD.ASSOCIATED_PARAM MDIO_BOARD_INTERFACE, CAN_DEBUG false" *) input phy_mdio_i;
-  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_O" *) output phy_mdio_o;
-  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_T" *) output phy_mdio_t;
-  (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDC" *) output phy_mdc;
-
-  wire ip2intc_irpt;
-  wire phy_col;
-  wire phy_crs;
-  wire phy_dv;
-  wire phy_mdc;
-  wire phy_mdio_i;
-  wire phy_mdio_o;
-  wire phy_mdio_t;
-  wire phy_rst_n;
-  (* IBUF_LOW_PWR *) wire phy_rx_clk;
-  wire [3:0]phy_rx_data;
-  wire phy_rx_er;
-  (* IBUF_LOW_PWR *) wire phy_tx_clk;
-  wire [3:0]phy_tx_data;
-  wire phy_tx_en;
-  wire s_axi_aclk;
-  wire [12:0]s_axi_araddr;
-  wire s_axi_aresetn;
-  wire s_axi_arready;
-  wire s_axi_arvalid;
-  wire [12:0]s_axi_awaddr;
-  wire s_axi_awready;
-  wire s_axi_awvalid;
-  wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
-  wire s_axi_bvalid;
-  wire [31:0]s_axi_rdata;
-  wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
-  wire s_axi_rvalid;
-  wire [31:0]s_axi_wdata;
-  wire s_axi_wready;
-  wire [3:0]s_axi_wstrb;
-  wire s_axi_wvalid;
-  wire NLW_U0_s_axi_rlast_UNCONNECTED;
-  wire [0:0]NLW_U0_s_axi_bid_UNCONNECTED;
-  wire [0:0]NLW_U0_s_axi_rid_UNCONNECTED;
-
-  (* C_DUPLEX = "1" *) 
-  (* C_FAMILY = "artix7" *) 
-  (* C_INCLUDE_GLOBAL_BUFFERS = "1" *) 
-  (* C_INCLUDE_INTERNAL_LOOPBACK = "0" *) 
-  (* C_INCLUDE_MDIO = "1" *) 
-  (* C_INSTANCE = "axi_ethernetlite_inst" *) 
-  (* C_RX_PING_PONG = "1" *) 
-  (* C_SELECT_XPM = "1" *) 
-  (* C_S_AXI_ACLK_PERIOD_PS = "12000" *) 
-  (* C_S_AXI_ADDR_WIDTH = "13" *) 
-  (* C_S_AXI_DATA_WIDTH = "32" *) 
-  (* C_S_AXI_ID_WIDTH = "1" *) 
-  (* C_S_AXI_PROTOCOL = "AXI4LITE" *) 
-  (* C_TX_PING_PONG = "1" *) 
-  (* downgradeipidentifiedwarnings = "yes" *) 
-  system_axi_ethernetlite_0_0_axi_ethernetlite U0
-       (.ip2intc_irpt(ip2intc_irpt),
-        .phy_col(phy_col),
-        .phy_crs(phy_crs),
-        .phy_dv(phy_dv),
-        .phy_mdc(phy_mdc),
-        .phy_mdio_i(phy_mdio_i),
-        .phy_mdio_o(phy_mdio_o),
-        .phy_mdio_t(phy_mdio_t),
-        .phy_rst_n(phy_rst_n),
-        .phy_rx_clk(phy_rx_clk),
-        .phy_rx_data(phy_rx_data),
-        .phy_rx_er(phy_rx_er),
-        .phy_tx_clk(phy_tx_clk),
-        .phy_tx_data(phy_tx_data),
-        .phy_tx_en(phy_tx_en),
-        .s_axi_aclk(s_axi_aclk),
-        .s_axi_araddr(s_axi_araddr),
-        .s_axi_arburst({1'b0,1'b0}),
-        .s_axi_arcache({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_aresetn(s_axi_aresetn),
-        .s_axi_arid(1'b0),
-        .s_axi_arlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_arready(s_axi_arready),
-        .s_axi_arsize({1'b0,1'b0,1'b0}),
-        .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
-        .s_axi_awburst({1'b0,1'b0}),
-        .s_axi_awcache({1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_awid(1'b0),
-        .s_axi_awlen({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .s_axi_awready(s_axi_awready),
-        .s_axi_awsize({1'b0,1'b0,1'b0}),
-        .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bid(NLW_U0_s_axi_bid_UNCONNECTED[0]),
-        .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
-        .s_axi_bvalid(s_axi_bvalid),
-        .s_axi_rdata(s_axi_rdata),
-        .s_axi_rid(NLW_U0_s_axi_rid_UNCONNECTED[0]),
-        .s_axi_rlast(NLW_U0_s_axi_rlast_UNCONNECTED),
-        .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
-        .s_axi_rvalid(s_axi_rvalid),
-        .s_axi_wdata(s_axi_wdata),
-        .s_axi_wlast(1'b1),
-        .s_axi_wready(s_axi_wready),
-        .s_axi_wstrb(s_axi_wstrb),
-        .s_axi_wvalid(s_axi_wvalid));
-endmodule
-
+(* ORIG_REF_NAME = "transmit" *) 
 module system_axi_ethernetlite_0_0_transmit
    (STATE0A,
     SS,
@@ -12227,6 +12248,7 @@ module system_axi_ethernetlite_0_0_transmit
         .R(SS));
 endmodule
 
+(* ORIG_REF_NAME = "tx_intrfce" *) 
 module system_axi_ethernetlite_0_0_tx_intrfce
    (full,
     wr_rst_busy,
@@ -12342,6 +12364,7 @@ module system_axi_ethernetlite_0_0_tx_intrfce
         .R(rst));
 endmodule
 
+(* ORIG_REF_NAME = "tx_statemachine" *) 
 module system_axi_ethernetlite_0_0_tx_statemachine
    (STATE0A_0,
     s_axi_aresetn_0,
@@ -13775,6 +13798,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .O(\txbuffer_addr_reg[9]_2 ));
 endmodule
 
+(* ORIG_REF_NAME = "xemac" *) 
 module system_axi_ethernetlite_0_0_xemac
    (SS,
     \MDIO_GEN.mdio_clk_i_reg_0 ,
@@ -15542,10 +15566,10 @@ module system_axi_ethernetlite_0_0_xemac
         .R(SS));
 endmodule
 
-(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* REG_OUTPUT = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) (* VERSION = "0" *) 
-(* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
-(* xpm_cdc = "GRAY" *) 
+(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_gray" *) 
+(* REG_OUTPUT = "0" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
+(* VERSION = "0" *) (* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "true" *) (* xpm_cdc = "GRAY" *) 
 module system_axi_ethernetlite_0_0_xpm_cdc_gray
    (src_clk,
     src_in_bin,
@@ -17019,8 +17043,9 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__parameterized0__6
 endmodule
 
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "2" *) (* INIT = "0" *) 
-(* INIT_SYNC_FF = "1" *) (* SIM_ASSERT_CHK = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SYNC_RST" *) 
+(* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
+(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
+(* xpm_cdc = "SYNC_RST" *) 
 module system_axi_ethernetlite_0_0_xpm_cdc_sync_rst
    (src_rst,
     dest_clk,
@@ -17181,6 +17206,7 @@ module system_axi_ethernetlite_0_0_xpm_cdc_sync_rst__6
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_counter_updn" *) 
 module system_axi_ethernetlite_0_0_xpm_counter_updn
    (Q,
     wrst_busy,
@@ -18613,12 +18639,13 @@ endmodule
 (* CASCADE_HEIGHT = "0" *) (* CDC_SYNC_STAGES = "2" *) (* DOUT_RESET_VALUE = "0" *) 
 (* ECC_MODE = "no_ecc" *) (* EN_ADV_FEATURE_ASYNC = "16'b0001111100011111" *) (* FIFO_MEMORY_TYPE = "auto" *) 
 (* FIFO_READ_LATENCY = "1" *) (* FIFO_WRITE_DEPTH = "16" *) (* FULL_RESET_VALUE = "1" *) 
-(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* P_COMMON_CLOCK = "0" *) 
-(* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) (* P_READ_MODE = "0" *) 
-(* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "2" *) (* READ_DATA_WIDTH = "6" *) 
-(* READ_MODE = "std" *) (* RELATED_CLOCKS = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "1F1F" *) (* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH = "6" *) 
-(* WR_DATA_COUNT_WIDTH = "2" *) (* XPM_MODULE = "TRUE" *) (* dont_touch = "true" *) 
+(* ORIG_REF_NAME = "xpm_fifo_async" *) (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) 
+(* P_COMMON_CLOCK = "0" *) (* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) 
+(* P_READ_MODE = "0" *) (* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "2" *) 
+(* READ_DATA_WIDTH = "6" *) (* READ_MODE = "std" *) (* RELATED_CLOCKS = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1F1F" *) (* WAKEUP_TIME = "0" *) 
+(* WRITE_DATA_WIDTH = "6" *) (* WR_DATA_COUNT_WIDTH = "2" *) (* XPM_MODULE = "TRUE" *) 
+(* dont_touch = "true" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_async
    (sleep,
     rst,
@@ -18989,19 +19016,19 @@ endmodule
 (* EN_WACK = "1'b1" *) (* EN_WDC = "1'b1" *) (* FG_EQ_ASYM_DOUT = "1'b0" *) 
 (* FIFO_MEMORY_TYPE = "0" *) (* FIFO_MEM_TYPE = "0" *) (* FIFO_READ_DEPTH = "16" *) 
 (* FIFO_READ_LATENCY = "1" *) (* FIFO_SIZE = "96" *) (* FIFO_WRITE_DEPTH = "16" *) 
-(* FULL_RESET_VALUE = "1" *) (* FULL_RST_VAL = "1'b1" *) (* PE_THRESH_ADJ = "10" *) 
-(* PE_THRESH_MAX = "13" *) (* PE_THRESH_MIN = "3" *) (* PF_THRESH_ADJ = "10" *) 
-(* PF_THRESH_MAX = "13" *) (* PF_THRESH_MIN = "5" *) (* PROG_EMPTY_THRESH = "10" *) 
-(* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "2" *) (* RD_DC_WIDTH_EXT = "5" *) 
-(* RD_LATENCY = "1" *) (* RD_MODE = "0" *) (* RD_PNTR_WIDTH = "4" *) 
-(* READ_DATA_WIDTH = "6" *) (* READ_MODE = "0" *) (* RELATED_CLOCKS = "0" *) 
-(* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1F1F" *) 
-(* VERSION = "0" *) (* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) 
-(* WRITE_DATA_WIDTH = "6" *) (* WR_DATA_COUNT_WIDTH = "2" *) (* WR_DC_WIDTH_EXT = "5" *) 
-(* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) 
-(* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) 
-(* invalid = "0" *) (* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) 
-(* stage2_valid = "1" *) 
+(* FULL_RESET_VALUE = "1" *) (* FULL_RST_VAL = "1'b1" *) (* ORIG_REF_NAME = "xpm_fifo_base" *) 
+(* PE_THRESH_ADJ = "10" *) (* PE_THRESH_MAX = "13" *) (* PE_THRESH_MIN = "3" *) 
+(* PF_THRESH_ADJ = "10" *) (* PF_THRESH_MAX = "13" *) (* PF_THRESH_MIN = "5" *) 
+(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "2" *) 
+(* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "1" *) (* RD_MODE = "0" *) 
+(* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "6" *) (* READ_MODE = "0" *) 
+(* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) 
+(* USE_ADV_FEATURES = "1F1F" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
+(* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "6" *) (* WR_DATA_COUNT_WIDTH = "2" *) 
+(* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) 
+(* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) 
+(* both_stages_valid = "3" *) (* invalid = "0" *) (* keep_hierarchy = "soft" *) 
+(* stage1_valid = "2" *) (* stage2_valid = "1" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_base
    (sleep,
     rst,
@@ -20189,6 +20216,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
         .wrst_busy(wrst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_bit" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit
    (rst_d1,
     \gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q_reg[3] ,
@@ -20336,6 +20364,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit_19
         .O(overflow_i0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_vec" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec
    (\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ,
     D,
@@ -21369,6 +21398,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec__parameterized0_5
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_rst" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_rst
    (SR,
     wrst_busy,
@@ -22179,24 +22209,25 @@ endmodule
 (* CLOCKING_MODE = "1" *) (* ECC_MODE = "0" *) (* MAX_NUM_CHAR = "0" *) 
 (* MEMORY_INIT_FILE = "none" *) (* MEMORY_INIT_PARAM = "" *) (* MEMORY_OPTIMIZATION = "true" *) 
 (* MEMORY_PRIMITIVE = "0" *) (* MEMORY_SIZE = "96" *) (* MEMORY_TYPE = "1" *) 
-(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* P_ECC_MODE = "no_ecc" *) 
-(* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) (* P_MAX_DEPTH_DATA = "16" *) 
-(* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) (* P_MIN_WIDTH_DATA = "6" *) 
-(* P_MIN_WIDTH_DATA_A = "6" *) (* P_MIN_WIDTH_DATA_B = "6" *) (* P_MIN_WIDTH_DATA_ECC = "6" *) 
-(* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "6" *) (* P_NUM_COLS_WRITE_A = "1" *) 
-(* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) (* P_NUM_ROWS_READ_B = "1" *) 
-(* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) (* P_SDP_WRITE_MODE = "yes" *) 
-(* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) 
-(* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "4" *) (* P_WIDTH_ADDR_READ_B = "4" *) 
-(* P_WIDTH_ADDR_WRITE_A = "4" *) (* P_WIDTH_ADDR_WRITE_B = "4" *) (* P_WIDTH_COL_WRITE_A = "6" *) 
-(* P_WIDTH_COL_WRITE_B = "6" *) (* READ_DATA_WIDTH_A = "6" *) (* READ_DATA_WIDTH_B = "6" *) 
-(* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "1" *) (* READ_RESET_VALUE_A = "0" *) 
-(* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "0" *) 
-(* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WRITE_DATA_WIDTH_A = "6" *) (* WRITE_DATA_WIDTH_B = "6" *) (* WRITE_MODE_A = "2" *) 
-(* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) (* rstb_loop_iter = "8" *) 
+(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* ORIG_REF_NAME = "xpm_memory_base" *) 
+(* P_ECC_MODE = "no_ecc" *) (* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) 
+(* P_MAX_DEPTH_DATA = "16" *) (* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) 
+(* P_MIN_WIDTH_DATA = "6" *) (* P_MIN_WIDTH_DATA_A = "6" *) (* P_MIN_WIDTH_DATA_B = "6" *) 
+(* P_MIN_WIDTH_DATA_ECC = "6" *) (* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "6" *) 
+(* P_NUM_COLS_WRITE_A = "1" *) (* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) 
+(* P_NUM_ROWS_READ_B = "1" *) (* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) 
+(* P_SDP_WRITE_MODE = "yes" *) (* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) 
+(* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "4" *) 
+(* P_WIDTH_ADDR_READ_B = "4" *) (* P_WIDTH_ADDR_WRITE_A = "4" *) (* P_WIDTH_ADDR_WRITE_B = "4" *) 
+(* P_WIDTH_COL_WRITE_A = "6" *) (* P_WIDTH_COL_WRITE_B = "6" *) (* READ_DATA_WIDTH_A = "6" *) 
+(* READ_DATA_WIDTH_B = "6" *) (* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "1" *) 
+(* READ_RESET_VALUE_A = "0" *) (* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) 
+(* RST_MODE_B = "SYNC" *) (* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) 
+(* USE_MEM_INIT = "0" *) (* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH_A = "6" *) (* WRITE_DATA_WIDTH_B = "6" *) 
+(* WRITE_MODE_A = "2" *) (* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) 
+(* rstb_loop_iter = "8" *) 
 module system_axi_ethernetlite_0_0_xpm_memory_base
    (sleep,
     clka,
@@ -24663,16 +24694,16 @@ endmodule
 (* BYTE_WRITE_WIDTH_A = "4" *) (* BYTE_WRITE_WIDTH_B = "16" *) (* CASCADE_HEIGHT = "0" *) 
 (* CLOCKING_MODE = "common_clock" *) (* ECC_MODE = "no_ecc" *) (* MEMORY_INIT_FILE = "none" *) 
 (* MEMORY_INIT_PARAM = "" *) (* MEMORY_OPTIMIZATION = "true" *) (* MEMORY_PRIMITIVE = "blockram" *) 
-(* MEMORY_SIZE = "8192" *) (* MESSAGE_CONTROL = "0" *) (* P_CLOCKING_MODE = "0" *) 
-(* P_ECC_MODE = "0" *) (* P_MEMORY_OPTIMIZATION = "1" *) (* P_MEMORY_PRIMITIVE = "2" *) 
-(* P_WAKEUP_TIME = "0" *) (* P_WRITE_MODE_A = "1" *) (* P_WRITE_MODE_B = "1" *) 
-(* READ_DATA_WIDTH_A = "4" *) (* READ_DATA_WIDTH_B = "16" *) (* READ_LATENCY_A = "1" *) 
-(* READ_LATENCY_B = "1" *) (* READ_RESET_VALUE_A = "0" *) (* READ_RESET_VALUE_B = "0" *) 
-(* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "1" *) (* USE_MEM_INIT_MMI = "0" *) 
-(* WAKEUP_TIME = "disable_sleep" *) (* WRITE_DATA_WIDTH_A = "4" *) (* WRITE_DATA_WIDTH_B = "16" *) 
-(* WRITE_MODE_A = "read_first" *) (* WRITE_MODE_B = "read_first" *) (* WRITE_PROTECT = "1" *) 
-(* XPM_MODULE = "TRUE" *) 
+(* MEMORY_SIZE = "8192" *) (* MESSAGE_CONTROL = "0" *) (* ORIG_REF_NAME = "xpm_memory_tdpram" *) 
+(* P_CLOCKING_MODE = "0" *) (* P_ECC_MODE = "0" *) (* P_MEMORY_OPTIMIZATION = "1" *) 
+(* P_MEMORY_PRIMITIVE = "2" *) (* P_WAKEUP_TIME = "0" *) (* P_WRITE_MODE_A = "1" *) 
+(* P_WRITE_MODE_B = "1" *) (* READ_DATA_WIDTH_A = "4" *) (* READ_DATA_WIDTH_B = "16" *) 
+(* READ_LATENCY_A = "1" *) (* READ_LATENCY_B = "1" *) (* READ_RESET_VALUE_A = "0" *) 
+(* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "1" *) 
+(* USE_MEM_INIT_MMI = "0" *) (* WAKEUP_TIME = "disable_sleep" *) (* WRITE_DATA_WIDTH_A = "4" *) 
+(* WRITE_DATA_WIDTH_B = "16" *) (* WRITE_MODE_A = "read_first" *) (* WRITE_MODE_B = "read_first" *) 
+(* WRITE_PROTECT = "1" *) (* XPM_MODULE = "TRUE" *) 
 module system_axi_ethernetlite_0_0_xpm_memory_tdpram
    (sleep,
     clka,

@@ -112,7 +112,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_rst_40mhz   : std_logic;
 	signal s_clk_7_37mhz : std_logic;
 	signal s_rst_7_37mhz : std_logic;
-	signal s_ce_2_5mhz   : std_logic;
+	signal s_cls_ce_mhz   : std_logic;
 	signal s_sf3_ce_div  : std_logic;
 
 	-- Extra MMCM signals for full port map to the MMCM primative, where
@@ -195,6 +195,9 @@ architecture rtl of fpga_serial_mem_tester is
 
 	signal s_cls_i : natural range 0 to c_cls_i_max;
 
+    -- CLS 
+    constant c_cls_display_ce_div_ratio : natural := (c_FCLK / 50000 / 4);
+    
 	-- Signals for controlling the PMOD CLS custom driver.
 	signal s_cls_command_ready     : std_logic;
 	signal s_cls_sf3_command_ready : std_logic;
@@ -231,7 +234,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_btns_deb : std_logic_vector(3 downto 0);
 
 	-- SF3 division down from 40 MHz
-	constant c_sf3_tester_ce_div_ratio : natural := 2;
+	constant c_sf3_tester_ce_div_ratio : natural := (c_FCLK / 5000000 / 4);
 
 	-- SF3 Tester FSM state outputs
 	signal s_sf3_tester_pr_state : t_tester_state;
@@ -379,12 +382,12 @@ begin
 	-- generated clock constraint. The 80 MHz or 20 MHz clock is divided
 	-- down to 2.5 MHz; and later divided down to 625 KHz on
 	-- the PMOD CLS bus.
-	u_2_5mhz_ce_divider : entity work.clock_enable_divider(rtl)
+	u_cls_ce_divider : entity work.clock_enable_divider(rtl)
 		generic map(
-			par_ce_divisor => (c_FCLK / 625000 / 4)
+			par_ce_divisor => c_cls_display_ce_div_ratio
 		)
 		port map(
-			o_ce_div  => s_ce_2_5mhz,
+			o_ce_div  => s_cls_ce_mhz,
 			i_clk_mhz => s_clk_40mhz,
 			i_rst_mhz => s_rst_40mhz,
 			i_ce_mhz  => '1'
@@ -444,8 +447,8 @@ begin
 		generic map (
 			parm_fast_simulation   => parm_fast_simulation,
 			parm_FCLK              => c_FCLK,
-			parm_FCLK_ce           => (c_FCLK / 8),
-			parm_ext_spi_clk_ratio => (c_FCLK / 625_000),
+			parm_FCLK_ce           => (c_FCLK / c_cls_display_ce_div_ratio),
+			parm_ext_spi_clk_ratio => (c_cls_display_ce_div_ratio * 4),
 			parm_tx_len_bits       => c_stand_spi_tx_fifo_count_bits,
 			parm_wait_cyc_bits     => c_stand_spi_wait_count_bits,
 			parm_rx_len_bits       => c_stand_spi_rx_fifo_count_bits
@@ -453,7 +456,7 @@ begin
 		port map (
 			i_clk_40mhz            => s_clk_40mhz,
 			i_rst_40mhz            => s_rst_40mhz,
-			i_ce_2_5mhz            => s_ce_2_5mhz,
+			i_ce_mhz               => s_cls_ce_mhz,
 			eo_sck_t               => so_pmod_cls_sck_t,
 			eo_sck_o               => so_pmod_cls_sck_o,
 			eo_csn_t               => so_pmod_cls_csn_t,
@@ -622,12 +625,13 @@ begin
 	-- LCD Update FSM
 	u_lcd_text_feed : entity work.lcd_text_feed(rtl)
 		generic map (
-			parm_fast_simulation => parm_fast_simulation
+			parm_fast_simulation => parm_fast_simulation,
+			parm_FCLK_ce         => (c_FCLK / c_cls_display_ce_div_ratio)
 		)
 		port map (
 			i_clk_40mhz            => s_clk_40mhz,
 			i_rst_40mhz            => s_rst_40mhz,
-			i_ce_2_5mhz            => s_ce_2_5mhz,
+			i_ce_mhz               => s_cls_ce_mhz,
 			i_lcd_command_ready    => s_cls_command_ready,
 			o_lcd_wr_clear_display => s_cls_wr_clear_display,
 			o_lcd_wr_text_line1    => s_cls_wr_text_line1,
