@@ -50,6 +50,7 @@ standard terminology in engineering is a priority.
 ./SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf
 
 [Serial Flash Sector Tester Design Diagrams info](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams.pdf)
+
 #### Target device assembly: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/img_serial-flash-tester-assembled-20200722.jpg)
 
