@@ -92,3 +92,6 @@ standard terminology in engineering is a priority.
 
 #### Generic Standard SPI Single Chip protocol bus driver, used by the the CLS driver
 ![Generic Standard SPI Single Slave bus driver](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SPI-generic-FSM.svg)
+
+#### Utility FSMs: one-shot FSM and synchonous pulse stretcher
+![Utility FSMs, one-shot, pulse stretcher](https://github.com/timothystotts/fpga-serial-acl-tester-1/blob/master/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-Utility-FSMs.svg)
