@@ -8,23 +8,29 @@ Created on Tue Jul 28 16:44:13 2020
 import io
 import sys
 import re
+import copy
 
 class N25QCommand:
     def __init__(self, copi, cipo):
         self._copi = copi
         self._cipo = cipo
         self.lineFormat = 1
-    
+        self._copiFormatted = self._copi
+        self._cipoFormatted = self._cipo
+
     def insertDashes(self, dashPos):
+        self._copiFormatted = copy.copy(self._copi)
+        self._cipoFormatted = copy.copy(self._cipo)
+        
         for i in reversed(dashPos):
-            self._copi.insert(i, '--')
-            self._cipo.insert(i, '--')
+            self._copiFormatted.insert(i, '--')
+            self._cipoFormatted.insert(i, '--')
 
     def __str__(self):
         if self.lineFormat == 2:
-            return "N25Q 0x{1} {0:<30}\t(\nout: {2};\nin : {3})".format(self.CommandName, self.CommandByte, " ".join(self._copi), " ".join(self._cipo))
+            return "N25Q 0x{1} {0:<30}\t(\nout: {2};\nin : {3})".format(self.CommandName, self.CommandByte, " ".join(self._copiFormatted), " ".join(self._cipoFormatted))
         else:
-            return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(self.CommandName, self.CommandByte, " ".join(self._copi), " ".join(self._cipo))
+            return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(self.CommandName, self.CommandByte, " ".join(self._copiFormatted), " ".join(self._cipoFormatted))
 
 class N25QUnknown(N25QCommand):
     CommandByte = "xx"
@@ -99,6 +105,14 @@ class N25QRead(N25QCommand):
         super().__init__(copi, cipo)
         self.insertDashes((1, 4, 4+256))
         self.lineFormat = 2
+
+    def getAddrAsInt(self):
+        try:
+            s = self._copi[1]+self._copi[2]+self._copi[3]
+            v = int(s, 16)
+            return v
+        except ValueError:
+            return -1
         
 class N25Q4ByteFastRead(N25QCommand):
     CommandByte = "0C"
@@ -108,6 +122,14 @@ class N25Q4ByteFastRead(N25QCommand):
         super().__init__(copi, cipo)
         self.insertDashes((1, 5, 6, 6+256))
         self.lineFormat = 2
+        
+    def getAddrAsInt(self):
+        try:
+            s = self._copi[1]+self._copi[2]+self._copi[3]+self._copi[4]
+            v = int(s, 16)
+            return v
+        except ValueError:
+            return -1
         
 class AnalogDiscoverySpiSpyParser:
     EscCharacters = ["1B",]
@@ -123,6 +145,7 @@ class AnalogDiscoverySpiSpyParser:
         self._strCipo = None
         self._asciiCopi = None
         self._asciiCipo = None
+        self._flashCmds = []
 
     def readCurrentLine(self):
         self._currentLine = self._fh.readline()
@@ -150,7 +173,10 @@ class AnalogDiscoverySpiSpyParser:
         
     def getIoParts(self):
         return self._ioParts
-    
+
+    def getFlashCmds(self):
+        return self._flashCmds
+
     def getIoPartsAsN25Q(self):
         bCopi = []
         bCipo = []
@@ -182,6 +208,8 @@ class AnalogDiscoverySpiSpyParser:
                 cmd = N25Q4BytePageProgram(bCopi, bCipo)
             elif (b == N25Q4ByteFastRead.CommandByte):
                 cmd = N25Q4ByteFastRead(bCopi, bCipo)
+
+        self._flashCmds.append(cmd)
 
         return str(cmd)
 
@@ -287,6 +315,7 @@ def mainPmodCLS(filename, partFlag):
 
 def mainPmodSF3(filename, partFlag):
     fh2 = io.open(filename + "_parse.txt", "w")
+    fh3 = io.open(filename + "_check.txt", "w")
     i = 0
     
     adssp = AnalogDiscoverySpiSpyParser(filename)
@@ -304,6 +333,27 @@ def mainPmodSF3(filename, partFlag):
             
     adssp.close()
     fh2.close()
+    
+    thisAddr = 0
+    prevAddr = 0
+    readIncr = 256
+    progIncr = 256
+    ssEraseIncr = progIncr * 16
+    sEraseIncr = ssEraseIncr * 16
+    
+    for cmd in adssp.getFlashCmds():
+        if isinstance(cmd, N25QRead) or isinstance(cmd, N25Q4ByteFastRead):
+            prevAddr = thisAddr
+            thisAddr = cmd.getAddrAsInt()
+            diffAddr = thisAddr - prevAddr
+            print(cmd, file=fh3)
+            if (diffAddr == readIncr):
+                print(f"N25Q4ByteFastRead Check: valid increment by {diffAddr}\n", file=fh3)
+            else:
+                print(f"N25Q4ByteFastRead Check: invalid increment by {diffAddr}\n", file=fh3)
+            print("\n", file=fh3)
+
+    fh3.close()
 
 if __name__ == "__main__":
     if (len(sys.argv) == 3):
