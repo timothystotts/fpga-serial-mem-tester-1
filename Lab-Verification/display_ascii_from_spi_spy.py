@@ -9,6 +9,106 @@ import io
 import sys
 import re
 
+class N25QCommand:
+    def __init__(self, copi, cipo):
+        self._copi = copi
+        self._cipo = cipo
+        self.lineFormat = 1
+    
+    def insertDashes(self, dashPos):
+        for i in reversed(dashPos):
+            self._copi.insert(i, '--')
+            self._cipo.insert(i, '--')
+
+    def __str__(self):
+        if self.lineFormat == 2:
+            return "N25Q 0x{1} {0:<30}\t(\nout: {2};\nin : {3})".format(self.CommandName, self.CommandByte, " ".join(self._copi), " ".join(self._cipo))
+        else:
+            return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(self.CommandName, self.CommandByte, " ".join(self._copi), " ".join(self._cipo))
+
+class N25QUnknown(N25QCommand):
+    CommandByte = "xx"
+    CommandName = "Unknown Command / Spy Fail"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+
+class N25QWriteEnable(N25QCommand):
+    CommandByte = "06"
+    CommandName = "WriteEnable"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, ))
+    
+class N25QReadStatusRegister(N25QCommand):
+    CommandByte = "05"
+    CommandName = "ReadStatusRegister"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 2))
+ 
+class N25QReadFlagStatusRegister(N25QCommand):
+    CommandByte = "70"
+    CommandName = "ReadFlagStatusRegister"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 2))
+        
+class N25QSectorErase(N25QCommand):
+    CommandByte = "D8"
+    CommandName = "SectorErase"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 4))
+
+class N25Q4ByteSubsectorErase(N25QCommand):
+    CommandByte = "21"
+    CommandName = "4ByteSubsectorErase"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 5))
+
+class N25QPageProgram(N25QCommand):
+    CommandByte = "02"
+    CommandName = "PageProgram"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 4, 4+256))
+        self.lineFormat = 2
+
+class N25Q4BytePageProgram(N25QCommand):
+    CommandByte = "12"
+    CommandName = "4BytePageProgram"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 5, 5+256))
+        self.lineFormat = 2
+
+class N25QRead(N25QCommand):
+    CommandByte = "03"
+    CommandName = "Read"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 4, 4+256))
+        self.lineFormat = 2
+        
+class N25Q4ByteFastRead(N25QCommand):
+    CommandByte = "0C"
+    CommandName = "4ByteFastRead"
+    
+    def __init__(self, copi, cipo):
+        super().__init__(copi, cipo)
+        self.insertDashes((1, 5, 6, 6+256))
+        self.lineFormat = 2
+        
 class AnalogDiscoverySpiSpyParser:
     EscCharacters = ["1B",]
     PartsCopi = ["c", "cp"]
@@ -19,7 +119,11 @@ class AnalogDiscoverySpiSpyParser:
         self._currentLine = None
         self._ioParts = None
         self._fh = open(fileName, "r")
-  
+        self._strCopi = None
+        self._strCipo = None
+        self._asciiCopi = None
+        self._asciiCipo = None
+
     def readCurrentLine(self):
         self._currentLine = self._fh.readline()
         if self._currentLine:
@@ -47,7 +151,42 @@ class AnalogDiscoverySpiSpyParser:
     def getIoParts(self):
         return self._ioParts
     
-    def getIoPartsAsAscii(self):
+    def getIoPartsAsN25Q(self):
+        bCopi = []
+        bCipo = []
+
+        for ioPart in self.getIoParts():
+            if (len(ioPart) == 2):
+                bCopi.append(ioPart[0].strip())
+                bCipo.append(ioPart[1].strip())
+        
+        cmd = N25QUnknown(bCopi, bCipo)
+
+        if (len(bCopi) > 0):
+            b = bCopi[0]
+            if (b == N25QWriteEnable.CommandByte):
+                cmd = N25QWriteEnable(bCopi, bCipo)
+            elif (b == N25QReadStatusRegister.CommandByte):
+                cmd = N25QReadStatusRegister(bCopi, bCipo)
+            elif (b == N25QSectorErase.CommandByte):
+                cmd = N25QSectorErase(bCopi, bCipo)
+            elif (b == N25QPageProgram.CommandByte):
+                cmd = N25QPageProgram(bCopi, bCipo)
+            elif (b == N25QRead.CommandByte):
+                cmd = N25QRead(bCopi, bCipo)
+            elif (b == N25QReadFlagStatusRegister.CommandByte):
+                cmd = N25QReadFlagStatusRegister(bCopi, bCipo)
+            elif (b == N25Q4ByteSubsectorErase.CommandByte):
+                cmd = N25Q4ByteSubsectorErase(bCopi, bCipo)
+            elif (b == N25Q4BytePageProgram.CommandByte):
+                cmd = N25Q4BytePageProgram(bCopi, bCipo)
+            elif (b == N25Q4ByteFastRead.CommandByte):
+                cmd = N25Q4ByteFastRead(bCopi, bCipo)
+
+        return str(cmd)
+
+
+    def getIoPartsAsEscAscii(self):
         self._strCopi = ""
         self._strCipo = ""
         cCopiEsc = []
@@ -118,7 +257,7 @@ def usage():
     print("%s : <c | p | cp> <filename.txt>" % (sys.argv[0], ))
     sys.exit(1)
 
-def main(filename, partFlag):
+def mainPmodCLS(filename, partFlag):
     fh2 = io.open(filename + "_parse.txt", "w")
     i = 0
     
@@ -127,7 +266,7 @@ def main(filename, partFlag):
     while(adssp.readCurrentLine()):
         i = i + 1
         if adssp.parseDataParts():            
-            adssp.getIoPartsAsAscii()
+            adssp.getIoPartsAsEscAscii()
             
             if (partFlag in adssp.PartsCopi):                
                 fh2.write(adssp.getStrCopi())
@@ -146,21 +285,52 @@ def main(filename, partFlag):
     adssp.close()
     fh2.close()
 
+def mainPmodSF3(filename, partFlag):
+    fh2 = io.open(filename + "_parse.txt", "w")
+    i = 0
+    
+    adssp = AnalogDiscoverySpiSpyParser(filename)
+    
+    while(adssp.readCurrentLine()):
+        i = i + 1
+        if adssp.parseDataParts():            
+            s = adssp.getIoPartsAsN25Q()
+            
+            if s:
+                fh2.write(s)
+                fh2.write("\n")
+
+            fh2.write("\n")
+            
+    adssp.close()
+    fh2.close()
+
 if __name__ == "__main__":
     if (len(sys.argv) == 3):
-        main(sys.argv[2], sys.argv[1])
+        mainPmodCLS(sys.argv[2], sys.argv[1])
     elif (len(sys.argv) == 1):
         partFlag = "c"
-        fileNames = ["SF-Tester-Design-AXI/CLS SPI Spy Capture of Boot-Time Display at ext_spi_clk SCK.txt",
+        pmodCLSfileNames = ["SF-Tester-Design-AXI/CLS SPI Spy Capture of Boot-Time Display at ext_spi_clk SCK.txt",
                      "SF-Tester-Design-AXI/CLS SPI Spy Capture of First-Iteration Display at ext_spi_clk SCK.txt",
                      "SF-Tester-Design-VHDL/CLS SPI Spy Capture of Boot-Time Display at 50 KHz SCK.txt",
                      "SF-Tester-Design-VHDL/CLS SPI Spy Capture of First-Iteration Display at 50 KHz SCK.txt"]
         
-        for fileName in fileNames:
-            #try:
-                main(fileName, partFlag)
-            #except Exception as ex:
-            #    print("Exception raised {}, {} : {}".format(fileName, type(ex), str(ex)))
+        for fileName in pmodCLSfileNames:
+            mainPmodCLS(fileName, partFlag)
+            
+        partFlag = "cp"
+        pmodSF3fileNames = ["SF-Tester-Design-AXI/SF3 SPI Spy Capture of Erase Subsector at ext_spi_clk SCK.txt",
+                            "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Page Program at ext_spi_clk SCK.txt",
+                            "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Random Read at ext_spi_clk SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 50 KHz SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 500 KHz SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 50 KHz SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 500 KHz SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 50 KHz SCK.txt",
+                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 500 KHz SCK.txt"]
+        
+        for fileName in pmodSF3fileNames:
+            mainPmodSF3(fileName, partFlag)
             
     else:
         usage()

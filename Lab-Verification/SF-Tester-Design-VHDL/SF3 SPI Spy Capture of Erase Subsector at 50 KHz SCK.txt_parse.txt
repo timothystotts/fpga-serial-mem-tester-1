@@ -1,0 +1,2000 @@
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 09 F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0A F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0B F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0C F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0D F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0E F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 00 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 10 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 20 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 30 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 40 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 50 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 60 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 70 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 80 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F 90 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F A0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F B0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F C0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F D0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F E0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 0F F0 00 --; in: FF -- FF FF FF FF --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
