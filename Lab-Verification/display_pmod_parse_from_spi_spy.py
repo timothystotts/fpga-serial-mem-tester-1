@@ -1,9 +1,32 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Jul 28 16:44:13 2020
-
-@author: timot
-"""
+"""-----------------------------------------------------------------------------
+-- MIT License
+--
+-- Copyright (c) 2020 Timothy Stotts
+--
+-- Permission is hereby granted, free of charge, to any person obtaining a copy
+-- of this software and associated documentation files (the "Software"), to deal
+-- in the Software without restriction, including without limitation the rights
+-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the Software is
+-- furnished to do so, subject to the following conditions:
+--
+-- The above copyright notice and this permission notice shall be included in
+-- all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+-- SOFTWARE.
+--------------------------------------------------------------------------------
+-- @file lcd_text_feed.vhdl
+--
+-- @brief A script to parse specific SPI bus control of the Pmod CLS and Pmod
+-- SF3 as capturerd with digital logic analyzer.
+-----------------------------------------------------------------------------"""
 
 import io
 import sys
@@ -32,6 +55,35 @@ class N25QCommand:
         else:
             return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(self.CommandName, self.CommandByte, " ".join(self._copiFormatted), " ".join(self._cipoFormatted))
 
+    def _getAddrAsInt(self, first, length, arr):
+        try:
+            s = ""
+            for i in range(first,first+length):
+                s += arr[i]
+            v = int(s, 16)
+            return v
+        except ValueError:
+            return -1
+
+    def _getFlashSequence(self, first, length, arr):
+        try:
+            v0 = int(arr[first + 0], 16)
+            v1 = int(arr[first + 1], 16)
+            diff = (v1 - v0) & 0xff
+            total = 1
+            
+            for i in range(first+1, first+length):
+                v0 = int(arr[i - 1], 16)
+                v1 = int(arr[i], 16)
+                if ((v1 - v0) & 0xff == diff):
+                    total += 1
+            
+            return total
+        except ValueError:
+            return -1
+        except IndexError:
+            return -2
+ 
 class N25QUnknown(N25QCommand):
     CommandByte = "xx"
     CommandName = "Unknown Command / Spy Fail"
@@ -71,6 +123,9 @@ class N25QSectorErase(N25QCommand):
         super().__init__(copi, cipo)
         self.insertDashes((1, 4))
 
+    def getEraseAddrAsInt(self):
+        return self._getAddrAsInt(1, 3, self._copi)
+
 class N25Q4ByteSubsectorErase(N25QCommand):
     CommandByte = "21"
     CommandName = "4ByteSubsectorErase"
@@ -78,6 +133,9 @@ class N25Q4ByteSubsectorErase(N25QCommand):
     def __init__(self, copi, cipo):
         super().__init__(copi, cipo)
         self.insertDashes((1, 5))
+
+    def getEraseAddrAsInt(self):
+        return self._getAddrAsInt(1, 4, self._copi)
 
 class N25QPageProgram(N25QCommand):
     CommandByte = "02"
@@ -88,6 +146,12 @@ class N25QPageProgram(N25QCommand):
         self.insertDashes((1, 4, 4+256))
         self.lineFormat = 2
 
+    def getProgAddrAsInt(self):
+        return self._getAddrAsInt(1, 3, self._copi)
+        
+    def getProgSequence(self):
+        return self._getFlashSequence(4, 256, self._copi)
+
 class N25Q4BytePageProgram(N25QCommand):
     CommandByte = "12"
     CommandName = "4BytePageProgram"
@@ -96,6 +160,12 @@ class N25Q4BytePageProgram(N25QCommand):
         super().__init__(copi, cipo)
         self.insertDashes((1, 5, 5+256))
         self.lineFormat = 2
+
+    def getProgAddrAsInt(self):
+        return self._getAddrAsInt(1, 4, self._copi)
+
+    def getProgSequence(self):
+        return self._getFlashSequence(5, 256, self._copi)
 
 class N25QRead(N25QCommand):
     CommandByte = "03"
@@ -106,13 +176,11 @@ class N25QRead(N25QCommand):
         self.insertDashes((1, 4, 4+256))
         self.lineFormat = 2
 
-    def getAddrAsInt(self):
-        try:
-            s = self._copi[1]+self._copi[2]+self._copi[3]
-            v = int(s, 16)
-            return v
-        except ValueError:
-            return -1
+    def getReadAddrAsInt(self):
+        return self._getAddrAsInt(1, 3, self._copi)
+
+    def getReadSequence(self):
+        return self._getFlashSequence(4, 256, self._cipo)
         
 class N25Q4ByteFastRead(N25QCommand):
     CommandByte = "0C"
@@ -123,14 +191,12 @@ class N25Q4ByteFastRead(N25QCommand):
         self.insertDashes((1, 5, 6, 6+256))
         self.lineFormat = 2
         
-    def getAddrAsInt(self):
-        try:
-            s = self._copi[1]+self._copi[2]+self._copi[3]+self._copi[4]
-            v = int(s, 16)
-            return v
-        except ValueError:
-            return -1
+    def getReadAddrAsInt(self):
+        return self._getAddrAsInt(1, 4, self._copi)
         
+    def getReadSequence(self):
+        return self._getFlashSequence(6, 256, self._cipo)
+
 class AnalogDiscoverySpiSpyParser:
     EscCharacters = ["1B",]
     PartsCopi = ["c", "cp"]
@@ -281,10 +347,6 @@ class AnalogDiscoverySpiSpyParser:
         return self._asciiCipo
         
 
-def usage():
-    print("%s : <c | p | cp> <filename.txt>" % (sys.argv[0], ))
-    sys.exit(1)
-
 def mainPmodCLS(filename, partFlag):
     fh2 = io.open(filename + "_parse.txt", "w")
     i = 0
@@ -336,24 +398,79 @@ def mainPmodSF3(filename, partFlag):
     
     thisAddr = 0
     prevAddr = 0
+    eraseIncr = 4096
     readIncr = 256
     progIncr = 256
     ssEraseIncr = progIncr * 16
     sEraseIncr = ssEraseIncr * 16
     
     for cmd in adssp.getFlashCmds():
-        if isinstance(cmd, N25QRead) or isinstance(cmd, N25Q4ByteFastRead):
-            prevAddr = thisAddr
-            thisAddr = cmd.getAddrAsInt()
-            diffAddr = thisAddr - prevAddr
-            print(cmd, file=fh3)
-            if (diffAddr == readIncr):
-                print(f"N25Q4ByteFastRead Check: valid increment by {diffAddr}\n", file=fh3)
-            else:
-                print(f"N25Q4ByteFastRead Check: invalid increment by {diffAddr}\n", file=fh3)
-            print("\n", file=fh3)
+        print(cmd, file=fh3)
 
+        try:
+            prevAddr = thisAddr
+            thisAddr = cmd.getEraseAddrAsInt()
+            diffAddr = thisAddr - prevAddr
+            
+            if (diffAddr == eraseIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid erase address increment by {diffAddr}", file=fh3)
+            else:
+                print(f"N25Q{cmd.CommandName} Check: invalid erase address increment by {diffAddr}", file=fh3)
+        except:
+            pass
+        
+        try:
+            prevAddr = thisAddr
+            thisAddr = cmd.getReadAddrAsInt()
+            diffAddr = thisAddr - prevAddr
+            
+            if (diffAddr == readIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid read address increment by {diffAddr}", file=fh3)
+            else:
+                print(f"N25Q{cmd.CommandName} Check: invalid read address increment by {diffAddr}", file=fh3)
+        except:
+            pass
+        
+        try:
+            prevAddr = thisAddr
+            thisAddr = cmd.getProgAddrAsInt()
+            diffAddr = thisAddr - prevAddr
+            
+            if (diffAddr == progIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid prog address increment by {diffAddr}", file=fh3)
+            else:
+                print(f"N25Q{cmd.CommandName} Check: invalid prog address increment by {diffAddr}", file=fh3)
+        except:
+            pass
+ 
+        try:
+            seqCnt = cmd.getReadSequence()
+            
+            if (seqCnt == readIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid data read increment for {seqCnt} bytes\n", file=fh3)
+            else:
+                print(f"N25Q{cmd.CommandName} Check: invalid data read increment for {seqCnt} bytes\n", file=fh3)
+        except:
+            pass
+        
+        try:
+            seqCnt = cmd.getProgSequence()
+            
+            if (seqCnt == progIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid data prog increment for {seqCnt} bytes\n", file=fh3)
+            else:
+                print(f"N25Q{cmd.CommandName} Check: invalid data prog increment for {seqCnt} bytes\n", file=fh3)
+        except:
+            pass
+        
+        print(file=fh3);
+                
     fh3.close()
+
+def usage():
+    print("{} : <c | p | cp> <filename.txt>" .formatt(sys.argv[0]))
+    print("{}".format(sys.argv[0]))
+    sys.exit(1)
 
 if __name__ == "__main__":
     if (len(sys.argv) == 3):

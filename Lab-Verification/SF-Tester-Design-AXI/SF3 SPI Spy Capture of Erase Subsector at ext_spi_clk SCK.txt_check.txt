@@ -1,0 +1,2047 @@
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 10 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: invalid erase address increment by 856064
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 20 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 30 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 04 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 40 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 50 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 60 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 7F -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 70 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 80 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D 90 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D A0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D B0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D C0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D D0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D E0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 04 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0D F0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 00 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 10 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 57 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 20 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 30 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 40 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 50 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 60 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 70 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 80 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E 90 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 07 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E A0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E B0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E C0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E D0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E E0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0E F0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 00 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 10 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 03 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- 03 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 20 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 30 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 40 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 7F -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 50 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 60 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 70 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 80 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F 90 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F A0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F B0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F C0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F D0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F E0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: FF -- 00 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: 00 --)
+
+N25Q 0x05 ReadStatusRegister            	(out: 05 -- A5 --; in: 00 -- 02 --)
+
+N25Q 0xD8 SectorErase                   	(out: D8 -- 0F F0 00 --; in: 00 -- 00 00 00 --)
+N25QSectorErase Check: valid erase address increment by 4096
+

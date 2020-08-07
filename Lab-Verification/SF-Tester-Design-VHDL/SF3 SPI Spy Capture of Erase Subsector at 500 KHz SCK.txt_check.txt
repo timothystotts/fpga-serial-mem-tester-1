@@ -1,0 +1,2002 @@
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 3C 80 00 --; in: FF -- FF FF FF FF --)
+N25Q4ByteSubsectorErase Check: invalid erase address increment by 3964928
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 3C 90 00 --; in: FF -- FF FF FF FF --)
+N25Q4ByteSubsectorErase Check: valid erase address increment by 4096
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 3F E0 00 --; in: FF -- FF FF FF FF --)
+N25Q4ByteSubsectorErase Check: invalid erase address increment by 217088
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 80 --)
+
+N25Q 0x06 WriteEnable                   	(out: 06 --; in: FF --)
+
+N25Q 0x21 4ByteSubsectorErase           	(out: 21 -- 00 3F F0 00 --; in: FF -- FF FF FF FF --)
+N25Q4ByteSubsectorErase Check: valid erase address increment by 4096
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: FF -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 00 --)
+
+N25Q 0x70 ReadFlagStatusRegister        	(out: 70 -- 00 --; in: 00 -- 80 --)
+
