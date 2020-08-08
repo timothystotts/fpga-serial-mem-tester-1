@@ -407,7 +407,7 @@ def mainPmodSF3(filename, partFlag):
     for cmd in adssp.getFlashCmds():
         print(cmd, file=fh3)
 
-        try:
+        if (hasattr(cmd, 'getEraseAddrAsInt')):
             prevAddr = thisAddr
             thisAddr = cmd.getEraseAddrAsInt()
             diffAddr = thisAddr - prevAddr
@@ -416,10 +416,10 @@ def mainPmodSF3(filename, partFlag):
                 print(f"N25Q{cmd.CommandName} Check: valid erase address increment by {diffAddr}", file=fh3)
             else:
                 print(f"N25Q{cmd.CommandName} Check: invalid erase address increment by {diffAddr}", file=fh3)
-        except:
+        else:
             pass
         
-        try:
+        if (hasattr(cmd, 'getReadAddrAsInt')):
             prevAddr = thisAddr
             thisAddr = cmd.getReadAddrAsInt()
             diffAddr = thisAddr - prevAddr
@@ -428,10 +428,10 @@ def mainPmodSF3(filename, partFlag):
                 print(f"N25Q{cmd.CommandName} Check: valid read address increment by {diffAddr}", file=fh3)
             else:
                 print(f"N25Q{cmd.CommandName} Check: invalid read address increment by {diffAddr}", file=fh3)
-        except:
+        else:
             pass
         
-        try:
+        if (hasattr(cmd, 'getProgAddrAsInt')):
             prevAddr = thisAddr
             thisAddr = cmd.getProgAddrAsInt()
             diffAddr = thisAddr - prevAddr
@@ -440,27 +440,27 @@ def mainPmodSF3(filename, partFlag):
                 print(f"N25Q{cmd.CommandName} Check: valid prog address increment by {diffAddr}", file=fh3)
             else:
                 print(f"N25Q{cmd.CommandName} Check: invalid prog address increment by {diffAddr}", file=fh3)
-        except:
+        else:
             pass
  
-        try:
+        if (hasattr(cmd, 'getReadSequence')):
             seqCnt = cmd.getReadSequence()
             
             if (seqCnt == readIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid data read increment for {seqCnt} bytes\n", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: valid read data increment for {seqCnt} bytes\n", file=fh3)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid data read increment for {seqCnt} bytes\n", file=fh3)
-        except:
+                print(f"N25Q{cmd.CommandName} Check: invalid read data increment for {seqCnt} bytes\n", file=fh3)
+        else:
             pass
         
-        try:
+        if (hasattr(cmd, 'getProgSequence')):
             seqCnt = cmd.getProgSequence()
             
             if (seqCnt == progIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid data prog increment for {seqCnt} bytes\n", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: valid prog data increment for {seqCnt} bytes\n", file=fh3)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid data prog increment for {seqCnt} bytes\n", file=fh3)
-        except:
+                print(f"N25Q{cmd.CommandName} Check: invalid prog data increment for {seqCnt} bytes\n", file=fh3)
+        else:
             pass
         
         print(file=fh3);
