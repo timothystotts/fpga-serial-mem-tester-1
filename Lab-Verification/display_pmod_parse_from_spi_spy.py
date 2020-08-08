@@ -290,58 +290,50 @@ class AnalogDiscoverySpiSpyParser:
 
         return str(cmd)
 
+    def _genHexStrAndEsc(self, arr):
+        strArr = ""
+        escArr = []
+        
+        for a in arr:
+            if (a not in self.EscCharacters):
+                strArr += a
+            else:
+                escArr.append(len(strArr))
+
+        return (strArr, escArr)
+
+    def _genAsciiEsc(self, arr):
+        (strArr, escArr) = self._genHexStrAndEsc(arr)
+        asciiArr = ""
+        
+        ba = str(bytearray.fromhex(strArr).decode())
+        for b in range(len(ba)):
+            if (len(escArr) > 0):
+                l = escArr[0]
+                while(b == l):
+                    escArr.pop(0)
+                    asciiArr += r"\x"
+                    if (len(escArr) > 0):
+                        l = escArr[0]
+                    else:
+                        l = -1
+                
+            asciiArr += ba[b]
+        
+        return (strArr, asciiArr)
 
     def getIoPartsAsEscAscii(self):
-        self._strCopi = ""
-        self._strCipo = ""
-        cCopiEsc = []
-        cCipoEsc = []
-        self._asciiCopi = ""
-        self._asciiCipo = ""
-        
+        bCopi = []
+        bCipo = []
+
         for ioPart in self.getIoParts():
             if (len(ioPart) == 2):
-                cCopi = ioPart[0].strip()
-                cCipo = ioPart[1].strip()
-                
-                if (cCopi not in self.EscCharacters):
-                    self._strCopi += cCopi
-                else:
-                    cCopiEsc.append(len(self._strCopi))
-                    
-                if (cCipo not in self.EscCharacters):
-                    self._strCipo += cCipo
-                else:
-                    cCipoEsc.append(len(self._strCipo))
-    
-        ba = str(bytearray.fromhex(self._strCopi).decode())
-        for b in range(len(ba)):
-            if (len(cCopiEsc) > 0):
-                l = cCopiEsc[0]
-                while(b == l):
-                    cCopiEsc.pop(0)
-                    self._asciiCopi += r"\x"
-                    if (len(cCopiEsc) > 0):
-                        l = cCopiEsc[0]
-                    else:
-                        l = -1
-                
-            self._asciiCopi += ba[b]
-
-        ba = bytearray.fromhex(self._strCipo).decode()
-        for b in range(len(ba)):
-            if (len(cCipoEsc) > 0):
-                l = cCipoEsc[0]
-                while(b == l):
-                    cCipoEsc.pop(0)
-                    self._asciiCipo += r"\x"
-                    if (len(cCipoEsc) > 0):
-                        l = cCipoEsc[0]
-                    else:
-                        l = -1
-                
-            self._asciiCipo += ba[b]
-
+                bCopi.append(ioPart[0].strip())
+                bCipo.append(ioPart[1].strip())
+        
+        (self._strCopi, self._asciiCopi) = self._genAsciiEsc(bCopi)
+        (self._strCipo, self._asciiCipo) = self._genAsciiEsc(bCipo)
+        
     def getCurrentLine(self):
         return self._currentLine
     
