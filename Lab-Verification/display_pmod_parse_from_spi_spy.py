@@ -423,6 +423,11 @@ def mainPmodSF3(filename, partFlag):
             thisAddr = cmd.getEraseAddrAsInt()
             diffAddr = thisAddr - prevAddr
             
+            if (isinstance(cmd, N25QSectorErase)):
+                eraseIncr = sEraseIncr
+            else:
+                eraseIncr = ssEraseIncr
+
             if (diffAddr == eraseIncr):
                 print(f"N25Q{cmd.CommandName} Check: valid erase address increment by {diffAddr}", file=fh3)
             else:
