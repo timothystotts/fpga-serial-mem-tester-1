@@ -197,6 +197,36 @@ class N25Q4ByteFastRead(N25QCommand):
     def getReadSequence(self):
         return self._getFlashSequence(6, 256, self._cipo)
 
+class N25QCommandFactory:
+    def __init__(self):
+        pass
+    
+    def getCmd(self, bCopi, bCipo):
+        cmd = N25QUnknown(bCopi, bCipo)
+
+        if (len(bCopi) > 0):
+            b = bCopi[0]
+            if (b == N25QWriteEnable.CommandByte):
+                cmd = N25QWriteEnable(bCopi, bCipo)
+            elif (b == N25QReadStatusRegister.CommandByte):
+                cmd = N25QReadStatusRegister(bCopi, bCipo)
+            elif (b == N25QSectorErase.CommandByte):
+                cmd = N25QSectorErase(bCopi, bCipo)
+            elif (b == N25QPageProgram.CommandByte):
+                cmd = N25QPageProgram(bCopi, bCipo)
+            elif (b == N25QRead.CommandByte):
+                cmd = N25QRead(bCopi, bCipo)
+            elif (b == N25QReadFlagStatusRegister.CommandByte):
+                cmd = N25QReadFlagStatusRegister(bCopi, bCipo)
+            elif (b == N25Q4ByteSubsectorErase.CommandByte):
+                cmd = N25Q4ByteSubsectorErase(bCopi, bCipo)
+            elif (b == N25Q4BytePageProgram.CommandByte):
+                cmd = N25Q4BytePageProgram(bCopi, bCipo)
+            elif (b == N25Q4ByteFastRead.CommandByte):
+                cmd = N25Q4ByteFastRead(bCopi, bCipo)
+
+        return cmd
+
 class AnalogDiscoverySpiSpyParser:
     EscCharacters = ["1B",]
     PartsCopi = ["c", "cp"]
@@ -212,7 +242,8 @@ class AnalogDiscoverySpiSpyParser:
         self._asciiCopi = None
         self._asciiCipo = None
         self._flashCmds = []
-
+        self._cmdFactory = N25QCommandFactory()
+        
     def readCurrentLine(self):
         self._currentLine = self._fh.readline()
         if self._currentLine:
@@ -252,29 +283,8 @@ class AnalogDiscoverySpiSpyParser:
                 bCopi.append(ioPart[0].strip())
                 bCipo.append(ioPart[1].strip())
         
-        cmd = N25QUnknown(bCopi, bCipo)
-
-        if (len(bCopi) > 0):
-            b = bCopi[0]
-            if (b == N25QWriteEnable.CommandByte):
-                cmd = N25QWriteEnable(bCopi, bCipo)
-            elif (b == N25QReadStatusRegister.CommandByte):
-                cmd = N25QReadStatusRegister(bCopi, bCipo)
-            elif (b == N25QSectorErase.CommandByte):
-                cmd = N25QSectorErase(bCopi, bCipo)
-            elif (b == N25QPageProgram.CommandByte):
-                cmd = N25QPageProgram(bCopi, bCipo)
-            elif (b == N25QRead.CommandByte):
-                cmd = N25QRead(bCopi, bCipo)
-            elif (b == N25QReadFlagStatusRegister.CommandByte):
-                cmd = N25QReadFlagStatusRegister(bCopi, bCipo)
-            elif (b == N25Q4ByteSubsectorErase.CommandByte):
-                cmd = N25Q4ByteSubsectorErase(bCopi, bCipo)
-            elif (b == N25Q4BytePageProgram.CommandByte):
-                cmd = N25Q4BytePageProgram(bCopi, bCipo)
-            elif (b == N25Q4ByteFastRead.CommandByte):
-                cmd = N25Q4ByteFastRead(bCopi, bCipo)
-
+        cmd = self._cmdFactory.getCmd(bCopi, bCipo)
+        
         self._flashCmds.append(cmd)
 
         return str(cmd)
