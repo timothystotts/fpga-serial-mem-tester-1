@@ -22,10 +22,11 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- @file lcd_text_feed.vhdl
+-- @file display_pmod_parse_from_spi_spy.py
 --
 -- @brief A script to parse specific SPI bus control of the Pmod CLS and Pmod
--- SF3 as capturerd with digital logic analyzer.
+-- SF3 as capturerd with digital logic analyzer. Parsing and testing specific
+-- to both the Pmod interfaces as well as project fpga-serial-mem-tester-1 .
 -----------------------------------------------------------------------------"""
 
 import io
