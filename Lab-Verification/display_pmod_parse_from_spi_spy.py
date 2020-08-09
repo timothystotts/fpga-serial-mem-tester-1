@@ -52,9 +52,15 @@ class N25QCommand:
 
     def __str__(self):
         if self.lineFormat == 2:
-            return "N25Q 0x{1} {0:<30}\t(\nout: {2};\nin : {3})".format(self.CommandName, self.CommandByte, " ".join(self._copiFormatted), " ".join(self._cipoFormatted))
+            return "N25Q 0x{1} {0:<30}\t(\nout: {2};\nin : {3})".format(
+                self.CommandName, self.CommandByte,
+                " ".join(self._copiFormatted),
+                " ".join(self._cipoFormatted))
         else:
-            return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(self.CommandName, self.CommandByte, " ".join(self._copiFormatted), " ".join(self._cipoFormatted))
+            return "N25Q 0x{1} {0:<30}\t(out: {2}; in: {3})".format(
+                self.CommandName, self.CommandByte,
+                " ".join(self._copiFormatted),
+                " ".join(self._cipoFormatted))
 
     def _getAddrAsInt(self, first, length, arr):
         try:
@@ -203,8 +209,7 @@ class N25QCommandFactory:
         pass
     
     def getCmd(self, bCopi, bCipo):
-        cmd = N25QUnknown(bCopi, bCipo)
-
+        
         if (len(bCopi) > 0):
             b = bCopi[0]
             if (b == N25QWriteEnable.CommandByte):
@@ -225,6 +230,10 @@ class N25QCommandFactory:
                 cmd = N25Q4BytePageProgram(bCopi, bCipo)
             elif (b == N25Q4ByteFastRead.CommandByte):
                 cmd = N25Q4ByteFastRead(bCopi, bCipo)
+            else:
+                cmd = N25QUnknown(bCopi, bCipo)
+        else:
+            cmd = N25QUnknown(bCopi, bCipo)
 
         return cmd
 
@@ -237,7 +246,7 @@ class AnalogDiscoverySpiSpyParser:
     def __init__(self, fileName):
         self._currentLine = None
         self._ioParts = None
-        self._fh = open(fileName, "r")
+        self._fh = io.open(fileName, "r")
         self._strCopi = None
         self._strCipo = None
         self._asciiCopi = None
@@ -349,131 +358,163 @@ class AnalogDiscoverySpiSpyParser:
     def getAsciiCipo(self):
         return self._asciiCipo
         
-
-def mainPmodCLS(filename, partFlag):
-    fh2 = io.open(filename + "_parse.txt", "w")
-    i = 0
+class PmodCLSTranslator:
+    def __init__(self, partFlag, filename):
+        self._partFlag = partFlag
+        self._adssp = AnalogDiscoverySpiSpyParser(filename)
+        self._fhParse = io.open(filename + "_parse.txt", "w")
     
-    adssp = AnalogDiscoverySpiSpyParser(filename)
+    def parseWithAdssp(self):
+        i = 0
+        
+        while(self._adssp.readCurrentLine()):
+            i = i + 1
+            if self._adssp.parseDataParts():            
+                self._adssp.getIoPartsAsEscAscii()
+                
+                if (self._partFlag in self._adssp.PartsCopi):                
+                    self._fhParse.write(self._adssp.getStrCopi())
+                    self._fhParse.write("\n")
+                    self._fhParse.write(self._adssp.getAsciiCopi())
+                    self._fhParse.write("\n")
     
-    while(adssp.readCurrentLine()):
-        i = i + 1
-        if adssp.parseDataParts():            
-            adssp.getIoPartsAsEscAscii()
-            
-            if (partFlag in adssp.PartsCopi):                
-                fh2.write(adssp.getStrCopi())
-                fh2.write("\n")
-                fh2.write(adssp.getAsciiCopi())
-                fh2.write("\n")
-
-            if (partFlag in adssp.PartsCipo):
-                fh2.write(adssp.getStrCipo())
-                fh2.write("\n")
-                fh2.write(adssp.getAsciiCipo())
-                fh2.write("\n")
-
-            fh2.write("\n")
-            
-    adssp.close()
-    fh2.close()
-
-def mainPmodSF3(filename, partFlag):
-    fh2 = io.open(filename + "_parse.txt", "w")
-    fh3 = io.open(filename + "_check.txt", "w")
-    i = 0
+                if (self._partFlag in self._adssp.PartsCipo):
+                    self._fhParse.write(self._adssp.getStrCipo())
+                    self._fhParse.write("\n")
+                    self._fhParse.write(self._adssp.getAsciiCipo())
+                    self._fhParse.write("\n")
     
-    adssp = AnalogDiscoverySpiSpyParser(filename)
+                self._fhParse.write("\n")
+                
+        self._adssp.close()
+        self._fhParse.close()
+        
+class PmodSF3TesterValidator:
+    def __init__(self, filename):
+        self._adssp = AnalogDiscoverySpiSpyParser(filename)
+        self._fhParse = io.open(filename + "_parse.txt", "w")
+        self._fhCheck = io.open(filename + "_check.txt", "w")
+        self._thisAddr = 0
+        self._prevAddr = 0
+        self._eraseIncr = 4096
+        self._readIncr = 256
+        self._progIncr = 256
+        self._ssEraseIncr = self._progIncr * 16
+        self._sEraseIncr = self._ssEraseIncr * 16
     
-    while(adssp.readCurrentLine()):
-        i = i + 1
-        if adssp.parseDataParts():            
-            s = adssp.getIoPartsAsN25Q()
-            
-            if s:
-                fh2.write(s)
-                fh2.write("\n")
-
-            fh2.write("\n")
-            
-    adssp.close()
-    fh2.close()
+    def parseWithAdssp(self):
+        i = 0
+        while(self._adssp.readCurrentLine()):
+            i = i + 1
+            if self._adssp.parseDataParts():            
+                s = self._adssp.getIoPartsAsN25Q()
+                
+                if s:
+                    self._fhParse.write(s)
+                    self._fhParse.write("\n")
     
-    thisAddr = 0
-    prevAddr = 0
-    eraseIncr = 4096
-    readIncr = 256
-    progIncr = 256
-    ssEraseIncr = progIncr * 16
-    sEraseIncr = ssEraseIncr * 16
-    
-    for cmd in adssp.getFlashCmds():
-        print(cmd, file=fh3)
-
+                self._fhParse.write("\n")
+                
+        self._adssp.close()
+        self._fhParse.close()
+        
+    def _checkEraseAddr(self, cmd):
         if (hasattr(cmd, 'getEraseAddrAsInt')):
-            prevAddr = thisAddr
-            thisAddr = cmd.getEraseAddrAsInt()
-            diffAddr = thisAddr - prevAddr
+            self._prevAddr = self._thisAddr
+            self._thisAddr = cmd.getEraseAddrAsInt()
+            self._diffAddr = self._thisAddr - self._prevAddr
             
             if (isinstance(cmd, N25QSectorErase)):
-                eraseIncr = sEraseIncr
+                self._eraseIncr = self._sEraseIncr
             else:
-                eraseIncr = ssEraseIncr
+                self._eraseIncr = self._ssEraseIncr
 
-            if (diffAddr == eraseIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid erase address increment by {diffAddr}", file=fh3)
+            if (self._diffAddr == self._eraseIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid erase address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid erase address increment by {diffAddr}", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: invalid erase address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
         else:
             pass
-        
+
+    def _checkReadAddr(self, cmd):
         if (hasattr(cmd, 'getReadAddrAsInt')):
-            prevAddr = thisAddr
-            thisAddr = cmd.getReadAddrAsInt()
-            diffAddr = thisAddr - prevAddr
+            self._prevAddr = self._thisAddr
+            self._thisAddr = cmd.getReadAddrAsInt()
+            self._diffAddr = self._thisAddr - self._prevAddr
             
-            if (diffAddr == readIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid read address increment by {diffAddr}", file=fh3)
+            if (self._diffAddr == self._readIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid read address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid read address increment by {diffAddr}", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: invalid read address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
         else:
             pass
-        
+
+    def _checkProgAddr(self, cmd):
         if (hasattr(cmd, 'getProgAddrAsInt')):
-            prevAddr = thisAddr
-            thisAddr = cmd.getProgAddrAsInt()
-            diffAddr = thisAddr - prevAddr
+            self._prevAddr = self._thisAddr
+            self._thisAddr = cmd.getProgAddrAsInt()
+            self._diffAddr = self._thisAddr - self._prevAddr
             
-            if (diffAddr == progIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid prog address increment by {diffAddr}", file=fh3)
+            if (self._diffAddr == self._progIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid prog address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid prog address increment by {diffAddr}", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: invalid prog address"
+                      f" increment by {self._diffAddr}", file=self._fhCheck)
         else:
             pass
- 
+
+    def _checkReadSeq(self, cmd):
         if (hasattr(cmd, 'getReadSequence')):
-            seqCnt = cmd.getReadSequence()
+            self._seqCnt = cmd.getReadSequence()
             
-            if (seqCnt == readIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid read data increment for {seqCnt} bytes\n", file=fh3)
+            if (self._seqCnt == self._readIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid read data"
+                      f" increment for {self._seqCnt} bytes\n", file=self._fhCheck)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid read data increment for {seqCnt} bytes\n", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: invalid read data"
+                      f" increment for {self._seqCnt} bytes\n", file=self._fhCheck)
         else:
             pass
         
+    def _checkProgSeq(self, cmd):
         if (hasattr(cmd, 'getProgSequence')):
-            seqCnt = cmd.getProgSequence()
+            self._seqCnt = cmd.getProgSequence()
             
-            if (seqCnt == progIncr):
-                print(f"N25Q{cmd.CommandName} Check: valid prog data increment for {seqCnt} bytes\n", file=fh3)
+            if (self._seqCnt == self._progIncr):
+                print(f"N25Q{cmd.CommandName} Check: valid prog data"
+                      f" increment for {self._seqCnt} bytes\n", file=self._fhCheck)
             else:
-                print(f"N25Q{cmd.CommandName} Check: invalid prog data increment for {seqCnt} bytes\n", file=fh3)
+                print(f"N25Q{cmd.CommandName} Check: invalid prog data"
+                      f" increment for {self._seqCnt} bytes\n", file=self._fhCheck)
         else:
             pass
-        
-        print(file=fh3);
-                
-    fh3.close()
+    
+    def checkValidateCommandBytes(self):
+        for cmd in self._adssp.getFlashCmds():
+            print(cmd, file=self._fhCheck)
+            self._checkEraseAddr(cmd)
+            self._checkReadAddr(cmd)
+            self._checkProgAddr(cmd)
+            self._checkReadSeq(cmd)
+            self._checkProgSeq(cmd)
+            print(file=self._fhCheck)
+        self._fhCheck.close()
+
+def mainPmodCLS(filename, partFlag):
+    parser = PmodCLSTranslator(partFlag, filename)
+    parser.parseWithAdssp()
+
+def mainPmodSF3(filename, partFlag):
+    
+    validator = PmodSF3TesterValidator(filename)
+    
+    validator.parseWithAdssp()
+    validator.checkValidateCommandBytes()
 
 def usage():
     print("{} : <c | p | cp> <filename.txt>" .formatt(sys.argv[0]))
@@ -481,28 +522,28 @@ def usage():
     sys.exit(1)
 
 if __name__ == "__main__":
-    if (len(sys.argv) == 3):
-        mainPmodCLS(sys.argv[2], sys.argv[1])
-    elif (len(sys.argv) == 1):
+    if (len(sys.argv) == 1):
         partFlag = "c"
-        pmodCLSfileNames = ["SF-Tester-Design-AXI/CLS SPI Spy Capture of Boot-Time Display at ext_spi_clk SCK.txt",
-                     "SF-Tester-Design-AXI/CLS SPI Spy Capture of First-Iteration Display at ext_spi_clk SCK.txt",
-                     "SF-Tester-Design-VHDL/CLS SPI Spy Capture of Boot-Time Display at 50 KHz SCK.txt",
-                     "SF-Tester-Design-VHDL/CLS SPI Spy Capture of First-Iteration Display at 50 KHz SCK.txt"]
+        pmodCLSfileNames = [\
+        "SF-Tester-Design-AXI/CLS SPI Spy Capture of Boot-Time Display at ext_spi_clk SCK.txt",
+        "SF-Tester-Design-AXI/CLS SPI Spy Capture of First-Iteration Display at ext_spi_clk SCK.txt",
+        "SF-Tester-Design-VHDL/CLS SPI Spy Capture of Boot-Time Display at 50 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/CLS SPI Spy Capture of First-Iteration Display at 50 KHz SCK.txt"]
         
         for fileName in pmodCLSfileNames:
             mainPmodCLS(fileName, partFlag)
             
         partFlag = "cp"
-        pmodSF3fileNames = ["SF-Tester-Design-AXI/SF3 SPI Spy Capture of Erase Subsector at ext_spi_clk SCK.txt",
-                            "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Page Program at ext_spi_clk SCK.txt",
-                            "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Random Read at ext_spi_clk SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 50 KHz SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 500 KHz SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 50 KHz SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 500 KHz SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 50 KHz SCK.txt",
-                            "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 500 KHz SCK.txt"]
+        pmodSF3fileNames = [\
+        "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Erase Subsector at ext_spi_clk SCK.txt",
+        "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Page Program at ext_spi_clk SCK.txt",
+        "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Random Read at ext_spi_clk SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 50 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Erase Subsector at 500 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 50 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Page Program at 500 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 50 KHz SCK.txt",
+        "SF-Tester-Design-VHDL/SF3 SPI Spy Capture of Random Read at 500 KHz SCK.txt"]
         
         for fileName in pmodSF3fileNames:
             mainPmodSF3(fileName, partFlag)
