@@ -212,6 +212,7 @@ class N25QCommandFactory:
         
         if (len(bCopi) > 0):
             b = bCopi[0]
+            print(b)
             if (b == N25QWriteEnable.CommandByte):
                 cmd = N25QWriteEnable(bCopi, bCipo)
             elif (b == N25QReadStatusRegister.CommandByte):
@@ -233,7 +234,8 @@ class N25QCommandFactory:
             else:
                 cmd = N25QUnknown(bCopi, bCipo)
         else:
-            cmd = N25QUnknown(bCopi, bCipo)
+        	print(None)
+        	cmd = N25QUnknown(bCopi, bCipo)
 
         return cmd
 
@@ -268,7 +270,8 @@ class AnalogDiscoverySpiSpyParser:
                 lineParts = dataParts[1].split(",")
                 self._ioParts = []
                 for linePart in lineParts:
-                    self._ioParts.append(linePart.split("|"))
+                    partRep = linePart.replace('h', '')
+                    self._ioParts.append(partRep.split("|"))
                 return True
             else:
                 return False
@@ -535,6 +538,7 @@ if __name__ == "__main__":
             
         partFlag = "cp"
         pmodSF3fileNames = [\
+        "SF-Tester-Design-VHDL/t.txt",
         "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Erase Subsector at ext_spi_clk SCK.txt",
         "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Page Program at ext_spi_clk SCK.txt",
         "SF-Tester-Design-AXI/SF3 SPI Spy Capture of Random Read at ext_spi_clk SCK.txt",
