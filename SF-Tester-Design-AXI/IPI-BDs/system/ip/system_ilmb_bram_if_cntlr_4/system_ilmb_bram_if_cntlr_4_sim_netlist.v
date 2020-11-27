@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:39:10 2020
-// Host        : J1STUDY running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri Nov 27 13:37:42 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
-//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_bram_if_cntlr_4/system_ilmb_bram_if_cntlr_4_sim_netlist.v
+//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_bram_if_cntlr_4/system_ilmb_bram_if_cntlr_4_sim_netlist.v
 // Design      : system_ilmb_bram_if_cntlr_4
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_ilmb_bram_if_cntlr_4,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2020.1" *) 
+(* CHECK_LICENSE_TYPE = "system_ilmb_bram_if_cntlr_4,lmb_bram_if_cntlr,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_bram_if_cntlr,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module system_ilmb_bram_if_cntlr_4
    (LMB_Clk,
@@ -56,26 +56,23 @@ module system_ilmb_bram_if_cntlr_4
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DIN" *) output [0:31]BRAM_Dout_A;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORT DOUT" *) input [0:31]BRAM_Din_A;
 
+  wire \<const0> ;
   wire [0:31]BRAM_Addr_A;
   wire BRAM_Clk_A;
   wire [0:31]BRAM_Din_A;
   wire [0:31]BRAM_Dout_A;
   wire BRAM_EN_A;
-  wire BRAM_Rst_A;
   wire [0:3]BRAM_WEN_A;
   wire [0:31]LMB_ABus;
   wire LMB_AddrStrobe;
   wire [0:3]LMB_BE;
   wire LMB_Clk;
-  wire LMB_ReadStrobe;
   wire LMB_Rst;
   wire [0:31]LMB_WriteDBus;
   wire LMB_WriteStrobe;
-  wire Sl_CE;
   wire [0:31]Sl_DBus;
   wire Sl_Ready;
-  wire Sl_UE;
-  wire Sl_Wait;
+  wire NLW_U0_BRAM_Rst_A_UNCONNECTED;
   wire NLW_U0_CE_UNCONNECTED;
   wire NLW_U0_Interrupt_UNCONNECTED;
   wire NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED;
@@ -95,6 +92,9 @@ module system_ilmb_bram_if_cntlr_4
   wire NLW_U0_Sl3_Ready_UNCONNECTED;
   wire NLW_U0_Sl3_UE_UNCONNECTED;
   wire NLW_U0_Sl3_Wait_UNCONNECTED;
+  wire NLW_U0_Sl_CE_UNCONNECTED;
+  wire NLW_U0_Sl_UE_UNCONNECTED;
+  wire NLW_U0_Sl_Wait_UNCONNECTED;
   wire NLW_U0_UE_UNCONNECTED;
   wire [1:0]NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED;
   wire [31:0]NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED;
@@ -103,6 +103,12 @@ module system_ilmb_bram_if_cntlr_4
   wire [0:31]NLW_U0_Sl2_DBus_UNCONNECTED;
   wire [0:31]NLW_U0_Sl3_DBus_UNCONNECTED;
 
+  assign BRAM_Rst_A = \<const0> ;
+  assign Sl_CE = \<const0> ;
+  assign Sl_UE = \<const0> ;
+  assign Sl_Wait = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
   (* C_BASEADDR = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
   (* C_BRAM_AWIDTH = "32" *) 
   (* C_CE_COUNTER_WIDTH = "0" *) 
@@ -135,7 +141,7 @@ module system_ilmb_bram_if_cntlr_4
         .BRAM_Din_A(BRAM_Din_A),
         .BRAM_Dout_A(BRAM_Dout_A),
         .BRAM_EN_A(BRAM_EN_A),
-        .BRAM_Rst_A(BRAM_Rst_A),
+        .BRAM_Rst_A(NLW_U0_BRAM_Rst_A_UNCONNECTED),
         .BRAM_WEN_A(BRAM_WEN_A),
         .CE(NLW_U0_CE_UNCONNECTED),
         .Interrupt(NLW_U0_Interrupt_UNCONNECTED),
@@ -161,7 +167,7 @@ module system_ilmb_bram_if_cntlr_4
         .LMB_AddrStrobe(LMB_AddrStrobe),
         .LMB_BE(LMB_BE),
         .LMB_Clk(LMB_Clk),
-        .LMB_ReadStrobe(LMB_ReadStrobe),
+        .LMB_ReadStrobe(1'b0),
         .LMB_Rst(LMB_Rst),
         .LMB_WriteDBus(LMB_WriteDBus),
         .LMB_WriteStrobe(LMB_WriteStrobe),
@@ -199,11 +205,11 @@ module system_ilmb_bram_if_cntlr_4
         .Sl3_Ready(NLW_U0_Sl3_Ready_UNCONNECTED),
         .Sl3_UE(NLW_U0_Sl3_UE_UNCONNECTED),
         .Sl3_Wait(NLW_U0_Sl3_Wait_UNCONNECTED),
-        .Sl_CE(Sl_CE),
+        .Sl_CE(NLW_U0_Sl_CE_UNCONNECTED),
         .Sl_DBus(Sl_DBus),
         .Sl_Ready(Sl_Ready),
-        .Sl_UE(Sl_UE),
-        .Sl_Wait(Sl_Wait),
+        .Sl_UE(NLW_U0_Sl_UE_UNCONNECTED),
+        .Sl_Wait(NLW_U0_Sl_Wait_UNCONNECTED),
         .UE(NLW_U0_UE_UNCONNECTED));
 endmodule
 

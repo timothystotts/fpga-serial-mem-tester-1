@@ -150,6 +150,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
     mp_impl->S_TARGET_rd_socket->bind(*(mp_S_AXI_transactor->rd_socket));
     mp_impl->S_TARGET_wr_socket->bind(*(mp_S_AXI_transactor->wr_socket));
   }
+  else
+  {
+  }
 
   // configure 'M_AXI' transactor
 
@@ -222,6 +225,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
 
     mp_impl->M_INITIATOR_rd_socket->bind(*(mp_M_AXI_transactor->rd_socket));
     mp_impl->M_INITIATOR_wr_socket->bind(*(mp_M_AXI_transactor->wr_socket));
+  }
+  else
+  {
   }
 
 }
@@ -321,6 +327,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
     mp_impl->S_TARGET_rd_socket->bind(*(mp_S_AXI_transactor->rd_socket));
     mp_impl->S_TARGET_wr_socket->bind(*(mp_S_AXI_transactor->wr_socket));
   }
+  else
+  {
+  }
 
   // configure 'M_AXI' transactor
 
@@ -393,6 +402,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
 
     mp_impl->M_INITIATOR_rd_socket->bind(*(mp_M_AXI_transactor->rd_socket));
     mp_impl->M_INITIATOR_wr_socket->bind(*(mp_M_AXI_transactor->wr_socket));
+  }
+  else
+  {
   }
 
 }
@@ -492,6 +504,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
     mp_impl->S_TARGET_rd_socket->bind(*(mp_S_AXI_transactor->rd_socket));
     mp_impl->S_TARGET_wr_socket->bind(*(mp_S_AXI_transactor->wr_socket));
   }
+  else
+  {
+  }
 
   // configure 'M_AXI' transactor
 
@@ -565,6 +580,9 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
     mp_impl->M_INITIATOR_rd_socket->bind(*(mp_M_AXI_transactor->rd_socket));
     mp_impl->M_INITIATOR_wr_socket->bind(*(mp_M_AXI_transactor->wr_socket));
   }
+  else
+  {
+  }
 
 }
 
@@ -583,6 +601,7 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   // initialize transactors
   mp_S_AXI_transactor = NULL;
   mp_M_AXI_transactor = NULL;
+
   // Instantiate Socket Stubs
 
   // configure S_AXI_transactor
@@ -642,7 +661,6 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   mp_S_AXI_transactor->RREADY(s_axi_rready);
   mp_S_AXI_transactor->CLK(aclk);
   mp_S_AXI_transactor->RST(aresetn);
-
   // configure M_AXI_transactor
     xsc::common_cpp::properties M_AXI_transactor_param_props;
     M_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -701,7 +719,6 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   mp_M_AXI_transactor->CLK(aclk);
   mp_M_AXI_transactor->RST(aresetn);
 
-
   // initialize transactors stubs
   S_AXI_transactor_target_wr_socket_stub = nullptr;
   S_AXI_transactor_target_rd_socket_stub = nullptr;
@@ -717,6 +734,7 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
   {
     mp_impl->S_TARGET_rd_socket->bind(*(mp_S_AXI_transactor->rd_socket));
     mp_impl->S_TARGET_wr_socket->bind(*(mp_S_AXI_transactor->wr_socket));
+  
   }
   else
   {
@@ -732,6 +750,7 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
   {
     mp_impl->M_INITIATOR_rd_socket->bind(*(mp_M_AXI_transactor->rd_socket));
     mp_impl->M_INITIATOR_wr_socket->bind(*(mp_M_AXI_transactor->wr_socket));
+  
   }
   else
   {
@@ -759,6 +778,7 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   // initialize transactors
   mp_S_AXI_transactor = NULL;
   mp_M_AXI_transactor = NULL;
+
   // Instantiate Socket Stubs
 
   // configure S_AXI_transactor
@@ -818,7 +838,6 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   mp_S_AXI_transactor->RREADY(s_axi_rready);
   mp_S_AXI_transactor->CLK(aclk);
   mp_S_AXI_transactor->RST(aresetn);
-
   // configure M_AXI_transactor
     xsc::common_cpp::properties M_AXI_transactor_param_props;
     M_AXI_transactor_param_props.addLong("DATA_WIDTH", "32");
@@ -877,7 +896,6 @@ system_s00_data_fifo_0::system_s00_data_fifo_0(const sc_core::sc_module_name& nm
   mp_M_AXI_transactor->CLK(aclk);
   mp_M_AXI_transactor->RST(aresetn);
 
-
   // initialize transactors stubs
   S_AXI_transactor_target_wr_socket_stub = nullptr;
   S_AXI_transactor_target_rd_socket_stub = nullptr;
@@ -893,6 +911,7 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
   {
     mp_impl->S_TARGET_rd_socket->bind(*(mp_S_AXI_transactor->rd_socket));
     mp_impl->S_TARGET_wr_socket->bind(*(mp_S_AXI_transactor->wr_socket));
+  
   }
   else
   {
@@ -908,6 +927,7 @@ void system_s00_data_fifo_0::before_end_of_elaboration()
   {
     mp_impl->M_INITIATOR_rd_socket->bind(*(mp_M_AXI_transactor->rd_socket));
     mp_impl->M_INITIATOR_wr_socket->bind(*(mp_M_AXI_transactor->wr_socket));
+  
   }
   else
   {

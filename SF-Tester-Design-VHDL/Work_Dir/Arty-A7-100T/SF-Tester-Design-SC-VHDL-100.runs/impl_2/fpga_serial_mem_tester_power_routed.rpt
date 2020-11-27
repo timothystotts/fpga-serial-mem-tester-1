@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Tue Jul 28 16:14:21 2020
-| Host             : J1STUDY running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date             : Thu Nov 26 21:12:44 2020
+| Host             : l2study running 64-bit Ubuntu 18.04.5 LTS
 | Command          : report_power -file fpga_serial_mem_tester_power_routed.rpt -pb fpga_serial_mem_tester_power_summary_routed.pb -rpx fpga_serial_mem_tester_power_routed.rpx
 | Design           : fpga_serial_mem_tester
 | Device           : xc7a100ticsg324-1L
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.204        |
+| Total On-Chip Power (W)  | 0.205        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.119        |
+| Dynamic (W)              | 0.121        |
 | Device Static (W)        | 0.084        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 99.1         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |       12 |       --- |             --- |
-| Slice Logic    |     0.002 |     6725 |       --- |             --- |
-|   LUT as Logic |     0.001 |     3383 |     63400 |            5.34 |
-|   CARRY4       |    <0.001 |      576 |     15850 |            3.63 |
-|   Register     |    <0.001 |     1711 |    126800 |            1.35 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
-|   Others       |     0.000 |       54 |       --- |             --- |
-| Signals        |     0.001 |     4923 |       --- |             --- |
+| Slice Logic    |     0.002 |     6710 |       --- |             --- |
+|   LUT as Logic |     0.002 |     3413 |     63400 |            5.38 |
+|   CARRY4       |    <0.001 |      579 |     15850 |            3.65 |
+|   Register     |    <0.001 |     1720 |    126800 |            1.36 |
+|   F7/F8 Muxes  |    <0.001 |        7 |     63400 |            0.01 |
+|   Others       |     0.000 |       50 |       --- |             --- |
+| Signals        |     0.002 |     4876 |       --- |             --- |
 | Block RAM      |    <0.001 |        2 |       135 |            1.48 |
 | MMCM           |     0.112 |        1 |         6 |           16.67 |
-| DSPs           |    <0.001 |       16 |       240 |            6.67 |
+| DSPs           |     0.001 |       16 |       240 |            6.67 |
 | I/O            |    <0.001 |       36 |       210 |           17.14 |
 | Static Power   |     0.084 |          |           |                 |
-| Total          |     0.204 |          |           |                 |
+| Total          |     0.205 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.017 |       0.007 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.018 |       0.009 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.079 |       0.062 |      0.016 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,11 +146,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------------+-----------+
-| Name                   | Power (W) |
-+------------------------+-----------+
-| fpga_serial_mem_tester |     0.119 |
-|   u_led_pwm_driver     |     0.003 |
-+------------------------+-----------+
++----------------------------+-----------+
+| Name                       | Power (W) |
++----------------------------+-----------+
+| fpga_serial_mem_tester     |     0.121 |
+|   u_led_pwm_driver         |     0.004 |
+|   u_pmod_sf3_custom_driver |     0.001 |
++----------------------------+-----------+
 
 

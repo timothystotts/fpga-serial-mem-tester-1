@@ -1,11 +1,11 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Mon Jul 27 12:37:54 2020
--- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top system_ilmb_v10_4 -prefix
---               system_ilmb_v10_4_ system_dlmb_v10_4_sim_netlist.vhdl
--- Design      : system_dlmb_v10_4
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Fri Nov 27 13:36:22 2020
+-- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_v10_4/system_ilmb_v10_4_sim_netlist.vhdl
+-- Design      : system_ilmb_v10_4
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a100ticsg324-1L
@@ -52,6 +52,8 @@ entity system_ilmb_v10_4_lmb_v10 is
   attribute C_LMB_NUM_SLAVES of system_ilmb_v10_4_lmb_v10 : entity is 1;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of system_ilmb_v10_4_lmb_v10 : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of system_ilmb_v10_4_lmb_v10 : entity is "lmb_v10";
 end system_ilmb_v10_4_lmb_v10;
 
 architecture STRUCTURE of system_ilmb_v10_4_lmb_v10 is
@@ -140,11 +142,11 @@ entity system_ilmb_v10_4 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of system_ilmb_v10_4 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of system_ilmb_v10_4 : entity is "system_dlmb_v10_4,lmb_v10,{}";
+  attribute CHECK_LICENSE_TYPE of system_ilmb_v10_4 : entity is "system_ilmb_v10_4,lmb_v10,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of system_ilmb_v10_4 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of system_ilmb_v10_4 : entity is "lmb_v10,Vivado 2020.1";
+  attribute x_core_info of system_ilmb_v10_4 : entity is "lmb_v10,Vivado 2020.2";
 end system_ilmb_v10_4;
 
 architecture STRUCTURE of system_ilmb_v10_4 is
@@ -167,7 +169,7 @@ architecture STRUCTURE of system_ilmb_v10_4 is
   attribute x_interface_info of LMB_ReadStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE";
   attribute x_interface_info of LMB_Ready : signal is "xilinx.com:interface:lmb:1.0 LMB_M READY";
   attribute x_interface_info of LMB_Rst : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
-  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD";
+  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
   attribute x_interface_info of LMB_UE : signal is "xilinx.com:interface:lmb:1.0 LMB_M UE";
   attribute x_interface_info of LMB_Wait : signal is "xilinx.com:interface:lmb:1.0 LMB_M WAIT";
   attribute x_interface_info of LMB_WriteStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITESTROBE";

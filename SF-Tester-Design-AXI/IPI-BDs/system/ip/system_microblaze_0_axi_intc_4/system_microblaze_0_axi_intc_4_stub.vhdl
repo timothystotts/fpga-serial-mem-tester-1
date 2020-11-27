@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Mon Jul 27 12:40:21 2020
--- Host        : J1STUDY running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Fri Nov 27 13:38:24 2020
+-- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_microblaze_0_axi_intc_4/system_microblaze_0_axi_intc_4_stub.vhdl
+--               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_microblaze_0_axi_intc_4/system_microblaze_0_axi_intc_4_stub.vhdl
 -- Design      : system_microblaze_0_axi_intc_4
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100ticsg324-1L
@@ -49,6 +49,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[8:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,s_axi_araddr[8:0],s_axi_arvalid,s_axi_arready,s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid,s_axi_rready,intr[5:0],processor_clk,processor_rst,irq,processor_ack[1:0],interrupt_address[31:0]";
 attribute x_core_info : string;
-attribute x_core_info of stub : architecture is "axi_intc,Vivado 2020.1";
+attribute x_core_info of stub : architecture is "axi_intc,Vivado 2020.2";
 begin
 end;

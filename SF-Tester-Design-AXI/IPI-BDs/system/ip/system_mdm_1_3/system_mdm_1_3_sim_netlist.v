@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:41:32 2020
-// Host        : J1STUDY running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri Nov 27 13:39:03 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
-//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_mdm_1_3/system_mdm_1_3_sim_netlist.v
+//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_mdm_1_3/system_mdm_1_3_sim_netlist.v
 // Design      : system_mdm_1_3
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_mdm_1_3,MDM,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MDM,Vivado 2020.1" *) 
+(* CHECK_LICENSE_TYPE = "system_mdm_1_3,MDM,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MDM,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module system_mdm_1_3
    (Debug_SYS_Rst,
@@ -948,6 +948,7 @@ module system_mdm_1_3
   (* C_M_AXI_ADDR_WIDTH = "32" *) 
   (* C_M_AXI_DATA_WIDTH = "32" *) 
   (* C_M_AXI_THREAD_ID_WIDTH = "1" *) 
+  (* C_REVISION = "" *) 
   (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) 
   (* C_S_AXI_ADDR_WIDTH = "4" *) 
   (* C_S_AXI_DATA_WIDTH = "32" *) 
@@ -962,6 +963,7 @@ module system_mdm_1_3
   (* C_USE_CONFIG_RESET = "0" *) 
   (* C_USE_CROSS_TRIGGER = "0" *) 
   (* C_USE_UART = "0" *) 
+  (* bscan_debug_core = "FALSE" *) 
   system_mdm_1_3_MDM U0
        (.Config_Reset(1'b0),
         .Dbg_ARADDR_0(NLW_U0_Dbg_ARADDR_0_UNCONNECTED[14:2]),
@@ -2486,9 +2488,7 @@ endmodule
 
 (* ORIG_REF_NAME = "JTAG_CONTROL" *) 
 module system_mdm_1_3_JTAG_CONTROL
-   (Q,
-    AR,
-    Ext_NM_BRK,
+   (\shift_Count_reg[0]_0 ,
     Debug_SYS_Rst,
     Dbg_Rst_0,
     Dbg_Reg_En_0,
@@ -2496,29 +2496,24 @@ module system_mdm_1_3_JTAG_CONTROL
     mb_data_overrun1__0,
     Dbg_Shift_0,
     tdo,
-    \Use_Serial_Unified_Completion.sample_1_reg[15]_0 ,
-    \Use_Serial_Unified_Completion.count_reg[5]_0 ,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
     CLK,
     \Using_FPGA.Native ,
     sel_n_reg_0,
     Dbg_Shift_0_0,
-    \command_1_reg[7]_0 ,
+    Q,
     SEL,
     sel_n_reg_1,
-    Scan_Reset,
-    Scan_Reset_Sel,
-    Scan_En,
     Dbg_TDO_0,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ,
     Ext_JTAG_TDI,
-    E,
-    D,
-    \Use_Serial_Unified_Completion.count_reg[5]_1 ,
-    \Use_Serial_Unified_Completion.count_reg[5]_2 ,
-    \shift_Count_reg[0]_0 );
-  output [0:0]Q;
-  output [0:0]AR;
-  output Ext_NM_BRK;
+    \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ,
+    \Use_Serial_Unified_Completion.completion_status_reg[15]_0 ,
+    sel,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ,
+    \shift_Count_reg[0]_1 );
+  output \shift_Count_reg[0]_0 ;
   output Debug_SYS_Rst;
   output Dbg_Rst_0;
   output [0:7]Dbg_Reg_En_0;
@@ -2526,54 +2521,45 @@ module system_mdm_1_3_JTAG_CONTROL
   output mb_data_overrun1__0;
   output Dbg_Shift_0;
   output tdo;
-  output [0:0]\Use_Serial_Unified_Completion.sample_1_reg[15]_0 ;
-  output [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
+  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ;
+  output \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
   input CLK;
   input \Using_FPGA.Native ;
   input sel_n_reg_0;
   input Dbg_Shift_0_0;
-  input [3:0]\command_1_reg[7]_0 ;
+  input [3:0]Q;
   input SEL;
   input sel_n_reg_1;
-  input Scan_Reset;
-  input Scan_Reset_Sel;
-  input Scan_En;
   input Dbg_TDO_0;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
   input Ext_JTAG_TDI;
-  input [0:0]E;
-  input [0:0]D;
-  input [0:0]\Use_Serial_Unified_Completion.count_reg[5]_1 ;
-  input [0:0]\Use_Serial_Unified_Completion.count_reg[5]_2 ;
-  input [0:0]\shift_Count_reg[0]_0 ;
+  input \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ;
+  input [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ;
+  input sel;
+  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ;
+  input [0:0]\shift_Count_reg[0]_1 ;
 
   wire A1;
   wire A2;
   wire A3;
-  wire [0:0]AR;
   wire CE;
   wire CLK;
-  wire [0:0]D;
-  wire D_1;
+  wire D;
   wire [0:7]Dbg_Reg_En_0;
   wire Dbg_Rst_0;
   wire Dbg_Shift_0;
   wire Dbg_Shift_0_0;
-  wire Dbg_Shift_31_INST_0_i_1_n_0;
-  wire Dbg_Shift_31_INST_0_i_3_n_0;
-  wire Dbg_Shift_31_INST_0_i_4_n_0;
+  wire Dbg_Shift_0_INST_0_i_1_n_0;
+  wire Dbg_Shift_0_INST_0_i_3_n_0;
+  wire Dbg_Shift_0_INST_0_i_4_n_0;
   wire Dbg_TDO_0;
   wire Debug_SYS_Rst;
-  wire [0:0]E;
+  wire Debug_SYS_Rst_i_i_2_n_0;
   wire Ext_JTAG_TDI;
-  wire Ext_NM_BRK;
-  wire Ext_NM_BRK_i_i_4_n_0;
+  wire Functional_Reset;
   wire ID_TDO_2;
-  wire [0:0]Q;
+  wire [3:0]Q;
   wire SEL;
-  wire Scan_En;
-  wire Scan_Reset;
-  wire Scan_Reset_Sel;
   wire \Use_BSCAN.FDC_I_n_13 ;
   wire \Use_BSCAN.FDC_I_n_26 ;
   wire \Use_BSCAN.FDC_I_n_27 ;
@@ -2585,7 +2571,6 @@ module system_mdm_1_3_JTAG_CONTROL
   wire \Use_BSCAN.FDC_I_n_34 ;
   wire \Use_BSCAN.FDC_I_n_35 ;
   wire \Use_BSCAN.FDC_I_n_36 ;
-  wire \Use_BSCAN.FDC_I_n_37 ;
   wire \Use_BSCAN.FDC_I_n_9 ;
   wire \Use_BSCAN.command[0]_i_1_n_0 ;
   wire \Use_BSCAN.command_reg[6]_0 ;
@@ -2595,6 +2580,20 @@ module system_mdm_1_3_JTAG_CONTROL
   wire \Use_E2.BSCANE2_I_i_6_n_0 ;
   wire \Use_E2.BSCANE2_I_i_7_n_0 ;
   wire \Use_ID_SRL16E.SRL16E_ID_1_n_0 ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ;
+  wire \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ;
+  wire [0:4]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg ;
+  wire \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ;
   wire \Use_Serial_Unified_Completion.completion_block_i_3_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_i_4_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_reg_n_0 ;
@@ -2603,31 +2602,17 @@ module system_mdm_1_3_JTAG_CONTROL
   wire \Use_Serial_Unified_Completion.completion_status[5]_i_2_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_status[7]_i_2_n_0 ;
   wire \Use_Serial_Unified_Completion.completion_status[9]_i_4_n_0 ;
-  wire \Use_Serial_Unified_Completion.count[0]__0_i_4_n_0 ;
-  wire \Use_Serial_Unified_Completion.count[0]_i_1_n_0 ;
-  wire \Use_Serial_Unified_Completion.count[1]_i_1_n_0 ;
-  wire [0:4]\Use_Serial_Unified_Completion.count_reg ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_1 ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_2 ;
-  wire \Use_Serial_Unified_Completion.count_reg_n_0_[0] ;
-  wire \Use_Serial_Unified_Completion.count_reg_n_0_[1] ;
+  wire \Use_Serial_Unified_Completion.completion_status_reg[10]_0 ;
+  wire [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
-  wire [0:0]\Use_Serial_Unified_Completion.sample_1_reg[15]_0 ;
-  wire \Use_Serial_Unified_Completion.sample_1_reg_n_0_[10] ;
-  wire \Use_Serial_Unified_Completion.sample_1_reg_n_0_[11] ;
-  wire \Use_Serial_Unified_Completion.sample_1_reg_n_0_[12] ;
-  wire \Use_Serial_Unified_Completion.sample_1_reg_n_0_[13] ;
-  wire \Use_Serial_Unified_Completion.sample_1_reg_n_0_[14] ;
   wire \Using_FPGA.Native ;
   wire [0:7]command;
   wire [0:7]command_1;
   wire command_10;
-  wire [3:0]\command_1_reg[7]_0 ;
   wire completion_block0__10;
   wire completion_ctrl;
   wire [15:0]completion_status;
@@ -2636,18 +2621,19 @@ module system_mdm_1_3_JTAG_CONTROL
   wire mb_instr_overrun;
   wire mb_instr_overrun137_out;
   wire [5:1]p_0_in;
-  wire p_0_in_2;
+  wire p_0_in_1;
   wire [4:1]p_0_in__0;
   wire [14:0]p_1_in;
   (* async_reg = "true" *) wire [15:13]sample;
   wire sample_1;
+  wire sel;
   wire sel_n;
   wire sel_n0;
   wire sel_n_reg_0;
   wire sel_n_reg_1;
-  wire sel_with_scan_reset;
   wire [4:4]shift_Count_reg;
-  wire [0:0]\shift_Count_reg[0]_0 ;
+  wire \shift_Count_reg[0]_0 ;
+  wire [0:0]\shift_Count_reg[0]_1 ;
   wire sync;
   wire tdi_shifter0;
   wire \tdi_shifter_reg_n_0_[1] ;
@@ -2661,125 +2647,120 @@ module system_mdm_1_3_JTAG_CONTROL
 
   LUT3 #(
     .INIT(8'h04)) 
-    Dbg_Shift_31_INST_0_i_1
+    Dbg_Shift_0_INST_0_i_1
        (.I0(command[6]),
         .I1(command[5]),
         .I2(command[7]),
-        .O(Dbg_Shift_31_INST_0_i_1_n_0));
+        .O(Dbg_Shift_0_INST_0_i_1_n_0));
   LUT2 #(
     .INIT(4'hE)) 
-    Dbg_Shift_31_INST_0_i_3
+    Dbg_Shift_0_INST_0_i_3
        (.I0(command[2]),
         .I1(command[4]),
-        .O(Dbg_Shift_31_INST_0_i_3_n_0));
+        .O(Dbg_Shift_0_INST_0_i_3_n_0));
   LUT3 #(
     .INIT(8'h01)) 
-    Dbg_Shift_31_INST_0_i_4
+    Dbg_Shift_0_INST_0_i_4
        (.I0(command[0]),
         .I1(command[1]),
         .I2(command[3]),
-        .O(Dbg_Shift_31_INST_0_i_4_n_0));
-  FDCE #(
+        .O(Dbg_Shift_0_INST_0_i_4_n_0));
+  FDRE #(
     .INIT(1'b0)) 
     Debug_Rst_i_reg
        (.C(CLK),
         .CE(1'b1),
-        .CLR(AR),
         .D(\Use_BSCAN.FDC_I_n_34 ),
-        .Q(Dbg_Rst_0));
-  FDCE #(
-    .INIT(1'b0)) 
-    Debug_SYS_Rst_i_reg
-       (.C(CLK),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_35 ),
-        .Q(Debug_SYS_Rst));
-  LUT3 #(
-    .INIT(8'h40)) 
-    Ext_NM_BRK_i_i_2
-       (.I0(Scan_En),
-        .I1(Scan_Reset_Sel),
-        .I2(Scan_Reset),
-        .O(AR));
+        .Q(Dbg_Rst_0),
+        .R(1'b0));
   LUT6 #(
     .INIT(64'h0000000000000004)) 
-    Ext_NM_BRK_i_i_4
+    Debug_SYS_Rst_i_i_2
        (.I0(command[7]),
         .I1(command[4]),
         .I2(command[5]),
         .I3(command[3]),
         .I4(command[1]),
         .I5(command[0]),
-        .O(Ext_NM_BRK_i_i_4_n_0));
-  FDCE #(
+        .O(Debug_SYS_Rst_i_i_2_n_0));
+  FDRE #(
     .INIT(1'b0)) 
-    Ext_NM_BRK_i_reg
+    Debug_SYS_Rst_i_reg
        (.C(CLK),
         .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_36 ),
-        .Q(Ext_NM_BRK));
+        .D(\Use_BSCAN.FDC_I_n_35 ),
+        .Q(Debug_SYS_Rst),
+        .R(1'b0));
   system_mdm_1_3_MB_FDC_1 \Use_BSCAN.FDC_I 
        (.CE(CE),
         .CLK(CLK),
-        .D(p_1_in[9:0]),
-        .D_1(D_1),
+        .D(D),
         .Dbg_Reg_En_0(Dbg_Reg_En_0),
         .Dbg_Rst_0(Dbg_Rst_0),
         .Dbg_TDO_0(Dbg_TDO_0),
         .Dbg_TDO_0_0(\Use_BSCAN.FDC_I_n_32 ),
-        .Debug_Rst_i_reg({p_0_in_2,\tdi_shifter_reg_n_0_[1] ,\tdi_shifter_reg_n_0_[2] ,\tdi_shifter_reg_n_0_[3] ,\tdi_shifter_reg_n_0_[4] ,\tdi_shifter_reg_n_0_[5] ,\tdi_shifter_reg_n_0_[6] ,\tdi_shifter_reg_n_0_[7] }),
+        .Debug_Rst_i_reg(Debug_SYS_Rst_i_i_2_n_0),
         .Debug_SYS_Rst(Debug_SYS_Rst),
-        .E(\Use_BSCAN.FDC_I_n_9 ),
-        .Ext_NM_BRK(Ext_NM_BRK),
-        .Ext_NM_BRK_i_reg(Ext_NM_BRK_i_i_4_n_0),
-        .Q({command[0],command[1],command[2],command[3],command[4],command[5],command[6],command[7]}),
+        .Debug_SYS_Rst_i_reg(\tdi_shifter_reg_n_0_[1] ),
+        .Q(Q),
         .SEL(SEL),
-        .\Use_BSCAN.PORT_Selector_reg[2] (command_10),
-        .\Use_BSCAN.command_reg[5] (sample_1),
         .\Use_BSCAN.command_reg[6] (\Use_BSCAN.command_reg[6]_0 ),
-        .\Use_Serial_Unified_Completion.completion_block_reg (\Use_Serial_Unified_Completion.completion_block_reg_n_0 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] (\Use_BSCAN.FDC_I_n_26 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] (\Use_BSCAN.FDC_I_n_27 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] (\Use_BSCAN.FDC_I_n_28 ),
+        .\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] (\Use_BSCAN.FDC_I_n_30 ),
+        .\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 (\Use_BSCAN.FDC_I_n_31 ),
+        .\Use_Serial_Unified_Completion.completion_block_reg (\Use_BSCAN.FDC_I_n_9 ),
+        .\Use_Serial_Unified_Completion.completion_block_reg_0 (\Use_Serial_Unified_Completion.completion_block_reg_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[0] (Dbg_Shift_0_0),
         .\Use_Serial_Unified_Completion.completion_status_reg[3] (\Use_Serial_Unified_Completion.completion_status[3]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[4] (\Use_Serial_Unified_Completion.completion_status[4]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[5] (\Use_Serial_Unified_Completion.completion_status[5]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[6] (\Use_Serial_Unified_Completion.completion_status[7]_i_2_n_0 ),
         .\Use_Serial_Unified_Completion.completion_status_reg[8] (\Use_Serial_Unified_Completion.completion_status[9]_i_4_n_0 ),
-        .\Use_Serial_Unified_Completion.completion_status_reg[9] (completion_status[10:0]),
-        .\Use_Serial_Unified_Completion.count_reg[1] (\Use_BSCAN.FDC_I_n_30 ),
-        .\Use_Serial_Unified_Completion.count_reg[1]_0 (\Use_BSCAN.FDC_I_n_31 ),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg (sel_n_reg_0),
-        .\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 (Dbg_Shift_31_INST_0_i_3_n_0),
-        .\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 (Dbg_Shift_31_INST_0_i_4_n_0),
+        .\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 (Dbg_Shift_0_INST_0_i_3_n_0),
+        .\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 (Dbg_Shift_0_INST_0_i_4_n_0),
         .\Use_Serial_Unified_Completion.mb_data_overrun_reg_2 (\Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ),
-        .\Use_Serial_Unified_Completion.mb_instr_error_reg (Dbg_Shift_31_INST_0_i_1_n_0),
-        .\Use_Serial_Unified_Completion.mb_instr_error_reg_0 (\Use_Serial_Unified_Completion.count_reg_n_0_[0] ),
+        .\Use_Serial_Unified_Completion.mb_data_overrun_reg_3 (\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
+        .\Use_Serial_Unified_Completion.mb_instr_error_reg (Dbg_Shift_0_INST_0_i_1_n_0),
+        .\Use_Serial_Unified_Completion.mb_instr_error_reg_0 (\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .\Use_Serial_Unified_Completion.mb_instr_error_reg_1 (\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
         .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
-        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion.count_reg_n_0_[1] ),
-        .\Use_Serial_Unified_Completion.sample_reg[15] ({\Use_BSCAN.FDC_I_n_26 ,\Use_BSCAN.FDC_I_n_27 ,\Use_BSCAN.FDC_I_n_28 }),
-        .\Use_Serial_Unified_Completion.sample_reg[15]_0 ({sample,\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ,\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ,mb_instr_overrun}),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
         .\Using_FPGA.Native_0 (\Use_BSCAN.FDC_I_n_13 ),
-        .\command_1_reg[7] (\command_1_reg[7]_0 ),
+        .\Using_FPGA.Native_1 (\tdi_shifter_reg_n_0_[4] ),
+        .\Using_FPGA.Native_2 (\tdi_shifter_reg_n_0_[5] ),
+        .\Using_FPGA.Native_3 (\tdi_shifter_reg_n_0_[7] ),
+        .\Using_FPGA.Native_4 (\tdi_shifter_reg_n_0_[6] ),
+        .\Using_FPGA.Native_5 (\tdi_shifter_reg_n_0_[2] ),
+        .\Using_FPGA.Native_6 (\tdi_shifter_reg_n_0_[3] ),
+        .command(command),
+        .command_10(command_10),
         .completion_block0__10(completion_block0__10),
         .completion_ctrl(completion_ctrl),
         .\completion_ctrl_reg[0] (\Use_BSCAN.FDC_I_n_33 ),
+        .completion_status(completion_status[10:0]),
         .mb_data_overrun1__0(mb_data_overrun1__0),
+        .mb_instr_overrun(mb_instr_overrun),
         .mb_instr_overrun137_out(mb_instr_overrun137_out),
+        .out(sample),
+        .p_0_in_1(p_0_in_1),
+        .p_1_in(p_1_in[9:0]),
+        .sample_1(sample_1),
         .sel_n(sel_n),
         .sync(sync),
         .\tdi_shifter_reg[0] (\Use_BSCAN.FDC_I_n_34 ),
-        .\tdi_shifter_reg[0]_0 (\Use_BSCAN.FDC_I_n_37 ),
-        .\tdi_shifter_reg[1] (\Use_BSCAN.FDC_I_n_35 ),
-        .\tdi_shifter_reg[3] (\Use_BSCAN.FDC_I_n_36 ));
+        .\tdi_shifter_reg[0]_0 (\Use_BSCAN.FDC_I_n_36 ),
+        .\tdi_shifter_reg[1] (\Use_BSCAN.FDC_I_n_35 ));
   system_mdm_1_3_MB_FDRE_1 \Use_BSCAN.SYNC_FDRE 
        (.CE(CE),
-        .D_1(D_1),
+        .D(D),
         .Dbg_Shift_0(Dbg_Shift_0),
-        .Dbg_Shift_0_0(Dbg_Shift_31_INST_0_i_1_n_0),
+        .Dbg_Shift_0_0(Dbg_Shift_0_INST_0_i_1_n_0),
         .Dbg_Shift_0_1(\Use_BSCAN.FDC_I_n_13 ),
-        .Dbg_Shift_0_2(Dbg_Shift_31_INST_0_i_3_n_0),
-        .Dbg_Shift_0_3(Dbg_Shift_31_INST_0_i_4_n_0),
+        .Dbg_Shift_0_2(Dbg_Shift_0_INST_0_i_3_n_0),
+        .Dbg_Shift_0_3(Dbg_Shift_0_INST_0_i_4_n_0),
         .Dbg_Shift_0_4(Dbg_Shift_0_0),
         .\Using_FPGA.Native_0 (\Using_FPGA.Native ),
         .sync(sync));
@@ -2787,100 +2768,107 @@ module system_mdm_1_3_JTAG_CONTROL
     .INIT(32'h00000008)) 
     \Use_BSCAN.command[0]_i_1 
        (.I0(SEL),
-        .I1(\command_1_reg[7]_0 [0]),
-        .I2(\command_1_reg[7]_0 [1]),
-        .I3(\command_1_reg[7]_0 [3]),
-        .I4(\command_1_reg[7]_0 [2]),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[3]),
+        .I4(Q[2]),
         .O(\Use_BSCAN.command[0]_i_1_n_0 ));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[0] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[0]),
-        .Q(command[0]));
-  FDCE #(
+        .Q(command[0]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[1] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[1]),
-        .Q(command[1]));
-  FDCE #(
+        .Q(command[1]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[2] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[2]),
-        .Q(command[2]));
-  FDCE #(
+        .Q(command[2]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[3] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[3]),
-        .Q(command[3]));
-  FDCE #(
+        .Q(command[3]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[4] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[4]),
-        .Q(command[4]));
-  FDCE #(
+        .Q(command[4]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[5] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[5]),
-        .Q(command[5]));
-  FDCE #(
+        .Q(command[5]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[6] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[6]),
-        .Q(command[6]));
-  FDCE #(
+        .Q(command[6]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \Use_BSCAN.command_reg[7] 
        (.C(CLK),
         .CE(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .CLR(AR),
         .D(command_1[7]),
-        .Q(command[7]));
+        .Q(command[7]),
+        .R(1'b0));
   system_mdm_1_3_MB_SRL16E \Use_Config_SRL16E.SRL16E_1 
-       (.Dbg_TDO_0(Dbg_TDO_0),
-        .Q({shift_Count_reg,A3,A2,A1,Q}),
+       (.A1(A1),
+        .A2(A2),
+        .A3(A3),
+        .Dbg_TDO_0(Dbg_TDO_0),
+        .Q(Q[0]),
         .\Use_E2.BSCANE2_I_i_1_0 (\Use_E2.BSCANE2_I_i_7_n_0 ),
-        .\Use_E2.BSCANE2_I_i_1_1 ({command[4],command[5],command[7]}),
-        .\Use_E2.BSCANE2_I_i_4_0 (completion_status[0]),
-        .\Use_E2.BSCANE2_I_i_8_0 (\Using_FPGA.Native ),
+        .\Use_E2.BSCANE2_I_i_8_0 (\shift_Count_reg[0]_0 ),
+        .\Use_E2.BSCANE2_I_i_8_1 (\Using_FPGA.Native ),
+        .command({command[4],command[5],command[7]}),
+        .completion_status(completion_status[0]),
         .config_TDO_2(config_TDO_2),
         .sel_n_reg(sel_n_reg_1),
-        .sel_n_reg_0(\command_1_reg[7]_0 [0]),
-        .sel_n_reg_1(\Use_E2.BSCANE2_I_i_3_n_0 ),
-        .sel_n_reg_2(\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
-        .sel_n_reg_3(\Use_E2.BSCANE2_I_i_6_n_0 ),
+        .sel_n_reg_0(\Use_E2.BSCANE2_I_i_3_n_0 ),
+        .sel_n_reg_1(\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
+        .sel_n_reg_2(\Use_E2.BSCANE2_I_i_6_n_0 ),
+        .shift_Count_reg(shift_Count_reg),
         .tdo(tdo));
   system_mdm_1_3_MB_SRL16E__parameterized1 \Use_Config_SRL16E.SRL16E_2 
-       (.Q({A3,A2,A1,Q}),
-        .\Use_E2.BSCANE2_I_i_8 (\Using_FPGA.Native ),
+       (.A1(A1),
+        .A2(A2),
+        .A3(A3),
+        .\Use_E2.BSCANE2_I_i_8 (\shift_Count_reg[0]_0 ),
+        .\Use_E2.BSCANE2_I_i_8_0 (\Using_FPGA.Native ),
         .config_TDO_2(config_TDO_2));
   LUT6 #(
     .INIT(64'hFEFCFEFFFFFFFFFF)) 
@@ -2902,15 +2890,15 @@ module system_mdm_1_3_JTAG_CONTROL
         .I4(command[4]),
         .I5(command[5]),
         .O(\Use_E2.BSCANE2_I_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     \Use_E2.BSCANE2_I_i_3 
        (.I0(command[0]),
         .I1(Dbg_TDO_0),
-        .I2(\command_1_reg[7]_0 [1]),
+        .I2(Q[1]),
         .O(\Use_E2.BSCANE2_I_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h00F8)) 
     \Use_E2.BSCANE2_I_i_6 
@@ -2930,85 +2918,289 @@ module system_mdm_1_3_JTAG_CONTROL
         .I5(command[2]),
         .O(\Use_E2.BSCANE2_I_i_7_n_0 ));
   system_mdm_1_3_MB_SRL16E__parameterized3 \Use_ID_SRL16E.SRL16E_ID_1 
-       (.ID_TDO_2(ID_TDO_2),
-        .Q({shift_Count_reg,A3,A2,A1,Q}),
+       (.A1(A1),
+        .A2(A2),
+        .A3(A3),
+        .ID_TDO_2(ID_TDO_2),
         .\Use_BSCAN.command_reg[5] (\Use_ID_SRL16E.SRL16E_ID_1_n_0 ),
-        .\Use_E2.BSCANE2_I_i_1 ({command[1],command[2],command[4],command[5],command[6],command[7]}),
-        .\Use_E2.BSCANE2_I_i_9_0 (\Using_FPGA.Native ));
+        .\Use_E2.BSCANE2_I_i_9_0 (\shift_Count_reg[0]_0 ),
+        .\Use_E2.BSCANE2_I_i_9_1 (\Using_FPGA.Native ),
+        .command({command[1],command[2],command[4],command[5],command[6],command[7]}),
+        .shift_Count_reg(shift_Count_reg));
   system_mdm_1_3_MB_SRL16E__parameterized5 \Use_ID_SRL16E.SRL16E_ID_2 
-       (.ID_TDO_2(ID_TDO_2),
-        .Q({A3,A2,A1,Q}),
-        .\Use_E2.BSCANE2_I_i_9 (\Using_FPGA.Native ));
+       (.A1(A1),
+        .A2(A2),
+        .A3(A3),
+        .ID_TDO_2(ID_TDO_2),
+        .\Use_E2.BSCANE2_I_i_9 (\shift_Count_reg[0]_0 ),
+        .\Use_E2.BSCANE2_I_i_9_0 (\Using_FPGA.Native ));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[10] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(mb_instr_overrun),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
+        .R(1'b0));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[11] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
+        .R(1'b0));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[12] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
+        .R(1'b0));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[13] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(sample[13]),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
+        .R(1'b0));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[14] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(sample[14]),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
+        .R(1'b0));
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sample_1),
+        .D(sample[15]),
+        .Q(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] 
+       (.C(\Using_FPGA.Native ),
+        .CE(1'b1),
+        .D(\Use_BSCAN.FDC_I_n_26 ),
+        .Q(sample[13]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] 
+       (.C(\Using_FPGA.Native ),
+        .CE(1'b1),
+        .D(\Use_BSCAN.FDC_I_n_27 ),
+        .Q(sample[14]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] 
+       (.C(\Using_FPGA.Native ),
+        .CE(1'b1),
+        .D(\Use_BSCAN.FDC_I_n_28 ),
+        .Q(sample[15]),
+        .R(1'b0));
+  LUT4 #(
+    .INIT(16'h0078)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_2 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
+        .I3(sel_n_reg_0),
+        .O(p_0_in[5]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT4 #(
+    .INIT(16'h8000)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .O(\Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000007FFF8000)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[1]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .I4(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+        .I5(sel_n_reg_0),
+        .O(p_0_in[4]));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT5 #(
+    .INIT(32'h00007F80)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[2]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+        .I4(sel_n_reg_0),
+        .O(p_0_in[3]));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT4 #(
+    .INIT(16'h0078)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[3]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .I3(sel_n_reg_0),
+        .O(p_0_in[2]));
+  LUT3 #(
+    .INIT(8'h06)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[4]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I2(sel_n_reg_0),
+        .O(p_0_in[1]));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[0] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(p_0_in[5]),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[1] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(p_0_in[4]),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[2] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(p_0_in[3]),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[3] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(p_0_in[2]),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[4] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(p_0_in[1]),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] 
+       (.C(\Using_FPGA.Native ),
+        .CE(sel),
+        .D(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 ),
+        .Q(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .R(1'b0));
+  LUT6 #(
+    .INIT(64'h0000FF80FF00FF00)) 
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+        .I1(Dbg_Shift_0_0),
+        .I2(sync),
+        .I3(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .I4(sel_n_reg_0),
+        .I5(mb_instr_overrun137_out),
+        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h00F7FFFF00080000)) 
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1 
+       (.I0(Dbg_Shift_0_0),
+        .I1(sync),
+        .I2(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .I3(sel_n_reg_0),
+        .I4(mb_instr_overrun137_out),
+        .I5(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[0] 
+       (.C(\Using_FPGA.Native ),
+        .CE(1'b1),
+        .D(\Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[0] ),
+        .R(1'b0));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] 
+       (.C(\Using_FPGA.Native ),
+        .CE(1'b1),
+        .D(\Use_Serial_Unified_Completion._Write_Instr_Status.count[1]_i_1_n_0 ),
+        .Q(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg_n_0_[1] ),
+        .R(1'b0));
   LUT6 #(
     .INIT(64'hFFFFFFFFBAFFBABA)) 
     \Use_Serial_Unified_Completion.completion_block_i_2 
        (.I0(\Use_Serial_Unified_Completion.completion_block_i_3_n_0 ),
-        .I1(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[13] ),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
         .I2(sample[13]),
-        .I3(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[14] ),
+        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
         .I4(sample[14]),
         .I5(\Use_Serial_Unified_Completion.completion_block_i_4_n_0 ),
         .O(completion_block0__10));
   LUT4 #(
     .INIT(16'h4F44)) 
     \Use_Serial_Unified_Completion.completion_block_i_3 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg[15]_0 ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 ),
         .I1(sample[15]),
-        .I2(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[10] ),
+        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
         .I3(mb_instr_overrun),
         .O(\Use_Serial_Unified_Completion.completion_block_i_3_n_0 ));
   LUT4 #(
     .INIT(16'h4F44)) 
     \Use_Serial_Unified_Completion.completion_block_i_4 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[11] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
         .I1(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
-        .I2(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[12] ),
+        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
         .I3(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
         .O(\Use_Serial_Unified_Completion.completion_block_i_4_n_0 ));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_block_reg 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(\Use_BSCAN.FDC_I_n_33 ),
-        .Q(\Use_Serial_Unified_Completion.completion_block_reg_n_0 ));
+        .Q(\Use_Serial_Unified_Completion.completion_block_reg_n_0 ),
+        .R(1'b0));
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[10]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[10] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[10] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[11]),
         .O(p_1_in[10]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[11]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[11] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[11] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[12]),
         .O(p_1_in[11]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[12]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[12] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[12] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[13]),
         .O(p_1_in[12]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[13]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[13] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[13] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[14]),
         .O(p_1_in[13]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \Use_Serial_Unified_Completion.completion_status[14]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[14] ),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg_n_0_[14] ),
         .I1(sel_n_reg_0),
         .I2(completion_status[15]),
         .O(p_1_in[14]));
@@ -3019,7 +3211,7 @@ module system_mdm_1_3_JTAG_CONTROL
         .I1(completion_status[0]),
         .I2(completion_status[1]),
         .O(\Use_Serial_Unified_Completion.completion_status[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \Use_Serial_Unified_Completion.completion_status[4]_i_2 
@@ -3028,7 +3220,7 @@ module system_mdm_1_3_JTAG_CONTROL
         .I2(completion_status[0]),
         .I3(completion_status[2]),
         .O(\Use_Serial_Unified_Completion.completion_status[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \Use_Serial_Unified_Completion.completion_status[5]_i_2 
@@ -3055,492 +3247,296 @@ module system_mdm_1_3_JTAG_CONTROL
         .I1(\Use_Serial_Unified_Completion.completion_status[7]_i_2_n_0 ),
         .I2(completion_status[6]),
         .O(\Use_Serial_Unified_Completion.completion_status[9]_i_4_n_0 ));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[0] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[0]),
-        .Q(completion_status[0]));
-  FDCE #(
+        .Q(completion_status[0]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[10] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[10]),
-        .Q(completion_status[10]));
-  FDCE #(
+        .Q(completion_status[10]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[11] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[11]),
-        .Q(completion_status[11]));
-  FDCE #(
+        .Q(completion_status[11]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[12] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[12]),
-        .Q(completion_status[12]));
-  FDCE #(
+        .Q(completion_status[12]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[13] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[13]),
-        .Q(completion_status[13]));
-  FDCE #(
+        .Q(completion_status[13]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[14] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
         .D(p_1_in[14]),
-        .Q(completion_status[14]));
-  FDCE #(
+        .Q(completion_status[14]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[15] 
        (.C(\Using_FPGA.Native ),
-        .CE(E),
-        .CLR(AR),
-        .D(D),
-        .Q(completion_status[15]));
-  FDCE #(
+        .CE(\Use_Serial_Unified_Completion.completion_status_reg[10]_0 ),
+        .D(\Use_Serial_Unified_Completion.completion_status_reg[15]_0 ),
+        .Q(completion_status[15]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[1] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[1]),
-        .Q(completion_status[1]));
-  FDCE #(
+        .Q(completion_status[1]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[2] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[2]),
-        .Q(completion_status[2]));
-  FDCE #(
+        .Q(completion_status[2]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[3] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[3]),
-        .Q(completion_status[3]));
-  FDCE #(
+        .Q(completion_status[3]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[4] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[4]),
-        .Q(completion_status[4]));
-  FDCE #(
+        .Q(completion_status[4]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[5] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[5]),
-        .Q(completion_status[5]));
-  FDCE #(
+        .Q(completion_status[5]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[6] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[6]),
-        .Q(completion_status[6]));
-  FDCE #(
+        .Q(completion_status[6]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[7] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[7]),
-        .Q(completion_status[7]));
-  FDCE #(
+        .Q(completion_status[7]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[8] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[8]),
-        .Q(completion_status[8]));
-  FDCE #(
+        .Q(completion_status[8]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.completion_status_reg[9] 
        (.C(\Using_FPGA.Native ),
         .CE(\Use_BSCAN.FDC_I_n_9 ),
-        .CLR(AR),
         .D(p_1_in[9]),
-        .Q(completion_status[9]));
-  LUT4 #(
-    .INIT(16'h0078)) 
-    \Use_Serial_Unified_Completion.count[0]__0_i_2 
-       (.I0(\Use_Serial_Unified_Completion.count_reg [1]),
-        .I1(\Use_Serial_Unified_Completion.count[0]__0_i_4_n_0 ),
-        .I2(\Use_Serial_Unified_Completion.count_reg [0]),
-        .I3(sel_n_reg_0),
-        .O(p_0_in[5]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \Use_Serial_Unified_Completion.count[0]__0_i_4 
-       (.I0(\Use_Serial_Unified_Completion.count_reg [2]),
-        .I1(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I2(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I3(\Use_Serial_Unified_Completion.count_reg [3]),
-        .O(\Use_Serial_Unified_Completion.count[0]__0_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000FF80FF00FF00)) 
-    \Use_Serial_Unified_Completion.count[0]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.count_reg_n_0_[1] ),
-        .I1(Dbg_Shift_0_0),
-        .I2(sync),
-        .I3(\Use_Serial_Unified_Completion.count_reg_n_0_[0] ),
-        .I4(sel_n_reg_0),
-        .I5(mb_instr_overrun137_out),
-        .O(\Use_Serial_Unified_Completion.count[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000007FFF8000)) 
-    \Use_Serial_Unified_Completion.count[1]__0_i_1 
-       (.I0(\Use_Serial_Unified_Completion.count_reg [2]),
-        .I1(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I2(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I3(\Use_Serial_Unified_Completion.count_reg [3]),
-        .I4(\Use_Serial_Unified_Completion.count_reg [1]),
-        .I5(sel_n_reg_0),
-        .O(p_0_in[4]));
-  LUT6 #(
-    .INIT(64'h00F7FFFF00080000)) 
-    \Use_Serial_Unified_Completion.count[1]_i_1 
-       (.I0(Dbg_Shift_0_0),
-        .I1(sync),
-        .I2(\Use_Serial_Unified_Completion.count_reg_n_0_[0] ),
-        .I3(sel_n_reg_0),
-        .I4(mb_instr_overrun137_out),
-        .I5(\Use_Serial_Unified_Completion.count_reg_n_0_[1] ),
-        .O(\Use_Serial_Unified_Completion.count[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
-  LUT5 #(
-    .INIT(32'h00007F80)) 
-    \Use_Serial_Unified_Completion.count[2]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.count_reg [3]),
-        .I1(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I3(\Use_Serial_Unified_Completion.count_reg [2]),
-        .I4(sel_n_reg_0),
-        .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT4 #(
-    .INIT(16'h0078)) 
-    \Use_Serial_Unified_Completion.count[3]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I1(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion.count_reg [3]),
-        .I3(sel_n_reg_0),
-        .O(p_0_in[2]));
-  LUT3 #(
-    .INIT(8'h06)) 
-    \Use_Serial_Unified_Completion.count[4]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I1(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I2(sel_n_reg_0),
-        .O(p_0_in[1]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[0] 
-       (.C(\Using_FPGA.Native ),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_Serial_Unified_Completion.count[0]_i_1_n_0 ),
-        .Q(\Use_Serial_Unified_Completion.count_reg_n_0_[0] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[0]__0 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(p_0_in[5]),
-        .Q(\Use_Serial_Unified_Completion.count_reg [0]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[1] 
-       (.C(\Using_FPGA.Native ),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_Serial_Unified_Completion.count[1]_i_1_n_0 ),
-        .Q(\Use_Serial_Unified_Completion.count_reg_n_0_[1] ));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[1]__0 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(p_0_in[4]),
-        .Q(\Use_Serial_Unified_Completion.count_reg [1]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[2] 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(p_0_in[3]),
-        .Q(\Use_Serial_Unified_Completion.count_reg [2]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[3] 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(p_0_in[2]),
-        .Q(\Use_Serial_Unified_Completion.count_reg [3]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[4] 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(p_0_in[1]),
-        .Q(\Use_Serial_Unified_Completion.count_reg [4]));
-  FDCE #(
-    .INIT(1'b0)) 
-    \Use_Serial_Unified_Completion.count_reg[5] 
-       (.C(\Using_FPGA.Native ),
-        .CE(\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .CLR(AR),
-        .D(\Use_Serial_Unified_Completion.count_reg[5]_2 ),
-        .Q(\Use_Serial_Unified_Completion.count_reg[5]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+        .Q(completion_status[9]),
+        .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h0002)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_i_2 
        (.I0(\Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ),
-        .I1(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .I2(\Use_Serial_Unified_Completion.count_reg [4]),
-        .I3(\Use_Serial_Unified_Completion.count_reg [3]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [4]),
+        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [3]),
         .O(\Use_Serial_Unified_Completion.mb_data_overrun_i_2_n_0 ));
   LUT4 #(
     .INIT(16'h0008)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_i_3 
        (.I0(Dbg_Shift_0_0),
-        .I1(\Use_Serial_Unified_Completion.count_reg [0]),
-        .I2(\Use_Serial_Unified_Completion.count_reg [1]),
-        .I3(\Use_Serial_Unified_Completion.count_reg [2]),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [0]),
+        .I2(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [1]),
+        .I3(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg [2]),
         .O(\Use_Serial_Unified_Completion.mb_data_overrun_i_3_n_0 ));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_reg 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(\Use_BSCAN.FDC_I_n_32 ),
-        .Q(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ));
-  FDCE #(
+        .Q(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_instr_error_reg 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(\Use_BSCAN.FDC_I_n_31 ),
-        .Q(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ));
-  FDCE #(
+        .Q(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(\Use_BSCAN.FDC_I_n_30 ),
-        .Q(mb_instr_overrun));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[10] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(mb_instr_overrun),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[10] ));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[11] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(\Use_Serial_Unified_Completion.mb_instr_error_reg_n_0 ),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[11] ));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[12] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(\Use_Serial_Unified_Completion.mb_data_overrun_reg_n_0 ),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[12] ));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[13] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(sample[13]),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[13] ));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[14] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(sample[14]),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg_n_0_[14] ));
-  FDCE \Use_Serial_Unified_Completion.sample_1_reg[15] 
-       (.C(\Using_FPGA.Native ),
-        .CE(sample_1),
-        .CLR(AR),
-        .D(sample[15]),
-        .Q(\Use_Serial_Unified_Completion.sample_1_reg[15]_0 ));
-  (* ASYNC_REG *) 
-  (* KEEP = "yes" *) 
-  FDCE \Use_Serial_Unified_Completion.sample_reg[13] 
-       (.C(\Using_FPGA.Native ),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_28 ),
-        .Q(sample[13]));
-  (* ASYNC_REG *) 
-  (* KEEP = "yes" *) 
-  FDCE \Use_Serial_Unified_Completion.sample_reg[14] 
-       (.C(\Using_FPGA.Native ),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_27 ),
-        .Q(sample[14]));
-  (* ASYNC_REG *) 
-  (* KEEP = "yes" *) 
-  FDCE \Use_Serial_Unified_Completion.sample_reg[15] 
-       (.C(\Using_FPGA.Native ),
-        .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_26 ),
-        .Q(sample[15]));
-  FDCE #(
+        .Q(mb_instr_overrun),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[0] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
-        .D(p_0_in_2),
-        .Q(command_1[0]));
-  FDCE #(
+        .D(p_0_in_1),
+        .Q(command_1[0]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[1] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[1] ),
-        .Q(command_1[1]));
-  FDCE #(
+        .Q(command_1[1]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[2] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[2] ),
-        .Q(command_1[2]));
-  FDCE #(
+        .Q(command_1[2]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[3] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[3] ),
-        .Q(command_1[3]));
-  FDCE #(
+        .Q(command_1[3]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[4] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[4] ),
-        .Q(command_1[4]));
-  FDCE #(
+        .Q(command_1[4]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[5] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[5] ),
-        .Q(command_1[5]));
-  FDCE #(
+        .Q(command_1[5]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[6] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[6] ),
-        .Q(command_1[6]));
-  FDCE #(
+        .Q(command_1[6]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \command_1_reg[7] 
        (.C(CLK),
         .CE(command_10),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[7] ),
-        .Q(command_1[7]));
-  FDCE #(
+        .Q(command_1[7]),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \completion_ctrl_reg[0] 
        (.C(CLK),
         .CE(1'b1),
-        .CLR(AR),
-        .D(\Use_BSCAN.FDC_I_n_37 ),
-        .Q(completion_ctrl));
+        .D(\Use_BSCAN.FDC_I_n_36 ),
+        .Q(completion_ctrl),
+        .R(1'b0));
   LUT5 #(
     .INIT(32'hFEFFFFFF)) 
     sel_n_i_1
-       (.I0(\command_1_reg[7]_0 [2]),
-        .I1(\command_1_reg[7]_0 [3]),
-        .I2(\command_1_reg[7]_0 [1]),
-        .I3(\command_1_reg[7]_0 [0]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .I4(SEL),
         .O(sel_n0));
-  LUT5 #(
-    .INIT(32'h0000F044)) 
+  LUT6 #(
+    .INIT(64'hAAA8AAAAAAAAAAAA)) 
     sel_n_i_2
-       (.I0(\Use_BSCAN.command[0]_i_1_n_0 ),
-        .I1(CLK),
-        .I2(Scan_Reset),
-        .I3(Scan_Reset_Sel),
-        .I4(Scan_En),
-        .O(sel_with_scan_reset));
+       (.I0(CLK),
+        .I1(Q[2]),
+        .I2(Q[3]),
+        .I3(Q[1]),
+        .I4(Q[0]),
+        .I5(SEL),
+        .O(Functional_Reset));
   FDPE #(
     .INIT(1'b1)) 
     sel_n_reg
        (.C(\Using_FPGA.Native ),
         .CE(sel_n_reg_0),
         .D(sel_n0),
-        .PRE(sel_with_scan_reset),
+        .PRE(Functional_Reset),
         .Q(sel_n));
   LUT3 #(
     .INIT(8'h48)) 
     \shift_Count[1]_i_1 
-       (.I0(Q),
+       (.I0(\shift_Count_reg[0]_0 ),
         .I1(Dbg_Shift_0_0),
         .I2(A1),
         .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h7080)) 
     \shift_Count[2]_i_1 
        (.I0(A1),
-        .I1(Q),
+        .I1(\shift_Count_reg[0]_0 ),
         .I2(Dbg_Shift_0_0),
         .I3(A2),
         .O(p_0_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'h7F008000)) 
     \shift_Count[3]_i_1 
        (.I0(A2),
-        .I1(Q),
+        .I1(\shift_Count_reg[0]_0 ),
         .I2(A1),
         .I3(Dbg_Shift_0_0),
         .I4(A3),
@@ -3550,226 +3546,208 @@ module system_mdm_1_3_JTAG_CONTROL
     \shift_Count[4]_i_1 
        (.I0(A3),
         .I1(A1),
-        .I2(Q),
+        .I2(\shift_Count_reg[0]_0 ),
         .I3(A2),
         .I4(Dbg_Shift_0_0),
         .I5(shift_Count_reg),
         .O(p_0_in__0[4]));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[0] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
-        .D(\shift_Count_reg[0]_0 ),
-        .Q(Q));
-  FDCE #(
+        .D(\shift_Count_reg[0]_1 ),
+        .Q(\shift_Count_reg[0]_0 ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[1] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(p_0_in__0[1]),
-        .Q(A1));
-  FDCE #(
+        .Q(A1),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[2] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(p_0_in__0[2]),
-        .Q(A2));
-  FDCE #(
+        .Q(A2),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[3] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(p_0_in__0[3]),
-        .Q(A3));
-  FDCE #(
+        .Q(A3),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \shift_Count_reg[4] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(AR),
         .D(p_0_in__0[4]),
-        .Q(shift_Count_reg));
+        .Q(shift_Count_reg),
+        .R(1'b0));
   LUT6 #(
     .INIT(64'h0100000000000000)) 
     \tdi_shifter[0]_i_1 
-       (.I0(\command_1_reg[7]_0 [2]),
-        .I1(\command_1_reg[7]_0 [3]),
-        .I2(\command_1_reg[7]_0 [1]),
-        .I3(\command_1_reg[7]_0 [0]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .I4(SEL),
         .I5(Dbg_Shift_0_0),
         .O(tdi_shifter0));
-  FDCE #(
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[0] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(Ext_JTAG_TDI),
-        .Q(p_0_in_2));
-  FDCE #(
+        .Q(p_0_in_1),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[1] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
-        .D(p_0_in_2),
-        .Q(\tdi_shifter_reg_n_0_[1] ));
-  FDCE #(
+        .D(p_0_in_1),
+        .Q(\tdi_shifter_reg_n_0_[1] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[2] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[1] ),
-        .Q(\tdi_shifter_reg_n_0_[2] ));
-  FDCE #(
+        .Q(\tdi_shifter_reg_n_0_[2] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[3] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[2] ),
-        .Q(\tdi_shifter_reg_n_0_[3] ));
-  FDCE #(
+        .Q(\tdi_shifter_reg_n_0_[3] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[4] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[3] ),
-        .Q(\tdi_shifter_reg_n_0_[4] ));
-  FDCE #(
+        .Q(\tdi_shifter_reg_n_0_[4] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[5] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[4] ),
-        .Q(\tdi_shifter_reg_n_0_[5] ));
-  FDCE #(
+        .Q(\tdi_shifter_reg_n_0_[5] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[6] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[5] ),
-        .Q(\tdi_shifter_reg_n_0_[6] ));
-  FDCE #(
+        .Q(\tdi_shifter_reg_n_0_[6] ),
+        .R(1'b0));
+  FDRE #(
     .INIT(1'b0)) 
     \tdi_shifter_reg[7] 
        (.C(\Using_FPGA.Native ),
         .CE(tdi_shifter0),
-        .CLR(AR),
         .D(\tdi_shifter_reg_n_0_[6] ),
-        .Q(\tdi_shifter_reg_n_0_[7] ));
+        .Q(\tdi_shifter_reg_n_0_[7] ),
+        .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "MB_BSCANE2" *) 
 module system_mdm_1_3_MB_BSCANE2
    (\Use_BSCAN.PORT_Selector_reg[0] ,
     DRCK,
-    Ext_JTAG_RESET,
     SEL,
     \Use_BSCAN.PORT_Selector_reg[0]_0 ,
     I0,
-    Ext_JTAG_UPDATE,
-    \Use_BSCAN.command_reg[5] ,
-    E,
-    \Use_Serial_Unified_Completion.count_reg[5] ,
+    Dbg_Update_0,
+    sel,
+    \Use_BSCAN.command_reg[6] ,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ,
+    \Use_E2.BSCANE2_I_0 ,
     \shift_Count_reg[0] ,
     AR,
-    shift_n_reset,
     Dbg_TDO_0_0,
-    D,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ,
     tdo,
     mb_data_overrun1__0,
     completion_status131_out,
-    \Use_Serial_Unified_Completion.count_reg[5]_0 ,
-    Q,
-    Scan_Reset,
-    Scan_Reset_Sel,
-    Scan_En,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
+    \shift_Count_reg[0]_0 ,
     Dbg_TDO_0,
     \Use_Serial_Unified_Completion.completion_status_reg[15] );
   output \Use_BSCAN.PORT_Selector_reg[0] ;
   output DRCK;
-  output Ext_JTAG_RESET;
   output SEL;
   output \Use_BSCAN.PORT_Selector_reg[0]_0 ;
   output I0;
-  output Ext_JTAG_UPDATE;
-  output [0:0]\Use_BSCAN.command_reg[5] ;
-  output [0:0]E;
-  output [0:0]\Use_Serial_Unified_Completion.count_reg[5] ;
+  output Dbg_Update_0;
+  output sel;
+  output \Use_BSCAN.command_reg[6] ;
+  output [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
+  output \Use_E2.BSCANE2_I_0 ;
   output [0:0]\shift_Count_reg[0] ;
   output [0:0]AR;
-  output shift_n_reset;
   output Dbg_TDO_0_0;
-  output [0:0]D;
+  output [0:0]\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
   input tdo;
   input mb_data_overrun1__0;
   input completion_status131_out;
-  input [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
-  input [0:0]Q;
-  input Scan_Reset;
-  input Scan_Reset_Sel;
-  input Scan_En;
+  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  input \shift_Count_reg[0]_0 ;
   input Dbg_TDO_0;
-  input [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
+  input \Use_Serial_Unified_Completion.completion_status_reg[15] ;
 
   wire [0:0]AR;
-  wire [0:0]D;
   wire DRCK;
   wire Dbg_TDO_0;
   wire Dbg_TDO_0_0;
-  wire [0:0]E;
-  wire Ext_JTAG_RESET;
-  wire Ext_JTAG_UPDATE;
+  wire Dbg_Update_0;
   wire I0;
-  wire [0:0]Q;
   wire SEL;
-  wire Scan_En;
-  wire Scan_Reset;
-  wire Scan_Reset_Sel;
   wire \Use_BSCAN.PORT_Selector_reg[0] ;
   wire \Use_BSCAN.PORT_Selector_reg[0]_0 ;
-  wire [0:0]\Use_BSCAN.command_reg[5] ;
+  wire \Use_BSCAN.command_reg[6] ;
+  wire \Use_E2.BSCANE2_I_0 ;
+  wire \Use_E2.BSCANE2_I_n_2 ;
   wire \Use_E2.BSCANE2_I_n_3 ;
   wire \Use_E2.BSCANE2_I_n_6 ;
   wire \Use_E2.BSCANE2_I_n_8 ;
-  wire [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5] ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
+  wire [0:0]\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
+  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
+  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  wire \Use_Serial_Unified_Completion.completion_status_reg[15] ;
   wire completion_status131_out;
   wire mb_data_overrun1__0;
+  wire sel;
   wire [0:0]\shift_Count_reg[0] ;
-  wire shift_n_reset;
+  wire \shift_Count_reg[0]_0 ;
   wire tdo;
 
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT4 #(
-    .INIT(16'h00C5)) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT1 #(
+    .INIT(2'h1)) 
     \Use_BSCAN.Config_Reg[30]_i_1 
        (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(Scan_Reset),
-        .I2(Scan_Reset_Sel),
-        .I3(Scan_En),
-        .O(shift_n_reset));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT4 #(
-    .INIT(16'h00C5)) 
+        .O(\Use_E2.BSCANE2_I_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
     \Use_BSCAN.TDI_Shifter[3]_i_2 
        (.I0(SEL),
-        .I1(Scan_Reset),
-        .I2(Scan_Reset_Sel),
-        .I3(Scan_En),
         .O(AR));
   (* box_type = "PRIMITIVE" *) 
   BSCANE2 #(
@@ -3778,7 +3756,7 @@ module system_mdm_1_3_MB_BSCANE2
     \Use_E2.BSCANE2_I 
        (.CAPTURE(\Use_BSCAN.PORT_Selector_reg[0] ),
         .DRCK(DRCK),
-        .RESET(Ext_JTAG_RESET),
+        .RESET(\Use_E2.BSCANE2_I_n_2 ),
         .RUNTEST(\Use_E2.BSCANE2_I_n_3 ),
         .SEL(SEL),
         .SHIFT(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
@@ -3786,48 +3764,49 @@ module system_mdm_1_3_MB_BSCANE2
         .TDI(I0),
         .TDO(tdo),
         .TMS(\Use_E2.BSCANE2_I_n_8 ),
-        .UPDATE(Ext_JTAG_UPDATE));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+        .UPDATE(Dbg_Update_0));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT3 #(
+    .INIT(8'hE0)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_1 
+       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
+        .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
+        .I2(mb_data_overrun1__0),
+        .O(sel));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[5]_i_1 
+       (.I0(\Use_BSCAN.PORT_Selector_reg[0] ),
+        .I1(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .O(\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hE0)) 
     \Use_Serial_Unified_Completion.completion_status[15]_i_1 
        (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
         .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
         .I2(completion_status131_out),
-        .O(E));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+        .O(\Use_BSCAN.command_reg[6] ));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \Use_Serial_Unified_Completion.completion_status[15]_i_2 
        (.I0(\Use_BSCAN.PORT_Selector_reg[0] ),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[15] ),
-        .O(D));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT3 #(
-    .INIT(8'hE0)) 
-    \Use_Serial_Unified_Completion.count[0]__0_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
-        .I2(mb_data_overrun1__0),
-        .O(\Use_BSCAN.command_reg[5] ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT2 #(
-    .INIT(4'h1)) 
-    \Use_Serial_Unified_Completion.count[5]_i_1 
-       (.I0(\Use_BSCAN.PORT_Selector_reg[0] ),
-        .I1(\Use_Serial_Unified_Completion.count_reg[5]_0 ),
-        .O(\Use_Serial_Unified_Completion.count_reg[5] ));
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ));
   LUT2 #(
     .INIT(4'h2)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_2 
        (.I0(Dbg_TDO_0),
         .I1(\Use_BSCAN.PORT_Selector_reg[0] ),
         .O(Dbg_TDO_0_0));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \shift_Count[0]_i_1 
        (.I0(\Use_BSCAN.PORT_Selector_reg[0]_0 ),
-        .I1(Q),
+        .I1(\shift_Count_reg[0]_0 ),
         .O(\shift_Count_reg[0] ));
 endmodule
 
@@ -3849,276 +3828,354 @@ endmodule
 
 (* ORIG_REF_NAME = "MB_FDC_1" *) 
 module system_mdm_1_3_MB_FDC_1
-   (D_1,
+   (D,
     Dbg_Reg_En_0,
-    E,
+    \Use_Serial_Unified_Completion.completion_block_reg ,
     \Use_BSCAN.command_reg[6] ,
     CE,
     mb_data_overrun1__0,
     \Using_FPGA.Native_0 ,
     mb_instr_overrun137_out,
-    \Use_BSCAN.PORT_Selector_reg[2] ,
-    D,
-    \Use_Serial_Unified_Completion.sample_reg[15] ,
-    \Use_BSCAN.command_reg[5] ,
-    \Use_Serial_Unified_Completion.count_reg[1] ,
-    \Use_Serial_Unified_Completion.count_reg[1]_0 ,
+    command_10,
+    p_1_in,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ,
+    sample_1,
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ,
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ,
     Dbg_TDO_0_0,
     \completion_ctrl_reg[0] ,
     \tdi_shifter_reg[0] ,
     \tdi_shifter_reg[1] ,
-    \tdi_shifter_reg[3] ,
     \tdi_shifter_reg[0]_0 ,
     CLK,
     sel_n,
-    \Use_Serial_Unified_Completion.completion_block_reg ,
-    Q,
+    \Use_Serial_Unified_Completion.completion_block_reg_0 ,
+    command,
     \Use_Serial_Unified_Completion.completion_status_reg[0] ,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg ,
-    Debug_Rst_i_reg,
-    Ext_NM_BRK_i_reg,
+    \Using_FPGA.Native_1 ,
+    \Using_FPGA.Native_2 ,
+    \Using_FPGA.Native_3 ,
+    \Using_FPGA.Native_4 ,
+    \Using_FPGA.Native_5 ,
+    \Using_FPGA.Native_6 ,
+    Debug_SYS_Rst_i_reg,
+    p_0_in_1,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ,
     \Use_Serial_Unified_Completion.mb_instr_error_reg ,
     sync,
     \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ,
-    \command_1_reg[7] ,
+    Q,
     SEL,
-    \Use_Serial_Unified_Completion.completion_status_reg[9] ,
+    completion_status,
     \Use_Serial_Unified_Completion.completion_status_reg[3] ,
     \Use_Serial_Unified_Completion.completion_status_reg[4] ,
     \Use_Serial_Unified_Completion.completion_status_reg[5] ,
     \Use_Serial_Unified_Completion.completion_status_reg[6] ,
     \Use_Serial_Unified_Completion.completion_status_reg[8] ,
-    \Use_Serial_Unified_Completion.sample_reg[15]_0 ,
+    out,
+    Debug_Rst_i_reg,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg ,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ,
+    mb_instr_overrun,
+    \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ,
     Dbg_TDO_0,
     \Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ,
+    \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ,
     completion_block0__10,
     completion_ctrl,
     Dbg_Rst_0,
-    Debug_SYS_Rst,
-    Ext_NM_BRK);
-  output D_1;
+    Debug_SYS_Rst);
+  output D;
   output [0:7]Dbg_Reg_En_0;
-  output [0:0]E;
+  output \Use_Serial_Unified_Completion.completion_block_reg ;
   output \Use_BSCAN.command_reg[6] ;
   output CE;
   output mb_data_overrun1__0;
   output \Using_FPGA.Native_0 ;
   output mb_instr_overrun137_out;
-  output [0:0]\Use_BSCAN.PORT_Selector_reg[2] ;
-  output [9:0]D;
-  output [2:0]\Use_Serial_Unified_Completion.sample_reg[15] ;
-  output [0:0]\Use_BSCAN.command_reg[5] ;
-  output \Use_Serial_Unified_Completion.count_reg[1] ;
-  output \Use_Serial_Unified_Completion.count_reg[1]_0 ;
+  output command_10;
+  output [9:0]p_1_in;
+  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ;
+  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ;
+  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ;
+  output sample_1;
+  output \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ;
+  output \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ;
   output Dbg_TDO_0_0;
   output \completion_ctrl_reg[0] ;
   output \tdi_shifter_reg[0] ;
   output \tdi_shifter_reg[1] ;
-  output \tdi_shifter_reg[3] ;
   output \tdi_shifter_reg[0]_0 ;
   input CLK;
   input sel_n;
-  input \Use_Serial_Unified_Completion.completion_block_reg ;
-  input [7:0]Q;
+  input \Use_Serial_Unified_Completion.completion_block_reg_0 ;
+  input [0:7]command;
   input \Use_Serial_Unified_Completion.completion_status_reg[0] ;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg ;
-  input [7:0]Debug_Rst_i_reg;
-  input Ext_NM_BRK_i_reg;
+  input \Using_FPGA.Native_1 ;
+  input \Using_FPGA.Native_2 ;
+  input \Using_FPGA.Native_3 ;
+  input \Using_FPGA.Native_4 ;
+  input \Using_FPGA.Native_5 ;
+  input \Using_FPGA.Native_6 ;
+  input Debug_SYS_Rst_i_reg;
+  input p_0_in_1;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ;
   input \Use_Serial_Unified_Completion.mb_instr_error_reg ;
   input sync;
   input \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ;
-  input [3:0]\command_1_reg[7] ;
+  input [3:0]Q;
   input SEL;
-  input [10:0]\Use_Serial_Unified_Completion.completion_status_reg[9] ;
+  input [10:0]completion_status;
   input \Use_Serial_Unified_Completion.completion_status_reg[3] ;
   input \Use_Serial_Unified_Completion.completion_status_reg[4] ;
   input \Use_Serial_Unified_Completion.completion_status_reg[5] ;
   input \Use_Serial_Unified_Completion.completion_status_reg[6] ;
   input \Use_Serial_Unified_Completion.completion_status_reg[8] ;
-  input [5:0]\Use_Serial_Unified_Completion.sample_reg[15]_0 ;
+  input [2:0]out;
+  input Debug_Rst_i_reg;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
+  input mb_instr_overrun;
+  input \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ;
   input Dbg_TDO_0;
   input \Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ;
+  input \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ;
   input completion_block0__10;
   input completion_ctrl;
   input Dbg_Rst_0;
   input Debug_SYS_Rst;
-  input Ext_NM_BRK;
 
   wire CE;
   wire CLK;
-  wire [9:0]D;
-  wire D_1;
+  wire D;
   wire [0:7]Dbg_Reg_En_0;
   wire Dbg_Rst_0;
   wire Dbg_TDO_0;
   wire Dbg_TDO_0_0;
-  wire Debug_Rst_i0;
-  wire [7:0]Debug_Rst_i_reg;
+  wire Debug_Rst_i_reg;
   wire Debug_SYS_Rst;
-  wire [0:0]E;
-  wire Ext_NM_BRK;
-  wire Ext_NM_BRK_i_reg;
-  wire [7:0]Q;
+  wire Debug_SYS_Rst_i_reg;
+  wire [3:0]Q;
   wire Q_0;
   wire SEL;
-  wire [0:0]\Use_BSCAN.PORT_Selector_reg[2] ;
-  wire [0:0]\Use_BSCAN.command_reg[5] ;
   wire \Use_BSCAN.command_reg[6] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ;
+  wire \Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ;
   wire \Use_Serial_Unified_Completion.completion_block_reg ;
+  wire \Use_Serial_Unified_Completion.completion_block_reg_0 ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[0] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[3] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[4] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[5] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[6] ;
   wire \Use_Serial_Unified_Completion.completion_status_reg[8] ;
-  wire [10:0]\Use_Serial_Unified_Completion.completion_status_reg[9] ;
-  wire \Use_Serial_Unified_Completion.count_reg[1] ;
-  wire \Use_Serial_Unified_Completion.count_reg[1]_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ;
   wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ;
+  wire \Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg ;
   wire \Use_Serial_Unified_Completion.mb_instr_error_reg_0 ;
+  wire \Use_Serial_Unified_Completion.mb_instr_error_reg_1 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_i_6_n_0 ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ;
-  wire \Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ;
-  wire \Use_Serial_Unified_Completion.sample_1[15]_i_3_n_0 ;
-  wire [2:0]\Use_Serial_Unified_Completion.sample_reg[15] ;
-  wire [5:0]\Use_Serial_Unified_Completion.sample_reg[15]_0 ;
   wire \Using_FPGA.Native_0 ;
+  wire \Using_FPGA.Native_1 ;
+  wire \Using_FPGA.Native_2 ;
+  wire \Using_FPGA.Native_3 ;
+  wire \Using_FPGA.Native_4 ;
+  wire \Using_FPGA.Native_5 ;
+  wire \Using_FPGA.Native_6 ;
   wire \Using_FPGA.Native_i_2_n_0 ;
-  wire [3:0]\command_1_reg[7] ;
+  wire [0:7]command;
+  wire command_10;
   wire completion_block0__10;
   wire completion_ctrl;
   wire completion_ctrl0;
   wire \completion_ctrl_reg[0] ;
+  wire [10:0]completion_status;
   wire mb_data_overrun1__0;
+  wire mb_instr_overrun;
   wire mb_instr_overrun137_out;
   wire mb_instr_overrun1__0;
+  wire [2:0]out;
+  wire p_0_in_1;
+  wire [9:0]p_1_in;
+  wire sample_1;
   wire sel_n;
   wire sync;
   wire \tdi_shifter_reg[0] ;
   wire \tdi_shifter_reg[0]_0 ;
   wire \tdi_shifter_reg[1] ;
-  wire \tdi_shifter_reg[3] ;
 
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[0]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[7]),
+        .I2(command[0]),
         .O(Dbg_Reg_En_0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[1]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[6]),
+        .I2(command[1]),
         .O(Dbg_Reg_En_0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[2]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[5]),
+        .I2(command[2]),
         .O(Dbg_Reg_En_0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[3]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[4]),
+        .I2(command[3]),
         .O(Dbg_Reg_En_0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[4]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[3]),
+        .I2(command[4]),
         .O(Dbg_Reg_En_0[4]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[5]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[2]),
+        .I2(command[5]),
         .O(Dbg_Reg_En_0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[6]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[1]),
+        .I2(command[6]),
         .O(Dbg_Reg_En_0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h40)) 
     \Dbg_Reg_En_0[7]_INST_0 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[0]),
+        .I2(command[7]),
         .O(Dbg_Reg_En_0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h2)) 
-    Dbg_Shift_31_INST_0_i_2
+    Dbg_Shift_0_INST_0_i_2
        (.I0(Q_0),
-        .I1(\Use_Serial_Unified_Completion.completion_block_reg ),
+        .I1(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .O(\Using_FPGA.Native_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT6 #(
+    .INIT(64'hFFFBFFFF00080000)) 
     Debug_Rst_i_i_1
-       (.I0(Debug_Rst_i_reg[7]),
-        .I1(Debug_Rst_i0),
-        .I2(Dbg_Rst_0),
+       (.I0(p_0_in_1),
+        .I1(\Using_FPGA.Native_0 ),
+        .I2(command[6]),
+        .I3(command[2]),
+        .I4(Debug_Rst_i_reg),
+        .I5(Dbg_Rst_0),
         .O(\tdi_shifter_reg[0] ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
+  LUT6 #(
+    .INIT(64'hFFFBFFFF00080000)) 
     Debug_SYS_Rst_i_i_1
-       (.I0(Debug_Rst_i_reg[6]),
-        .I1(Debug_Rst_i0),
-        .I2(Debug_SYS_Rst),
+       (.I0(Debug_SYS_Rst_i_reg),
+        .I1(\Using_FPGA.Native_0 ),
+        .I2(command[6]),
+        .I3(command[2]),
+        .I4(Debug_Rst_i_reg),
+        .I5(Debug_SYS_Rst),
         .O(\tdi_shifter_reg[1] ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    Ext_NM_BRK_i_i_1
-       (.I0(Debug_Rst_i_reg[4]),
-        .I1(Debug_Rst_i0),
-        .I2(Ext_NM_BRK),
-        .O(\tdi_shifter_reg[3] ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[13]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(out[0]),
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[13] ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[14]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(out[1]),
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[14] ));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample[15]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .I1(out[2]),
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_reg[15] ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00020000)) 
-    Ext_NM_BRK_i_i_3
-       (.I0(Q_0),
-        .I1(\Use_Serial_Unified_Completion.completion_block_reg ),
-        .I2(Q[1]),
-        .I3(Q[5]),
-        .I4(Ext_NM_BRK_i_reg),
-        .O(Debug_Rst_i0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_1 
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .O(sample_1));
+  LUT6 #(
+    .INIT(64'h0020800000000000)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2 
+       (.I0(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
+        .I1(command[5]),
+        .I2(command[4]),
+        .I3(command[7]),
+        .I4(command[6]),
+        .I5(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ),
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3 
+       (.I0(command[2]),
+        .I1(Q_0),
+        .O(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000080000000000)) 
+    \Use_Serial_Unified_Completion._Data_Read_Status.count[0]_i_3 
+       (.I0(command[5]),
+        .I1(command[6]),
+        .I2(command[7]),
+        .I3(\Using_FPGA.Native_0 ),
+        .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
+        .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
+        .O(mb_data_overrun1__0));
+  LUT6 #(
+    .INIT(64'h0000040000000000)) 
+    \Use_Serial_Unified_Completion._Write_Instr_Status.count[0]_i_2 
+       (.I0(command[6]),
+        .I1(command[5]),
+        .I2(command[7]),
+        .I3(\Using_FPGA.Native_0 ),
+        .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
+        .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
+        .O(mb_instr_overrun137_out));
   LUT6 #(
     .INIT(64'hFFFF55FF000000C0)) 
     \Use_Serial_Unified_Completion.completion_block_i_1 
@@ -4127,152 +4184,132 @@ module system_mdm_1_3_MB_FDC_1
         .I2(completion_ctrl),
         .I3(completion_ctrl0),
         .I4(\Use_BSCAN.command_reg[6] ),
-        .I5(\Use_Serial_Unified_Completion.completion_block_reg ),
+        .I5(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .O(\completion_ctrl_reg[0] ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h888F)) 
     \Use_Serial_Unified_Completion.completion_status[0]_i_1 
        (.I0(\Use_BSCAN.command_reg[6] ),
-        .I1(\Use_Serial_Unified_Completion.completion_status_reg[9] [1]),
-        .I2(\Use_Serial_Unified_Completion.completion_status_reg[9] [0]),
-        .I3(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
-        .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+        .I1(completion_status[1]),
+        .I2(completion_status[0]),
+        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
+        .O(p_1_in[0]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \Use_Serial_Unified_Completion.completion_status[15]_i_3 
-       (.I0(Q[1]),
-        .I1(Q[5]),
+       (.I0(command[6]),
+        .I1(command[2]),
         .I2(Q_0),
-        .I3(Ext_NM_BRK_i_reg),
+        .I3(Debug_Rst_i_reg),
         .O(\Use_BSCAN.command_reg[6] ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'hFF060606)) 
     \Use_Serial_Unified_Completion.completion_status[1]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [1]),
-        .I1(\Use_Serial_Unified_Completion.completion_status_reg[9] [0]),
-        .I2(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[1]),
+        .I1(completion_status[0]),
+        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [2]),
-        .O(D[1]));
+        .I4(completion_status[2]),
+        .O(p_1_in[1]));
   LUT6 #(
     .INIT(64'hFFFF006A006A006A)) 
     \Use_Serial_Unified_Completion.completion_status[2]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [2]),
-        .I1(\Use_Serial_Unified_Completion.completion_status_reg[9] [1]),
-        .I2(\Use_Serial_Unified_Completion.completion_status_reg[9] [0]),
-        .I3(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[2]),
+        .I1(completion_status[1]),
+        .I2(completion_status[0]),
+        .I3(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I4(\Use_BSCAN.command_reg[6] ),
-        .I5(\Use_Serial_Unified_Completion.completion_status_reg[9] [3]),
-        .O(D[2]));
+        .I5(completion_status[3]),
+        .O(p_1_in[2]));
   LUT5 #(
     .INIT(32'hFF060606)) 
     \Use_Serial_Unified_Completion.completion_status[3]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [3]),
+       (.I0(completion_status[3]),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[3] ),
-        .I2(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [4]),
-        .O(D[3]));
+        .I4(completion_status[4]),
+        .O(p_1_in[3]));
   LUT5 #(
     .INIT(32'hFF060606)) 
     \Use_Serial_Unified_Completion.completion_status[4]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [4]),
+       (.I0(completion_status[4]),
         .I1(\Use_Serial_Unified_Completion.completion_status_reg[4] ),
-        .I2(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+        .I2(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [5]),
-        .O(D[4]));
+        .I4(completion_status[5]),
+        .O(p_1_in[4]));
   LUT5 #(
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[5]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [5]),
-        .I1(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[5]),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[5] ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [6]),
-        .O(D[5]));
+        .I4(completion_status[6]),
+        .O(p_1_in[5]));
   LUT5 #(
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[6]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [6]),
-        .I1(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[6]),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[6] ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [7]),
-        .O(D[6]));
+        .I4(completion_status[7]),
+        .O(p_1_in[6]));
   LUT6 #(
     .INIT(64'hFFFF122212221222)) 
     \Use_Serial_Unified_Completion.completion_status[7]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [7]),
-        .I1(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[7]),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[6] ),
-        .I3(\Use_Serial_Unified_Completion.completion_status_reg[9] [6]),
+        .I3(completion_status[6]),
         .I4(\Use_BSCAN.command_reg[6] ),
-        .I5(\Use_Serial_Unified_Completion.completion_status_reg[9] [8]),
-        .O(D[7]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+        .I5(completion_status[8]),
+        .O(p_1_in[7]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'hFF121212)) 
     \Use_Serial_Unified_Completion.completion_status[8]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [8]),
-        .I1(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[8]),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[8] ),
         .I3(\Use_BSCAN.command_reg[6] ),
-        .I4(\Use_Serial_Unified_Completion.completion_status_reg[9] [9]),
-        .O(D[8]));
+        .I4(completion_status[9]),
+        .O(p_1_in[8]));
   LUT6 #(
     .INIT(64'h00F100F1FF000000)) 
     \Use_Serial_Unified_Completion.completion_status[9]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
         .I2(completion_ctrl0),
         .I3(\Use_BSCAN.command_reg[6] ),
         .I4(\Use_Serial_Unified_Completion.completion_status_reg[0] ),
         .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg ),
-        .O(E));
+        .O(\Use_Serial_Unified_Completion.completion_block_reg ));
   LUT6 #(
     .INIT(64'hFFFF122212221222)) 
     \Use_Serial_Unified_Completion.completion_status[9]_i_2 
-       (.I0(\Use_Serial_Unified_Completion.completion_status_reg[9] [9]),
-        .I1(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
+       (.I0(completion_status[9]),
+        .I1(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_2_n_0 ),
         .I2(\Use_Serial_Unified_Completion.completion_status_reg[8] ),
-        .I3(\Use_Serial_Unified_Completion.completion_status_reg[9] [8]),
+        .I3(completion_status[8]),
         .I4(\Use_BSCAN.command_reg[6] ),
-        .I5(\Use_Serial_Unified_Completion.completion_status_reg[9] [10]),
-        .O(D[9]));
+        .I5(completion_status[10]),
+        .O(p_1_in[9]));
   LUT6 #(
     .INIT(64'h2000000000000000)) 
     \Use_Serial_Unified_Completion.completion_status[9]_i_3 
-       (.I0(\Use_Serial_Unified_Completion.sample_1[15]_i_3_n_0 ),
-        .I1(Q[1]),
-        .I2(Q[0]),
-        .I3(Q[3]),
-        .I4(Q[2]),
+       (.I0(\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1[15]_i_3_n_0 ),
+        .I1(command[6]),
+        .I2(command[7]),
+        .I3(command[4]),
+        .I4(command[5]),
         .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
         .O(completion_ctrl0));
-  LUT6 #(
-    .INIT(64'h0000080000000000)) 
-    \Use_Serial_Unified_Completion.count[0]__0_i_3 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[0]),
-        .I3(\Using_FPGA.Native_0 ),
-        .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
-        .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
-        .O(mb_data_overrun1__0));
-  LUT6 #(
-    .INIT(64'h0000040000000000)) 
-    \Use_Serial_Unified_Completion.count[0]_i_2 
-       (.I0(Q[1]),
-        .I1(Q[2]),
-        .I2(Q[0]),
-        .I3(\Using_FPGA.Native_0 ),
-        .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_0 ),
-        .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
-        .O(mb_instr_overrun137_out));
   LUT6 #(
     .INIT(64'h053F0F3F05000000)) 
     \Use_Serial_Unified_Completion.mb_data_overrun_i_1 
@@ -4281,7 +4318,7 @@ module system_mdm_1_3_MB_FDC_1
         .I2(\Use_Serial_Unified_Completion.mb_data_overrun_reg ),
         .I3(mb_data_overrun1__0),
         .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg_2 ),
-        .I5(\Use_Serial_Unified_Completion.sample_reg[15]_0 [2]),
+        .I5(\Use_Serial_Unified_Completion.mb_data_overrun_reg_3 ),
         .O(Dbg_TDO_0_0));
   LUT6 #(
     .INIT(64'hA0A0BFFFA0A08000)) 
@@ -4291,8 +4328,8 @@ module system_mdm_1_3_MB_FDC_1
         .I2(mb_instr_overrun137_out),
         .I3(\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ),
-        .I5(\Use_Serial_Unified_Completion.sample_reg[15]_0 [1]),
-        .O(\Use_Serial_Unified_Completion.count_reg[1]_0 ));
+        .I5(\Use_Serial_Unified_Completion.mb_instr_error_reg_1 ),
+        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1]_0 ));
   LUT6 #(
     .INIT(64'hA0A0FFBFA0A00080)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_1 
@@ -4301,8 +4338,8 @@ module system_mdm_1_3_MB_FDC_1
         .I2(mb_instr_overrun137_out),
         .I3(\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 ),
         .I4(\Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ),
-        .I5(\Use_Serial_Unified_Completion.sample_reg[15]_0 [0]),
-        .O(\Use_Serial_Unified_Completion.count_reg[1] ));
+        .I5(mb_instr_overrun),
+        .O(\Use_Serial_Unified_Completion._Write_Instr_Status.count_reg[1] ));
   LUT6 #(
     .INIT(64'h00000000AAAA2AAA)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_3 
@@ -4323,68 +4360,25 @@ module system_mdm_1_3_MB_FDC_1
         .I4(\Use_Serial_Unified_Completion.mb_data_overrun_reg ),
         .I5(\Use_Serial_Unified_Completion.mb_instr_overrun_i_6_n_0 ),
         .O(\Use_Serial_Unified_Completion.mb_instr_overrun_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h0004)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_5 
-       (.I0(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I1(Q_0),
-        .I2(Q[3]),
-        .I3(Q[5]),
+        .I2(command[4]),
+        .I3(command[2]),
         .O(\Use_Serial_Unified_Completion.mb_instr_overrun_i_5_n_0 ));
   LUT6 #(
     .INIT(64'h0080000000000000)) 
     \Use_Serial_Unified_Completion.mb_instr_overrun_i_6 
-       (.I0(Q[2]),
-        .I1(Q[3]),
-        .I2(Q[0]),
-        .I3(Q[1]),
+       (.I0(command[5]),
+        .I1(command[4]),
+        .I2(command[7]),
+        .I3(command[6]),
         .I4(Q_0),
-        .I5(Q[5]),
+        .I5(command[2]),
         .O(\Use_Serial_Unified_Completion.mb_instr_overrun_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion.sample[13]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
-        .I1(\Use_Serial_Unified_Completion.sample_reg[15]_0 [3]),
-        .O(\Use_Serial_Unified_Completion.sample_reg[15] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion.sample[14]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
-        .I1(\Use_Serial_Unified_Completion.sample_reg[15]_0 [4]),
-        .O(\Use_Serial_Unified_Completion.sample_reg[15] [1]));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion.sample[15]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
-        .I1(\Use_Serial_Unified_Completion.sample_reg[15]_0 [5]),
-        .O(\Use_Serial_Unified_Completion.sample_reg[15] [2]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    \Use_Serial_Unified_Completion.sample_1[15]_i_1 
-       (.I0(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ),
-        .O(\Use_BSCAN.command_reg[5] ));
-  LUT6 #(
-    .INIT(64'h0020800000000000)) 
-    \Use_Serial_Unified_Completion.sample_1[15]_i_2 
-       (.I0(\Use_Serial_Unified_Completion.mb_data_overrun_reg_1 ),
-        .I1(Q[2]),
-        .I2(Q[3]),
-        .I3(Q[0]),
-        .I4(Q[1]),
-        .I5(\Use_Serial_Unified_Completion.sample_1[15]_i_3_n_0 ),
-        .O(\Use_Serial_Unified_Completion.sample_1[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \Use_Serial_Unified_Completion.sample_1[15]_i_3 
-       (.I0(Q[5]),
-        .I1(Q_0),
-        .O(\Use_Serial_Unified_Completion.sample_1[15]_i_3_n_0 ));
   (* XILINX_LEGACY_PRIM = "FDC_1" *) 
   (* box_type = "PRIMITIVE" *) 
   FDCE #(
@@ -4394,48 +4388,46 @@ module system_mdm_1_3_MB_FDC_1
        (.C(CLK),
         .CE(1'b1),
         .CLR(sel_n),
-        .D(D_1),
+        .D(D),
         .Q(Q_0));
   LUT5 #(
     .INIT(32'h00000800)) 
     \Using_FPGA.Native_i_1 
        (.I0(\Using_FPGA.Native_i_2_n_0 ),
-        .I1(Debug_Rst_i_reg[3]),
-        .I2(Debug_Rst_i_reg[2]),
-        .I3(Debug_Rst_i_reg[0]),
-        .I4(Debug_Rst_i_reg[1]),
+        .I1(\Using_FPGA.Native_1 ),
+        .I2(\Using_FPGA.Native_2 ),
+        .I3(\Using_FPGA.Native_3 ),
+        .I4(\Using_FPGA.Native_4 ),
         .O(CE));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \Using_FPGA.Native_i_1__0 
        (.I0(Q_0),
-        .O(D_1));
+        .O(D));
   LUT6 #(
     .INIT(64'h0000002000000000)) 
     \Using_FPGA.Native_i_2 
-       (.I0(Debug_Rst_i_reg[5]),
-        .I1(Debug_Rst_i_reg[4]),
-        .I2(Debug_Rst_i_reg[6]),
-        .I3(Debug_Rst_i_reg[7]),
-        .I4(\Use_Serial_Unified_Completion.completion_block_reg ),
+       (.I0(\Using_FPGA.Native_5 ),
+        .I1(\Using_FPGA.Native_6 ),
+        .I2(Debug_SYS_Rst_i_reg),
+        .I3(p_0_in_1),
+        .I4(\Use_Serial_Unified_Completion.completion_block_reg_0 ),
         .I5(Q_0),
         .O(\Using_FPGA.Native_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000001000000)) 
     \command_1[0]_i_1 
-       (.I0(\command_1_reg[7] [2]),
-        .I1(\command_1_reg[7] [3]),
-        .I2(\command_1_reg[7] [1]),
-        .I3(\command_1_reg[7] [0]),
+       (.I0(Q[2]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[0]),
         .I4(SEL),
         .I5(\Using_FPGA.Native_0 ),
-        .O(\Use_BSCAN.PORT_Selector_reg[2] ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+        .O(command_10));
   LUT3 #(
     .INIT(8'hB8)) 
     \completion_ctrl[0]_i_1 
-       (.I0(Debug_Rst_i_reg[7]),
+       (.I0(p_0_in_1),
         .I1(completion_ctrl0),
         .I2(completion_ctrl),
         .O(\tdi_shifter_reg[0]_0 ));
@@ -4445,7 +4437,7 @@ endmodule
 module system_mdm_1_3_MB_FDRE_1
    (sync,
     Dbg_Shift_0,
-    D_1,
+    D,
     CE,
     \Using_FPGA.Native_0 ,
     Dbg_Shift_0_0,
@@ -4455,7 +4447,7 @@ module system_mdm_1_3_MB_FDRE_1
     Dbg_Shift_0_4);
   output sync;
   output Dbg_Shift_0;
-  input D_1;
+  input D;
   input CE;
   input \Using_FPGA.Native_0 ;
   input Dbg_Shift_0_0;
@@ -4465,7 +4457,7 @@ module system_mdm_1_3_MB_FDRE_1
   input Dbg_Shift_0_4;
 
   wire CE;
-  wire D_1;
+  wire D;
   wire Dbg_Shift_0;
   wire Dbg_Shift_0_0;
   wire Dbg_Shift_0_1;
@@ -4477,7 +4469,7 @@ module system_mdm_1_3_MB_FDRE_1
 
   LUT6 #(
     .INIT(64'hFFBFFFFF00000000)) 
-    Dbg_Shift_31_INST_0
+    Dbg_Shift_0_INST_0
        (.I0(sync),
         .I1(Dbg_Shift_0_0),
         .I2(Dbg_Shift_0_1),
@@ -4495,7 +4487,7 @@ module system_mdm_1_3_MB_FDRE_1
         .CE(CE),
         .D(1'b1),
         .Q(sync),
-        .R(D_1));
+        .R(D));
 endmodule
 
 (* ORIG_REF_NAME = "MB_LUT1" *) 
@@ -4520,75 +4512,87 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module system_mdm_1_3_MB_SRL16E
    (tdo,
-    Q,
     \Use_E2.BSCANE2_I_i_8_0 ,
+    A1,
+    A2,
+    A3,
+    \Use_E2.BSCANE2_I_i_8_1 ,
     sel_n_reg,
+    Q,
     sel_n_reg_0,
     sel_n_reg_1,
     sel_n_reg_2,
-    sel_n_reg_3,
     \Use_E2.BSCANE2_I_i_1_0 ,
-    \Use_E2.BSCANE2_I_i_1_1 ,
+    command,
     Dbg_TDO_0,
-    \Use_E2.BSCANE2_I_i_4_0 ,
+    completion_status,
+    shift_Count_reg,
     config_TDO_2);
   output tdo;
-  input [4:0]Q;
   input \Use_E2.BSCANE2_I_i_8_0 ;
+  input A1;
+  input A2;
+  input A3;
+  input \Use_E2.BSCANE2_I_i_8_1 ;
   input sel_n_reg;
-  input [0:0]sel_n_reg_0;
+  input [0:0]Q;
+  input sel_n_reg_0;
   input sel_n_reg_1;
   input sel_n_reg_2;
-  input sel_n_reg_3;
   input \Use_E2.BSCANE2_I_i_1_0 ;
-  input [2:0]\Use_E2.BSCANE2_I_i_1_1 ;
+  input [2:0]command;
   input Dbg_TDO_0;
-  input [0:0]\Use_E2.BSCANE2_I_i_4_0 ;
+  input [0:0]completion_status;
+  input [0:0]shift_Count_reg;
   input config_TDO_2;
 
+  wire A1;
+  wire A2;
+  wire A3;
   wire Dbg_TDO_0;
-  wire [4:0]Q;
+  wire [0:0]Q;
   wire \Use_E2.BSCANE2_I_i_1_0 ;
-  wire [2:0]\Use_E2.BSCANE2_I_i_1_1 ;
-  wire [0:0]\Use_E2.BSCANE2_I_i_4_0 ;
   wire \Use_E2.BSCANE2_I_i_4_n_0 ;
   wire \Use_E2.BSCANE2_I_i_8_0 ;
+  wire \Use_E2.BSCANE2_I_i_8_1 ;
   wire \Use_E2.BSCANE2_I_i_8_n_0 ;
+  wire [2:0]command;
+  wire [0:0]completion_status;
   wire config_TDO_1;
   wire config_TDO_2;
   wire sel_n_reg;
-  wire [0:0]sel_n_reg_0;
+  wire sel_n_reg_0;
   wire sel_n_reg_1;
   wire sel_n_reg_2;
-  wire sel_n_reg_3;
+  wire [0:0]shift_Count_reg;
   wire tdo;
 
   LUT6 #(
     .INIT(64'hEEEEEEEAEAEAEAEA)) 
     \Use_E2.BSCANE2_I_i_1 
        (.I0(sel_n_reg),
-        .I1(sel_n_reg_0),
-        .I2(sel_n_reg_1),
+        .I1(Q),
+        .I2(sel_n_reg_0),
         .I3(\Use_E2.BSCANE2_I_i_4_n_0 ),
-        .I4(sel_n_reg_2),
-        .I5(sel_n_reg_3),
+        .I4(sel_n_reg_1),
+        .I5(sel_n_reg_2),
         .O(tdo));
   LUT5 #(
     .INIT(32'hFEEEBAAA)) 
     \Use_E2.BSCANE2_I_i_4 
        (.I0(\Use_E2.BSCANE2_I_i_1_0 ),
-        .I1(\Use_E2.BSCANE2_I_i_1_1 [0]),
-        .I2(\Use_E2.BSCANE2_I_i_1_1 [2]),
+        .I1(command[0]),
+        .I2(command[2]),
         .I3(\Use_E2.BSCANE2_I_i_8_n_0 ),
         .I4(Dbg_TDO_0),
         .O(\Use_E2.BSCANE2_I_i_4_n_0 ));
   LUT5 #(
     .INIT(32'hFACA0ACA)) 
     \Use_E2.BSCANE2_I_i_8 
-       (.I0(\Use_E2.BSCANE2_I_i_4_0 ),
+       (.I0(completion_status),
         .I1(config_TDO_1),
-        .I2(\Use_E2.BSCANE2_I_i_1_1 [1]),
-        .I3(Q[4]),
+        .I2(command[1]),
+        .I3(shift_Count_reg),
         .I4(config_TDO_2),
         .O(\Use_E2.BSCANE2_I_i_8_n_0 ));
   (* box_type = "PRIMITIVE" *) 
@@ -4597,12 +4601,12 @@ module system_mdm_1_3_MB_SRL16E
     .INIT(16'h0167),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(Q[0]),
-        .A1(Q[1]),
-        .A2(Q[2]),
-        .A3(Q[3]),
+       (.A0(\Use_E2.BSCANE2_I_i_8_0 ),
+        .A1(A1),
+        .A2(A2),
+        .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_8_0 ),
+        .CLK(\Use_E2.BSCANE2_I_i_8_1 ),
         .D(1'b0),
         .Q(config_TDO_1));
 endmodule
@@ -4610,14 +4614,23 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module system_mdm_1_3_MB_SRL16E__parameterized1
    (config_TDO_2,
-    Q,
-    \Use_E2.BSCANE2_I_i_8 );
+    \Use_E2.BSCANE2_I_i_8 ,
+    A1,
+    A2,
+    A3,
+    \Use_E2.BSCANE2_I_i_8_0 );
   output config_TDO_2;
-  input [3:0]Q;
   input \Use_E2.BSCANE2_I_i_8 ;
+  input A1;
+  input A2;
+  input A3;
+  input \Use_E2.BSCANE2_I_i_8_0 ;
 
-  wire [3:0]Q;
+  wire A1;
+  wire A2;
+  wire A3;
   wire \Use_E2.BSCANE2_I_i_8 ;
+  wire \Use_E2.BSCANE2_I_i_8_0 ;
   wire config_TDO_2;
 
   (* box_type = "PRIMITIVE" *) 
@@ -4626,12 +4639,12 @@ module system_mdm_1_3_MB_SRL16E__parameterized1
     .INIT(16'h4287),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(Q[0]),
-        .A1(Q[1]),
-        .A2(Q[2]),
-        .A3(Q[3]),
+       (.A0(\Use_E2.BSCANE2_I_i_8 ),
+        .A1(A1),
+        .A2(A2),
+        .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_8 ),
+        .CLK(\Use_E2.BSCANE2_I_i_8_0 ),
         .D(1'b0),
         .Q(config_TDO_2));
 endmodule
@@ -4639,42 +4652,54 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module system_mdm_1_3_MB_SRL16E__parameterized3
    (\Use_BSCAN.command_reg[5] ,
-    Q,
     \Use_E2.BSCANE2_I_i_9_0 ,
-    \Use_E2.BSCANE2_I_i_1 ,
+    A1,
+    A2,
+    A3,
+    \Use_E2.BSCANE2_I_i_9_1 ,
+    command,
+    shift_Count_reg,
     ID_TDO_2);
   output \Use_BSCAN.command_reg[5] ;
-  input [4:0]Q;
   input \Use_E2.BSCANE2_I_i_9_0 ;
-  input [5:0]\Use_E2.BSCANE2_I_i_1 ;
+  input A1;
+  input A2;
+  input A3;
+  input \Use_E2.BSCANE2_I_i_9_1 ;
+  input [5:0]command;
+  input [0:0]shift_Count_reg;
   input ID_TDO_2;
 
+  wire A1;
+  wire A2;
+  wire A3;
   wire ID_TDO_1;
   wire ID_TDO_2;
-  wire [4:0]Q;
   wire \Use_BSCAN.command_reg[5] ;
-  wire [5:0]\Use_E2.BSCANE2_I_i_1 ;
   wire \Use_E2.BSCANE2_I_i_9_0 ;
+  wire \Use_E2.BSCANE2_I_i_9_1 ;
   wire \Use_E2.BSCANE2_I_i_9_n_0 ;
+  wire [5:0]command;
+  wire [0:0]shift_Count_reg;
 
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFB8C8C)) 
     \Use_E2.BSCANE2_I_i_5 
-       (.I0(\Use_E2.BSCANE2_I_i_1 [2]),
-        .I1(\Use_E2.BSCANE2_I_i_1 [1]),
-        .I2(\Use_E2.BSCANE2_I_i_1 [4]),
-        .I3(\Use_E2.BSCANE2_I_i_1 [3]),
-        .I4(\Use_E2.BSCANE2_I_i_1 [5]),
+       (.I0(command[2]),
+        .I1(command[1]),
+        .I2(command[4]),
+        .I3(command[3]),
+        .I4(command[5]),
         .I5(\Use_E2.BSCANE2_I_i_9_n_0 ),
         .O(\Use_BSCAN.command_reg[5] ));
   LUT6 #(
     .INIT(64'h0101010000000100)) 
     \Use_E2.BSCANE2_I_i_9 
-       (.I0(\Use_E2.BSCANE2_I_i_1 [1]),
-        .I1(\Use_E2.BSCANE2_I_i_1 [0]),
-        .I2(\Use_E2.BSCANE2_I_i_1 [2]),
+       (.I0(command[1]),
+        .I1(command[0]),
+        .I2(command[2]),
         .I3(ID_TDO_1),
-        .I4(Q[4]),
+        .I4(shift_Count_reg),
         .I5(ID_TDO_2),
         .O(\Use_E2.BSCANE2_I_i_9_n_0 ));
   (* box_type = "PRIMITIVE" *) 
@@ -4683,12 +4708,12 @@ module system_mdm_1_3_MB_SRL16E__parameterized3
     .INIT(16'h4443),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(Q[0]),
-        .A1(Q[1]),
-        .A2(Q[2]),
-        .A3(Q[3]),
+       (.A0(\Use_E2.BSCANE2_I_i_9_0 ),
+        .A1(A1),
+        .A2(A2),
+        .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_9_0 ),
+        .CLK(\Use_E2.BSCANE2_I_i_9_1 ),
         .D(1'b0),
         .Q(ID_TDO_1));
 endmodule
@@ -4696,15 +4721,24 @@ endmodule
 (* ORIG_REF_NAME = "MB_SRL16E" *) 
 module system_mdm_1_3_MB_SRL16E__parameterized5
    (ID_TDO_2,
-    Q,
-    \Use_E2.BSCANE2_I_i_9 );
+    \Use_E2.BSCANE2_I_i_9 ,
+    A1,
+    A2,
+    A3,
+    \Use_E2.BSCANE2_I_i_9_0 );
   output ID_TDO_2;
-  input [3:0]Q;
   input \Use_E2.BSCANE2_I_i_9 ;
+  input A1;
+  input A2;
+  input A3;
+  input \Use_E2.BSCANE2_I_i_9_0 ;
 
+  wire A1;
+  wire A2;
+  wire A3;
   wire ID_TDO_2;
-  wire [3:0]Q;
   wire \Use_E2.BSCANE2_I_i_9 ;
+  wire \Use_E2.BSCANE2_I_i_9_0 ;
 
   (* box_type = "PRIMITIVE" *) 
   (* srl_name = "U0/\MDM_Core_I1/JTAG_CONTROL_I/Use_ID_SRL16E.SRL16E_ID_2/Use_unisim.MB_SRL16E_I1 " *) 
@@ -4712,12 +4746,12 @@ module system_mdm_1_3_MB_SRL16E__parameterized5
     .INIT(16'h584D),
     .IS_CLK_INVERTED(1'b0)) 
     \Use_unisim.MB_SRL16E_I1 
-       (.A0(Q[0]),
-        .A1(Q[1]),
-        .A2(Q[2]),
-        .A3(Q[3]),
+       (.A0(\Use_E2.BSCANE2_I_i_9 ),
+        .A1(A1),
+        .A2(A2),
+        .A3(A3),
         .CE(1'b0),
-        .CLK(\Use_E2.BSCANE2_I_i_9 ),
+        .CLK(\Use_E2.BSCANE2_I_i_9_0 ),
         .D(1'b0),
         .Q(ID_TDO_2));
 endmodule
@@ -4728,11 +4762,12 @@ endmodule
 (* C_INTERCONNECT = "2" *) (* C_JTAG_CHAIN = "2" *) (* C_LMB_PROTOCOL = "0" *) 
 (* C_MB_DBG_PORTS = "1" *) (* C_M_AXIS_DATA_WIDTH = "32" *) (* C_M_AXIS_ID_WIDTH = "7" *) 
 (* C_M_AXI_ADDR_WIDTH = "32" *) (* C_M_AXI_DATA_WIDTH = "32" *) (* C_M_AXI_THREAD_ID_WIDTH = "1" *) 
-(* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
-(* C_TRACE_ASYNC_RESET = "0" *) (* C_TRACE_CLK_FREQ_HZ = "200000000" *) (* C_TRACE_CLK_OUT_PHASE = "90" *) 
-(* C_TRACE_DATA_WIDTH = "32" *) (* C_TRACE_ID = "110" *) (* C_TRACE_OUTPUT = "0" *) 
-(* C_TRACE_PROTOCOL = "1" *) (* C_USE_BSCAN = "0" *) (* C_USE_CONFIG_RESET = "0" *) 
-(* C_USE_CROSS_TRIGGER = "0" *) (* C_USE_UART = "0" *) (* ORIG_REF_NAME = "MDM" *) 
+(* C_REVISION = "" *) (* C_S_AXI_ACLK_FREQ_HZ = "100000000" *) (* C_S_AXI_ADDR_WIDTH = "4" *) 
+(* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRACE_ASYNC_RESET = "0" *) (* C_TRACE_CLK_FREQ_HZ = "200000000" *) 
+(* C_TRACE_CLK_OUT_PHASE = "90" *) (* C_TRACE_DATA_WIDTH = "32" *) (* C_TRACE_ID = "110" *) 
+(* C_TRACE_OUTPUT = "0" *) (* C_TRACE_PROTOCOL = "1" *) (* C_USE_BSCAN = "0" *) 
+(* C_USE_CONFIG_RESET = "0" *) (* C_USE_CROSS_TRIGGER = "0" *) (* C_USE_UART = "0" *) 
+(* ORIG_REF_NAME = "MDM" *) (* bscan_debug_core = "FALSE" *) (* dont_touch = "false" *) 
 module system_mdm_1_3_MDM
    (Config_Reset,
     Scan_Reset_Sel,
@@ -7753,16 +7788,16 @@ module system_mdm_1_3_MDM
   input [1:0]Dbg_RRESP_31;
   input Dbg_RVALID_31;
   output Dbg_RREADY_31;
-  input bscan_ext_tdi;
-  input bscan_ext_reset;
-  input bscan_ext_shift;
-  input bscan_ext_update;
-  input bscan_ext_capture;
-  input bscan_ext_sel;
-  input bscan_ext_drck;
-  output bscan_ext_tdo;
-  input bscan_ext_tck;
-  input bscan_ext_tms;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN TDI" *) (* dont_touch = "false" *) input bscan_ext_tdi;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN RESET" *) (* dont_touch = "false" *) input bscan_ext_reset;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN SHIFT" *) (* dont_touch = "false" *) input bscan_ext_shift;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN UPDATE" *) (* dont_touch = "false" *) input bscan_ext_update;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN CAPTURE" *) (* dont_touch = "false" *) input bscan_ext_capture;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN SEL" *) (* dont_touch = "false" *) input bscan_ext_sel;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN DRCK" *) (* dont_touch = "false" *) input bscan_ext_drck;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN TDO" *) (* dont_touch = "false" *) output bscan_ext_tdo;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN TCK" *) (* dont_touch = "false" *) input bscan_ext_tck;
+  (* bscan_debug_interface = "xilinx.com:interface:bscan:1.0 BSCAN TMS" *) (* dont_touch = "false" *) input bscan_ext_tms;
   input bscan_ext_bscanid_en;
   output Ext_JTAG_DRCK;
   output Ext_JTAG_RESET;
@@ -7774,41 +7809,33 @@ module system_mdm_1_3_MDM
   input Ext_JTAG_TDO;
 
   wire \<const0> ;
-  wire \<const1> ;
   wire DRCK;
+  wire Dbg_Capture_0;
   wire Dbg_Clk_0;
   wire Dbg_Disable_0;
   wire [0:7]Dbg_Reg_En_0;
   wire Dbg_Rst_0;
   wire Dbg_Shift_0;
   wire Dbg_TDO_0;
+  wire Dbg_Update_0;
   wire Debug_SYS_Rst;
-  wire Ext_JTAG_CAPTURE;
-  wire Ext_JTAG_RESET;
-  wire Ext_JTAG_SEL;
-  wire Ext_JTAG_SHIFT;
   wire Ext_JTAG_TDI;
-  wire Ext_JTAG_TDO;
-  wire Ext_JTAG_UPDATE;
-  wire Ext_NM_BRK;
-  wire [5:5]\JTAG_CONTROL_I/Use_Serial_Unified_Completion.count_reg ;
+  wire Functional_Reset;
+  wire [5:5]\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ;
   wire \JTAG_CONTROL_I/completion_status131_out ;
   wire \JTAG_CONTROL_I/mb_data_overrun1__0 ;
   wire \JTAG_CONTROL_I/sel ;
   wire MDM_Core_I1_n_0;
-  wire MDM_Core_I1_n_18;
+  wire MDM_Core_I1_n_16;
   wire SEL;
-  wire Scan_En;
-  wire Scan_Reset;
-  wire Scan_Reset_Sel;
   wire TDI;
-  wire \Use_E2.BSCAN_I_n_13 ;
-  wire \Use_E2.BSCAN_I_n_8 ;
+  wire \Use_E2.BSCAN_I_n_12 ;
+  wire \Use_E2.BSCAN_I_n_3 ;
+  wire \Use_E2.BSCAN_I_n_7 ;
+  wire \Use_E2.BSCAN_I_n_9 ;
   wire [0:0]p_0_in;
   wire [0:0]p_0_in__0;
   wire [15:15]p_1_in;
-  wire sel_n_reset;
-  wire shift_n_reset;
   wire tdo;
 
   assign Dbg_ARADDR_0[14] = \<const0> ;
@@ -8739,100 +8766,99 @@ module system_mdm_1_3_MDM
   assign Dbg_BREADY_7 = \<const0> ;
   assign Dbg_BREADY_8 = \<const0> ;
   assign Dbg_BREADY_9 = \<const0> ;
-  assign Dbg_Capture_0 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_1 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_10 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_11 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_12 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_13 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_14 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_15 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_16 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_17 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_18 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_19 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_2 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_20 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_21 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_22 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_23 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_24 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_25 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_26 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_27 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_28 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_29 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_3 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_30 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_31 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_4 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_5 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_6 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_7 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_8 = Ext_JTAG_CAPTURE;
-  assign Dbg_Capture_9 = Ext_JTAG_CAPTURE;
-  assign Dbg_Clk_1 = Dbg_Clk_0;
-  assign Dbg_Clk_10 = Dbg_Clk_0;
-  assign Dbg_Clk_11 = Dbg_Clk_0;
-  assign Dbg_Clk_12 = Dbg_Clk_0;
-  assign Dbg_Clk_13 = Dbg_Clk_0;
-  assign Dbg_Clk_14 = Dbg_Clk_0;
-  assign Dbg_Clk_15 = Dbg_Clk_0;
-  assign Dbg_Clk_16 = Dbg_Clk_0;
-  assign Dbg_Clk_17 = Dbg_Clk_0;
-  assign Dbg_Clk_18 = Dbg_Clk_0;
-  assign Dbg_Clk_19 = Dbg_Clk_0;
-  assign Dbg_Clk_2 = Dbg_Clk_0;
-  assign Dbg_Clk_20 = Dbg_Clk_0;
-  assign Dbg_Clk_21 = Dbg_Clk_0;
-  assign Dbg_Clk_22 = Dbg_Clk_0;
-  assign Dbg_Clk_23 = Dbg_Clk_0;
-  assign Dbg_Clk_24 = Dbg_Clk_0;
-  assign Dbg_Clk_25 = Dbg_Clk_0;
-  assign Dbg_Clk_26 = Dbg_Clk_0;
-  assign Dbg_Clk_27 = Dbg_Clk_0;
-  assign Dbg_Clk_28 = Dbg_Clk_0;
-  assign Dbg_Clk_29 = Dbg_Clk_0;
-  assign Dbg_Clk_3 = Dbg_Clk_0;
-  assign Dbg_Clk_30 = Dbg_Clk_0;
-  assign Dbg_Clk_31 = Dbg_Clk_0;
-  assign Dbg_Clk_4 = Dbg_Clk_0;
-  assign Dbg_Clk_5 = Dbg_Clk_0;
-  assign Dbg_Clk_6 = Dbg_Clk_0;
-  assign Dbg_Clk_7 = Dbg_Clk_0;
-  assign Dbg_Clk_8 = Dbg_Clk_0;
-  assign Dbg_Clk_9 = Dbg_Clk_0;
-  assign Dbg_Disable_1 = \<const1> ;
-  assign Dbg_Disable_10 = \<const1> ;
-  assign Dbg_Disable_11 = \<const1> ;
-  assign Dbg_Disable_12 = \<const1> ;
-  assign Dbg_Disable_13 = \<const1> ;
-  assign Dbg_Disable_14 = \<const1> ;
-  assign Dbg_Disable_15 = \<const1> ;
-  assign Dbg_Disable_16 = \<const1> ;
-  assign Dbg_Disable_17 = \<const1> ;
-  assign Dbg_Disable_18 = \<const1> ;
-  assign Dbg_Disable_19 = \<const1> ;
-  assign Dbg_Disable_2 = \<const1> ;
-  assign Dbg_Disable_20 = \<const1> ;
-  assign Dbg_Disable_21 = \<const1> ;
-  assign Dbg_Disable_22 = \<const1> ;
-  assign Dbg_Disable_23 = \<const1> ;
-  assign Dbg_Disable_24 = \<const1> ;
-  assign Dbg_Disable_25 = \<const1> ;
-  assign Dbg_Disable_26 = \<const1> ;
-  assign Dbg_Disable_27 = \<const1> ;
-  assign Dbg_Disable_28 = \<const1> ;
-  assign Dbg_Disable_29 = \<const1> ;
-  assign Dbg_Disable_3 = \<const1> ;
-  assign Dbg_Disable_30 = \<const1> ;
-  assign Dbg_Disable_31 = \<const1> ;
-  assign Dbg_Disable_4 = \<const1> ;
-  assign Dbg_Disable_5 = \<const1> ;
-  assign Dbg_Disable_6 = \<const1> ;
-  assign Dbg_Disable_7 = \<const1> ;
-  assign Dbg_Disable_8 = \<const1> ;
-  assign Dbg_Disable_9 = \<const1> ;
+  assign Dbg_Capture_1 = \<const0> ;
+  assign Dbg_Capture_10 = \<const0> ;
+  assign Dbg_Capture_11 = \<const0> ;
+  assign Dbg_Capture_12 = \<const0> ;
+  assign Dbg_Capture_13 = \<const0> ;
+  assign Dbg_Capture_14 = \<const0> ;
+  assign Dbg_Capture_15 = \<const0> ;
+  assign Dbg_Capture_16 = \<const0> ;
+  assign Dbg_Capture_17 = \<const0> ;
+  assign Dbg_Capture_18 = \<const0> ;
+  assign Dbg_Capture_19 = \<const0> ;
+  assign Dbg_Capture_2 = \<const0> ;
+  assign Dbg_Capture_20 = \<const0> ;
+  assign Dbg_Capture_21 = \<const0> ;
+  assign Dbg_Capture_22 = \<const0> ;
+  assign Dbg_Capture_23 = \<const0> ;
+  assign Dbg_Capture_24 = \<const0> ;
+  assign Dbg_Capture_25 = \<const0> ;
+  assign Dbg_Capture_26 = \<const0> ;
+  assign Dbg_Capture_27 = \<const0> ;
+  assign Dbg_Capture_28 = \<const0> ;
+  assign Dbg_Capture_29 = \<const0> ;
+  assign Dbg_Capture_3 = \<const0> ;
+  assign Dbg_Capture_30 = \<const0> ;
+  assign Dbg_Capture_31 = \<const0> ;
+  assign Dbg_Capture_4 = \<const0> ;
+  assign Dbg_Capture_5 = \<const0> ;
+  assign Dbg_Capture_6 = \<const0> ;
+  assign Dbg_Capture_7 = \<const0> ;
+  assign Dbg_Capture_8 = \<const0> ;
+  assign Dbg_Capture_9 = \<const0> ;
+  assign Dbg_Clk_1 = \<const0> ;
+  assign Dbg_Clk_10 = \<const0> ;
+  assign Dbg_Clk_11 = \<const0> ;
+  assign Dbg_Clk_12 = \<const0> ;
+  assign Dbg_Clk_13 = \<const0> ;
+  assign Dbg_Clk_14 = \<const0> ;
+  assign Dbg_Clk_15 = \<const0> ;
+  assign Dbg_Clk_16 = \<const0> ;
+  assign Dbg_Clk_17 = \<const0> ;
+  assign Dbg_Clk_18 = \<const0> ;
+  assign Dbg_Clk_19 = \<const0> ;
+  assign Dbg_Clk_2 = \<const0> ;
+  assign Dbg_Clk_20 = \<const0> ;
+  assign Dbg_Clk_21 = \<const0> ;
+  assign Dbg_Clk_22 = \<const0> ;
+  assign Dbg_Clk_23 = \<const0> ;
+  assign Dbg_Clk_24 = \<const0> ;
+  assign Dbg_Clk_25 = \<const0> ;
+  assign Dbg_Clk_26 = \<const0> ;
+  assign Dbg_Clk_27 = \<const0> ;
+  assign Dbg_Clk_28 = \<const0> ;
+  assign Dbg_Clk_29 = \<const0> ;
+  assign Dbg_Clk_3 = \<const0> ;
+  assign Dbg_Clk_30 = \<const0> ;
+  assign Dbg_Clk_31 = \<const0> ;
+  assign Dbg_Clk_4 = \<const0> ;
+  assign Dbg_Clk_5 = \<const0> ;
+  assign Dbg_Clk_6 = \<const0> ;
+  assign Dbg_Clk_7 = \<const0> ;
+  assign Dbg_Clk_8 = \<const0> ;
+  assign Dbg_Clk_9 = \<const0> ;
+  assign Dbg_Disable_1 = \<const0> ;
+  assign Dbg_Disable_10 = \<const0> ;
+  assign Dbg_Disable_11 = \<const0> ;
+  assign Dbg_Disable_12 = \<const0> ;
+  assign Dbg_Disable_13 = \<const0> ;
+  assign Dbg_Disable_14 = \<const0> ;
+  assign Dbg_Disable_15 = \<const0> ;
+  assign Dbg_Disable_16 = \<const0> ;
+  assign Dbg_Disable_17 = \<const0> ;
+  assign Dbg_Disable_18 = \<const0> ;
+  assign Dbg_Disable_19 = \<const0> ;
+  assign Dbg_Disable_2 = \<const0> ;
+  assign Dbg_Disable_20 = \<const0> ;
+  assign Dbg_Disable_21 = \<const0> ;
+  assign Dbg_Disable_22 = \<const0> ;
+  assign Dbg_Disable_23 = \<const0> ;
+  assign Dbg_Disable_24 = \<const0> ;
+  assign Dbg_Disable_25 = \<const0> ;
+  assign Dbg_Disable_26 = \<const0> ;
+  assign Dbg_Disable_27 = \<const0> ;
+  assign Dbg_Disable_28 = \<const0> ;
+  assign Dbg_Disable_29 = \<const0> ;
+  assign Dbg_Disable_3 = \<const0> ;
+  assign Dbg_Disable_30 = \<const0> ;
+  assign Dbg_Disable_31 = \<const0> ;
+  assign Dbg_Disable_4 = \<const0> ;
+  assign Dbg_Disable_5 = \<const0> ;
+  assign Dbg_Disable_6 = \<const0> ;
+  assign Dbg_Disable_7 = \<const0> ;
+  assign Dbg_Disable_8 = \<const0> ;
+  assign Dbg_Disable_9 = \<const0> ;
   assign Dbg_RREADY_0 = \<const0> ;
   assign Dbg_RREADY_1 = \<const0> ;
   assign Dbg_RREADY_10 = \<const0> ;
@@ -9144,37 +9170,37 @@ module system_mdm_1_3_MDM
   assign Dbg_Rst_7 = \<const0> ;
   assign Dbg_Rst_8 = \<const0> ;
   assign Dbg_Rst_9 = \<const0> ;
-  assign Dbg_Shift_1 = Dbg_Shift_0;
-  assign Dbg_Shift_10 = Dbg_Shift_0;
-  assign Dbg_Shift_11 = Dbg_Shift_0;
-  assign Dbg_Shift_12 = Dbg_Shift_0;
-  assign Dbg_Shift_13 = Dbg_Shift_0;
-  assign Dbg_Shift_14 = Dbg_Shift_0;
-  assign Dbg_Shift_15 = Dbg_Shift_0;
-  assign Dbg_Shift_16 = Dbg_Shift_0;
-  assign Dbg_Shift_17 = Dbg_Shift_0;
-  assign Dbg_Shift_18 = Dbg_Shift_0;
-  assign Dbg_Shift_19 = Dbg_Shift_0;
-  assign Dbg_Shift_2 = Dbg_Shift_0;
-  assign Dbg_Shift_20 = Dbg_Shift_0;
-  assign Dbg_Shift_21 = Dbg_Shift_0;
-  assign Dbg_Shift_22 = Dbg_Shift_0;
-  assign Dbg_Shift_23 = Dbg_Shift_0;
-  assign Dbg_Shift_24 = Dbg_Shift_0;
-  assign Dbg_Shift_25 = Dbg_Shift_0;
-  assign Dbg_Shift_26 = Dbg_Shift_0;
-  assign Dbg_Shift_27 = Dbg_Shift_0;
-  assign Dbg_Shift_28 = Dbg_Shift_0;
-  assign Dbg_Shift_29 = Dbg_Shift_0;
-  assign Dbg_Shift_3 = Dbg_Shift_0;
-  assign Dbg_Shift_30 = Dbg_Shift_0;
-  assign Dbg_Shift_31 = Dbg_Shift_0;
-  assign Dbg_Shift_4 = Dbg_Shift_0;
-  assign Dbg_Shift_5 = Dbg_Shift_0;
-  assign Dbg_Shift_6 = Dbg_Shift_0;
-  assign Dbg_Shift_7 = Dbg_Shift_0;
-  assign Dbg_Shift_8 = Dbg_Shift_0;
-  assign Dbg_Shift_9 = Dbg_Shift_0;
+  assign Dbg_Shift_1 = \<const0> ;
+  assign Dbg_Shift_10 = \<const0> ;
+  assign Dbg_Shift_11 = \<const0> ;
+  assign Dbg_Shift_12 = \<const0> ;
+  assign Dbg_Shift_13 = \<const0> ;
+  assign Dbg_Shift_14 = \<const0> ;
+  assign Dbg_Shift_15 = \<const0> ;
+  assign Dbg_Shift_16 = \<const0> ;
+  assign Dbg_Shift_17 = \<const0> ;
+  assign Dbg_Shift_18 = \<const0> ;
+  assign Dbg_Shift_19 = \<const0> ;
+  assign Dbg_Shift_2 = \<const0> ;
+  assign Dbg_Shift_20 = \<const0> ;
+  assign Dbg_Shift_21 = \<const0> ;
+  assign Dbg_Shift_22 = \<const0> ;
+  assign Dbg_Shift_23 = \<const0> ;
+  assign Dbg_Shift_24 = \<const0> ;
+  assign Dbg_Shift_25 = \<const0> ;
+  assign Dbg_Shift_26 = \<const0> ;
+  assign Dbg_Shift_27 = \<const0> ;
+  assign Dbg_Shift_28 = \<const0> ;
+  assign Dbg_Shift_29 = \<const0> ;
+  assign Dbg_Shift_3 = \<const0> ;
+  assign Dbg_Shift_30 = \<const0> ;
+  assign Dbg_Shift_31 = \<const0> ;
+  assign Dbg_Shift_4 = \<const0> ;
+  assign Dbg_Shift_5 = \<const0> ;
+  assign Dbg_Shift_6 = \<const0> ;
+  assign Dbg_Shift_7 = \<const0> ;
+  assign Dbg_Shift_8 = \<const0> ;
+  assign Dbg_Shift_9 = \<const0> ;
   assign Dbg_TDI_0 = Ext_JTAG_TDI;
   assign Dbg_TDI_1 = Ext_JTAG_TDI;
   assign Dbg_TDI_10 = Ext_JTAG_TDI;
@@ -9783,38 +9809,37 @@ module system_mdm_1_3_MDM
   assign Dbg_Trig_Out_9[5] = \<const0> ;
   assign Dbg_Trig_Out_9[6] = \<const0> ;
   assign Dbg_Trig_Out_9[7] = \<const0> ;
-  assign Dbg_Update_0 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_1 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_10 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_11 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_12 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_13 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_14 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_15 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_16 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_17 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_18 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_19 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_2 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_20 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_21 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_22 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_23 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_24 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_25 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_26 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_27 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_28 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_29 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_3 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_30 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_31 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_4 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_5 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_6 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_7 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_8 = Ext_JTAG_UPDATE;
-  assign Dbg_Update_9 = Ext_JTAG_UPDATE;
+  assign Dbg_Update_1 = \<const0> ;
+  assign Dbg_Update_10 = \<const0> ;
+  assign Dbg_Update_11 = \<const0> ;
+  assign Dbg_Update_12 = \<const0> ;
+  assign Dbg_Update_13 = \<const0> ;
+  assign Dbg_Update_14 = \<const0> ;
+  assign Dbg_Update_15 = \<const0> ;
+  assign Dbg_Update_16 = \<const0> ;
+  assign Dbg_Update_17 = \<const0> ;
+  assign Dbg_Update_18 = \<const0> ;
+  assign Dbg_Update_19 = \<const0> ;
+  assign Dbg_Update_2 = \<const0> ;
+  assign Dbg_Update_20 = \<const0> ;
+  assign Dbg_Update_21 = \<const0> ;
+  assign Dbg_Update_22 = \<const0> ;
+  assign Dbg_Update_23 = \<const0> ;
+  assign Dbg_Update_24 = \<const0> ;
+  assign Dbg_Update_25 = \<const0> ;
+  assign Dbg_Update_26 = \<const0> ;
+  assign Dbg_Update_27 = \<const0> ;
+  assign Dbg_Update_28 = \<const0> ;
+  assign Dbg_Update_29 = \<const0> ;
+  assign Dbg_Update_3 = \<const0> ;
+  assign Dbg_Update_30 = \<const0> ;
+  assign Dbg_Update_31 = \<const0> ;
+  assign Dbg_Update_4 = \<const0> ;
+  assign Dbg_Update_5 = \<const0> ;
+  assign Dbg_Update_6 = \<const0> ;
+  assign Dbg_Update_7 = \<const0> ;
+  assign Dbg_Update_8 = \<const0> ;
+  assign Dbg_Update_9 = \<const0> ;
   assign Dbg_WDATA_0[31] = \<const0> ;
   assign Dbg_WDATA_0[30] = \<const0> ;
   assign Dbg_WDATA_0[29] = \<const0> ;
@@ -10872,7 +10897,13 @@ module system_mdm_1_3_MDM
   assign Dbg_WVALID_8 = \<const0> ;
   assign Dbg_WVALID_9 = \<const0> ;
   assign Ext_BRK = \<const0> ;
-  assign Ext_JTAG_DRCK = Dbg_Clk_0;
+  assign Ext_JTAG_CAPTURE = \<const0> ;
+  assign Ext_JTAG_DRCK = \<const0> ;
+  assign Ext_JTAG_RESET = \<const0> ;
+  assign Ext_JTAG_SEL = \<const0> ;
+  assign Ext_JTAG_SHIFT = \<const0> ;
+  assign Ext_JTAG_UPDATE = \<const0> ;
+  assign Ext_NM_BRK = \<const0> ;
   assign Interrupt = \<const0> ;
   assign LMB_Addr_Strobe_0 = \<const0> ;
   assign LMB_Addr_Strobe_1 = \<const0> ;
@@ -13386,7 +13417,7 @@ module system_mdm_1_3_MDM
   assign S_AXI_RVALID = \<const0> ;
   assign S_AXI_WREADY = \<const0> ;
   assign TRACE_CLK_OUT = \<const0> ;
-  assign TRACE_CTL = \<const1> ;
+  assign TRACE_CTL = \<const0> ;
   assign TRACE_DATA[31] = \<const0> ;
   assign TRACE_DATA[30] = \<const0> ;
   assign TRACE_DATA[29] = \<const0> ;
@@ -13431,145 +13462,120 @@ module system_mdm_1_3_MDM
   GND GND
        (.G(\<const0> ));
   system_mdm_1_3_MDM_Core MDM_Core_I1
-       (.AR(sel_n_reset),
-        .CLK(Ext_JTAG_UPDATE),
-        .D(p_1_in),
+       (.AR(Functional_Reset),
+        .CLK(Dbg_Update_0),
         .Dbg_Disable_0(Dbg_Disable_0),
         .Dbg_Reg_En_0(Dbg_Reg_En_0),
         .Dbg_Rst_0(Dbg_Rst_0),
         .Dbg_Shift_0(Dbg_Shift_0),
-        .Dbg_Shift_0_0(Ext_JTAG_SHIFT),
+        .Dbg_Shift_0_0(\Use_E2.BSCAN_I_n_3 ),
         .Dbg_TDO_0(Dbg_TDO_0),
         .Debug_SYS_Rst(Debug_SYS_Rst),
-        .E(\Use_E2.BSCAN_I_n_8 ),
-        .Ext_JTAG_SEL(Ext_JTAG_SEL),
         .Ext_JTAG_TDI(Ext_JTAG_TDI),
-        .Ext_JTAG_TDO(Ext_JTAG_TDO),
-        .Ext_NM_BRK(Ext_NM_BRK),
-        .Q(MDM_Core_I1_n_0),
         .SEL(SEL),
-        .Scan_En(Scan_En),
-        .Scan_Reset(Scan_Reset),
-        .Scan_Reset_Sel(Scan_Reset_Sel),
-        .\Use_Serial_Unified_Completion.count_reg[5] (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.count_reg ),
-        .\Use_Serial_Unified_Completion.count_reg[5]_0 (p_0_in),
-        .\Use_Serial_Unified_Completion.count_reg[5]_1 (\JTAG_CONTROL_I/sel ),
-        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_E2.BSCAN_I_n_13 ),
-        .\Use_Serial_Unified_Completion.sample_1_reg[15] (MDM_Core_I1_n_18),
+        .\Use_BSCAN.Config_Reg_reg[30]_0 (\Use_E2.BSCAN_I_n_9 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] (MDM_Core_I1_n_16),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] (\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (p_0_in),
+        .\Use_Serial_Unified_Completion.completion_status_reg[10] (\Use_E2.BSCAN_I_n_7 ),
+        .\Use_Serial_Unified_Completion.completion_status_reg[15] (p_1_in),
+        .\Use_Serial_Unified_Completion.mb_instr_overrun_reg (\Use_E2.BSCAN_I_n_12 ),
         .\Using_FPGA.Native (Dbg_Clk_0),
         .completion_status131_out(\JTAG_CONTROL_I/completion_status131_out ),
         .mb_data_overrun1__0(\JTAG_CONTROL_I/mb_data_overrun1__0 ),
-        .sel_n_reg(Ext_JTAG_CAPTURE),
-        .\shift_Count_reg[0] (p_0_in__0),
-        .shift_n_reset(shift_n_reset),
+        .sel(\JTAG_CONTROL_I/sel ),
+        .sel_n_reg(Dbg_Capture_0),
+        .\shift_Count_reg[0] (MDM_Core_I1_n_0),
+        .\shift_Count_reg[0]_0 (p_0_in__0),
         .tdo(tdo));
   system_mdm_1_3_MB_BUFG \No_Dbg_Reg_Access.BUFG_DRCK 
        (.DRCK(DRCK),
         .Dbg_Clk_0(Dbg_Clk_0));
   system_mdm_1_3_MB_BSCANE2 \Use_E2.BSCAN_I 
-       (.AR(sel_n_reset),
-        .D(p_1_in),
+       (.AR(Functional_Reset),
         .DRCK(DRCK),
         .Dbg_TDO_0(Dbg_TDO_0),
-        .Dbg_TDO_0_0(\Use_E2.BSCAN_I_n_13 ),
-        .E(\Use_E2.BSCAN_I_n_8 ),
-        .Ext_JTAG_RESET(Ext_JTAG_RESET),
-        .Ext_JTAG_UPDATE(Ext_JTAG_UPDATE),
+        .Dbg_TDO_0_0(\Use_E2.BSCAN_I_n_12 ),
+        .Dbg_Update_0(Dbg_Update_0),
         .I0(TDI),
-        .Q(MDM_Core_I1_n_0),
         .SEL(SEL),
-        .Scan_En(Scan_En),
-        .Scan_Reset(Scan_Reset),
-        .Scan_Reset_Sel(Scan_Reset_Sel),
-        .\Use_BSCAN.PORT_Selector_reg[0] (Ext_JTAG_CAPTURE),
-        .\Use_BSCAN.PORT_Selector_reg[0]_0 (Ext_JTAG_SHIFT),
-        .\Use_BSCAN.command_reg[5] (\JTAG_CONTROL_I/sel ),
-        .\Use_Serial_Unified_Completion.completion_status_reg[15] (MDM_Core_I1_n_18),
-        .\Use_Serial_Unified_Completion.count_reg[5] (p_0_in),
-        .\Use_Serial_Unified_Completion.count_reg[5]_0 (\JTAG_CONTROL_I/Use_Serial_Unified_Completion.count_reg ),
+        .\Use_BSCAN.PORT_Selector_reg[0] (Dbg_Capture_0),
+        .\Use_BSCAN.PORT_Selector_reg[0]_0 (\Use_E2.BSCAN_I_n_3 ),
+        .\Use_BSCAN.command_reg[6] (\Use_E2.BSCAN_I_n_7 ),
+        .\Use_E2.BSCANE2_I_0 (\Use_E2.BSCAN_I_n_9 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] (p_1_in),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] (p_0_in),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (\JTAG_CONTROL_I/Use_Serial_Unified_Completion._Data_Read_Status.count_reg ),
+        .\Use_Serial_Unified_Completion.completion_status_reg[15] (MDM_Core_I1_n_16),
         .completion_status131_out(\JTAG_CONTROL_I/completion_status131_out ),
         .mb_data_overrun1__0(\JTAG_CONTROL_I/mb_data_overrun1__0 ),
+        .sel(\JTAG_CONTROL_I/sel ),
         .\shift_Count_reg[0] (p_0_in__0),
-        .shift_n_reset(shift_n_reset),
+        .\shift_Count_reg[0]_0 (MDM_Core_I1_n_0),
         .tdo(tdo));
   system_mdm_1_3_MB_LUT1 \Use_E2.LUT1_I 
        (.Ext_JTAG_TDI(Ext_JTAG_TDI),
         .I0(TDI));
-  VCC VCC
-       (.P(\<const1> ));
 endmodule
 
 (* ORIG_REF_NAME = "MDM_Core" *) 
 module system_mdm_1_3_MDM_Core
-   (Q,
-    Dbg_Disable_0,
-    Ext_NM_BRK,
+   (\shift_Count_reg[0] ,
     Debug_SYS_Rst,
     Dbg_Rst_0,
+    Dbg_Disable_0,
     Dbg_Reg_En_0,
     completion_status131_out,
     mb_data_overrun1__0,
     Dbg_Shift_0,
-    Ext_JTAG_SEL,
     tdo,
-    \Use_Serial_Unified_Completion.sample_1_reg[15] ,
-    \Use_Serial_Unified_Completion.count_reg[5] ,
+    \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ,
     CLK,
     \Using_FPGA.Native ,
     sel_n_reg,
-    shift_n_reset,
+    \Use_BSCAN.Config_Reg_reg[30]_0 ,
     Dbg_Shift_0_0,
     SEL,
-    Ext_JTAG_TDO,
-    Scan_Reset,
-    Scan_Reset_Sel,
-    Scan_En,
-    D,
+    \Use_Serial_Unified_Completion.completion_status_reg[15] ,
     Dbg_TDO_0,
-    \Use_Serial_Unified_Completion.count_reg[5]_0 ,
-    \shift_Count_reg[0] ,
+    \Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ,
+    \shift_Count_reg[0]_0 ,
     \Use_Serial_Unified_Completion.mb_instr_overrun_reg ,
     Ext_JTAG_TDI,
-    E,
+    \Use_Serial_Unified_Completion.completion_status_reg[10] ,
     AR,
-    \Use_Serial_Unified_Completion.count_reg[5]_1 );
-  output [0:0]Q;
-  output Dbg_Disable_0;
-  output Ext_NM_BRK;
+    sel);
+  output \shift_Count_reg[0] ;
   output Debug_SYS_Rst;
   output Dbg_Rst_0;
+  output Dbg_Disable_0;
   output [0:7]Dbg_Reg_En_0;
   output completion_status131_out;
   output mb_data_overrun1__0;
   output Dbg_Shift_0;
-  output Ext_JTAG_SEL;
   output tdo;
-  output [0:0]\Use_Serial_Unified_Completion.sample_1_reg[15] ;
-  output [0:0]\Use_Serial_Unified_Completion.count_reg[5] ;
+  output \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
+  output [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
   input CLK;
   input \Using_FPGA.Native ;
   input sel_n_reg;
-  input shift_n_reset;
+  input \Use_BSCAN.Config_Reg_reg[30]_0 ;
   input Dbg_Shift_0_0;
   input SEL;
-  input Ext_JTAG_TDO;
-  input Scan_Reset;
-  input Scan_Reset_Sel;
-  input Scan_En;
-  input [0:0]D;
+  input [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
   input Dbg_TDO_0;
-  input [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
-  input [0:0]\shift_Count_reg[0] ;
+  input [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  input [0:0]\shift_Count_reg[0]_0 ;
   input \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
   input Ext_JTAG_TDI;
-  input [0:0]E;
+  input \Use_Serial_Unified_Completion.completion_status_reg[10] ;
   input [0:0]AR;
-  input [0:0]\Use_Serial_Unified_Completion.count_reg[5]_1 ;
+  input sel;
 
   wire [0:0]AR;
   wire CLK;
   wire [0:0]Config_Reg;
-  wire [0:0]D;
   wire Dbg_Disable_0;
   wire [0:7]Dbg_Reg_En_0;
   wire Dbg_Rst_0;
@@ -13577,25 +13583,18 @@ module system_mdm_1_3_MDM_Core
   wire Dbg_Shift_0_0;
   wire Dbg_TDO_0;
   wire Debug_SYS_Rst;
-  wire [0:0]E;
-  wire Ext_JTAG_SEL;
   wire Ext_JTAG_TDI;
-  wire Ext_JTAG_TDO;
-  wire Ext_NM_BRK;
   wire MDM_SEL;
   wire [3:0]PORT_Selector;
   wire [3:0]PORT_Selector_1;
-  wire [0:0]Q;
   wire SEL;
-  wire Scan_En;
-  wire Scan_Reset;
-  wire Scan_Reset_Sel;
   wire [3:0]TDI_Shifter;
   wire TDI_Shifter0;
   wire \Use_BSCAN.Config_Reg_reg[11]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_12_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[12]_srl13_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_11_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[27]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_1_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[28]_srl2_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_0_n_0 ;
+  wire \Use_BSCAN.Config_Reg_reg[30]_0 ;
   wire \Use_BSCAN.Config_Reg_reg[4]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_3_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg[5]_srl4_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_2_n_0 ;
   wire \Use_BSCAN.Config_Reg_reg_c_0_n_0 ;
@@ -13624,59 +13623,46 @@ module system_mdm_1_3_MDM_Core
   wire \Use_BSCAN.Config_Reg_reg_n_0_[3] ;
   wire \Use_BSCAN.Config_Reg_reg_n_0_[9] ;
   wire \Use_E2.BSCANE2_I_i_2_n_0 ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5] ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_0 ;
-  wire [0:0]\Use_Serial_Unified_Completion.count_reg[5]_1 ;
+  wire \Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ;
+  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ;
+  wire [0:0]\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ;
+  wire \Use_Serial_Unified_Completion.completion_status_reg[10] ;
+  wire [0:0]\Use_Serial_Unified_Completion.completion_status_reg[15] ;
   wire \Use_Serial_Unified_Completion.mb_instr_overrun_reg ;
-  wire [0:0]\Use_Serial_Unified_Completion.sample_1_reg[15] ;
   wire \Using_FPGA.Native ;
   wire completion_status131_out;
-  wire config_with_scan_reset;
   wire mb_data_overrun1__0;
+  wire sel;
   wire sel_n_reg;
-  wire [0:0]\shift_Count_reg[0] ;
-  wire shift_n_reset;
+  wire \shift_Count_reg[0] ;
+  wire [0:0]\shift_Count_reg[0]_0 ;
   wire tdo;
 
-  LUT5 #(
-    .INIT(32'h00000008)) 
-    Ext_JTAG_SEL_INST_0
-       (.I0(SEL),
-        .I1(PORT_Selector[1]),
-        .I2(PORT_Selector[0]),
-        .I3(PORT_Selector[3]),
-        .I4(PORT_Selector[2]),
-        .O(Ext_JTAG_SEL));
   system_mdm_1_3_JTAG_CONTROL JTAG_CONTROL_I
-       (.AR(config_with_scan_reset),
-        .CLK(CLK),
-        .D(D),
+       (.CLK(CLK),
         .Dbg_Reg_En_0(Dbg_Reg_En_0),
         .Dbg_Rst_0(Dbg_Rst_0),
         .Dbg_Shift_0(Dbg_Shift_0),
         .Dbg_Shift_0_0(Dbg_Shift_0_0),
         .Dbg_TDO_0(Dbg_TDO_0),
         .Debug_SYS_Rst(Debug_SYS_Rst),
-        .E(E),
         .Ext_JTAG_TDI(Ext_JTAG_TDI),
-        .Ext_NM_BRK(Ext_NM_BRK),
-        .Q(Q),
+        .Q(PORT_Selector),
         .SEL(SEL),
-        .Scan_En(Scan_En),
-        .Scan_Reset(Scan_Reset),
-        .Scan_Reset_Sel(Scan_Reset_Sel),
         .\Use_BSCAN.command_reg[6]_0 (completion_status131_out),
-        .\Use_Serial_Unified_Completion.count_reg[5]_0 (\Use_Serial_Unified_Completion.count_reg[5] ),
-        .\Use_Serial_Unified_Completion.count_reg[5]_1 (\Use_Serial_Unified_Completion.count_reg[5]_1 ),
-        .\Use_Serial_Unified_Completion.count_reg[5]_2 (\Use_Serial_Unified_Completion.count_reg[5]_0 ),
+        .\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15]_0 (\Use_Serial_Unified_Completion._Completion_Status_Register.sample_1_reg[15] ),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 (\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5] ),
+        .\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_1 (\Use_Serial_Unified_Completion._Data_Read_Status.count_reg[5]_0 ),
+        .\Use_Serial_Unified_Completion.completion_status_reg[10]_0 (\Use_Serial_Unified_Completion.completion_status_reg[10] ),
+        .\Use_Serial_Unified_Completion.completion_status_reg[15]_0 (\Use_Serial_Unified_Completion.completion_status_reg[15] ),
         .\Use_Serial_Unified_Completion.mb_instr_overrun_reg_0 (\Use_Serial_Unified_Completion.mb_instr_overrun_reg ),
-        .\Use_Serial_Unified_Completion.sample_1_reg[15]_0 (\Use_Serial_Unified_Completion.sample_1_reg[15] ),
         .\Using_FPGA.Native (\Using_FPGA.Native ),
-        .\command_1_reg[7]_0 (PORT_Selector),
         .mb_data_overrun1__0(mb_data_overrun1__0),
+        .sel(sel),
         .sel_n_reg_0(sel_n_reg),
         .sel_n_reg_1(\Use_E2.BSCANE2_I_i_2_n_0 ),
         .\shift_Count_reg[0]_0 (\shift_Count_reg[0] ),
+        .\shift_Count_reg[0]_1 (\shift_Count_reg[0]_0 ),
         .tdo(tdo));
   (* SHREG_EXTRACT = "yes" *) 
   FDCE #(
@@ -13684,13 +13670,13 @@ module system_mdm_1_3_MDM_Core
     \Use_BSCAN.Config_Reg_reg[0] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[1] ),
         .Q(Config_Reg));
   FDCE \Use_BSCAN.Config_Reg_reg[10] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate__0_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[10] ));
   FDRE \Use_BSCAN.Config_Reg_reg[11]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_12 
@@ -13719,7 +13705,7 @@ module system_mdm_1_3_MDM_Core
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[2] ),
-        .PRE(shift_n_reset),
+        .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[1] ));
   (* SHREG_EXTRACT = "yes" *) 
   FDPE #(
@@ -13728,12 +13714,12 @@ module system_mdm_1_3_MDM_Core
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[26] ),
-        .PRE(shift_n_reset),
+        .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[25] ));
   FDCE \Use_BSCAN.Config_Reg_reg[26] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[26] ));
   FDRE \Use_BSCAN.Config_Reg_reg[27]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_1 
@@ -13762,7 +13748,7 @@ module system_mdm_1_3_MDM_Core
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[3] ),
-        .PRE(shift_n_reset),
+        .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[2] ));
   (* SHREG_EXTRACT = "yes" *) 
   FDPE #(
@@ -13771,12 +13757,12 @@ module system_mdm_1_3_MDM_Core
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
         .D(1'b0),
-        .PRE(shift_n_reset),
+        .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[30] ));
   FDCE \Use_BSCAN.Config_Reg_reg[3] 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_gate__1_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[3] ));
   FDRE \Use_BSCAN.Config_Reg_reg[4]_MDM_Core_I1_Use_BSCAN.Config_Reg_reg_c_3 
@@ -13805,90 +13791,90 @@ module system_mdm_1_3_MDM_Core
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
         .D(\Use_BSCAN.Config_Reg_reg_n_0_[10] ),
-        .PRE(shift_n_reset),
+        .PRE(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_n_0_[9] ));
   FDCE \Use_BSCAN.Config_Reg_reg_c 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(1'b1),
         .Q(\Use_BSCAN.Config_Reg_reg_c_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_0 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_0_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_1 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_0_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_1_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_10 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_9_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_10_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_11 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_10_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_11_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_12 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_11_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_12_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_2 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_1_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_2_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_3 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_2_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_3_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_4 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_3_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_4_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_5 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_4_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_5_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_6 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_5_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_6_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_7 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_6_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_7_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_8 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_7_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_8_n_0 ));
   FDCE \Use_BSCAN.Config_Reg_reg_c_9 
        (.C(\Using_FPGA.Native ),
         .CE(1'b1),
-        .CLR(shift_n_reset),
+        .CLR(\Use_BSCAN.Config_Reg_reg[30]_0 ),
         .D(\Use_BSCAN.Config_Reg_reg_c_8_n_0 ),
         .Q(\Use_BSCAN.Config_Reg_reg_c_9_n_0 ));
   LUT2 #(
@@ -14028,23 +14014,22 @@ module system_mdm_1_3_MDM_Core
         .CLR(AR),
         .D(Ext_JTAG_TDI),
         .Q(TDI_Shifter[3]));
-  FDPE #(
+  FDRE #(
     .INIT(1'b1)) 
     \Use_BSCAN.jtag_disable_reg 
        (.C(CLK),
         .CE(1'b1),
         .D(1'b0),
-        .PRE(config_with_scan_reset),
-        .Q(Dbg_Disable_0));
-  LUT6 #(
-    .INIT(64'hFEFEFEFEEEFFEEEE)) 
+        .Q(Dbg_Disable_0),
+        .R(1'b0));
+  LUT5 #(
+    .INIT(32'hFFFFFF04)) 
     \Use_E2.BSCANE2_I_i_2 
-       (.I0(PORT_Selector[2]),
-        .I1(PORT_Selector[3]),
-        .I2(Ext_JTAG_TDO),
-        .I3(PORT_Selector[0]),
-        .I4(Config_Reg),
-        .I5(PORT_Selector[1]),
+       (.I0(PORT_Selector[0]),
+        .I1(Config_Reg),
+        .I2(PORT_Selector[1]),
+        .I3(PORT_Selector[3]),
+        .I4(PORT_Selector[2]),
         .O(\Use_E2.BSCANE2_I_i_2_n_0 ));
 endmodule
 `ifndef GLBL

@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2020.1
+set scripts_vivado_version 2020.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -59,7 +59,7 @@ set run_remote_bd_flow 1
 if { $run_remote_bd_flow == 1 } {
   # Set the reference directory for source file relative paths (by default 
   # the value is script directory path)
-  set origin_dir ./IPI-BDs
+  set origin_dir ./GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs
 
   # Use origin directory path location variable, if specified in the tcl shell
   if { [info exists ::origin_dir_loc] } {
@@ -286,13 +286,13 @@ proc create_root_design { parentCell } {
   # Create instance: PmodCLS_0, and set properties
   set PmodCLS_0 [ create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodCLS:1.0 PmodCLS_0 ]
   set_property -dict [ list \
-   CONFIG.PMOD {jb} \
+   CONFIG.PMOD {Custom} \
  ] $PmodCLS_0
 
   # Create instance: PmodSF3_0, and set properties
   set PmodSF3_0 [ create_bd_cell -type ip -vlnv digilentinc.com:IP:PmodSF3:1.0 PmodSF3_0 ]
   set_property -dict [ list \
-   CONFIG.PMOD {jc} \
+   CONFIG.PMOD {Custom} \
  ] $PmodSF3_0
 
   # Create instance: axi_ethernetlite_0, and set properties
@@ -306,7 +306,12 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_ALL_INPUTS_2 {1} \
+   CONFIG.C_GPIO2_WIDTH {4} \
+   CONFIG.C_GPIO_WIDTH {4} \
    CONFIG.C_INTERRUPT_PRESENT {1} \
+   CONFIG.C_IS_DUAL {1} \
    CONFIG.GPIO2_BOARD_INTERFACE {push_buttons_4bits} \
    CONFIG.GPIO_BOARD_INTERFACE {dip_switches_4bits} \
    CONFIG.USE_BOARD_FLOW {true} \
@@ -316,7 +321,11 @@ proc create_root_design { parentCell } {
   set axi_quad_spi_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_0 ]
   set_property -dict [ list \
    CONFIG.C_FIFO_DEPTH {16} \
+   CONFIG.C_SCK_RATIO {2} \
    CONFIG.C_SPI_MEMORY {3} \
+   CONFIG.C_SPI_MODE {2} \
+   CONFIG.C_USE_STARTUP {0} \
+   CONFIG.C_USE_STARTUP_INT {0} \
    CONFIG.QSPI_BOARD_INTERFACE {qspi_flash} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_quad_spi_0
@@ -334,6 +343,7 @@ proc create_root_design { parentCell } {
   set axi_uartlite_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_uartlite:2.0 axi_uartlite_0 ]
   set_property -dict [ list \
    CONFIG.C_BAUDRATE {115200} \
+   CONFIG.C_S_AXI_ACLK_FREQ_HZ {83333333} \
    CONFIG.UARTLITE_BOARD_INTERFACE {usb_uart} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $axi_uartlite_0
@@ -373,7 +383,9 @@ proc create_root_design { parentCell } {
   # Create instance: microblaze_0, and set properties
   set microblaze_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0 ]
   set_property -dict [ list \
+   CONFIG.C_ADDR_TAG_BITS {14} \
    CONFIG.C_CACHE_BYTE_SIZE {16384} \
+   CONFIG.C_DCACHE_ADDR_TAG {14} \
    CONFIG.C_DCACHE_BYTE_SIZE {16384} \
    CONFIG.C_DCACHE_USE_WRITEBACK {1} \
    CONFIG.C_DEBUG_ENABLED {1} \
@@ -416,6 +428,7 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_MI {10} \
    CONFIG.NUM_SI {1} \
    CONFIG.S00_HAS_DATA_FIFO {2} \
+   CONFIG.S01_HAS_DATA_FIFO {2} \
    CONFIG.STRATEGY {2} \
  ] $microblaze_0_axi_periph
 
@@ -494,8 +507,8 @@ proc create_root_design { parentCell } {
   # Create address segments
   assign_bd_address -offset 0x44A00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PWM_0/PWM_AXI/PWM_AXI_reg] -force
   assign_bd_address -offset 0x44A10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PWM_1/PWM_AXI/PWM_AXI_reg] -force
-  assign_bd_address -offset 0x00020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PmodCLS_0/AXI_LITE_SPI/Reg0] -force
-  assign_bd_address -offset 0x00030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PmodSF3_0/AXI_LITE/Reg0] -force
+  assign_bd_address -offset 0x44A30000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PmodCLS_0/AXI_LITE_SPI/Reg0] -force
+  assign_bd_address -offset 0x44A40000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs PmodSF3_0/AXI_LITE/Reg0] -force
   assign_bd_address -offset 0x40E00000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_ethernetlite_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x40000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_gpio_0/S_AXI/Reg] -force
   assign_bd_address -offset 0x44A20000 -range 0x00010000 -target_address_space [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_quad_spi_0/AXI_LITE/Reg] -force

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:axi_data_fifo:2.1
-// IP Revision: 20
+// IP Revision: 21
 
-(* X_CORE_INFO = "axi_data_fifo_v2_1_20_axi_data_fifo,Vivado 2020.1" *)
-(* CHECK_LICENSE_TYPE = "system_s00_data_fifo_0,axi_data_fifo_v2_1_20_axi_data_fifo,{}" *)
-(* CORE_GENERATION_INFO = "system_s00_data_fifo_0,axi_data_fifo_v2_1_20_axi_data_fifo,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_data_fifo,x_ipVersion=2.1,x_ipCoreRevision=20,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_FAMILY=artix7,C_AXI_PROTOCOL=2,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=32,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_AXI_WRITE_FIFO_DEPTH=512,C_AXI_WRITE_FIFO_TYPE=bram,\
+(* X_CORE_INFO = "axi_data_fifo_v2_1_21_axi_data_fifo,Vivado 2020.2" *)
+(* CHECK_LICENSE_TYPE = "system_s00_data_fifo_0,axi_data_fifo_v2_1_21_axi_data_fifo,{}" *)
+(* CORE_GENERATION_INFO = "system_s00_data_fifo_0,axi_data_fifo_v2_1_21_axi_data_fifo,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_data_fifo,x_ipVersion=2.1,x_ipCoreRevision=21,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_FAMILY=artix7,C_AXI_PROTOCOL=2,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=32,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_AXI_WRITE_FIFO_DEPTH=512,C_AXI_WRITE_FIFO_TYPE=bram,\
 C_AXI_WRITE_FIFO_DELAY=1,C_AXI_READ_FIFO_DEPTH=512,C_AXI_READ_FIFO_TYPE=bram,C_AXI_READ_FIFO_DELAY=1}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_s00_data_fifo_0 (
@@ -185,7 +185,7 @@ READS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  axi_data_fifo_v2_1_20_axi_data_fifo #(
+  axi_data_fifo_v2_1_21_axi_data_fifo #(
     .C_FAMILY("artix7"),
     .C_AXI_PROTOCOL(2),
     .C_AXI_ID_WIDTH(1),

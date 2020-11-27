@@ -627,7 +627,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ID_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -974,11 +974,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 27 16:31:04 UTC 2020</spirit:value>
+            <spirit:value>Fri Nov 27 18:29:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:69724f7f</spirit:value>
+            <spirit:value>9:7cd8c5ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -989,7 +989,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:69724f7f</spirit:value>
+            <spirit:value>9:7cd8c5ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1005,11 +1005,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 27 16:31:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Nov 27 18:29:17 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:69724f7f</spirit:value>
+            <spirit:value>9:7cd8c5ce</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1028,11 +1028,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 27 16:31:04 UTC 2020</spirit:value>
+            <spirit:value>Fri Nov 27 18:29:15 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2fc9df42</spirit:value>
+            <spirit:value>9:5ce202eb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1048,11 +1048,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Jul 27 16:31:10 UTC 2020</spirit:value>
+            <spirit:value>Fri Nov 27 18:29:17 UTC 2020</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2fc9df42</spirit:value>
+            <spirit:value>9:5ce202eb</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1144,7 +1144,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_RPAYLD_WIDTH&apos;)) - 1)">147</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_RPAYLD_WIDTH&apos;)) - 1)">148</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1232,7 +1232,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_BPAYLD_WIDTH&apos;)) - 1)">5</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_BPAYLD_WIDTH&apos;)) - 1)">6</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1320,7 +1320,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_ARPAYLD_WIDTH&apos;)) - 1)">137</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_ARPAYLD_WIDTH&apos;)) - 1)">139</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1408,7 +1408,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AWPAYLD_WIDTH&apos;)) - 1)">137</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_AWPAYLD_WIDTH&apos;)) - 1)">139</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1516,7 +1516,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1886,7 +1886,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2010,7 +2010,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2245,7 +2245,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">0</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_AXI_ID_WIDTH&apos;))) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2424,7 +2424,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_AXI_ID_WIDTH</spirit:name>
         <spirit:displayName>AXI_ID_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_AXI_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_AXI_RDATA_WIDTH</spirit:name>
@@ -2444,7 +2444,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SC_ID_WIDTH</spirit:name>
         <spirit:displayName>SC_ID_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SC_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SC_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_SC_RDATA_WIDTH</spirit:name>
@@ -2493,11 +2493,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_AWPAYLD_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_AWPAYLD_WIDTH" spirit:dependency="(((((102 + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ADDR_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_AWUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_AWUSER_WIDTH&apos;))))">138</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_AWPAYLD_WIDTH" spirit:dependency="(((((102 + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ADDR_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_AWUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_AWUSER_WIDTH&apos;))))">140</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_ARPAYLD_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_ARPAYLD_WIDTH" spirit:dependency="(((((102 + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ADDR_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ARUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ARUSER_WIDTH&apos;))))">138</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_ARPAYLD_WIDTH" spirit:dependency="(((((102 + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ADDR_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ARUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ARUSER_WIDTH&apos;))))">140</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_WPAYLD_WIDTH</spirit:name>
@@ -2505,11 +2505,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_RPAYLD_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_RPAYLD_WIDTH" spirit:dependency="((((17 + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SSC_ROUTE_WIDTH&apos;))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RDATA_WIDTH&apos;))) + (spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RUSER_BITS_PER_BYTE&apos;)) * (spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RDATA_WIDTH&apos;)) / 8)))">148</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_RPAYLD_WIDTH" spirit:dependency="((((17 + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SSC_ROUTE_WIDTH&apos;))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RDATA_WIDTH&apos;))) + (spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RUSER_BITS_PER_BYTE&apos;)) * (spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_RDATA_WIDTH&apos;)) / 8)))">149</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_BPAYLD_WIDTH</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_BPAYLD_WIDTH" spirit:dependency="(((2 + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_BUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_BUSER_WIDTH&apos;))))">6</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_BPAYLD_WIDTH" spirit:dependency="(((2 + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_ID_WIDTH&apos;)))) + spirit:decode(id(&apos;MODELPARAM_VALUE.C_SSC_ROUTE_WIDTH&apos;))) + ((spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_BUSER_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_SC_BUSER_WIDTH&apos;))))">7</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -2534,31 +2534,31 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_xilinx_com_ip_sc_util_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_constants.vh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_constants.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_constants_noc.vh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_constants_noc.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_structs.svh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_structs.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/sc_util_v1_0_vl_rfs.sv</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/sc_util_v1_0_vl_rfs.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="sc_util" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="bbf68196">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="sc_util" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="ff605306">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -2590,35 +2590,35 @@
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_xilinx_com_ip_sc_util_1_0__ref_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_constants.vh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_constants.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_constants_noc.vh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_constants_noc.vh</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/verilog/sc_util_v1_0_4_structs.svh</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/verilog/sc_util_v1_0_4_structs.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../../../../ipshared/2702/hdl/sc_util_v1_0_vl_rfs.sv</spirit:name>
+        <spirit:name>../../../../../ipshared/25b7/hdl/sc_util_v1_0_vl_rfs.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
         <spirit:logicalName>smartconnect_v1_0</spirit:logicalName>
       </spirit:file>
       <spirit:vendorExtensions>
         <xilinx:subCoreRef>
-          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="sc_util" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="bbf68196">
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="sc_util" xilinx:version="1.0" xilinx:isGenerated="true" xilinx:checksum="ff605306">
             <xilinx:mode xilinx:name="copy_mode"/>
           </xilinx:componentRef>
         </xilinx:subCoreRef>
@@ -2657,7 +2657,7 @@
     <spirit:parameter>
       <spirit:name>AXI_ID_WIDTH</spirit:name>
       <spirit:displayName>AXI_ID_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_ID_WIDTH" spirit:order="4" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.AXI_ID_WIDTH" spirit:order="4" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>AXI_RDATA_WIDTH</spirit:name>
@@ -2677,7 +2677,7 @@
     <spirit:parameter>
       <spirit:name>SC_ID_WIDTH</spirit:name>
       <spirit:displayName>SC_ID_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SC_ID_WIDTH" spirit:order="8" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SC_ID_WIDTH" spirit:order="8" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SC_RDATA_WIDTH</spirit:name>
@@ -2793,7 +2793,7 @@
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6b26b306"/>
       <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="32cce78a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="61774b2f"/>

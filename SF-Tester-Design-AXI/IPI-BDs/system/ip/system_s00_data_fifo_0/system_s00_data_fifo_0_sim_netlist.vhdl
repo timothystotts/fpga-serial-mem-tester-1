@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Mon Jul 27 12:43:10 2020
--- Host        : J1STUDY running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Fri Nov 27 13:42:28 2020
+-- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_sim_netlist.vhdl
+--               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_s00_data_fifo_0/system_s00_data_fifo_0_sim_netlist.vhdl
 -- Design      : system_s00_data_fifo_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo is
+entity system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -110,204 +110,195 @@ entity system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo is
     m_axi_rready : out STD_LOGIC
   );
   attribute C_AXI_ADDR_WIDTH : integer;
-  attribute C_AXI_ADDR_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 32;
+  attribute C_AXI_ADDR_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 32;
   attribute C_AXI_ARUSER_WIDTH : integer;
-  attribute C_AXI_ARUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_ARUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_AWUSER_WIDTH : integer;
-  attribute C_AXI_AWUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_AWUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_BUSER_WIDTH : integer;
-  attribute C_AXI_BUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_BUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_DATA_WIDTH : integer;
-  attribute C_AXI_DATA_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 32;
+  attribute C_AXI_DATA_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 32;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_ID_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_PROTOCOL : integer;
-  attribute C_AXI_PROTOCOL of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 2;
+  attribute C_AXI_PROTOCOL of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 2;
   attribute C_AXI_READ_FIFO_DELAY : integer;
-  attribute C_AXI_READ_FIFO_DELAY of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_READ_FIFO_DELAY of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_READ_FIFO_DEPTH : integer;
-  attribute C_AXI_READ_FIFO_DEPTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 512;
+  attribute C_AXI_READ_FIFO_DEPTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 512;
   attribute C_AXI_READ_FIFO_TYPE : string;
-  attribute C_AXI_READ_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "bram";
+  attribute C_AXI_READ_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "bram";
   attribute C_AXI_RUSER_WIDTH : integer;
-  attribute C_AXI_RUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_RUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_SUPPORTS_USER_SIGNALS : integer;
-  attribute C_AXI_SUPPORTS_USER_SIGNALS of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 0;
+  attribute C_AXI_SUPPORTS_USER_SIGNALS of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 0;
   attribute C_AXI_WRITE_FIFO_DELAY : integer;
-  attribute C_AXI_WRITE_FIFO_DELAY of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_WRITE_FIFO_DELAY of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_AXI_WRITE_FIFO_DEPTH : integer;
-  attribute C_AXI_WRITE_FIFO_DEPTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 512;
+  attribute C_AXI_WRITE_FIFO_DEPTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 512;
   attribute C_AXI_WRITE_FIFO_TYPE : string;
-  attribute C_AXI_WRITE_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "bram";
+  attribute C_AXI_WRITE_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "bram";
   attribute C_AXI_WUSER_WIDTH : integer;
-  attribute C_AXI_WUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute C_AXI_WUSER_WIDTH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "artix7";
+  attribute C_FAMILY of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "artix7";
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "yes";
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "axi_data_fifo_v2_1_20_axi_data_fifo";
+  attribute ORIG_REF_NAME of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "axi_data_fifo_v2_1_21_axi_data_fifo";
   attribute P_AXI3 : integer;
-  attribute P_AXI3 of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 1;
+  attribute P_AXI3 of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 1;
   attribute P_AXI4 : integer;
-  attribute P_AXI4 of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 0;
+  attribute P_AXI4 of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 0;
   attribute P_AXILITE : integer;
-  attribute P_AXILITE of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 2;
+  attribute P_AXILITE of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 2;
   attribute P_PRIM_FIFO_TYPE : string;
-  attribute P_PRIM_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is "512x72";
+  attribute P_PRIM_FIFO_TYPE of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is "512x72";
   attribute P_READ_FIFO_DEPTH_LOG : integer;
-  attribute P_READ_FIFO_DEPTH_LOG of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 9;
+  attribute P_READ_FIFO_DEPTH_LOG of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 9;
   attribute P_WIDTH_RACH : integer;
-  attribute P_WIDTH_RACH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 63;
+  attribute P_WIDTH_RACH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 63;
   attribute P_WIDTH_RDCH : integer;
-  attribute P_WIDTH_RDCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 37;
+  attribute P_WIDTH_RDCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 37;
   attribute P_WIDTH_WACH : integer;
-  attribute P_WIDTH_WACH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 63;
+  attribute P_WIDTH_WACH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 63;
   attribute P_WIDTH_WDCH : integer;
-  attribute P_WIDTH_WDCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 38;
+  attribute P_WIDTH_WDCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 38;
   attribute P_WIDTH_WRCH : integer;
-  attribute P_WIDTH_WRCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 4;
+  attribute P_WIDTH_WRCH of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 4;
   attribute P_WRITE_FIFO_DEPTH_LOG : integer;
-  attribute P_WRITE_FIFO_DEPTH_LOG of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo : entity is 9;
-end system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo;
+  attribute P_WRITE_FIFO_DEPTH_LOG of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo : entity is 9;
+end system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo;
 
-architecture STRUCTURE of system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo is
+architecture STRUCTURE of system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo is
+  signal \<const0>\ : STD_LOGIC;
   signal \^m_axi_arready\ : STD_LOGIC;
   signal \^m_axi_awready\ : STD_LOGIC;
-  signal \^m_axi_bid\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^m_axi_bresp\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^m_axi_buser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^m_axi_bvalid\ : STD_LOGIC;
   signal \^m_axi_rdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^m_axi_rid\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \^m_axi_rlast\ : STD_LOGIC;
   signal \^m_axi_rresp\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^m_axi_ruser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^m_axi_rvalid\ : STD_LOGIC;
   signal \^m_axi_wready\ : STD_LOGIC;
   signal \^s_axi_araddr\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^s_axi_arburst\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^s_axi_arcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_arid\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \^s_axi_arlen\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \^s_axi_arlock\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_arprot\ : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \^s_axi_arqos\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_arregion\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_arsize\ : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \^s_axi_aruser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_arvalid\ : STD_LOGIC;
   signal \^s_axi_awaddr\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^s_axi_awburst\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^s_axi_awcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_awid\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \^s_axi_awlen\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \^s_axi_awlock\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_awprot\ : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \^s_axi_awqos\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_awregion\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_awsize\ : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal \^s_axi_awuser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_awvalid\ : STD_LOGIC;
   signal \^s_axi_bready\ : STD_LOGIC;
   signal \^s_axi_rready\ : STD_LOGIC;
   signal \^s_axi_wdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \^s_axi_wid\ : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal \^s_axi_wlast\ : STD_LOGIC;
   signal \^s_axi_wstrb\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_wuser\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_wvalid\ : STD_LOGIC;
 begin
   \^m_axi_arready\ <= m_axi_arready;
   \^m_axi_awready\ <= m_axi_awready;
-  \^m_axi_bid\(0) <= m_axi_bid(0);
   \^m_axi_bresp\(1 downto 0) <= m_axi_bresp(1 downto 0);
-  \^m_axi_buser\(0) <= m_axi_buser(0);
   \^m_axi_bvalid\ <= m_axi_bvalid;
   \^m_axi_rdata\(31 downto 0) <= m_axi_rdata(31 downto 0);
-  \^m_axi_rid\(0) <= m_axi_rid(0);
-  \^m_axi_rlast\ <= m_axi_rlast;
   \^m_axi_rresp\(1 downto 0) <= m_axi_rresp(1 downto 0);
-  \^m_axi_ruser\(0) <= m_axi_ruser(0);
   \^m_axi_rvalid\ <= m_axi_rvalid;
   \^m_axi_wready\ <= m_axi_wready;
   \^s_axi_araddr\(31 downto 0) <= s_axi_araddr(31 downto 0);
-  \^s_axi_arburst\(1 downto 0) <= s_axi_arburst(1 downto 0);
-  \^s_axi_arcache\(3 downto 0) <= s_axi_arcache(3 downto 0);
-  \^s_axi_arid\(0) <= s_axi_arid(0);
-  \^s_axi_arlen\(7 downto 0) <= s_axi_arlen(7 downto 0);
-  \^s_axi_arlock\(0) <= s_axi_arlock(0);
   \^s_axi_arprot\(2 downto 0) <= s_axi_arprot(2 downto 0);
-  \^s_axi_arqos\(3 downto 0) <= s_axi_arqos(3 downto 0);
-  \^s_axi_arregion\(3 downto 0) <= s_axi_arregion(3 downto 0);
-  \^s_axi_arsize\(2 downto 0) <= s_axi_arsize(2 downto 0);
-  \^s_axi_aruser\(0) <= s_axi_aruser(0);
   \^s_axi_arvalid\ <= s_axi_arvalid;
   \^s_axi_awaddr\(31 downto 0) <= s_axi_awaddr(31 downto 0);
-  \^s_axi_awburst\(1 downto 0) <= s_axi_awburst(1 downto 0);
-  \^s_axi_awcache\(3 downto 0) <= s_axi_awcache(3 downto 0);
-  \^s_axi_awid\(0) <= s_axi_awid(0);
-  \^s_axi_awlen\(7 downto 0) <= s_axi_awlen(7 downto 0);
-  \^s_axi_awlock\(0) <= s_axi_awlock(0);
   \^s_axi_awprot\(2 downto 0) <= s_axi_awprot(2 downto 0);
-  \^s_axi_awqos\(3 downto 0) <= s_axi_awqos(3 downto 0);
-  \^s_axi_awregion\(3 downto 0) <= s_axi_awregion(3 downto 0);
-  \^s_axi_awsize\(2 downto 0) <= s_axi_awsize(2 downto 0);
-  \^s_axi_awuser\(0) <= s_axi_awuser(0);
   \^s_axi_awvalid\ <= s_axi_awvalid;
   \^s_axi_bready\ <= s_axi_bready;
   \^s_axi_rready\ <= s_axi_rready;
   \^s_axi_wdata\(31 downto 0) <= s_axi_wdata(31 downto 0);
-  \^s_axi_wid\(0) <= s_axi_wid(0);
-  \^s_axi_wlast\ <= s_axi_wlast;
   \^s_axi_wstrb\(3 downto 0) <= s_axi_wstrb(3 downto 0);
-  \^s_axi_wuser\(0) <= s_axi_wuser(0);
   \^s_axi_wvalid\ <= s_axi_wvalid;
   m_axi_araddr(31 downto 0) <= \^s_axi_araddr\(31 downto 0);
-  m_axi_arburst(1 downto 0) <= \^s_axi_arburst\(1 downto 0);
-  m_axi_arcache(3 downto 0) <= \^s_axi_arcache\(3 downto 0);
-  m_axi_arid(0) <= \^s_axi_arid\(0);
-  m_axi_arlen(7 downto 0) <= \^s_axi_arlen\(7 downto 0);
-  m_axi_arlock(0) <= \^s_axi_arlock\(0);
+  m_axi_arburst(1) <= \<const0>\;
+  m_axi_arburst(0) <= \<const0>\;
+  m_axi_arcache(3) <= \<const0>\;
+  m_axi_arcache(2) <= \<const0>\;
+  m_axi_arcache(1) <= \<const0>\;
+  m_axi_arcache(0) <= \<const0>\;
+  m_axi_arid(0) <= \<const0>\;
+  m_axi_arlen(7) <= \<const0>\;
+  m_axi_arlen(6) <= \<const0>\;
+  m_axi_arlen(5) <= \<const0>\;
+  m_axi_arlen(4) <= \<const0>\;
+  m_axi_arlen(3) <= \<const0>\;
+  m_axi_arlen(2) <= \<const0>\;
+  m_axi_arlen(1) <= \<const0>\;
+  m_axi_arlen(0) <= \<const0>\;
+  m_axi_arlock(0) <= \<const0>\;
   m_axi_arprot(2 downto 0) <= \^s_axi_arprot\(2 downto 0);
-  m_axi_arqos(3 downto 0) <= \^s_axi_arqos\(3 downto 0);
-  m_axi_arregion(3 downto 0) <= \^s_axi_arregion\(3 downto 0);
-  m_axi_arsize(2 downto 0) <= \^s_axi_arsize\(2 downto 0);
-  m_axi_aruser(0) <= \^s_axi_aruser\(0);
+  m_axi_arqos(3) <= \<const0>\;
+  m_axi_arqos(2) <= \<const0>\;
+  m_axi_arqos(1) <= \<const0>\;
+  m_axi_arqos(0) <= \<const0>\;
+  m_axi_arregion(3) <= \<const0>\;
+  m_axi_arregion(2) <= \<const0>\;
+  m_axi_arregion(1) <= \<const0>\;
+  m_axi_arregion(0) <= \<const0>\;
+  m_axi_arsize(2) <= \<const0>\;
+  m_axi_arsize(1) <= \<const0>\;
+  m_axi_arsize(0) <= \<const0>\;
+  m_axi_aruser(0) <= \<const0>\;
   m_axi_arvalid <= \^s_axi_arvalid\;
   m_axi_awaddr(31 downto 0) <= \^s_axi_awaddr\(31 downto 0);
-  m_axi_awburst(1 downto 0) <= \^s_axi_awburst\(1 downto 0);
-  m_axi_awcache(3 downto 0) <= \^s_axi_awcache\(3 downto 0);
-  m_axi_awid(0) <= \^s_axi_awid\(0);
-  m_axi_awlen(7 downto 0) <= \^s_axi_awlen\(7 downto 0);
-  m_axi_awlock(0) <= \^s_axi_awlock\(0);
+  m_axi_awburst(1) <= \<const0>\;
+  m_axi_awburst(0) <= \<const0>\;
+  m_axi_awcache(3) <= \<const0>\;
+  m_axi_awcache(2) <= \<const0>\;
+  m_axi_awcache(1) <= \<const0>\;
+  m_axi_awcache(0) <= \<const0>\;
+  m_axi_awid(0) <= \<const0>\;
+  m_axi_awlen(7) <= \<const0>\;
+  m_axi_awlen(6) <= \<const0>\;
+  m_axi_awlen(5) <= \<const0>\;
+  m_axi_awlen(4) <= \<const0>\;
+  m_axi_awlen(3) <= \<const0>\;
+  m_axi_awlen(2) <= \<const0>\;
+  m_axi_awlen(1) <= \<const0>\;
+  m_axi_awlen(0) <= \<const0>\;
+  m_axi_awlock(0) <= \<const0>\;
   m_axi_awprot(2 downto 0) <= \^s_axi_awprot\(2 downto 0);
-  m_axi_awqos(3 downto 0) <= \^s_axi_awqos\(3 downto 0);
-  m_axi_awregion(3 downto 0) <= \^s_axi_awregion\(3 downto 0);
-  m_axi_awsize(2 downto 0) <= \^s_axi_awsize\(2 downto 0);
-  m_axi_awuser(0) <= \^s_axi_awuser\(0);
+  m_axi_awqos(3) <= \<const0>\;
+  m_axi_awqos(2) <= \<const0>\;
+  m_axi_awqos(1) <= \<const0>\;
+  m_axi_awqos(0) <= \<const0>\;
+  m_axi_awregion(3) <= \<const0>\;
+  m_axi_awregion(2) <= \<const0>\;
+  m_axi_awregion(1) <= \<const0>\;
+  m_axi_awregion(0) <= \<const0>\;
+  m_axi_awsize(2) <= \<const0>\;
+  m_axi_awsize(1) <= \<const0>\;
+  m_axi_awsize(0) <= \<const0>\;
+  m_axi_awuser(0) <= \<const0>\;
   m_axi_awvalid <= \^s_axi_awvalid\;
   m_axi_bready <= \^s_axi_bready\;
   m_axi_rready <= \^s_axi_rready\;
   m_axi_wdata(31 downto 0) <= \^s_axi_wdata\(31 downto 0);
-  m_axi_wid(0) <= \^s_axi_wid\(0);
-  m_axi_wlast <= \^s_axi_wlast\;
+  m_axi_wid(0) <= \<const0>\;
+  m_axi_wlast <= \<const0>\;
   m_axi_wstrb(3 downto 0) <= \^s_axi_wstrb\(3 downto 0);
-  m_axi_wuser(0) <= \^s_axi_wuser\(0);
+  m_axi_wuser(0) <= \<const0>\;
   m_axi_wvalid <= \^s_axi_wvalid\;
   s_axi_arready <= \^m_axi_arready\;
   s_axi_awready <= \^m_axi_awready\;
-  s_axi_bid(0) <= \^m_axi_bid\(0);
+  s_axi_bid(0) <= \<const0>\;
   s_axi_bresp(1 downto 0) <= \^m_axi_bresp\(1 downto 0);
-  s_axi_buser(0) <= \^m_axi_buser\(0);
+  s_axi_buser(0) <= \<const0>\;
   s_axi_bvalid <= \^m_axi_bvalid\;
   s_axi_rdata(31 downto 0) <= \^m_axi_rdata\(31 downto 0);
-  s_axi_rid(0) <= \^m_axi_rid\(0);
-  s_axi_rlast <= \^m_axi_rlast\;
+  s_axi_rid(0) <= \<const0>\;
+  s_axi_rlast <= \<const0>\;
   s_axi_rresp(1 downto 0) <= \^m_axi_rresp\(1 downto 0);
-  s_axi_ruser(0) <= \^m_axi_ruser\(0);
+  s_axi_ruser(0) <= \<const0>\;
   s_axi_rvalid <= \^m_axi_rvalid\;
   s_axi_wready <= \^m_axi_wready\;
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -359,11 +350,11 @@ entity system_s00_data_fifo_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of system_s00_data_fifo_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of system_s00_data_fifo_0 : entity is "system_s00_data_fifo_0,axi_data_fifo_v2_1_20_axi_data_fifo,{}";
+  attribute CHECK_LICENSE_TYPE of system_s00_data_fifo_0 : entity is "system_s00_data_fifo_0,axi_data_fifo_v2_1_21_axi_data_fifo,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of system_s00_data_fifo_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of system_s00_data_fifo_0 : entity is "axi_data_fifo_v2_1_20_axi_data_fifo,Vivado 2020.1";
+  attribute X_CORE_INFO of system_s00_data_fifo_0 : entity is "axi_data_fifo_v2_1_21_axi_data_fifo,Vivado 2020.2";
 end system_s00_data_fifo_0;
 
 architecture STRUCTURE of system_s00_data_fifo_0 is
@@ -497,10 +488,10 @@ architecture STRUCTURE of system_s00_data_fifo_0 is
   attribute X_INTERFACE_INFO of s_axi_wdata : signal is "xilinx.com:interface:aximm:1.0 S_AXI WDATA";
   attribute X_INTERFACE_INFO of s_axi_wstrb : signal is "xilinx.com:interface:aximm:1.0 S_AXI WSTRB";
 begin
-inst: entity work.system_s00_data_fifo_0_axi_data_fifo_v2_1_20_axi_data_fifo
+inst: entity work.system_s00_data_fifo_0_axi_data_fifo_v2_1_21_axi_data_fifo
      port map (
-      aclk => aclk,
-      aresetn => aresetn,
+      aclk => '0',
+      aresetn => '0',
       m_axi_araddr(31 downto 0) => m_axi_araddr(31 downto 0),
       m_axi_arburst(1 downto 0) => NLW_inst_m_axi_arburst_UNCONNECTED(1 downto 0),
       m_axi_arcache(3 downto 0) => NLW_inst_m_axi_arcache_UNCONNECTED(3 downto 0),

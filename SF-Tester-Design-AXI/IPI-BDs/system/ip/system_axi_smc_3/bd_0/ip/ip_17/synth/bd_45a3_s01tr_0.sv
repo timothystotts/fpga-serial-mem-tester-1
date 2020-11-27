@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_transaction_regulator:1.0
-// IP Revision: 8
+// IP Revision: 9
 
-(* X_CORE_INFO = "sc_transaction_regulator_v1_0_8_top,Vivado 2020.1" *)
-(* CHECK_LICENSE_TYPE = "bd_45a3_s01tr_0,sc_transaction_regulator_v1_0_8_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_45a3_s01tr_0,sc_transaction_regulator_v1_0_8_top,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_transaction_regulator,x_ipVersion=1.0,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_FAMILY=artix7,C_IS_CASCADED=0,C_ENABLE_PIPELINING=0x1,C_NUM_READ_THREADS=1,C_NUM_WRITE_THREADS=1,C_MEP_IDENTIFIER_WIDTH=1,C_MEP_IDENTIFIER=1,C_SEP_ROUTE_WIDTH=1,C_RDATA_WIDTH=32,C_WDATA_WIDTH=32,C_S_ID_WIDTH=0,C_M_ID_WIDTH=1,C_ADDR_WIDTH=32,C_SUPPORTS_READ_DEADLOCK=0,C_S\
+(* X_CORE_INFO = "sc_transaction_regulator_v1_0_9_top,Vivado 2020.2" *)
+(* CHECK_LICENSE_TYPE = "bd_45a3_s01tr_0,sc_transaction_regulator_v1_0_9_top,{}" *)
+(* CORE_GENERATION_INFO = "bd_45a3_s01tr_0,sc_transaction_regulator_v1_0_9_top,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_transaction_regulator,x_ipVersion=1.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_FAMILY=artix7,C_IS_CASCADED=0,C_ENABLE_PIPELINING=0x1,C_NUM_READ_THREADS=1,C_NUM_WRITE_THREADS=1,C_MEP_IDENTIFIER_WIDTH=2,C_MEP_IDENTIFIER=2,C_SEP_ROUTE_WIDTH=1,C_RDATA_WIDTH=32,C_WDATA_WIDTH=32,C_S_ID_WIDTH=0,C_M_ID_WIDTH=2,C_ADDR_WIDTH=32,C_SUPPORTS_READ_DEADLOCK=0,C_S\
 UPPORTS_WRITE_DEADLOCK=0,C_READ_ACCEPTANCE=32,C_WRITE_ACCEPTANCE=32,C_NUM_READ_OUTSTANDING=2,C_NUM_WRITE_OUTSTANDING=2,C_SINGLE_ISSUING=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_45a3_s01tr_0 (
@@ -139,7 +139,7 @@ DS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *)
 input wire s_axi_rready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARID" *)
-output wire [0 : 0] m_axi_arid;
+output wire [1 : 0] m_axi_arid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARADDR" *)
 output wire [31 : 0] m_axi_araddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARLEN" *)
@@ -163,7 +163,7 @@ output wire m_axi_arvalid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARREADY" *)
 input wire m_axi_arready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RID" *)
-input wire [0 : 0] m_axi_rid;
+input wire [1 : 0] m_axi_rid;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RDATA" *)
 input wire [31 : 0] m_axi_rdata;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RRESP" *)
@@ -174,24 +174,24 @@ input wire m_axi_rlast;
 input wire [1023 : 0] m_axi_ruser;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RVALID" *)
 input wire m_axi_rvalid;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 83333333, ID_WIDTH 1, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 1024, WUSER_WIDTH 0, RUSER_WIDTH 1024, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE\
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI, DATA_WIDTH 32, PROTOCOL AXI4, FREQ_HZ 83333333, ID_WIDTH 2, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 1024, WUSER_WIDTH 0, RUSER_WIDTH 1024, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 256, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE\
 _THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  sc_transaction_regulator_v1_0_8_top #(
+  sc_transaction_regulator_v1_0_9_top #(
     .C_FAMILY("artix7"),
     .C_IS_CASCADED(0),
-    .C_ENABLE_PIPELINING('H1),
+    .C_ENABLE_PIPELINING(1'H1),
     .C_NUM_READ_THREADS(1),
     .C_NUM_WRITE_THREADS(1),
-    .C_MEP_IDENTIFIER_WIDTH(1),
-    .C_MEP_IDENTIFIER(1),
+    .C_MEP_IDENTIFIER_WIDTH(2),
+    .C_MEP_IDENTIFIER(2),
     .C_SEP_ROUTE_WIDTH(1),
     .C_RDATA_WIDTH(32),
     .C_WDATA_WIDTH(32),
     .C_S_ID_WIDTH(0),
-    .C_M_ID_WIDTH(1),
+    .C_M_ID_WIDTH(2),
     .C_ADDR_WIDTH(32),
     .C_SUPPORTS_READ_DEADLOCK(0),
     .C_SUPPORTS_WRITE_DEADLOCK(0),
@@ -201,7 +201,7 @@ output wire m_axi_rready;
     .C_NUM_WRITE_OUTSTANDING(2),
     .C_SINGLE_ISSUING(0)
   ) inst (
-    .mep_identifier(1'H1),
+    .mep_identifier(2'H2),
     .aclk(aclk),
     .aclken(1'D1),
     .aresetn(aresetn),
@@ -265,7 +265,7 @@ output wire m_axi_rready;
     .m_axi_wuser(),
     .m_axi_wvalid(),
     .m_axi_wready(1'H0),
-    .m_axi_bid(1'H0),
+    .m_axi_bid(2'H0),
     .m_axi_bresp(2'H0),
     .m_axi_buser(1024'H0),
     .m_axi_bvalid(1'H0),

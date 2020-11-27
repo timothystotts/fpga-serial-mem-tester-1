@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:32:36 2020
-// Host        : J1STUDY running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri Nov 27 13:30:07 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
-//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_sim_netlist.v
+//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_clk_wiz_0_0/system_clk_wiz_0_0_sim_netlist.v
 // Design      : system_clk_wiz_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -29,13 +29,13 @@ module system_clk_wiz_0_0
   output locked;
   input clk_in1;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) wire clk_in1;
   wire clk_out1;
   wire clk_out2;
   wire clk_out3;
   wire clk_out4;
   wire locked;
-  wire resetn;
+  (* RTL_KEEP = "yes" *) wire resetn;
 
   system_clk_wiz_0_0_system_clk_wiz_0_0_clk_wiz inst
        (.clk_in1(clk_in1),

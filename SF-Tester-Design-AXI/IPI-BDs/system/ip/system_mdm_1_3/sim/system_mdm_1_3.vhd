@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:mdm:3.2
--- IP Revision: 18
+-- IP Revision: 19
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY mdm_v3_2_18;
-USE mdm_v3_2_18.MDM;
+LIBRARY mdm_v3_2_19;
+USE mdm_v3_2_19.MDM;
 
 ENTITY system_mdm_1_3 IS
   PORT (
@@ -77,6 +77,7 @@ ARCHITECTURE system_mdm_1_3_arch OF system_mdm_1_3 IS
   COMPONENT MDM IS
     GENERIC (
       C_FAMILY : STRING;
+      C_REVISION : STRING;
       C_JTAG_CHAIN : INTEGER;
       C_USE_BSCAN : INTEGER;
       C_BSCANID : INTEGER;
@@ -1648,6 +1649,7 @@ BEGIN
   U0 : MDM
     GENERIC MAP (
       C_FAMILY => "artix7",
+      C_REVISION => "",
       C_JTAG_CHAIN => 2,
       C_USE_BSCAN => 0,
       C_BSCANID => 76547328,

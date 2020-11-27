@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:ip:sc_switchboard:1.0
 // IP Revision: 6
 
-(* X_CORE_INFO = "sc_switchboard_v1_0_6_top,Vivado 2020.1" *)
+(* X_CORE_INFO = "sc_switchboard_v1_0_6_top,Vivado 2020.2" *)
 (* CHECK_LICENSE_TYPE = "bd_45a3_rsw_0,sc_switchboard_v1_0_6_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_45a3_rsw_0,sc_switchboard_v1_0_6_top,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_PAYLD_WIDTH=148,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=1,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=2,C_TESTING_MODE=0,C_CONNECTIVITY=0b11}" *)
+(* CORE_GENERATION_INFO = "bd_45a3_rsw_0,sc_switchboard_v1_0_6_top,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_switchboard,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_PAYLD_WIDTH=149,K_MAX_INFO_WIDTH=1,C_S_PIPELINES=0,C_M_PIPELINES=1,C_S_LATENCY=0,C_NUM_SI=1,C_NUM_MI=2,C_TESTING_MODE=0,C_CONNECTIVITY=0b11}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_45a3_rsw_0 (
   aclk,
@@ -82,7 +82,7 @@ input wire [1 : 0] s_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC INFO" *)
 input wire [1 : 0] s_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC PAYLD" *)
-input wire [147 : 0] s_sc_payld;
+input wire [148 : 0] s_sc_payld;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S00_SC, BRIDGES M00_SC:M01_SC:M02_SC:M03_SC:M04_SC:M05_SC:M06_SC:M07_SC:M08_SC:M09_SC:M10_SC:M11_SC:M12_SC:M13_SC:M14_SC:M15_SC" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 S00_SC RECV" *)
 output wire [1 : 0] s_sc_recv;
@@ -94,11 +94,11 @@ output wire [1 : 0] m_sc_send;
 output wire [1 : 0] m_sc_req;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC INFO [0:0] [0:0], xilinx.com:interface:sc:1.0 M01_SC INFO [0:0] [1:1]" *)
 output wire [1 : 0] m_sc_info;
-(* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC PAYLD [147:0] [147:0], xilinx.com:interface:sc:1.0 M01_SC PAYLD [147:0] [295:148]" *)
-output wire [295 : 0] m_sc_payld;
+(* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M00_SC PAYLD [148:0] [148:0], xilinx.com:interface:sc:1.0 M01_SC PAYLD [148:0] [297:149]" *)
+output wire [297 : 0] m_sc_payld;
 
   sc_switchboard_v1_0_6_top #(
-    .C_PAYLD_WIDTH(148),
+    .C_PAYLD_WIDTH(149),
     .K_MAX_INFO_WIDTH(1),
     .C_S_PIPELINES(0),
     .C_M_PIPELINES(1),

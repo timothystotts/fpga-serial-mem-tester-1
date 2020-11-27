@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:35:14 2020
-// Host        : J1STUDY running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri Nov 27 13:32:55 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
-//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_axi_ethernetlite_0_0/system_axi_ethernetlite_0_0_sim_netlist.v
+//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_axi_ethernetlite_0_0/system_axi_ethernetlite_0_0_sim_netlist.v
 // Design      : system_axi_ethernetlite_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_axi_ethernetlite_0_0,axi_ethernetlite,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_ethernetlite,Vivado 2020.1" *) 
+(* CHECK_LICENSE_TYPE = "system_axi_ethernetlite_0_0,axi_ethernetlite,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_ethernetlite,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module system_axi_ethernetlite_0_0
    (s_axi_aclk,
@@ -52,7 +52,7 @@ module system_axi_ethernetlite_0_0
   (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 83333333, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *) input s_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
   (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SUGGESTED_PRIORITY HIGH, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 83333333, ID_WIDTH 0, ADDR_WIDTH 13, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 32, MAX_BURST_LENGTH 1, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [12:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 83333333, ID_WIDTH 0, ADDR_WIDTH 13, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [12:0]s_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
@@ -84,35 +84,35 @@ module system_axi_ethernetlite_0_0
   (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDIO_T" *) output phy_mdio_t;
   (* x_interface_info = "xilinx.com:interface:mdio:1.0 MDIO MDC" *) output phy_mdc;
 
+  wire \<const0> ;
   wire ip2intc_irpt;
-  wire phy_col;
-  wire phy_crs;
-  wire phy_dv;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII COL" *) wire phy_col;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII CRS" *) wire phy_crs;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_DV" *) wire phy_dv;
   wire phy_mdc;
   wire phy_mdio_i;
   wire phy_mdio_o;
   wire phy_mdio_t;
   wire phy_rst_n;
-  (* IBUF_LOW_PWR *) wire phy_rx_clk;
-  wire [3:0]phy_rx_data;
-  wire phy_rx_er;
-  (* IBUF_LOW_PWR *) wire phy_tx_clk;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_CLK" *) wire phy_rx_clk;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RXD" *) wire [3:0]phy_rx_data;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII RX_ER" *) wire phy_rx_er;
+  (* IBUF_LOW_PWR *) (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:interface:mii:1.0 MII TX_CLK" *) 
+  (* x_interface_parameter = "XIL_INTERFACENAME MII, BOARD.ASSOCIATED_PARAM MII_BOARD_INTERFACE" *) wire phy_tx_clk;
   wire [3:0]phy_tx_data;
   wire phy_tx_en;
   wire s_axi_aclk;
   wire [12:0]s_axi_araddr;
-  wire s_axi_aresetn;
+  (* RTL_KEEP = "yes" *) (* x_interface_info = "xilinx.com:signal:reset:1.0 s_axi_aresetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aresetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) wire s_axi_aresetn;
   wire s_axi_arready;
   wire s_axi_arvalid;
   wire [12:0]s_axi_awaddr;
   wire s_axi_awready;
   wire s_axi_awvalid;
   wire s_axi_bready;
-  wire [1:0]s_axi_bresp;
   wire s_axi_bvalid;
   wire [31:0]s_axi_rdata;
   wire s_axi_rready;
-  wire [1:0]s_axi_rresp;
   wire s_axi_rvalid;
   wire [31:0]s_axi_wdata;
   wire s_axi_wready;
@@ -120,8 +120,16 @@ module system_axi_ethernetlite_0_0
   wire s_axi_wvalid;
   wire NLW_U0_s_axi_rlast_UNCONNECTED;
   wire [0:0]NLW_U0_s_axi_bid_UNCONNECTED;
+  wire [1:0]NLW_U0_s_axi_bresp_UNCONNECTED;
   wire [0:0]NLW_U0_s_axi_rid_UNCONNECTED;
+  wire [1:0]NLW_U0_s_axi_rresp_UNCONNECTED;
 
+  assign s_axi_bresp[1] = \<const0> ;
+  assign s_axi_bresp[0] = \<const0> ;
+  assign s_axi_rresp[1] = \<const0> ;
+  assign s_axi_rresp[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
   (* C_DUPLEX = "1" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_INCLUDE_GLOBAL_BUFFERS = "1" *) 
@@ -154,7 +162,7 @@ module system_axi_ethernetlite_0_0
         .phy_tx_data(phy_tx_data),
         .phy_tx_en(phy_tx_en),
         .s_axi_aclk(s_axi_aclk),
-        .s_axi_araddr(s_axi_araddr),
+        .s_axi_araddr({s_axi_araddr[12:2],1'b0,1'b0}),
         .s_axi_arburst({1'b0,1'b0}),
         .s_axi_arcache({1'b0,1'b0,1'b0,1'b0}),
         .s_axi_aresetn(s_axi_aresetn),
@@ -163,7 +171,7 @@ module system_axi_ethernetlite_0_0
         .s_axi_arready(s_axi_arready),
         .s_axi_arsize({1'b0,1'b0,1'b0}),
         .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awaddr({s_axi_awaddr[12:2],1'b0,1'b0}),
         .s_axi_awburst({1'b0,1'b0}),
         .s_axi_awcache({1'b0,1'b0,1'b0,1'b0}),
         .s_axi_awid(1'b0),
@@ -173,13 +181,13 @@ module system_axi_ethernetlite_0_0
         .s_axi_awvalid(s_axi_awvalid),
         .s_axi_bid(NLW_U0_s_axi_bid_UNCONNECTED[0]),
         .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bresp(NLW_U0_s_axi_bresp_UNCONNECTED[1:0]),
         .s_axi_bvalid(s_axi_bvalid),
         .s_axi_rdata(s_axi_rdata),
         .s_axi_rid(NLW_U0_s_axi_rid_UNCONNECTED[0]),
         .s_axi_rlast(NLW_U0_s_axi_rlast_UNCONNECTED),
         .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rresp(NLW_U0_s_axi_rresp_UNCONNECTED[1:0]),
         .s_axi_rvalid(s_axi_rvalid),
         .s_axi_wdata(s_axi_wdata),
         .s_axi_wlast(1'b1),
@@ -192,21 +200,21 @@ endmodule
 module system_axi_ethernetlite_0_0_MacAddrRAM
    (\emac_rx_rd_data_d1_reg[3] ,
     Q,
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ,
+    \Mac_addr_ram_addr_rd[0]_i_15 ,
     s_axi_aclk,
     D,
     mac_addr_ram_we,
     mac_addr_ram_addr);
   output \emac_rx_rd_data_d1_reg[3] ;
   output [0:0]Q;
-  input [2:0]\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ;
+  input [2:0]\Mac_addr_ram_addr_rd[0]_i_15 ;
   input s_axi_aclk;
   input [3:0]D;
   input mac_addr_ram_we;
   input [0:3]mac_addr_ram_addr;
 
   wire [3:0]D;
-  wire [2:0]\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ;
+  wire [2:0]\Mac_addr_ram_addr_rd[0]_i_15 ;
   wire [0:0]Q;
   wire \emac_rx_rd_data_d1_reg[3] ;
   wire [0:3]mac_addr_ram_addr;
@@ -215,7 +223,7 @@ module system_axi_ethernetlite_0_0_MacAddrRAM
 
   system_axi_ethernetlite_0_0_ram16x4 ram16x4i
        (.D(D),
-        .\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 (\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ),
+        .\Mac_addr_ram_addr_rd[0]_i_15 (\Mac_addr_ram_addr_rd[0]_i_15 ),
         .Q(Q),
         .\emac_rx_rd_data_d1_reg[3] (\emac_rx_rd_data_d1_reg[3] ),
         .mac_addr_ram_addr(mac_addr_ram_addr),
@@ -230,9 +238,9 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
     dout,
     empty,
     D20_out,
-    pipeIt,
-    D25_out,
+    D29_out,
     \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ,
+    \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ,
     axi_phy_tx_en_i_p_reg,
     rst,
     s_axi_aclk,
@@ -254,9 +262,9 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
   output [3:0]dout;
   output empty;
   output D20_out;
-  output pipeIt;
-  output D25_out;
+  output D29_out;
   output \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ;
+  output \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ;
   output axi_phy_tx_en_i_p_reg;
   input rst;
   input s_axi_aclk;
@@ -276,7 +284,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
 
   wire D20_out;
   wire D22_out;
-  wire D25_out;
+  wire D29_out;
   wire STATE16A;
   wire STATE9A;
   wire axi_phy_tx_en_i_p;
@@ -290,8 +298,8 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
   wire enblPreamble;
   wire full;
   wire \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ;
+  wire \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ;
   wire phy_tx_clk_core;
-  wire pipeIt;
   wire rd_en;
   wire rst;
   wire s_axi_aclk;
@@ -330,7 +338,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
         .I2(full),
         .I3(checkBusFifoFull),
         .O(D20_out));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT5 #(
     .INIT(32'h444F4444)) 
     STATE16A_i_1
@@ -339,14 +347,14 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
         .I2(wr_rst_busy),
         .I3(full),
         .I4(STATE16A),
-        .O(pipeIt));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+        .O(D29_out));
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT2 #(
     .INIT(4'h1)) 
     STATE8A_i_3
        (.I0(wr_rst_busy),
         .I1(full),
-        .O(\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ));
+        .O(\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ));
   LUT5 #(
     .INIT(32'hFFE0E0E0)) 
     STATE9A_i_1
@@ -355,7 +363,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg
         .I2(checkBusFifoFullSFD),
         .I3(STATE9A),
         .I4(enblPreamble),
-        .O(D25_out));
+        .O(\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ));
   (* CASCADE_HEIGHT = "0" *) 
   (* CDC_SYNC_STAGES = "2" *) 
   (* DOUT_RESET_VALUE = "0" *) 
@@ -424,10 +432,11 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
     \gen_rd_b.doutb_reg_reg[1] ,
     D7_out,
     D6_out,
-    goto_readDestAdrNib1,
     D,
-    \gen_rd_b.doutb_reg_reg[1]_0 ,
     \gdvld.data_valid_std_reg ,
+    \gen_rd_b.doutb_reg_reg[1]_0 ,
+    goto_readDestAdrNib1,
+    \gen_rd_b.doutb_reg_reg[1]_1 ,
     D11_out,
     \gen_rd_b.doutb_reg_reg[4]_0 ,
     \gen_rd_b.doutb_reg_reg[5]_0 ,
@@ -445,11 +454,12 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
     startReadDestAdrNib,
     rxCrcRst,
     Q,
+    \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ,
     startReadDataNib,
+    state17a,
     p_9_in,
     pong_rx_status,
-    \crc_local_reg[3] ,
-    state17a);
+    \crc_local_reg[3] );
   output [5:0]dout;
   output empty;
   output data_valid;
@@ -461,10 +471,11 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
   output \gen_rd_b.doutb_reg_reg[1] ;
   output D7_out;
   output D6_out;
-  output goto_readDestAdrNib1;
-  output [6:0]D;
-  output \gen_rd_b.doutb_reg_reg[1]_0 ;
+  output [11:0]D;
   output \gdvld.data_valid_std_reg ;
+  output \gen_rd_b.doutb_reg_reg[1]_0 ;
+  output goto_readDestAdrNib1;
+  output \gen_rd_b.doutb_reg_reg[1]_1 ;
   output D11_out;
   output [2:0]\gen_rd_b.doutb_reg_reg[4]_0 ;
   output \gen_rd_b.doutb_reg_reg[5]_0 ;
@@ -481,21 +492,23 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
   input s_axi_aresetn;
   input startReadDestAdrNib;
   input rxCrcRst;
-  input [10:0]Q;
+  input [12:0]Q;
+  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ;
   input startReadDataNib;
+  input state17a;
   input [0:0]p_9_in;
   input pong_rx_status;
   input [3:0]\crc_local_reg[3] ;
-  input state17a;
 
-  wire [6:0]D;
+  wire [11:0]D;
   wire D10_out;
   wire D11_out;
   wire D13_out;
   wire D5_out;
   wire D6_out;
   wire D7_out;
-  wire [10:0]Q;
+  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ;
+  wire [12:0]Q;
   wire [0:0]SR;
   wire busFifoData_is_5_d1;
   wire [3:0]\crc_local_reg[3] ;
@@ -507,6 +520,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
   wire \gdvld.data_valid_std_reg ;
   wire \gen_rd_b.doutb_reg_reg[1] ;
   wire \gen_rd_b.doutb_reg_reg[1]_0 ;
+  wire \gen_rd_b.doutb_reg_reg[1]_1 ;
   wire \gen_rd_b.doutb_reg_reg[4] ;
   wire [2:0]\gen_rd_b.doutb_reg_reg[4]_0 ;
   wire \gen_rd_b.doutb_reg_reg[5] ;
@@ -547,84 +561,132 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
   wire \NLW_xpm_fifo_instance.xpm_fifo_async_inst_sbiterr_UNCONNECTED ;
   wire \NLW_xpm_fifo_instance.xpm_fifo_async_inst_underflow_UNCONNECTED ;
 
+  LUT6 #(
+    .INIT(64'hF700F700F700FFFF)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_1 
+       (.I0(data_valid),
+        .I1(startReadDestAdrNib),
+        .I2(dout[0]),
+        .I3(Q[0]),
+        .I4(\FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ),
+        .I5(\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .O(D[0]));
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[10]_i_1 
-       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
-        .I1(Q[7]),
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .I1(Q[9]),
         .I2(\gdvld.data_valid_std_reg ),
-        .I3(Q[8]),
-        .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+        .I3(Q[10]),
+        .O(D[9]));
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[11]_i_1 
        (.I0(\gdvld.data_valid_std_reg ),
-        .I1(Q[9]),
-        .I2(\gen_rd_b.doutb_reg_reg[1]_0 ),
-        .I3(Q[8]),
-        .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
-  LUT4 #(
-    .INIT(16'h4F44)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_2 
-       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
-        .I1(Q[9]),
-        .I2(\gdvld.data_valid_std_reg ),
+        .I1(Q[11]),
+        .I2(\gen_rd_b.doutb_reg_reg[1]_1 ),
         .I3(Q[10]),
-        .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+        .O(D[10]));
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT5 #(
-    .INIT(32'hA0A0B3BF)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 
-       (.I0(data_valid),
-        .I1(dout[1]),
-        .I2(state17a),
+    .INIT(32'h888D8F8F)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 
+       (.I0(state17a),
+        .I1(data_valid),
+        .I2(Q[0]),
         .I3(empty),
-        .I4(Q[0]),
+        .I4(dout[1]),
         .O(\gdvld.data_valid_std_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
-  LUT3 #(
-    .INIT(8'h08)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[1]_i_2 
-       (.I0(data_valid),
-        .I1(startReadDestAdrNib),
-        .I2(dout[0]),
-        .O(goto_readDestAdrNib1));
+  LUT4 #(
+    .INIT(16'hF444)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_2 
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .I1(Q[11]),
+        .I2(Q[12]),
+        .I3(\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .O(D[11]));
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  LUT5 #(
+    .INIT(32'h00FAF8F8)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 
+       (.I0(dout[1]),
+        .I1(empty),
+        .I2(Q[0]),
+        .I3(data_valid),
+        .I4(state17a),
+        .O(\gen_rd_b.doutb_reg_reg[1]_0 ));
+  LUT6 #(
+    .INIT(64'h4444F44444444444)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1 
+       (.I0(\gdvld.data_valid_std_reg ),
+        .I1(Q[1]),
+        .I2(data_valid),
+        .I3(startReadDestAdrNib),
+        .I4(dout[0]),
+        .I5(Q[0]),
+        .O(D[1]));
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[2]_i_1 
-       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_1 ),
         .I1(Q[1]),
         .I2(\gdvld.data_valid_std_reg ),
         .I3(Q[2]),
-        .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+        .O(D[2]));
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[3]_i_1 
        (.I0(\gdvld.data_valid_std_reg ),
         .I1(Q[3]),
-        .I2(\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .I2(\gen_rd_b.doutb_reg_reg[1]_1 ),
         .I3(Q[2]),
-        .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+        .O(D[3]));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[4]_i_1 
        (.I0(\gdvld.data_valid_std_reg ),
         .I1(Q[4]),
-        .I2(\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .I2(\gen_rd_b.doutb_reg_reg[1]_1 ),
         .I3(Q[3]),
-        .O(D[2]));
+        .O(D[4]));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  LUT4 #(
+    .INIT(16'h4F44)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1 
+       (.I0(\gdvld.data_valid_std_reg ),
+        .I1(Q[5]),
+        .I2(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .I3(Q[4]),
+        .O(D[5]));
   LUT4 #(
     .INIT(16'h4F44)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[6]_i_1 
-       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_1 ),
         .I1(Q[5]),
         .I2(\gdvld.data_valid_std_reg ),
         .I3(Q[6]),
-        .O(D[3]));
+        .O(D[6]));
+  LUT4 #(
+    .INIT(16'h88F8)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[8]_i_1 
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .I1(Q[8]),
+        .I2(Q[7]),
+        .I3(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .O(D[7]));
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  LUT4 #(
+    .INIT(16'h4F44)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1 
+       (.I0(\gdvld.data_valid_std_reg ),
+        .I1(Q[9]),
+        .I2(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .I3(Q[8]),
+        .O(D[8]));
   LUT6 #(
     .INIT(64'hFBFBFBFBFBFFFBFB)) 
     \Mac_addr_ram_addr_rd[0]_i_1 
@@ -672,7 +734,15 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
         .I4(\crc_local_reg[3] [3]),
         .I5(dout[2]),
         .O(\gen_rd_b.doutb_reg_reg[4]_0 [2]));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  LUT3 #(
+    .INIT(8'h08)) 
+    \pkt_length_cnt[6]_i_5 
+       (.I0(data_valid),
+        .I1(startReadDestAdrNib),
+        .I2(dout[0]),
+        .O(goto_readDestAdrNib1));
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT5 #(
     .INIT(32'hDF000000)) 
     preamble_i_1
@@ -691,7 +761,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
         .I3(D7_out),
         .I4(rxCrcRst),
         .O(\gen_rd_b.doutb_reg_reg[5] ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h0800)) 
     state0a_i_3
@@ -703,13 +773,12 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
   LUT5 #(
     .INIT(32'h4F444444)) 
     state17a_i_1
-       (.I0(\gen_rd_b.doutb_reg_reg[1]_0 ),
-        .I1(Q[9]),
+       (.I0(\gen_rd_b.doutb_reg_reg[1]_1 ),
+        .I1(Q[11]),
         .I2(dout[0]),
         .I3(dout[1]),
         .I4(startReadDataNib),
         .O(D11_out));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h1FFF)) 
     state17a_i_2
@@ -717,7 +786,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
         .I1(Q[0]),
         .I2(data_valid),
         .I3(state17a),
-        .O(\gen_rd_b.doutb_reg_reg[1]_0 ));
+        .O(\gen_rd_b.doutb_reg_reg[1]_1 ));
   LUT5 #(
     .INIT(32'h70007070)) 
     state1a_i_1
@@ -747,7 +816,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
         .I4(data_valid),
         .I5(empty),
         .O(state2a_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT5 #(
     .INIT(32'h00002000)) 
     state2a_i_3
@@ -767,7 +836,7 @@ module system_axi_ethernetlite_0_0_async_fifo_fg__xdcDup__1
         .I4(dout[5]),
         .I5(state3a_i_2_n_0),
         .O(D13_out));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     state3a_i_2
@@ -1012,10 +1081,12 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
   wire I_AXI_NATIVE_IPIF_n_9;
   wire \NO_LOOPBACK_GEN.INCLUDE_BUFG_GEN.RX_IBUF_INST_n_0 ;
   wire Q;
-  wire XEMAC_I_n_22;
-  wire XEMAC_I_n_29;
-  wire XEMAC_I_n_62;
-  wire XEMAC_I_n_63;
+  wire XEMAC_I_n_17;
+  wire XEMAC_I_n_24;
+  wire XEMAC_I_n_31;
+  wire XEMAC_I_n_64;
+  wire XEMAC_I_n_91;
+  wire XEMAC_I_n_92;
   wire [12:2]bus2ip_addr;
   wire bus_rst;
   wire bus_rst_rx_sync_core;
@@ -1039,7 +1110,8 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
   wire p_31_in166_in;
   wire [31:31]p_5_in;
   wire p_7_in94_in;
-  wire [3:3]p_9_in;
+  wire [3:0]p_9_in;
+  wire phy_col;
   wire phy_crs;
   wire phy_dv;
   wire phy_dv_reg;
@@ -1054,17 +1126,17 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
   wire phy_rx_er_reg;
   wire phy_tx_clk;
   wire phy_tx_clk_core;
-  wire [3:0]phy_tx_data;
+  (* RTL_KEEP = "yes" *) wire [3:0]phy_tx_data;
   wire [3:0]phy_tx_data_i;
   wire [3:0]phy_tx_data_i_cdc;
-  wire phy_tx_en;
+  (* RTL_KEEP = "yes" *) wire phy_tx_en;
   wire phy_tx_en_i;
   wire phy_tx_en_i_cdc;
-  wire [15:1]ping_pkt_lenth;
+  wire [15:0]ping_pkt_lenth;
   wire ping_pkt_lenth0;
   wire ping_soft_status;
   wire pong_mac_program1;
-  wire [15:1]pong_pkt_lenth;
+  wire [15:0]pong_pkt_lenth;
   wire pong_pkt_lenth0;
   wire pong_rx_status;
   wire pong_soft_status;
@@ -1081,8 +1153,8 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
   wire s_axi_bready;
   wire s_axi_bvalid;
   wire [31:0]s_axi_rdata;
-  wire s_axi_rlast;
   wire s_axi_rready;
+  wire s_axi_rvalid;
   wire [31:0]s_axi_wdata;
   wire s_axi_wready;
   wire [3:0]s_axi_wstrb;
@@ -1095,9 +1167,9 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
   assign s_axi_bresp[1] = \<const0> ;
   assign s_axi_bresp[0] = \<const0> ;
   assign s_axi_rid[0] = \<const0> ;
+  assign s_axi_rlast = \<const0> ;
   assign s_axi_rresp[1] = \<const0> ;
   assign s_axi_rresp[0] = \<const0> ;
-  assign s_axi_rvalid = s_axi_rlast;
   system_axi_ethernetlite_0_0_cdc_sync BUS_RST_RX_SYNC_CORE_I
        (.SS(bus_rst),
         .scndry_out(bus_rst_rx_sync_core),
@@ -1261,22 +1333,23 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .R(bus_rst_tx_sync_core));
   system_axi_ethernetlite_0_0_axi_interface I_AXI_NATIVE_IPIF
        (.\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[11]_0 (I_AXI_NATIVE_IPIF_n_58),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 (I_AXI_NATIVE_IPIF_n_56),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 (I_AXI_NATIVE_IPIF_n_57),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 (I_AXI_NATIVE_IPIF_n_23),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 (I_AXI_NATIVE_IPIF_n_56),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_2 (I_AXI_NATIVE_IPIF_n_57),
         .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_0 (I_AXI_NATIVE_IPIF_n_44),
         .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 (I_AXI_NATIVE_IPIF_n_45),
         .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 (I_AXI_NATIVE_IPIF_n_62),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 (I_AXI_NATIVE_IPIF_n_25),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 (mdio_wr_data_reg0),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 (pong_pkt_lenth0),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 (I_AXI_NATIVE_IPIF_n_67),
-        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 (I_AXI_NATIVE_IPIF_n_69),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 (I_AXI_NATIVE_IPIF_n_69),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 (I_AXI_NATIVE_IPIF_n_24),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 (I_AXI_NATIVE_IPIF_n_25),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 (mdio_wr_data_reg0),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 (pong_pkt_lenth0),
+        .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 (I_AXI_NATIVE_IPIF_n_67),
         .\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_5 (I_AXI_NATIVE_IPIF_n_71),
-        .\AXI4_LITE_IF_GEN.read_in_prog_reg_0 (I_AXI_NATIVE_IPIF_n_23),
-        .\AXI4_LITE_IF_GEN.read_in_prog_reg_1 (I_AXI_NATIVE_IPIF_n_24),
-        .\AXI4_LITE_IF_GEN.read_in_prog_reg_2 (I_AXI_NATIVE_IPIF_n_47),
-        .\AXI4_LITE_IF_GEN.read_in_prog_reg_3 (I_AXI_NATIVE_IPIF_n_68),
-        .\AXI4_LITE_IF_GEN.read_in_prog_reg_4 (I_AXI_NATIVE_IPIF_n_70),
+        .\AXI4_LITE_IF_GEN.read_in_prog_reg_0 (I_AXI_NATIVE_IPIF_n_26),
+        .\AXI4_LITE_IF_GEN.read_in_prog_reg_1 (I_AXI_NATIVE_IPIF_n_47),
+        .\AXI4_LITE_IF_GEN.read_in_prog_reg_2 (I_AXI_NATIVE_IPIF_n_68),
+        .\AXI4_LITE_IF_GEN.read_in_prog_reg_3 (I_AXI_NATIVE_IPIF_n_70),
         .\AXI4_LITE_IF_GEN.write_in_prog_reg_0 (I_AXI_NATIVE_IPIF_n_11),
         .D(ip2bus_data),
         .E(ping_pkt_lenth0),
@@ -1288,14 +1361,12 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .\MDIO_GEN.mdio_data_out_reg[15] (mdio_wr_data_reg),
         .Q(bus2ip_addr),
         .SS(bus_rst),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] (I_AXI_NATIVE_IPIF_n_31),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] (I_AXI_NATIVE_IPIF_n_32),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] (I_AXI_NATIVE_IPIF_n_33),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] (I_AXI_NATIVE_IPIF_n_35),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] (I_AXI_NATIVE_IPIF_n_27),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] (I_AXI_NATIVE_IPIF_n_28),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] (I_AXI_NATIVE_IPIF_n_29),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] (I_AXI_NATIVE_IPIF_n_30),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] (I_AXI_NATIVE_IPIF_n_27),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] (I_AXI_NATIVE_IPIF_n_28),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] (I_AXI_NATIVE_IPIF_n_29),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] (I_AXI_NATIVE_IPIF_n_30),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] (I_AXI_NATIVE_IPIF_n_34),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] (I_AXI_NATIVE_IPIF_n_33),
         .enb(I_AXI_NATIVE_IPIF_n_55),
         .mdio_en_i0(mdio_en_i0),
         .mdio_rd_data_reg(mdio_rd_data_reg),
@@ -1309,35 +1380,38 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .p_31_in166_in(p_31_in166_in),
         .p_5_in(p_5_in),
         .p_7_in94_in(p_7_in94_in),
-        .p_9_in(p_9_in),
-        .\ping_pkt_lenth_reg[13] (I_AXI_NATIVE_IPIF_n_34),
-        .\ping_pkt_lenth_reg[15] (I_AXI_NATIVE_IPIF_n_36),
+        .p_9_in({p_9_in[3],p_9_in[0]}),
+        .\ping_pkt_lenth_reg[12] (I_AXI_NATIVE_IPIF_n_32),
+        .\ping_pkt_lenth_reg[14] (I_AXI_NATIVE_IPIF_n_31),
+        .\ping_pkt_lenth_reg[6] (I_AXI_NATIVE_IPIF_n_36),
+        .\ping_pkt_lenth_reg[7] (I_AXI_NATIVE_IPIF_n_35),
         .ping_soft_status(ping_soft_status),
         .pong_mac_program1(pong_mac_program1),
         .pong_rx_status(pong_rx_status),
         .pong_soft_status(pong_soft_status),
         .reg_access(reg_access),
         .reg_data_out0__0(reg_data_out0__0),
+        .\reg_data_out[4]_i_2_0 (XEMAC_I_n_17),
         .\reg_data_out_reg[0] (I_AXI_NATIVE_IPIF_n_9),
-        .\reg_data_out_reg[0]_0 (XEMAC_I_n_29),
-        .\reg_data_out_reg[0]_1 (XEMAC_I_n_63),
-        .\reg_data_out_reg[15] (ping_pkt_lenth),
-        .\reg_data_out_reg[15]_0 (pong_pkt_lenth),
+        .\reg_data_out_reg[0]_0 (XEMAC_I_n_31),
+        .\reg_data_out_reg[15] ({pong_pkt_lenth[15:6],pong_pkt_lenth[4],pong_pkt_lenth[1:0]}),
+        .\reg_data_out_reg[15]_0 ({ping_pkt_lenth[15:6],ping_pkt_lenth[4],ping_pkt_lenth[1:0]}),
         .\reg_data_out_reg[1] (I_AXI_NATIVE_IPIF_n_8),
         .\reg_data_out_reg[2] (I_AXI_NATIVE_IPIF_n_53),
+        .\reg_data_out_reg[2]_0 (XEMAC_I_n_92),
         .\reg_data_out_reg[30] (I_AXI_NATIVE_IPIF_n_5),
-        .\reg_data_out_reg[31] (XEMAC_I_n_22),
+        .\reg_data_out_reg[31] (XEMAC_I_n_24),
         .\reg_data_out_reg[3] (I_AXI_NATIVE_IPIF_n_7),
+        .\reg_data_out_reg[3]_0 (XEMAC_I_n_64),
         .\reg_data_out_reg[4] (I_AXI_NATIVE_IPIF_n_6),
-        .\reg_data_out_reg[4]_0 (XEMAC_I_n_62),
         .\reg_data_out_reg[5] (I_AXI_NATIVE_IPIF_n_54),
         .\reg_data_out_reg[5]_0 (data7),
+        .\reg_data_out_reg[5]_1 (XEMAC_I_n_91),
         .rx_intr_en0(rx_intr_en0),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr[12:2]),
         .s_axi_aresetn(s_axi_aresetn),
         .s_axi_aresetn_0(I_AXI_NATIVE_IPIF_n_3),
-        .s_axi_aresetn_1(I_AXI_NATIVE_IPIF_n_26),
         .s_axi_arready(s_axi_arready),
         .s_axi_arvalid(s_axi_arvalid),
         .s_axi_awaddr(s_axi_awaddr[12:2]),
@@ -1345,8 +1419,8 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .s_axi_bready(s_axi_bready),
         .s_axi_bvalid(s_axi_bvalid),
         .s_axi_rdata(s_axi_rdata),
-        .s_axi_rlast(s_axi_rlast),
         .s_axi_rready(s_axi_rready),
+        .s_axi_rvalid(s_axi_rvalid),
         .s_axi_wdata({s_axi_wdata[31],s_axi_wdata[3]}),
         .\s_axi_wdata[31] (I_AXI_NATIVE_IPIF_n_49),
         .\s_axi_wdata[31]_0 (I_AXI_NATIVE_IPIF_n_50),
@@ -1391,9 +1465,9 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .D(ip2bus_data),
         .E(mdio_phy_addr0),
         .\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] (mdio_rd_data_reg),
-        .\MDIO_GEN.mdio_clk_i_reg_0 (phy_mdc),
         .\MDIO_GEN.mdio_data_out_reg[10]_0 (I_AXI_NATIVE_IPIF_n_69),
-        .\MDIO_GEN.mdio_data_out_reg[10]_1 (I_AXI_NATIVE_IPIF_n_44),
+        .\MDIO_GEN.mdio_data_out_reg[10]_1 (I_AXI_NATIVE_IPIF_n_62),
+        .\MDIO_GEN.mdio_data_out_reg[10]_2 (I_AXI_NATIVE_IPIF_n_44),
         .\MDIO_GEN.mdio_data_out_reg[11]_0 (I_AXI_NATIVE_IPIF_n_70),
         .\MDIO_GEN.mdio_data_out_reg[11]_1 (I_AXI_NATIVE_IPIF_n_68),
         .\MDIO_GEN.mdio_data_out_reg[11]_2 (I_AXI_NATIVE_IPIF_n_61),
@@ -1402,7 +1476,6 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .\MDIO_GEN.mdio_data_out_reg[14]_0 (I_AXI_NATIVE_IPIF_n_65),
         .\MDIO_GEN.mdio_data_out_reg[15]_0 (I_AXI_NATIVE_IPIF_n_66),
         .\MDIO_GEN.mdio_data_out_reg[3]_0 (I_AXI_NATIVE_IPIF_n_67),
-        .\MDIO_GEN.mdio_data_out_reg[9]_0 (I_AXI_NATIVE_IPIF_n_62),
         .\MDIO_GEN.mdio_en_i_reg_0 (p_0_in),
         .\MDIO_GEN.mdio_en_i_reg_1 (I_AXI_NATIVE_IPIF_n_48),
         .\MDIO_GEN.mdio_wr_data_reg_reg[15]_0 (mdio_wr_data_reg),
@@ -1411,9 +1484,10 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .\RX_PONG_REG_GEN.pong_rx_status_reg_0 (I_AXI_NATIVE_IPIF_n_71),
         .\RX_PONG_REG_GEN.pong_rx_status_reg_1 (I_AXI_NATIVE_IPIF_n_11),
         .SS(bus_rst),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[0]_0 (XEMAC_I_n_63),
-        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 (pong_pkt_lenth),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ({pong_pkt_lenth[15:6],pong_pkt_lenth[4],pong_pkt_lenth[1:0]}),
         .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 (pong_pkt_lenth0),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[2]_0 (XEMAC_I_n_92),
+        .\TX_PONG_REG_GEN.pong_pkt_lenth_reg[5]_0 (XEMAC_I_n_91),
         .\TX_PONG_REG_GEN.pong_soft_status_reg_0 (I_AXI_NATIVE_IPIF_n_50),
         .din({Q,\IOFFS_GEN[2].RX_FF_I_n_0 ,\IOFFS_GEN[1].RX_FF_I_n_0 ,\IOFFS_GEN[0].RX_FF_I_n_0 ,phy_dv_reg,phy_rx_er_reg}),
         .enb(I_AXI_NATIVE_IPIF_n_55),
@@ -1422,8 +1496,9 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .\gen_wr_b.gen_word_wide.mem_reg_1 (I_AXI_NATIVE_IPIF_n_56),
         .gie_enable_reg_0(I_AXI_NATIVE_IPIF_n_49),
         .ip2intc_irpt(ip2intc_irpt),
-        .loopback_en_reg_0(XEMAC_I_n_62),
+        .loopback_en_reg_0(XEMAC_I_n_17),
         .mdio_en_i0(mdio_en_i0),
+        .out(phy_mdc),
         .p_13_in113_in(p_13_in113_in),
         .p_15_in(p_15_in),
         .p_17_in({p_17_in[3],p_17_in[1:0]}),
@@ -1433,12 +1508,14 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .p_31_in166_in(p_31_in166_in),
         .p_5_in(p_5_in),
         .p_7_in94_in(p_7_in94_in),
+        .p_9_in({p_9_in[3],p_9_in[0]}),
+        .phy_col(phy_col),
         .phy_crs(phy_crs),
         .phy_mdio_i(phy_mdio_i),
         .phy_mdio_o(phy_mdio_o),
         .phy_mdio_t(phy_mdio_t),
         .phy_tx_clk_core(phy_tx_clk_core),
-        .\ping_pkt_lenth_reg[15]_0 (ping_pkt_lenth),
+        .\ping_pkt_lenth_reg[15]_0 ({ping_pkt_lenth[15:6],ping_pkt_lenth[4],ping_pkt_lenth[1:0]}),
         .\ping_pkt_lenth_reg[15]_1 (ping_pkt_lenth0),
         .ping_soft_status(ping_soft_status),
         .ping_soft_status_reg_0(I_AXI_NATIVE_IPIF_n_51),
@@ -1450,32 +1527,32 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .reg_access(reg_access),
         .reg_access_reg_0(I_AXI_NATIVE_IPIF_n_47),
         .reg_data_out0__0(reg_data_out0__0),
-        .\reg_data_out[0]_i_2 (I_AXI_NATIVE_IPIF_n_24),
-        .\reg_data_out[0]_i_2_0 (I_AXI_NATIVE_IPIF_n_25),
-        .\reg_data_out_reg[0]_0 (XEMAC_I_n_29),
+        .\reg_data_out[2]_i_2 (I_AXI_NATIVE_IPIF_n_24),
+        .\reg_data_out[2]_i_2_0 (I_AXI_NATIVE_IPIF_n_25),
+        .\reg_data_out[3]_i_3 (I_AXI_NATIVE_IPIF_n_23),
+        .\reg_data_out_reg[0]_0 (XEMAC_I_n_31),
         .\reg_data_out_reg[0]_1 (I_AXI_NATIVE_IPIF_n_9),
-        .\reg_data_out_reg[10]_0 (I_AXI_NATIVE_IPIF_n_31),
-        .\reg_data_out_reg[11]_0 (I_AXI_NATIVE_IPIF_n_32),
-        .\reg_data_out_reg[12]_0 (I_AXI_NATIVE_IPIF_n_33),
-        .\reg_data_out_reg[13]_0 (I_AXI_NATIVE_IPIF_n_34),
-        .\reg_data_out_reg[14]_0 (I_AXI_NATIVE_IPIF_n_35),
-        .\reg_data_out_reg[15]_0 (I_AXI_NATIVE_IPIF_n_36),
+        .\reg_data_out_reg[10]_0 (I_AXI_NATIVE_IPIF_n_27),
+        .\reg_data_out_reg[11]_0 (I_AXI_NATIVE_IPIF_n_28),
+        .\reg_data_out_reg[12]_0 (I_AXI_NATIVE_IPIF_n_32),
+        .\reg_data_out_reg[13]_0 (I_AXI_NATIVE_IPIF_n_29),
+        .\reg_data_out_reg[14]_0 (I_AXI_NATIVE_IPIF_n_31),
+        .\reg_data_out_reg[15]_0 (I_AXI_NATIVE_IPIF_n_30),
         .\reg_data_out_reg[1]_0 (I_AXI_NATIVE_IPIF_n_8),
         .\reg_data_out_reg[2]_0 (I_AXI_NATIVE_IPIF_n_53),
         .\reg_data_out_reg[30]_0 (I_AXI_NATIVE_IPIF_n_5),
-        .\reg_data_out_reg[31]_0 (XEMAC_I_n_22),
+        .\reg_data_out_reg[31]_0 (XEMAC_I_n_24),
         .\reg_data_out_reg[31]_1 (I_AXI_NATIVE_IPIF_n_3),
         .\reg_data_out_reg[3]_0 (I_AXI_NATIVE_IPIF_n_7),
         .\reg_data_out_reg[4]_0 (I_AXI_NATIVE_IPIF_n_6),
-        .\reg_data_out_reg[4]_1 (I_AXI_NATIVE_IPIF_n_23),
         .\reg_data_out_reg[5]_0 (I_AXI_NATIVE_IPIF_n_54),
         .\reg_data_out_reg[6]_0 (I_AXI_NATIVE_IPIF_n_26),
-        .\reg_data_out_reg[6]_1 (I_AXI_NATIVE_IPIF_n_27),
-        .\reg_data_out_reg[7]_0 (I_AXI_NATIVE_IPIF_n_28),
-        .\reg_data_out_reg[8]_0 (I_AXI_NATIVE_IPIF_n_29),
-        .\reg_data_out_reg[9]_0 (I_AXI_NATIVE_IPIF_n_30),
+        .\reg_data_out_reg[6]_1 (I_AXI_NATIVE_IPIF_n_36),
+        .\reg_data_out_reg[7]_0 (I_AXI_NATIVE_IPIF_n_35),
+        .\reg_data_out_reg[8]_0 (I_AXI_NATIVE_IPIF_n_34),
+        .\reg_data_out_reg[9]_0 (I_AXI_NATIVE_IPIF_n_33),
         .rx_intr_en0(rx_intr_en0),
-        .rx_intr_en_reg_0(p_9_in),
+        .rx_intr_en_reg_0(XEMAC_I_n_64),
         .rx_intr_en_reg_1(I_AXI_NATIVE_IPIF_n_59),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_aresetn(s_axi_aresetn),
@@ -1487,8 +1564,8 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite
         .wr_clk(phy_rx_clk_core));
 endmodule
 
-(* ORIG_REF_NAME = "axi_ethernetlite_v3_0_20_emac" *) 
-module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
+(* ORIG_REF_NAME = "axi_ethernetlite_v3_0_21_emac" *) 
+module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_21_emac
    (prmry_in,
     dout,
     tx_idle,
@@ -1518,6 +1595,7 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
     wr_clk,
     din,
     phy_tx_clk_core,
+    phy_col,
     phy_crs,
     s_axi_aresetn,
     rx_pong_ping_l,
@@ -1533,7 +1611,6 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
     \status_reg_reg[5] ,
     transmit_start_reg_reg_0,
     p_5_in,
-    IP2INTC_IRPT_REG_I,
     p_17_in,
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ,
     rx_done_d1,
@@ -1573,10 +1650,11 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   input wr_clk;
   input [5:0]din;
   input phy_tx_clk_core;
+  input phy_col;
   input phy_crs;
   input s_axi_aresetn;
   input rx_pong_ping_l;
-  input [0:0]p_9_in;
+  input [1:0]p_9_in;
   input pong_rx_status;
   input [15:0]Q;
   input tx_pong_ping_l;
@@ -1588,7 +1666,6 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   input \status_reg_reg[5] ;
   input transmit_start_reg_reg_0;
   input [0:0]p_5_in;
-  input [0:0]IP2INTC_IRPT_REG_I;
   input [0:0]p_17_in;
   input \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
   input rx_done_d1;
@@ -1606,7 +1683,6 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   wire \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
   wire \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
   wire \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
-  wire [0:0]IP2INTC_IRPT_REG_I;
   wire NODEMACADDRRAMI_n_0;
   wire Phy_tx_clk_axi_d;
   wire [15:0]Q;
@@ -1628,7 +1704,10 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   wire mac_addr_ram_we;
   wire [0:0]p_17_in;
   wire [0:0]p_5_in;
-  wire [0:0]p_9_in;
+  wire [1:0]p_9_in;
+  wire phy_col;
+  wire phy_col_d1;
+  wire phy_col_d2;
   wire phy_crs;
   wire phy_crs_d1;
   wire phy_crs_d2;
@@ -1733,6 +1812,26 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
     .INIT(1'b0)) 
+    COLLISION_SYNC_1
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(phy_col),
+        .Q(phy_col_d1),
+        .R(prmry_in));
+  (* XILINX_LEGACY_PRIM = "FDR" *) 
+  (* box_type = "PRIMITIVE" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    COLLISION_SYNC_2
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(phy_col_d1),
+        .Q(phy_col_d2),
+        .R(prmry_in));
+  (* XILINX_LEGACY_PRIM = "FDR" *) 
+  (* box_type = "PRIMITIVE" *) 
+  FDRE #(
+    .INIT(1'b0)) 
     C_SENSE_SYNC_1
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -1751,7 +1850,7 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
         .R(prmry_in));
   system_axi_ethernetlite_0_0_MacAddrRAM NODEMACADDRRAMI
        (.D(D),
-        .\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 (emac_rx_rd_data_d1),
+        .\Mac_addr_ram_addr_rd[0]_i_15 (emac_rx_rd_data_d1),
         .Q(mac_addr_ram_data),
         .\emac_rx_rd_data_d1_reg[3] (NODEMACADDRRAMI_n_0),
         .mac_addr_ram_addr(mac_addr_ram_addr),
@@ -1760,9 +1859,8 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
   system_axi_ethernetlite_0_0_receive RX
        (.D(dout),
         .D_2(D_2),
-        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[5] (NODEMACADDRRAMI_n_0),
-        .IP2INTC_IRPT_REG_I(IP2INTC_IRPT_REG_I),
-        .IP2INTC_IRPT_REG_I_0(txDone),
+        .IP2INTC_IRPT_REG_I(txDone),
+        .\Mac_addr_ram_addr_rd[0]_i_8 (NODEMACADDRRAMI_n_0),
         .\Mac_addr_ram_addr_rd_reg[0] ({mac_addr_ram_addr_rd[0],mac_addr_ram_addr_rd[1],mac_addr_ram_addr_rd[2],mac_addr_ram_addr_rd[3]}),
         .Q(mac_addr_ram_data),
         .\RX_PONG_REG_GEN.pong_rx_status_reg (\RX_PONG_REG_GEN.pong_rx_status_reg ),
@@ -1805,6 +1903,7 @@ module system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac
         .STATE17A(txDone),
         .STATE8A(TX_n_10),
         .axi_phy_tx_en_i_p_reg_0(axi_phy_tx_en_i_p_reg),
+        .in0(phy_col_d2),
         .loopback_en_reg(loopback_en_reg),
         .mac_addr_ram_addr_wr(mac_addr_ram_addr_wr),
         .mac_addr_ram_we(mac_addr_ram_we),
@@ -2086,7 +2185,7 @@ endmodule
 module system_axi_ethernetlite_0_0_axi_interface
    (s_axi_wready,
     s_axi_bvalid,
-    s_axi_rlast,
+    s_axi_rvalid,
     s_axi_aresetn_0,
     reg_data_out0__0,
     \reg_data_out_reg[30] ,
@@ -2097,31 +2196,31 @@ module system_axi_ethernetlite_0_0_axi_interface
     tx_intr_en0,
     \AXI4_LITE_IF_GEN.write_in_prog_reg_0 ,
     Q,
-    \AXI4_LITE_IF_GEN.read_in_prog_reg_0 ,
-    \AXI4_LITE_IF_GEN.read_in_prog_reg_1 ,
+    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ,
-    s_axi_aresetn_1,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ,
+    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ,
+    \AXI4_LITE_IF_GEN.read_in_prog_reg_0 ,
     \TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] ,
     \TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] ,
-    \ping_pkt_lenth_reg[13] ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] ,
-    \ping_pkt_lenth_reg[15] ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] ,
+    \ping_pkt_lenth_reg[14] ,
+    \ping_pkt_lenth_reg[12] ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ,
+    \ping_pkt_lenth_reg[7] ,
+    \ping_pkt_lenth_reg[6] ,
     E,
     rx_intr_en0,
-    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 ,
+    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ,
     pong_mac_program1,
     mdio_en_i0,
     s_axi_wvalid_0,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_0 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 ,
     s_axi_arready,
-    \AXI4_LITE_IF_GEN.read_in_prog_reg_2 ,
+    \AXI4_LITE_IF_GEN.read_in_prog_reg_1 ,
     \s_axi_wdata[3] ,
     \s_axi_wdata[31] ,
     \s_axi_wdata[31]_0 ,
@@ -2130,8 +2229,8 @@ module system_axi_ethernetlite_0_0_axi_interface
     \reg_data_out_reg[2] ,
     \reg_data_out_reg[5] ,
     enb,
-    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 ,
+    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_2 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[11]_0 ,
     \s_axi_wdata[3]_1 ,
     web,
@@ -2141,10 +2240,10 @@ module system_axi_ethernetlite_0_0_axi_interface
     \MDIO_CAPTURE_DATA[13].MDIO_RD_DATA_reg[13] ,
     \MDIO_CAPTURE_DATA[14].MDIO_RD_DATA_reg[14] ,
     \MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ,
-    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ,
-    \AXI4_LITE_IF_GEN.read_in_prog_reg_3 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ,
-    \AXI4_LITE_IF_GEN.read_in_prog_reg_4 ,
+    \AXI4_LITE_IF_GEN.read_in_prog_reg_2 ,
+    \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 ,
+    \AXI4_LITE_IF_GEN.read_in_prog_reg_3 ,
     \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_5 ,
     s_axi_rdata,
     SS,
@@ -2153,19 +2252,21 @@ module system_axi_ethernetlite_0_0_axi_interface
     \reg_data_out_reg[31] ,
     p_181_in,
     p_25_in148_in,
-    \reg_data_out_reg[4]_0 ,
     p_19_in,
     p_7_in94_in,
     \reg_data_out_reg[0]_0 ,
-    \reg_data_out_reg[0]_1 ,
-    p_17_in,
     p_15_in,
+    p_17_in,
     \reg_data_out_reg[5]_0 ,
+    \reg_data_out[4]_i_2_0 ,
     p_5_in,
     pong_soft_status,
     ping_soft_status,
     \reg_data_out_reg[15] ,
     \reg_data_out_reg[15]_0 ,
+    \reg_data_out_reg[3]_0 ,
+    \reg_data_out_reg[2]_0 ,
+    \reg_data_out_reg[5]_1 ,
     pong_rx_status,
     s_axi_wstrb,
     s_axi_wvalid,
@@ -2186,7 +2287,7 @@ module system_axi_ethernetlite_0_0_axi_interface
     D);
   output s_axi_wready;
   output s_axi_bvalid;
-  output s_axi_rlast;
+  output s_axi_rvalid;
   output s_axi_aresetn_0;
   output reg_data_out0__0;
   output \reg_data_out_reg[30] ;
@@ -2197,31 +2298,31 @@ module system_axi_ethernetlite_0_0_axi_interface
   output tx_intr_en0;
   output \AXI4_LITE_IF_GEN.write_in_prog_reg_0 ;
   output [10:0]Q;
-  output \AXI4_LITE_IF_GEN.read_in_prog_reg_0 ;
-  output \AXI4_LITE_IF_GEN.read_in_prog_reg_1 ;
+  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ;
-  output s_axi_aresetn_1;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] ;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] ;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ;
+  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ;
+  output \AXI4_LITE_IF_GEN.read_in_prog_reg_0 ;
   output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] ;
   output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] ;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] ;
-  output \ping_pkt_lenth_reg[13] ;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] ;
-  output \ping_pkt_lenth_reg[15] ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] ;
+  output \ping_pkt_lenth_reg[14] ;
+  output \ping_pkt_lenth_reg[12] ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ;
+  output \ping_pkt_lenth_reg[7] ;
+  output \ping_pkt_lenth_reg[6] ;
   output [0:0]E;
   output rx_intr_en0;
-  output [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ;
   output [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 ;
+  output [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ;
   output pong_mac_program1;
   output mdio_en_i0;
   output [0:0]s_axi_wvalid_0;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_0 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 ;
   output s_axi_arready;
-  output \AXI4_LITE_IF_GEN.read_in_prog_reg_2 ;
+  output \AXI4_LITE_IF_GEN.read_in_prog_reg_1 ;
   output \s_axi_wdata[3] ;
   output \s_axi_wdata[31] ;
   output \s_axi_wdata[31]_0 ;
@@ -2230,8 +2331,8 @@ module system_axi_ethernetlite_0_0_axi_interface
   output \reg_data_out_reg[2] ;
   output \reg_data_out_reg[5] ;
   output enb;
-  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 ;
+  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_2 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[11]_0 ;
   output \s_axi_wdata[3]_1 ;
   output [0:0]web;
@@ -2241,10 +2342,10 @@ module system_axi_ethernetlite_0_0_axi_interface
   output \MDIO_CAPTURE_DATA[13].MDIO_RD_DATA_reg[13] ;
   output \MDIO_CAPTURE_DATA[14].MDIO_RD_DATA_reg[14] ;
   output \MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ;
-  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ;
-  output \AXI4_LITE_IF_GEN.read_in_prog_reg_3 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ;
-  output [0:0]\AXI4_LITE_IF_GEN.read_in_prog_reg_4 ;
+  output \AXI4_LITE_IF_GEN.read_in_prog_reg_2 ;
+  output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 ;
+  output [0:0]\AXI4_LITE_IF_GEN.read_in_prog_reg_3 ;
   output \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_5 ;
   output [31:0]s_axi_rdata;
   input [0:0]SS;
@@ -2253,23 +2354,25 @@ module system_axi_ethernetlite_0_0_axi_interface
   input \reg_data_out_reg[31] ;
   input p_181_in;
   input p_25_in148_in;
-  input \reg_data_out_reg[4]_0 ;
   input p_19_in;
   input p_7_in94_in;
   input \reg_data_out_reg[0]_0 ;
-  input \reg_data_out_reg[0]_1 ;
-  input [2:0]p_17_in;
   input [1:0]p_15_in;
+  input [2:0]p_17_in;
   input [5:0]\reg_data_out_reg[5]_0 ;
+  input \reg_data_out[4]_i_2_0 ;
   input [0:0]p_5_in;
   input pong_soft_status;
   input ping_soft_status;
-  input [14:0]\reg_data_out_reg[15] ;
-  input [14:0]\reg_data_out_reg[15]_0 ;
+  input [12:0]\reg_data_out_reg[15] ;
+  input [12:0]\reg_data_out_reg[15]_0 ;
+  input \reg_data_out_reg[3]_0 ;
+  input \reg_data_out_reg[2]_0 ;
+  input \reg_data_out_reg[5]_1 ;
   input pong_rx_status;
   input [3:0]s_axi_wstrb;
   input s_axi_wvalid;
-  input [0:0]p_9_in;
+  input [1:0]p_9_in;
   input s_axi_arvalid;
   input s_axi_awvalid;
   input [10:0]s_axi_araddr;
@@ -2289,13 +2392,15 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[11]_0 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 ;
+  wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_2 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_0 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 ;
+  wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ;
-  wire [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ;
+  wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ;
   wire [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 ;
-  wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ;
+  wire [0:0]\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ;
   wire \AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_5 ;
   wire \AXI4_LITE_IF_GEN.bvalid_i_1_n_0 ;
@@ -2303,8 +2408,7 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire \AXI4_LITE_IF_GEN.read_in_prog_reg_0 ;
   wire \AXI4_LITE_IF_GEN.read_in_prog_reg_1 ;
   wire \AXI4_LITE_IF_GEN.read_in_prog_reg_2 ;
-  wire \AXI4_LITE_IF_GEN.read_in_prog_reg_3 ;
-  wire [0:0]\AXI4_LITE_IF_GEN.read_in_prog_reg_4 ;
+  wire [0:0]\AXI4_LITE_IF_GEN.read_in_prog_reg_3 ;
   wire \AXI4_LITE_IF_GEN.read_req_i_1_n_0 ;
   wire \AXI4_LITE_IF_GEN.rvalid_i_1_n_0 ;
   wire \AXI4_LITE_IF_GEN.write_in_prog_i_1_n_0 ;
@@ -2323,10 +2427,8 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire \TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ;
   wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] ;
   wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] ;
-  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] ;
-  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] ;
-  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] ;
-  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] ;
+  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] ;
+  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] ;
   wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ;
   wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ;
   wire \XEMAC_I/reg_access_i ;
@@ -2349,10 +2451,12 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire p_31_in166_in;
   wire [0:0]p_5_in;
   wire p_7_in94_in;
-  wire [0:0]p_9_in;
+  wire [1:0]p_9_in;
   wire \ping_pkt_lenth[15]_i_3_n_0 ;
-  wire \ping_pkt_lenth_reg[13] ;
-  wire \ping_pkt_lenth_reg[15] ;
+  wire \ping_pkt_lenth_reg[12] ;
+  wire \ping_pkt_lenth_reg[14] ;
+  wire \ping_pkt_lenth_reg[6] ;
+  wire \ping_pkt_lenth_reg[7] ;
   wire ping_soft_status;
   wire pong_mac_program1;
   wire pong_rx_status;
@@ -2363,63 +2467,61 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire reg_data_out0__0;
   wire \reg_data_out[0]_i_2_n_0 ;
   wire \reg_data_out[0]_i_3_n_0 ;
+  wire \reg_data_out[0]_i_4_n_0 ;
   wire \reg_data_out[0]_i_5_n_0 ;
-  wire \reg_data_out[12]_i_2_n_0 ;
+  wire \reg_data_out[0]_i_6_n_0 ;
+  wire \reg_data_out[0]_i_7_n_0 ;
+  wire \reg_data_out[13]_i_2_n_0 ;
   wire \reg_data_out[15]_i_10_n_0 ;
-  wire \reg_data_out[15]_i_11_n_0 ;
-  wire \reg_data_out[15]_i_12_n_0 ;
   wire \reg_data_out[15]_i_13_n_0 ;
-  wire \reg_data_out[15]_i_14_n_0 ;
   wire \reg_data_out[15]_i_4_n_0 ;
+  wire \reg_data_out[15]_i_5_n_0 ;
+  wire \reg_data_out[15]_i_6_n_0 ;
   wire \reg_data_out[15]_i_7_n_0 ;
   wire \reg_data_out[15]_i_8_n_0 ;
   wire \reg_data_out[15]_i_9_n_0 ;
   wire \reg_data_out[1]_i_2_n_0 ;
   wire \reg_data_out[1]_i_3_n_0 ;
   wire \reg_data_out[1]_i_4_n_0 ;
-  wire \reg_data_out[1]_i_5_n_0 ;
   wire \reg_data_out[2]_i_2_n_0 ;
-  wire \reg_data_out[2]_i_3_n_0 ;
+  wire \reg_data_out[30]_i_2_n_0 ;
   wire \reg_data_out[31]_i_2_n_0 ;
   wire \reg_data_out[31]_i_3_n_0 ;
   wire \reg_data_out[31]_i_4_n_0 ;
   wire \reg_data_out[31]_i_5_n_0 ;
+  wire \reg_data_out[31]_i_6_n_0 ;
   wire \reg_data_out[3]_i_2_n_0 ;
   wire \reg_data_out[3]_i_3_n_0 ;
   wire \reg_data_out[3]_i_4_n_0 ;
-  wire \reg_data_out[3]_i_5_n_0 ;
   wire \reg_data_out[3]_i_6_n_0 ;
   wire \reg_data_out[3]_i_7_n_0 ;
+  wire \reg_data_out[4]_i_2_0 ;
+  wire \reg_data_out[4]_i_2_n_0 ;
   wire \reg_data_out[4]_i_3_n_0 ;
   wire \reg_data_out[4]_i_4_n_0 ;
   wire \reg_data_out[4]_i_5_n_0 ;
-  wire \reg_data_out[4]_i_6_n_0 ;
   wire \reg_data_out[5]_i_2_n_0 ;
-  wire \reg_data_out[5]_i_3_n_0 ;
-  wire \reg_data_out[5]_i_4_n_0 ;
-  wire \reg_data_out[5]_i_5_n_0 ;
-  wire \reg_data_out[5]_i_6_n_0 ;
   wire \reg_data_out_reg[0] ;
   wire \reg_data_out_reg[0]_0 ;
-  wire \reg_data_out_reg[0]_1 ;
-  wire [14:0]\reg_data_out_reg[15] ;
-  wire [14:0]\reg_data_out_reg[15]_0 ;
+  wire [12:0]\reg_data_out_reg[15] ;
+  wire [12:0]\reg_data_out_reg[15]_0 ;
   wire \reg_data_out_reg[1] ;
   wire \reg_data_out_reg[2] ;
+  wire \reg_data_out_reg[2]_0 ;
   wire \reg_data_out_reg[30] ;
   wire \reg_data_out_reg[31] ;
   wire \reg_data_out_reg[3] ;
+  wire \reg_data_out_reg[3]_0 ;
   wire \reg_data_out_reg[4] ;
-  wire \reg_data_out_reg[4]_0 ;
   wire \reg_data_out_reg[5] ;
   wire [5:0]\reg_data_out_reg[5]_0 ;
+  wire \reg_data_out_reg[5]_1 ;
   wire rx_intr_en0;
   wire rx_intr_en_i_2_n_0;
   wire s_axi_aclk;
   wire [10:0]s_axi_araddr;
   wire s_axi_aresetn;
   wire s_axi_aresetn_0;
-  wire s_axi_aresetn_1;
   wire s_axi_arready;
   wire s_axi_arvalid;
   wire [10:0]s_axi_awaddr;
@@ -2427,8 +2529,8 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire s_axi_bready;
   wire s_axi_bvalid;
   wire [31:0]s_axi_rdata;
-  wire s_axi_rlast;
   wire s_axi_rready;
+  wire s_axi_rvalid;
   wire [1:0]s_axi_wdata;
   wire \s_axi_wdata[31] ;
   wire \s_axi_wdata[31]_0 ;
@@ -2444,7 +2546,7 @@ module system_axi_ethernetlite_0_0_axi_interface
   wire [0:0]web;
   wire \xpm_mem_gen.xpm_memory_inst_1_i_5_n_0 ;
 
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'hCF9F)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_2 
@@ -2859,7 +2961,7 @@ module system_axi_ethernetlite_0_0_axi_interface
     \AXI4_LITE_IF_GEN.read_in_prog_i_2 
        (.I0(s_axi_aresetn),
         .I1(s_axi_rready),
-        .I2(s_axi_rlast),
+        .I2(s_axi_rvalid),
         .I3(s_axi_bvalid),
         .I4(s_axi_bready),
         .O(read_in_prog));
@@ -2891,13 +2993,13 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I1(read_req),
         .I2(s_axi_aresetn),
         .I3(s_axi_rready),
-        .I4(s_axi_rlast),
+        .I4(s_axi_rvalid),
         .O(\AXI4_LITE_IF_GEN.rvalid_i_1_n_0 ));
   FDRE \AXI4_LITE_IF_GEN.rvalid_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\AXI4_LITE_IF_GEN.rvalid_i_1_n_0 ),
-        .Q(s_axi_rlast),
+        .Q(s_axi_rvalid),
         .R(1'b0));
   LUT6 #(
     .INIT(64'h00000000AAAABAAA)) 
@@ -2915,24 +3017,34 @@ module system_axi_ethernetlite_0_0_axi_interface
         .D(\AXI4_LITE_IF_GEN.write_in_prog_i_1_n_0 ),
         .Q(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'h4F)) 
     \MDIO_GEN.mdio_data_out[10]_i_1 
        (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 ),
         .I1(bus2ip_rdce),
         .I2(s_axi_aresetn),
-        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_4 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_3 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
-    .INIT(32'h00400000)) 
+    .INIT(32'hFFFFBFFF)) 
     \MDIO_GEN.mdio_data_out[10]_i_4 
-       (.I0(Q[2]),
-        .I1(\XEMAC_I/reg_access_i ),
-        .I2(Q[0]),
-        .I3(Q[1]),
+       (.I0(Q[0]),
+        .I1(bus2ip_rdce),
+        .I2(Q[1]),
+        .I3(\XEMAC_I/reg_access_i ),
+        .I4(Q[2]),
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h04000000)) 
+    \MDIO_GEN.mdio_data_out[10]_i_5 
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(Q[2]),
+        .I3(\XEMAC_I/reg_access_i ),
         .I4(bus2ip_rdce),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ));
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 ));
   LUT4 #(
     .INIT(16'h44F4)) 
     \MDIO_GEN.mdio_data_out[11]_i_1 
@@ -2965,15 +3077,15 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I2(\MDIO_GEN.mdio_data_out_reg[15] [3]),
         .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 ),
         .O(\MDIO_CAPTURE_DATA[14].MDIO_RD_DATA_reg[14] ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h20FF)) 
     \MDIO_GEN.mdio_data_out[15]_i_1 
        (.I0(bus2ip_rdce),
         .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_1 ),
-        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[3]_0 ),
         .I3(s_axi_aresetn),
-        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_3 ));
+        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_2 ));
   LUT4 #(
     .INIT(16'h44F4)) 
     \MDIO_GEN.mdio_data_out[15]_i_2 
@@ -2982,7 +3094,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I2(\MDIO_GEN.mdio_data_out_reg[15] [4]),
         .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 ),
         .O(\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \MDIO_GEN.mdio_data_out[15]_i_3 
@@ -2992,7 +3104,6 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I3(\XEMAC_I/reg_access_i ),
         .I4(Q[2]),
         .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \MDIO_GEN.mdio_data_out[3]_i_3 
@@ -3000,18 +3111,8 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I1(\XEMAC_I/reg_access_i ),
         .I2(Q[1]),
         .I3(bus2ip_rdce),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'hFFFFBFFF)) 
-    \MDIO_GEN.mdio_data_out[9]_i_3 
-       (.I0(Q[0]),
-        .I1(bus2ip_rdce),
-        .I2(Q[1]),
-        .I3(\XEMAC_I/reg_access_i ),
-        .I4(Q[2]),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[2]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_4 ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \MDIO_GEN.mdio_en_i_i_1 
@@ -3020,14 +3121,14 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I2(p_0_in),
         .O(\s_axi_wdata[3] ));
   LUT6 #(
-    .INIT(64'h0000000008000000)) 
+    .INIT(64'h0000080000000000)) 
     \MDIO_GEN.mdio_reg_addr[4]_i_1 
        (.I0(s_axi_wvalid),
         .I1(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
-        .I2(Q[2]),
-        .I3(\XEMAC_I/reg_access_i ),
-        .I4(Q[0]),
-        .I5(Q[1]),
+        .I2(Q[1]),
+        .I3(Q[0]),
+        .I4(Q[2]),
+        .I5(\XEMAC_I/reg_access_i ),
         .O(s_axi_wvalid_0));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
@@ -3058,7 +3159,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I3(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
         .I4(s_axi_wvalid),
         .I5(Q[0]),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ));
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
     \RX_PONG_REG_GEN.pong_rx_status_i_2 
@@ -3078,14 +3179,14 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I3(Q[0]),
         .I4(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_2 ));
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_3 ));
   LUT2 #(
     .INIT(4'hB)) 
     \TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2 
        (.I0(Q[10]),
         .I1(Q[9]),
         .O(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \TX_PONG_REG_GEN.pong_soft_status_i_1 
@@ -3103,7 +3204,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I4(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
         .O(pong_mac_program1));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'hFFBF0080)) 
     gie_enable_i_1
@@ -3133,14 +3234,14 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I4(\ping_pkt_lenth[15]_i_3_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
         .O(E));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \ping_pkt_lenth[15]_i_2 
        (.I0(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
         .I1(s_axi_wvalid),
         .O(\AXI4_LITE_IF_GEN.write_in_prog_reg_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \ping_pkt_lenth[15]_i_3 
@@ -3150,14 +3251,14 @@ module system_axi_ethernetlite_0_0_axi_interface
   LUT6 #(
     .INIT(64'h0000000080000000)) 
     ping_rx_status_i_2
-       (.I0(\reg_data_out[15]_i_13_n_0 ),
+       (.I0(\reg_data_out[15]_i_5_n_0 ),
         .I1(Q[10]),
         .I2(\XEMAC_I/reg_access_i ),
         .I3(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
         .I4(s_axi_wvalid),
         .I5(Q[9]),
         .O(rx_intr_en0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     ping_soft_status_i_1
@@ -3175,332 +3276,339 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I4(\ping_pkt_lenth[15]_i_3_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
         .O(tx_intr_en0));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     reg_access_i_1
        (.I0(\XEMAC_I/reg_access_i ),
         .I1(bus2ip_rdce),
         .I2(reg_access),
-        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_2 ));
-  LUT5 #(
-    .INIT(32'h0000B800)) 
+        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ));
+  LUT6 #(
+    .INIT(64'h000000002F200000)) 
     \reg_data_out[0]_i_1 
        (.I0(\reg_data_out[0]_i_2_n_0 ),
-        .I1(reg_data_out0__0),
-        .I2(\reg_data_out_reg[0]_0 ),
-        .I3(s_axi_aresetn),
-        .I4(\reg_data_out[15]_i_9_n_0 ),
+        .I1(\reg_data_out[0]_i_3_n_0 ),
+        .I2(reg_data_out0__0),
+        .I3(\reg_data_out_reg[0]_0 ),
+        .I4(s_axi_aresetn),
+        .I5(\reg_data_out[0]_i_4_n_0 ),
         .O(\reg_data_out_reg[0] ));
-  LUT5 #(
-    .INIT(32'hFFFF0047)) 
+  LUT6 #(
+    .INIT(64'hCFCCEFEEFFFCEFEE)) 
     \reg_data_out[0]_i_2 
-       (.I0(\reg_data_out[0]_i_3_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[0]_1 ),
-        .I3(\reg_data_out[15]_i_11_n_0 ),
-        .I4(\reg_data_out[0]_i_5_n_0 ),
+       (.I0(\reg_data_out_reg[15] [0]),
+        .I1(\reg_data_out[15]_i_7_n_0 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15]_0 [0]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I5(\reg_data_out[0]_i_5_n_0 ),
         .O(\reg_data_out[0]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h0F11)) 
+  LUT6 #(
+    .INIT(64'h3333555533330F00)) 
     \reg_data_out[0]_i_3 
-       (.I0(\reg_data_out[15]_i_9_n_0 ),
-        .I1(\reg_data_out_reg[5]_0 [0]),
-        .I2(pong_rx_status),
-        .I3(\reg_data_out[15]_i_10_n_0 ),
-        .O(\reg_data_out[0]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'hF888)) 
-    \reg_data_out[0]_i_5 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ),
+       (.I0(p_15_in[0]),
         .I1(p_17_in[0]),
-        .I2(\reg_data_out[4]_i_5_n_0 ),
-        .I3(p_15_in[0]),
-        .O(\reg_data_out[0]_i_5_n_0 ));
+        .I2(\reg_data_out[0]_i_6_n_0 ),
+        .I3(\reg_data_out[3]_i_6_n_0 ),
+        .I4(\reg_data_out[0]_i_7_n_0 ),
+        .I5(\reg_data_out[3]_i_7_n_0 ),
+        .O(\reg_data_out[0]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
-    \reg_data_out[10]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [9]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [9]),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
-    \reg_data_out[11]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [10]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [10]),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
-    \reg_data_out[12]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [11]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [11]),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \reg_data_out[12]_i_2 
-       (.I0(\reg_data_out[15]_i_13_n_0 ),
-        .I1(Q[10]),
-        .I2(\XEMAC_I/reg_access_i ),
-        .I3(Q[9]),
-        .I4(bus2ip_rdce),
-        .O(\reg_data_out[12]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hEAEAFFEA)) 
-    \reg_data_out[13]_i_1 
-       (.I0(\reg_data_out[15]_i_14_n_0 ),
-        .I1(\reg_data_out_reg[15] [12]),
-        .I2(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I3(\reg_data_out_reg[15]_0 [12]),
-        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .O(\ping_pkt_lenth_reg[13] ));
-  LUT5 #(
-    .INIT(32'hFFAEAEAE)) 
-    \reg_data_out[14]_i_1 
-       (.I0(\reg_data_out[15]_i_14_n_0 ),
-        .I1(\reg_data_out_reg[15]_0 [13]),
-        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I3(\reg_data_out_reg[15] [13]),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] ));
-  LUT6 #(
-    .INIT(64'hFFFFBAFFAAAAAAAA)) 
-    \reg_data_out[15]_i_1 
-       (.I0(\reg_data_out[15]_i_4_n_0 ),
-        .I1(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I3(s_axi_aresetn),
-        .I4(\reg_data_out[15]_i_7_n_0 ),
-        .I5(\reg_data_out[15]_i_8_n_0 ),
-        .O(s_axi_aresetn_1));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    \reg_data_out[15]_i_10 
-       (.I0(bus2ip_rdce),
-        .I1(Q[9]),
-        .I2(\XEMAC_I/reg_access_i ),
-        .I3(Q[10]),
-        .I4(\reg_data_out[15]_i_13_n_0 ),
-        .O(\reg_data_out[15]_i_10_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
-  LUT4 #(
-    .INIT(16'h2000)) 
-    \reg_data_out[15]_i_11 
-       (.I0(\XEMAC_I/reg_access_i ),
-        .I1(Q[10]),
-        .I2(\reg_data_out[15]_i_13_n_0 ),
-        .I3(bus2ip_rdce),
-        .O(\reg_data_out[15]_i_11_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h4044)) 
-    \reg_data_out[15]_i_12 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I2(Q[9]),
-        .I3(\reg_data_out[1]_i_3_n_0 ),
-        .O(\reg_data_out[15]_i_12_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
-    \reg_data_out[15]_i_13 
-       (.I0(Q[0]),
-        .I1(Q[1]),
-        .I2(Q[2]),
-        .O(\reg_data_out[15]_i_13_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT4 #(
-    .INIT(16'h4474)) 
-    \reg_data_out[15]_i_14 
-       (.I0(Q[9]),
-        .I1(\reg_data_out[1]_i_3_n_0 ),
-        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .O(\reg_data_out[15]_i_14_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000800000000000)) 
-    \reg_data_out[15]_i_15 
+    .INIT(64'h0000200000000000)) 
+    \reg_data_out[0]_i_4 
        (.I0(bus2ip_rdce),
         .I1(Q[0]),
         .I2(Q[1]),
         .I3(Q[2]),
         .I4(\ping_pkt_lenth[15]_i_3_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
-        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ));
+        .O(\reg_data_out[0]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \reg_data_out[0]_i_5 
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I1(p_9_in[0]),
+        .O(\reg_data_out[0]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hF0EE)) 
+    \reg_data_out[0]_i_6 
+       (.I0(\reg_data_out[0]_i_4_n_0 ),
+        .I1(\reg_data_out_reg[5]_0 [0]),
+        .I2(pong_rx_status),
+        .I3(\reg_data_out[31]_i_5_n_0 ),
+        .O(\reg_data_out[0]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'hFEFFFEFFFFFFFEFF)) 
-    \reg_data_out[15]_i_2 
-       (.I0(\reg_data_out[15]_i_9_n_0 ),
-        .I1(\reg_data_out[15]_i_10_n_0 ),
-        .I2(\reg_data_out[15]_i_11_n_0 ),
-        .I3(\reg_data_out[15]_i_12_n_0 ),
-        .I4(bus2ip_rdce),
-        .I5(\reg_data_out[15]_i_13_n_0 ),
-        .O(reg_data_out0__0));
-  LUT5 #(
-    .INIT(32'hEAEAFFEA)) 
-    \reg_data_out[15]_i_3 
-       (.I0(\reg_data_out[15]_i_14_n_0 ),
-        .I1(\reg_data_out_reg[15] [14]),
-        .I2(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I3(\reg_data_out_reg[15]_0 [14]),
-        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .O(\ping_pkt_lenth_reg[15] ));
-  LUT5 #(
-    .INIT(32'hFFFFFFEF)) 
-    \reg_data_out[15]_i_4 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ),
-        .I1(\reg_data_out[15]_i_9_n_0 ),
-        .I2(s_axi_aresetn),
-        .I3(\reg_data_out[1]_i_3_n_0 ),
-        .I4(\reg_data_out[4]_i_5_n_0 ),
-        .O(\reg_data_out[15]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000080000000000)) 
-    \reg_data_out[15]_i_5 
+    .INIT(64'h0000800000000000)) 
+    \reg_data_out[0]_i_7 
        (.I0(bus2ip_rdce),
-        .I1(Q[2]),
+        .I1(Q[0]),
         .I2(Q[1]),
-        .I3(Q[0]),
+        .I3(Q[2]),
         .I4(\ping_pkt_lenth[15]_i_3_n_0 ),
         .I5(\XEMAC_I/reg_access_i ),
-        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ));
+        .O(\reg_data_out[0]_i_7_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFBFCF8FF3B3C080)) 
+    \reg_data_out[10]_i_1 
+       (.I0(\reg_data_out[13]_i_2_n_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I4(\reg_data_out_reg[15] [7]),
+        .I5(\reg_data_out_reg[15]_0 [7]),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] ));
+  LUT6 #(
+    .INIT(64'hFFBFCF8FF3B3C080)) 
+    \reg_data_out[11]_i_1 
+       (.I0(\reg_data_out[13]_i_2_n_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I4(\reg_data_out_reg[15] [8]),
+        .I5(\reg_data_out_reg[15]_0 [8]),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] ));
+  LUT5 #(
+    .INIT(32'hAEAEFFAE)) 
+    \reg_data_out[12]_i_1 
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15]_0 [9]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15] [9]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\ping_pkt_lenth_reg[12] ));
+  LUT6 #(
+    .INIT(64'hFFBFCF8FF3B3C080)) 
+    \reg_data_out[13]_i_1 
+       (.I0(\reg_data_out[13]_i_2_n_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I4(\reg_data_out_reg[15] [10]),
+        .I5(\reg_data_out_reg[15]_0 [10]),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] ));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h7FFFFFFF)) 
+    \reg_data_out[13]_i_2 
+       (.I0(Q[9]),
+        .I1(\XEMAC_I/reg_access_i ),
+        .I2(Q[10]),
+        .I3(\reg_data_out[15]_i_5_n_0 ),
+        .I4(bus2ip_rdce),
+        .O(\reg_data_out[13]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h00008000)) 
+    \reg_data_out[13]_i_3 
+       (.I0(\XEMAC_I/reg_access_i ),
+        .I1(Q[10]),
+        .I2(\reg_data_out[15]_i_5_n_0 ),
+        .I3(bus2ip_rdce),
+        .I4(Q[9]),
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ));
+  LUT5 #(
+    .INIT(32'hAEAEFFAE)) 
+    \reg_data_out[14]_i_1 
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15]_0 [11]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15] [11]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\ping_pkt_lenth_reg[14] ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFAE00AEAE)) 
+    \reg_data_out[15]_i_1 
+       (.I0(\reg_data_out[15]_i_4_n_0 ),
+        .I1(bus2ip_rdce),
+        .I2(\reg_data_out[15]_i_5_n_0 ),
+        .I3(\reg_data_out[15]_i_6_n_0 ),
+        .I4(s_axi_aresetn),
+        .I5(\reg_data_out[15]_i_7_n_0 ),
+        .O(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT4 #(
+    .INIT(16'h7444)) 
+    \reg_data_out[15]_i_10 
+       (.I0(Q[9]),
+        .I1(\reg_data_out[15]_i_13_n_0 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\reg_data_out[15]_i_10_n_0 ));
   LUT6 #(
     .INIT(64'hFFDFFFFFFFFFFFFF)) 
-    \reg_data_out[15]_i_6 
+    \reg_data_out[15]_i_11 
        (.I0(Q[2]),
         .I1(Q[1]),
         .I2(Q[0]),
         .I3(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ),
         .I4(\XEMAC_I/reg_access_i ),
         .I5(bus2ip_rdce),
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ));
+  LUT6 #(
+    .INIT(64'hFFDFFFFFFFFFFFFF)) 
+    \reg_data_out[15]_i_12 
+       (.I0(Q[2]),
+        .I1(Q[1]),
+        .I2(Q[0]),
+        .I3(\ping_pkt_lenth[15]_i_3_n_0 ),
+        .I4(\XEMAC_I/reg_access_i ),
+        .I5(bus2ip_rdce),
         .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ));
   LUT6 #(
-    .INIT(64'h0000800000000000)) 
-    \reg_data_out[15]_i_7 
-       (.I0(bus2ip_rdce),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[2]),
-        .I4(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ),
-        .I5(\XEMAC_I/reg_access_i ),
-        .O(\reg_data_out[15]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT4 #(
-    .INIT(16'h2AAA)) 
-    \reg_data_out[15]_i_8 
-       (.I0(bus2ip_rdce),
-        .I1(Q[2]),
-        .I2(Q[1]),
-        .I3(Q[0]),
-        .O(\reg_data_out[15]_i_8_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000200000000000)) 
-    \reg_data_out[15]_i_9 
-       (.I0(bus2ip_rdce),
-        .I1(Q[0]),
-        .I2(Q[1]),
-        .I3(Q[2]),
-        .I4(\ping_pkt_lenth[15]_i_3_n_0 ),
-        .I5(\XEMAC_I/reg_access_i ),
-        .O(\reg_data_out[15]_i_9_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000E20000)) 
-    \reg_data_out[1]_i_1 
-       (.I0(p_7_in94_in),
-        .I1(reg_data_out0__0),
-        .I2(\reg_data_out[1]_i_2_n_0 ),
-        .I3(\reg_data_out[1]_i_3_n_0 ),
-        .I4(s_axi_aresetn),
-        .I5(\reg_data_out[15]_i_9_n_0 ),
-        .O(\reg_data_out_reg[1] ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF55115551)) 
-    \reg_data_out[1]_i_2 
-       (.I0(\reg_data_out[1]_i_4_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[5]_0 [1]),
-        .I3(\reg_data_out[15]_i_9_n_0 ),
-        .I4(\reg_data_out[15]_i_10_n_0 ),
-        .I5(\reg_data_out[1]_i_5_n_0 ),
-        .O(\reg_data_out[1]_i_2_n_0 ));
-  LUT6 #(
     .INIT(64'h8000000000000000)) 
-    \reg_data_out[1]_i_3 
+    \reg_data_out[15]_i_13 
        (.I0(bus2ip_rdce),
         .I1(Q[2]),
         .I2(Q[1]),
         .I3(Q[0]),
         .I4(Q[10]),
         .I5(\XEMAC_I/reg_access_i ),
-        .O(\reg_data_out[1]_i_3_n_0 ));
+        .O(\reg_data_out[15]_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF7F00FFFF)) 
+    \reg_data_out[15]_i_2 
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
+        .I3(bus2ip_rdce),
+        .I4(\reg_data_out[15]_i_8_n_0 ),
+        .I5(\reg_data_out[15]_i_9_n_0 ),
+        .O(reg_data_out0__0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'hBAAABABF)) 
-    \reg_data_out[1]_i_4 
-       (.I0(\reg_data_out[15]_i_11_n_0 ),
-        .I1(\reg_data_out_reg[15] [0]),
-        .I2(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\reg_data_out_reg[15]_0 [0]),
-        .O(\reg_data_out[1]_i_4_n_0 ));
+    .INIT(32'hAEAEFFAE)) 
+    \reg_data_out[15]_i_3 
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15] [12]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I3(\reg_data_out_reg[15]_0 [12]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] ));
+  LUT6 #(
+    .INIT(64'hFBBBBBBBBBBBBBBB)) 
+    \reg_data_out[15]_i_4 
+       (.I0(\reg_data_out[0]_i_4_n_0 ),
+        .I1(s_axi_aresetn),
+        .I2(bus2ip_rdce),
+        .I3(\reg_data_out[15]_i_5_n_0 ),
+        .I4(Q[10]),
+        .I5(\XEMAC_I/reg_access_i ),
+        .O(\reg_data_out[15]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h80)) 
+    \reg_data_out[15]_i_5 
+       (.I0(Q[0]),
+        .I1(Q[1]),
+        .I2(Q[2]),
+        .O(\reg_data_out[15]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
+    \reg_data_out[15]_i_6 
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\reg_data_out[15]_i_6_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT4 #(
+    .INIT(16'h2000)) 
+    \reg_data_out[15]_i_7 
+       (.I0(\XEMAC_I/reg_access_i ),
+        .I1(Q[10]),
+        .I2(\reg_data_out[15]_i_5_n_0 ),
+        .I3(bus2ip_rdce),
+        .O(\reg_data_out[15]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT4 #(
+    .INIT(16'h0040)) 
+    \reg_data_out[15]_i_8 
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I3(\reg_data_out[15]_i_7_n_0 ),
+        .O(\reg_data_out[15]_i_8_n_0 ));
+  LUT6 #(
+    .INIT(64'hEAAAAAAAAAAAAAAA)) 
+    \reg_data_out[15]_i_9 
+       (.I0(\reg_data_out[0]_i_4_n_0 ),
+        .I1(\reg_data_out[15]_i_5_n_0 ),
+        .I2(Q[10]),
+        .I3(\XEMAC_I/reg_access_i ),
+        .I4(Q[9]),
+        .I5(bus2ip_rdce),
+        .O(\reg_data_out[15]_i_9_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT4 #(
+    .INIT(16'h00E2)) 
+    \reg_data_out[1]_i_1 
+       (.I0(p_7_in94_in),
+        .I1(reg_data_out0__0),
+        .I2(\reg_data_out[1]_i_2_n_0 ),
+        .I3(\reg_data_out[15]_i_4_n_0 ),
+        .O(\reg_data_out_reg[1] ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF51555151)) 
+    \reg_data_out[1]_i_2 
+       (.I0(\reg_data_out[1]_i_3_n_0 ),
+        .I1(\reg_data_out[3]_i_6_n_0 ),
+        .I2(\reg_data_out[0]_i_4_n_0 ),
+        .I3(\reg_data_out[15]_i_9_n_0 ),
+        .I4(\reg_data_out_reg[5]_0 [1]),
+        .I5(\reg_data_out[1]_i_4_n_0 ),
+        .O(\reg_data_out[1]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hAAAEBABF)) 
+    \reg_data_out[1]_i_3 
+       (.I0(\reg_data_out[15]_i_7_n_0 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15]_0 [1]),
+        .I4(\reg_data_out_reg[15] [1]),
+        .O(\reg_data_out[1]_i_3_n_0 ));
   LUT4 #(
     .INIT(16'hF888)) 
-    \reg_data_out[1]_i_5 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ),
+    \reg_data_out[1]_i_4 
+       (.I0(\reg_data_out[0]_i_7_n_0 ),
         .I1(p_17_in[1]),
-        .I2(\reg_data_out[4]_i_5_n_0 ),
+        .I2(\reg_data_out[4]_i_3_n_0 ),
         .I3(p_15_in[1]),
-        .O(\reg_data_out[1]_i_5_n_0 ));
+        .O(\reg_data_out[1]_i_4_n_0 ));
   LUT4 #(
     .INIT(16'h00E2)) 
     \reg_data_out[2]_i_1 
        (.I0(p_13_in113_in),
         .I1(reg_data_out0__0),
         .I2(\reg_data_out[2]_i_2_n_0 ),
-        .I3(\reg_data_out[15]_i_4_n_0 ),
+        .I3(\reg_data_out[30]_i_2_n_0 ),
         .O(\reg_data_out_reg[2] ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFAAAAEEEA)) 
-    \reg_data_out[2]_i_2 
-       (.I0(\reg_data_out[2]_i_3_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[5]_0 [2]),
-        .I3(\reg_data_out[15]_i_9_n_0 ),
-        .I4(\reg_data_out[15]_i_10_n_0 ),
-        .I5(\reg_data_out[15]_i_11_n_0 ),
-        .O(\reg_data_out[2]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFF88F8)) 
-    \reg_data_out[2]_i_3 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I1(\reg_data_out_reg[15] [1]),
-        .I2(\reg_data_out_reg[15]_0 [1]),
-        .I3(\reg_data_out[5]_i_5_n_0 ),
-        .I4(\reg_data_out[5]_i_4_n_0 ),
-        .O(\reg_data_out[2]_i_3_n_0 ));
+    .INIT(32'h00A8AAAA)) 
+    \reg_data_out[2]_i_2 
+       (.I0(\reg_data_out_reg[2]_0 ),
+        .I1(\reg_data_out[0]_i_4_n_0 ),
+        .I2(\reg_data_out_reg[5]_0 [2]),
+        .I3(\reg_data_out[31]_i_5_n_0 ),
+        .I4(\reg_data_out[15]_i_8_n_0 ),
+        .O(\reg_data_out[2]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00E200E2000000E2)) 
     \reg_data_out[30]_i_1 
        (.I0(p_181_in),
         .I1(reg_data_out0__0),
-        .I2(\reg_data_out[15]_i_14_n_0 ),
-        .I3(\reg_data_out[15]_i_4_n_0 ),
+        .I2(\reg_data_out[15]_i_10_n_0 ),
+        .I3(\reg_data_out[30]_i_2_n_0 ),
         .I4(bus2ip_rdce),
-        .I5(\reg_data_out[15]_i_13_n_0 ),
+        .I5(\reg_data_out[15]_i_5_n_0 ),
         .O(\reg_data_out_reg[30] ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \reg_data_out[30]_i_2 
+       (.I0(\reg_data_out[15]_i_7_n_0 ),
+        .I1(\reg_data_out[15]_i_4_n_0 ),
+        .O(\reg_data_out[30]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h0000000088800080)) 
     \reg_data_out[31]_i_1 
@@ -3512,24 +3620,23 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I5(\reg_data_out[31]_i_4_n_0 ),
         .O(s_axi_aresetn_0));
   LUT6 #(
-    .INIT(64'h0444444444444444)) 
+    .INIT(64'h0888888888888888)) 
     \reg_data_out[31]_i_2 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
         .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
         .I2(\XEMAC_I/reg_access_i ),
         .I3(Q[10]),
-        .I4(\reg_data_out[15]_i_13_n_0 ),
+        .I4(\reg_data_out[15]_i_5_n_0 ),
         .I5(bus2ip_rdce),
         .O(\reg_data_out[31]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF00004500)) 
+  LUT5 #(
+    .INIT(32'hFFFF4500)) 
     \reg_data_out[31]_i_3 
-       (.I0(\reg_data_out[15]_i_10_n_0 ),
+       (.I0(\reg_data_out[31]_i_5_n_0 ),
         .I1(p_5_in),
-        .I2(\reg_data_out[15]_i_9_n_0 ),
-        .I3(\reg_data_out[15]_i_12_n_0 ),
-        .I4(\reg_data_out[15]_i_11_n_0 ),
-        .I5(\reg_data_out[31]_i_5_n_0 ),
+        .I2(\reg_data_out[0]_i_4_n_0 ),
+        .I3(\reg_data_out[15]_i_8_n_0 ),
+        .I4(\reg_data_out[31]_i_6_n_0 ),
         .O(\reg_data_out[31]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0BFFFFFF00000000)) 
@@ -3541,227 +3648,180 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I4(Q[2]),
         .I5(bus2ip_rdce),
         .O(\reg_data_out[31]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFF444F444F444)) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT5 #(
+    .INIT(32'h80000000)) 
     \reg_data_out[31]_i_5 
-       (.I0(Q[9]),
-        .I1(\reg_data_out[1]_i_3_n_0 ),
-        .I2(pong_soft_status),
-        .I3(\reg_data_out[15]_i_7_n_0 ),
-        .I4(ping_soft_status),
-        .I5(\AXI4_LITE_IF_GEN.read_in_prog_reg_0 ),
+       (.I0(bus2ip_rdce),
+        .I1(Q[9]),
+        .I2(\XEMAC_I/reg_access_i ),
+        .I3(Q[10]),
+        .I4(\reg_data_out[15]_i_5_n_0 ),
         .O(\reg_data_out[31]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h00000000E2E2EEE2)) 
+  LUT5 #(
+    .INIT(32'hFFEAEAEA)) 
+    \reg_data_out[31]_i_6 
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I1(pong_soft_status),
+        .I2(\reg_data_out[3]_i_7_n_0 ),
+        .I3(ping_soft_status),
+        .I4(\reg_data_out[0]_i_7_n_0 ),
+        .O(\reg_data_out[31]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'h0000EEE2)) 
     \reg_data_out[3]_i_1 
        (.I0(p_19_in),
         .I1(reg_data_out0__0),
         .I2(\reg_data_out[3]_i_2_n_0 ),
         .I3(\reg_data_out[3]_i_3_n_0 ),
         .I4(\reg_data_out[3]_i_4_n_0 ),
-        .I5(\reg_data_out[3]_i_5_n_0 ),
         .O(\reg_data_out_reg[3] ));
   LUT6 #(
     .INIT(64'h0088000000800000)) 
     \reg_data_out[3]_i_2 
        (.I0(bus2ip_rdce),
-        .I1(\reg_data_out[15]_i_13_n_0 ),
+        .I1(\reg_data_out[15]_i_5_n_0 ),
         .I2(Q[9]),
         .I3(Q[10]),
         .I4(\XEMAC_I/reg_access_i ),
         .I5(p_17_in[2]),
         .O(\reg_data_out[3]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF8F88)) 
+    .INIT(64'h00000000AAAA08AA)) 
     \reg_data_out[3]_i_3 
-       (.I0(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I1(\reg_data_out_reg[15] [2]),
-        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I3(\reg_data_out_reg[15]_0 [2]),
-        .I4(\reg_data_out[15]_i_12_n_0 ),
-        .I5(\reg_data_out[3]_i_6_n_0 ),
-        .O(\reg_data_out[3]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'hAAFBAAAA)) 
-    \reg_data_out[3]_i_4 
-       (.I0(\reg_data_out[15]_i_11_n_0 ),
+       (.I0(\reg_data_out_reg[3]_0 ),
         .I1(\reg_data_out_reg[5]_0 [3]),
-        .I2(\reg_data_out[15]_i_10_n_0 ),
-        .I3(\reg_data_out[15]_i_9_n_0 ),
-        .I4(\reg_data_out[15]_i_12_n_0 ),
-        .O(\reg_data_out[3]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFDFDFDFDFFFDFDFD)) 
-    \reg_data_out[3]_i_5 
-       (.I0(s_axi_aresetn),
-        .I1(\reg_data_out[15]_i_7_n_0 ),
         .I2(\reg_data_out[15]_i_9_n_0 ),
-        .I3(bus2ip_rdce),
-        .I4(Q[9]),
-        .I5(\reg_data_out[3]_i_7_n_0 ),
-        .O(\reg_data_out[3]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h2000000000000000)) 
+        .I3(\reg_data_out[3]_i_6_n_0 ),
+        .I4(\reg_data_out[0]_i_4_n_0 ),
+        .I5(\reg_data_out[15]_i_7_n_0 ),
+        .O(\reg_data_out[3]_i_3_n_0 ));
+  LUT3 #(
+    .INIT(8'hFD)) 
+    \reg_data_out[3]_i_4 
+       (.I0(s_axi_aresetn),
+        .I1(\reg_data_out[3]_i_7_n_0 ),
+        .I2(\reg_data_out[15]_i_9_n_0 ),
+        .O(\reg_data_out[3]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h08)) 
     \reg_data_out[3]_i_6 
-       (.I0(p_9_in),
-        .I1(Q[9]),
-        .I2(\reg_data_out[15]_i_13_n_0 ),
-        .I3(Q[10]),
-        .I4(\XEMAC_I/reg_access_i ),
-        .I5(bus2ip_rdce),
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
         .O(\reg_data_out[3]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \reg_data_out[3]_i_7 
-       (.I0(\XEMAC_I/reg_access_i ),
-        .I1(Q[10]),
-        .I2(Q[2]),
-        .I3(Q[1]),
-        .I4(Q[0]),
-        .O(\reg_data_out[3]_i_7_n_0 ));
   LUT6 #(
-    .INIT(64'h000000000000EEE2)) 
+    .INIT(64'h0000800000000000)) 
+    \reg_data_out[3]_i_7 
+       (.I0(bus2ip_rdce),
+        .I1(Q[0]),
+        .I2(Q[1]),
+        .I3(Q[2]),
+        .I4(\TX_PONG_REG_GEN.pong_pkt_lenth[15]_i_2_n_0 ),
+        .I5(\XEMAC_I/reg_access_i ),
+        .O(\reg_data_out[3]_i_7_n_0 ));
+  LUT5 #(
+    .INIT(32'h000000E2)) 
     \reg_data_out[4]_i_1 
        (.I0(p_25_in148_in),
         .I1(reg_data_out0__0),
-        .I2(\reg_data_out_reg[4]_0 ),
-        .I3(\reg_data_out[4]_i_3_n_0 ),
+        .I2(\reg_data_out[4]_i_2_n_0 ),
+        .I3(\reg_data_out[15]_i_4_n_0 ),
+        .I4(\reg_data_out[4]_i_3_n_0 ),
+        .O(\reg_data_out_reg[4] ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFF40)) 
+    \reg_data_out[4]_i_2 
+       (.I0(\reg_data_out[15]_i_9_n_0 ),
+        .I1(\reg_data_out[15]_i_8_n_0 ),
+        .I2(\reg_data_out_reg[5]_0 [4]),
+        .I3(\reg_data_out[0]_i_4_n_0 ),
         .I4(\reg_data_out[4]_i_4_n_0 ),
         .I5(\reg_data_out[4]_i_5_n_0 ),
-        .O(\reg_data_out_reg[4] ));
-  LUT5 #(
-    .INIT(32'h0000DFDD)) 
-    \reg_data_out[4]_i_3 
-       (.I0(\reg_data_out[15]_i_12_n_0 ),
-        .I1(\reg_data_out[15]_i_9_n_0 ),
-        .I2(\reg_data_out[15]_i_10_n_0 ),
-        .I3(\reg_data_out_reg[5]_0 [4]),
-        .I4(\reg_data_out[4]_i_6_n_0 ),
-        .O(\reg_data_out[4]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'hFBBBBBBBBBBBBBBB)) 
-    \reg_data_out[4]_i_4 
-       (.I0(\reg_data_out[15]_i_9_n_0 ),
-        .I1(s_axi_aresetn),
-        .I2(bus2ip_rdce),
-        .I3(\reg_data_out[15]_i_13_n_0 ),
-        .I4(Q[10]),
-        .I5(\XEMAC_I/reg_access_i ),
-        .O(\reg_data_out[4]_i_4_n_0 ));
+        .O(\reg_data_out[4]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h00800000)) 
-    \reg_data_out[4]_i_5 
+    \reg_data_out[4]_i_3 
        (.I0(bus2ip_rdce),
-        .I1(\reg_data_out[15]_i_13_n_0 ),
+        .I1(\reg_data_out[15]_i_5_n_0 ),
         .I2(\XEMAC_I/reg_access_i ),
         .I3(Q[10]),
         .I4(Q[9]),
-        .O(\reg_data_out[4]_i_5_n_0 ));
+        .O(\reg_data_out[4]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0088000000800000)) 
+    \reg_data_out[4]_i_4 
+       (.I0(bus2ip_rdce),
+        .I1(\reg_data_out[15]_i_5_n_0 ),
+        .I2(Q[9]),
+        .I3(Q[10]),
+        .I4(\XEMAC_I/reg_access_i ),
+        .I5(\reg_data_out[4]_i_2_0 ),
+        .O(\reg_data_out[4]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
-    .INIT(32'hBAAABABF)) 
-    \reg_data_out[4]_i_6 
-       (.I0(\reg_data_out[15]_i_11_n_0 ),
-        .I1(\reg_data_out_reg[15] [3]),
-        .I2(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\reg_data_out_reg[15]_0 [3]),
-        .O(\reg_data_out[4]_i_6_n_0 ));
+    .INIT(32'hAEAEFFAE)) 
+    \reg_data_out[4]_i_5 
+       (.I0(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ),
+        .I1(\reg_data_out_reg[15]_0 [2]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15] [2]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\reg_data_out[4]_i_5_n_0 ));
   LUT4 #(
     .INIT(16'h00E2)) 
     \reg_data_out[5]_i_1 
        (.I0(p_31_in166_in),
         .I1(reg_data_out0__0),
         .I2(\reg_data_out[5]_i_2_n_0 ),
-        .I3(\reg_data_out[15]_i_4_n_0 ),
+        .I3(\reg_data_out[30]_i_2_n_0 ),
         .O(\reg_data_out_reg[5] ));
   LUT5 #(
-    .INIT(32'hFFFF5400)) 
+    .INIT(32'h8A88AAAA)) 
     \reg_data_out[5]_i_2 
-       (.I0(\reg_data_out[15]_i_10_n_0 ),
-        .I1(\reg_data_out[15]_i_9_n_0 ),
-        .I2(\reg_data_out_reg[5]_0 [5]),
-        .I3(\reg_data_out[15]_i_12_n_0 ),
-        .I4(\reg_data_out[5]_i_3_n_0 ),
+       (.I0(\reg_data_out_reg[5]_1 ),
+        .I1(\reg_data_out[0]_i_4_n_0 ),
+        .I2(\reg_data_out[15]_i_9_n_0 ),
+        .I3(\reg_data_out_reg[5]_0 [5]),
+        .I4(\reg_data_out[15]_i_8_n_0 ),
         .O(\reg_data_out[5]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFEFEEEFEEEFEE)) 
-    \reg_data_out[5]_i_3 
-       (.I0(\reg_data_out[15]_i_11_n_0 ),
-        .I1(\reg_data_out[5]_i_4_n_0 ),
-        .I2(\reg_data_out[5]_i_5_n_0 ),
-        .I3(\reg_data_out_reg[15]_0 [4]),
-        .I4(\reg_data_out_reg[15] [4]),
-        .I5(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .O(\reg_data_out[5]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
-    .INIT(32'h00008000)) 
-    \reg_data_out[5]_i_4 
-       (.I0(bus2ip_rdce),
-        .I1(\XEMAC_I/reg_access_i ),
-        .I2(Q[10]),
-        .I3(\reg_data_out[15]_i_13_n_0 ),
-        .I4(Q[9]),
-        .O(\reg_data_out[5]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT5 #(
-    .INIT(32'hFBFFFFFF)) 
-    \reg_data_out[5]_i_5 
-       (.I0(\reg_data_out[5]_i_6_n_0 ),
-        .I1(\XEMAC_I/reg_access_i ),
-        .I2(Q[10]),
-        .I3(Q[9]),
-        .I4(bus2ip_rdce),
-        .O(\reg_data_out[5]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'hDF)) 
-    \reg_data_out[5]_i_6 
-       (.I0(Q[2]),
-        .I1(Q[1]),
-        .I2(Q[0]),
-        .O(\reg_data_out[5]_i_6_n_0 ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
+    .INIT(32'hAEAEFFAE)) 
     \reg_data_out[6]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [5]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [5]),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15]_0 [3]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15] [3]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\ping_pkt_lenth_reg[6] ));
+  LUT5 #(
+    .INIT(32'hAEAEFFAE)) 
     \reg_data_out[7]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [6]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [6]),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15]_0 [4]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
+        .I3(\reg_data_out_reg[15] [4]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .O(\ping_pkt_lenth_reg[7] ));
+  LUT5 #(
+    .INIT(32'hAEAEFFAE)) 
     \reg_data_out[8]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [7]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [7]),
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15] [5]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I3(\reg_data_out_reg[15]_0 [5]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
         .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] ));
-  LUT6 #(
-    .INIT(64'hBBBBBBB888B8BBB8)) 
+  LUT5 #(
+    .INIT(32'hAEAEFFAE)) 
     \reg_data_out[9]_i_1 
-       (.I0(\reg_data_out[12]_i_2_n_0 ),
-        .I1(\reg_data_out[15]_i_12_n_0 ),
-        .I2(\reg_data_out_reg[15]_0 [8]),
-        .I3(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.read_in_prog_reg_1 ),
-        .I5(\reg_data_out_reg[15] [8]),
+       (.I0(\reg_data_out[15]_i_10_n_0 ),
+        .I1(\reg_data_out_reg[15] [6]),
+        .I2(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_1 ),
+        .I3(\reg_data_out_reg[15]_0 [6]),
+        .I4(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[4]_0 ),
         .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] ));
   LUT6 #(
     .INIT(64'hFFFFEFFF00002000)) 
@@ -3771,9 +3831,9 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I2(\AXI4_LITE_IF_GEN.write_in_prog_reg_n_0 ),
         .I3(s_axi_wvalid),
         .I4(Q[9]),
-        .I5(p_9_in),
+        .I5(p_9_in[1]),
         .O(\s_axi_wdata[3]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h7FFFFFFF)) 
     rx_intr_en_i_2
@@ -3790,7 +3850,7 @@ module system_axi_ethernetlite_0_0_axi_interface
        (.I0(bus2ip_rdce_i_d1),
         .I1(arready_i2),
         .O(s_axi_arready));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     tx_intr_en_i_1
@@ -3798,7 +3858,6 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I1(tx_intr_en0),
         .I2(p_17_in[2]),
         .O(\s_axi_wdata[3]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h10FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_2__0 
@@ -3807,7 +3866,6 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I2(\xpm_mem_gen.xpm_memory_inst_1_i_5_n_0 ),
         .I3(s_axi_aresetn),
         .O(enb));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h80FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_2__1 
@@ -3815,8 +3873,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I1(Q[9]),
         .I2(\xpm_mem_gen.xpm_memory_inst_1_i_5_n_0 ),
         .I3(s_axi_aresetn),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 ));
   LUT4 #(
     .INIT(16'h40FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_2__2 
@@ -3824,8 +3881,7 @@ module system_axi_ethernetlite_0_0_axi_interface
         .I1(Q[9]),
         .I2(\xpm_mem_gen.xpm_memory_inst_1_i_5_n_0 ),
         .I3(s_axi_aresetn),
-        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+        .O(\AXI4_LITE_IF_GEN.bus2ip_addr_i_reg[12]_2 ));
   LUT4 #(
     .INIT(16'h40FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_3 
@@ -4712,7 +4768,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I4(Q[2]),
         .I5(\crc_local[13]_i_2_n_0 ),
         .O(parallel_crc[13]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \crc_local[13]_i_2 
@@ -4728,7 +4784,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I3(Q[3]),
         .I4(dout[0]),
         .O(parallel_crc[14]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[15]_i_1 
@@ -4736,7 +4792,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(dout[0]),
         .I2(Q[3]),
         .O(parallel_crc[15]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[16]_i_1 
@@ -4751,7 +4807,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(dout[2]),
         .I2(Q[1]),
         .O(parallel_crc[17]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[18]_i_1 
@@ -4759,7 +4815,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(dout[1]),
         .I2(Q[2]),
         .O(parallel_crc[18]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[19]_i_1 
@@ -4767,7 +4823,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(dout[0]),
         .I2(Q[3]),
         .O(parallel_crc[19]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \crc_local[1]_i_1 
@@ -4776,7 +4832,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I2(dout[2]),
         .I3(Q[1]),
         .O(parallel_crc[1]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[22]_i_1 
@@ -4784,7 +4840,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(Q[0]),
         .I2(dout[3]),
         .O(parallel_crc[22]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     \crc_local[23]_i_1 
@@ -4821,7 +4877,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I3(dout[3]),
         .I4(Q[0]),
         .O(parallel_crc[26]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[27]_i_1 
@@ -4829,7 +4885,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I1(dout[2]),
         .I2(Q[1]),
         .O(parallel_crc[27]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT3 #(
     .INIT(8'h96)) 
     \crc_local[28]_i_1 
@@ -4864,7 +4920,7 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I4(dout[2]),
         .I5(p_4_in),
         .O(parallel_crc[5]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h96696996)) 
     \crc_local[6]_i_1 
@@ -5105,13 +5161,14 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I4(crcokr1),
         .I5(s_axi_aresetn),
         .O(crcokdelay));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
-    .INIT(16'hFFF7)) 
+    .INIT(16'hFFFE)) 
     crcokdelay_i_10
-       (.I0(Q[3]),
-        .I1(Q[2]),
-        .I2(p_10_in36_in),
-        .I3(p_5_in),
+       (.I0(Q[1]),
+        .I1(Q[0]),
+        .I2(\crc_local_reg_n_0_[27] ),
+        .I3(p_24_in69_in),
         .O(crcokdelay_i_10_n_0));
   LUT6 #(
     .INIT(64'h0004FFFF00040004)) 
@@ -5135,28 +5192,28 @@ module system_axi_ethernetlite_0_0_crcgenrx
   LUT5 #(
     .INIT(32'h00008000)) 
     crcokdelay_i_4
-       (.I0(p_6_in),
+       (.I0(\crc_local_reg_n_0_[0] ),
         .I1(p_7_in),
-        .I2(\crc_local_reg_n_0_[0] ),
-        .I3(p_4_in),
+        .I2(p_4_in),
+        .I3(p_6_in),
         .I4(crcokdelay_i_8_n_0),
         .O(crcokdelay_i_4_n_0));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     crcokdelay_i_5
-       (.I0(p_14_in),
-        .I1(p_17_in66_in),
-        .I2(p_15_in62_in),
-        .I3(p_16_in),
+       (.I0(p_12_in43_in),
+        .I1(p_20_in51_in),
+        .I2(p_28_in),
+        .I3(p_27_in),
         .I4(crcokdelay_i_9_n_0),
         .O(crcokdelay_i_5_n_0));
   LUT5 #(
     .INIT(32'hFFFFFFFE)) 
     crcokdelay_i_6
-       (.I0(p_12_in43_in),
-        .I1(p_27_in),
-        .I2(p_20_in51_in),
-        .I3(p_28_in),
+       (.I0(p_14_in),
+        .I1(p_17_in66_in),
+        .I2(p_15_in62_in),
+        .I3(p_16_in),
         .I4(crcokdelay_i_10_n_0),
         .O(crcokdelay_i_6_n_0));
   LUT4 #(
@@ -5175,14 +5232,13 @@ module system_axi_ethernetlite_0_0_crcgenrx
         .I2(p_13_in),
         .I3(p_8_in),
         .O(crcokdelay_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'hFFF7)) 
     crcokdelay_i_9
-       (.I0(\crc_local_reg_n_0_[27] ),
-        .I1(p_24_in69_in),
-        .I2(Q[1]),
-        .I3(Q[0]),
+       (.I0(Q[3]),
+        .I1(Q[2]),
+        .I2(p_10_in36_in),
+        .I3(p_5_in),
         .O(crcokdelay_i_9_n_0));
 endmodule
 
@@ -5273,7 +5329,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
   wire s_axi_aclk;
   wire txCrcEn_reg;
 
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[12]_i_1 
@@ -5282,7 +5338,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[0]),
         .I3(txCrcEn_reg),
         .O(\nibData[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[13]_i_1 
@@ -5291,7 +5347,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[1]),
         .I3(txCrcEn_reg),
         .O(\nibData[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[14]_i_1 
@@ -5300,7 +5356,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[2]),
         .I3(txCrcEn_reg),
         .O(\nibData[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[15]_i_1 
@@ -5309,7 +5365,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[3]),
         .I3(txCrcEn_reg),
         .O(\nibData[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[16]_i_1 
@@ -5338,14 +5394,14 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I4(\nibData_reg[30]_0 [2]),
         .I5(Q[2]),
         .O(\nibData[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \nibData[18]_i_2 
        (.I0(\nibData_reg[30]_0 [0]),
         .I1(Q[0]),
         .O(\nibData[18]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT5 #(
     .INIT(32'hA66A6AA6)) 
     \nibData[19]_i_1 
@@ -5355,7 +5411,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I3(Q[1]),
         .I4(\nibData_reg[30]_0 [1]),
         .O(\nibData[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT4 #(
     .INIT(16'h6996)) 
     \nibData[19]_i_2 
@@ -5364,7 +5420,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[2]),
         .I3(\nibData_reg[30]_0 [2]),
         .O(\nibData[19]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \nibData[20]_i_1 
@@ -5391,7 +5447,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I4(Q[1]),
         .I5(\nibData_reg[30]_0 [1]),
         .O(\nibData[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \nibData[23]_i_1 
@@ -5454,7 +5510,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I4(\nibData_reg[30]_0 [0]),
         .I5(\nibData[28]_i_2_n_0 ),
         .O(\nibData[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \nibData[28]_i_2 
@@ -5471,14 +5527,14 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I4(Q[2]),
         .I5(\nibData_reg[30]_0 [2]),
         .O(\nibData[29]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \nibData[29]_i_2 
        (.I0(\nibData_reg[30]_0 [3]),
         .I1(Q[3]),
         .O(\nibData[29]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[2]_i_1 
@@ -5487,7 +5543,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[0]),
         .I3(txCrcEn_reg),
         .O(\nibData[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT5 #(
     .INIT(32'h82282882)) 
     \nibData[30]_i_1 
@@ -5497,7 +5553,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I3(\nibData_reg[30]_0 [3]),
         .I4(Q[3]),
         .O(\nibData[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT3 #(
     .INIT(8'h60)) 
     \nibData[31]_i_3 
@@ -5505,7 +5561,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I1(\nibData_reg[30]_0 [3]),
         .I2(txCrcEn_reg),
         .O(\nibData[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[3]_i_1 
@@ -5514,7 +5570,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I2(Q[1]),
         .I3(txCrcEn_reg),
         .O(\nibData[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[4]_i_1 
@@ -5563,7 +5619,7 @@ module system_axi_ethernetlite_0_0_crcnibshiftreg
         .I4(Q[2]),
         .I5(\nibData_reg[30]_0 [2]),
         .O(\nibData[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'h69AA)) 
     \nibData[9]_i_1 
@@ -5851,7 +5907,7 @@ module system_axi_ethernetlite_0_0_defer_state
         .D(nextState[1]),
         .Q(Q[1]),
         .R(\FSM_sequential_thisState_reg[1]_2 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT5 #(
     .INIT(32'h0A0A3A0A)) 
     \count[0]_i_1 
@@ -5871,14 +5927,14 @@ module system_axi_ethernetlite_0_0_defer_state
         .I4(tx_clk_reg_d2),
         .I5(tx_clk_reg_d3),
         .O(\FSM_sequential_thisState_reg[0]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \count[0]_i_3 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\FSM_sequential_thisState_reg[0]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT4 #(
     .INIT(16'hB00B)) 
     \count[3]_i_1 
@@ -5887,7 +5943,7 @@ module system_axi_ethernetlite_0_0_defer_state
         .I2(\count_reg[3] [1]),
         .I3(\count_reg[3] [0]),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT4 #(
     .INIT(16'hB00B)) 
     \count[3]_i_1__0 
@@ -5896,7 +5952,7 @@ module system_axi_ethernetlite_0_0_defer_state
         .I2(\count_reg[3]_0 [1]),
         .I3(\count_reg[3]_0 [0]),
         .O(\FSM_sequential_thisState_reg[1]_0 [1]));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT3 #(
     .INIT(8'h45)) 
     \count[4]_i_1 
@@ -5904,7 +5960,7 @@ module system_axi_ethernetlite_0_0_defer_state
         .I1(Q[1]),
         .I2(Q[0]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT3 #(
     .INIT(8'h45)) 
     \count[4]_i_1__0 
@@ -6012,11 +6068,9 @@ module system_axi_ethernetlite_0_0_emac_dpram
   input \gen_wr_b.gen_word_wide.mem_reg_2 ;
   input [0:0]wea;
 
-  wire [3:0]Data_out_a_2;
   wire [8:0]Q;
   wire [10:0]addra;
   wire [3:0]dout;
-  wire [3:0]douta;
   wire \gen_wr_b.gen_word_wide.mem_reg ;
   wire [0:0]\gen_wr_b.gen_word_wide.mem_reg_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_1 ;
@@ -6030,10 +6084,12 @@ module system_axi_ethernetlite_0_0_emac_dpram
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_sbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_sbiterrb_UNCONNECTED ;
+  wire [3:0]\NLW_xpm_mem_gen.xpm_memory_inst_1_douta_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_sbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_sbiterrb_UNCONNECTED ;
+  wire [3:0]\NLW_xpm_mem_gen.xpm_memory_inst_2_douta_UNCONNECTED ;
 
   (* ADDR_WIDTH_A = "11" *) 
   (* ADDR_WIDTH_B = "9" *) 
@@ -6079,12 +6135,12 @@ module system_axi_ethernetlite_0_0_emac_dpram
        (.addra(addra),
         .addrb(Q),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ),
         .dina(dout),
         .dinb(s_axi_wdata[15:0]),
-        .douta(douta),
+        .douta(\NLW_xpm_mem_gen.xpm_memory_inst_1_douta_UNCONNECTED [3:0]),
         .doutb(rx_pong_data_out[15:0]),
         .ena(\gen_wr_b.gen_word_wide.mem_reg ),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_1 ),
@@ -6145,12 +6201,12 @@ module system_axi_ethernetlite_0_0_emac_dpram
        (.addra(addra),
         .addrb(Q),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ),
         .dina(dout),
         .dinb(s_axi_wdata[31:16]),
-        .douta(Data_out_a_2),
+        .douta(\NLW_xpm_mem_gen.xpm_memory_inst_2_douta_UNCONNECTED [3:0]),
         .doutb(rx_pong_data_out[31:16]),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_2 ),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_1 ),
@@ -6176,8 +6232,8 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     D,
     \gen_wr_b.gen_word_wide.mem_reg_0 ,
     \gen_wr_b.gen_word_wide.mem_reg_1 ,
-    \gen_wr_b.gen_word_wide.mem_reg_2 ,
     STATE0A,
+    \gen_wr_b.gen_word_wide.mem_reg_2 ,
     \gen_wr_b.gen_word_wide.mem_reg_3 ,
     s_axi_aclk,
     \gen_wr_b.gen_word_wide.mem_reg_4 ,
@@ -6188,35 +6244,37 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     s_axi_wdata,
     \gen_wr_b.gen_word_wide.mem_reg_5 ,
     prmry_in,
-    p_19_in,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] ,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ,
     rx_pong_data_out,
     doutb,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 ,
-    p_25_in148_in,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 ,
+    p_31_in166_in,
     p_43_in207_in,
     p_55_in246_in,
     p_61_in265_in,
     p_67_in,
     p_66_in,
-    p_73_in303_in,
-    p_72_in301_in,
+    p_79_in,
+    p_78_in,
     p_85_in339_in,
     p_84_in,
+    p_91_in355_in,
+    p_90_in,
     douta,
     ram16x1_3,
     tx_pong_ping_l,
     tx_idle,
-    \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 );
-  output [23:0]\gen_wr_b.gen_word_wide.mem_reg ;
+    \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 );
+  output [22:0]\gen_wr_b.gen_word_wide.mem_reg ;
   output select_2;
-  output [7:0]D;
+  output [8:0]D;
   output [2:0]\gen_wr_b.gen_word_wide.mem_reg_0 ;
   output \gen_wr_b.gen_word_wide.mem_reg_1 ;
-  output \gen_wr_b.gen_word_wide.mem_reg_2 ;
   output STATE0A;
+  output \gen_wr_b.gen_word_wide.mem_reg_2 ;
   output \gen_wr_b.gen_word_wide.mem_reg_3 ;
   input s_axi_aclk;
   input \gen_wr_b.gen_word_wide.mem_reg_4 ;
@@ -6227,77 +6285,82 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
   input [31:0]s_axi_wdata;
   input \gen_wr_b.gen_word_wide.mem_reg_5 ;
   input prmry_in;
-  input p_19_in;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ;
   input [4:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] ;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ;
-  input [7:0]rx_pong_data_out;
-  input [7:0]doutb;
-  input [7:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 ;
-  input p_25_in148_in;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ;
+  input [8:0]rx_pong_data_out;
+  input [8:0]doutb;
+  input [8:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 ;
+  input p_31_in166_in;
   input p_43_in207_in;
   input p_55_in246_in;
   input p_61_in265_in;
   input p_67_in;
   input p_66_in;
-  input p_73_in303_in;
-  input p_72_in301_in;
+  input p_79_in;
+  input p_78_in;
   input p_85_in339_in;
   input p_84_in;
+  input p_91_in355_in;
+  input p_90_in;
   input [1:0]douta;
   input [1:0]ram16x1_3;
   input tx_pong_ping_l;
   input tx_idle;
-  input \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
+  input \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
 
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[10]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[11]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[14]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[7]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[9]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ;
   wire [4:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ;
-  wire [7:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 ;
-  wire [7:0]D;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ;
+  wire [8:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 ;
+  wire [8:0]D;
   wire [3:0]Data_out_a_2;
-  wire \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
+  wire \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
   wire [10:0]Q;
   wire STATE0A;
   wire [1:0]douta;
   wire [3:0]douta_0;
-  wire [7:0]doutb;
+  wire [8:0]doutb;
   wire enb;
-  wire [23:0]\gen_wr_b.gen_word_wide.mem_reg ;
+  wire [22:0]\gen_wr_b.gen_word_wide.mem_reg ;
   wire [2:0]\gen_wr_b.gen_word_wide.mem_reg_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_1 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_2 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_3 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_4 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_5 ;
-  wire p_19_in;
-  wire p_25_in148_in;
+  wire p_31_in166_in;
   wire p_43_in207_in;
   wire p_55_in246_in;
   wire p_61_in265_in;
   wire p_66_in;
   wire p_67_in;
-  wire p_72_in301_in;
-  wire p_73_in303_in;
+  wire p_78_in;
+  wire p_79_in;
   wire p_84_in;
   wire p_85_in339_in;
+  wire p_90_in;
+  wire p_91_in355_in;
   wire prmry_in;
   wire [1:0]ram16x1_3;
-  wire [7:0]rx_pong_data_out;
+  wire [8:0]rx_pong_data_out;
   wire s_axi_aclk;
   wire [31:0]s_axi_wdata;
   wire select_2;
   wire [11:0]tx_DPM_adr;
   wire tx_idle;
-  wire [14:3]tx_ping_data_out;
+  wire [15:0]tx_ping_data_out;
   wire tx_pong_ping_l;
   wire [0:0]web;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ;
@@ -6311,11 +6374,30 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
 
   LUT5 #(
     .INIT(32'hB8FFB800)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [0]),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ),
+        .O(D[0]));
+  LUT6 #(
+    .INIT(64'hCCFFF0AACC00F0AA)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2 
+       (.I0(tx_ping_data_out[0]),
+        .I1(rx_pong_data_out[0]),
+        .I2(doutb[0]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [0]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[10]_i_1 
        (.I0(p_61_in265_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [4]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[10]_i_2_n_0 ),
         .O(D[4]));
   LUT6 #(
@@ -6323,18 +6405,18 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[10]_i_2 
        (.I0(tx_ping_data_out[10]),
         .I1(rx_pong_data_out[4]),
-        .I2(doutb[4]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [4]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [4]),
+        .I3(Q[10]),
+        .I4(Q[9]),
+        .I5(doutb[4]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[10]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[11]_i_1 
        (.I0(p_67_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(p_66_in),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[11]_i_2_n_0 ),
         .O(D[5]));
   LUT6 #(
@@ -6342,37 +6424,37 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[11]_i_2 
        (.I0(tx_ping_data_out[11]),
         .I1(rx_pong_data_out[5]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [5]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [5]),
         .I3(Q[10]),
         .I4(Q[9]),
         .I5(doutb[5]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[11]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_1 
-       (.I0(p_73_in303_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
-        .I2(p_72_in301_in),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_1 
+       (.I0(p_79_in),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
+        .I2(p_78_in),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ),
         .O(D[6]));
   LUT6 #(
     .INIT(64'hCCFFF0AACC00F0AA)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2 
-       (.I0(tx_ping_data_out[12]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2 
+       (.I0(tx_ping_data_out[13]),
         .I1(rx_pong_data_out[6]),
         .I2(doutb[6]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [6]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ));
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [6]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[14]_i_1 
        (.I0(p_85_in339_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(p_84_in),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[14]_i_2_n_0 ),
         .O(D[7]));
   LUT6 #(
@@ -6380,56 +6462,56 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[14]_i_2 
        (.I0(tx_ping_data_out[14]),
         .I1(rx_pong_data_out[7]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [7]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(doutb[7]),
+        .I2(doutb[7]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [7]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[14]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_1 
-       (.I0(p_19_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [0]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ),
-        .O(D[0]));
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_1 
+       (.I0(p_91_in355_in),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
+        .I2(p_90_in),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ),
+        .O(D[8]));
   LUT6 #(
     .INIT(64'hCCFFF0AACC00F0AA)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2 
-       (.I0(tx_ping_data_out[3]),
-        .I1(rx_pong_data_out[0]),
-        .I2(doutb[0]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2 
+       (.I0(tx_ping_data_out[15]),
+        .I1(rx_pong_data_out[8]),
+        .I2(doutb[8]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [0]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ));
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [8]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_1 
-       (.I0(p_25_in148_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_1 
+       (.I0(p_31_in166_in),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [1]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ),
         .O(D[1]));
   LUT6 #(
     .INIT(64'hCCFFF0AACC00F0AA)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2 
-       (.I0(tx_ping_data_out[4]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2 
+       (.I0(tx_ping_data_out[5]),
         .I1(rx_pong_data_out[1]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [1]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(doutb[1]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ));
+        .I2(doutb[1]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [1]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[7]_i_1 
        (.I0(p_43_in207_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [2]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[7]_i_2_n_0 ),
         .O(D[2]));
   LUT6 #(
@@ -6437,18 +6519,18 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[7]_i_2 
        (.I0(tx_ping_data_out[7]),
         .I1(rx_pong_data_out[2]),
-        .I2(doutb[2]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [2]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [2]),
+        .I3(Q[10]),
+        .I4(Q[9]),
+        .I5(doutb[2]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[7]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[9]_i_1 
        (.I0(p_55_in246_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] [3]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[9]_i_2_n_0 ),
         .O(D[3]));
   LUT6 #(
@@ -6456,20 +6538,20 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[9]_i_2 
        (.I0(tx_ping_data_out[9]),
         .I1(rx_pong_data_out[3]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 [3]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(doutb[3]),
+        .I2(doutb[3]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 [3]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[9]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000EFEEEFFF)) 
-    \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_2 
+    \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_2 
        (.I0(tx_idle),
         .I1(tx_pong_ping_l),
-        .I2(Data_out_a_2[1]),
+        .I2(Data_out_a_2[2]),
         .I3(select_2),
-        .I4(douta_0[1]),
-        .I5(\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
+        .I4(douta_0[2]),
+        .I5(\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
         .O(STATE0A));
   LUT5 #(
     .INIT(32'h000000E2)) 
@@ -6481,34 +6563,34 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
         .I4(tx_idle),
         .O(\gen_wr_b.gen_word_wide.mem_reg_3 ));
   LUT6 #(
-    .INIT(64'hAAAAAAAAAAAAFEAE)) 
-    ram16x1_1_i_1
-       (.I0(\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
-        .I1(douta_0[1]),
-        .I2(select_2),
-        .I3(Data_out_a_2[1]),
-        .I4(tx_pong_ping_l),
-        .I5(tx_idle),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_0 [0]));
-  LUT6 #(
     .INIT(64'hAAAAAAAAFEAEAAAA)) 
-    ram16x1_2_i_1
+    ram16x1_1_i_1
        (.I0(\gen_wr_b.gen_word_wide.mem_reg_2 ),
         .I1(douta[0]),
         .I2(select_2),
         .I3(ram16x1_3[0]),
         .I4(tx_pong_ping_l),
         .I5(tx_idle),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_0 [1]));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_0 [0]));
   LUT5 #(
     .INIT(32'h000000E2)) 
-    ram16x1_2_i_2
-       (.I0(douta_0[2]),
+    ram16x1_1_i_2
+       (.I0(douta_0[1]),
         .I1(select_2),
-        .I2(Data_out_a_2[2]),
+        .I2(Data_out_a_2[1]),
         .I3(tx_pong_ping_l),
         .I4(tx_idle),
         .O(\gen_wr_b.gen_word_wide.mem_reg_2 ));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAFEAE)) 
+    ram16x1_2_i_1
+       (.I0(\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
+        .I1(douta_0[2]),
+        .I2(select_2),
+        .I3(Data_out_a_2[2]),
+        .I4(tx_pong_ping_l),
+        .I5(tx_idle),
+        .O(\gen_wr_b.gen_word_wide.mem_reg_0 [1]));
   LUT6 #(
     .INIT(64'hAAAAAAAAFEAEAAAA)) 
     ram16x1_3_i_1
@@ -6578,13 +6660,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
        (.addra({tx_DPM_adr[11:3],tx_DPM_adr[1:0]}),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ),
         .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(s_axi_wdata[15:0]),
         .douta(douta_0),
-        .doutb({\gen_wr_b.gen_word_wide.mem_reg [7],tx_ping_data_out[14],\gen_wr_b.gen_word_wide.mem_reg [6],tx_ping_data_out[12:9],\gen_wr_b.gen_word_wide.mem_reg [5],tx_ping_data_out[7],\gen_wr_b.gen_word_wide.mem_reg [4:3],tx_ping_data_out[4:3],\gen_wr_b.gen_word_wide.mem_reg [2:0]}),
+        .doutb({tx_ping_data_out[15:13],\gen_wr_b.gen_word_wide.mem_reg [6],tx_ping_data_out[11:9],\gen_wr_b.gen_word_wide.mem_reg [5],tx_ping_data_out[7],\gen_wr_b.gen_word_wide.mem_reg [4],tx_ping_data_out[5],\gen_wr_b.gen_word_wide.mem_reg [3:0],tx_ping_data_out[0]}),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_4 ),
         .enb(enb),
         .injectdbiterra(1'b0),
@@ -6644,13 +6726,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1
        (.addra({tx_DPM_adr[11:3],tx_DPM_adr[1:0]}),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ),
         .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(s_axi_wdata[31:16]),
         .douta(Data_out_a_2),
-        .doutb(\gen_wr_b.gen_word_wide.mem_reg [23:8]),
+        .doutb(\gen_wr_b.gen_word_wide.mem_reg [22:7]),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_5 ),
         .enb(enb),
         .injectdbiterra(1'b0),
@@ -6683,16 +6765,17 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__2
     s_axi_wdata,
     ena,
     wea,
-    p_79_in,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ,
-    p_78_in,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ,
+    p_7_in94_in,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] ,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ,
     tx_pong_data_out,
     tx_ping_data_out,
     rx_pong_data_out,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 );
-  output [22:0]\gen_wr_b.gen_word_wide.mem_reg ;
-  output [8:0]D;
+    p_25_in148_in,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 );
+  output [18:0]\gen_wr_b.gen_word_wide.mem_reg ;
+  output [12:0]D;
   input s_axi_aclk;
   input \gen_wr_b.gen_word_wide.mem_reg_0 ;
   input [0:0]\gen_wr_b.gen_word_wide.mem_reg_1 ;
@@ -6704,228 +6787,309 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__2
   input [31:0]s_axi_wdata;
   input ena;
   input [0:0]wea;
-  input p_79_in;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ;
-  input p_78_in;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ;
-  input [8:0]tx_pong_data_out;
-  input [8:0]tx_ping_data_out;
-  input [8:0]rx_pong_data_out;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ;
+  input p_7_in94_in;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ;
+  input [1:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] ;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ;
+  input [12:0]tx_pong_data_out;
+  input [12:0]tx_ping_data_out;
+  input [12:0]rx_pong_data_out;
+  input p_25_in148_in;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ;
 
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ;
-  wire [8:0]D;
-  wire [3:0]Data_out_a_2;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ;
+  wire [1:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] ;
+  wire [12:0]D;
   wire [10:0]Q;
   wire [10:0]addra;
   wire [3:0]dout;
-  wire [3:0]douta;
   wire ena;
-  wire [22:0]\gen_wr_b.gen_word_wide.mem_reg ;
+  wire [18:0]\gen_wr_b.gen_word_wide.mem_reg ;
   wire \gen_wr_b.gen_word_wide.mem_reg_0 ;
   wire [0:0]\gen_wr_b.gen_word_wide.mem_reg_1 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_2 ;
-  wire p_78_in;
-  wire p_79_in;
-  wire [28:13]rx_ping_data_out;
-  wire [8:0]rx_pong_data_out;
+  wire p_25_in148_in;
+  wire p_7_in94_in;
+  wire [30:1]rx_ping_data_out;
+  wire [12:0]rx_pong_data_out;
   wire s_axi_aclk;
   wire [31:0]s_axi_wdata;
-  wire [8:0]tx_ping_data_out;
-  wire [8:0]tx_pong_data_out;
+  wire [12:0]tx_ping_data_out;
+  wire [12:0]tx_pong_data_out;
   wire [0:0]wea;
   wire [0:0]web;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_sbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_sbiterrb_UNCONNECTED ;
+  wire [3:0]\NLW_xpm_mem_gen.xpm_memory_inst_1_douta_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_sbiterra_UNCONNECTED ;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_2_sbiterrb_UNCONNECTED ;
+  wire [3:0]\NLW_xpm_mem_gen.xpm_memory_inst_2_douta_UNCONNECTED ;
 
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_1 
-       (.I0(p_79_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(p_78_in),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ),
-        .O(D[0]));
-  LUT6 #(
-    .INIT(64'hFFAACCF000AACCF0)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2 
-       (.I0(rx_ping_data_out[13]),
-        .I1(tx_pong_data_out[0]),
-        .I2(tx_ping_data_out[0]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(rx_pong_data_out[0]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[13]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_2_n_0 ),
-        .O(D[1]));
+        .O(D[2]));
   LUT6 #(
     .INIT(64'hCCAAF0FFCCAAF000)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_2 
        (.I0(rx_ping_data_out[16]),
-        .I1(rx_pong_data_out[1]),
-        .I2(tx_pong_data_out[1]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(tx_ping_data_out[1]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2_n_0 ),
-        .O(D[2]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2 
-       (.I0(rx_ping_data_out[18]),
-        .I1(tx_ping_data_out[2]),
+        .I1(rx_pong_data_out[2]),
         .I2(tx_pong_data_out[2]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[2]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+        .I5(tx_ping_data_out[2]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[16]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ),
         .O(D[3]));
   LUT6 #(
     .INIT(64'hCCAAF0FFCCAAF000)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2 
-       (.I0(rx_ping_data_out[19]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2 
+       (.I0(rx_ping_data_out[17]),
         .I1(rx_pong_data_out[3]),
         .I2(tx_pong_data_out[3]),
         .I3(Q[9]),
         .I4(Q[10]),
         .I5(tx_ping_data_out[3]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2_n_0 ),
         .O(D[4]));
   LUT6 #(
-    .INIT(64'hCCAAF0FFCCAAF000)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2 
-       (.I0(rx_ping_data_out[22]),
-        .I1(rx_pong_data_out[4]),
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2 
+       (.I0(rx_ping_data_out[18]),
+        .I1(tx_ping_data_out[4]),
         .I2(tx_pong_data_out[4]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(tx_ping_data_out[4]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+        .I5(rx_pong_data_out[4]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[18]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2_n_0 ),
         .O(D[5]));
   LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2 
-       (.I0(rx_ping_data_out[25]),
-        .I1(tx_ping_data_out[5]),
+    .INIT(64'hCCAAF0FFCCAAF000)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2 
+       (.I0(rx_ping_data_out[19]),
+        .I1(rx_pong_data_out[5]),
         .I2(tx_pong_data_out[5]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[5]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+        .I5(tx_ping_data_out[5]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[19]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_1 
+       (.I0(p_7_in94_in),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] [0]),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ),
+        .O(D[0]));
+  LUT6 #(
+    .INIT(64'hFFAACCF000AACCF0)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2 
+       (.I0(rx_ping_data_out[1]),
+        .I1(tx_pong_data_out[0]),
+        .I2(tx_ping_data_out[0]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(rx_pong_data_out[0]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ),
         .O(D[6]));
   LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2 
-       (.I0(rx_ping_data_out[26]),
-        .I1(tx_ping_data_out[6]),
+    .INIT(64'hCCAAF0FFCCAAF000)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2 
+       (.I0(rx_ping_data_out[21]),
+        .I1(rx_pong_data_out[6]),
         .I2(tx_pong_data_out[6]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[6]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+        .I5(tx_ping_data_out[6]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2_n_0 ),
         .O(D[7]));
   LUT6 #(
     .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2 
-       (.I0(rx_ping_data_out[27]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2 
+       (.I0(rx_ping_data_out[22]),
         .I1(tx_ping_data_out[7]),
         .I2(tx_pong_data_out[7]),
         .I3(Q[9]),
         .I4(Q[10]),
         .I5(rx_pong_data_out[7]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[22]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ),
         .O(D[8]));
   LUT6 #(
     .INIT(64'hCCAAF0FFCCAAF000)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2 
-       (.I0(rx_ping_data_out[28]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2 
+       (.I0(rx_ping_data_out[24]),
         .I1(rx_pong_data_out[8]),
         .I2(tx_pong_data_out[8]),
         .I3(Q[9]),
         .I4(Q[10]),
         .I5(tx_ping_data_out[8]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ));
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2_n_0 ),
+        .O(D[9]));
+  LUT6 #(
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2 
+       (.I0(rx_ping_data_out[26]),
+        .I1(tx_ping_data_out[9]),
+        .I2(tx_pong_data_out[9]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(rx_pong_data_out[9]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[26]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2_n_0 ),
+        .O(D[10]));
+  LUT6 #(
+    .INIT(64'hCCAAF0FFCCAAF000)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2 
+       (.I0(rx_ping_data_out[27]),
+        .I1(rx_pong_data_out[10]),
+        .I2(tx_pong_data_out[10]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(tx_ping_data_out[10]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[27]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ),
+        .O(D[11]));
+  LUT6 #(
+    .INIT(64'hCCAAF0FFCCAAF000)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2 
+       (.I0(rx_ping_data_out[29]),
+        .I1(rx_pong_data_out[11]),
+        .I2(tx_pong_data_out[11]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(tx_ping_data_out[11]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ),
+        .O(D[12]));
+  LUT6 #(
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2 
+       (.I0(rx_ping_data_out[30]),
+        .I1(tx_ping_data_out[12]),
+        .I2(tx_pong_data_out[12]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(rx_pong_data_out[12]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hB8FFB800)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_1 
+       (.I0(p_25_in148_in),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] [1]),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 ),
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ),
+        .O(D[1]));
+  LUT6 #(
+    .INIT(64'hFFAACCF000AACCF0)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2 
+       (.I0(rx_ping_data_out[4]),
+        .I1(tx_pong_data_out[1]),
+        .I2(tx_ping_data_out[1]),
+        .I3(Q[9]),
+        .I4(Q[10]),
+        .I5(rx_pong_data_out[1]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[4]_i_2_n_0 ));
   (* ADDR_WIDTH_A = "11" *) 
   (* ADDR_WIDTH_B = "9" *) 
   (* AUTO_SLEEP_TIME = "0" *) 
@@ -6970,13 +7134,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__2
        (.addra(addra),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ),
         .dina(dout),
         .dinb(s_axi_wdata[15:0]),
-        .douta(douta),
-        .doutb({\gen_wr_b.gen_word_wide.mem_reg [14:13],rx_ping_data_out[13],\gen_wr_b.gen_word_wide.mem_reg [12:0]}),
+        .douta(\NLW_xpm_mem_gen.xpm_memory_inst_1_douta_UNCONNECTED [3:0]),
+        .doutb({\gen_wr_b.gen_word_wide.mem_reg [13:3],rx_ping_data_out[4],\gen_wr_b.gen_word_wide.mem_reg [2:1],rx_ping_data_out[1],\gen_wr_b.gen_word_wide.mem_reg [0]}),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_0 ),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_2 ),
         .injectdbiterra(1'b0),
@@ -7036,13 +7200,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__2
        (.addra(addra),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ),
         .dina(dout),
         .dinb(s_axi_wdata[31:16]),
-        .douta(Data_out_a_2),
-        .doutb({\gen_wr_b.gen_word_wide.mem_reg [22:20],rx_ping_data_out[28:25],\gen_wr_b.gen_word_wide.mem_reg [19:18],rx_ping_data_out[22],\gen_wr_b.gen_word_wide.mem_reg [17:16],rx_ping_data_out[19:18],\gen_wr_b.gen_word_wide.mem_reg [15],rx_ping_data_out[16]}),
+        .douta(\NLW_xpm_mem_gen.xpm_memory_inst_2_douta_UNCONNECTED [3:0]),
+        .doutb({\gen_wr_b.gen_word_wide.mem_reg [18],rx_ping_data_out[30:29],\gen_wr_b.gen_word_wide.mem_reg [17],rx_ping_data_out[27:26],\gen_wr_b.gen_word_wide.mem_reg [16],rx_ping_data_out[24],\gen_wr_b.gen_word_wide.mem_reg [15],rx_ping_data_out[22:21],\gen_wr_b.gen_word_wide.mem_reg [14],rx_ping_data_out[19:16]}),
         .ena(ena),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_2 ),
         .injectdbiterra(1'b0),
@@ -7078,32 +7242,30 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
     Q,
     s_axi_wdata,
     \gen_wr_b.gen_word_wide.mem_reg_4 ,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ,
+    p_13_in113_in,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ,
     rx_pong_data_out,
-    p_7_in94_in,
-    p_13_in113_in,
-    p_31_in166_in,
+    p_19_in,
     p_37_in186_in,
     p_49_in,
-    p_91_in355_in,
-    p_90_in,
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ,
+    p_73_in303_in,
+    p_72_in301_in,
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_3 ,
     tx_idle,
     tx_pong_ping_l,
     select_2,
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ,
-    \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ,
+    \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ,
     ram16x1_0);
   output [1:0]douta;
-  output [16:0]\gen_wr_b.gen_word_wide.mem_reg ;
+  output [21:0]\gen_wr_b.gen_word_wide.mem_reg ;
   output [1:0]\gen_wr_b.gen_word_wide.mem_reg_0 ;
-  output [14:0]D;
+  output [9:0]D;
   output STATE0A;
   output STATE0A_0;
   output [0:0]STATE0A_1;
@@ -7116,83 +7278,74 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
   input [10:0]Q;
   input [31:0]s_axi_wdata;
   input \gen_wr_b.gen_word_wide.mem_reg_4 ;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ;
-  input [5:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ;
-  input [14:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ;
-  input [14:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ;
-  input [14:0]rx_pong_data_out;
-  input p_7_in94_in;
   input p_13_in113_in;
-  input p_31_in166_in;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ;
+  input [3:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ;
+  input [9:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ;
+  input [9:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ;
+  input [9:0]rx_pong_data_out;
+  input p_19_in;
   input p_37_in186_in;
   input p_49_in;
-  input p_91_in355_in;
-  input p_90_in;
-  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ;
+  input p_73_in303_in;
+  input p_72_in301_in;
+  input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ;
   input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_3 ;
   input tx_idle;
   input tx_pong_ping_l;
   input select_2;
   input \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
-  input \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
+  input \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
   input ram16x1_0;
 
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[2]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_3_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[6]_i_2_n_0 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[8]_i_2_n_0 ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ;
-  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ;
+  wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ;
-  wire [14:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ;
-  wire [14:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ;
+  wire [9:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ;
+  wire [9:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ;
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_3 ;
-  wire [5:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ;
-  wire [14:0]D;
-  wire [1:0]Data_out_a_2;
+  wire [3:0]\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ;
+  wire [9:0]D;
+  wire [2:0]Data_out_a_2;
   wire \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
-  wire \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
+  wire \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ;
   wire [10:0]Q;
   wire STATE0A;
   wire STATE0A_0;
   wire [0:0]STATE0A_1;
   wire [1:0]douta;
-  wire [1:0]douta_0;
-  wire [16:0]\gen_wr_b.gen_word_wide.mem_reg ;
+  wire [2:0]douta_0;
+  wire [21:0]\gen_wr_b.gen_word_wide.mem_reg ;
   wire [1:0]\gen_wr_b.gen_word_wide.mem_reg_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_1 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_2 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_3 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_4 ;
   wire p_13_in113_in;
-  wire p_31_in166_in;
+  wire p_19_in;
   wire p_37_in186_in;
   wire p_49_in;
-  wire p_7_in94_in;
-  wire p_90_in;
-  wire p_91_in355_in;
+  wire p_72_in301_in;
+  wire p_73_in303_in;
   wire ram16x1_0;
-  wire [14:0]rx_pong_data_out;
+  wire [9:0]rx_pong_data_out;
   wire s_axi_aclk;
   wire [31:0]s_axi_wdata;
   wire select_2;
   wire [10:0]tx_DPM_adr;
   wire tx_idle;
-  wire [31:0]tx_pong_data_out;
+  wire [31:2]tx_pong_data_out;
   wire tx_pong_ping_l;
   wire [0:0]web;
   wire \NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ;
@@ -7206,212 +7359,118 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
 
   LUT5 #(
     .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] ),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_1 
+       (.I0(p_73_in303_in),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [0]),
+        .I2(p_72_in301_in),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ),
-        .O(D[0]));
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ),
+        .O(D[4]));
   LUT6 #(
     .INIT(64'hFFCCAAF000CCAAF0)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2 
-       (.I0(tx_pong_data_out[0]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [0]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [0]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2 
+       (.I0(tx_pong_data_out[12]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [4]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [4]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[0]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[0]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_1 
-       (.I0(p_91_in355_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(p_90_in),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ),
-        .O(D[6]));
-  LUT6 #(
-    .INIT(64'hFFCCAAF000CCAAF0)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2 
-       (.I0(tx_pong_data_out[15]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [6]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [6]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(rx_pong_data_out[6]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[15]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ),
-        .O(D[7]));
-  LUT6 #(
-    .INIT(64'hCCAAF0FFCCAAF000)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2 
-       (.I0(tx_pong_data_out[17]),
-        .I1(rx_pong_data_out[7]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [7]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [7]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[17]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_1 
-       (.I0(p_7_in94_in),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [1]),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ),
-        .O(D[1]));
-  LUT6 #(
-    .INIT(64'hFFCCAAF000CCAAF0)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2 
-       (.I0(tx_pong_data_out[1]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [1]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [1]),
-        .I3(Q[9]),
-        .I4(Q[10]),
-        .I5(rx_pong_data_out[1]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+        .I5(rx_pong_data_out[4]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[12]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT4 #(
     .INIT(16'h8F80)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_2_n_0 ),
-        .O(D[8]));
+        .O(D[5]));
   LUT6 #(
     .INIT(64'hFFAAF0CC00AAF0CC)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_2 
        (.I0(tx_pong_data_out[20]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [5]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [5]),
+        .I3(Q[10]),
+        .I4(Q[9]),
+        .I5(rx_pong_data_out[5]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2_n_0 ),
+        .O(D[6]));
+  LUT6 #(
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2 
+       (.I0(tx_pong_data_out[23]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [6]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [6]),
+        .I3(Q[10]),
+        .I4(Q[9]),
+        .I5(rx_pong_data_out[6]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ),
+        .O(D[7]));
+  LUT6 #(
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2 
+       (.I0(tx_pong_data_out[25]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [7]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [7]),
+        .I3(Q[10]),
+        .I4(Q[9]),
+        .I5(rx_pong_data_out[7]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[25]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  LUT4 #(
+    .INIT(16'h8F80)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_1 
+       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] ),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
+        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ),
+        .O(D[8]));
+  LUT6 #(
+    .INIT(64'hFFAAF0CC00AAF0CC)) 
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2 
+       (.I0(tx_pong_data_out[28]),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [8]),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [8]),
         .I3(Q[10]),
         .I4(Q[9]),
         .I5(rx_pong_data_out[8]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[20]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ),
-        .O(D[9]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2 
-       (.I0(tx_pong_data_out[21]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [9]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [9]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(rx_pong_data_out[9]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[21]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2_n_0 ),
-        .O(D[10]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2 
-       (.I0(tx_pong_data_out[23]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [10]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [10]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(rx_pong_data_out[10]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[23]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ),
-        .O(D[11]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2 
-       (.I0(tx_pong_data_out[24]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [11]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [11]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(rx_pong_data_out[11]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[24]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ),
-        .O(D[12]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2 
-       (.I0(tx_pong_data_out[29]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [12]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [12]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(rx_pong_data_out[12]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[29]_i_2_n_0 ));
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[28]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[2]_i_1 
        (.I0(p_13_in113_in),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [2]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [0]),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[2]_i_2_n_0 ),
-        .O(D[2]));
+        .O(D[0]));
   LUT6 #(
     .INIT(64'hFFCCAAF000CCAAF0)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[2]_i_2 
        (.I0(tx_pong_data_out[2]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [2]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [2]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [0]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [0]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[2]),
+        .I5(rx_pong_data_out[0]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[2]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h8F80)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_1 
-       (.I0(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] ),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ),
-        .O(D[13]));
-  LUT6 #(
-    .INIT(64'hFFAAF0CC00AAF0CC)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2 
-       (.I0(tx_pong_data_out[30]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [13]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [13]),
-        .I3(Q[10]),
-        .I4(Q[9]),
-        .I5(rx_pong_data_out[13]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[30]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'h8F80)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_1 
@@ -7419,73 +7478,73 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
         .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_3_n_0 ),
-        .O(D[14]));
+        .O(D[9]));
   LUT6 #(
     .INIT(64'hCCAAF0FFCCAAF000)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_3 
        (.I0(tx_pong_data_out[31]),
-        .I1(rx_pong_data_out[14]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [14]),
+        .I1(rx_pong_data_out[9]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [9]),
         .I3(Q[10]),
         .I4(Q[9]),
-        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [14]),
+        .I5(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [9]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[31]_i_3_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_1 
-       (.I0(p_31_in166_in),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_1 
+       (.I0(p_19_in),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [3]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [1]),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
-        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ),
-        .O(D[3]));
+        .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ),
+        .O(D[1]));
   LUT6 #(
     .INIT(64'hFFCCAAF000CCAAF0)) 
-    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2 
-       (.I0(tx_pong_data_out[5]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [3]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [3]),
+    \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2 
+       (.I0(tx_pong_data_out[3]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [1]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [1]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[3]),
-        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[5]_i_2_n_0 ));
+        .I5(rx_pong_data_out[1]),
+        .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[3]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[6]_i_1 
        (.I0(p_37_in186_in),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [4]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [2]),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[6]_i_2_n_0 ),
-        .O(D[4]));
+        .O(D[2]));
   LUT6 #(
     .INIT(64'hFFCCAAF000CCAAF0)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[6]_i_2 
        (.I0(tx_pong_data_out[6]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [4]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [4]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [2]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [2]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[4]),
+        .I5(rx_pong_data_out[2]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[6]_i_2_n_0 ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[8]_i_1 
        (.I0(p_49_in),
         .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [5]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] [3]),
         .I3(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 ),
         .I4(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[8]_i_2_n_0 ),
-        .O(D[5]));
+        .O(D[3]));
   LUT6 #(
     .INIT(64'hFFCCAAF000CCAAF0)) 
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[8]_i_2 
        (.I0(tx_pong_data_out[8]),
-        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [5]),
-        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [5]),
+        .I1(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 [3]),
+        .I2(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 [3]),
         .I3(Q[9]),
         .I4(Q[10]),
-        .I5(rx_pong_data_out[5]),
+        .I5(rx_pong_data_out[3]),
         .O(\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled[8]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'h00000000BFBBBFFF)) 
@@ -7499,13 +7558,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
         .O(STATE0A));
   LUT6 #(
     .INIT(64'h00000000BFBBBFFF)) 
-    \GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_2 
+    \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_2 
        (.I0(tx_idle),
         .I1(tx_pong_ping_l),
         .I2(\gen_wr_b.gen_word_wide.mem_reg_0 [0]),
         .I3(select_2),
         .I4(douta[0]),
-        .I5(\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
+        .I5(\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 ),
         .O(STATE0A_0));
   LUT6 #(
     .INIT(64'hFFFFFFFF40444000)) 
@@ -7519,10 +7578,10 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
         .O(STATE0A_1));
   LUT5 #(
     .INIT(32'h0000E200)) 
-    ram16x1_1_i_2
-       (.I0(douta_0[1]),
+    ram16x1_2_i_2
+       (.I0(douta_0[2]),
         .I1(select_2),
-        .I2(Data_out_a_2[1]),
+        .I2(Data_out_a_2[2]),
         .I3(tx_pong_ping_l),
         .I4(tx_idle),
         .O(\gen_wr_b.gen_word_wide.mem_reg_1 ));
@@ -7570,13 +7629,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
        (.addra(tx_DPM_adr),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_1_dbiterrb_UNCONNECTED ),
         .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(s_axi_wdata[15:0]),
-        .douta({douta,douta_0}),
-        .doutb({tx_pong_data_out[15],\gen_wr_b.gen_word_wide.mem_reg [8:3],tx_pong_data_out[8],\gen_wr_b.gen_word_wide.mem_reg [2],tx_pong_data_out[6:5],\gen_wr_b.gen_word_wide.mem_reg [1:0],tx_pong_data_out[2:0]}),
+        .douta({douta[1],douta_0[2],douta[0],douta_0[0]}),
+        .doutb({\gen_wr_b.gen_word_wide.mem_reg [10:8],tx_pong_data_out[12],\gen_wr_b.gen_word_wide.mem_reg [7:5],tx_pong_data_out[8],\gen_wr_b.gen_word_wide.mem_reg [4],tx_pong_data_out[6],\gen_wr_b.gen_word_wide.mem_reg [3:2],tx_pong_data_out[3:2],\gen_wr_b.gen_word_wide.mem_reg [1:0]}),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_2 ),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_3 ),
         .injectdbiterra(1'b0),
@@ -7636,13 +7695,13 @@ module system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3
        (.addra(tx_DPM_adr),
         .addrb(Q[8:0]),
         .clka(s_axi_aclk),
-        .clkb(s_axi_aclk),
+        .clkb(1'b0),
         .dbiterra(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterra_UNCONNECTED ),
         .dbiterrb(\NLW_xpm_mem_gen.xpm_memory_inst_2_dbiterrb_UNCONNECTED ),
         .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(s_axi_wdata[31:16]),
-        .douta({\gen_wr_b.gen_word_wide.mem_reg_0 ,Data_out_a_2}),
-        .doutb({tx_pong_data_out[31:29],\gen_wr_b.gen_word_wide.mem_reg [16:13],tx_pong_data_out[24:23],\gen_wr_b.gen_word_wide.mem_reg [12],tx_pong_data_out[21:20],\gen_wr_b.gen_word_wide.mem_reg [11:10],tx_pong_data_out[17],\gen_wr_b.gen_word_wide.mem_reg [9]}),
+        .douta({\gen_wr_b.gen_word_wide.mem_reg_0 [1],Data_out_a_2[2],\gen_wr_b.gen_word_wide.mem_reg_0 [0],Data_out_a_2[0]}),
+        .doutb({tx_pong_data_out[31],\gen_wr_b.gen_word_wide.mem_reg [21:20],tx_pong_data_out[28],\gen_wr_b.gen_word_wide.mem_reg [19:18],tx_pong_data_out[25],\gen_wr_b.gen_word_wide.mem_reg [17],tx_pong_data_out[23],\gen_wr_b.gen_word_wide.mem_reg [16:15],tx_pong_data_out[20],\gen_wr_b.gen_word_wide.mem_reg [14:11]}),
         .ena(\gen_wr_b.gen_word_wide.mem_reg_4 ),
         .enb(\gen_wr_b.gen_word_wide.mem_reg_3 ),
         .injectdbiterra(1'b0),
@@ -8299,7 +8358,7 @@ module system_axi_ethernetlite_0_0_ld_arith_reg__parameterized0
        (.I0(currentTxBusFifoWrCnt[2]),
         .I1(emac_tx_wr_i),
         .O(gen_cry_kill_n_2));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     STATE10A_i_2
@@ -8308,7 +8367,7 @@ module system_axi_ethernetlite_0_0_ld_arith_reg__parameterized0
         .I2(currentTxBusFifoWrCnt[2]),
         .I3(currentTxBusFifoWrCnt[3]),
         .O(\PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     STATE8A_i_2
@@ -8514,49 +8573,49 @@ endmodule
 
 (* ORIG_REF_NAME = "mdio_if" *) 
 module system_axi_ethernetlite_0_0_mdio_if
-   (\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 ,
+   (phy_mdio_t,
+    \MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 ,
     phy_mdio_o,
-    phy_mdio_t,
     D,
     s_axi_wdata_0_sp_1,
     prmry_in,
     s_axi_aclk,
-    mdio_clk_reg_reg_0,
+    out,
     phy_mdio_i,
     s_axi_aresetn,
     p_0_in_1,
     \MDIO_GEN.mdio_data_out_reg[10] ,
     Q,
+    PHY_MDIO_O_reg_i_5_0,
     \MDIO_GEN.mdio_data_out_reg[3] ,
-    PHY_MDIO_O_reg_i_8_0,
     \MDIO_GEN.mdio_data_out_reg[3]_0 ,
-    \MDIO_GEN.mdio_data_out_reg[9] ,
     \MDIO_GEN.mdio_data_out_reg[10]_0 ,
+    \MDIO_GEN.mdio_data_out_reg[10]_1 ,
     mdio_en_reg_reg_0,
-    \MDIO_GEN.mdio_data_out_reg[9]_0 ,
+    \MDIO_GEN.mdio_data_out_reg[9] ,
     mdio_op_i,
     s_axi_wdata,
     mdio_en_i0);
+  output phy_mdio_t;
   output [4:0]\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 ;
   output phy_mdio_o;
-  output phy_mdio_t;
   output [10:0]D;
   output s_axi_wdata_0_sp_1;
   input prmry_in;
   input s_axi_aclk;
-  input mdio_clk_reg_reg_0;
+  input out;
   input phy_mdio_i;
   input s_axi_aresetn;
   input [0:0]p_0_in_1;
   input \MDIO_GEN.mdio_data_out_reg[10] ;
   input [4:0]Q;
+  input [15:0]PHY_MDIO_O_reg_i_5_0;
   input \MDIO_GEN.mdio_data_out_reg[3] ;
-  input [15:0]PHY_MDIO_O_reg_i_8_0;
   input [0:0]\MDIO_GEN.mdio_data_out_reg[3]_0 ;
-  input \MDIO_GEN.mdio_data_out_reg[9] ;
   input \MDIO_GEN.mdio_data_out_reg[10]_0 ;
+  input \MDIO_GEN.mdio_data_out_reg[10]_1 ;
   input [0:0]mdio_en_reg_reg_0;
-  input [4:0]\MDIO_GEN.mdio_data_out_reg[9]_0 ;
+  input [4:0]\MDIO_GEN.mdio_data_out_reg[9] ;
   input mdio_op_i;
   input [0:0]s_axi_wdata;
   input mdio_en_i0;
@@ -8619,24 +8678,25 @@ module system_axi_ethernetlite_0_0_mdio_if
   wire \MDIO_GEN.mdio_data_out[9]_i_2_n_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[10] ;
   wire \MDIO_GEN.mdio_data_out_reg[10]_0 ;
+  wire \MDIO_GEN.mdio_data_out_reg[10]_1 ;
   wire \MDIO_GEN.mdio_data_out_reg[3] ;
   wire [0:0]\MDIO_GEN.mdio_data_out_reg[3]_0 ;
-  wire \MDIO_GEN.mdio_data_out_reg[9] ;
-  wire [4:0]\MDIO_GEN.mdio_data_out_reg[9]_0 ;
+  wire [4:0]\MDIO_GEN.mdio_data_out_reg[9] ;
   wire PHY_MDIO_O_i_10_n_0;
   wire PHY_MDIO_O_i_11_n_0;
   wire PHY_MDIO_O_i_12_n_0;
   wire PHY_MDIO_O_i_13_n_0;
   wire PHY_MDIO_O_i_14_n_0;
   wire PHY_MDIO_O_i_1_n_0;
-  wire PHY_MDIO_O_i_2_n_0;
-  wire PHY_MDIO_O_i_4_n_0;
-  wire PHY_MDIO_O_i_5_n_0;
+  wire PHY_MDIO_O_i_3_n_0;
   wire PHY_MDIO_O_i_6_n_0;
   wire PHY_MDIO_O_i_7_n_0;
-  wire [15:0]PHY_MDIO_O_reg_i_8_0;
-  wire PHY_MDIO_O_reg_i_8_n_0;
-  wire PHY_MDIO_O_reg_i_9_n_0;
+  wire PHY_MDIO_O_i_8_n_0;
+  wire PHY_MDIO_O_i_9_n_0;
+  wire PHY_MDIO_O_reg_i_2_n_0;
+  wire PHY_MDIO_O_reg_i_4_n_0;
+  wire [15:0]PHY_MDIO_O_reg_i_5_0;
+  wire PHY_MDIO_O_reg_i_5_n_0;
   wire PHY_MDIO_T_i_1_n_0;
   wire [4:0]Q;
   wire clk_cnt;
@@ -8646,9 +8706,7 @@ module system_axi_ethernetlite_0_0_mdio_if
   wire [4:2]ld_cnt_data_cmb;
   wire ld_cnt_en_cmb;
   wire ld_cnt_en_reg;
-  wire mdc_falling;
   wire mdio_clk_reg;
-  wire mdio_clk_reg_reg_0;
   wire mdio_done_i;
   wire mdio_en_i0;
   wire mdio_en_reg;
@@ -8662,11 +8720,12 @@ module system_axi_ethernetlite_0_0_mdio_if
   wire [10:0]mdio_rd_data_reg;
   wire mdio_state;
   wire mdio_t_comb;
+  wire out;
   wire [0:0]p_0_in_1;
   wire [5:0]p_0_in__1;
   wire phy_mdio_i;
   wire phy_mdio_o;
-  wire phy_mdio_t;
+  (* RTL_KEEP = "yes" *) wire phy_mdio_t;
   wire prmry_in;
   wire s_axi_aclk;
   wire s_axi_aresetn;
@@ -8680,7 +8739,7 @@ module system_axi_ethernetlite_0_0_mdio_if
        (.I0(\FSM_onehot_mdio_state_reg_n_0_[9] ),
         .I1(mdio_op_i),
         .O(\FSM_onehot_mdio_state[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \FSM_onehot_mdio_state[11]_i_1 
@@ -8697,18 +8756,18 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I4(\FSM_onehot_mdio_state[12]_i_6_n_0 ),
         .I5(\FSM_onehot_mdio_state_reg_n_0_[6] ),
         .O(mdio_state));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \FSM_onehot_mdio_state[12]_i_2 
        (.I0(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .I1(\FSM_onehot_mdio_state_reg_n_0_[10] ),
         .O(\FSM_onehot_mdio_state[12]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \FSM_onehot_mdio_state[12]_i_3 
-       (.I0(mdio_clk_reg_reg_0),
+       (.I0(out),
         .I1(mdio_clk_reg),
         .O(\FSM_onehot_mdio_state[12]_i_3_n_0 ));
   LUT6 #(
@@ -8731,7 +8790,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I4(clk_cnt_reg[1]),
         .I5(clk_cnt_reg[0]),
         .O(\FSM_onehot_mdio_state[12]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \FSM_onehot_mdio_state[12]_i_6 
@@ -8865,7 +8924,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_3_n_0 ),
         .I3(mdio_rd_data_reg[0]),
         .O(\MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT4 #(
     .INIT(16'h0001)) 
     \MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_2 
@@ -8874,13 +8933,13 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(clk_cnt_reg[5]),
         .I3(clk_cnt_reg[3]),
         .O(\MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT5 #(
     .INIT(32'h00100000)) 
     \MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_3 
        (.I0(clk_cnt_reg[0]),
         .I1(clk_cnt_reg[1]),
-        .I2(mdio_clk_reg_reg_0),
+        .I2(out),
         .I3(mdio_clk_reg),
         .I4(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .O(\MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_3_n_0 ));
@@ -8890,6 +8949,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[0].MDIO_RD_DATA[0]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[0]),
         .R(prmry_in));
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[10].MDIO_RD_DATA[10]_i_1 
@@ -8926,7 +8986,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[12].MDIO_RD_DATA[12]_i_2_n_0 ),
         .I3(\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 [1]),
         .O(\MDIO_CAPTURE_DATA[12].MDIO_RD_DATA[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT4 #(
     .INIT(16'hFDFF)) 
     \MDIO_CAPTURE_DATA[12].MDIO_RD_DATA[12]_i_2 
@@ -8983,6 +9043,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA[15]_i_1_n_0 ),
         .Q(\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 [4]),
         .R(prmry_in));
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT4 #(
     .INIT(16'hBF80)) 
     \MDIO_CAPTURE_DATA[1].MDIO_RD_DATA[1]_i_1 
@@ -8991,11 +9052,11 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[1].MDIO_RD_DATA[1]_i_2_n_0 ),
         .I3(mdio_rd_data_reg[1]),
         .O(\MDIO_CAPTURE_DATA[1].MDIO_RD_DATA[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT5 #(
     .INIT(32'h00002000)) 
     \MDIO_CAPTURE_DATA[1].MDIO_RD_DATA[1]_i_2 
-       (.I0(mdio_clk_reg_reg_0),
+       (.I0(out),
         .I1(mdio_clk_reg),
         .I2(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .I3(clk_cnt_reg[0]),
@@ -9007,6 +9068,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[1].MDIO_RD_DATA[1]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[1]),
         .R(prmry_in));
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT4 #(
     .INIT(16'hBF80)) 
     \MDIO_CAPTURE_DATA[2].MDIO_RD_DATA[2]_i_1 
@@ -9015,11 +9077,11 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[2].MDIO_RD_DATA[2]_i_2_n_0 ),
         .I3(mdio_rd_data_reg[2]),
         .O(\MDIO_CAPTURE_DATA[2].MDIO_RD_DATA[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT5 #(
     .INIT(32'h00002000)) 
     \MDIO_CAPTURE_DATA[2].MDIO_RD_DATA[2]_i_2 
-       (.I0(mdio_clk_reg_reg_0),
+       (.I0(out),
         .I1(mdio_clk_reg),
         .I2(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .I3(clk_cnt_reg[1]),
@@ -9039,11 +9101,11 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[3].MDIO_RD_DATA[3]_i_2_n_0 ),
         .I3(mdio_rd_data_reg[3]),
         .O(\MDIO_CAPTURE_DATA[3].MDIO_RD_DATA[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT5 #(
     .INIT(32'h20000000)) 
     \MDIO_CAPTURE_DATA[3].MDIO_RD_DATA[3]_i_2 
-       (.I0(mdio_clk_reg_reg_0),
+       (.I0(out),
         .I1(mdio_clk_reg),
         .I2(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .I3(clk_cnt_reg[0]),
@@ -9055,7 +9117,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[3].MDIO_RD_DATA[3]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[3]),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[4].MDIO_RD_DATA[4]_i_1 
@@ -9064,7 +9126,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[4].MDIO_RD_DATA[4]_i_2_n_0 ),
         .I3(mdio_rd_data_reg[4]),
         .O(\MDIO_CAPTURE_DATA[4].MDIO_RD_DATA[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT4 #(
     .INIT(16'hFEFF)) 
     \MDIO_CAPTURE_DATA[4].MDIO_RD_DATA[4]_i_2 
@@ -9079,7 +9141,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[4].MDIO_RD_DATA[4]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[4]),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[5].MDIO_RD_DATA[5]_i_1 
@@ -9094,6 +9156,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[5].MDIO_RD_DATA[5]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[5]),
         .R(prmry_in));
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[6].MDIO_RD_DATA[6]_i_1 
@@ -9108,7 +9171,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[6].MDIO_RD_DATA[6]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[6]),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[7].MDIO_RD_DATA[7]_i_1 
@@ -9123,7 +9186,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[7].MDIO_RD_DATA[7]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[7]),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[8].MDIO_RD_DATA[8]_i_1 
@@ -9132,7 +9195,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(\MDIO_CAPTURE_DATA[8].MDIO_RD_DATA[8]_i_2_n_0 ),
         .I3(mdio_rd_data_reg[8]),
         .O(\MDIO_CAPTURE_DATA[8].MDIO_RD_DATA[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT4 #(
     .INIT(16'hFFFB)) 
     \MDIO_CAPTURE_DATA[8].MDIO_RD_DATA[8]_i_2 
@@ -9147,7 +9210,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .D(\MDIO_CAPTURE_DATA[8].MDIO_RD_DATA[8]_i_1_n_0 ),
         .Q(mdio_rd_data_reg[8]),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     \MDIO_CAPTURE_DATA[9].MDIO_RD_DATA[9]_i_1 
@@ -9171,66 +9234,65 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I3(Q[0]),
         .O(D[0]));
   LUT6 #(
-    .INIT(64'hEFECEFECFFFCCFCC)) 
+    .INIT(64'hFFFCCFCCEFECEFEC)) 
     \MDIO_GEN.mdio_data_out[0]_i_2 
-       (.I0(mdio_rd_data_reg[0]),
+       (.I0(PHY_MDIO_O_reg_i_5_0[0]),
         .I1(\MDIO_GEN.mdio_data_out_reg[10] ),
         .I2(\MDIO_GEN.mdio_data_out_reg[3] ),
         .I3(p_0_in_1),
-        .I4(PHY_MDIO_O_reg_i_8_0[0]),
+        .I4(mdio_rd_data_reg[0]),
         .I5(\MDIO_GEN.mdio_data_out_reg[3]_0 ),
         .O(\MDIO_GEN.mdio_data_out[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
-  LUT4 #(
-    .INIT(16'hA030)) 
+  LUT6 #(
+    .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[10]_i_2 
-       (.I0(mdio_op_i),
-        .I1(\MDIO_GEN.mdio_data_out[10]_i_3_n_0 ),
-        .I2(s_axi_aresetn),
-        .I3(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .O(D[10]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
-  LUT4 #(
-    .INIT(16'hD0DD)) 
-    \MDIO_GEN.mdio_data_out[10]_i_3 
-       (.I0(PHY_MDIO_O_reg_i_8_0[10]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[9] ),
+       (.I0(\MDIO_GEN.mdio_data_out[10]_i_3_n_0 ),
+        .I1(PHY_MDIO_O_reg_i_5_0[10]),
         .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
-        .I3(mdio_rd_data_reg[10]),
+        .I3(s_axi_aresetn),
+        .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
+        .I5(mdio_op_i),
+        .O(D[10]));
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \MDIO_GEN.mdio_data_out[10]_i_3 
+       (.I0(mdio_rd_data_reg[10]),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[10]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[1]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[1]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[1]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[1]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
         .I5(Q[1]),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[1]_i_2 
        (.I0(mdio_rd_data_reg[1]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[1]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[2]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[2]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[2]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[2]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
         .I5(Q[2]),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[2]_i_2 
        (.I0(mdio_rd_data_reg[2]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[2]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'h8808)) 
@@ -9243,7 +9305,7 @@ module system_axi_ethernetlite_0_0_mdio_if
   LUT6 #(
     .INIT(64'hFFFCCFCCEFECEFEC)) 
     \MDIO_GEN.mdio_data_out[3]_i_2 
-       (.I0(PHY_MDIO_O_reg_i_8_0[3]),
+       (.I0(PHY_MDIO_O_reg_i_5_0[3]),
         .I1(\MDIO_GEN.mdio_data_out_reg[10] ),
         .I2(\MDIO_GEN.mdio_data_out_reg[3] ),
         .I3(mdio_en_reg_reg_0),
@@ -9254,103 +9316,103 @@ module system_axi_ethernetlite_0_0_mdio_if
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[4]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[4]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[4]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[4]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
         .I5(Q[4]),
         .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[4]_i_2 
        (.I0(mdio_rd_data_reg[4]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[4]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[5]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[5]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[5]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[5]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .I5(\MDIO_GEN.mdio_data_out_reg[9]_0 [0]),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [0]),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[5]_i_2 
        (.I0(mdio_rd_data_reg[5]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[5]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'hA030)) 
+  LUT6 #(
+    .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[6]_i_1 
-       (.I0(\MDIO_GEN.mdio_data_out_reg[9]_0 [1]),
-        .I1(\MDIO_GEN.mdio_data_out[6]_i_2_n_0 ),
-        .I2(s_axi_aresetn),
-        .I3(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
-  LUT4 #(
-    .INIT(16'hD0DD)) 
-    \MDIO_GEN.mdio_data_out[6]_i_2 
-       (.I0(PHY_MDIO_O_reg_i_8_0[6]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[9] ),
+       (.I0(\MDIO_GEN.mdio_data_out[6]_i_2_n_0 ),
+        .I1(PHY_MDIO_O_reg_i_5_0[6]),
         .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
-        .I3(mdio_rd_data_reg[6]),
+        .I3(s_axi_aresetn),
+        .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [1]),
+        .O(D[6]));
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \MDIO_GEN.mdio_data_out[6]_i_2 
+       (.I0(mdio_rd_data_reg[6]),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[6]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[7]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[7]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[7]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[7]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .I5(\MDIO_GEN.mdio_data_out_reg[9]_0 [2]),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [2]),
         .O(D[7]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[7]_i_2 
        (.I0(mdio_rd_data_reg[7]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[7]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[8]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[8]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[8]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[8]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .I5(\MDIO_GEN.mdio_data_out_reg[9]_0 [3]),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [3]),
         .O(D[8]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[8]_i_2 
        (.I0(mdio_rd_data_reg[8]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[8]_i_2_n_0 ));
   LUT6 #(
     .INIT(64'hFF00AE000000AE00)) 
     \MDIO_GEN.mdio_data_out[9]_i_1 
        (.I0(\MDIO_GEN.mdio_data_out[9]_i_2_n_0 ),
-        .I1(PHY_MDIO_O_reg_i_8_0[9]),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9] ),
+        .I1(PHY_MDIO_O_reg_i_5_0[9]),
+        .I2(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .I3(s_axi_aresetn),
         .I4(\MDIO_GEN.mdio_data_out_reg[10] ),
-        .I5(\MDIO_GEN.mdio_data_out_reg[9]_0 [4]),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [4]),
         .O(D[9]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \MDIO_GEN.mdio_data_out[9]_i_2 
        (.I0(mdio_rd_data_reg[9]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[10]_0 ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[10]_1 ),
         .O(\MDIO_GEN.mdio_data_out[9]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hA3A0)) 
@@ -9361,143 +9423,139 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I3(p_0_in_1),
         .O(s_axi_wdata_0_sn_1));
   LUT6 #(
-    .INIT(64'hFFFEFFFFFFFE0000)) 
+    .INIT(64'hFFFFF8FF0000F800)) 
     PHY_MDIO_O_i_1
-       (.I0(PHY_MDIO_O_i_2_n_0),
-        .I1(\FSM_onehot_mdio_state_reg_n_0_[0] ),
-        .I2(\FSM_onehot_mdio_state_reg_n_0_[1] ),
-        .I3(\FSM_onehot_mdio_state_reg_n_0_[8] ),
-        .I4(mdc_falling),
+       (.I0(PHY_MDIO_O_reg_i_2_n_0),
+        .I1(\FSM_onehot_mdio_state_reg_n_0_[10] ),
+        .I2(PHY_MDIO_O_i_3_n_0),
+        .I3(mdio_clk_reg),
+        .I4(out),
         .I5(phy_mdio_o),
         .O(PHY_MDIO_O_i_1_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     PHY_MDIO_O_i_10
-       (.I0(\MDIO_GEN.mdio_data_out_reg[9]_0 [3]),
-        .I1(\MDIO_GEN.mdio_data_out_reg[9]_0 [2]),
+       (.I0(PHY_MDIO_O_reg_i_5_0[11]),
+        .I1(PHY_MDIO_O_reg_i_5_0[10]),
         .I2(clk_cnt_reg[1]),
-        .I3(\MDIO_GEN.mdio_data_out_reg[9]_0 [1]),
+        .I3(PHY_MDIO_O_reg_i_5_0[9]),
         .I4(clk_cnt_reg[0]),
-        .I5(\MDIO_GEN.mdio_data_out_reg[9]_0 [0]),
+        .I5(PHY_MDIO_O_reg_i_5_0[8]),
         .O(PHY_MDIO_O_i_10_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     PHY_MDIO_O_i_11
-       (.I0(PHY_MDIO_O_reg_i_8_0[11]),
-        .I1(PHY_MDIO_O_reg_i_8_0[10]),
+       (.I0(PHY_MDIO_O_reg_i_5_0[15]),
+        .I1(PHY_MDIO_O_reg_i_5_0[14]),
         .I2(clk_cnt_reg[1]),
-        .I3(PHY_MDIO_O_reg_i_8_0[9]),
+        .I3(PHY_MDIO_O_reg_i_5_0[13]),
         .I4(clk_cnt_reg[0]),
-        .I5(PHY_MDIO_O_reg_i_8_0[8]),
+        .I5(PHY_MDIO_O_reg_i_5_0[12]),
         .O(PHY_MDIO_O_i_11_n_0));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  LUT3 #(
+    .INIT(8'h35)) 
     PHY_MDIO_O_i_12
-       (.I0(PHY_MDIO_O_reg_i_8_0[15]),
-        .I1(PHY_MDIO_O_reg_i_8_0[14]),
-        .I2(clk_cnt_reg[1]),
-        .I3(PHY_MDIO_O_reg_i_8_0[13]),
-        .I4(clk_cnt_reg[0]),
-        .I5(PHY_MDIO_O_reg_i_8_0[12]),
+       (.I0(\FSM_onehot_mdio_state_reg_n_0_[5] ),
+        .I1(\FSM_onehot_mdio_state_reg_n_0_[4] ),
+        .I2(mdio_op_i),
         .O(PHY_MDIO_O_i_12_n_0));
   LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
     PHY_MDIO_O_i_13
-       (.I0(PHY_MDIO_O_reg_i_8_0[3]),
-        .I1(PHY_MDIO_O_reg_i_8_0[2]),
-        .I2(clk_cnt_reg[1]),
-        .I3(PHY_MDIO_O_reg_i_8_0[1]),
-        .I4(clk_cnt_reg[0]),
-        .I5(PHY_MDIO_O_reg_i_8_0[0]),
+       (.I0(\FSM_onehot_mdio_state_reg_n_0_[11] ),
+        .I1(mdio_done_i),
+        .I2(\FSM_onehot_mdio_state_reg_n_0_[8] ),
+        .I3(\FSM_onehot_mdio_state_reg_n_0_[0] ),
+        .I4(\FSM_onehot_mdio_state_reg_n_0_[3] ),
+        .I5(\FSM_onehot_mdio_state_reg_n_0_[1] ),
         .O(PHY_MDIO_O_i_13_n_0));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     PHY_MDIO_O_i_14
-       (.I0(PHY_MDIO_O_reg_i_8_0[7]),
-        .I1(PHY_MDIO_O_reg_i_8_0[6]),
-        .I2(clk_cnt_reg[1]),
-        .I3(PHY_MDIO_O_reg_i_8_0[5]),
-        .I4(clk_cnt_reg[0]),
-        .I5(PHY_MDIO_O_reg_i_8_0[4]),
-        .O(PHY_MDIO_O_i_14_n_0));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    PHY_MDIO_O_i_2
-       (.I0(PHY_MDIO_O_i_4_n_0),
-        .I1(PHY_MDIO_O_i_5_n_0),
-        .I2(PHY_MDIO_O_i_6_n_0),
-        .I3(mdio_done_i),
-        .I4(\FSM_onehot_mdio_state_reg_n_0_[3] ),
-        .O(PHY_MDIO_O_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    PHY_MDIO_O_i_3
-       (.I0(mdio_clk_reg),
-        .I1(mdio_clk_reg_reg_0),
-        .O(mdc_falling));
-  LUT6 #(
-    .INIT(64'hF4FFF44444444444)) 
-    PHY_MDIO_O_i_4
-       (.I0(mdio_op_i),
-        .I1(\FSM_onehot_mdio_state_reg_n_0_[5] ),
-        .I2(Q[4]),
-        .I3(clk_cnt_reg[2]),
-        .I4(PHY_MDIO_O_i_7_n_0),
-        .I5(\FSM_onehot_mdio_state_reg_n_0_[7] ),
-        .O(PHY_MDIO_O_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hF8FFF88888888888)) 
-    PHY_MDIO_O_i_5
-       (.I0(\FSM_onehot_mdio_state_reg_n_0_[4] ),
-        .I1(mdio_op_i),
-        .I2(PHY_MDIO_O_reg_i_8_n_0),
-        .I3(clk_cnt_reg[3]),
-        .I4(PHY_MDIO_O_reg_i_9_n_0),
-        .I5(\FSM_onehot_mdio_state_reg_n_0_[10] ),
-        .O(PHY_MDIO_O_i_5_n_0));
-  LUT5 #(
-    .INIT(32'hEAEEEAAA)) 
-    PHY_MDIO_O_i_6
-       (.I0(\FSM_onehot_mdio_state_reg_n_0_[11] ),
-        .I1(\FSM_onehot_mdio_state_reg_n_0_[6] ),
-        .I2(\MDIO_GEN.mdio_data_out_reg[9]_0 [4]),
-        .I3(clk_cnt_reg[2]),
-        .I4(PHY_MDIO_O_i_10_n_0),
-        .O(PHY_MDIO_O_i_6_n_0));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
-    PHY_MDIO_O_i_7
        (.I0(Q[3]),
         .I1(Q[2]),
         .I2(clk_cnt_reg[1]),
         .I3(Q[1]),
         .I4(clk_cnt_reg[0]),
         .I5(Q[0]),
+        .O(PHY_MDIO_O_i_14_n_0));
+  LUT5 #(
+    .INIT(32'hFFFF8A80)) 
+    PHY_MDIO_O_i_3
+       (.I0(\FSM_onehot_mdio_state_reg_n_0_[6] ),
+        .I1(\MDIO_GEN.mdio_data_out_reg[9] [4]),
+        .I2(clk_cnt_reg[2]),
+        .I3(PHY_MDIO_O_i_6_n_0),
+        .I4(PHY_MDIO_O_i_7_n_0),
+        .O(PHY_MDIO_O_i_3_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    PHY_MDIO_O_i_6
+       (.I0(\MDIO_GEN.mdio_data_out_reg[9] [3]),
+        .I1(\MDIO_GEN.mdio_data_out_reg[9] [2]),
+        .I2(clk_cnt_reg[1]),
+        .I3(\MDIO_GEN.mdio_data_out_reg[9] [1]),
+        .I4(clk_cnt_reg[0]),
+        .I5(\MDIO_GEN.mdio_data_out_reg[9] [0]),
+        .O(PHY_MDIO_O_i_6_n_0));
+  LUT6 #(
+    .INIT(64'hFDFDFDDDDDDDFDDD)) 
+    PHY_MDIO_O_i_7
+       (.I0(PHY_MDIO_O_i_12_n_0),
+        .I1(PHY_MDIO_O_i_13_n_0),
+        .I2(\FSM_onehot_mdio_state_reg_n_0_[7] ),
+        .I3(PHY_MDIO_O_i_14_n_0),
+        .I4(clk_cnt_reg[2]),
+        .I5(Q[4]),
         .O(PHY_MDIO_O_i_7_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    PHY_MDIO_O_i_8
+       (.I0(PHY_MDIO_O_reg_i_5_0[3]),
+        .I1(PHY_MDIO_O_reg_i_5_0[2]),
+        .I2(clk_cnt_reg[1]),
+        .I3(PHY_MDIO_O_reg_i_5_0[1]),
+        .I4(clk_cnt_reg[0]),
+        .I5(PHY_MDIO_O_reg_i_5_0[0]),
+        .O(PHY_MDIO_O_i_8_n_0));
+  LUT6 #(
+    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+    PHY_MDIO_O_i_9
+       (.I0(PHY_MDIO_O_reg_i_5_0[7]),
+        .I1(PHY_MDIO_O_reg_i_5_0[6]),
+        .I2(clk_cnt_reg[1]),
+        .I3(PHY_MDIO_O_reg_i_5_0[5]),
+        .I4(clk_cnt_reg[0]),
+        .I5(PHY_MDIO_O_reg_i_5_0[4]),
+        .O(PHY_MDIO_O_i_9_n_0));
   FDRE PHY_MDIO_O_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(PHY_MDIO_O_i_1_n_0),
         .Q(phy_mdio_o),
         .R(prmry_in));
-  MUXF7 PHY_MDIO_O_reg_i_8
-       (.I0(PHY_MDIO_O_i_11_n_0),
-        .I1(PHY_MDIO_O_i_12_n_0),
-        .O(PHY_MDIO_O_reg_i_8_n_0),
+  MUXF8 PHY_MDIO_O_reg_i_2
+       (.I0(PHY_MDIO_O_reg_i_4_n_0),
+        .I1(PHY_MDIO_O_reg_i_5_n_0),
+        .O(PHY_MDIO_O_reg_i_2_n_0),
+        .S(clk_cnt_reg[3]));
+  MUXF7 PHY_MDIO_O_reg_i_4
+       (.I0(PHY_MDIO_O_i_8_n_0),
+        .I1(PHY_MDIO_O_i_9_n_0),
+        .O(PHY_MDIO_O_reg_i_4_n_0),
         .S(clk_cnt_reg[2]));
-  MUXF7 PHY_MDIO_O_reg_i_9
-       (.I0(PHY_MDIO_O_i_13_n_0),
-        .I1(PHY_MDIO_O_i_14_n_0),
-        .O(PHY_MDIO_O_reg_i_9_n_0),
+  MUXF7 PHY_MDIO_O_reg_i_5
+       (.I0(PHY_MDIO_O_i_10_n_0),
+        .I1(PHY_MDIO_O_i_11_n_0),
+        .O(PHY_MDIO_O_reg_i_5_n_0),
         .S(clk_cnt_reg[2]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'hFB08)) 
     PHY_MDIO_T_i_1
        (.I0(mdio_t_comb),
         .I1(mdio_clk_reg),
-        .I2(mdio_clk_reg_reg_0),
+        .I2(out),
         .I3(phy_mdio_t),
         .O(PHY_MDIO_T_i_1_n_0));
   LUT6 #(
@@ -9510,13 +9568,14 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I4(mdio_done_i),
         .I5(\FSM_onehot_mdio_state_reg_n_0_[11] ),
         .O(mdio_t_comb));
+  (* KEEP = "yes" *) 
   FDSE PHY_MDIO_T_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(PHY_MDIO_T_i_1_n_0),
         .Q(phy_mdio_t),
         .S(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'h8B)) 
     \clk_cnt[0]_i_1 
@@ -9524,7 +9583,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I1(ld_cnt_en_reg),
         .I2(clk_cnt_reg[0]),
         .O(p_0_in__1[0]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'hB88B)) 
     \clk_cnt[1]_i_1 
@@ -9533,7 +9592,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I2(clk_cnt_reg[1]),
         .I3(clk_cnt_reg[0]),
         .O(p_0_in__1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT5 #(
     .INIT(32'hB8B8B88B)) 
     \clk_cnt[2]_i_1 
@@ -9566,7 +9625,7 @@ module system_axi_ethernetlite_0_0_mdio_if
     .INIT(64'h4444444044404440)) 
     \clk_cnt[5]_i_1 
        (.I0(mdio_clk_reg),
-        .I1(mdio_clk_reg_reg_0),
+        .I1(out),
         .I2(ld_cnt_en_reg),
         .I3(\FSM_onehot_mdio_state_reg_n_0_[6] ),
         .I4(\FSM_onehot_mdio_state[12]_i_6_n_0 ),
@@ -9581,7 +9640,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I3(clk_cnt_reg[5]),
         .I4(ld_cnt_en_reg),
         .O(p_0_in__1[5]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \clk_cnt[5]_i_3 
@@ -9635,7 +9694,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I4(\FSM_onehot_mdio_state_reg_n_0_[6] ),
         .I5(\FSM_onehot_mdio_state[12]_i_5_n_0 ),
         .O(ld_cnt_data_cmb[2]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT3 #(
     .INIT(8'hBA)) 
     \ld_cnt_data_reg[3]_i_1 
@@ -9643,7 +9702,7 @@ module system_axi_ethernetlite_0_0_mdio_if
         .I1(mdio_idle_reg_n_0),
         .I2(\FSM_onehot_mdio_state_reg_n_0_[0] ),
         .O(ld_cnt_data_cmb[3]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \ld_cnt_data_reg[4]_i_1 
@@ -9686,16 +9745,16 @@ module system_axi_ethernetlite_0_0_mdio_if
   FDRE mdio_clk_reg_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(mdio_clk_reg_reg_0),
+        .D(out),
         .Q(mdio_clk_reg),
         .R(prmry_in));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT5 #(
     .INIT(32'hFBFF0800)) 
     mdio_en_reg_i_1
        (.I0(mdio_en_reg_reg_0),
         .I1(mdio_idle_reg_n_0),
-        .I2(mdio_clk_reg_reg_0),
+        .I2(out),
         .I3(mdio_clk_reg),
         .I4(mdio_en_reg),
         .O(mdio_en_reg_i_1_n_0));
@@ -9738,7 +9797,7 @@ endmodule
 (* ORIG_REF_NAME = "mux_onehot_f" *) 
 module system_axi_ethernetlite_0_0_mux_onehot_f
    (D,
-    \txNibbleCnt_pad_reg[4] ,
+    \txNibbleCnt_pad_reg[6] ,
     \emac_tx_wr_data_d1_reg[0] ,
     \emac_tx_wr_data_d1_reg[0]_0 ,
     \emac_tx_wr_data_d1_reg[1] ,
@@ -9749,7 +9808,7 @@ module system_axi_ethernetlite_0_0_mux_onehot_f
     \emac_tx_wr_data_d1_reg[3]_0 ,
     Q);
   output [3:0]D;
-  output \txNibbleCnt_pad_reg[4] ;
+  output \txNibbleCnt_pad_reg[6] ;
   input \emac_tx_wr_data_d1_reg[0] ;
   input \emac_tx_wr_data_d1_reg[0]_0 ;
   input \emac_tx_wr_data_d1_reg[1] ;
@@ -9776,7 +9835,7 @@ module system_axi_ethernetlite_0_0_mux_onehot_f
   wire \emac_tx_wr_data_d1_reg[2]_0 ;
   wire \emac_tx_wr_data_d1_reg[3] ;
   wire \emac_tx_wr_data_d1_reg[3]_0 ;
-  wire \txNibbleCnt_pad_reg[4] ;
+  wire \txNibbleCnt_pad_reg[6] ;
   wire [3:2]\NLW_GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_CARRY4_CO_UNCONNECTED ;
   wire [3:2]\NLW_GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_CARRY4_DI_UNCONNECTED ;
   wire [3:0]\NLW_GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_CARRY4_O_UNCONNECTED ;
@@ -9807,28 +9866,28 @@ module system_axi_ethernetlite_0_0_mux_onehot_f
   LUT6 #(
     .INIT(64'h0000000000000001)) 
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_2 
-       (.I0(Q[7]),
-        .I1(Q[8]),
-        .I2(Q[4]),
-        .I3(Q[3]),
+       (.I0(Q[5]),
+        .I1(Q[3]),
+        .I2(Q[1]),
+        .I3(Q[10]),
         .I4(\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_4_n_0 ),
         .I5(\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_5_n_0 ),
-        .O(\txNibbleCnt_pad_reg[4] ));
+        .O(\txNibbleCnt_pad_reg[6] ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_4 
-       (.I0(Q[1]),
-        .I1(Q[5]),
-        .I2(Q[0]),
-        .I3(Q[2]),
+       (.I0(Q[8]),
+        .I1(Q[7]),
+        .I2(Q[9]),
+        .I3(Q[0]),
         .O(\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_4_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_5 
-       (.I0(Q[11]),
-        .I1(Q[6]),
-        .I2(Q[9]),
-        .I3(Q[10]),
+       (.I0(Q[2]),
+        .I1(Q[4]),
+        .I2(Q[11]),
+        .I3(Q[6]),
         .O(\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_5_n_0 ));
   (* OPT_MODIFIED = "MLO" *) 
   (* XILINX_LEGACY_PRIM = "(MUXCY,XORCY)" *) 
@@ -9866,21 +9925,21 @@ endmodule
 module system_axi_ethernetlite_0_0_ram16x4
    (\emac_rx_rd_data_d1_reg[3] ,
     Q,
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ,
+    \Mac_addr_ram_addr_rd[0]_i_15 ,
     s_axi_aclk,
     D,
     mac_addr_ram_we,
     mac_addr_ram_addr);
   output \emac_rx_rd_data_d1_reg[3] ;
   output [0:0]Q;
-  input [2:0]\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ;
+  input [2:0]\Mac_addr_ram_addr_rd[0]_i_15 ;
   input s_axi_aclk;
   input [3:0]D;
   input mac_addr_ram_we;
   input [0:3]mac_addr_ram_addr;
 
   wire [3:0]D;
-  wire [2:0]\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 ;
+  wire [2:0]\Mac_addr_ram_addr_rd[0]_i_15 ;
   wire [0:0]Q;
   wire \emac_rx_rd_data_d1_reg[3] ;
   wire [0:3]mac_addr_ram_addr;
@@ -9888,16 +9947,6 @@ module system_axi_ethernetlite_0_0_ram16x4
   wire mac_addr_ram_we;
   wire s_axi_aclk;
 
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_5 
-       (.I0(mac_addr_ram_data[3]),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 [0]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 [2]),
-        .I3(mac_addr_ram_data[1]),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 [1]),
-        .I5(mac_addr_ram_data[2]),
-        .O(\emac_rx_rd_data_d1_reg[3] ));
   (* XILINX_LEGACY_PRIM = "RAM16X1S" *) 
   (* box_type = "PRIMITIVE" *) 
   RAM32X1S #(
@@ -9958,6 +10007,16 @@ module system_axi_ethernetlite_0_0_ram16x4
         .O(Q),
         .WCLK(s_axi_aclk),
         .WE(mac_addr_ram_we));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    state17a_i_5
+       (.I0(mac_addr_ram_data[3]),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_15 [0]),
+        .I2(\Mac_addr_ram_addr_rd[0]_i_15 [1]),
+        .I3(mac_addr_ram_data[2]),
+        .I4(\Mac_addr_ram_addr_rd[0]_i_15 [2]),
+        .I5(mac_addr_ram_data[1]),
+        .O(\emac_rx_rd_data_d1_reg[3] ));
 endmodule
 
 (* ORIG_REF_NAME = "receive" *) 
@@ -9982,7 +10041,7 @@ module system_axi_ethernetlite_0_0_receive
     wr_clk,
     din,
     s_axi_aresetn,
-    \FSM_onehot_rdDestAddrNib_D_t_q_reg[5] ,
+    \Mac_addr_ram_addr_rd[0]_i_8 ,
     Q,
     rx_DPM_adr__0,
     rx_pong_ping_l,
@@ -9990,7 +10049,6 @@ module system_axi_ethernetlite_0_0_receive
     pong_rx_status,
     p_5_in,
     IP2INTC_IRPT_REG_I,
-    IP2INTC_IRPT_REG_I_0,
     p_17_in,
     s_axi_wdata,
     rx_intr_en0,
@@ -10016,15 +10074,14 @@ module system_axi_ethernetlite_0_0_receive
   input wr_clk;
   input [5:0]din;
   input s_axi_aresetn;
-  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[5] ;
+  input \Mac_addr_ram_addr_rd[0]_i_8 ;
   input [0:0]Q;
   input [0:0]rx_DPM_adr__0;
   input rx_pong_ping_l;
-  input [0:0]p_9_in;
+  input [1:0]p_9_in;
   input pong_rx_status;
   input [0:0]p_5_in;
-  input [0:0]IP2INTC_IRPT_REG_I;
-  input IP2INTC_IRPT_REG_I_0;
+  input IP2INTC_IRPT_REG_I;
   input [0:0]p_17_in;
   input [0:0]s_axi_wdata;
   input rx_intr_en0;
@@ -10040,12 +10097,12 @@ module system_axi_ethernetlite_0_0_receive
   wire D7_out;
   wire D_0;
   wire D_2;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[5] ;
   wire INST_CRCGENRX_n_4;
   wire INST_RX_INTRFCE_n_10;
   wire INST_RX_INTRFCE_n_11;
   wire INST_RX_INTRFCE_n_12;
   wire INST_RX_INTRFCE_n_13;
+  wire INST_RX_INTRFCE_n_16;
   wire INST_RX_INTRFCE_n_17;
   wire INST_RX_INTRFCE_n_18;
   wire INST_RX_INTRFCE_n_19;
@@ -10055,7 +10112,12 @@ module system_axi_ethernetlite_0_0_receive
   wire INST_RX_INTRFCE_n_23;
   wire INST_RX_INTRFCE_n_24;
   wire INST_RX_INTRFCE_n_25;
-  wire INST_RX_INTRFCE_n_30;
+  wire INST_RX_INTRFCE_n_26;
+  wire INST_RX_INTRFCE_n_27;
+  wire INST_RX_INTRFCE_n_28;
+  wire INST_RX_INTRFCE_n_29;
+  wire INST_RX_INTRFCE_n_31;
+  wire INST_RX_INTRFCE_n_36;
   wire INST_RX_STATE_n_10;
   wire INST_RX_STATE_n_11;
   wire INST_RX_STATE_n_12;
@@ -10067,11 +10129,14 @@ module system_axi_ethernetlite_0_0_receive
   wire INST_RX_STATE_n_18;
   wire INST_RX_STATE_n_19;
   wire INST_RX_STATE_n_20;
-  wire INST_RX_STATE_n_34;
-  wire INST_RX_STATE_n_35;
+  wire INST_RX_STATE_n_21;
+  wire INST_RX_STATE_n_22;
+  wire INST_RX_STATE_n_36;
+  wire INST_RX_STATE_n_37;
+  wire INST_RX_STATE_n_38;
   wire INST_RX_STATE_n_9;
-  wire [0:0]IP2INTC_IRPT_REG_I;
-  wire IP2INTC_IRPT_REG_I_0;
+  wire IP2INTC_IRPT_REG_I;
+  wire \Mac_addr_ram_addr_rd[0]_i_8 ;
   wire [3:0]\Mac_addr_ram_addr_rd_reg[0] ;
   wire [0:0]Q;
   wire \RX_PONG_REG_GEN.pong_rx_status_reg ;
@@ -10093,7 +10158,7 @@ module system_axi_ethernetlite_0_0_receive
   wire p_1_in7_in;
   wire [0:0]p_5_in;
   wire p_65_in;
-  wire [0:0]p_9_in;
+  wire [1:0]p_9_in;
   wire [3:2]parallel_crc;
   wire pong_rx_status;
   wire rxBusFifoRdAck;
@@ -10129,7 +10194,7 @@ module system_axi_ethernetlite_0_0_receive
         .D_0(D_0),
         .E(rxCrcEn_d1),
         .Q({p_1_in7_in,p_1_in4_in,p_1_in1_in,p_1_in}),
-        .SS(INST_RX_STATE_n_35),
+        .SS(INST_RX_STATE_n_38),
         .crcokdelay(INST_CRCGENRX_n_4),
         .crcokr1(crcokr1),
         .dout(D),
@@ -10137,14 +10202,15 @@ module system_axi_ethernetlite_0_0_receive
         .s_axi_aclk(s_axi_aclk),
         .s_axi_aresetn(s_axi_aresetn));
   system_axi_ethernetlite_0_0_rx_intrfce INST_RX_INTRFCE
-       (.D({INST_RX_INTRFCE_n_17,INST_RX_INTRFCE_n_18,INST_RX_INTRFCE_n_19,INST_RX_INTRFCE_n_20,INST_RX_INTRFCE_n_21,INST_RX_INTRFCE_n_22,INST_RX_INTRFCE_n_23}),
+       (.D({INST_RX_INTRFCE_n_16,INST_RX_INTRFCE_n_17,INST_RX_INTRFCE_n_18,INST_RX_INTRFCE_n_19,INST_RX_INTRFCE_n_20,INST_RX_INTRFCE_n_21,INST_RX_INTRFCE_n_22,INST_RX_INTRFCE_n_23,INST_RX_INTRFCE_n_24,INST_RX_INTRFCE_n_25,INST_RX_INTRFCE_n_26,INST_RX_INTRFCE_n_27}),
         .D10_out(D10_out),
         .D11_out(D11_out),
         .D13_out(D13_out),
         .D5_out(D5_out),
         .D6_out(D6_out),
         .D7_out(D7_out),
-        .Q({INST_RX_STATE_n_9,INST_RX_STATE_n_10,INST_RX_STATE_n_11,INST_RX_STATE_n_12,INST_RX_STATE_n_13,INST_RX_STATE_n_14,INST_RX_STATE_n_15,INST_RX_STATE_n_16,INST_RX_STATE_n_17,INST_RX_STATE_n_18,INST_RX_STATE_n_19}),
+        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[0] (INST_RX_STATE_n_36),
+        .Q({INST_RX_STATE_n_9,INST_RX_STATE_n_10,INST_RX_STATE_n_11,INST_RX_STATE_n_12,INST_RX_STATE_n_13,INST_RX_STATE_n_14,INST_RX_STATE_n_15,INST_RX_STATE_n_16,INST_RX_STATE_n_17,INST_RX_STATE_n_18,INST_RX_STATE_n_19,INST_RX_STATE_n_20,INST_RX_STATE_n_21}),
         .SR(INST_RX_INTRFCE_n_11),
         .SS(SS),
         .busFifoData_is_5_d1(busFifoData_is_5_d1),
@@ -10153,17 +10219,18 @@ module system_axi_ethernetlite_0_0_receive
         .din(din),
         .dout({D,emac_rx_rd_data_i[4],emac_rx_rd_data_i[5]}),
         .empty(fifo_empty_i),
-        .\gdvld.data_valid_std_reg (INST_RX_INTRFCE_n_25),
+        .\gdvld.data_valid_std_reg (INST_RX_INTRFCE_n_28),
         .\gen_rd_b.doutb_reg_reg[1] (INST_RX_INTRFCE_n_13),
-        .\gen_rd_b.doutb_reg_reg[1]_0 (INST_RX_INTRFCE_n_24),
+        .\gen_rd_b.doutb_reg_reg[1]_0 (INST_RX_INTRFCE_n_29),
+        .\gen_rd_b.doutb_reg_reg[1]_1 (INST_RX_INTRFCE_n_31),
         .\gen_rd_b.doutb_reg_reg[4] (INST_RX_INTRFCE_n_10),
         .\gen_rd_b.doutb_reg_reg[4]_0 ({parallel_crc,p_65_in}),
         .\gen_rd_b.doutb_reg_reg[5] (INST_RX_INTRFCE_n_12),
-        .\gen_rd_b.doutb_reg_reg[5]_0 (INST_RX_INTRFCE_n_30),
+        .\gen_rd_b.doutb_reg_reg[5]_0 (INST_RX_INTRFCE_n_36),
         .goto_readDestAdrNib1(goto_readDestAdrNib1),
-        .p_9_in(p_9_in),
+        .p_9_in(p_9_in[0]),
         .pong_rx_status(pong_rx_status),
-        .rd_en(INST_RX_STATE_n_34),
+        .rd_en(INST_RX_STATE_n_37),
         .rxCrcRst(rxCrcRst),
         .rx_start(rx_start),
         .s_axi_aclk(s_axi_aclk),
@@ -10171,11 +10238,11 @@ module system_axi_ethernetlite_0_0_receive
         .sfd1CheckBusFifoEmpty(sfd1CheckBusFifoEmpty),
         .startReadDataNib(startReadDataNib),
         .startReadDestAdrNib(startReadDestAdrNib),
-        .state17a(INST_RX_STATE_n_20),
+        .state17a(INST_RX_STATE_n_22),
         .waitForSfd1(waitForSfd1),
         .wr_clk(wr_clk));
   system_axi_ethernetlite_0_0_rx_statemachine INST_RX_STATE
-       (.D({INST_RX_INTRFCE_n_17,INST_RX_INTRFCE_n_18,INST_RX_INTRFCE_n_19,INST_RX_INTRFCE_n_20,INST_RX_INTRFCE_n_21,INST_RX_INTRFCE_n_22,INST_RX_INTRFCE_n_23}),
+       (.D({INST_RX_INTRFCE_n_16,INST_RX_INTRFCE_n_17,INST_RX_INTRFCE_n_18,INST_RX_INTRFCE_n_19,INST_RX_INTRFCE_n_20,INST_RX_INTRFCE_n_21,INST_RX_INTRFCE_n_22,INST_RX_INTRFCE_n_23,INST_RX_INTRFCE_n_24,INST_RX_INTRFCE_n_25,INST_RX_INTRFCE_n_26,INST_RX_INTRFCE_n_27}),
         .D10_out(D10_out),
         .D11_out(D11_out),
         .D13_out(D13_out),
@@ -10184,20 +10251,21 @@ module system_axi_ethernetlite_0_0_receive
         .D7_out(D7_out),
         .D_0(D_0),
         .D_2(D_2),
-        .\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 (Q),
-        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 (INST_RX_INTRFCE_n_25),
-        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 (\FSM_onehot_rdDestAddrNib_D_t_q_reg[5] ),
-        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 (INST_RX_INTRFCE_n_24),
+        .\FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 (Q),
+        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[12]_0 (INST_RX_STATE_n_36),
+        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 (INST_RX_INTRFCE_n_31),
+        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_1 (INST_RX_INTRFCE_n_29),
         .IP2INTC_IRPT_REG_I(IP2INTC_IRPT_REG_I),
-        .IP2INTC_IRPT_REG_I_0(IP2INTC_IRPT_REG_I_0),
+        .\Mac_addr_ram_addr_rd[0]_i_8_0 (\Mac_addr_ram_addr_rd[0]_i_8 ),
         .\Mac_addr_ram_addr_rd_reg[0]_0 (\Mac_addr_ram_addr_rd_reg[0] ),
-        .Q({INST_RX_STATE_n_9,INST_RX_STATE_n_10,INST_RX_STATE_n_11,INST_RX_STATE_n_12,INST_RX_STATE_n_13,INST_RX_STATE_n_14,INST_RX_STATE_n_15,INST_RX_STATE_n_16,INST_RX_STATE_n_17,INST_RX_STATE_n_18,INST_RX_STATE_n_19}),
+        .\Mac_addr_ram_addr_rd_reg[1]_0 (INST_RX_INTRFCE_n_28),
+        .Q({INST_RX_STATE_n_9,INST_RX_STATE_n_10,INST_RX_STATE_n_11,INST_RX_STATE_n_12,INST_RX_STATE_n_13,INST_RX_STATE_n_14,INST_RX_STATE_n_15,INST_RX_STATE_n_16,INST_RX_STATE_n_17,INST_RX_STATE_n_18,INST_RX_STATE_n_19,INST_RX_STATE_n_20,INST_RX_STATE_n_21}),
         .\RX_PONG_REG_GEN.pong_rx_status_reg (\RX_PONG_REG_GEN.pong_rx_status_reg ),
         .\RX_PONG_REG_GEN.pong_rx_status_reg_0 (\RX_PONG_REG_GEN.pong_rx_status_reg_0 ),
         .SR(INST_RX_INTRFCE_n_11),
         .SS(SS),
         .busFifoData_is_5_d1(busFifoData_is_5_d1),
-        .busFifoData_is_5_d1_reg_0(INST_RX_INTRFCE_n_30),
+        .busFifoData_is_5_d1_reg_0(INST_RX_INTRFCE_n_36),
         .checkingBroadcastAdr_reg_reg_0({emac_rx_rd_data_d1,\emac_rx_rd_data_d1_reg[1]_0 }),
         .crcokdelay_0(INST_CRCGENRX_n_4),
         .crcokr1(crcokr1),
@@ -10212,7 +10280,7 @@ module system_axi_ethernetlite_0_0_receive
         .p_9_in(p_9_in),
         .pong_rx_status(pong_rx_status),
         .preamble_0(INST_RX_INTRFCE_n_10),
-        .rd_en(INST_RX_STATE_n_34),
+        .rd_en(INST_RX_STATE_n_37),
         .rxCrcEn(rxCrcEn),
         .rxCrcRst(rxCrcRst),
         .rx_DPM_adr__0(rx_DPM_adr__0),
@@ -10230,8 +10298,8 @@ module system_axi_ethernetlite_0_0_receive
         .sfd1CheckBusFifoEmpty(sfd1CheckBusFifoEmpty),
         .startReadDataNib(startReadDataNib),
         .startReadDestAdrNib(startReadDestAdrNib),
-        .state0a_0(INST_RX_STATE_n_20),
-        .state0a_1(INST_RX_STATE_n_35),
+        .state0a_0(INST_RX_STATE_n_22),
+        .state0a_1(INST_RX_STATE_n_38),
         .state0a_2(INST_RX_INTRFCE_n_12),
         .state0a_3(INST_RX_INTRFCE_n_13),
         .state17a_0(state17a),
@@ -10284,10 +10352,11 @@ module system_axi_ethernetlite_0_0_rx_intrfce
     \gen_rd_b.doutb_reg_reg[1] ,
     D7_out,
     D6_out,
-    goto_readDestAdrNib1,
     D,
-    \gen_rd_b.doutb_reg_reg[1]_0 ,
     \gdvld.data_valid_std_reg ,
+    \gen_rd_b.doutb_reg_reg[1]_0 ,
+    goto_readDestAdrNib1,
+    \gen_rd_b.doutb_reg_reg[1]_1 ,
     D11_out,
     \gen_rd_b.doutb_reg_reg[4]_0 ,
     \gen_rd_b.doutb_reg_reg[5]_0 ,
@@ -10304,11 +10373,12 @@ module system_axi_ethernetlite_0_0_rx_intrfce
     startReadDestAdrNib,
     rxCrcRst,
     Q,
+    \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ,
     startReadDataNib,
+    state17a,
     p_9_in,
     pong_rx_status,
     \crc_local_reg[3] ,
-    state17a,
     SS);
   output [5:0]dout;
   output empty;
@@ -10321,10 +10391,11 @@ module system_axi_ethernetlite_0_0_rx_intrfce
   output \gen_rd_b.doutb_reg_reg[1] ;
   output D7_out;
   output D6_out;
-  output goto_readDestAdrNib1;
-  output [6:0]D;
-  output \gen_rd_b.doutb_reg_reg[1]_0 ;
+  output [11:0]D;
   output \gdvld.data_valid_std_reg ;
+  output \gen_rd_b.doutb_reg_reg[1]_0 ;
+  output goto_readDestAdrNib1;
+  output \gen_rd_b.doutb_reg_reg[1]_1 ;
   output D11_out;
   output [2:0]\gen_rd_b.doutb_reg_reg[4]_0 ;
   output \gen_rd_b.doutb_reg_reg[5]_0 ;
@@ -10340,22 +10411,24 @@ module system_axi_ethernetlite_0_0_rx_intrfce
   input s_axi_aresetn;
   input startReadDestAdrNib;
   input rxCrcRst;
-  input [10:0]Q;
+  input [12:0]Q;
+  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ;
   input startReadDataNib;
+  input state17a;
   input [0:0]p_9_in;
   input pong_rx_status;
   input [3:0]\crc_local_reg[3] ;
-  input state17a;
   input [0:0]SS;
 
-  wire [6:0]D;
+  wire [11:0]D;
   wire D10_out;
   wire D11_out;
   wire D13_out;
   wire D5_out;
   wire D6_out;
   wire D7_out;
-  wire [10:0]Q;
+  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ;
+  wire [12:0]Q;
   wire [0:0]SR;
   wire [0:0]SS;
   wire busFifoData_is_5_d1;
@@ -10367,6 +10440,7 @@ module system_axi_ethernetlite_0_0_rx_intrfce
   wire \gdvld.data_valid_std_reg ;
   wire \gen_rd_b.doutb_reg_reg[1] ;
   wire \gen_rd_b.doutb_reg_reg[1]_0 ;
+  wire \gen_rd_b.doutb_reg_reg[1]_1 ;
   wire \gen_rd_b.doutb_reg_reg[4] ;
   wire [2:0]\gen_rd_b.doutb_reg_reg[4]_0 ;
   wire \gen_rd_b.doutb_reg_reg[5] ;
@@ -10399,6 +10473,7 @@ module system_axi_ethernetlite_0_0_rx_intrfce
         .D5_out(D5_out),
         .D6_out(D6_out),
         .D7_out(D7_out),
+        .\FSM_onehot_rdDestAddrNib_D_t_q_reg[0] (\FSM_onehot_rdDestAddrNib_D_t_q_reg[0] ),
         .Q(Q),
         .SR(SR),
         .busFifoData_is_5_d1(busFifoData_is_5_d1),
@@ -10410,6 +10485,7 @@ module system_axi_ethernetlite_0_0_rx_intrfce
         .\gdvld.data_valid_std_reg (\gdvld.data_valid_std_reg ),
         .\gen_rd_b.doutb_reg_reg[1] (\gen_rd_b.doutb_reg_reg[1] ),
         .\gen_rd_b.doutb_reg_reg[1]_0 (\gen_rd_b.doutb_reg_reg[1]_0 ),
+        .\gen_rd_b.doutb_reg_reg[1]_1 (\gen_rd_b.doutb_reg_reg[1]_1 ),
         .\gen_rd_b.doutb_reg_reg[4] (\gen_rd_b.doutb_reg_reg[4] ),
         .\gen_rd_b.doutb_reg_reg[4]_0 (\gen_rd_b.doutb_reg_reg[4]_0 ),
         .\gen_rd_b.doutb_reg_reg[5] (\gen_rd_b.doutb_reg_reg[5] ),
@@ -10457,6 +10533,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     state20a_0,
     s_axi_wdata_0_sp_1,
     \s_axi_wdata[0]_0 ,
+    \FSM_onehot_rdDestAddrNib_D_t_q_reg[12]_0 ,
     rd_en,
     state0a_1,
     \Mac_addr_ram_addr_rd_reg[0]_0 ,
@@ -10473,25 +10550,25 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     busFifoData_is_5_d1_reg_0,
     state0a_2,
     state0a_3,
-    dout,
     goto_readDestAdrNib1,
-    \FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ,
-    \FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ,
+    \Mac_addr_ram_addr_rd_reg[1]_0 ,
+    \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ,
+    \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_1 ,
+    dout,
     empty,
-    data_valid,
-    \FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ,
-    \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 ,
+    \Mac_addr_ram_addr_rd[0]_i_8_0 ,
+    \FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 ,
     checkingBroadcastAdr_reg_reg_0,
+    data_valid,
     rx_DPM_adr__0,
     s_axi_aresetn,
     rx_pong_ping_l,
     p_5_in,
+    p_9_in,
     IP2INTC_IRPT_REG_I,
-    IP2INTC_IRPT_REG_I_0,
     p_17_in,
     s_axi_wdata,
     rx_intr_en0,
-    p_9_in,
     \RX_PONG_REG_GEN.pong_rx_status_reg ,
     \RX_PONG_REG_GEN.pong_rx_status_reg_0 ,
     pong_rx_status,
@@ -10506,7 +10583,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   output startReadDestAdrNib;
   output startReadDataNib;
   output busFifoData_is_5_d1;
-  output [10:0]Q;
+  output [12:0]Q;
   output state0a_0;
   output rxCrcEn;
   output [0:0]wea;
@@ -10521,6 +10598,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   output state20a_0;
   output s_axi_wdata_0_sp_1;
   output \s_axi_wdata[0]_0 ;
+  output \FSM_onehot_rdDestAddrNib_D_t_q_reg[12]_0 ;
   output rd_en;
   output [0:0]state0a_1;
   output [3:0]\Mac_addr_ram_addr_rd_reg[0]_0 ;
@@ -10537,32 +10615,32 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   input busFifoData_is_5_d1_reg_0;
   input state0a_2;
   input state0a_3;
-  input [2:0]dout;
   input goto_readDestAdrNib1;
-  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ;
-  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ;
+  input \Mac_addr_ram_addr_rd_reg[1]_0 ;
+  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ;
+  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_1 ;
+  input [2:0]dout;
   input empty;
-  input data_valid;
-  input \FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ;
-  input [0:0]\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 ;
+  input \Mac_addr_ram_addr_rd[0]_i_8_0 ;
+  input [0:0]\FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 ;
   input [3:0]checkingBroadcastAdr_reg_reg_0;
+  input data_valid;
   input [0:0]rx_DPM_adr__0;
   input s_axi_aresetn;
   input rx_pong_ping_l;
   input [0:0]p_5_in;
-  input [0:0]IP2INTC_IRPT_REG_I;
-  input IP2INTC_IRPT_REG_I_0;
+  input [1:0]p_9_in;
+  input IP2INTC_IRPT_REG_I;
   input [0:0]p_17_in;
   input [0:0]s_axi_wdata;
   input rx_intr_en0;
-  input [0:0]p_9_in;
   input \RX_PONG_REG_GEN.pong_rx_status_reg ;
   input \RX_PONG_REG_GEN.pong_rx_status_reg_0 ;
   input pong_rx_status;
-  input [6:0]D;
+  input [11:0]D;
   input [0:0]SR;
 
-  wire [6:0]D;
+  wire [11:0]D;
   wire D10_out;
   wire D11_out;
   wire D12_out;
@@ -10573,43 +10651,39 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   wire D7_out;
   wire D_0;
   wire D_2;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_1_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_2_n_0 ;
   wire \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3_n_0 ;
   wire \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_4_n_0 ;
+  wire [0:0]\FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 ;
   wire \FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ;
-  wire [0:0]\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1_n_0 ;
   wire \FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[8]_i_1_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_4_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6_n_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ;
-  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[8] ;
-  wire [0:0]IP2INTC_IRPT_REG_I;
-  wire IP2INTC_IRPT_REG_I_0;
+  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[12]_0 ;
+  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ;
+  wire \FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_1 ;
+  wire IP2INTC_IRPT_REG_I;
   wire \Mac_addr_ram_addr_rd[0]_i_10_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_11_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_12_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_13_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_14_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_15_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_16_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_17_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_18_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_19_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_20_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_21_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_22_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_3_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_4_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_5_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_6_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_7_n_0 ;
+  wire \Mac_addr_ram_addr_rd[0]_i_8_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_8_n_0 ;
   wire \Mac_addr_ram_addr_rd[0]_i_9_n_0 ;
   wire [3:0]\Mac_addr_ram_addr_rd_reg[0]_0 ;
-  wire [10:0]Q;
+  wire \Mac_addr_ram_addr_rd_reg[1]_0 ;
+  wire [12:0]Q;
   wire \RX_PONG_REG_GEN.pong_rx_status_reg ;
   wire \RX_PONG_REG_GEN.pong_rx_status_reg_0 ;
   wire [0:0]SR;
@@ -10632,7 +10706,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   wire [0:3]mac_addr_ram_addr_rd_D;
   wire [0:0]p_17_in;
   wire [0:0]p_5_in;
-  wire [0:0]p_9_in;
+  wire [1:0]p_9_in;
   wire pkt_length_cnt0;
   wire \pkt_length_cnt[0]_i_1_n_0 ;
   wire \pkt_length_cnt[1]_i_1_n_0 ;
@@ -10680,6 +10754,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
   wire state0a_2;
   wire state0a_3;
   wire [0:0]state17a_0;
+  wire state17a_i_4_n_0;
   wire state20a_0;
   wire state22a_i_1_n_0;
   wire state22a_i_2_n_0;
@@ -10690,39 +10765,33 @@ module system_axi_ethernetlite_0_0_rx_statemachine
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
   LUT6 #(
-    .INIT(64'h88F888F888F8FFFF)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_1 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ),
-        .I1(Q[10]),
-        .I2(Q[0]),
-        .I3(goto_readDestAdrNib1),
-        .I4(state22a_i_2_n_0),
-        .I5(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_2_n_0 ),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h0000000000000002)) 
+    .INIT(64'h5555555500000001)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_2 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3_n_0 ),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_4_n_0 ),
-        .I2(Q[6]),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I4(Q[3]),
-        .I5(Q[1]),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_2_n_0 ));
-  LUT3 #(
-    .INIT(8'h01)) 
+       (.I0(Q[12]),
+        .I1(Q[1]),
+        .I2(Q[8]),
+        .I3(Q[7]),
+        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3_n_0 ),
+        .I5(state22a_i_2_n_0),
+        .O(\FSM_onehot_rdDestAddrNib_D_t_q_reg[12]_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[8] ),
-        .I1(Q[9]),
-        .I2(Q[7]),
+       (.I0(Q[4]),
+        .I1(Q[5]),
+        .I2(Q[11]),
+        .I3(Q[9]),
+        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_4_n_0 ),
         .O(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \FSM_onehot_rdDestAddrNib_D_t_q[0]_i_4 
        (.I0(Q[2]),
-        .I1(Q[8]),
-        .I2(Q[5]),
-        .I3(Q[4]),
+        .I1(Q[10]),
+        .I2(Q[6]),
+        .I3(Q[3]),
         .O(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_4_n_0 ));
   LUT5 #(
     .INIT(32'h8000FFFF)) 
@@ -10733,98 +10802,21 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(state0a_3),
         .I4(s_axi_aresetn),
         .O(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFF550004000400)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
-        .I1(dout[1]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ),
-        .I3(Q[1]),
-        .I4(goto_readDestAdrNib1),
-        .I5(Q[0]),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF0CAA080000AA08)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1 
-       (.I0(Q[5]),
-        .I1(dout[1]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ),
-        .I3(Q[0]),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
-        .I5(Q[4]),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF0CAA080000AA08)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I1(dout[1]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ),
-        .I3(Q[0]),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
-        .I5(Q[6]),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h22F2)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[8]_i_1 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[8] ),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[8]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFF0CAA080000AA08)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1 
+    .INIT(16'h8F88)) 
+    \FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1 
        (.I0(Q[7]),
-        .I1(dout[1]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ),
-        .I3(Q[0]),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
-        .I5(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[8] ),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h4545450045454555)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2 
-       (.I0(empty),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_4_n_0 ),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6_n_0 ),
-        .I4(rxCrcRst),
-        .I5(checkingBroadcastAdr_reg_i_2_n_0),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h444F444000000000)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_4_n_0 ),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6_n_0 ),
-        .I3(rxCrcRst),
-        .I4(checkingBroadcastAdr_reg_i_2_n_0),
-        .I5(data_valid),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_4 
-       (.I0(checkingBroadcastAdr_reg_reg_0[3]),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 ),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h000000007FFFFFFF)) 
-    \FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6 
-       (.I0(checkingBroadcastAdr_reg_reg_0[0]),
-        .I1(checkingBroadcastAdr_reg_reg_0[2]),
-        .I2(checkingBroadcastAdr_reg_reg_0[1]),
-        .I3(checkingBroadcastAdr_reg_reg_0[3]),
-        .I4(Q[1]),
-        .I5(checkingBroadcastAdr_reg),
-        .O(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6_n_0 ));
+        .I1(\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_1 ),
+        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ),
+        .I3(Q[6]),
+        .O(\FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDSE #(
     .INIT(1'b1)) 
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_1_n_0 ),
+        .D(D[0]),
         .Q(Q[0]),
         .S(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10833,8 +10825,8 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[10] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[4]),
-        .Q(Q[8]),
+        .D(D[9]),
+        .Q(Q[10]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDRE #(
@@ -10842,8 +10834,8 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[11] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[5]),
-        .Q(Q[9]),
+        .D(D[10]),
+        .Q(Q[11]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDRE #(
@@ -10851,8 +10843,8 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[12] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[6]),
-        .Q(Q[10]),
+        .D(D[11]),
+        .Q(Q[12]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDRE #(
@@ -10860,7 +10852,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1_n_0 ),
+        .D(D[1]),
         .Q(Q[1]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10869,7 +10861,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[2] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[0]),
+        .D(D[2]),
         .Q(Q[2]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10878,7 +10870,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[3] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[1]),
+        .D(D[3]),
         .Q(Q[3]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10887,7 +10879,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[4] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[2]),
+        .D(D[4]),
         .Q(Q[4]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10896,7 +10888,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[5] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1_n_0 ),
+        .D(D[5]),
         .Q(Q[5]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10905,7 +10897,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[6] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[3]),
+        .D(D[6]),
         .Q(Q[6]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
@@ -10915,7 +10907,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1_n_0 ),
-        .Q(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
+        .Q(Q[7]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDRE #(
@@ -10923,8 +10915,8 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[8] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FSM_onehot_rdDestAddrNib_D_t_q[8]_i_1_n_0 ),
-        .Q(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[8] ),
+        .D(D[7]),
+        .Q(Q[8]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   (* FSM_ENCODED_STATES = "iSTATE:0000000001000,iSTATE0:0000000010000,iSTATE1:0000000000100,iSTATE2:0100000000000,iSTATE3:1000000000000,iSTATE4:0010000000000,iSTATE5:0000000000010,iSTATE6:0000000000001,iSTATE7:0001000000000,iSTATE8:0000010000000,iSTATE9:0000100000000,iSTATE10:0000001000000,iSTATE11:0000000100000" *) 
   FDRE #(
@@ -10932,183 +10924,242 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     \FSM_onehot_rdDestAddrNib_D_t_q_reg[9] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1_n_0 ),
-        .Q(Q[7]),
+        .D(D[8]),
+        .Q(Q[9]),
         .R(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_1_n_0 ));
   LUT5 #(
     .INIT(32'hAA808080)) 
     IP2INTC_IRPT_REG_I_i_2
        (.I0(p_5_in),
-        .I1(IP2INTC_IRPT_REG_I),
+        .I1(p_9_in[1]),
         .I2(state20a_0),
-        .I3(IP2INTC_IRPT_REG_I_0),
+        .I3(IP2INTC_IRPT_REG_I),
         .I4(p_17_in),
         .O(D_2));
-  LUT6 #(
-    .INIT(64'hE0E00000E0000000)) 
+  LUT5 #(
+    .INIT(32'h80808000)) 
     \Mac_addr_ram_addr_rd[0]_i_10 
-       (.I0(Q[8]),
-        .I1(Q[2]),
+       (.I0(Q[1]),
+        .I1(state0a_0),
         .I2(data_valid),
         .I3(Q[0]),
-        .I4(state0a_0),
-        .I5(dout[1]),
+        .I4(dout[1]),
         .O(\Mac_addr_ram_addr_rd[0]_i_10_n_0 ));
-  LUT6 #(
-    .INIT(64'h3333003022220020)) 
+  LUT5 #(
+    .INIT(32'h80808000)) 
     \Mac_addr_ram_addr_rd[0]_i_11 
-       (.I0(Q[9]),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
-        .I2(dout[1]),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_2_n_0 ),
-        .I4(Q[0]),
-        .I5(Q[3]),
+       (.I0(Q[5]),
+        .I1(state0a_0),
+        .I2(data_valid),
+        .I3(Q[0]),
+        .I4(dout[1]),
         .O(\Mac_addr_ram_addr_rd[0]_i_11_n_0 ));
   LUT6 #(
-    .INIT(64'h00A80088AAA88888)) 
+    .INIT(64'h7772707000000000)) 
     \Mac_addr_ram_addr_rd[0]_i_12 
-       (.I0(Q[10]),
+       (.I0(state0a_0),
+        .I1(data_valid),
+        .I2(Q[0]),
+        .I3(empty),
+        .I4(dout[1]),
+        .I5(Q[7]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_12_n_0 ));
+  LUT6 #(
+    .INIT(64'hAAA88888FFFCCCCC)) 
+    \Mac_addr_ram_addr_rd[0]_i_13 
+       (.I0(Q[6]),
         .I1(Q[0]),
         .I2(empty),
         .I3(state0a_0),
         .I4(dout[1]),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_19_n_0 ),
+        .O(\Mac_addr_ram_addr_rd[0]_i_13_n_0 ));
+  LUT6 #(
+    .INIT(64'h3033303020222020)) 
+    \Mac_addr_ram_addr_rd[0]_i_14 
+       (.I0(Q[11]),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ),
+        .I2(Q[0]),
+        .I3(\Mac_addr_ram_addr_rd[0]_i_20_n_0 ),
+        .I4(dout[1]),
+        .I5(Q[3]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_14_n_0 ));
+  LUT6 #(
+    .INIT(64'h444F444000000000)) 
+    \Mac_addr_ram_addr_rd[0]_i_15 
+       (.I0(\Mac_addr_ram_addr_rd[0]_i_21_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_8_0 ),
+        .I2(state17a_i_4_n_0),
+        .I3(rxCrcRst),
+        .I4(checkingBroadcastAdr_reg_i_2_n_0),
         .I5(data_valid),
-        .O(\Mac_addr_ram_addr_rd[0]_i_12_n_0 ));
+        .O(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ));
+  LUT6 #(
+    .INIT(64'h7772707000000000)) 
+    \Mac_addr_ram_addr_rd[0]_i_16 
+       (.I0(state0a_0),
+        .I1(data_valid),
+        .I2(Q[0]),
+        .I3(empty),
+        .I4(dout[1]),
+        .I5(Q[12]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_16_n_0 ));
   LUT6 #(
     .INIT(64'hBBBBBBB0B0B0B0B0)) 
-    \Mac_addr_ram_addr_rd[0]_i_13 
+    \Mac_addr_ram_addr_rd[0]_i_17 
        (.I0(Q[6]),
-        .I1(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_22_n_0 ),
         .I2(Q[0]),
         .I3(empty),
         .I4(state0a_0),
         .I5(dout[1]),
-        .O(\Mac_addr_ram_addr_rd[0]_i_13_n_0 ));
-  LUT6 #(
-    .INIT(64'h00A80088AAA88888)) 
-    \Mac_addr_ram_addr_rd[0]_i_14 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I1(Q[0]),
-        .I2(empty),
-        .I3(state0a_0),
-        .I4(dout[1]),
-        .I5(data_valid),
-        .O(\Mac_addr_ram_addr_rd[0]_i_14_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+        .O(\Mac_addr_ram_addr_rd[0]_i_17_n_0 ));
+  LUT3 #(
+    .INIT(8'h01)) 
+    \Mac_addr_ram_addr_rd[0]_i_18 
+       (.I0(Q[8]),
+        .I1(Q[9]),
+        .I2(Q[11]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_18_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT2 #(
     .INIT(4'h1)) 
-    \Mac_addr_ram_addr_rd[0]_i_15 
-       (.I0(Q[4]),
-        .I1(Q[5]),
-        .O(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
-  LUT5 #(
-    .INIT(32'h000004FB)) 
+    \Mac_addr_ram_addr_rd[0]_i_19 
+       (.I0(Q[10]),
+        .I1(Q[2]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_19_n_0 ));
+  LUT6 #(
+    .INIT(64'h000000000002FFFD)) 
     \Mac_addr_ram_addr_rd[0]_i_2 
        (.I0(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ),
         .I1(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
         .I2(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ),
         .I3(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
         .I4(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ),
         .O(mac_addr_ram_addr_rd_D[0]));
   LUT6 #(
-    .INIT(64'hF0FFF0FFFFFFFEFF)) 
+    .INIT(64'h4545450045454555)) 
+    \Mac_addr_ram_addr_rd[0]_i_20 
+       (.I0(empty),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_21_n_0 ),
+        .I2(\Mac_addr_ram_addr_rd[0]_i_8_0 ),
+        .I3(state17a_i_4_n_0),
+        .I4(rxCrcRst),
+        .I5(checkingBroadcastAdr_reg_i_2_n_0),
+        .O(\Mac_addr_ram_addr_rd[0]_i_20_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \Mac_addr_ram_addr_rd[0]_i_21 
+       (.I0(checkingBroadcastAdr_reg_reg_0[3]),
+        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 ),
+        .O(\Mac_addr_ram_addr_rd[0]_i_21_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
+    \Mac_addr_ram_addr_rd[0]_i_22 
+       (.I0(Q[4]),
+        .I1(Q[5]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_22_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
     \Mac_addr_ram_addr_rd[0]_i_3 
-       (.I0(Q[3]),
-        .I1(Q[9]),
-        .I2(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ),
-        .I3(\Mac_addr_ram_addr_rd[0]_i_9_n_0 ),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I5(\FSM_onehot_rdDestAddrNib_D_t_q_reg[0]_0 ),
-        .O(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
-  LUT4 #(
-    .INIT(16'hF0F1)) 
-    \Mac_addr_ram_addr_rd[0]_i_4 
-       (.I0(Q[5]),
-        .I1(Q[1]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ),
-        .I3(Q[7]),
-        .O(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    \Mac_addr_ram_addr_rd[0]_i_5 
-       (.I0(\Mac_addr_ram_addr_rd[0]_i_10_n_0 ),
-        .I1(\FSM_onehot_rdDestAddrNib_D_t_q[5]_i_1_n_0 ),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_1_n_0 ),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q[1]_i_1_n_0 ),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[7]_i_1_n_0 ),
-        .I5(\Mac_addr_ram_addr_rd[0]_i_11_n_0 ),
-        .O(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFAFAE)) 
-    \Mac_addr_ram_addr_rd[0]_i_6 
-       (.I0(\Mac_addr_ram_addr_rd[0]_i_12_n_0 ),
-        .I1(Q[9]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg[8]_0 ),
-        .I3(Q[3]),
+       (.I0(\Mac_addr_ram_addr_rd[0]_i_9_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_10_n_0 ),
+        .I2(\Mac_addr_ram_addr_rd[0]_i_11_n_0 ),
+        .I3(\Mac_addr_ram_addr_rd[0]_i_12_n_0 ),
         .I4(\Mac_addr_ram_addr_rd[0]_i_13_n_0 ),
         .I5(\Mac_addr_ram_addr_rd[0]_i_14_n_0 ),
+        .O(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h8888FFFF8888FFF8)) 
+    \Mac_addr_ram_addr_rd[0]_i_4 
+       (.I0(Q[0]),
+        .I1(goto_readDestAdrNib1),
+        .I2(Q[1]),
+        .I3(Q[3]),
+        .I4(\Mac_addr_ram_addr_rd_reg[1]_0 ),
+        .I5(Q[11]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h00FA00FAFFFFCCFE)) 
+    \Mac_addr_ram_addr_rd[0]_i_5 
+       (.I0(Q[8]),
+        .I1(Q[9]),
+        .I2(Q[4]),
+        .I3(\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ),
+        .I4(Q[5]),
+        .I5(\Mac_addr_ram_addr_rd_reg[1]_0 ),
+        .O(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFA0000CCCC0000)) 
+    \Mac_addr_ram_addr_rd[0]_i_6 
+       (.I0(Q[6]),
+        .I1(Q[7]),
+        .I2(Q[2]),
+        .I3(Q[10]),
+        .I4(state22a_i_2_n_0),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ),
         .O(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ));
   LUT6 #(
-    .INIT(64'h10FF10FF00FF30FF)) 
+    .INIT(64'hFFFFFFFFFFFFAFAE)) 
     \Mac_addr_ram_addr_rd[0]_i_7 
-       (.I0(\FSM_onehot_rdDestAddrNib_D_t_q_reg_n_0_[7] ),
-        .I1(Q[8]),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[0]_i_3_n_0 ),
-        .I3(state22a_i_2_n_0),
-        .I4(Q[10]),
-        .I5(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_3_n_0 ),
+       (.I0(\Mac_addr_ram_addr_rd[0]_i_16_n_0 ),
+        .I1(Q[11]),
+        .I2(\FSM_onehot_rdDestAddrNib_D_t_q_reg[7]_0 ),
+        .I3(Q[3]),
+        .I4(\Mac_addr_ram_addr_rd[0]_i_17_n_0 ),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_12_n_0 ),
         .O(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
-  LUT5 #(
-    .INIT(32'hAAAA8880)) 
-    \Mac_addr_ram_addr_rd[0]_i_8 
-       (.I0(Q[6]),
-        .I1(dout[1]),
-        .I2(state0a_0),
-        .I3(empty),
-        .I4(Q[0]),
-        .O(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ));
   LUT6 #(
-    .INIT(64'h111111111F1F1FFF)) 
-    \Mac_addr_ram_addr_rd[0]_i_9 
-       (.I0(Q[2]),
-        .I1(Q[8]),
-        .I2(dout[1]),
-        .I3(state0a_0),
-        .I4(empty),
-        .I5(Q[0]),
-        .O(\Mac_addr_ram_addr_rd[0]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+    .INIT(64'h10FF00FF10FF30FF)) 
+    \Mac_addr_ram_addr_rd[0]_i_8 
+       (.I0(Q[7]),
+        .I1(Q[10]),
+        .I2(\Mac_addr_ram_addr_rd[0]_i_18_n_0 ),
+        .I3(state22a_i_2_n_0),
+        .I4(\Mac_addr_ram_addr_rd[0]_i_15_n_0 ),
+        .I5(Q[12]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ));
   LUT5 #(
-    .INIT(32'h88888188)) 
+    .INIT(32'h80808000)) 
+    \Mac_addr_ram_addr_rd[0]_i_9 
+       (.I0(Q[9]),
+        .I1(state0a_0),
+        .I2(data_valid),
+        .I3(Q[0]),
+        .I4(dout[1]),
+        .O(\Mac_addr_ram_addr_rd[0]_i_9_n_0 ));
+  LUT6 #(
+    .INIT(64'h8888888888888818)) 
     \Mac_addr_ram_addr_rd[1]_i_1 
-       (.I0(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
-        .I1(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
+       (.I0(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
         .I2(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ),
         .I3(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
         .I4(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
         .O(mac_addr_ram_addr_rd_D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
-  LUT5 #(
-    .INIT(32'hA604A2A6)) 
+  LUT6 #(
+    .INIT(64'h01FE010000FE01FE)) 
     \Mac_addr_ram_addr_rd[2]_i_1 
-       (.I0(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ),
-        .I1(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
-        .I2(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ),
-        .I3(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
-        .I4(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
+       (.I0(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ),
+        .I2(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
+        .I3(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ),
+        .I4(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
         .O(mac_addr_ram_addr_rd_D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
-  LUT5 #(
-    .INIT(32'h0000F4BF)) 
+  LUT6 #(
+    .INIT(64'h00000000000000E7)) 
     \Mac_addr_ram_addr_rd[3]_i_1 
        (.I0(\Mac_addr_ram_addr_rd[0]_i_3_n_0 ),
-        .I1(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
+        .I1(\Mac_addr_ram_addr_rd[0]_i_8_n_0 ),
         .I2(\Mac_addr_ram_addr_rd[0]_i_7_n_0 ),
         .I3(\Mac_addr_ram_addr_rd[0]_i_6_n_0 ),
         .I4(\Mac_addr_ram_addr_rd[0]_i_5_n_0 ),
+        .I5(\Mac_addr_ram_addr_rd[0]_i_4_n_0 ),
         .O(mac_addr_ram_addr_rd_D[3]));
   FDRE \Mac_addr_ram_addr_rd_reg[0] 
        (.C(s_axi_aclk),
@@ -11134,6 +11185,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .D(mac_addr_ram_addr_rd_D[3]),
         .Q(\Mac_addr_ram_addr_rd_reg[0]_0 [0]),
         .R(SR));
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT5 #(
     .INIT(32'h00000008)) 
     RX_DONE_D1_I_i_1
@@ -11167,7 +11219,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I2(Q[1]),
         .I3(checkingBroadcastAdr_reg_i_2_n_0),
         .O(checkingBroadcastAdr_reg_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     checkingBroadcastAdr_reg_i_2
@@ -11182,7 +11234,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .D(checkingBroadcastAdr_reg_i_1_n_0),
         .Q(checkingBroadcastAdr_reg),
         .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     \crc_local[31]_i_1 
@@ -11207,9 +11259,9 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I1(rx_intr_en0),
         .I2(rx_pong_ping_l),
         .I3(state20a_0),
-        .I4(p_9_in),
+        .I4(p_9_in[0]),
         .O(s_axi_wdata_0_sn_1));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'h1F11)) 
     \pkt_length_cnt[0]_i_1 
@@ -11218,7 +11270,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I2(dout[0]),
         .I3(startReadDestAdrNib),
         .O(\pkt_length_cnt[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT5 #(
     .INIT(32'h41FF4141)) 
     \pkt_length_cnt[1]_i_1 
@@ -11257,7 +11309,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I4(\pkt_length_cnt[3]_i_2_n_0 ),
         .I5(goto_readDestAdrNib1),
         .O(\pkt_length_cnt[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \pkt_length_cnt[3]_i_2 
@@ -11265,7 +11317,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I1(\pkt_length_cnt_reg_n_0_[5] ),
         .I2(\pkt_length_cnt_reg_n_0_[4] ),
         .O(\pkt_length_cnt[3]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT5 #(
     .INIT(32'hFFFF6662)) 
     \pkt_length_cnt[4]_i_1 
@@ -11275,7 +11326,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(\pkt_length_cnt_reg_n_0_[5] ),
         .I4(goto_readDestAdrNib1),
         .O(\pkt_length_cnt[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'hFFFF9A8A)) 
     \pkt_length_cnt[5]_i_1 
@@ -11300,7 +11351,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(startReadDestAdrNib),
         .I4(data_valid),
         .O(\pkt_length_cnt[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'hFFFFFD00)) 
     \pkt_length_cnt[6]_i_3 
@@ -11370,7 +11421,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .D(preamble_0),
         .Q(preamble_error_reg),
         .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT5 #(
     .INIT(32'hAAAA80AA)) 
     rxCrcEn_d1_i_1
@@ -11380,14 +11431,14 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(Q[0]),
         .I4(startReadDestAdrNib),
         .O(rxCrcEn));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \rxbuffer_addr[11]_i_1 
        (.I0(rx_start),
         .I1(s_axi_aresetn),
         .O(state3a_0));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT4 #(
     .INIT(16'hAA8A)) 
     \rxbuffer_addr[11]_i_2 
@@ -11430,11 +11481,21 @@ module system_axi_ethernetlite_0_0_rx_statemachine
     state17a_i_3
        (.I0(checkingBroadcastAdr_reg_i_2_n_0),
         .I1(rxCrcRst),
-        .I2(\FSM_onehot_rdDestAddrNib_D_t_q[9]_i_6_n_0 ),
-        .I3(\FSM_onehot_rdDestAddrNib_D_t_q_reg[5]_0 ),
-        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[12]_i_3 ),
+        .I2(state17a_i_4_n_0),
+        .I3(\Mac_addr_ram_addr_rd[0]_i_8_0 ),
+        .I4(\FSM_onehot_rdDestAddrNib_D_t_q[11]_i_2 ),
         .I5(checkingBroadcastAdr_reg_reg_0[3]),
         .O(state0a_0));
+  LUT6 #(
+    .INIT(64'h000000007FFFFFFF)) 
+    state17a_i_4
+       (.I0(checkingBroadcastAdr_reg_reg_0[0]),
+        .I1(checkingBroadcastAdr_reg_reg_0[2]),
+        .I2(checkingBroadcastAdr_reg_reg_0[1]),
+        .I3(checkingBroadcastAdr_reg_reg_0[3]),
+        .I4(Q[1]),
+        .I5(checkingBroadcastAdr_reg),
+        .O(state17a_i_4_n_0));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
@@ -11474,7 +11535,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .D(D18_out),
         .Q(rxDone),
         .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT2 #(
     .INIT(4'h8)) 
     state20a_i_1
@@ -11491,7 +11552,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .D(state22a_i_1_n_0),
         .Q(rxAbortRst),
         .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT4 #(
     .INIT(16'hF2FF)) 
     state22a_i_1
@@ -11500,7 +11561,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I2(preamble_error_reg),
         .I3(state22a_i_2_n_0),
         .O(state22a_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT4 #(
     .INIT(16'hFEAA)) 
     state22a_i_2
@@ -11555,7 +11615,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I1(Q[0]),
         .I2(startReadDataNib),
         .O(\xpm_fifo_instance.xpm_fifo_async_inst_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT5 #(
     .INIT(32'h1110FFFF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_1 
@@ -11565,7 +11624,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(rxCrcRst),
         .I4(s_axi_aresetn),
         .O(\rxbuffer_addr_reg[9] ));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'h4440FFFF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_1__0 
@@ -11575,7 +11633,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(rxCrcRst),
         .I4(s_axi_aresetn),
         .O(\rxbuffer_addr_reg[9]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'h0000FB00)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_2 
@@ -11585,7 +11643,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(s_axi_aresetn),
         .I4(rx_DPM_adr__0),
         .O(state17a_0));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT5 #(
     .INIT(32'h2220FFFF)) 
     \xpm_mem_gen.xpm_memory_inst_2_i_1 
@@ -11595,7 +11652,6 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(rxCrcRst),
         .I4(s_axi_aresetn),
         .O(ena));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT5 #(
     .INIT(32'h8880FFFF)) 
     \xpm_mem_gen.xpm_memory_inst_2_i_1__0 
@@ -11605,7 +11661,7 @@ module system_axi_ethernetlite_0_0_rx_statemachine
         .I3(rxCrcRst),
         .I4(s_axi_aresetn),
         .O(\rxbuffer_addr_reg[9]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'hFB000000)) 
     \xpm_mem_gen.xpm_memory_inst_2_i_2 
@@ -11637,6 +11693,7 @@ module system_axi_ethernetlite_0_0_transmit
     axi_phy_tx_en_i_p_reg_0,
     s_axi_aclk,
     phy_tx_clk_core,
+    in0,
     s_axi_aresetn,
     Q,
     S,
@@ -11676,6 +11733,7 @@ module system_axi_ethernetlite_0_0_transmit
   output axi_phy_tx_en_i_p_reg_0;
   input s_axi_aclk;
   input phy_tx_clk_core;
+  input in0;
   input s_axi_aresetn;
   input [15:0]Q;
   input [0:0]S;
@@ -11704,7 +11762,7 @@ module system_axi_ethernetlite_0_0_transmit
   wire [0:0]D;
   wire D20_out;
   wire D22_out;
-  wire D25_out;
+  wire D29_out;
   wire D9_out;
   wire [0:0]E;
   wire \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
@@ -11716,7 +11774,7 @@ module system_axi_ethernetlite_0_0_transmit
   wire INST_TXBUSFIFOWRITENIBBLECOUNT_n_5;
   wire INST_TXNIBBLECOUNT_n_1;
   wire INST_TX_INTRFCE_n_10;
-  wire INST_TX_INTRFCE_n_8;
+  wire INST_TX_INTRFCE_n_9;
   wire INST_TX_STATE_MACHINE_n_20;
   wire INST_TX_STATE_MACHINE_n_26;
   wire INST_TX_STATE_MACHINE_n_27;
@@ -11726,7 +11784,6 @@ module system_axi_ethernetlite_0_0_transmit
   wire INST_TX_STATE_MACHINE_n_42;
   wire INST_TX_STATE_MACHINE_n_43;
   wire INST_TX_STATE_MACHINE_n_44;
-  wire INST_TX_STATE_MACHINE_n_56;
   wire INST_TX_STATE_MACHINE_n_57;
   wire INST_TX_STATE_MACHINE_n_69;
   wire INST_TX_STATE_MACHINE_n_70;
@@ -11742,7 +11799,6 @@ module system_axi_ethernetlite_0_0_transmit
   wire \PERBIT_GEN[8].Q_I_GEN_ADD.q_i_ns_reg ;
   wire \PERBIT_GEN[9].Q_I_GEN_ADD.q_i_ns_reg ;
   wire [15:0]Q;
-  wire Rst0;
   wire [0:0]S;
   wire [0:0]SS;
   wire STATE0A;
@@ -11780,12 +11836,13 @@ module system_axi_ethernetlite_0_0_transmit
   wire i__carry_i_2_n_0;
   wire i__carry_i_3_n_0;
   wire i__carry_i_4_n_0;
+  (* RTL_KEEP = "true" *) wire in0;
   wire [1:0]\inst_deferral_state/thisState ;
   wire loopback_en_reg;
   wire [0:3]mac_addr_ram_addr_wr;
   wire mac_addr_ram_we;
   wire [16:19]mux_in_data;
-  wire [11:1]p_1_in;
+  wire [11:0]p_1_in;
   wire phy_crs_d2;
   wire phy_tx_clk_core;
   wire [5:0]ping_mac_program_reg;
@@ -11800,6 +11857,7 @@ module system_axi_ethernetlite_0_0_transmit
   wire \status_reg_reg[5] ;
   wire transmit_start_reg_reg;
   wire transmit_start_reg_reg_0;
+  wire txComboBusFifoRst;
   wire txComboBusFifoWrCntRst;
   wire txComboNibbleCntRst;
   wire txCrcEn_reg;
@@ -11841,28 +11899,28 @@ module system_axi_ethernetlite_0_0_transmit
         .phy_tx_clk_core(phy_tx_clk_core),
         .prmry_in(tx_en_i),
         .scndry_out(tx_d_rst));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[0].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1 
        (.I0(axi_phy_tx_en_i_p),
         .I1(bus_combo[2]),
         .O(prmry_vect_in[0]));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[1].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1 
        (.I0(axi_phy_tx_en_i_p),
         .I1(bus_combo[3]),
         .O(prmry_vect_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[2].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1 
        (.I0(axi_phy_tx_en_i_p),
         .I1(bus_combo[4]),
         .O(prmry_vect_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[3].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1 
@@ -11926,7 +11984,7 @@ module system_axi_ethernetlite_0_0_transmit
   system_axi_ethernetlite_0_0_tx_intrfce INST_TX_INTRFCE
        (.D20_out(D20_out),
         .D22_out(D22_out),
-        .D25_out(D25_out),
+        .D29_out(D29_out),
         .STATE16A(INST_CRCCOUNTER_n_6),
         .STATE9A(INST_TXBUSFIFOWRITENIBBLECOUNT_n_5),
         .axi_phy_tx_en_i_p(axi_phy_tx_en_i_p),
@@ -11937,11 +11995,11 @@ module system_axi_ethernetlite_0_0_transmit
         .dout(bus_combo),
         .enblPreamble(enblPreamble),
         .full(\I_TX_FIFO/full ),
-        .\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg (INST_TX_INTRFCE_n_10),
+        .\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg (INST_TX_INTRFCE_n_9),
+        .\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 (INST_TX_INTRFCE_n_10),
         .phy_tx_clk_core(phy_tx_clk_core),
-        .pipeIt_0(INST_TX_INTRFCE_n_8),
         .rd_en(fifo_tx_en),
-        .rst(Rst0),
+        .rst(txComboBusFifoRst),
         .s_axi_aclk(s_axi_aclk),
         .txfifo_empty(txfifo_empty),
         .waitFifoEmpty(waitFifoEmpty),
@@ -11953,7 +12011,7 @@ module system_axi_ethernetlite_0_0_transmit
         .D(D),
         .D20_out(D20_out),
         .D22_out(D22_out),
-        .D25_out(D25_out),
+        .D29_out(D29_out),
         .D9_out(D9_out),
         .E(\NSR/nibData ),
         .\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ),
@@ -11981,7 +12039,6 @@ module system_axi_ethernetlite_0_0_transmit
         .STATE15A_1(INST_TX_STATE_MACHINE_n_42),
         .STATE15A_2(INST_TX_STATE_MACHINE_n_43),
         .STATE15A_3(INST_TX_STATE_MACHINE_n_44),
-        .STATE16A_0(INST_TX_INTRFCE_n_8),
         .STATE17A_0(STATE17A),
         .STATE17A_1(INST_TX_STATE_MACHINE_n_26),
         .STATE7A_0(\inst_deferral_state/thisState ),
@@ -11990,6 +12047,7 @@ module system_axi_ethernetlite_0_0_transmit
         .STATE8A_2(INST_TX_STATE_MACHINE_n_33),
         .STATE8A_3(STATE8A),
         .STATE8A_4(INST_TXBUSFIFOWRITENIBBLECOUNT_n_5),
+        .STATE9A_0(INST_TX_INTRFCE_n_9),
         .S_0(S_1),
         .S_2(S_0),
         .axi_phy_tx_en_i_p0(axi_phy_tx_en_i_p0),
@@ -12009,7 +12067,7 @@ module system_axi_ethernetlite_0_0_transmit
         .mac_addr_ram_we(mac_addr_ram_we),
         .ping_mac_program_reg(ping_mac_program_reg),
         .prmry_in(tx_en_i),
-        .rst(Rst0),
+        .rst(txComboBusFifoRst),
         .rx_done_d1(rx_done_d1),
         .rx_pong_ping_l(rx_pong_ping_l),
         .s_axi_aclk(s_axi_aclk),
@@ -12032,7 +12090,7 @@ module system_axi_ethernetlite_0_0_transmit
         .tx_addr_en(tx_addr_en),
         .tx_done_d2(tx_done_d2),
         .tx_intr_en0(tx_intr_en0),
-        .\tx_packet_length_reg[10] ({p_1_in,INST_TX_STATE_MACHINE_n_56}),
+        .\tx_packet_length_reg[10] (p_1_in),
         .tx_pong_ping_l(tx_pong_ping_l),
         .\txbuffer_addr_reg[9] (\txbuffer_addr_reg[9] ),
         .\txbuffer_addr_reg[9]_0 (\txbuffer_addr_reg[9]_0 ),
@@ -12052,7 +12110,7 @@ module system_axi_ethernetlite_0_0_transmit
         .\emac_tx_wr_data_d1_reg[2]_0 (INST_TX_STATE_MACHINE_n_42),
         .\emac_tx_wr_data_d1_reg[3] (INST_TX_STATE_MACHINE_n_28),
         .\emac_tx_wr_data_d1_reg[3]_0 (INST_TX_STATE_MACHINE_n_41),
-        .\txNibbleCnt_pad_reg[4] (ONR_HOT_MUX_n_4));
+        .\txNibbleCnt_pad_reg[6] (ONR_HOT_MUX_n_4));
   FDRE axi_phy_tx_en_i_p_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -12189,7 +12247,7 @@ module system_axi_ethernetlite_0_0_transmit
   FDRE \txNibbleCnt_pad_reg[11] 
        (.C(s_axi_aclk),
         .CE(INST_TX_STATE_MACHINE_n_20),
-        .D(INST_TX_STATE_MACHINE_n_56),
+        .D(p_1_in[0]),
         .Q(txNibbleCnt_pad[11]),
         .R(SS));
   FDRE \txNibbleCnt_pad_reg[1] 
@@ -12255,9 +12313,9 @@ module system_axi_ethernetlite_0_0_tx_intrfce
     dout,
     txfifo_empty,
     D20_out,
-    pipeIt_0,
-    D25_out,
+    D29_out,
     \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ,
+    \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ,
     axi_phy_tx_en_i_p_reg,
     rst,
     s_axi_aclk,
@@ -12278,9 +12336,9 @@ module system_axi_ethernetlite_0_0_tx_intrfce
   output [3:0]dout;
   output txfifo_empty;
   output D20_out;
-  output pipeIt_0;
-  output D25_out;
+  output D29_out;
   output \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ;
+  output \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ;
   output axi_phy_tx_en_i_p_reg;
   input rst;
   input s_axi_aclk;
@@ -12299,7 +12357,7 @@ module system_axi_ethernetlite_0_0_tx_intrfce
 
   wire D20_out;
   wire D22_out;
-  wire D25_out;
+  wire D29_out;
   wire STATE16A;
   wire STATE9A;
   wire axi_phy_tx_en_i_p;
@@ -12313,8 +12371,8 @@ module system_axi_ethernetlite_0_0_tx_intrfce
   wire fifo_empty_i;
   wire full;
   wire \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ;
+  wire \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ;
   wire phy_tx_clk_core;
-  wire pipeIt_0;
   wire rd_en;
   wire rst;
   wire s_axi_aclk;
@@ -12330,7 +12388,7 @@ module system_axi_ethernetlite_0_0_tx_intrfce
   system_axi_ethernetlite_0_0_async_fifo_fg I_TX_FIFO
        (.D20_out(D20_out),
         .D22_out(D22_out),
-        .D25_out(D25_out),
+        .D29_out(D29_out),
         .STATE16A(STATE16A),
         .STATE9A(STATE9A),
         .axi_phy_tx_en_i_p(axi_phy_tx_en_i_p),
@@ -12343,8 +12401,8 @@ module system_axi_ethernetlite_0_0_tx_intrfce
         .enblPreamble(enblPreamble),
         .full(full),
         .\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg (\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ),
+        .\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 (\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg_0 ),
         .phy_tx_clk_core(phy_tx_clk_core),
-        .pipeIt(pipeIt_0),
         .rd_en(rd_en),
         .rst(rst),
         .s_axi_aclk(s_axi_aclk),
@@ -12420,11 +12478,11 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     \PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1 ,
     STATE12A_1,
     s_axi_aclk,
-    D25_out,
+    STATE9A_0,
     D20_out,
     D22_out,
     D9_out,
-    STATE16A_0,
+    D29_out,
     s_axi_aresetn,
     emac_tx_wr_d1,
     \PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1_0 ,
@@ -12444,6 +12502,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     transmit_start_reg_reg_1,
     crcCnt,
     Q,
+    \txNibbleCnt_pad_reg[11]_1 ,
     \txNibbleCnt_pad_reg[0] ,
     txNibbleCnt_pad0,
     \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ,
@@ -12457,7 +12516,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     s_axi_wdata,
     tx_intr_en0,
     loopback_en_reg,
-    \txNibbleCnt_pad_reg[11]_1 ,
     \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I );
   output STATE0A_0;
   output s_axi_aresetn_0;
@@ -12513,11 +12571,11 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   output \PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1 ;
   output STATE12A_1;
   input s_axi_aclk;
-  input D25_out;
+  input STATE9A_0;
   input D20_out;
   input D22_out;
   input D9_out;
-  input STATE16A_0;
+  input D29_out;
   input s_axi_aresetn;
   input emac_tx_wr_d1;
   input [0:0]\PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1_0 ;
@@ -12537,6 +12595,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   input transmit_start_reg_reg_1;
   input [0:3]crcCnt;
   input [3:0]Q;
+  input [0:0]\txNibbleCnt_pad_reg[11]_1 ;
   input [10:0]\txNibbleCnt_pad_reg[0] ;
   input [10:0]txNibbleCnt_pad0;
   input \GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
@@ -12550,7 +12609,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   input [0:0]s_axi_wdata;
   input tx_intr_en0;
   input loopback_en_reg;
-  input [0:0]\txNibbleCnt_pad_reg[11]_1 ;
   input \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
 
   wire CE;
@@ -12560,9 +12618,9 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   wire D22_out;
   wire D23_out;
   wire D24_out;
-  wire D25_out;
+  wire D26_out;
   wire D27_out;
-  wire D28_out;
+  wire D29_out;
   wire D30_out;
   wire D9_out;
   wire D_0;
@@ -12572,6 +12630,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   wire \GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I ;
   wire \Mac_addr_ram_addr_wr[0]_i_1_n_0 ;
   wire \Mac_addr_ram_addr_wr[0]_i_2_n_0 ;
+  wire \Mac_addr_ram_addr_wr[0]_i_3_n_0 ;
   wire \Mac_addr_ram_addr_wr[1]_i_1_n_0 ;
   wire \Mac_addr_ram_addr_wr[1]_i_2_n_0 ;
   wire \Mac_addr_ram_addr_wr[2]_i_1_n_0 ;
@@ -12597,16 +12656,15 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   wire STATE0A_0;
   wire STATE0A_i_2_n_0;
   wire [0:0]STATE10A_0;
-  wire STATE10A_i_1_n_0;
   wire STATE11A_0;
   wire STATE11A_1;
   wire STATE12A_0;
   wire STATE12A_1;
+  wire STATE14A_i_1_n_0;
   wire STATE15A_0;
   wire STATE15A_1;
   wire STATE15A_2;
   wire STATE15A_3;
-  wire STATE16A_0;
   wire STATE17A_0;
   wire STATE17A_1;
   wire STATE26A_i_1_n_0;
@@ -12617,6 +12675,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
   wire STATE8A_2;
   wire STATE8A_3;
   wire STATE8A_4;
+  wire STATE9A_0;
   wire S_0;
   wire S_2;
   wire axi_fifo_tx_en;
@@ -12760,7 +12819,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
        (.I0(enblCRC),
         .I1(Q[0]),
         .O(STATE15A_0));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT4 #(
     .INIT(16'h000E)) 
     \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1 
@@ -12775,7 +12834,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
        (.I0(s_axi_aresetn),
         .O(s_axi_aresetn_0));
   LUT6 #(
-    .INIT(64'h8888888888888880)) 
+    .INIT(64'h2222222222222220)) 
     \Mac_addr_ram_addr_wr[0]_i_1 
        (.I0(Mac_addr_ram_we_i_2_n_0),
         .I1(\Mac_addr_ram_addr_wr[0]_i_2_n_0 ),
@@ -12784,34 +12843,44 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I4(chgMacAdr11),
         .I5(chgMacAdr10),
         .O(\Mac_addr_ram_addr_wr[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT5 #(
-    .INIT(32'h00000001)) 
+    .INIT(32'hFFFFFFFE)) 
     \Mac_addr_ram_addr_wr[0]_i_2 
        (.I0(chgMacAdr7),
         .I1(chgMacAdr6),
         .I2(chgMacAdr9),
         .I3(chgMacAdr8),
-        .I4(\Mac_addr_ram_addr_wr[1]_i_2_n_0 ),
+        .I4(\Mac_addr_ram_addr_wr[0]_i_3_n_0 ),
         .O(\Mac_addr_ram_addr_wr[0]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h2222222222222220)) 
-    \Mac_addr_ram_addr_wr[1]_i_1 
-       (.I0(Mac_addr_ram_we_i_2_n_0),
-        .I1(\Mac_addr_ram_addr_wr[1]_i_2_n_0 ),
-        .I2(chgMacAdr8),
-        .I3(chgMacAdr9),
-        .I4(chgMacAdr6),
-        .I5(chgMacAdr7),
-        .O(\Mac_addr_ram_addr_wr[1]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    \Mac_addr_ram_addr_wr[1]_i_2 
+    \Mac_addr_ram_addr_wr[0]_i_3 
        (.I0(chgMacAdr3),
         .I1(chgMacAdr2),
         .I2(chgMacAdr4),
         .I3(chgMacAdr5),
+        .O(\Mac_addr_ram_addr_wr[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000008)) 
+    \Mac_addr_ram_addr_wr[1]_i_1 
+       (.I0(Mac_addr_ram_we_i_2_n_0),
+        .I1(\Mac_addr_ram_addr_wr[1]_i_2_n_0 ),
+        .I2(chgMacAdr3),
+        .I3(chgMacAdr2),
+        .I4(chgMacAdr4),
+        .I5(chgMacAdr5),
+        .O(\Mac_addr_ram_addr_wr[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \Mac_addr_ram_addr_wr[1]_i_2 
+       (.I0(chgMacAdr8),
+        .I1(chgMacAdr9),
+        .I2(chgMacAdr6),
+        .I3(chgMacAdr7),
         .O(\Mac_addr_ram_addr_wr[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT4 #(
     .INIT(16'h0010)) 
     \Mac_addr_ram_addr_wr[2]_i_1 
@@ -12839,7 +12908,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I4(chgMacAdr13),
         .I5(chgMacAdr12),
         .O(\Mac_addr_ram_addr_wr[2]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \Mac_addr_ram_addr_wr[3]_i_1 
@@ -12891,14 +12960,14 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .D(\Mac_addr_ram_addr_wr[3]_i_1_n_0 ),
         .Q(mac_addr_ram_addr_wr[3]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT2 #(
     .INIT(4'h2)) 
     Mac_addr_ram_we_i_1
        (.I0(Mac_addr_ram_we_i_2_n_0),
         .I1(\txbuffer_addr[11]_i_4_n_0 ),
         .O(Mac_addr_ram_we_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'h04)) 
     Mac_addr_ram_we_i_2
@@ -12937,7 +13006,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I4(s_axi_aresetn),
         .I5(txDonePause),
         .O(txComboBusFifoWrCntRst));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT3 #(
     .INIT(8'hFB)) 
     \PERBIT_GEN[11].FF_RST0_GEN.FDRE_i1_i_1__0 
@@ -12951,7 +13020,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
        (.I0(enblData),
         .I1(enblSFD),
         .O(CE));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT4 #(
     .INIT(16'hFFFE)) 
     \PERBIT_GEN[11].MULT_AND_i1_i_1 
@@ -12987,7 +13056,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
        (.I0(enblCRC),
         .I1(crcCnt[2]),
         .O(\PERBIT_GEN[2].Q_I_GEN_SUB.q_i_ns_reg ));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT5 #(
     .INIT(32'hFFFFFFAB)) 
     \PERBIT_GEN[3].FF_RST0_GEN.FDRE_i1_i_1 
@@ -13054,7 +13123,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     STATE10A
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(STATE10A_i_1_n_0),
+        .D(D26_out),
         .Q(enblSFD),
         .R(s_axi_aresetn_0));
   LUT5 #(
@@ -13065,7 +13134,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(wr_rst_busy),
         .I3(full),
         .I4(checkBusFifoFullSFD),
-        .O(STATE10A_i_1_n_0));
+        .O(D26_out));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
@@ -13113,10 +13182,10 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     STATE14A
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D28_out),
+        .D(STATE14A_i_1_n_0),
         .Q(checkBusFifoFullCrc),
         .R(s_axi_aresetn_0));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT5 #(
     .INIT(32'hFFFFFFE0)) 
     STATE14A_i_1
@@ -13125,7 +13194,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(checkBusFifoFullCrc),
         .I3(checkCrc),
         .I4(enblCRC),
-        .O(D28_out));
+        .O(STATE14A_i_1_n_0));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
@@ -13143,7 +13212,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     STATE16A
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(STATE16A_0),
+        .D(D29_out),
         .Q(waitFifoEmpty),
         .R(s_axi_aresetn_0));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -13407,10 +13476,10 @@ module system_axi_ethernetlite_0_0_tx_statemachine
     STATE9A
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D25_out),
+        .D(STATE9A_0),
         .Q(checkBusFifoFullSFD),
         .R(s_axi_aresetn_0));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT3 #(
     .INIT(8'h02)) 
     axi_phy_tx_en_i_p_i_1
@@ -13418,7 +13487,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I1(STATE17A_0),
         .I2(STATE0A_0),
         .O(axi_phy_tx_en_i_p0));
-  (* SOFT_HLUTNM = "soft_lutpair113" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT4 #(
     .INIT(16'hEFEE)) 
     busFifoWrCntRst_reg_i_1
@@ -13441,7 +13510,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(tx_intr_en0),
         .I3(loopback_en_reg),
         .O(\s_axi_wdata[4] ));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT4 #(
     .INIT(16'hF888)) 
     mac_program_start_reg_i_1
@@ -13456,7 +13525,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .D(mac_program_start),
         .Q(mac_program_start_reg),
         .R(s_axi_aresetn_0));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT5 #(
     .INIT(32'hFFF1FFFF)) 
     \nibData[31]_i_1 
@@ -13480,7 +13549,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .D(prmry_in),
         .Q(axi_fifo_tx_en),
         .R(s_axi_aresetn_0));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \status_reg[0]_i_1 
@@ -13489,7 +13558,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(s_axi_aresetn),
         .I3(STATE17A_0),
         .O(ping_mac_program_reg[0]));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     \status_reg[1]_i_1 
@@ -13498,7 +13567,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(STATE17A_0),
         .I3(tx_pong_ping_l),
         .O(ping_mac_program_reg[1]));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \status_reg[2]_i_1 
@@ -13513,7 +13582,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I1(s_axi_aresetn),
         .I2(STATE17A_0),
         .O(ping_mac_program_reg[3]));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \status_reg[4]_i_1 
@@ -13522,7 +13591,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(s_axi_aresetn),
         .I3(STATE17A_0),
         .O(ping_mac_program_reg[4]));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
   LUT3 #(
     .INIT(8'hFB)) 
     \status_reg[5]_i_1 
@@ -13530,7 +13599,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I1(s_axi_aresetn),
         .I2(STATE17A_0),
         .O(RX_DONE_D1_I));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT4 #(
     .INIT(16'h0040)) 
     \status_reg[5]_i_2 
@@ -13539,7 +13608,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(STATE17A_0),
         .I3(tx_pong_ping_l),
         .O(ping_mac_program_reg[5]));
-  (* SOFT_HLUTNM = "soft_lutpair106" *) 
+  (* SOFT_HLUTNM = "soft_lutpair103" *) 
   LUT5 #(
     .INIT(32'h000044F4)) 
     transmit_start_reg_i_1
@@ -13565,14 +13634,14 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I4(txCrcEn_reg_i_2_n_0),
         .I5(txCrcEn_reg_i_3_n_0),
         .O(txCrcEn));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT2 #(
     .INIT(4'h1)) 
     txCrcEn_reg_i_2
        (.I0(checkBusFifoFullCrc),
         .I1(enblCRC),
         .O(txCrcEn_reg_i_2_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT2 #(
     .INIT(4'h1)) 
     txCrcEn_reg_i_3
@@ -13592,7 +13661,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I1(\txNibbleCnt_pad_reg[11] ),
         .I2(enblData),
         .O(STATE10A_0));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT4 #(
     .INIT(16'h88B8)) 
     \txNibbleCnt_pad[0]_i_2 
@@ -13609,15 +13678,15 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(txNibbleCnt_pad0[0]),
         .I3(\txNibbleCnt_pad_reg[11]_0 ),
         .O(\tx_packet_length_reg[10] [1]));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \txNibbleCnt_pad[11]_i_1 
-       (.I0(\txNibbleCnt_pad_reg[11]_1 ),
-        .I1(\txNibbleCnt_pad_reg[11]_0 ),
-        .I2(enblSFD),
+       (.I0(\txNibbleCnt_pad_reg[11]_0 ),
+        .I1(enblSFD),
+        .I2(\txNibbleCnt_pad_reg[11]_1 ),
         .O(\tx_packet_length_reg[10] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair109" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT4 #(
     .INIT(16'h88B8)) 
     \txNibbleCnt_pad[1]_i_1 
@@ -13690,7 +13759,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(txNibbleCnt_pad0[1]),
         .I3(\txNibbleCnt_pad_reg[11]_0 ),
         .O(\tx_packet_length_reg[10] [2]));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT3 #(
     .INIT(8'hFB)) 
     \txbuffer_addr[11]_i_1 
@@ -13698,7 +13767,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I1(s_axi_aresetn),
         .I2(chgMacAdr1),
         .O(STATE8A_3));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT3 #(
     .INIT(8'hFD)) 
     \txbuffer_addr[11]_i_2 
@@ -13707,22 +13776,22 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(enblData),
         .O(tx_addr_en));
   LUT5 #(
-    .INIT(32'h00000002)) 
+    .INIT(32'h00000001)) 
     \txbuffer_addr[11]_i_4 
-       (.I0(\Mac_addr_ram_addr_wr[0]_i_2_n_0 ),
-        .I1(chgMacAdr10),
-        .I2(chgMacAdr11),
-        .I3(chgMacAdr13),
-        .I4(chgMacAdr12),
+       (.I0(chgMacAdr10),
+        .I1(chgMacAdr11),
+        .I2(chgMacAdr13),
+        .I3(chgMacAdr12),
+        .I4(\Mac_addr_ram_addr_wr[0]_i_2_n_0 ),
         .O(\txbuffer_addr[11]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \xpm_fifo_instance.xpm_fifo_async_inst_i_1 
        (.I0(txDonePause),
         .I1(s_axi_aresetn),
         .O(rst));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair106" *) 
   LUT4 #(
     .INIT(16'h0001)) 
     \xpm_fifo_instance.xpm_fifo_async_inst_i_4 
@@ -13731,7 +13800,7 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(enblCRC),
         .I3(enblData),
         .O(STATE8A_2));
-  (* SOFT_HLUTNM = "soft_lutpair103" *) 
+  (* SOFT_HLUTNM = "soft_lutpair100" *) 
   LUT4 #(
     .INIT(16'hEEEF)) 
     \xpm_fifo_instance.xpm_fifo_async_inst_i_5 
@@ -13740,7 +13809,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(axi_fifo_tx_en),
         .I3(enblPreamble),
         .O(STATE17A_1));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT4 #(
     .INIT(16'h01FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_1__1 
@@ -13749,7 +13817,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(\xpm_mem_gen.xpm_memory_inst_1_i_4_n_0 ),
         .I3(s_axi_aresetn),
         .O(\txbuffer_addr_reg[9] ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT4 #(
     .INIT(16'h04FF)) 
     \xpm_mem_gen.xpm_memory_inst_1_i_1__2 
@@ -13778,7 +13845,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I4(lngthDelay1),
         .I5(txDone2),
         .O(\xpm_mem_gen.xpm_memory_inst_1_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT4 #(
     .INIT(16'h02FF)) 
     \xpm_mem_gen.xpm_memory_inst_2_i_1__1 
@@ -13787,7 +13853,6 @@ module system_axi_ethernetlite_0_0_tx_statemachine
         .I2(\xpm_mem_gen.xpm_memory_inst_1_i_4_n_0 ),
         .I3(s_axi_aresetn),
         .O(\txbuffer_addr_reg[9]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT4 #(
     .INIT(16'h08FF)) 
     \xpm_mem_gen.xpm_memory_inst_2_i_1__2 
@@ -13801,16 +13866,17 @@ endmodule
 (* ORIG_REF_NAME = "xemac" *) 
 module system_axi_ethernetlite_0_0_xemac
    (SS,
-    \MDIO_GEN.mdio_clk_i_reg_0 ,
+    phy_mdio_t,
+    out,
     ip2intc_irpt,
     \MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ,
     phy_mdio_o,
-    phy_mdio_t,
     reg_access,
     \MDIO_GEN.mdio_en_i_reg_0 ,
     p_15_in,
     p_17_in,
-    rx_intr_en_reg_0,
+    loopback_en_reg_0,
+    p_9_in,
     pong_rx_status,
     p_5_in,
     ping_soft_status,
@@ -13824,10 +13890,11 @@ module system_axi_ethernetlite_0_0_xemac
     p_7_in94_in,
     \reg_data_out_reg[0]_0 ,
     D,
-    loopback_en_reg_0,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[0]_0 ,
-    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ,
+    rx_intr_en_reg_0,
     \ping_pkt_lenth_reg[15]_0 ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[5]_0 ,
+    \TX_PONG_REG_GEN.pong_pkt_lenth_reg[2]_0 ,
     \MDIO_GEN.mdio_wr_data_reg_reg[15]_0 ,
     \status_reg_reg[5]_0 ,
     prmry_vect_in,
@@ -13836,6 +13903,7 @@ module system_axi_ethernetlite_0_0_xemac
     wr_clk,
     din,
     phy_tx_clk_core,
+    phy_col,
     phy_crs,
     enb,
     web,
@@ -13875,13 +13943,13 @@ module system_axi_ethernetlite_0_0_xemac
     \reg_data_out_reg[0]_1 ,
     s_axi_aresetn,
     \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ,
-    \reg_data_out_reg[4]_1 ,
-    \reg_data_out[0]_i_2 ,
-    \reg_data_out[0]_i_2_0 ,
+    \reg_data_out[2]_i_2 ,
+    \reg_data_out[2]_i_2_0 ,
+    \reg_data_out[3]_i_3 ,
     \MDIO_GEN.mdio_data_out_reg[10]_0 ,
     \MDIO_GEN.mdio_data_out_reg[3]_0 ,
-    \MDIO_GEN.mdio_data_out_reg[9]_0 ,
     \MDIO_GEN.mdio_data_out_reg[10]_1 ,
+    \MDIO_GEN.mdio_data_out_reg[10]_2 ,
     mdio_en_i0,
     tx_intr_en0,
     rx_intr_en0,
@@ -13899,16 +13967,17 @@ module system_axi_ethernetlite_0_0_xemac
     \ping_pkt_lenth_reg[15]_1 ,
     \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 );
   output [0:0]SS;
-  output \MDIO_GEN.mdio_clk_i_reg_0 ;
+  output phy_mdio_t;
+  output out;
   output ip2intc_irpt;
   output [4:0]\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ;
   output phy_mdio_o;
-  output phy_mdio_t;
   output reg_access;
   output [0:0]\MDIO_GEN.mdio_en_i_reg_0 ;
   output [1:0]p_15_in;
   output [2:0]p_17_in;
-  output [0:0]rx_intr_en_reg_0;
+  output loopback_en_reg_0;
+  output [1:0]p_9_in;
   output pong_rx_status;
   output [0:0]p_5_in;
   output ping_soft_status;
@@ -13922,10 +13991,11 @@ module system_axi_ethernetlite_0_0_xemac
   output p_7_in94_in;
   output \reg_data_out_reg[0]_0 ;
   output [31:0]D;
-  output loopback_en_reg_0;
-  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[0]_0 ;
-  output [14:0]\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ;
-  output [14:0]\ping_pkt_lenth_reg[15]_0 ;
+  output rx_intr_en_reg_0;
+  output [12:0]\ping_pkt_lenth_reg[15]_0 ;
+  output [12:0]\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[5]_0 ;
+  output \TX_PONG_REG_GEN.pong_pkt_lenth_reg[2]_0 ;
   output [4:0]\MDIO_GEN.mdio_wr_data_reg_reg[15]_0 ;
   output [5:0]\status_reg_reg[5]_0 ;
   output [3:0]prmry_vect_in;
@@ -13934,6 +14004,7 @@ module system_axi_ethernetlite_0_0_xemac
   input wr_clk;
   input [5:0]din;
   input phy_tx_clk_core;
+  input phy_col;
   input phy_crs;
   input enb;
   input [0:0]web;
@@ -13973,13 +14044,13 @@ module system_axi_ethernetlite_0_0_xemac
   input \reg_data_out_reg[0]_1 ;
   input s_axi_aresetn;
   input \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ;
-  input \reg_data_out_reg[4]_1 ;
-  input \reg_data_out[0]_i_2 ;
-  input \reg_data_out[0]_i_2_0 ;
+  input \reg_data_out[2]_i_2 ;
+  input \reg_data_out[2]_i_2_0 ;
+  input \reg_data_out[3]_i_3 ;
   input \MDIO_GEN.mdio_data_out_reg[10]_0 ;
   input \MDIO_GEN.mdio_data_out_reg[3]_0 ;
-  input \MDIO_GEN.mdio_data_out_reg[9]_0 ;
   input \MDIO_GEN.mdio_data_out_reg[10]_1 ;
+  input \MDIO_GEN.mdio_data_out_reg[10]_2 ;
   input mdio_en_i0;
   input tx_intr_en0;
   input rx_intr_en0;
@@ -14000,7 +14071,7 @@ module system_axi_ethernetlite_0_0_xemac
   wire \AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ;
   wire [31:0]D;
   wire D_2;
-  wire [3:2]Data_out_a_2;
+  wire [3:1]Data_out_a_2;
   wire [0:0]E;
   wire EMAC_I_n_40;
   wire EMAC_I_n_41;
@@ -14041,9 +14112,9 @@ module system_axi_ethernetlite_0_0_xemac
   wire \MDIO_GEN.clk_cnt_reg_n_0_[5] ;
   wire \MDIO_GEN.mdio_clk_i_i_1_n_0 ;
   wire \MDIO_GEN.mdio_clk_i_i_2_n_0 ;
-  wire \MDIO_GEN.mdio_clk_i_reg_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[10]_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[10]_1 ;
+  wire \MDIO_GEN.mdio_data_out_reg[10]_2 ;
   wire [0:0]\MDIO_GEN.mdio_data_out_reg[11]_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[11]_1 ;
   wire \MDIO_GEN.mdio_data_out_reg[11]_2 ;
@@ -14052,7 +14123,6 @@ module system_axi_ethernetlite_0_0_xemac
   wire \MDIO_GEN.mdio_data_out_reg[14]_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[15]_0 ;
   wire \MDIO_GEN.mdio_data_out_reg[3]_0 ;
-  wire \MDIO_GEN.mdio_data_out_reg[9]_0 ;
   wire \MDIO_GEN.mdio_data_out_reg_n_0_[0] ;
   wire [0:0]\MDIO_GEN.mdio_en_i_reg_0 ;
   wire \MDIO_GEN.mdio_en_i_reg_1 ;
@@ -14074,13 +14144,14 @@ module system_axi_ethernetlite_0_0_xemac
   wire \TX_PONG_GEN.TX_PONG_I_n_39 ;
   wire \TX_PONG_GEN.tx_pong_ping_l_i_1_n_0 ;
   wire \TX_PONG_REG_GEN.pong_mac_program_i_1_n_0 ;
-  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[0]_0 ;
-  wire [14:0]\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ;
+  wire [12:0]\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 ;
   wire [0:0]\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ;
+  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[2]_0 ;
+  wire \TX_PONG_REG_GEN.pong_pkt_lenth_reg[5]_0 ;
   wire \TX_PONG_REG_GEN.pong_soft_status_reg_0 ;
   wire \TX_PONG_REG_GEN.pong_tx_status_i_1_n_0 ;
   wire [5:0]din;
-  wire [3:2]douta;
+  wire [3:1]douta;
   wire ena;
   wire ena4_out;
   wire ena4_out_3;
@@ -14094,7 +14165,7 @@ module system_axi_ethernetlite_0_0_xemac
   wire gie_enable_reg_0;
   wire ip2intc_irpt;
   wire loopback_en_reg_0;
-  wire loopback_en_reg_n_0;
+  (* RTL_KEEP = "yes" *) wire mdio_clk_i;
   wire mdio_en_i0;
   wire mdio_op_i;
   wire [4:0]mdio_phy_addr;
@@ -14135,21 +14206,22 @@ module system_axi_ethernetlite_0_0_xemac
   wire p_85_in339_in;
   wire p_90_in;
   wire p_91_in355_in;
-  wire [0:0]p_9_in;
+  wire [1:0]p_9_in;
+  wire phy_col;
   wire phy_crs;
   wire phy_mdio_i;
   wire phy_mdio_o;
   wire phy_mdio_t;
   wire phy_tx_clk_core;
   wire ping_mac_program_i_1_n_0;
-  wire [0:0]ping_pkt_lenth;
-  wire [14:0]\ping_pkt_lenth_reg[15]_0 ;
+  wire [5:2]ping_pkt_lenth;
+  wire [12:0]\ping_pkt_lenth_reg[15]_0 ;
   wire [0:0]\ping_pkt_lenth_reg[15]_1 ;
   wire ping_soft_status;
   wire ping_soft_status_reg_0;
   wire ping_tx_status_i_1_n_0;
   wire pong_mac_program1;
-  wire [0:0]pong_pkt_lenth;
+  wire [5:2]pong_pkt_lenth;
   wire pong_rx_status;
   wire pong_soft_status;
   wire prmry_in;
@@ -14157,8 +14229,9 @@ module system_axi_ethernetlite_0_0_xemac
   wire reg_access;
   wire reg_access_reg_0;
   wire reg_data_out0__0;
-  wire \reg_data_out[0]_i_2 ;
-  wire \reg_data_out[0]_i_2_0 ;
+  wire \reg_data_out[2]_i_2 ;
+  wire \reg_data_out[2]_i_2_0 ;
+  wire \reg_data_out[3]_i_3 ;
   wire \reg_data_out_reg[0]_0 ;
   wire \reg_data_out_reg[0]_1 ;
   wire \reg_data_out_reg[10]_0 ;
@@ -14174,7 +14247,6 @@ module system_axi_ethernetlite_0_0_xemac
   wire \reg_data_out_reg[31]_1 ;
   wire \reg_data_out_reg[3]_0 ;
   wire \reg_data_out_reg[4]_0 ;
-  wire \reg_data_out_reg[4]_1 ;
   wire \reg_data_out_reg[5]_0 ;
   wire \reg_data_out_reg[6]_0 ;
   wire \reg_data_out_reg[6]_1 ;
@@ -14186,7 +14258,7 @@ module system_axi_ethernetlite_0_0_xemac
   wire rx_done;
   wire rx_done_d1;
   wire rx_intr_en0;
-  wire [0:0]rx_intr_en_reg_0;
+  wire rx_intr_en_reg_0;
   wire rx_intr_en_reg_1;
   wire [31:0]rx_ping_data_out;
   wire [31:0]rx_pong_data_out;
@@ -14219,22 +14291,22 @@ module system_axi_ethernetlite_0_0_xemac
   wire \tx_packet_length[7]_i_1_n_0 ;
   wire \tx_packet_length[8]_i_1_n_0 ;
   wire \tx_packet_length[9]_i_1_n_0 ;
-  wire [31:0]tx_ping_data_out;
-  wire [28:3]tx_pong_data_out;
+  wire [31:1]tx_ping_data_out;
+  wire [30:0]tx_pong_data_out;
   wire tx_pong_ping_l;
   wire wea;
   wire wea3_out;
   wire [0:0]web;
   wire wr_clk;
 
-  system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_20_emac EMAC_I
+  assign out = mdio_clk_i;
+  system_axi_ethernetlite_0_0_axi_ethernetlite_v3_0_21_emac EMAC_I
        (.D(tx_DPM_rd_data),
         .D_2(D_2),
         .E(EMAC_I_n_46),
         .\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (\TX_PONG_GEN.TX_PONG_I_n_36 ),
-        .\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (\TX_PONG_GEN.TX_PONG_I_n_37 ),
-        .\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (TX_PING_n_38),
-        .IP2INTC_IRPT_REG_I(rx_intr_en_reg_0),
+        .\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (TX_PING_n_37),
+        .\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I (\TX_PONG_GEN.TX_PONG_I_n_37 ),
         .Q(tx_packet_length),
         .\RX_PONG_REG_GEN.pong_rx_status_reg (\RX_PONG_REG_GEN.pong_rx_status_reg_0 ),
         .\RX_PONG_REG_GEN.pong_rx_status_reg_0 (\RX_PONG_REG_GEN.pong_rx_status_reg_1 ),
@@ -14243,10 +14315,11 @@ module system_axi_ethernetlite_0_0_xemac
         .din(din),
         .dout(rx_DPM_wr_data),
         .ena(ena4_out_3),
-        .loopback_en_reg(loopback_en_reg_n_0),
+        .loopback_en_reg(loopback_en_reg_0),
         .p_17_in(p_17_in[2]),
         .p_5_in(p_5_in),
         .p_9_in(p_9_in),
+        .phy_col(phy_col),
         .phy_crs(phy_crs),
         .phy_tx_clk_core(phy_tx_clk_core),
         .ping_mac_program_reg({EMAC_I_n_40,EMAC_I_n_41,EMAC_I_n_42,EMAC_I_n_43,EMAC_I_n_44,EMAC_I_n_45}),
@@ -14298,16 +14371,16 @@ module system_axi_ethernetlite_0_0_xemac
         .\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15]_0 (\MDIO_CAPTURE_DATA[15].MDIO_RD_DATA_reg[15] ),
         .\MDIO_GEN.mdio_data_out_reg[10] (\MDIO_GEN.mdio_data_out_reg[10]_0 ),
         .\MDIO_GEN.mdio_data_out_reg[10]_0 (\MDIO_GEN.mdio_data_out_reg[10]_1 ),
+        .\MDIO_GEN.mdio_data_out_reg[10]_1 (\MDIO_GEN.mdio_data_out_reg[10]_2 ),
         .\MDIO_GEN.mdio_data_out_reg[3] (\MDIO_GEN.mdio_data_out_reg[3]_0 ),
         .\MDIO_GEN.mdio_data_out_reg[3]_0 (Q[0]),
-        .\MDIO_GEN.mdio_data_out_reg[9] (\MDIO_GEN.mdio_data_out_reg[9]_0 ),
-        .\MDIO_GEN.mdio_data_out_reg[9]_0 (mdio_phy_addr),
-        .PHY_MDIO_O_reg_i_8_0({\MDIO_GEN.mdio_wr_data_reg_reg[15]_0 ,mdio_wr_data_reg}),
+        .\MDIO_GEN.mdio_data_out_reg[9] (mdio_phy_addr),
+        .PHY_MDIO_O_reg_i_5_0({\MDIO_GEN.mdio_wr_data_reg_reg[15]_0 ,mdio_wr_data_reg}),
         .Q(mdio_reg_addr),
-        .mdio_clk_reg_reg_0(\MDIO_GEN.mdio_clk_i_reg_0 ),
         .mdio_en_i0(mdio_en_i0),
         .mdio_en_reg_reg_0(\MDIO_GEN.mdio_en_i_reg_0 ),
         .mdio_op_i(mdio_op_i),
+        .out(mdio_clk_i),
         .p_0_in_1(p_0_in_1),
         .phy_mdio_i(phy_mdio_i),
         .phy_mdio_o(phy_mdio_o),
@@ -14352,7 +14425,7 @@ module system_axi_ethernetlite_0_0_xemac
         .I4(\MDIO_GEN.clk_cnt_reg_n_0_[1] ),
         .I5(\MDIO_GEN.clk_cnt_reg_n_0_[0] ),
         .O(\MDIO_GEN.clk_cnt[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT5 #(
     .INIT(32'hFFFE0001)) 
     \MDIO_GEN.clk_cnt[4]_i_1 
@@ -14408,16 +14481,17 @@ module system_axi_ethernetlite_0_0_xemac
         .D(\MDIO_GEN.clk_cnt[5]_i_1_n_0 ),
         .Q(\MDIO_GEN.clk_cnt_reg_n_0_[5] ),
         .R(SS));
-  LUT5 #(
-    .INIT(32'hFFFE0001)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFD00000001)) 
     \MDIO_GEN.mdio_clk_i_i_1 
-       (.I0(\MDIO_GEN.mdio_clk_i_i_2_n_0 ),
-        .I1(\MDIO_GEN.clk_cnt_reg_n_0_[5] ),
+       (.I0(mdio_clk_i),
+        .I1(\MDIO_GEN.clk_cnt_reg_n_0_[4] ),
         .I2(\MDIO_GEN.clk_cnt_reg_n_0_[3] ),
-        .I3(\MDIO_GEN.clk_cnt_reg_n_0_[4] ),
-        .I4(\MDIO_GEN.mdio_clk_i_reg_0 ),
+        .I3(\MDIO_GEN.clk_cnt_reg_n_0_[5] ),
+        .I4(\MDIO_GEN.mdio_clk_i_i_2_n_0 ),
+        .I5(mdio_clk_i),
         .O(\MDIO_GEN.mdio_clk_i_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \MDIO_GEN.mdio_clk_i_i_2 
@@ -14425,11 +14499,12 @@ module system_axi_ethernetlite_0_0_xemac
         .I1(\MDIO_GEN.clk_cnt_reg_n_0_[1] ),
         .I2(\MDIO_GEN.clk_cnt_reg_n_0_[0] ),
         .O(\MDIO_GEN.mdio_clk_i_i_2_n_0 ));
+  (* KEEP = "yes" *) 
   FDRE \MDIO_GEN.mdio_clk_i_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\MDIO_GEN.mdio_clk_i_i_1_n_0 ),
-        .Q(\MDIO_GEN.mdio_clk_i_reg_0 ),
+        .Q(mdio_clk_i),
         .R(SS));
   FDRE \MDIO_GEN.mdio_data_out_reg[0] 
        (.C(s_axi_aclk),
@@ -14712,25 +14787,26 @@ module system_axi_ethernetlite_0_0_xemac
         .Q(rx_done_d1),
         .R(SS));
   system_axi_ethernetlite_0_0_emac_dpram__xdcDup__2 RX_PING
-       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] (\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_0 (reg_access),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28]_1 (p_181_in),
-        .D({D[28:25],D[22],D[19:18],D[16],D[13]}),
+       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] (\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_0 (reg_access),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30]_1 (p_181_in),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[4] ({p_24_in,p_6_in92_in}),
+        .D({D[30:29],D[27:26],D[24],D[22:21],D[19:16],D[4],D[1]}),
         .Q(Q),
         .addra({rx_DPM_adr[11:3],rx_DPM_adr[1:0]}),
         .dout(rx_DPM_wr_data),
         .ena(ena4_out_3),
-        .\gen_wr_b.gen_word_wide.mem_reg ({rx_ping_data_out[31:29],rx_ping_data_out[24:23],rx_ping_data_out[21:20],rx_ping_data_out[17],rx_ping_data_out[15:14],rx_ping_data_out[12:0]}),
+        .\gen_wr_b.gen_word_wide.mem_reg ({rx_ping_data_out[31],rx_ping_data_out[28],rx_ping_data_out[25],rx_ping_data_out[23],rx_ping_data_out[20],rx_ping_data_out[15:5],rx_ping_data_out[3:2],rx_ping_data_out[0]}),
         .\gen_wr_b.gen_word_wide.mem_reg_0 (ena_2),
         .\gen_wr_b.gen_word_wide.mem_reg_1 (wea),
         .\gen_wr_b.gen_word_wide.mem_reg_2 (\gen_wr_b.gen_word_wide.mem_reg ),
-        .p_78_in(p_78_in),
-        .p_79_in(p_79_in),
-        .rx_pong_data_out({rx_pong_data_out[28:25],rx_pong_data_out[22],rx_pong_data_out[19:18],rx_pong_data_out[16],rx_pong_data_out[13]}),
+        .p_25_in148_in(p_25_in148_in),
+        .p_7_in94_in(p_7_in94_in),
+        .rx_pong_data_out({rx_pong_data_out[30:29],rx_pong_data_out[27:26],rx_pong_data_out[24],rx_pong_data_out[22:21],rx_pong_data_out[19:16],rx_pong_data_out[4],rx_pong_data_out[1]}),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
-        .tx_ping_data_out({tx_ping_data_out[28:25],tx_ping_data_out[22],tx_ping_data_out[19:18],tx_ping_data_out[16],tx_ping_data_out[13]}),
-        .tx_pong_data_out({tx_pong_data_out[28:25],tx_pong_data_out[22],tx_pong_data_out[19:18],tx_pong_data_out[16],tx_pong_data_out[13]}),
+        .tx_ping_data_out({tx_ping_data_out[30:29],tx_ping_data_out[27:26],tx_ping_data_out[24],tx_ping_data_out[22:21],tx_ping_data_out[19:16],tx_ping_data_out[4],tx_ping_data_out[1]}),
+        .tx_pong_data_out({tx_pong_data_out[30:29],tx_pong_data_out[27:26],tx_pong_data_out[24],tx_pong_data_out[22:21],tx_pong_data_out[19:16],tx_pong_data_out[4],tx_pong_data_out[1]}),
         .wea(wea3_out),
         .web(web));
   system_axi_ethernetlite_0_0_emac_dpram \RX_PONG_GEN.RX_PONG_I 
@@ -14787,38 +14863,40 @@ module system_axi_ethernetlite_0_0_xemac
         .Q(tx_done_d2),
         .R(SS));
   system_axi_ethernetlite_0_0_emac_dpram__xdcDup__1 TX_PING
-       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] ({p_60_in263_in,p_54_in244_in,p_42_in205_in,p_24_in,p_18_in}),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14] (\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_0 (reg_access),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[14]_1 ({rx_ping_data_out[14],rx_ping_data_out[12:9],rx_ping_data_out[7],rx_ping_data_out[4:3]}),
-        .D({D[14],D[12:9],D[7],D[4:3]}),
-        .\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 (\TX_PONG_GEN.TX_PONG_I_n_39 ),
+       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] (\reg_data_out_reg[0]_0 ),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[10] ({p_60_in263_in,p_54_in244_in,p_42_in205_in,p_30_in,\MDIO_GEN.mdio_data_out_reg_n_0_[0] }),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15] (\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_0 (reg_access),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[15]_1 ({rx_ping_data_out[15:13],rx_ping_data_out[11:9],rx_ping_data_out[7],rx_ping_data_out[5],rx_ping_data_out[0]}),
+        .D({D[15:13],D[11:9],D[7],D[5],D[0]}),
+        .\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 (\TX_PONG_GEN.TX_PONG_I_n_39 ),
         .Q(Q),
-        .STATE0A(TX_PING_n_38),
-        .douta(douta),
-        .doutb({tx_pong_data_out[14],tx_pong_data_out[12:9],tx_pong_data_out[7],tx_pong_data_out[4:3]}),
+        .STATE0A(TX_PING_n_37),
+        .douta({douta[3],douta[1]}),
+        .doutb({tx_pong_data_out[15:13],tx_pong_data_out[11:9],tx_pong_data_out[7],tx_pong_data_out[5],tx_pong_data_out[0]}),
         .enb(enb),
-        .\gen_wr_b.gen_word_wide.mem_reg ({tx_ping_data_out[31:15],tx_ping_data_out[13],tx_ping_data_out[8],tx_ping_data_out[6:5],tx_ping_data_out[2:0]}),
+        .\gen_wr_b.gen_word_wide.mem_reg ({tx_ping_data_out[31:16],tx_ping_data_out[12],tx_ping_data_out[8],tx_ping_data_out[6],tx_ping_data_out[4:1]}),
         .\gen_wr_b.gen_word_wide.mem_reg_0 (tx_DPM_rd_data[3:1]),
         .\gen_wr_b.gen_word_wide.mem_reg_1 (TX_PING_n_36),
-        .\gen_wr_b.gen_word_wide.mem_reg_2 (TX_PING_n_37),
+        .\gen_wr_b.gen_word_wide.mem_reg_2 (TX_PING_n_38),
         .\gen_wr_b.gen_word_wide.mem_reg_3 (TX_PING_n_39),
         .\gen_wr_b.gen_word_wide.mem_reg_4 (ena_0),
         .\gen_wr_b.gen_word_wide.mem_reg_5 (EMAC_I_n_50),
-        .p_19_in(p_19_in),
-        .p_25_in148_in(p_25_in148_in),
+        .p_31_in166_in(p_31_in166_in),
         .p_43_in207_in(p_43_in207_in),
         .p_55_in246_in(p_55_in246_in),
         .p_61_in265_in(p_61_in265_in),
         .p_66_in(p_66_in),
         .p_67_in(p_67_in),
-        .p_72_in301_in(p_72_in301_in),
-        .p_73_in303_in(p_73_in303_in),
+        .p_78_in(p_78_in),
+        .p_79_in(p_79_in),
         .p_84_in(p_84_in),
         .p_85_in339_in(p_85_in339_in),
+        .p_90_in(p_90_in),
+        .p_91_in355_in(p_91_in355_in),
         .prmry_in(SS),
-        .ram16x1_3(Data_out_a_2),
-        .rx_pong_data_out({rx_pong_data_out[14],rx_pong_data_out[12:9],rx_pong_data_out[7],rx_pong_data_out[4:3]}),
+        .ram16x1_3({Data_out_a_2[3],Data_out_a_2[1]}),
+        .rx_pong_data_out({rx_pong_data_out[15:13],rx_pong_data_out[11:9],rx_pong_data_out[7],rx_pong_data_out[5],rx_pong_data_out[0]}),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .select_2(select_2),
@@ -14827,37 +14905,35 @@ module system_axi_ethernetlite_0_0_xemac
         .tx_pong_ping_l(tx_pong_ping_l),
         .web(web));
   system_axi_ethernetlite_0_0_emac_dpram__xdcDup__3 \TX_PONG_GEN.TX_PONG_I 
-       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[0] (\reg_data_out_reg[0]_0 ),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[30] (p_181_in),
+       (.\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[28] (p_181_in),
         .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] (\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31] ),
         .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_0 (reg_access),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ({rx_ping_data_out[31:29],rx_ping_data_out[24:23],rx_ping_data_out[21:20],rx_ping_data_out[17],rx_ping_data_out[15],rx_ping_data_out[8],rx_ping_data_out[6:5],rx_ping_data_out[2:0]}),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ({tx_ping_data_out[31:29],tx_ping_data_out[24:23],tx_ping_data_out[21:20],tx_ping_data_out[17],tx_ping_data_out[15],tx_ping_data_out[8],tx_ping_data_out[6:5],tx_ping_data_out[2:0]}),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_1 ({rx_ping_data_out[31],rx_ping_data_out[28],rx_ping_data_out[25],rx_ping_data_out[23],rx_ping_data_out[20],rx_ping_data_out[12],rx_ping_data_out[8],rx_ping_data_out[6],rx_ping_data_out[3:2]}),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_2 ({tx_ping_data_out[31],tx_ping_data_out[28],tx_ping_data_out[25],tx_ping_data_out[23],tx_ping_data_out[20],tx_ping_data_out[12],tx_ping_data_out[8],tx_ping_data_out[6],tx_ping_data_out[3:2]}),
         .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[31]_3 (\reg_data_out_reg[31]_0 ),
-        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ({p_48_in225_in,p_36_in184_in,p_30_in,p_12_in111_in,p_6_in92_in,\MDIO_GEN.mdio_data_out_reg_n_0_[0] }),
-        .D({D[31:29],D[24:23],D[21:20],D[17],D[15],D[8],D[6:5],D[2:0]}),
+        .\AXI4_LITE_IF_GEN.IP2Bus_Data_sampled_reg[8] ({p_48_in225_in,p_36_in184_in,p_18_in,p_12_in111_in}),
+        .D({D[31],D[28],D[25],D[23],D[20],D[12],D[8],D[6],D[3:2]}),
         .\GEN.DATA_WIDTH_GEN[0].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 (TX_PING_n_36),
-        .\GEN.DATA_WIDTH_GEN[1].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 (TX_PING_n_37),
+        .\GEN.DATA_WIDTH_GEN[2].NUM_BUSES_GEN[0].MUXCY_GEN.MUXCY_I_i_1 (TX_PING_n_38),
         .Q(Q),
         .STATE0A(\TX_PONG_GEN.TX_PONG_I_n_36 ),
         .STATE0A_0(\TX_PONG_GEN.TX_PONG_I_n_37 ),
         .STATE0A_1(tx_DPM_rd_data[0]),
-        .douta(douta),
-        .\gen_wr_b.gen_word_wide.mem_reg ({tx_pong_data_out[28:25],tx_pong_data_out[22],tx_pong_data_out[19:18],tx_pong_data_out[16],tx_pong_data_out[14:9],tx_pong_data_out[7],tx_pong_data_out[4:3]}),
-        .\gen_wr_b.gen_word_wide.mem_reg_0 (Data_out_a_2),
+        .douta({douta[3],douta[1]}),
+        .\gen_wr_b.gen_word_wide.mem_reg ({tx_pong_data_out[30:29],tx_pong_data_out[27:26],tx_pong_data_out[24],tx_pong_data_out[22:21],tx_pong_data_out[19:13],tx_pong_data_out[11:9],tx_pong_data_out[7],tx_pong_data_out[5:4],tx_pong_data_out[1:0]}),
+        .\gen_wr_b.gen_word_wide.mem_reg_0 ({Data_out_a_2[3],Data_out_a_2[1]}),
         .\gen_wr_b.gen_word_wide.mem_reg_1 (\TX_PONG_GEN.TX_PONG_I_n_39 ),
         .\gen_wr_b.gen_word_wide.mem_reg_2 (ena),
         .\gen_wr_b.gen_word_wide.mem_reg_3 (\gen_wr_b.gen_word_wide.mem_reg_0 ),
         .\gen_wr_b.gen_word_wide.mem_reg_4 (EMAC_I_n_51),
         .p_13_in113_in(p_13_in113_in),
-        .p_31_in166_in(p_31_in166_in),
+        .p_19_in(p_19_in),
         .p_37_in186_in(p_37_in186_in),
         .p_49_in(p_49_in),
-        .p_7_in94_in(p_7_in94_in),
-        .p_90_in(p_90_in),
-        .p_91_in355_in(p_91_in355_in),
+        .p_72_in301_in(p_72_in301_in),
+        .p_73_in303_in(p_73_in303_in),
         .ram16x1_0(TX_PING_n_39),
-        .rx_pong_data_out({rx_pong_data_out[31:29],rx_pong_data_out[24:23],rx_pong_data_out[21:20],rx_pong_data_out[17],rx_pong_data_out[15],rx_pong_data_out[8],rx_pong_data_out[6:5],rx_pong_data_out[2:0]}),
+        .rx_pong_data_out({rx_pong_data_out[31],rx_pong_data_out[28],rx_pong_data_out[25],rx_pong_data_out[23],rx_pong_data_out[20],rx_pong_data_out[12],rx_pong_data_out[8],rx_pong_data_out[6],rx_pong_data_out[3:2]}),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .select_2(select_2),
@@ -14900,97 +14976,97 @@ module system_axi_ethernetlite_0_0_xemac
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[0]),
-        .Q(pong_pkt_lenth),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [0]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[10] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[10]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [9]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [7]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[11] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[11]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [10]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [8]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[12] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[12]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [11]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [9]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[13] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[13]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [12]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [10]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[14] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[14]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [13]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [11]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[15] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[15]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [14]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [12]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[1] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[1]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [0]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [1]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[2] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[2]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [1]),
+        .Q(pong_pkt_lenth[2]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[3] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[3]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [2]),
+        .Q(pong_pkt_lenth[3]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[4] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[4]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [3]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [2]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[5] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[5]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [4]),
+        .Q(pong_pkt_lenth[5]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[6] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[6]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [5]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [3]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[7] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[7]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [6]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [4]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[8] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[8]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [7]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [5]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_pkt_lenth_reg[9] 
        (.C(s_axi_aclk),
         .CE(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[9]),
-        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [8]),
+        .Q(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [6]),
         .R(SS));
   FDRE \TX_PONG_REG_GEN.pong_soft_status_reg 
        (.C(s_axi_aclk),
@@ -15023,7 +15099,7 @@ module system_axi_ethernetlite_0_0_xemac
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(EMAC_I_n_47),
-        .Q(loopback_en_reg_n_0),
+        .Q(loopback_en_reg_0),
         .R(SS));
   LUT5 #(
     .INIT(32'hB8BB8888)) 
@@ -15044,103 +15120,103 @@ module system_axi_ethernetlite_0_0_xemac
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[0]),
-        .Q(ping_pkt_lenth),
+        .Q(\ping_pkt_lenth_reg[15]_0 [0]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[10] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[10]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [9]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [7]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[11] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[11]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [10]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [8]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[12] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[12]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [11]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [9]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[13] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[13]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [12]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [10]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[14] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[14]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [13]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [11]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[15] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[15]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [14]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [12]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[1] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[1]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [0]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [1]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[2] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[2]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [1]),
+        .Q(ping_pkt_lenth[2]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[3] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[3]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [2]),
+        .Q(ping_pkt_lenth[3]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[4] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[4]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [3]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [2]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[5] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[5]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [4]),
+        .Q(ping_pkt_lenth[5]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[6] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[6]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [5]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [3]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[7] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[7]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [6]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [4]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[8] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[8]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [7]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [5]),
         .R(SS));
   FDRE \ping_pkt_lenth_reg[9] 
        (.C(s_axi_aclk),
         .CE(\ping_pkt_lenth_reg[15]_1 ),
         .D(s_axi_wdata[9]),
-        .Q(\ping_pkt_lenth_reg[15]_0 [8]),
+        .Q(\ping_pkt_lenth_reg[15]_0 [6]),
         .R(SS));
   FDRE ping_rx_status_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(EMAC_I_n_48),
-        .Q(p_9_in),
+        .Q(p_9_in[0]),
         .R(SS));
   FDRE ping_soft_status_reg
        (.C(s_axi_aclk),
@@ -15169,21 +15245,34 @@ module system_axi_ethernetlite_0_0_xemac
         .D(reg_access_reg_0),
         .Q(reg_access),
         .R(SS));
-  LUT5 #(
-    .INIT(32'h0305F355)) 
-    \reg_data_out[0]_i_4 
-       (.I0(pong_pkt_lenth),
-        .I1(p_9_in),
-        .I2(\reg_data_out[0]_i_2 ),
-        .I3(\reg_data_out[0]_i_2_0 ),
-        .I4(ping_pkt_lenth),
-        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[0]_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \reg_data_out[4]_i_2 
-       (.I0(loopback_en_reg_n_0),
-        .I1(\reg_data_out_reg[4]_1 ),
-        .O(loopback_en_reg_0));
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  LUT4 #(
+    .INIT(16'hFCAE)) 
+    \reg_data_out[2]_i_3 
+       (.I0(pong_pkt_lenth[2]),
+        .I1(ping_pkt_lenth[2]),
+        .I2(\reg_data_out[2]_i_2 ),
+        .I3(\reg_data_out[2]_i_2_0 ),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[2]_0 ));
+  LUT6 #(
+    .INIT(64'hBAFFBABAFCFFFC30)) 
+    \reg_data_out[3]_i_5 
+       (.I0(p_9_in[1]),
+        .I1(\reg_data_out[2]_i_2 ),
+        .I2(ping_pkt_lenth[3]),
+        .I3(\reg_data_out[2]_i_2_0 ),
+        .I4(pong_pkt_lenth[3]),
+        .I5(\reg_data_out[3]_i_3 ),
+        .O(rx_intr_en_reg_0));
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  LUT4 #(
+    .INIT(16'hFCAE)) 
+    \reg_data_out[5]_i_3 
+       (.I0(pong_pkt_lenth[5]),
+        .I1(ping_pkt_lenth[5]),
+        .I2(\reg_data_out[2]_i_2 ),
+        .I3(\reg_data_out[2]_i_2_0 ),
+        .O(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[5]_0 ));
   FDRE \reg_data_out_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -15296,7 +15385,7 @@ module system_axi_ethernetlite_0_0_xemac
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(rx_intr_en_reg_1),
-        .Q(rx_intr_en_reg_0),
+        .Q(p_9_in[1]),
         .R(SS));
   FDRE \status_reg_reg[0] 
        (.C(s_axi_aclk),
@@ -15340,133 +15429,133 @@ module system_axi_ethernetlite_0_0_xemac
         .D(tx_intr_en_reg_0),
         .Q(p_17_in[2]),
         .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \tx_packet_length[0]_i_1 
-       (.I0(pong_pkt_lenth),
-        .I1(tx_pong_ping_l),
-        .I2(ping_pkt_lenth),
-        .O(\tx_packet_length[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[10]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [9]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [9]),
-        .O(\tx_packet_length[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[11]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [10]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [10]),
-        .O(\tx_packet_length[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[12]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [11]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [11]),
-        .O(\tx_packet_length[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[13]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [12]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [12]),
-        .O(\tx_packet_length[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[14]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [13]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [13]),
-        .O(\tx_packet_length[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[15]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [14]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [14]),
-        .O(\tx_packet_length[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[1]_i_1 
        (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [0]),
         .I1(tx_pong_ping_l),
         .I2(\ping_pkt_lenth_reg[15]_0 [0]),
-        .O(\tx_packet_length[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+        .O(\tx_packet_length[0]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \tx_packet_length[2]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [1]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [1]),
-        .O(\tx_packet_length[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[3]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [2]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [2]),
-        .O(\tx_packet_length[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[4]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [3]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [3]),
-        .O(\tx_packet_length[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[5]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [4]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [4]),
-        .O(\tx_packet_length[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[6]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [5]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [5]),
-        .O(\tx_packet_length[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[7]_i_1 
-       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [6]),
-        .I1(tx_pong_ping_l),
-        .I2(\ping_pkt_lenth_reg[15]_0 [6]),
-        .O(\tx_packet_length[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
-  LUT3 #(
-    .INIT(8'hB8)) 
-    \tx_packet_length[8]_i_1 
+    \tx_packet_length[10]_i_1 
        (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [7]),
         .I1(tx_pong_ping_l),
         .I2(\ping_pkt_lenth_reg[15]_0 [7]),
-        .O(\tx_packet_length[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+        .O(\tx_packet_length[10]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT3 #(
     .INIT(8'hB8)) 
-    \tx_packet_length[9]_i_1 
+    \tx_packet_length[11]_i_1 
        (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [8]),
         .I1(tx_pong_ping_l),
         .I2(\ping_pkt_lenth_reg[15]_0 [8]),
+        .O(\tx_packet_length[11]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[12]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [9]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [9]),
+        .O(\tx_packet_length[12]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[13]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [10]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [10]),
+        .O(\tx_packet_length[13]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[14]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [11]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [11]),
+        .O(\tx_packet_length[14]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[15]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [12]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [12]),
+        .O(\tx_packet_length[15]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[1]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [1]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [1]),
+        .O(\tx_packet_length[1]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[2]_i_1 
+       (.I0(pong_pkt_lenth[2]),
+        .I1(tx_pong_ping_l),
+        .I2(ping_pkt_lenth[2]),
+        .O(\tx_packet_length[2]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[3]_i_1 
+       (.I0(pong_pkt_lenth[3]),
+        .I1(tx_pong_ping_l),
+        .I2(ping_pkt_lenth[3]),
+        .O(\tx_packet_length[3]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[4]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [2]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [2]),
+        .O(\tx_packet_length[4]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[5]_i_1 
+       (.I0(pong_pkt_lenth[5]),
+        .I1(tx_pong_ping_l),
+        .I2(ping_pkt_lenth[5]),
+        .O(\tx_packet_length[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[6]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [3]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [3]),
+        .O(\tx_packet_length[6]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[7]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [4]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [4]),
+        .O(\tx_packet_length[7]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[8]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [5]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [5]),
+        .O(\tx_packet_length[8]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \tx_packet_length[9]_i_1 
+       (.I0(\TX_PONG_REG_GEN.pong_pkt_lenth_reg[15]_0 [6]),
+        .I1(tx_pong_ping_l),
+        .I2(\ping_pkt_lenth_reg[15]_0 [6]),
         .O(\tx_packet_length[9]_i_1_n_0 ));
   FDRE \tx_packet_length_reg[0] 
        (.C(s_axi_aclk),
@@ -15684,14 +15773,14 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray
        (.I0(\dest_graysync_ff[1] [2]),
         .I1(\dest_graysync_ff[1] [3]),
         .O(\^dest_out_bin [2]));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
@@ -15848,14 +15937,14 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__4
        (.I0(\dest_graysync_ff[1] [2]),
         .I1(\dest_graysync_ff[1] [3]),
         .O(\^dest_out_bin [2]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
@@ -16012,14 +16101,14 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__5
        (.I0(\dest_graysync_ff[1] [2]),
         .I1(\dest_graysync_ff[1] [3]),
         .O(\^dest_out_bin [2]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
@@ -16176,14 +16265,14 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__6
        (.I0(\dest_graysync_ff[1] [2]),
         .I1(\dest_graysync_ff[1] [3]),
         .O(\^dest_out_bin [2]));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
@@ -16367,28 +16456,28 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__parameterized0
        (.I0(\dest_graysync_ff[1] [3]),
         .I1(\dest_graysync_ff[1] [4]),
         .O(\^dest_out_bin [3]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
        (.I0(src_in_bin[2]),
         .I1(src_in_bin[1]),
         .O(gray_enc[1]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[2]_i_1 
        (.I0(src_in_bin[3]),
         .I1(src_in_bin[2]),
         .O(gray_enc[2]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[3]_i_1 
@@ -16572,28 +16661,28 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__parameterized0__4
        (.I0(\dest_graysync_ff[1] [3]),
         .I1(\dest_graysync_ff[1] [4]),
         .O(\^dest_out_bin [3]));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
        (.I0(src_in_bin[2]),
         .I1(src_in_bin[1]),
         .O(gray_enc[1]));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[2]_i_1 
        (.I0(src_in_bin[3]),
         .I1(src_in_bin[2]),
         .O(gray_enc[2]));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[3]_i_1 
@@ -16777,28 +16866,28 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__parameterized0__5
        (.I0(\dest_graysync_ff[1] [3]),
         .I1(\dest_graysync_ff[1] [4]),
         .O(\^dest_out_bin [3]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
        (.I0(src_in_bin[2]),
         .I1(src_in_bin[1]),
         .O(gray_enc[1]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[2]_i_1 
        (.I0(src_in_bin[3]),
         .I1(src_in_bin[2]),
         .O(gray_enc[2]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[3]_i_1 
@@ -16982,28 +17071,28 @@ module system_axi_ethernetlite_0_0_xpm_cdc_gray__parameterized0__6
        (.I0(\dest_graysync_ff[1] [3]),
         .I1(\dest_graysync_ff[1] [4]),
         .O(\^dest_out_bin [3]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[0]_i_1 
        (.I0(src_in_bin[1]),
         .I1(src_in_bin[0]),
         .O(gray_enc[0]));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[1]_i_1 
        (.I0(src_in_bin[2]),
         .I1(src_in_bin[1]),
         .O(gray_enc[1]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[2]_i_1 
        (.I0(src_in_bin[3]),
         .I1(src_in_bin[2]),
         .O(gray_enc[2]));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \src_gray_ff[3]_i_1 
@@ -17226,20 +17315,20 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn
   wire wr_pntr_plus1_pf_carry;
   wire wrst_busy;
 
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \count_value_i[0]_i_1__2 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair88" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__2 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__2 
@@ -17247,7 +17336,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__2 
@@ -17310,20 +17399,20 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn_12
   wire wr_pntr_plus1_pf_carry;
   wire wrst_busy;
 
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \count_value_i[0]_i_1__2 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__2 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__2 
@@ -17331,7 +17420,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn_12
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__2 
@@ -17405,7 +17494,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__5 
@@ -17413,7 +17502,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__5 
@@ -17487,7 +17576,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_11
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__5 
@@ -17495,7 +17584,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_11
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__5 
@@ -17569,7 +17658,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_22
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1 
@@ -17577,7 +17666,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_22
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1 
@@ -17651,7 +17740,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_8
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1 
@@ -17659,7 +17748,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized0_8
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair100" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1 
@@ -17748,14 +17837,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
     \count_value_i[0]_i_1__5 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__4 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__4 
@@ -17763,7 +17852,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__4 
@@ -17772,7 +17861,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
         .I2(Q[2]),
         .I3(Q[3]),
         .O(\count_value_i[3]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair88" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \count_value_i[4]_i_1__0 
@@ -17822,7 +17911,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
         .D(\count_value_i[4]_i_1__0_n_0 ),
         .Q(Q[4]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe[2]_i_1 
@@ -17830,7 +17919,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
         .I1(\gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[3] [2]),
         .I2(Q[2]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe[3]_i_1 
@@ -17856,7 +17945,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
        (.I0(rd_en),
         .I1(\count_value_i_reg[0]_0 ),
         .O(E));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \grdc.rd_data_count_i[3]_i_1 
@@ -17864,7 +17953,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1
         .I1(Q[3]),
         .I2(\grdc.rd_data_count_i_reg[4] [3]),
         .O(\reg_out_i_reg[3] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair91" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \grdc.rd_data_count_i[4]_i_1 
@@ -17932,14 +18021,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
     \count_value_i[0]_i_1__5 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__4 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__4 
@@ -17947,7 +18036,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__4 
@@ -17956,7 +18045,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
         .I2(Q[2]),
         .I3(Q[3]),
         .O(\count_value_i[3]_i_1__4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \count_value_i[4]_i_1__0 
@@ -18006,7 +18095,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
         .D(\count_value_i[4]_i_1__0_n_0 ),
         .Q(Q[4]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe[2]_i_1 
@@ -18014,7 +18103,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
         .I1(\gen_pf_ic_rc.gpe_ic.diff_pntr_pe_reg[3] [2]),
         .I2(Q[2]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gen_pf_ic_rc.gpe_ic.diff_pntr_pe[3]_i_1 
@@ -18040,7 +18129,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
        (.I0(rd_en),
         .I1(\count_value_i_reg[0]_0 ),
         .O(E));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \grdc.rd_data_count_i[3]_i_1 
@@ -18048,7 +18137,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_17
         .I1(Q[3]),
         .I2(\grdc.rd_data_count_i_reg[4] [3]),
         .O(\reg_out_i_reg[3] [0]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \grdc.rd_data_count_i[4]_i_1 
@@ -18096,14 +18185,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_20
     \count_value_i[0]_i_1__1 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__1 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__1 
@@ -18111,7 +18200,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_20
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__1 
@@ -18120,7 +18209,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_20
         .I2(Q[2]),
         .I3(Q[3]),
         .O(\count_value_i[3]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \count_value_i[4]_i_1 
@@ -18198,14 +18287,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_6
     \count_value_i[0]_i_1__1 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__1 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair97" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__1 
@@ -18213,7 +18302,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_6
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__1 
@@ -18222,7 +18311,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized1_6
         .I2(Q[2]),
         .I3(Q[3]),
         .O(\count_value_i[3]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \count_value_i[4]_i_1 
@@ -18305,7 +18394,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__3 
@@ -18313,7 +18402,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair94" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__3 
@@ -18387,7 +18476,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_18
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__3 
@@ -18395,7 +18484,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_18
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__3 
@@ -18469,14 +18558,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_21
     \count_value_i[0]_i_1__0 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__0 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__0 
@@ -18484,7 +18573,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_21
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__0 
@@ -18525,7 +18614,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_21
         .D(\count_value_i[3]_i_1__0_n_0 ),
         .Q(Q[3]),
         .R(wrst_busy));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q[2]_i_1 
@@ -18568,14 +18657,14 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_7
     \count_value_i[0]_i_1__0 
        (.I0(Q[0]),
         .O(\count_value_i[0]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \count_value_i[1]_i_1__0 
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(\count_value_i[1]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \count_value_i[2]_i_1__0 
@@ -18583,7 +18672,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_7
         .I1(Q[1]),
         .I2(Q[2]),
         .O(\count_value_i[2]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \count_value_i[3]_i_1__0 
@@ -18624,7 +18713,7 @@ module system_axi_ethernetlite_0_0_xpm_counter_updn__parameterized2_7
         .D(\count_value_i[3]_i_1__0_n_0 ),
         .Q(Q[3]),
         .R(wrst_busy));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair94" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q[2]_i_1 
@@ -18773,6 +18862,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_async
   (* RD_PNTR_WIDTH = "4" *) 
   (* READ_DATA_WIDTH = "6" *) 
   (* READ_MODE = "0" *) 
+  (* READ_MODE_LL = "0" *) 
   (* RELATED_CLOCKS = "0" *) 
   (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
@@ -18959,6 +19049,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_async__xdcDup__1
   (* RD_PNTR_WIDTH = "4" *) 
   (* READ_DATA_WIDTH = "6" *) 
   (* READ_MODE = "0" *) 
+  (* READ_MODE_LL = "0" *) 
   (* RELATED_CLOCKS = "0" *) 
   (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
@@ -19022,13 +19113,13 @@ endmodule
 (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "2" *) 
 (* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "1" *) (* RD_MODE = "0" *) 
 (* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "6" *) (* READ_MODE = "0" *) 
-(* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "1F1F" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "6" *) (* WR_DATA_COUNT_WIDTH = "2" *) 
-(* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) 
-(* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) 
-(* both_stages_valid = "3" *) (* invalid = "0" *) (* keep_hierarchy = "soft" *) 
-(* stage1_valid = "2" *) (* stage2_valid = "1" *) 
+(* READ_MODE_LL = "0" *) (* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1F1F" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "6" *) 
+(* WR_DATA_COUNT_WIDTH = "2" *) (* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) 
+(* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) 
+(* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) (* invalid = "0" *) 
+(* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) (* stage2_valid = "1" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_base
    (sleep,
     rst,
@@ -19192,7 +19283,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base
         .R(rd_rst_busy));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19207,7 +19297,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base
         .src_in_bin(rd_pntr_ext));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19265,7 +19354,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base
         .rd_clk(rd_clk));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19280,7 +19368,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base
         .src_in_bin(wr_pntr_ext));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19626,13 +19713,13 @@ endmodule
 (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "2" *) 
 (* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "1" *) (* RD_MODE = "0" *) 
 (* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "6" *) (* READ_MODE = "0" *) 
-(* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "1F1F" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "6" *) (* WR_DATA_COUNT_WIDTH = "2" *) 
-(* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) 
-(* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) 
-(* both_stages_valid = "3" *) (* invalid = "0" *) (* keep_hierarchy = "soft" *) 
-(* stage1_valid = "2" *) (* stage2_valid = "1" *) 
+(* READ_MODE_LL = "0" *) (* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1F1F" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "6" *) 
+(* WR_DATA_COUNT_WIDTH = "2" *) (* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) 
+(* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) 
+(* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) (* invalid = "0" *) 
+(* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) (* stage2_valid = "1" *) 
 module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
    (sleep,
     rst,
@@ -19796,7 +19883,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
         .R(rd_rst_busy));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19811,7 +19897,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
         .src_in_bin(rd_pntr_ext));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19869,7 +19954,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
         .rd_clk(rd_clk));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -19884,7 +19968,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_base__xdcDup__1
         .src_in_bin(wr_pntr_ext));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* REG_OUTPUT = "0" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
@@ -20261,7 +20344,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit
         .D(wrst_busy),
         .Q(rst_d1),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_i_4 
@@ -20279,7 +20362,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit
         .I4(\gen_pf_ic_rc.gpf_ic.prog_full_i_reg ),
         .I5(prog_full),
         .O(\gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q_reg[3] ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair91" *) 
   LUT4 #(
     .INIT(16'hFE00)) 
     \gof.overflow_i_i_1 
@@ -20335,7 +20418,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit_19
         .D(wrst_busy),
         .Q(rst_d1),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT3 #(
     .INIT(8'h04)) 
     \gen_pf_ic_rc.gen_full_rst_val.ram_full_i_i_4 
@@ -20353,7 +20436,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_bit_19
         .I4(\gen_pf_ic_rc.gpf_ic.prog_full_i_reg ),
         .I5(prog_full),
         .O(\gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q_reg[3] ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT4 #(
     .INIT(16'hFE00)) 
     \gof.overflow_i_i_1 
@@ -21117,7 +21200,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec__parameterized0
   wire wr_clk;
   wire wrst_busy;
 
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \gwdc.wr_data_count_i[3]_i_1 
@@ -21125,7 +21208,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec__parameterized0
         .I1(\reg_out_i_reg_n_0_[3] ),
         .I2(Q[3]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gwdc.wr_data_count_i[4]_i_1 
@@ -21212,7 +21295,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec__parameterized0_14
   wire wr_clk;
   wire wrst_busy;
 
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT3 #(
     .INIT(8'h69)) 
     \gwdc.wr_data_count_i[3]_i_1 
@@ -21220,7 +21303,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_reg_vec__parameterized0_14
         .I1(\reg_out_i_reg_n_0_[3] ),
         .I2(Q[3]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'h718E8E71)) 
     \gwdc.wr_data_count_i[4]_i_1 
@@ -21650,7 +21733,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst
         .I4(\gen_rst_ic.fifo_wr_rst_ic_i_3_n_0 ),
         .I5(\gen_rst_ic.fifo_wr_rst_ic ),
         .O(\gen_rst_ic.fifo_wr_rst_ic_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \gen_rst_ic.fifo_wr_rst_ic_i_2 
@@ -21678,7 +21761,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst
   (* DEST_SYNC_FF = "2" *) 
   (* INIT = "0" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
@@ -21687,7 +21769,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst
        (.dest_clk(wr_clk),
         .dest_rst(\gen_rst_ic.fifo_rd_rst_wr_i ),
         .src_rst(SR));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \gen_rst_ic.rst_seq_reentered_i_1 
@@ -21743,7 +21825,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst
   (* DEST_SYNC_FF = "2" *) 
   (* INIT = "0" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
@@ -22053,7 +22134,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst__xdcDup__1
         .I4(\gen_rst_ic.fifo_wr_rst_ic_i_3_n_0 ),
         .I5(\gen_rst_ic.fifo_wr_rst_ic ),
         .O(\gen_rst_ic.fifo_wr_rst_ic_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \gen_rst_ic.fifo_wr_rst_ic_i_2 
@@ -22081,7 +22162,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst__xdcDup__1
   (* DEST_SYNC_FF = "2" *) 
   (* INIT = "0" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
@@ -22090,7 +22170,7 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst__xdcDup__1
        (.dest_clk(wr_clk),
         .dest_rst(\gen_rst_ic.fifo_rd_rst_wr_i ),
         .src_rst(SR));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT3 #(
     .INIT(8'h02)) 
     \gen_rst_ic.rst_seq_reentered_i_1 
@@ -22146,7 +22226,6 @@ module system_axi_ethernetlite_0_0_xpm_fifo_rst__xdcDup__1
   (* DEST_SYNC_FF = "2" *) 
   (* INIT = "0" *) 
   (* INIT_SYNC_FF = "1" *) 
-  (* KEEP_HIERARCHY = "true" *) 
   (* SIM_ASSERT_CHK = "0" *) 
   (* VERSION = "0" *) 
   (* XPM_CDC = "SYNC_RST" *) 
@@ -22660,16 +22739,15 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_12 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_13 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_14 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_15 ;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -22679,6 +22757,10 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -22802,44 +22884,32 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
-        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],douta}),
+        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],\gen_wr_b.gen_word_wide.mem_reg_n_12 ,\gen_wr_b.gen_word_wide.mem_reg_n_13 ,\gen_wr_b.gen_word_wide.mem_reg_n_14 ,\gen_wr_b.gen_word_wide.mem_reg_n_15 }),
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
+       (.I0(wea),
         .I1(ena),
         .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -22924,16 +22994,15 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__10
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_12 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_13 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_14 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_15 ;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -22943,6 +23012,10 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__10
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -23066,44 +23139,32 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__10
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
-        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],douta}),
+        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],\gen_wr_b.gen_word_wide.mem_reg_n_12 ,\gen_wr_b.gen_word_wide.mem_reg_n_13 ,\gen_wr_b.gen_word_wide.mem_reg_n_14 ,\gen_wr_b.gen_word_wide.mem_reg_n_15 }),
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
+       (.I0(wea),
         .I1(ena),
         .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -23186,20 +23247,13 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__4
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire [15:4]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED ;
   wire [1:0]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED ;
@@ -23326,7 +23380,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__4
         .ADDRBWRADDR({1'b0,addrb,1'b0,1'b0,1'b0,1'b0}),
         .CLKARDCLK(clka),
         .CLKBWRCLK(clka),
-        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,dina}),
+        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
@@ -23334,40 +23388,22 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__4
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({1'b0,1'b0}),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -23450,20 +23486,13 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__5
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire [15:4]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED ;
   wire [1:0]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED ;
@@ -23590,7 +23619,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__5
         .ADDRBWRADDR({1'b0,addrb,1'b0,1'b0,1'b0,1'b0}),
         .CLKARDCLK(clka),
         .CLKBWRCLK(clka),
-        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,dina}),
+        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
@@ -23598,40 +23627,22 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__5
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({1'b0,1'b0}),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -23716,16 +23727,15 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__6
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_12 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_13 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_14 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_15 ;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -23735,6 +23745,10 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__6
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -23858,44 +23872,32 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__6
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
-        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],douta}),
+        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],\gen_wr_b.gen_word_wide.mem_reg_n_12 ,\gen_wr_b.gen_word_wide.mem_reg_n_13 ,\gen_wr_b.gen_word_wide.mem_reg_n_14 ,\gen_wr_b.gen_word_wide.mem_reg_n_15 }),
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
+       (.I0(wea),
         .I1(ena),
         .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -23980,16 +23982,15 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__7
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_12 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_13 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_14 ;
+  wire \gen_wr_b.gen_word_wide.mem_reg_n_15 ;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -23999,6 +24000,10 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__7
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -24122,44 +24127,32 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__7
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
-        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],douta}),
+        .DOADO({\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED [15:4],\gen_wr_b.gen_word_wide.mem_reg_n_12 ,\gen_wr_b.gen_word_wide.mem_reg_n_13 ,\gen_wr_b.gen_word_wide.mem_reg_n_14 ,\gen_wr_b.gen_word_wide.mem_reg_n_15 }),
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
+       (.I0(wea),
         .I1(ena),
         .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -24242,20 +24235,13 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__8
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire [15:4]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED ;
   wire [1:0]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED ;
@@ -24382,7 +24368,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__8
         .ADDRBWRADDR({1'b0,addrb,1'b0,1'b0,1'b0,1'b0}),
         .CLKARDCLK(clka),
         .CLKBWRCLK(clka),
-        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,dina}),
+        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
@@ -24390,40 +24376,22 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__8
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({1'b0,1'b0}),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -24506,20 +24474,13 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__9
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
   wire \gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ;
-  wire \gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire [15:4]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOADO_UNCONNECTED ;
   wire [1:0]\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED ;
@@ -24646,7 +24607,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__9
         .ADDRBWRADDR({1'b0,addrb,1'b0,1'b0,1'b0,1'b0}),
         .CLKARDCLK(clka),
         .CLKBWRCLK(clka),
-        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,dina}),
+        .DIADI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .DIBDI(dinb),
         .DIPADIP({1'b0,1'b0}),
         .DIPBDIP({1'b0,1'b0}),
@@ -24654,40 +24615,22 @@ module system_axi_ethernetlite_0_0_xpm_memory_base__parameterized0__9
         .DOBDO(doutb),
         .DOPADOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPADOP_UNCONNECTED [1:0]),
         .DOPBDOP(\NLW_gen_wr_b.gen_word_wide.mem_reg_DOPBDOP_UNCONNECTED [1:0]),
-        .ENARDEN(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ),
-        .ENBWREN(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .REGCEAREGCE(1'b0),
         .REGCEB(1'b0),
-        .RSTRAMARSTRAM(rsta),
-        .RSTRAMB(rstb),
+        .RSTRAMARSTRAM(1'b0),
+        .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
         .RSTREGB(1'b0),
-        .WEA({\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 }),
-        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 }));
+        .WEA({1'b0,1'b0}),
+        .WEBWE({1'b0,1'b0,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ,\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 }));
   LUT2 #(
-    .INIT(4'hE)) 
+    .INIT(4'h8)) 
     \gen_wr_b.gen_word_wide.mem_reg_i_1 
-       (.I0(rsta),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_2 
-       (.I0(rstb),
-        .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_3 
-       (.I0(wea),
-        .I1(ena),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \gen_wr_b.gen_word_wide.mem_reg_i_4 
        (.I0(web),
         .I1(enb),
-        .O(\gen_wr_b.gen_word_wide.mem_reg_i_4_n_0 ));
+        .O(\gen_wr_b.gen_word_wide.mem_reg_i_1_n_0 ));
 endmodule
 
 (* ADDR_WIDTH_A = "11" *) (* ADDR_WIDTH_B = "9" *) (* AUTO_SLEEP_TIME = "0" *) 
@@ -24762,12 +24705,9 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -24775,9 +24715,14 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED;
+  wire [3:0]NLW_xpm_memory_base_inst_douta_UNCONNECTED;
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -24866,7 +24811,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
         .dina(dina),
         .dinb(dinb),
-        .douta(douta),
+        .douta(NLW_xpm_memory_base_inst_douta_UNCONNECTED[3:0]),
         .doutb(doutb),
         .ena(ena),
         .enb(enb),
@@ -24876,8 +24821,8 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
@@ -24957,12 +24902,9 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__10
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -24970,9 +24912,14 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__10
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED;
+  wire [3:0]NLW_xpm_memory_base_inst_douta_UNCONNECTED;
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -25061,7 +25008,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__10
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
         .dina(dina),
         .dinb(dinb),
-        .douta(douta),
+        .douta(NLW_xpm_memory_base_inst_douta_UNCONNECTED[3:0]),
         .doutb(doutb),
         .ena(ena),
         .enb(enb),
@@ -25071,8 +25018,8 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__10
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
@@ -25150,16 +25097,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__4
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
@@ -25254,7 +25197,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__4
         .clkb(1'b0),
         .dbiterra(NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED),
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
-        .dina(dina),
+        .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(dinb),
         .douta(douta),
         .doutb(doutb),
@@ -25266,12 +25209,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__4
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
-        .wea(wea),
+        .wea(1'b0),
         .web(web));
 endmodule
 
@@ -25345,16 +25288,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__5
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
@@ -25449,7 +25388,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__5
         .clkb(1'b0),
         .dbiterra(NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED),
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
-        .dina(dina),
+        .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(dinb),
         .douta(douta),
         .doutb(doutb),
@@ -25461,12 +25400,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__5
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
-        .wea(wea),
+        .wea(1'b0),
         .web(web));
 endmodule
 
@@ -25542,12 +25481,9 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__6
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -25555,9 +25491,14 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__6
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED;
+  wire [3:0]NLW_xpm_memory_base_inst_douta_UNCONNECTED;
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -25646,7 +25587,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__6
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
         .dina(dina),
         .dinb(dinb),
-        .douta(douta),
+        .douta(NLW_xpm_memory_base_inst_douta_UNCONNECTED[3:0]),
         .doutb(doutb),
         .ena(ena),
         .enb(enb),
@@ -25656,8 +25597,8 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__6
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
@@ -25737,12 +25678,9 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__7
   wire clka;
   wire [3:0]dina;
   wire [15:0]dinb;
-  wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
   wire [0:0]wea;
   wire [0:0]web;
@@ -25750,9 +25688,14 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__7
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED;
+  wire [3:0]NLW_xpm_memory_base_inst_douta_UNCONNECTED;
 
   assign dbiterra = \<const0> ;
   assign dbiterrb = \<const0> ;
+  assign douta[3] = \<const0> ;
+  assign douta[2] = \<const0> ;
+  assign douta[1] = \<const0> ;
+  assign douta[0] = \<const0> ;
   assign sbiterra = \<const0> ;
   assign sbiterrb = \<const0> ;
   GND GND
@@ -25841,7 +25784,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__7
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
         .dina(dina),
         .dinb(dinb),
-        .douta(douta),
+        .douta(NLW_xpm_memory_base_inst_douta_UNCONNECTED[3:0]),
         .doutb(doutb),
         .ena(ena),
         .enb(enb),
@@ -25851,8 +25794,8 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__7
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
@@ -25930,16 +25873,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__8
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
@@ -26034,7 +25973,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__8
         .clkb(1'b0),
         .dbiterra(NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED),
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
-        .dina(dina),
+        .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(dinb),
         .douta(douta),
         .doutb(doutb),
@@ -26046,12 +25985,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__8
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
-        .wea(wea),
+        .wea(1'b0),
         .web(web));
 endmodule
 
@@ -26125,16 +26064,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__9
   wire [10:0]addra;
   wire [8:0]addrb;
   wire clka;
-  wire [3:0]dina;
   wire [15:0]dinb;
   wire [3:0]douta;
   wire [15:0]doutb;
   wire ena;
   wire enb;
-  wire rsta;
-  wire rstb;
   wire sleep;
-  wire [0:0]wea;
   wire [0:0]web;
   wire NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED;
   wire NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED;
@@ -26229,7 +26164,7 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__9
         .clkb(1'b0),
         .dbiterra(NLW_xpm_memory_base_inst_dbiterra_UNCONNECTED),
         .dbiterrb(NLW_xpm_memory_base_inst_dbiterrb_UNCONNECTED),
-        .dina(dina),
+        .dina({1'b0,1'b0,1'b0,1'b0}),
         .dinb(dinb),
         .douta(douta),
         .doutb(doutb),
@@ -26241,12 +26176,12 @@ module system_axi_ethernetlite_0_0_xpm_memory_tdpram__9
         .injectsbiterrb(1'b0),
         .regcea(1'b0),
         .regceb(1'b0),
-        .rsta(rsta),
-        .rstb(rstb),
+        .rsta(1'b0),
+        .rstb(1'b0),
         .sbiterra(NLW_xpm_memory_base_inst_sbiterra_UNCONNECTED),
         .sbiterrb(NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED),
         .sleep(sleep),
-        .wea(wea),
+        .wea(1'b0),
         .web(web));
 endmodule
 `ifndef GLBL

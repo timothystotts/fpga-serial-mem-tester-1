@@ -1,19 +1,132 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:37:54 2020
-// Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top system_ilmb_v10_4 -prefix
-//               system_ilmb_v10_4_ system_dlmb_v10_4_sim_netlist.v
-// Design      : system_dlmb_v10_4
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Fri Nov 27 13:36:22 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+// Command     : write_verilog -force -mode funcsim
+//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_v10_4/system_ilmb_v10_4_sim_netlist.v
+// Design      : system_ilmb_v10_4
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a100ticsg324-1L
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "system_ilmb_v10_4,lmb_v10,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_v10,Vivado 2020.2" *) 
+(* NotValidForBitStream *)
+module system_ilmb_v10_4
+   (LMB_Clk,
+    SYS_Rst,
+    LMB_Rst,
+    M_ABus,
+    M_ReadStrobe,
+    M_WriteStrobe,
+    M_AddrStrobe,
+    M_DBus,
+    M_BE,
+    Sl_DBus,
+    Sl_Ready,
+    Sl_Wait,
+    Sl_UE,
+    Sl_CE,
+    LMB_ABus,
+    LMB_ReadStrobe,
+    LMB_WriteStrobe,
+    LMB_AddrStrobe,
+    LMB_ReadDBus,
+    LMB_WriteDBus,
+    LMB_Ready,
+    LMB_Wait,
+    LMB_UE,
+    LMB_CE,
+    LMB_BE);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF LMB_Sl_0:LMB_Sl_1:LMB_Sl_2:LMB_Sl_3:LMB_Sl_4:LMB_Sl_5:LMB_Sl_6:LMB_Sl_7:LMB_Sl_8:LMB_Sl_9:LMB_Sl_10:LMB_Sl_11:LMB_Sl_12:LMB_Sl_13:LMB_Sl_14:LMB_Sl_15:LMB_M, ASSOCIATED_RESET SYS_Rst, FREQ_HZ 83333333, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *) input LMB_Clk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.SYS_Rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.SYS_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input SYS_Rst;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST" *) (* x_interface_parameter = "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD" *) output LMB_Rst;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M ABUS" *) input [0:31]M_ABus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READSTROBE" *) input M_ReadStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WRITESTROBE" *) input M_WriteStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M ADDRSTROBE" *) input M_AddrStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WRITEDBUS" *) input [0:31]M_DBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M BE" *) input [0:3]M_BE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READDBUS" *) input [0:31]Sl_DBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READY" *) input [0:0]Sl_Ready;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WAIT" *) input [0:0]Sl_Wait;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 UE" *) input [0:0]Sl_UE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 CE" *) input [0:0]Sl_CE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 ABUS" *) output [0:31]LMB_ABus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE" *) output LMB_ReadStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITESTROBE" *) output LMB_WriteStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 ADDRSTROBE" *) output LMB_AddrStrobe;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READDBUS" *) output [0:31]LMB_ReadDBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITEDBUS" *) output [0:31]LMB_WriteDBus;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READY" *) output LMB_Ready;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WAIT" *) output LMB_Wait;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M UE" *) output LMB_UE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M CE" *) output LMB_CE;
+  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 BE" *) output [0:3]LMB_BE;
+
+  wire [0:31]LMB_ABus;
+  wire LMB_AddrStrobe;
+  wire [0:3]LMB_BE;
+  wire LMB_CE;
+  wire LMB_Clk;
+  wire [0:31]LMB_ReadDBus;
+  wire LMB_ReadStrobe;
+  wire LMB_Ready;
+  wire LMB_Rst;
+  wire LMB_UE;
+  wire LMB_Wait;
+  wire [0:31]LMB_WriteDBus;
+  wire LMB_WriteStrobe;
+  wire [0:31]M_ABus;
+  wire M_AddrStrobe;
+  wire [0:3]M_BE;
+  wire [0:31]M_DBus;
+  wire M_ReadStrobe;
+  wire M_WriteStrobe;
+  wire SYS_Rst;
+  wire [0:0]Sl_CE;
+  wire [0:31]Sl_DBus;
+  wire [0:0]Sl_Ready;
+  wire [0:0]Sl_UE;
+  wire [0:0]Sl_Wait;
+
+  (* C_EXT_RESET_HIGH = "1" *) 
+  (* C_LMB_AWIDTH = "32" *) 
+  (* C_LMB_DWIDTH = "32" *) 
+  (* C_LMB_NUM_SLAVES = "1" *) 
+  (* C_LMB_PROTOCOL = "0" *) 
+  system_ilmb_v10_4_lmb_v10 U0
+       (.LMB_ABus(LMB_ABus),
+        .LMB_AddrStrobe(LMB_AddrStrobe),
+        .LMB_BE(LMB_BE),
+        .LMB_CE(LMB_CE),
+        .LMB_Clk(LMB_Clk),
+        .LMB_ReadDBus(LMB_ReadDBus),
+        .LMB_ReadStrobe(LMB_ReadStrobe),
+        .LMB_Ready(LMB_Ready),
+        .LMB_Rst(LMB_Rst),
+        .LMB_UE(LMB_UE),
+        .LMB_Wait(LMB_Wait),
+        .LMB_WriteDBus(LMB_WriteDBus),
+        .LMB_WriteStrobe(LMB_WriteStrobe),
+        .M_ABus(M_ABus),
+        .M_AddrStrobe(M_AddrStrobe),
+        .M_BE(M_BE),
+        .M_DBus(M_DBus),
+        .M_ReadStrobe(M_ReadStrobe),
+        .M_WriteStrobe(M_WriteStrobe),
+        .SYS_Rst(SYS_Rst),
+        .Sl_CE(Sl_CE),
+        .Sl_DBus(Sl_DBus),
+        .Sl_Ready(Sl_Ready),
+        .Sl_UE(Sl_UE),
+        .Sl_Wait(Sl_Wait));
+endmodule
+
 (* C_EXT_RESET_HIGH = "1" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
-(* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) 
+(* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) (* ORIG_REF_NAME = "lmb_v10" *) 
 module system_ilmb_v10_4_lmb_v10
    (LMB_Clk,
     SYS_Rst,
@@ -102,119 +215,6 @@ module system_ilmb_v10_4_lmb_v10
         .D(1'b0),
         .Q(LMB_Rst),
         .S(SYS_Rst));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "system_dlmb_v10_4,lmb_v10,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "lmb_v10,Vivado 2020.1" *) 
-(* NotValidForBitStream *)
-module system_ilmb_v10_4
-   (LMB_Clk,
-    SYS_Rst,
-    LMB_Rst,
-    M_ABus,
-    M_ReadStrobe,
-    M_WriteStrobe,
-    M_AddrStrobe,
-    M_DBus,
-    M_BE,
-    Sl_DBus,
-    Sl_Ready,
-    Sl_Wait,
-    Sl_UE,
-    Sl_CE,
-    LMB_ABus,
-    LMB_ReadStrobe,
-    LMB_WriteStrobe,
-    LMB_AddrStrobe,
-    LMB_ReadDBus,
-    LMB_WriteDBus,
-    LMB_Ready,
-    LMB_Wait,
-    LMB_UE,
-    LMB_CE,
-    LMB_BE);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.LMB_Clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.LMB_Clk, ASSOCIATED_BUSIF LMB_Sl_0:LMB_Sl_1:LMB_Sl_2:LMB_Sl_3:LMB_Sl_4:LMB_Sl_5:LMB_Sl_6:LMB_Sl_7:LMB_Sl_8:LMB_Sl_9:LMB_Sl_10:LMB_Sl_11:LMB_Sl_12:LMB_Sl_13:LMB_Sl_14:LMB_Sl_15:LMB_M, ASSOCIATED_RESET SYS_Rst, FREQ_HZ 83333333, FREQ_TOLERANCE_HZ 0, PHASE 0, CLK_DOMAIN system_mig_7series_0_0_ui_clk, INSERT_VIP 0" *) input LMB_Clk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.SYS_Rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.SYS_Rst, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0" *) input SYS_Rst;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST" *) (* x_interface_parameter = "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD" *) output LMB_Rst;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M ABUS" *) input [0:31]M_ABus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READSTROBE" *) input M_ReadStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WRITESTROBE" *) input M_WriteStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M ADDRSTROBE" *) input M_AddrStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WRITEDBUS" *) input [0:31]M_DBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M BE" *) input [0:3]M_BE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READDBUS" *) input [0:31]Sl_DBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READY" *) input [0:0]Sl_Ready;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WAIT" *) input [0:0]Sl_Wait;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 UE" *) input [0:0]Sl_UE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 CE" *) input [0:0]Sl_CE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 ABUS" *) output [0:31]LMB_ABus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE" *) output LMB_ReadStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITESTROBE" *) output LMB_WriteStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 ADDRSTROBE" *) output LMB_AddrStrobe;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READDBUS" *) output [0:31]LMB_ReadDBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITEDBUS" *) output [0:31]LMB_WriteDBus;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M READY" *) output LMB_Ready;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M WAIT" *) output LMB_Wait;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M UE" *) output LMB_UE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_M CE" *) output LMB_CE;
-  (* x_interface_info = "xilinx.com:interface:lmb:1.0 LMB_Sl_0 BE" *) output [0:3]LMB_BE;
-
-  wire [0:31]LMB_ABus;
-  wire LMB_AddrStrobe;
-  wire [0:3]LMB_BE;
-  wire LMB_CE;
-  wire LMB_Clk;
-  wire [0:31]LMB_ReadDBus;
-  wire LMB_ReadStrobe;
-  wire LMB_Ready;
-  wire LMB_Rst;
-  wire LMB_UE;
-  wire LMB_Wait;
-  wire [0:31]LMB_WriteDBus;
-  wire LMB_WriteStrobe;
-  wire [0:31]M_ABus;
-  wire M_AddrStrobe;
-  wire [0:3]M_BE;
-  wire [0:31]M_DBus;
-  wire M_ReadStrobe;
-  wire M_WriteStrobe;
-  wire SYS_Rst;
-  wire [0:0]Sl_CE;
-  wire [0:31]Sl_DBus;
-  wire [0:0]Sl_Ready;
-  wire [0:0]Sl_UE;
-  wire [0:0]Sl_Wait;
-
-  (* C_EXT_RESET_HIGH = "1" *) 
-  (* C_LMB_AWIDTH = "32" *) 
-  (* C_LMB_DWIDTH = "32" *) 
-  (* C_LMB_NUM_SLAVES = "1" *) 
-  (* C_LMB_PROTOCOL = "0" *) 
-  system_ilmb_v10_4_lmb_v10 U0
-       (.LMB_ABus(LMB_ABus),
-        .LMB_AddrStrobe(LMB_AddrStrobe),
-        .LMB_BE(LMB_BE),
-        .LMB_CE(LMB_CE),
-        .LMB_Clk(LMB_Clk),
-        .LMB_ReadDBus(LMB_ReadDBus),
-        .LMB_ReadStrobe(LMB_ReadStrobe),
-        .LMB_Ready(LMB_Ready),
-        .LMB_Rst(LMB_Rst),
-        .LMB_UE(LMB_UE),
-        .LMB_Wait(LMB_Wait),
-        .LMB_WriteDBus(LMB_WriteDBus),
-        .LMB_WriteStrobe(LMB_WriteStrobe),
-        .M_ABus(M_ABus),
-        .M_AddrStrobe(M_AddrStrobe),
-        .M_BE(M_BE),
-        .M_DBus(M_DBus),
-        .M_ReadStrobe(M_ReadStrobe),
-        .M_WriteStrobe(M_WriteStrobe),
-        .SYS_Rst(SYS_Rst),
-        .Sl_CE(Sl_CE),
-        .Sl_DBus(Sl_DBus),
-        .Sl_Ready(Sl_Ready),
-        .Sl_UE(Sl_UE),
-        .Sl_Wait(Sl_Wait));
 endmodule
 `ifndef GLBL
 `define GLBL

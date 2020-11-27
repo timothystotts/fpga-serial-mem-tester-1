@@ -81,7 +81,7 @@ system_s00_data_fifo_0_sc::system_s00_data_fifo_0_sc(const sc_core::sc_module_na
 
   mp_impl = new axi_data_fifo("inst", model_param_props);
 
-  // initialize sockets
+  // initialize AXI sockets
   S_TARGET_rd_socket = mp_impl->S_TARGET_rd_socket;
   S_TARGET_wr_socket = mp_impl->S_TARGET_wr_socket;
   M_INITIATOR_rd_socket = mp_impl->M_INITIATOR_rd_socket;
