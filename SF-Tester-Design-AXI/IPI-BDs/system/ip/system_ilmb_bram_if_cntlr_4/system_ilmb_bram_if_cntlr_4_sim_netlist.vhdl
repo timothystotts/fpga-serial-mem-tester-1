@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Mon Jul 27 12:39:10 2020
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Fri Nov 27 18:04:49 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_bram_if_cntlr_4/system_ilmb_bram_if_cntlr_4_sim_netlist.vhdl
@@ -455,10 +455,12 @@ entity system_ilmb_bram_if_cntlr_4 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of system_ilmb_bram_if_cntlr_4 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of system_ilmb_bram_if_cntlr_4 : entity is "lmb_bram_if_cntlr,Vivado 2020.1";
+  attribute x_core_info of system_ilmb_bram_if_cntlr_4 : entity is "lmb_bram_if_cntlr,Vivado 2020.2";
 end system_ilmb_bram_if_cntlr_4;
 
 architecture STRUCTURE of system_ilmb_bram_if_cntlr_4 is
+  signal \<const0>\ : STD_LOGIC;
+  signal NLW_U0_BRAM_Rst_A_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_CE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED : STD_LOGIC;
@@ -478,6 +480,9 @@ architecture STRUCTURE of system_ilmb_bram_if_cntlr_4 is
   signal NLW_U0_Sl3_Ready_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Sl3_UE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Sl3_Wait_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_CE_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_UE_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_Wait_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_UE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -564,6 +569,14 @@ architecture STRUCTURE of system_ilmb_bram_if_cntlr_4 is
   attribute x_interface_info of LMB_WriteDBus : signal is "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS";
   attribute x_interface_info of Sl_DBus : signal is "xilinx.com:interface:lmb:1.0 SLMB READDBUS";
 begin
+  BRAM_Rst_A <= \<const0>\;
+  Sl_CE <= \<const0>\;
+  Sl_UE <= \<const0>\;
+  Sl_Wait <= \<const0>\;
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 U0: entity work.system_ilmb_bram_if_cntlr_4_lmb_bram_if_cntlr
      port map (
       BRAM_Addr_A(0 to 31) => BRAM_Addr_A(0 to 31),
@@ -571,7 +584,7 @@ U0: entity work.system_ilmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       BRAM_Din_A(0 to 31) => BRAM_Din_A(0 to 31),
       BRAM_Dout_A(0 to 31) => BRAM_Dout_A(0 to 31),
       BRAM_EN_A => BRAM_EN_A,
-      BRAM_Rst_A => BRAM_Rst_A,
+      BRAM_Rst_A => NLW_U0_BRAM_Rst_A_UNCONNECTED,
       BRAM_WEN_A(0 to 3) => BRAM_WEN_A(0 to 3),
       CE => NLW_U0_CE_UNCONNECTED,
       Interrupt => NLW_U0_Interrupt_UNCONNECTED,
@@ -597,7 +610,7 @@ U0: entity work.system_ilmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       LMB_AddrStrobe => LMB_AddrStrobe,
       LMB_BE(0 to 3) => LMB_BE(0 to 3),
       LMB_Clk => LMB_Clk,
-      LMB_ReadStrobe => LMB_ReadStrobe,
+      LMB_ReadStrobe => '0',
       LMB_Rst => LMB_Rst,
       LMB_WriteDBus(0 to 31) => LMB_WriteDBus(0 to 31),
       LMB_WriteStrobe => LMB_WriteStrobe,
@@ -635,11 +648,11 @@ U0: entity work.system_ilmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       Sl3_Ready => NLW_U0_Sl3_Ready_UNCONNECTED,
       Sl3_UE => NLW_U0_Sl3_UE_UNCONNECTED,
       Sl3_Wait => NLW_U0_Sl3_Wait_UNCONNECTED,
-      Sl_CE => Sl_CE,
+      Sl_CE => NLW_U0_Sl_CE_UNCONNECTED,
       Sl_DBus(0 to 31) => Sl_DBus(0 to 31),
       Sl_Ready => Sl_Ready,
-      Sl_UE => Sl_UE,
-      Sl_Wait => Sl_Wait,
+      Sl_UE => NLW_U0_Sl_UE_UNCONNECTED,
+      Sl_Wait => NLW_U0_Sl_Wait_UNCONNECTED,
       UE => NLW_U0_UE_UNCONNECTED
     );
 end STRUCTURE;

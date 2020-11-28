@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:lmb_bram_if_cntlr:4.0
--- IP Revision: 18
+-- IP Revision: 19
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY lmb_bram_if_cntlr_v4_0_18;
-USE lmb_bram_if_cntlr_v4_0_18.lmb_bram_if_cntlr;
+LIBRARY lmb_bram_if_cntlr_v4_0_19;
+USE lmb_bram_if_cntlr_v4_0_19.lmb_bram_if_cntlr;
 
 ENTITY system_ilmb_bram_if_cntlr_4 IS
   PORT (

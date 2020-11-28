@@ -63,46 +63,22 @@ set_property IOB true [get_cells -hierarchical -filter {NAME =~*TEN_FF}]
 
 
 ################################ Waivers #################################
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */TX/axi_phy_tx_en_i_p_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]  
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */TX/axi_phy_tx_en_i_p_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-12} -user "axi_ethernetlite" -desc "Waiving the CDC-12 As all the reported failures are in Loopback mode where tx_clk and rx_clk are same but tool is treating them as diffrent clocks" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */TX/axi_phy_tx_en_i_p_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] 
+create_waiver -internal -scope -quiet -type CDC -id {CDC-12} -user "axi_ethernetlite" -desc "Waiving the CDC-12 As all the reported failures are in Loopback mode where tx_clk and rx_clk are same but tool is treating them as diffrent clocks" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */TX/axi_phy_tx_en_i_p_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */INST_TX_STATE_MACHINE/STATE*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] 
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */INST_TX_STATE_MACHINE/STATE*}] -filter {name =~ *C}] -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-13} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */LOOPBACK_GEN.*.CLOCK_MUX*}] -filter {name =~ *CE*}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */gen_wr_a.gen_word_narrow.mem_reg_0_15_0_5/RAMA*}] -filter {name =~ *I}]
+create_waiver -internal -scope -quiet -type CDC -id {CDC-13} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */LOOPBACK_GEN.*.CLOCK_MUX*}] -filter {name =~ *CE*}] [get_pins -of [get_cells -hier -filter {name =~ */gen_wr_a.gen_word_narrow.mem_reg_0_15_0_5/RAMA*}] -filter {name =~ *I}]]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-12} -user "axi_ethernetlite" -desc "Waiving the CDC-12 As all the reported failures are in Loopback mode where tx_clk and rx_clk are same but tool is treating them as diffrent clocks" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
+create_waiver -internal -scope -quiet -type CDC -id {CDC-12} -user "axi_ethernetlite" -desc "Waiving the CDC-12 As all the reported failures are in Loopback mode where tx_clk and rx_clk are same but tool is treating them as diffrent clocks" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */loopback_en_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */TX/INST_TX_STATE_MACHINE/phytx_en_reg_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */CDC_TX_EN/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */TX/INST_TX_STATE_MACHINE/phytx_en_reg_reg*}] -filter {name =~ *C}] -to [get_pins -of [get_cells -hier -filter {name =~ */CDC_TX_EN/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */TX/tx3_generate.INST_JAMTXNIBCNT/PERBIT_GEN[*].FF_RST*_GEN.*_i1*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
 
-create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999"\
- -from [get_pins -of [get_cells -hier -filter {name =~ */TX/INST_TX_STATE_MACHINE/PRE_SFD_count/zero_i_reg*}] -filter {name =~ *C}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]\
- -to [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */TX/tx3_generate.INST_JAMTXNIBCNT/PERBIT_GEN[*].FF_RST*_GEN.*_i1*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
+
+create_waiver -internal -scope -quiet -type CDC -id {CDC-10} -user "axi_ethernetlite" -desc "This is sustaining IP so there is no core level change hence waived" -tags "11999" -from [get_pins -of [get_cells -hier -filter {name =~ */TX/INST_TX_STATE_MACHINE/PRE_SFD_count/zero_i_reg*}] -filter {name =~ *C}] -to [list [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.MULTI_BIT.FOR_IN_cdc_to[*].CROSS2_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}] [get_pins -of [get_cells -hier -filter {name =~ */GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to*}] -filter {name =~ *D}]]
 

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1595867473"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1595867473"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1595867473"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1595867473"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1606529981"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1606529981"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1606529981"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1606529981"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_clk_wiz_0_0\system_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -17,14 +17,6 @@
       </File>
       <File Name="ip\system_mig_7series_0_0\system_mig_7series_0_0.xci" Type="IP">
         <Instance HierarchyPath="mig_7series_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\system_xbar_0\system_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="microblaze_0_axi_periph/xbar"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -183,7 +175,15 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_PmodCLS_0_6\system_PmodCLS_0_6.xci" Type="IP">
+      <File Name="ip\system_xbar_0\system_xbar_0.xci" Type="IP">
+        <Instance HierarchyPath="microblaze_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_PmodCLS_0_9\system_PmodCLS_0_9.xci" Type="IP">
         <Instance HierarchyPath="PmodCLS_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -191,7 +191,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_PmodSF3_0_10\system_PmodSF3_0_10.xci" Type="IP">
+      <File Name="ip\system_PmodSF3_0_14\system_PmodSF3_0_14.xci" Type="IP">
         <Instance HierarchyPath="PmodSF3_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -232,6 +232,11 @@
         <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
       <File Name="hw_handoff\system.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="system.bda">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>

@@ -126,11 +126,11 @@ ARCHITECTURE system_ilmb_v10_4_arch OF system_ilmb_v10_4 IS
     );
   END COMPONENT lmb_v10;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF system_ilmb_v10_4_arch: ARCHITECTURE IS "lmb_v10,Vivado 2020.1";
+  ATTRIBUTE X_CORE_INFO OF system_ilmb_v10_4_arch: ARCHITECTURE IS "lmb_v10,Vivado 2020.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF system_ilmb_v10_4_arch : ARCHITECTURE IS "system_ilmb_v10_4,lmb_v10,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF system_ilmb_v10_4_arch: ARCHITECTURE IS "system_ilmb_v10_4,lmb_v10,{x_ipProduct=Vivado 2020.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF system_ilmb_v10_4_arch: ARCHITECTURE IS "system_ilmb_v10_4,lmb_v10,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=lmb_v10,x_ipVersion=3.0,x_ipCoreRevision=11,x_ipLanguage=VERILOG,x_ipSimLanguage=VHDL,C_LMB_NUM_SLAVES=1,C_LMB_DWIDTH=32,C_LMB_AWIDTH=32,C_LMB_PROTOCOL=0,C_EXT_RESET_HIGH=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF LMB_BE: SIGNAL IS "xilinx.com:interface:lmb:1.0 LMB_Sl_0 BE";

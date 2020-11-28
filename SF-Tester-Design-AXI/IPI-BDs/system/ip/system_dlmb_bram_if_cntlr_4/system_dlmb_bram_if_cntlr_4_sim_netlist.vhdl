@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Mon Jul 27 12:38:20 2020
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Fri Nov 27 18:03:54 2020
 -- Host        : J1STUDY running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_dlmb_bram_if_cntlr_4/system_dlmb_bram_if_cntlr_4_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_dlmb_bram_if_cntlr_4 -prefix
+--               system_dlmb_bram_if_cntlr_4_ system_dlmb_bram_if_cntlr_4_sim_netlist.vhdl
 -- Design      : system_dlmb_bram_if_cntlr_4
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -123,7 +123,7 @@ entity system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is 0;
   attribute C_MASK : string;
-  attribute C_MASK of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000011000000000000100000000000000000";
+  attribute C_MASK of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000011000000000000000000000000000000";
   attribute C_MASK1 : string;
   attribute C_MASK1 of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
@@ -144,8 +144,6 @@ entity system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is
   attribute C_UE_FAILING_REGISTERS of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is 0;
   attribute C_WRITE_ACCESS : integer;
   attribute C_WRITE_ACCESS of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is 2;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr : entity is "lmb_bram_if_cntlr";
 end system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr;
 
 architecture STRUCTURE of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is
@@ -160,8 +158,12 @@ architecture STRUCTURE of system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr is
   signal Sl_Rdy : STD_LOGIC;
   signal lmb_as : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \No_ECC.Sl_Rdy_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \No_ECC.lmb_as_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[0]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[1]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[2]_INST_0\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \BRAM_WEN_A[3]_INST_0\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \No_ECC.Sl_Rdy_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \No_ECC.lmb_as_i_1\ : label is "soft_lutpair2";
 begin
   BRAM_Addr_A(0 to 31) <= \^lmb_abus\(0 to 31);
   BRAM_Clk_A <= \^lmb_clk\;
@@ -329,67 +331,62 @@ begin
   \^lmb_addrstrobe\ <= LMB_AddrStrobe;
   \^lmb_clk\ <= LMB_Clk;
   \^lmb_writedbus\(0 to 31) <= LMB_WriteDBus(0 to 31);
-\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT5
+\BRAM_WEN_A[0]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00020000"
+      INIT => X"0200"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(0),
-      I2 => \^lmb_abus\(1),
-      I3 => \^lmb_abus\(14),
-      I4 => LMB_BE(0),
+      I1 => \^lmb_abus\(1),
+      I2 => \^lmb_abus\(0),
+      I3 => LMB_BE(0),
       O => BRAM_WEN_A(0)
     );
-\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT5
+\BRAM_WEN_A[1]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00020000"
+      INIT => X"0200"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(0),
-      I2 => \^lmb_abus\(1),
-      I3 => \^lmb_abus\(14),
-      I4 => LMB_BE(1),
+      I1 => \^lmb_abus\(1),
+      I2 => \^lmb_abus\(0),
+      I3 => LMB_BE(1),
       O => BRAM_WEN_A(1)
     );
-\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT5
+\BRAM_WEN_A[2]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00020000"
+      INIT => X"0200"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(0),
-      I2 => \^lmb_abus\(1),
-      I3 => \^lmb_abus\(14),
-      I4 => LMB_BE(2),
+      I1 => \^lmb_abus\(1),
+      I2 => \^lmb_abus\(0),
+      I3 => LMB_BE(2),
       O => BRAM_WEN_A(2)
     );
-\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT5
+\BRAM_WEN_A[3]_INST_0\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"00020000"
+      INIT => X"0200"
     )
         port map (
       I0 => LMB_WriteStrobe,
-      I1 => \^lmb_abus\(0),
-      I2 => \^lmb_abus\(1),
-      I3 => \^lmb_abus\(14),
-      I4 => LMB_BE(3),
+      I1 => \^lmb_abus\(1),
+      I2 => \^lmb_abus\(0),
+      I3 => LMB_BE(3),
       O => BRAM_WEN_A(3)
     );
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT4
+\No_ECC.Sl_Rdy_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"0001"
+      INIT => X"01"
     )
         port map (
-      I0 => \^lmb_abus\(14),
+      I0 => \^lmb_abus\(0),
       I1 => \^lmb_abus\(1),
-      I2 => \^lmb_abus\(0),
-      I3 => LMB_Rst,
+      I2 => LMB_Rst,
       O => \No_ECC.Sl_Rdy_i_1_n_0\
     );
 \No_ECC.Sl_Rdy_reg\: unisim.vcomponents.FDRE
@@ -461,10 +458,12 @@ entity system_dlmb_bram_if_cntlr_4 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of system_dlmb_bram_if_cntlr_4 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of system_dlmb_bram_if_cntlr_4 : entity is "lmb_bram_if_cntlr,Vivado 2020.1";
+  attribute x_core_info of system_dlmb_bram_if_cntlr_4 : entity is "lmb_bram_if_cntlr,Vivado 2020.2";
 end system_dlmb_bram_if_cntlr_4;
 
 architecture STRUCTURE of system_dlmb_bram_if_cntlr_4 is
+  signal \<const0>\ : STD_LOGIC;
+  signal NLW_U0_BRAM_Rst_A_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_CE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S_AXI_CTRL_ARREADY_UNCONNECTED : STD_LOGIC;
@@ -484,6 +483,9 @@ architecture STRUCTURE of system_dlmb_bram_if_cntlr_4 is
   signal NLW_U0_Sl3_Ready_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Sl3_UE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_Sl3_Wait_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_CE_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_UE_UNCONNECTED : STD_LOGIC;
+  signal NLW_U0_Sl_Wait_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_UE_UNCONNECTED : STD_LOGIC;
   signal NLW_U0_S_AXI_CTRL_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_U0_S_AXI_CTRL_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -522,7 +524,7 @@ architecture STRUCTURE of system_dlmb_bram_if_cntlr_4 is
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of U0 : label is 0;
   attribute C_MASK : string;
-  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000011000000000000100000000000000000";
+  attribute C_MASK of U0 : label is "64'b0000000000000000000000000000000011000000000000000000000000000000";
   attribute C_MASK1 : string;
   attribute C_MASK1 of U0 : label is "64'b0000000000000000000000000000000000000000100000000000000000000000";
   attribute C_MASK2 : string;
@@ -570,6 +572,14 @@ architecture STRUCTURE of system_dlmb_bram_if_cntlr_4 is
   attribute x_interface_info of LMB_WriteDBus : signal is "xilinx.com:interface:lmb:1.0 SLMB WRITEDBUS";
   attribute x_interface_info of Sl_DBus : signal is "xilinx.com:interface:lmb:1.0 SLMB READDBUS";
 begin
+  BRAM_Rst_A <= \<const0>\;
+  Sl_CE <= \<const0>\;
+  Sl_UE <= \<const0>\;
+  Sl_Wait <= \<const0>\;
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 U0: entity work.system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr
      port map (
       BRAM_Addr_A(0 to 31) => BRAM_Addr_A(0 to 31),
@@ -577,7 +587,7 @@ U0: entity work.system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       BRAM_Din_A(0 to 31) => BRAM_Din_A(0 to 31),
       BRAM_Dout_A(0 to 31) => BRAM_Dout_A(0 to 31),
       BRAM_EN_A => BRAM_EN_A,
-      BRAM_Rst_A => BRAM_Rst_A,
+      BRAM_Rst_A => NLW_U0_BRAM_Rst_A_UNCONNECTED,
       BRAM_WEN_A(0 to 3) => BRAM_WEN_A(0 to 3),
       CE => NLW_U0_CE_UNCONNECTED,
       Interrupt => NLW_U0_Interrupt_UNCONNECTED,
@@ -603,7 +613,7 @@ U0: entity work.system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       LMB_AddrStrobe => LMB_AddrStrobe,
       LMB_BE(0 to 3) => LMB_BE(0 to 3),
       LMB_Clk => LMB_Clk,
-      LMB_ReadStrobe => LMB_ReadStrobe,
+      LMB_ReadStrobe => '0',
       LMB_Rst => LMB_Rst,
       LMB_WriteDBus(0 to 31) => LMB_WriteDBus(0 to 31),
       LMB_WriteStrobe => LMB_WriteStrobe,
@@ -641,11 +651,11 @@ U0: entity work.system_dlmb_bram_if_cntlr_4_lmb_bram_if_cntlr
       Sl3_Ready => NLW_U0_Sl3_Ready_UNCONNECTED,
       Sl3_UE => NLW_U0_Sl3_UE_UNCONNECTED,
       Sl3_Wait => NLW_U0_Sl3_Wait_UNCONNECTED,
-      Sl_CE => Sl_CE,
+      Sl_CE => NLW_U0_Sl_CE_UNCONNECTED,
       Sl_DBus(0 to 31) => Sl_DBus(0 to 31),
       Sl_Ready => Sl_Ready,
-      Sl_UE => Sl_UE,
-      Sl_Wait => Sl_Wait,
+      Sl_UE => NLW_U0_Sl_UE_UNCONNECTED,
+      Sl_Wait => NLW_U0_Sl_Wait_UNCONNECTED,
       UE => NLW_U0_UE_UNCONNECTED
     );
 end STRUCTURE;

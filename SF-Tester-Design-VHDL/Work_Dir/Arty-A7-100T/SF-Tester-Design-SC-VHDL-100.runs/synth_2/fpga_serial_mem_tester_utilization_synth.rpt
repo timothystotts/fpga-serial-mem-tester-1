@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Jul 28 16:12:07 2020
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Fri Nov 27 17:41:03 2020
 | Host         : J1STUDY running 64-bit major release  (build 9200)
 | Command      : report_utilization -file fpga_serial_mem_tester_utilization_synth.rpt -pb fpga_serial_mem_tester_utilization_synth.pb
 | Design       : fpga_serial_mem_tester
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 3558 |     0 |     63400 |  5.61 |
-|   LUT as Logic          | 3558 |     0 |     63400 |  5.61 |
+| Slice LUTs*             | 3607 |     0 |     63400 |  5.69 |
+|   LUT as Logic          | 3607 |     0 |     63400 |  5.69 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 1770 |     0 |    126800 |  1.40 |
-|   Register as Flip Flop | 1770 |     0 |    126800 |  1.40 |
+| Slice Registers         | 1779 |     0 |    126800 |  1.40 |
+|   Register as Flip Flop | 1779 |     0 |    126800 |  1.40 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |    1 |     0 |     31700 | <0.01 |
+| F7 Muxes                |    7 |     0 |     31700 |  0.02 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -57,7 +57,7 @@ Table of Contents
 | 28    |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 229   |          Yes |         Set |            - |
-| 1513  |          Yes |       Reset |            - |
+| 1522  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,22 +148,22 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 1513 |        Flop & Latch |
-| LUT6       | 1005 |                 LUT |
-| LUT2       |  823 |                 LUT |
-| LUT4       |  759 |                 LUT |
-| LUT3       |  755 |                 LUT |
+| FDRE       | 1522 |        Flop & Latch |
+| LUT6       |  906 |                 LUT |
+| LUT4       |  821 |                 LUT |
+| LUT2       |  814 |                 LUT |
+| LUT3       |  742 |                 LUT |
 | LUT1       |  587 |                 LUT |
-| CARRY4     |  578 |          CarryLogic |
-| LUT5       |  475 |                 LUT |
+| CARRY4     |  581 |          CarryLogic |
+| LUT5       |  511 |                 LUT |
 | FDSE       |  229 |        Flop & Latch |
 | FDPE       |   28 |        Flop & Latch |
 | OBUF       |   22 |                  IO |
 | DSP48E1    |   16 |    Block Arithmetic |
 | IBUF       |   15 |                  IO |
+| MUXF7      |    7 |               MuxFx |
 | FIFO18E1   |    5 |        Block Memory |
-| OBUFT      |    3 |                  IO |
-| MUXF7      |    1 |               MuxFx |
+| OBUFT      |    4 |                  IO |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+
 

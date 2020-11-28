@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Mon Jul 27 12:44:34 2020
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Nov 27 18:09:30 2020
 // Host        : J1STUDY running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               w:/wa/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_axi_smc_3/system_axi_smc_3_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top system_axi_smc_3 -prefix
+//               system_axi_smc_3_ system_axi_smc_3_stub.v
 // Design      : system_axi_smc_3
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100ticsg324-1L
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "bd_45a3,Vivado 2020.1" *)
+(* X_CORE_INFO = "bd_45a3,Vivado 2020.2" *)
 module system_axi_smc_3(aclk, aresetn, S00_AXI_awaddr, S00_AXI_awlen, 
   S00_AXI_awsize, S00_AXI_awburst, S00_AXI_awlock, S00_AXI_awcache, S00_AXI_awprot, 
   S00_AXI_awqos, S00_AXI_awvalid, S00_AXI_awready, S00_AXI_wdata, S00_AXI_wstrb, 

@@ -74,7 +74,7 @@ public:
   system_xbar_0_sc(const sc_core::sc_module_name& nm);
   virtual ~system_xbar_0_sc();
 
-public: // module socket-to-socket TLM interface
+  // module socket-to-socket AXI TLM interfaces
 
   xtlm::xtlm_aximm_target_socket* target_0_rd_socket;
   xtlm::xtlm_aximm_target_socket* target_0_wr_socket;
@@ -98,6 +98,9 @@ public: // module socket-to-socket TLM interface
   xtlm::xtlm_aximm_initiator_socket* initiator_8_wr_socket;
   xtlm::xtlm_aximm_initiator_socket* initiator_9_rd_socket;
   xtlm::xtlm_aximm_initiator_socket* initiator_9_wr_socket;
+
+  // module socket-to-socket TLM interfaces
+
 
 protected:
 
