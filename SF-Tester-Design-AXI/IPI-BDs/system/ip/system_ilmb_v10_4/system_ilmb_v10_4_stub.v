@@ -1,11 +1,11 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Fri Nov 27 13:36:21 2020
-// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-serial-mem-tester-1/SF-Tester-Design-AXI/IPI-BDs/system/ip/system_ilmb_v10_4/system_ilmb_v10_4_stub.v
-// Design      : system_ilmb_v10_4
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Fri Nov 27 18:02:45 2020
+// Host        : J1STUDY running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub -rename_top system_ilmb_v10_4 -prefix
+//               system_ilmb_v10_4_ system_dlmb_v10_4_stub.v
+// Design      : system_dlmb_v10_4
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100ticsg324-1L
 // --------------------------------------------------------------------------------

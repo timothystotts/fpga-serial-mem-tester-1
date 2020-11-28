@@ -1,8 +1,8 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Fri Nov 27 13:28:56 2020
-//Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+//Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+//Date        : Fri Nov 27 21:19:29 2020
+//Host        : J1STUDY running 64-bit major release  (build 9200)
 //Command     : generate_target system.bd
 //Design      : system
 //Purpose     : IP block netlist
@@ -1801,7 +1801,7 @@ module s00_couplers_imp_1LZPV07
         .s_axi_wvalid(s00_couplers_to_s00_data_fifo_WVALID));
 endmodule
 
-(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=37,numReposBlks=24,numNonXlnxBlks=4,numHierBlks=13,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=46,da_board_cnt=2,da_clkrst_cnt=26,da_mb_cnt=5,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
+(* CORE_GENERATION_INFO = "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=37,numReposBlks=24,numNonXlnxBlks=4,numHierBlks=13,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=48,da_board_cnt=2,da_clkrst_cnt=28,da_mb_cnt=5,da_trigger_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "system.hwdef" *) 
 module system
    (ddr3_sdram_addr,
     ddr3_sdram_ba,
@@ -2586,7 +2586,7 @@ module system
         .pwm_axi_wready(microblaze_0_axi_periph_M09_AXI_WREADY),
         .pwm_axi_wstrb(microblaze_0_axi_periph_M09_AXI_WSTRB),
         .pwm_axi_wvalid(microblaze_0_axi_periph_M09_AXI_WVALID));
-  system_PmodCLS_0_8 PmodCLS_0
+  system_PmodCLS_0_9 PmodCLS_0
        (.AXI_LITE_SPI_araddr(microblaze_0_axi_periph_M03_AXI_ARADDR[6:0]),
         .AXI_LITE_SPI_arready(microblaze_0_axi_periph_M03_AXI_ARREADY),
         .AXI_LITE_SPI_arvalid(microblaze_0_axi_periph_M03_AXI_ARVALID),
@@ -2631,7 +2631,7 @@ module system
         .ext_spi_clk(clk_wiz_0_clk_out4),
         .s_axi_aclk(microblaze_0_Clk),
         .s_axi_aresetn(rst_mig_7series_0_83M_peripheral_aresetn));
-  system_PmodSF3_0_13 PmodSF3_0
+  system_PmodSF3_0_14 PmodSF3_0
        (.AXI_LITE_araddr(microblaze_0_axi_periph_M05_AXI_ARADDR[6:0]),
         .AXI_LITE_arready(microblaze_0_axi_periph_M05_AXI_ARREADY),
         .AXI_LITE_arvalid(microblaze_0_axi_periph_M05_AXI_ARVALID),
