@@ -179,28 +179,11 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_upd_pr_state : t_cls_update_state;
 	signal s_cls_upd_nx_state : t_cls_update_state;
 
-	-- Timer steps for the continuous refresh of the PMOD CLS display:
-	-- Wait 0.2 seconds
-	-- Clear Display
-	-- Wait 1.0 milliseconds
-	-- Write Line 1
-	-- Wait 1.0 milliseconds
-	-- Write Line 2
-	-- Repeat the above.
-	constant c_cls_i_subsecond_fast : natural := (2500000 / 100 - 1);
-	constant c_cls_i_subsecond      : natural := (2500000 / 5 - 1);
-	constant c_cls_i_one_ms         : natural := 2500 - 1;
-	constant c_cls_i_step           : natural := 4 - 1;
-	constant c_cls_i_max            : natural := c_cls_i_subsecond;
-
-	signal s_cls_i : natural range 0 to c_cls_i_max;
-
     -- CLS 
     constant c_cls_display_ce_div_ratio : natural := (c_FCLK / 50000 / 4);
     
 	-- Signals for controlling the PMOD CLS custom driver.
 	signal s_cls_command_ready     : std_logic;
-	signal s_cls_sf3_command_ready : std_logic;
 	signal s_cls_wr_clear_display  : std_logic;
 	signal s_cls_wr_text_line1     : std_logic;
 	signal s_cls_wr_text_line2     : std_logic;
