@@ -2,3 +2,6 @@
 	path = SF-Tester-Design-AXI/IP/vivado-library
 	url = https://github.com/timothystotts/vivado-library.git
 	branch = arty-a7-100-vivado-2020.2
+[submodule "SF-Tester-Design-VHDL/OSVVM/OsvvmLibraries"]
+	path = SF-Tester-Design-VHDL/OSVVM/OsvvmLibraries
+	url = https://github.com/OSVVM/OsvvmLibraries.git
