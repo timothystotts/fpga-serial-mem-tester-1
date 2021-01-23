@@ -30,18 +30,20 @@
 ------------------------------------------------------------------------------*/
 //------------------------------------------------------------------------------
 //Part 1: Module header:--------------------------------------------------------
+`timescale 1ns / 1ps
+
 module N25Qxxx_wrapper(
 	S, C, HOLD_DQ3, DQ0, DQ1, W_DQ2
 	);
 
 parameter time powerup_time = 150e0;
 
-input wire S;
-input wire C;
-inout wire HOLD_DQ3;
-inout wire DQ0;
-inout wire DQ1;
-inout wire W_DQ2;
+input S;
+input C;
+inout HOLD_DQ3;
+inout DQ0;
+inout DQ1;
+inout W_DQ2;
 
 //Part 2: Declarations----------------------------------------------------------
 `define VoltageRange 31:0
@@ -49,15 +51,11 @@ reg [`VoltageRange] Vcc;
 wire RESET2;
 
 //Part 3: Statements------------------------------------------------------------
-assign RESET2 = 1'b0;
+assign RESET2 = 1'b1;
 
 initial
 begin
-    `ifdef VCC_3V
-        Vcc = 'd3000;
-    `else
-        Vcc = 'd1800;
-    `endif    
+    Vcc = 'd3300;
 	#(powerup_time+100);
 end
 

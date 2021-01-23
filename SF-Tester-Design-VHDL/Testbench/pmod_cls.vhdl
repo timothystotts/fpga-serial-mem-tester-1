@@ -265,39 +265,39 @@ begin
                         fn_convert_hex_to_ascii(input_buffer, buf_len / 8),
                         INFO);
 
-                    if (start_char = ASCII_CLS_X) then
-                        -- If the text line starts with character 'X' it is
-                        -- presumed to be the first line of 16x2.
-                        scored_receipt(63 downto 32) :=
-                            fn_convert_hex_to_slv32(input_buffer, 8);
-                        scored_first := false;
+                    --if (start_char = ASCII_CLS_X) then
+                    --    -- If the text line starts with character 'X' it is
+                    --    -- presumed to be the first line of 16x2.
+                    --    scored_receipt(63 downto 32) :=
+                    --        fn_convert_hex_to_slv32(input_buffer, 8);
+                    --    scored_first := false;
 
-                    elsif (start_char = ASCII_CLS_Z) then
-                        -- If the text line starts with character 'X' it is
-                        -- presumed to be the second line of 16x2.
-                        scored_receipt(31 downto 0) :=
-                            fn_convert_hex_to_slv32(input_buffer, 8);
+                    --elsif (start_char = ASCII_CLS_Z) then
+                    --    -- If the text line starts with character 'X' it is
+                    --    -- presumed to be the second line of 16x2.
+                    --    scored_receipt(31 downto 0) :=
+                    --        fn_convert_hex_to_slv32(input_buffer, 8);
 
-                        if (scored_receipt /= c_all_undef) then
-                            -- If the \ref scored_receipt contains real data,
-                            -- then it is presumed that 16 bytes of data were
-                            -- parsed from the 32 bytes of ASCII text. The
-                            -- real data is searched for in the ScoreBoard.
-                            found_pos := SB_CLS.Find(scored_receipt);
-                            Log(ModelID,
-                                "PMOD CLS Text lines matched ScoreBoard " &
-                                "history: " & to_string(found_pos),
-                                INFO);
-                            SB_CLS.Flush(found_pos);
-                        else
-                            -- The \ref scored_receipt does not contain real
-                            -- data as the two ASCII lines did not display
-                            -- the raw register value 16 hexadecimal characters.
+                    --    if (scored_receipt /= c_all_undef) then
+                    --        -- If the \ref scored_receipt contains real data,
+                    --        -- then it is presumed that 16 bytes of data were
+                    --        -- parsed from the 32 bytes of ASCII text. The
+                    --        -- real data is searched for in the ScoreBoard.
+                    --        found_pos := SB_CLS.Find(scored_receipt);
+                    --        Log(ModelID,
+                    --            "PMOD CLS Text lines matched ScoreBoard " &
+                    --            "history: " & to_string(found_pos),
+                    --            INFO);
+                    --        SB_CLS.Flush(found_pos);
+                    --    else
+                    --        -- The \ref scored_receipt does not contain real
+                    --        -- data as the two ASCII lines did not display
+                    --        -- the raw register value 16 hexadecimal characters.
                             Alert(ModelID, "PMOD CLS text lines not tested " &
                                 "with ScoreBoard history.",
                                 WARNING);
-                        end if;
-                    end if;
+                        --end if;
+                    --end if;
                 end if;
             end if;
         end loop l_spi_recv;

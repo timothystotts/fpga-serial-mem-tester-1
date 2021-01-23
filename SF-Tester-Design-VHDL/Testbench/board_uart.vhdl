@@ -132,23 +132,25 @@ begin
 				v_slv_expect(63 downto 32) := fn_convert_hex_to_slv32(v_hex_expect(255 downto 128), 8);
 				v_slv_expect(31 downto 0) := fn_convert_hex_to_slv32(v_hex_expect(127 downto 0), 8);
 
+				Log(ModelID, "BOARD UART text line not configured to search ScoreBoard history", INFO);
+
 				if (v_slv_expect /= c_all_undef) then
 					-- If the expected data is not all "U" bits, then attempt to
 					-- find the expected vector in the ScoreBoard. It will
 					-- likely not be the first in the FIFO as the UART runs
 					-- at a less frequent interval that the Pmod ACL2 filter
 					-- rate. Thus, find the match and drop all preceding values.
-					v_expect_idx := SB_UART.Find(v_slv_expect);
-					Log(ModelID, "BOARD UART text line matched ScoreBoard history: " & to_string(v_expect_idx), INFO);
-					SB_UART.Flush(v_expect_idx);
+					--v_expect_idx := SB_UART.Find(v_slv_expect);
+					--Log(ModelID, "BOARD UART text line not configured to search ScoreBoard history", INFO);
+					--SB_UART.Flush(v_expect_idx);
 				else
 					-- If \ref v_slv_expect is all "U" bits, then this ASCII
 					-- line was something other than raw register values. Thus,
 					-- do not test it with the ScoreBoard, but alert with a
 					-- warning.
-					Alert(ModelID, "BOARD UART text line not tested with " &
-						"ScoreBoard history.",
-						WARNING);
+					--Alert(ModelID, "BOARD UART text line not tested with " &
+					--	"ScoreBoard history.",
+					--	WARNING);
 				end if;
 
 				-- Reset data tracking in preparation of receiving next text

@@ -112,6 +112,15 @@ begin
 		wait;
 	end process p_sim_init;
 
+	p_sim_track : process
+	begin
+        wait for 0 ns;
+        WaitForBarrier(BarrierLogStart);
+        Log(ModelID, "Entering Pmod SF3 emulation with SPI mode 0 bus.",
+            ALWAYS);
+        wait;
+	end process p_sim_track;
+
 	u_N25Qxxx_wrapper : N25Qxxx_wrapper
 		port map(
 			S        => ci_csn,
