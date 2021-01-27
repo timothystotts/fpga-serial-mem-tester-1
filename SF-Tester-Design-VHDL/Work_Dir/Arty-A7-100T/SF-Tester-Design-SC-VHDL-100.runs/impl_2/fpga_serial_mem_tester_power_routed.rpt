@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Nov 27 17:43:15 2020
+| Date             : Wed Jan 27 15:25:47 2021
 | Host             : J1STUDY running 64-bit major release  (build 9200)
 | Command          : report_power -file fpga_serial_mem_tester_power_routed.rpt -pb fpga_serial_mem_tester_power_summary_routed.pb -rpx fpga_serial_mem_tester_power_routed.rpx
 | Design           : fpga_serial_mem_tester
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.004 |       12 |       --- |             --- |
-| Slice Logic    |     0.002 |     6710 |       --- |             --- |
-|   LUT as Logic |     0.002 |     3413 |     63400 |            5.38 |
+| Slice Logic    |     0.002 |     6708 |       --- |             --- |
+|   LUT as Logic |     0.002 |     3403 |     63400 |            5.37 |
 |   CARRY4       |    <0.001 |      579 |     15850 |            3.65 |
-|   Register     |    <0.001 |     1720 |    126800 |            1.36 |
+|   Register     |    <0.001 |     1721 |    126800 |            1.36 |
 |   F7/F8 Muxes  |    <0.001 |        7 |     63400 |            0.01 |
 |   Others       |     0.000 |       50 |       --- |             --- |
-| Signals        |     0.002 |     4876 |       --- |             --- |
+| Signals        |     0.001 |     4879 |       --- |             --- |
 | Block RAM      |    <0.001 |        2 |       135 |            1.48 |
 | MMCM           |     0.112 |        1 |         6 |           16.67 |
 | DSPs           |     0.001 |       16 |       240 |            6.67 |

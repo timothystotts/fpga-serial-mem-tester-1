@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Fri Nov 27 17:41:52 2020
+| Date         : Wed Jan 27 15:24:17 2021
 | Host         : J1STUDY running 64-bit major release  (build 9200)
 | Command      : report_drc -file fpga_serial_mem_tester_drc_opted.rpt -pb fpga_serial_mem_tester_drc_opted.pb -rpx fpga_serial_mem_tester_drc_opted.rpx
 | Design       : fpga_serial_mem_tester

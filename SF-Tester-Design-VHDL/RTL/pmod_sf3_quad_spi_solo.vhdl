@@ -172,8 +172,8 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 
 	constant c_addr_byte_index_preset : natural := 3;
 
-	signal s_wait_len_val                  : natural range 0 to 511;
-	signal s_wait_len_aux                  : natural range 0 to 511;
+	signal s_wait_len_val                  : integer range -1 to 511;
+	signal s_wait_len_aux                  : integer range -1 to 511;
 	signal s_addr_byte_index_val           : integer range -1 to 3;
 	signal s_addr_byte_index_aux           : integer range -1 to 3;
 	signal s_read_status_register_val      : std_logic_vector(7 downto 0);
