@@ -1,7 +1,7 @@
 set SRC_DIR ".."
 set ACOM_OPTS "-2008 -dbg"
 set ALOG_OPTS "-v2k5 -dbg"
-set MTI_ALOG_OPTS "-v2k5 -incdir ${SRC_DIR}/N25Q256A13E_VG12"
+set MTI_ALOG_OPTS "-v2k5 -dbg -incdir ${SRC_DIR}/N25Q256A13E_VG12"
 
 amap unisim "C:\\Aldec\\Xilinx_lib_2020.2\\unisim"
 amap unimacro "C:\\Aldec\\Xilinx_lib_2020.2\\unimacro"
