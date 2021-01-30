@@ -1,11 +1,11 @@
 # Test-bench simulation setup with Riviera-PRO, HOWTO
 
-# Install the N25Qxxx flash memory model
+## Install the N25Qxxx flash memory model
 Extract the N25Qxxx verilog model downloaded from micron.com into
 the folder N25Q256A13E_VG12. Several modifications to the source
 code are needed.
 
-# Update the time text in the memory model
+## Update the time text in the memory model
 Edit code/N25Qxxx.v to have text:
 	%0t ns]
 as:
@@ -19,7 +19,7 @@ The floating-point formatter should also be updated:
 as:
 	%0f ps]
 
-# Update the model choice in the UserData.h include
+## Update the model choice in the UserData.h include
 The include should define `N25Q256A 83E` as the model to
 simulate, because the chip indicated by the Digilent Inc.
 Pmod SF3 schematic is `N25Q512A 836SF40G`. After asking
@@ -34,7 +34,7 @@ simulation of the part actually on the board.
 `define N25Q256A83E
 ```
 
-# Update the timing choices in the TimingData.h include
+## Update the timing choices in the TimingData.h include
 The timing choices in the TimingData.h are not all correctly
 matched with the N25Q datasheet; specifically the subsector
 erase is much longer than indicated in the datasheet.
@@ -61,7 +61,7 @@ as follows:
 `endif   
 ```
 
-# Commands to compile the Micron memory model in Riviera Pro work area
+## Commands to compile the Micron memory model in Riviera Pro work area
 
 ```tcl
 set SRC_DIR ".."
