@@ -12,20 +12,27 @@ Two peripherals are used: Digilent Inc. Pmod SF3, Digilent Inc. Pmod CLS.
 The design is broken into two groupings.
 
 The folder SF-Tester-Design-AXI contains a Xilinx Vivado IP Integrator plus
-Xilinx Vitis design. A microblaze soft CPU is instantiated to talk with board components,
+Xilinx Vitis design.
+A microblaze soft CPU is instantiated to talk with board components,
 a SPI Flash peripheral, and
 a 16x2 character LCD peripheral.
 Sources to be incorporated into a Xilinx Vitis project contain
 a very small FreeRTOS program in C; drivers
 for the peripherals, a real-time task to operate the flash chip,
 two real-time tasks to display data, and a real-time task to color-mix RGB LEDs.
+(None of the real-time tasks demonstrate executing with a precise timer, but only
+demonstrate a best-effort execution; as such, calling these tasks real-time
+may be a misnomer. Executing these tasks with a precise timer can be achieved
+with FreeRTOS; but the benefit does not outweigh the added complexity for
+this specific implementation.)
 
 The folder SF-Tester-Design-VHDL contains a Xilinx Vivado project with sources
 containing only VHDL-2002 and VHDL-2008 modules. Plain HDL without a soft CPU or C code is authored to
 talk with board components, a N25Q SPI Flash 256Mbit, and a 16x2 character LCD peripheral.
 
 These two groupings of design provide equivalent functionality, excepting that the HDL design provides
-a much faster execution.
+a much faster execution. Checkouts for the latest implementation should refer to tag
+Serial_Mem_Tester_All_Prerelease_9A .
 
 ### Naming conventions notice
 The Pmod peripherals used in this project connect via a standard bus technology design called SPI.
