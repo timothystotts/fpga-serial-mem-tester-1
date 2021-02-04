@@ -40,10 +40,10 @@ configuration test_default_fpga_regression of fpga_serial_mem_tester_testharness
         for u_fpga_serial_mem_tester_testbench : fpga_serial_mem_tester_testbench
             use entity work.fpga_serial_mem_tester_testbench(simulation)
             generic map(
-                -- Total execution time of approximately less than 3 iterations
-                -- of 1/32 flash size testing if ERASE timing characteristics were
-                -- not sped-up. Number of iterations will be determined empirically
-                -- with simulator, and noted here.
+                -- Total execution time of approximately less than 8 iterations
+                -- of 1/32 flash size testing if timing characteristics are
+                -- sped-up by documented factor. Number of iterations were
+                -- determined empirically with simulator.
                 parm_simulation_duration => 30000 ms, 
                 parm_log_file_name => "log_test_default_fpga_regression.txt"
             );
