@@ -82,8 +82,11 @@ standard terminology in engineering is a priority.
 #### 4-input Multi-Debouncer for 4 exclusve inputs, such as switches or buttons, of the HDL design:
 ![4-bit Multi-Debouncer](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-multi-debounce.svg)
 
-#### SF3 Custom Driver Ports diagram of the HDL design:
+#### SF3 Custom Driver External Ports diagram of the HDL design:
 ![SF3 Custom Driver Ports](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-ports.svg)
+
+#### SF3 Custom Driver Internal Ports diagram of the HDL design:
+![SF3 Custom Driver Ports, Internal](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-ports-internal.svg)
 
 #### Pmod SF3 Extended SPI custom driver FSM for operating the QSPI Extended SPI driver to configure and operate the functions of the N25Q Flash chip of the Pmod SF3:
 ![SF3 Custom Driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SF3-QSPI-FSM.svg)
@@ -91,8 +94,11 @@ standard terminology in engineering is a priority.
 #### Generic QSPI Extended SPI Single Chip protocol bus driver, used by the SF3 driver
 ![Generic Standard SPI Single Chip bus driver](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-SPI-quad-FSM.svg)
 
-#### CLS Custom Driver Ports diagram of the HDL designs:
+#### CLS Custom Driver External Ports diagram of the HDL designs:
 ![CLS Custom Driver Ports](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-ports.svg)
+
+#### CLS Custom Driver Internal Ports diagram of the HDL designs:
+![CLS Custom Driver Ports, Internal](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-ports-internal.svg)
 
 #### Pmod CLS Standard SPI custom driver FSM for operating the standard SPI driver to send text line refreshes to the ATmega48 microcontroller chip of the Pmod CLS:
 ![CLS Custom Driver readings driver FSM](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-CLS-driver-FSM.svg)
