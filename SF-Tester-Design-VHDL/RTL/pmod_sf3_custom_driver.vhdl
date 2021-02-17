@@ -24,7 +24,7 @@
 -- \file pmod_sf3_custom_driver.vhdl
 --
 -- \brief A wrapper for the single Slave Select, Extended SPI modules
---        \ref pmod_sf3_stand_spi_solo and \ref pmod_generic_qspi_solo ,
+--        \ref pmod_sf3_quad_spi_solo and \ref pmod_generic_qspi_solo ,
 --        implementing a custom multi-mode operation of the PMOD SF3
 --        peripheral board by Digilent Inc with only SPI bus communication.
 --------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ architecture rtl of pmod_sf3_custom_driver is
 	signal sio_dq3_in_i   : std_logic;
 
 	-- system SPI control signals and data
-	signal s_go_stand   : std_logic;
+	signal s_go_enhan   : std_logic;
 	signal s_go_quadio  : std_logic;
 	signal s_spi_idle   : std_logic;
 	signal s_tx_len     : std_logic_vector(8 downto 0);
@@ -215,7 +215,7 @@ begin
 			i_ext_spi_clk_x       => i_clk_mhz,
 			i_srst                => i_rst_mhz,
 			i_spi_ce_4x           => i_ce_mhz_div,
-			o_go_stand            => s_go_stand,
+			o_go_enhan            => s_go_enhan,
 			o_go_quadio           => s_go_quadio,
 			i_spi_idle            => s_spi_idle,
 			o_tx_len              => s_tx_len,
@@ -255,7 +255,7 @@ begin
 			i_ext_spi_clk_x => i_clk_mhz,
 			i_srst          => i_rst_mhz,
 			i_spi_ce_4x     => i_ce_mhz_div,
-			i_go_stand      => s_go_stand,
+			i_go_enhan      => s_go_enhan,
 			i_go_quadio     => s_go_quadio,
 			o_spi_idle      => s_spi_idle,
 			i_tx_len        => s_tx_len,

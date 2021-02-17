@@ -59,7 +59,7 @@ entity pmod_generic_qspi_solo is
 		i_srst          : in std_logic;
 		i_spi_ce_4x     : in std_logic;
 		-- SPI machine system interfaces
-		i_go_stand  : in  std_logic;
+		i_go_enhan  : in  std_logic;
 		i_go_quadio : in  std_logic;
 		o_spi_idle  : out std_logic;
 		i_tx_len    : in  std_logic_vector((parm_tx_len_bits - 1) downto 0);
@@ -98,18 +98,15 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	-- SPI FSM state declarations
 	type t_spi_state is (
 			-- Enhanced SPI with single MOSI, MISO states
-			ST_IDLE_STAND, ST_START_D_STAND, ST_START_S_STAND,
-			ST_TX_STAND, ST_WAIT_STAND, ST_RX_STAND, ST_STOP_S_STAND,
-			ST_STOP_D_STAND,
-			-- Quad I/O SPI with quad DQ3:DQ0 states
-			ST_IDLE_QUADIO, ST_START_D_QUADIO, ST_START_S_QUADIO, ST_TX_QUADIO,
-			ST_WAIT_QUADIO, ST_RX_QUADIO, ST_STOP_S_QUADIO, ST_STOP_D_QUADIO);
+			ST_IDLE_ENHAN, ST_START_D_ENHAN, ST_START_S_ENHAN,
+			ST_TX_ENHAN, ST_WAIT_ENHAN, ST_RX_ENHAN, ST_STOP_S_ENHAN,
+			ST_STOP_D_ENHAN);
 
-	signal s_spi_pr_state                      : t_spi_state := ST_IDLE_STAND;
-	signal s_spi_nx_state                      : t_spi_state := ST_IDLE_STAND;
-	signal s_spi_pr_state_delayed1             : t_spi_state := ST_IDLE_STAND;
-	signal s_spi_pr_state_delayed2             : t_spi_state := ST_IDLE_STAND;
-	signal s_spi_pr_state_delayed3             : t_spi_state := ST_IDLE_STAND;
+	signal s_spi_pr_state                      : t_spi_state := ST_IDLE_ENHAN;
+	signal s_spi_nx_state                      : t_spi_state := ST_IDLE_ENHAN;
+	signal s_spi_pr_state_delayed1             : t_spi_state := ST_IDLE_ENHAN;
+	signal s_spi_pr_state_delayed2             : t_spi_state := ST_IDLE_ENHAN;
+	signal s_spi_pr_state_delayed3             : t_spi_state := ST_IDLE_ENHAN;
 	attribute fsm_encoding                     : string;
 	attribute fsm_encoding of s_spi_pr_state   : signal is "gray";
 	attribute fsm_safe_state                   : string;
@@ -125,17 +122,12 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	attribute fsm_safe_state of s_dat_pr_state : signal is "default_state";
 
 	-- Timer signals and constants
-	constant c_t_stand_wait_ss  : natural := 4;
-	constant c_t_stand_max_tx   : natural := 2096;
-	constant c_t_stand_max_wait : natural := 512;
-	constant c_t_stand_max_rx   : natural := 2088;
+	constant c_t_enhan_wait_ss  : natural := 4;
+	constant c_t_enhan_max_tx   : natural := 2096;
+	constant c_t_enhan_max_wait : natural := 512;
+	constant c_t_enhan_max_rx   : natural := 2088;
 
-	constant c_t_quadio_wait_ss  : natural := 16;
-	constant c_t_quadio_max_tx   : natural := 2096;
-	constant c_t_quadio_max_wait : natural := 512;
-	constant c_t_quadio_max_rx   : natural := 2088;
-
-	constant c_tmax : natural := c_t_stand_max_tx - 1;
+	constant c_tmax : natural := c_t_enhan_max_tx - 1;
 
 	signal s_t          : natural range 0 to c_tmax;
 	signal s_t_delayed1 : natural range 0 to c_tmax;
@@ -154,8 +146,7 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	signal s_spi_clk_ce3 : std_logic;
 
 	-- FSM pulse stretched
-	signal s_go_stand  : std_logic;
-	signal s_go_quadio : std_logic;
+	signal s_go_enhan  : std_logic;
 
 	-- FSM auxiliary registers
 	signal s_tx_len_val    : unsigned((parm_tx_len_bits - 1) downto 0);
@@ -164,10 +155,8 @@ architecture spi_hybrid_fsm of pmod_generic_qspi_solo is
 	signal s_rx_len_aux    : unsigned((parm_rx_len_bits - 1) downto 0);
 	signal s_wait_cyc_val  : unsigned((parm_wait_cyc_bits - 1) downto 0);
 	signal s_wait_cyc_aux  : unsigned((parm_wait_cyc_bits - 1) downto 0);
-	signal s_go_stand_val  : std_logic;
-	signal s_go_stand_aux  : std_logic;
-	signal s_go_quadio_val : std_logic;
-	signal s_go_quadio_aux : std_logic;
+	signal s_go_enhan_val  : std_logic;
+	signal s_go_enhan_aux  : std_logic;
 
 	-- FSM output status
 	signal s_spi_idle : std_logic;
@@ -403,17 +392,15 @@ begin
 					end if;
 				end if;
 
-				if (s_go_stand = '1') then
+				if (s_go_enhan = '1') then
 					s_t_inc <= 1;
-				elsif (s_go_quadio = '1') then
-					s_t_inc <= 4;
 				end if;
 			end if;
 		end if;
 	end process p_timer_1;
 
 	-- FSM for holding control inputs upon system 4x clock cycle pulse on
-	-- i_go_stand or i_go_quadio .
+	-- i_go_enhan.
 	p_dat_fsm_state_aux : process(i_ext_spi_clk_x)
 	begin
 		if rising_edge(i_ext_spi_clk_x) then
@@ -423,8 +410,7 @@ begin
 				s_tx_len_aux    <= (others => '0');
 				s_rx_len_aux    <= (others => '0');
 				s_wait_cyc_aux  <= (others => '0');
-				s_go_stand_aux  <= '0';
-				s_go_quadio_aux <= '0';
+				s_go_enhan_aux  <= '0';
 
 			elsif (s_spi_ce_4x = '1') then
 				-- no clock enable as this is a system-side interface
@@ -434,30 +420,27 @@ begin
 				s_tx_len_aux    <= s_tx_len_val;
 				s_rx_len_aux    <= s_rx_len_val;
 				s_wait_cyc_aux  <= s_wait_cyc_val;
-				s_go_stand_aux  <= s_go_stand_val;
-				s_go_quadio_aux <= s_go_quadio_val;
+				s_go_enhan_aux  <= s_go_enhan_val;
 			end if;
 		end if;
 	end process p_dat_fsm_state_aux;
 
-	-- Pass the auxiliary signals that last for a single iteration of allfour
+	-- Pass the auxiliary signals that last for a single iteration of all four
 	-- i_spi_ce_4x clock enables on to the \ref p_spi_fsm_comb
-	s_go_stand  <= s_go_stand_aux;
-	s_go_quadio <= s_go_quadio_aux;
+	s_go_enhan  <= s_go_enhan_aux;
 
-	-- System Data GO data value holder and i_go_stand/i_go_quadio pulse stretcher for all
+	-- System Data GO data value holder and i_go_enhan pulse stretcher for all
 	-- four clock enables duration of the 4x clock, starting at an clock enable
 	-- position. Combinatorial logic paired with the \ref p_dat_fsm_state
 	-- assignments.
-	p_dat_fsm_comb : process(s_dat_pr_state, i_go_stand, i_go_quadio,
+	p_dat_fsm_comb : process(s_dat_pr_state, i_go_enhan,
 			i_tx_len, i_rx_len, i_wait_cyc, s_tx_len_aux, s_rx_len_aux,
-			s_wait_cyc_aux, s_go_stand_aux, s_go_quadio_aux)
+			s_wait_cyc_aux, s_go_enhan_aux)
 	begin
 		s_tx_len_val    <= s_tx_len_aux;
 		s_rx_len_val    <= s_rx_len_aux;
 		s_wait_cyc_val  <= s_wait_cyc_aux;
-		s_go_stand_val  <= s_go_stand_aux;
-		s_go_quadio_val <= s_go_quadio_aux;
+		s_go_enhan_val  <= s_go_enhan_aux;
 
 		case (s_dat_pr_state) is
 			when ST_HOLD_PULSE_0 =>
@@ -474,17 +457,15 @@ begin
 
 			when ST_HOLD_PULSE_3 =>
 				-- Reset the GO signal and and hold the auxiliary for this cycle.
-				s_go_stand_val  <= '0';
-				s_go_quadio_val <= '0';
+				s_go_enhan_val  <= '0';
 				s_dat_nx_state  <= ST_WAIT_PULSE;
 
 			when others => -- ST_WAIT_PULSE
 				           -- If GO signal is 1, assign it and the auxiliary on the
 				           -- transition to the first HOLD state. Otherwise, hold
 				           -- the values already assigned.
-				if ((i_go_stand = '1') or (i_go_quadio = '1')) then
-					s_go_stand_val  <= i_go_stand;
-					s_go_quadio_val <= i_go_quadio;
+				if (i_go_enhan = '1') then
+					s_go_enhan_val  <= i_go_enhan;
 					s_tx_len_val    <= unsigned(i_tx_len);
 					s_rx_len_val    <= unsigned(i_rx_len);
 					s_wait_cyc_val  <= unsigned(i_wait_cyc);
@@ -502,10 +483,10 @@ begin
 	begin
 		if rising_edge(i_ext_spi_clk_x) then
 			if (i_srst = '1') then
-				s_spi_pr_state_delayed3 <= ST_IDLE_STAND;
-				s_spi_pr_state_delayed2 <= ST_IDLE_STAND;
-				s_spi_pr_state_delayed1 <= ST_IDLE_STAND;
-				s_spi_pr_state          <= ST_IDLE_STAND;
+				s_spi_pr_state_delayed3 <= ST_IDLE_ENHAN;
+				s_spi_pr_state_delayed2 <= ST_IDLE_ENHAN;
+				s_spi_pr_state_delayed1 <= ST_IDLE_ENHAN;
+				s_spi_pr_state          <= ST_IDLE_ENHAN;
 
 			else
 				if (s_spi_ce_4x = '1') then
@@ -530,7 +511,7 @@ begin
 	-- holding for wait cycles, and timing for RX data where RX data iscaptured
 	-- in a different synchronous state machine delayed from the state ofthis
 	-- machine.
-	p_spi_fsm_comb : process(s_spi_pr_state, s_spi_clk_1x, s_go_stand, s_go_quadio,
+	p_spi_fsm_comb : process(s_spi_pr_state, s_spi_clk_1x, s_go_enhan,
 			s_tx_len_aux, s_rx_len_aux,
 			s_wait_cyc_aux, s_t, s_t_inc,
 			s_data_fifo_tx_empty, s_spi_clk_ce2, s_spi_clk_ce3,
@@ -549,7 +530,7 @@ begin
 		s_data_fifo_tx_re <= '0';
 
 		case (s_spi_pr_state) is
-			when ST_START_D_STAND =>
+			when ST_START_D_ENHAN =>
 				-- halt clock
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
@@ -570,13 +551,13 @@ begin
 				eio_hldn_dq3_t <= '0';
 
 				-- wait for time to hold chip select value
-				if (s_t = c_t_stand_wait_ss - s_t_inc) then
-					s_spi_nx_state <= ST_START_S_STAND;
+				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
+					s_spi_nx_state <= ST_START_S_ENHAN;
 				else
-					s_spi_nx_state <= ST_START_D_STAND;
+					s_spi_nx_state <= ST_START_D_ENHAN;
 				end if;
 
-			when ST_START_S_STAND =>
+			when ST_START_S_ENHAN =>
 				-- halt clock
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
@@ -596,31 +577,27 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
-				-- wait for time to hold chip select value
-				if (s_t = c_t_stand_wait_ss - s_t_inc) then
-					if (s_data_fifo_tx_empty = '0') then
-						-- Fetch the first byte from the TX FIFO
-						s_data_fifo_tx_re <= s_spi_clk_ce3;
-					end if;
+				-- hold not reading the TX FIFO
+				s_data_fifo_tx_re <= s_spi_clk_ce3 when ((s_t = c_t_enhan_wait_ss - s_t_inc) and 
+					(s_data_fifo_tx_empty = '0')) else '0';
+				-- machine is not idle
+				s_spi_idle <= '0';
 
-					s_spi_nx_state <= ST_TX_STAND;
+				-- wait for time to hold chip select value
+				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
+					s_spi_nx_state <= ST_TX_ENHAN;
 				else
-					s_spi_nx_state <= ST_START_S_STAND;
+					s_spi_nx_state <= ST_START_S_ENHAN;
 				end if;
 
-			when ST_TX_STAND =>
+			when ST_TX_ENHAN =>
 				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
 
 				-- output currently dequeued byte
-				if (s_t < 8 * unsigned(s_tx_len_aux)) then
-					-- output current byte from fifo MSbit first
-					eio_copi_dq0_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
-				else
-					eio_copi_dq0_o <= '0';
-				end if;
+				eio_copi_dq0_o <= s_data_fifo_tx_out(7 - (s_t mod 8)) when (s_t < 8 * s_tx_len_aux) else '0';
 
 				eio_copi_dq0_t <= '0';
 				eio_cipo_dq1_o <= '0';
@@ -630,34 +607,28 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
+				-- read byte by byte from the TX FIFO
+				-- only if on last bit, dequeue another byte
+				s_data_fifo_tx_re <= s_spi_clk_ce2 when ((s_t /= (8 * s_tx_len_aux) - s_t_inc) and
+					(s_t mod 8 = 7) and (s_data_fifo_tx_empty = '0')) else '0';
+
 				-- If every bit from the FIFO according to i_tx_len value captured
 				-- in s_tx_len_aux, then move to either WAIT for RX or STOP.
-				if (s_t = (8 * unsigned(s_tx_len_aux)) - s_t_inc) then
-					if (unsigned(s_rx_len_aux) > 0) then
-						if (unsigned(s_wait_cyc_aux) > 0) then
-							s_spi_nx_state <= ST_WAIT_STAND;
+				if (s_t = (8 * s_tx_len_aux) - s_t_inc) then
+					if (s_rx_len_aux > 0) then
+						if (s_wait_cyc_aux > 0) then
+							s_spi_nx_state <= ST_WAIT_ENHAN;
 						else
-							s_spi_nx_state <= ST_RX_STAND;
+							s_spi_nx_state <= ST_RX_ENHAN;
 						end if;
 					else
-						s_spi_nx_state <= ST_STOP_S_STAND;
+						s_spi_nx_state <= ST_STOP_S_ENHAN;
 					end if;
 				else
-					-- only if on last bit, dequeue another byte
-					if (s_t mod 8 = 7) then
-						-- only if TX FIFO is not empty, dequeue another byte
-						if (s_data_fifo_tx_empty = '0') then
-							-- pass a clock enable
-							-- so that the Read Enable only occurs
-							-- for one clock cycle for the 4x SPI clock
-							s_data_fifo_tx_re <= s_spi_clk_ce2;
-						end if;
-					end if;
-
-					s_spi_nx_state <= ST_TX_STAND;
+					s_spi_nx_state <= ST_TX_ENHAN;
 				end if;
 
-			when ST_WAIT_STAND =>
+			when ST_WAIT_ENHAN =>
 				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
@@ -675,13 +646,13 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
-				if (s_t = unsigned(s_wait_cyc_aux) - s_t_inc) then
-					s_spi_nx_state <= ST_RX_STAND;
+				if (s_t = s_wait_cyc_aux - s_t_inc) then
+					s_spi_nx_state <= ST_RX_ENHAN;
 				else
-					s_spi_nx_state <= ST_WAIT_STAND;
+					s_spi_nx_state <= ST_WAIT_ENHAN;
 				end if;
 
-			when ST_RX_STAND =>
+			when ST_RX_ENHAN =>
 				-- run clock
 				-- assert chip select
 				eio_csn_o <= '0';
@@ -701,13 +672,13 @@ begin
 
 				-- If every bit from the FIFO according to i_rx_len value captured
 				-- in s_rx_len_aux, then move to STOP.
-				if (s_t = (8 * unsigned(s_rx_len_aux)) - s_t_inc) then
-					s_spi_nx_state <= ST_STOP_S_STAND;
+				if (s_t = (8 * s_rx_len_aux) - s_t_inc) then
+					s_spi_nx_state <= ST_STOP_S_ENHAN;
 				else
-					s_spi_nx_state <= ST_RX_STAND;
+					s_spi_nx_state <= ST_RX_ENHAN;
 				end if;
 
-			when ST_STOP_S_STAND =>
+			when ST_STOP_S_ENHAN =>
 				-- halt clock
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
@@ -728,13 +699,13 @@ begin
 				eio_hldn_dq3_t <= '0';
 
 				-- wait for time to hold chip select value
-				if (s_t = c_t_stand_wait_ss - s_t_inc) then
-					s_spi_nx_state <= ST_STOP_D_STAND;
+				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
+					s_spi_nx_state <= ST_STOP_D_ENHAN;
 				else
-					s_spi_nx_state <= ST_STOP_S_STAND;
+					s_spi_nx_state <= ST_STOP_S_ENHAN;
 				end if;
 
-			when ST_STOP_D_STAND =>
+			when ST_STOP_D_ENHAN =>
 				-- halt clock
 				eio_sck_o <= '0';
 				eio_sck_t <= '0';
@@ -755,255 +726,13 @@ begin
 				eio_hldn_dq3_t <= '0';
 
 				-- wait for time to hold chip select value
-				if (s_t = c_t_stand_wait_ss - s_t_inc) then
-					s_spi_nx_state <= ST_IDLE_STAND;
+				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
+					s_spi_nx_state <= ST_IDLE_ENHAN;
 				else
-					s_spi_nx_state <= ST_STOP_D_STAND;
+					s_spi_nx_state <= ST_STOP_D_ENHAN;
 				end if;
 
-			when ST_START_D_QUADIO =>
-				-- halt clock
-				eio_sck_o <= '0';
-				eio_sck_t <= '0';
-				-- no chip select
-				eio_csn_o <= '1';
-				eio_csn_t <= '0';
-				-- High-Z DQ0
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				-- wait for time to hold chip select value
-				if (s_t = c_t_quadio_wait_ss - 4) then
-					s_spi_nx_state <= ST_START_S_QUADIO;
-				else
-					s_spi_nx_state <= ST_START_D_QUADIO;
-				end if;
-
-			when ST_START_S_QUADIO =>
-				-- halt clock
-				eio_sck_o <= '0';
-				eio_sck_t <= '0';
-				-- assert chip select
-				eio_csn_o <= '0';
-				eio_csn_t <= '0';
-				-- High-Z DQ0
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				-- wait for time to hold chip select value
-				if (s_t = c_t_quadio_wait_ss - s_t_inc) then
-					if (s_data_fifo_tx_empty = '0') then
-						-- Fetch the first byte from the TX FIFO
-						s_data_fifo_tx_re <= s_spi_clk_ce2;
-					end if;
-
-					s_spi_nx_state <= ST_TX_QUADIO;
-				else
-					s_spi_nx_state <= ST_START_S_QUADIO;
-				end if;
-
-			when ST_TX_QUADIO =>
-				-- run clock
-				-- assert chip select
-				eio_csn_o <= '0';
-				eio_csn_t <= '0';
-
-				-- output currently dequeued byte
-				if (s_t < 8 * unsigned(s_tx_len_aux)) then
-					-- output current byte nibble from fifo MSbit first
-					eio_hldn_dq3_o <= s_data_fifo_tx_out(7 - (s_t mod 8));
-					eio_wrpn_dq2_o <= s_data_fifo_tx_out(6 - (s_t mod 8));
-					eio_cipo_dq1_o <= s_data_fifo_tx_out(5 - (s_t mod 8));
-					eio_copi_dq0_o <= s_data_fifo_tx_out(4 - (s_t mod 8));
-				else
-					eio_hldn_dq3_o <= '0';
-					eio_wrpn_dq2_o <= '0';
-					eio_cipo_dq1_o <= '0';
-					eio_copi_dq0_o <= '0';
-				end if;
-
-				-- Keep DQ3:DQ0 as not High-Z, but direct output instead
-				eio_copi_dq0_t <= '0';
-				eio_cipo_dq1_t <= '0';
-				eio_wrpn_dq2_t <= '0';
-				eio_hldn_dq3_t <= '0';
-
-				-- If every bit from the FIFO according to i_tx_len value captured
-				-- in s_tx_len_aux, then move to either WAIT for RX or STOP.
-				if (s_t = (8 * unsigned(s_tx_len_aux)) - s_t_inc) then
-					if (unsigned(s_rx_len_aux) > 0) then
-						if (unsigned(s_wait_cyc_aux) > 0) then
-							s_spi_nx_state <= ST_WAIT_QUADIO;
-						else
-							s_spi_nx_state <= ST_RX_QUADIO;
-						end if;
-					else
-						s_spi_nx_state <= ST_STOP_S_QUADIO;
-					end if;
-				else
-					-- only if on last bit, dequeue another byte
-					if (s_t mod 8 = 4) then
-						-- only if TX FIFO is not empty, dequeue another byte
-						if (s_data_fifo_tx_empty = '0') then
-							-- pass a clock enable
-							-- so that the Read Enable only occurs
-							-- for one clock cycle for the 4x SPI clock
-							s_data_fifo_tx_re <= s_spi_clk_ce2;
-						end if;
-					end if;
-
-					s_spi_nx_state <= ST_TX_QUADIO;
-				end if;
-
-			when ST_WAIT_QUADIO =>
-				-- run clock
-				-- assert chip select
-				eio_csn_o <= '0';
-				eio_csn_t <= '0';
-				-- High-Z DQ0
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				if (s_t = (s_t_inc * unsigned(s_wait_cyc_aux)) -
-						s_t_inc) then
-					s_spi_nx_state <= ST_RX_QUADIO;
-				else
-					s_spi_nx_state <= ST_WAIT_QUADIO;
-				end if;
-
-			when ST_RX_QUADIO =>
-				-- run clock
-				-- assert chip select
-				eio_csn_o <= '0';
-				eio_csn_t <= '0';
-				-- High-Z DQ0 to input from the peripheral chip
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				-- If every bit from the FIFO according to i_rx_len value captured
-				-- in s_rx_len_aux, then move to STOP.
-				if (s_t = (8 * unsigned(s_rx_len_aux)) - s_t_inc) then
-					s_spi_nx_state <= ST_STOP_S_QUADIO;
-				else
-					s_spi_nx_state <= ST_RX_QUADIO;
-				end if;
-
-			when ST_STOP_S_QUADIO =>
-				-- halt clock
-				eio_sck_o <= '0';
-				eio_sck_t <= '0';
-				-- assert chip select
-				eio_csn_o <= '0';
-				eio_csn_t <= '0';
-				-- High-Z DQ0
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				-- wait for time to hold chip select value
-				if (s_t = c_t_quadio_wait_ss - s_t_inc) then
-					s_spi_nx_state <= ST_STOP_D_QUADIO;
-				else
-					s_spi_nx_state <= ST_STOP_S_QUADIO;
-				end if;
-
-			when ST_STOP_D_QUADIO =>
-				-- halt clock
-				eio_sck_o <= '0';
-				eio_sck_t <= '0';
-				-- deassert chip select
-				eio_csn_o <= '1';
-				eio_csn_t <= '0';
-				-- High-Z DQ0
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				-- High-Z DQ1
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				-- High-Z DQ2
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				-- High-Z DQ3
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				-- wait for time to hold chip select value
-				if (s_t = c_t_quadio_wait_ss - s_t_inc) then
-					s_spi_nx_state <= ST_IDLE_QUADIO;
-				else
-					s_spi_nx_state <= ST_STOP_D_QUADIO;
-				end if;
-
-			when ST_IDLE_QUADIO =>
-				s_spi_idle     <= '1';
-				eio_sck_o      <= '0';
-				eio_sck_t      <= '0';
-				eio_csn_o      <= '1';
-				eio_csn_t      <= '0';
-				eio_copi_dq0_o <= '0';
-				eio_copi_dq0_t <= '1';
-				eio_cipo_dq1_o <= '0';
-				eio_cipo_dq1_t <= '1';
-				eio_wrpn_dq2_o <= '1';
-				eio_wrpn_dq2_t <= '1';
-				eio_hldn_dq3_o <= '1';
-				eio_hldn_dq3_t <= '1';
-
-				if (s_go_stand = '1') then
-					s_spi_nx_state <= ST_START_D_STAND;
-
-				elsif (s_go_quadio = '1') then
-					s_spi_nx_state <= ST_START_D_QUADIO;
-
-				else
-					s_spi_nx_state <= ST_IDLE_QUADIO;
-				end if;
-
-			when others => -- ST_IDLE_STAND
+			when others => -- ST_IDLE_ENHAN
 				s_spi_idle     <= '1';
 				eio_sck_o      <= '0';
 				eio_sck_t      <= '0';
@@ -1018,14 +747,10 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
-				if (s_go_stand = '1') then
-					s_spi_nx_state <= ST_START_D_STAND;
-
-				elsif (s_go_quadio = '1') then
-					s_spi_nx_state <= ST_START_D_QUADIO;
-
+				if (s_go_enhan = '1') then
+					s_spi_nx_state <= ST_START_D_ENHAN;
 				else
-					s_spi_nx_state <= ST_IDLE_STAND;
+					s_spi_nx_state <= ST_IDLE_ENHAN;
 				end if;
 		end case;
 
@@ -1049,55 +774,22 @@ begin
 				s_data_fifo_rx_we <= '0';
 
 				if (s_spi_clk_ce3 = '1') then
-					if (s_spi_pr_state_delayed3 = ST_RX_STAND) then
-						-- input current byte to enqueue
-
-						if (s_t_delayed3 < 8 * unsigned(s_rx_len_aux)) then
-							-- input current byte to RX fifo MSbit first
-							-- FIXME: change this to a shift register instead of
-							-- multiplexer for a more efficient implementation.
-							s_data_fifo_rx_in(7 - (s_t_delayed3 mod 8)) <= eio_cipo_dq1_i;
-						else
-							s_data_fifo_rx_in(7 downto 0) <= x"00";
-						end if;
+					if (s_spi_pr_state_delayed3 = ST_RX_ENHAN) then
+						-- input current byte to enqueue, one bit at a time, shifting
+						s_data_fifo_rx_in <= s_data_fifo_rx_in(6 downto 0) & eio_cipo_dq1_i when
+							(s_t_delayed3 < (8 * s_rx_len_aux)) else x"00";
 
 						-- only if on last bit, enqueue another byte
-						if (s_t_delayed3 mod 8 = 7) then
-							-- only if RX FIFO is not full, enqueue another byte
-							if (s_data_fifo_rx_full = '0') then
-								-- pass a clock enable
-								-- so that the Read Enable only occurs
-								-- for one clock cycle for the 4x SPI clock
-								s_data_fifo_rx_we <= '1';
-							end if;
-						end if;
-
-					elsif (s_spi_pr_state_delayed3 = ST_RX_QUADIO) then
-						-- input current byte to enqueue
-
-						if (s_t_delayed3 < 8 * unsigned(s_rx_len_aux)) then
-							-- input current byte to RX fifo MSbit first
-							-- FIXME: change this to a shift register instead of
-							-- multiplexer for a more efficient implementation.
-							s_data_fifo_rx_in(7 - (s_t_delayed3 mod 8)) <= eio_hldn_dq3_i;
-							s_data_fifo_rx_in(6 - (s_t_delayed3 mod 8)) <= eio_wrpn_dq2_i;
-							s_data_fifo_rx_in(5 - (s_t_delayed3 mod 8)) <= eio_cipo_dq1_i;
-							s_data_fifo_rx_in(4 - (s_t_delayed3 mod 8)) <= eio_copi_dq0_i;
-						else
-							s_data_fifo_rx_in(7 downto 0) <= x"00";
-						end if;
-
-						-- only if on last bit, enqueue another byte
-						if (s_t_delayed3 mod 8 = 4) then
-							-- only if RX FIFO is not full, enqueue another byte
-							if (s_data_fifo_rx_full = '0') then
-								-- pass a clock enable
-								-- so that the Read Enable only occurs
-								-- for one clock cycle for the 4x SPI clock
-								s_data_fifo_rx_we <= '1';
-							end if;
-						end if;
+						-- only if RX FIFO is not full, enqueue another byte
+						s_data_fifo_rx_we <= '1' when ((s_t_delayed3 mod 8 = 7) and
+							(s_data_fifo_rx_full = '0')) else '0';
+					else
+						s_data_fifo_rx_we <= '0';
+						s_data_fifo_rx_in <= x"00";
 					end if;
+				else
+					s_data_fifo_rx_we <= '0';
+					s_data_fifo_rx_in <= s_data_fifo_rx_in;
 				end if;
 			end if;
 		end if;

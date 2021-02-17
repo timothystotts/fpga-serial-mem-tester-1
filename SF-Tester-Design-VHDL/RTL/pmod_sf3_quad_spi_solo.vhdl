@@ -53,7 +53,7 @@ entity pmod_sf3_quad_spi_solo is
 		i_srst          : in std_logic;
 		i_spi_ce_4x     : in std_logic;
 		-- system interface to the \ref pmod_generic_spi_solo
-		o_go_stand  : out std_logic;
+		o_go_enhan  : out std_logic;
 		o_go_quadio : out std_logic;
 		i_spi_idle  : in  std_logic;
 		o_tx_len    : out std_logic_vector((parm_tx_len_bits - 1) downto 0);
@@ -94,21 +94,11 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 			ST_BOOTA_STATUS_CMD, ST_BOOTA_STATUS_WAIT, ST_BOOTA_STATUS_RX,
 			ST_BOOTA_STATUS_CHK0, ST_BOOTA_STATUS_CHK1,
 			-- Boot init the Status Register
-/*			ST_BOOT0_INIT, */
 			ST_BOOT0_WEN_STATUS, ST_BOOT0_WEN_STWAIT,
 			ST_BOOT0_WR_STATUS_CMD, ST_BOOT0_WR_STATUS_DAT,
 			ST_BOOT0_IDLE_STWAIT,
 			ST_BOOT0_FLAGST_CMD, ST_BOOT0_FLAGST_WAIT, ST_BOOT0_FLAGST_RX,
 			ST_BOOT0_FLAGST_CHK0, ST_BOOT0_FLAGST_CHK1,
-			-- Boot init the Enhanced Volatile Configuration Register
-/*			ST_BOOT1_INIT, ST_BOOT1_WEN_EVC, ST_BOOT1_WEN_EVCWAIT,
-			ST_BOOT1_WR_EVC_CMD, ST_BOOT1_WR_EVC_DAT, */
-			-- Boot init the Non-volatile Configuration Register
-/*			ST_BOOT2_INIT, ST_BOOT2_WEN_NONVOL, ST_BOOT2_WEN_NVWAIT,
-			ST_BOOT2_WR_NVC_CMD, ST_BOOT2_WR_NVC_DAT1, ST_BOOT2_WR_NVC_DAT0,
-			ST_BOOT2_IDLE_STWAIT,
-			ST_BOOT2_FLAGST_CMD, ST_BOOT2_FLAGST_WAIT, ST_BOOT2_FLAGST_RX,
-			ST_BOOT2_FLAGST_CHK0, ST_BOOT2_FLAGST_CHK1, */
 			-- Idle state
 			ST_WAIT_IDLE, ST_IDLE,
 			-- Read up to one page states
@@ -117,9 +107,7 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 			ST_WEN_ERASE, ST_WEN_WAIT2, ST_ERASE_CMD, ST_ERASE_ADDR,
 			ST_ERASE_WAIT,
 			-- Status check states
-			--ST_STATUS_CMD, ST_STATUS_WAIT, ST_STATUS_RX, ST_STATUS_CHK,
 			ST_FLAGST_CMD, ST_FLAGST_WAIT, ST_FLAGST_RX,
-			--ST_FLAGST_CLEAR,
 			ST_FLAGST_CHK0, ST_FLAGST_CHK1,
 			-- Write a full page states
 			ST_WEN_PROGR, ST_WEN_WAIT3, ST_PAGE_PROGR_CMD, ST_PAGE_PROGR_ADDR,
@@ -180,14 +168,6 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 	signal s_read_status_register_aux      : std_logic_vector(7 downto 0);
 	signal s_read_flag_status_register_val : std_logic_vector(7 downto 0);
 	signal s_read_flag_status_register_aux : std_logic_vector(7 downto 0);
-	--signal s_read_enh_vol_cfg_register_val : std_logic_vector(7 downto 0);
-	--signal s_read_enh_vol_cfg_register_aux : std_logic_vector(7 downto 0);
-	--signal s_read_extend_addr_register_val : std_logic_vector(7 downto 0);
-	--signal s_read_extend_addr_register_aux : std_logic_vector(7 downto 0);
-	--signal s_read_nonvol_cfg_register_val  : std_logic_vector(7 downto 0);
-	--signal s_read_nonvol_cfg_register_aux  : std_logic_vector(7 downto 0);
-	--signal s_read_volati_cfg_register_val  : std_logic_vector(7 downto 0);
-	--signal s_read_volati_cfg_register_aux  : std_logic_vector(7 downto 0);
 
 	constant c_boot_in_quadio : boolean := false;
 begin
@@ -218,10 +198,6 @@ begin
 				s_addr_byte_index_aux           <= 0;
 				s_read_status_register_aux      <= x"00";
 				s_read_flag_status_register_aux <= x"00";
-			--s_read_enh_vol_cfg_register_aux <= x"00";
-			--s_read_extend_addr_register_aux <= x"00";
-			--s_read_nonvol_cfg_register_aux  <= x"00";
-			--s_read_volati_cfg_register_aux  <= x"00";
 			elsif (i_spi_ce_4x = '1') then
 				s_pr_state <= s_nx_state;
 
@@ -229,10 +205,6 @@ begin
 				s_addr_byte_index_aux           <= s_addr_byte_index_val;
 				s_read_status_register_aux      <= s_read_status_register_val;
 				s_read_flag_status_register_aux <= s_read_flag_status_register_val;
-			--s_read_enh_vol_cfg_register_aux <= s_read_enh_vol_cfg_register_val;
-			--s_read_extend_addr_register_aux <= s_read_extend_addr_register_val;
-			--s_read_nonvol_cfg_register_aux  <= s_read_nonvol_cfg_register_val;
-			--s_read_volati_cfg_register_aux  <= s_read_volati_cfg_register_val;
 			end if;
 		end if;
 	end process p_fsm_state_aux;
@@ -241,10 +213,6 @@ begin
 			i_address_of_cmd, i_len_random_read, i_rx_data, i_rx_valid,
 			s_wait_len_aux, s_addr_byte_index_aux,
 			s_read_status_register_aux, s_read_flag_status_register_aux,
-			--s_read_enh_vol_cfg_register_aux,
-			--s_read_extend_addr_register_aux,
-			--s_read_nonvol_cfg_register_aux,
-			--s_read_volati_cfg_register_aux,
 			i_cmd_random_read, i_cmd_erase_subsector, i_cmd_page_program,
 			i_wr_data_stream, i_wr_data_valid)
 	begin
@@ -255,16 +223,12 @@ begin
 		o_tx_len                        <= std_logic_vector(to_unsigned(0, o_tx_len'length));
 		o_rx_len                        <= std_logic_vector(to_unsigned(0, o_rx_len'length));
 		o_wait_cyc                      <= std_logic_vector(to_unsigned(0, o_wait_cyc'length));
-		o_go_stand                      <= '0';
+		o_go_enhan                      <= '0';
 		o_go_quadio                     <= '0';
 		s_wait_len_val                  <= s_wait_len_aux;
 		s_addr_byte_index_val           <= s_addr_byte_index_aux;
 		s_read_status_register_val      <= s_read_status_register_aux;
 		s_read_flag_status_register_val <= s_read_flag_status_register_aux;
-		--s_read_enh_vol_cfg_register_val <= s_read_enh_vol_cfg_register_aux;
-		--s_read_extend_addr_register_val <= s_read_extend_addr_register_aux;
-		--s_read_nonvol_cfg_register_val  <= s_read_nonvol_cfg_register_aux;
-		--s_read_volati_cfg_register_val  <= s_read_volati_cfg_register_aux;
 
 		o_rd_data_stream <= (others => '0');
 		o_rd_data_valid  <= '0';
@@ -278,7 +242,7 @@ begin
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_read_status_register, o_tx_len'length));
 				o_rx_len        <= std_logic_vector(to_unsigned(c_n25q_rxlen_cmd_read_status_register, o_rx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_BOOTA_STATUS_WAIT;
@@ -331,14 +295,9 @@ begin
 				o_tx_data       <= c_n25q_cmd_write_enable;
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enable, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
-					--if (c_boot_in_quadio) then
-					--	o_go_stand <= '1'; -- use standard extended SPI regardless
-					--else
-					--	o_go_stand <= '1';
-					--end if;
 					s_nx_state <= ST_BOOT0_WEN_STWAIT;
 				else
 					s_nx_state <= ST_BOOT0_WEN_STATUS;
@@ -369,14 +328,9 @@ begin
 				o_tx_data       <= c_n25q_dat_status_reg_as_pmod_sf3;
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_status_register, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready and i_spi_idle;
-				o_go_stand      <= i_tx_ready and i_spi_idle;
+				o_go_enhan      <= i_tx_ready and i_spi_idle;
 
 				if ((i_tx_ready = '1') and (i_spi_idle = '1')) then
-					--if (c_boot_in_quadio) then
-					--	o_go_stand <= '1'; -- use standard extended SPI regardless
-					--else
-					--	o_go_stand <= '1';
-					--end if;
 					s_nx_state <= ST_BOOT0_IDLE_STWAIT;
 				else
 					s_nx_state <= ST_BOOT0_WR_STATUS_DAT;
@@ -397,7 +351,7 @@ begin
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_read_flag_status_register, o_tx_len'length));
 				o_rx_len        <= std_logic_vector(to_unsigned(c_n25q_rxlen_cmd_read_flag_status_register, o_rx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_BOOT0_FLAGST_WAIT;
@@ -445,202 +399,6 @@ begin
 					s_nx_state <= ST_BOOT0_FLAGST_CMD;
 				end if;
 
-				/*
-				when ST_BOOT1_INIT =>
-				o_command_ready <= '0';
-
-				if ((s_t >= c_t_boot_init1 - 1) and (i_spi_idle = '1')) then
-				s_nx_state <= ST_BOOT1_WEN_EVC;
-				else
-				s_nx_state <= ST_BOOT1_INIT;
-				end if;
-
-				when ST_BOOT1_WEN_EVC => -- step 1 of 4 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_cmd_write_enable;
-				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enable, o_tx_len'length));
-				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
-
-				if (i_tx_ready = '1') then
-				--if (c_boot_in_quadio) then
-				--	o_go_stand <= '1';
-				--else
-				--	o_go_stand <= '1';
-				--end if;
-				s_nx_state <= ST_BOOT1_WEN_EVCWAIT;
-				else
-				s_nx_state <= ST_BOOT1_WEN_EVC;
-				end if;
-
-				when ST_BOOT1_WEN_EVCWAIT => -- step 2 of 4 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-
-				if (i_spi_idle= '1') then
-				s_nx_state <= ST_BOOT1_WR_EVC_CMD;
-				else
-				s_nx_state <= ST_BOOT1_WEN_EVCWAIT;
-				end if;
-
-				when ST_BOOT1_WR_EVC_CMD => -- step 3 of 4 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_cmd_write_enh_vol_cfg_reg;
-				o_tx_enqueue    <= i_tx_ready;
-
-				if (i_tx_ready = '1') then
-				s_nx_state <= ST_BOOT1_WR_EVC_DAT;
-				else
-				s_nx_state <= ST_BOOT1_WR_EVC_CMD;
-				end if;
-
-				when ST_BOOT1_WR_EVC_DAT => -- step 4 of 4 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_dat_enh_vol_cfg_reg_as_pmod_sf3;
-				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enh_vol_cfg_reg, o_tx_len'length));
-				o_tx_enqueue    <= i_tx_ready and i_spi_idle;
-				o_go_stand      <= i_tx_ready and i_spi_idle;
-
-				if ((i_tx_ready = '1') and (i_spi_idle = '1')) then
-				--if (c_boot_in_quadio) then
-				--	o_go_stand <= '1';
-				--else
-				--	o_go_stand <= '1';
-				--end if;
-				s_nx_state <= ST_BOOT2_INIT;
-				else
-				s_nx_state <= ST_BOOT1_WR_EVC_DAT;
-				end if;
-
-				when ST_BOOT2_INIT =>
-				o_command_ready <= '0';
-
-				if ((s_t >= c_t_boot_init2 - 1) and (i_spi_idle = '1')) then
-				s_nx_state <= ST_BOOT2_WEN_NONVOL;
-				else
-				s_nx_state <= ST_BOOT2_INIT;
-				end if;
-
-				when ST_BOOT2_WEN_NONVOL => -- step 1 of 5 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_cmd_write_enable;
-				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enable, o_tx_len'length));
-				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
-
-				if (i_tx_ready = '1') then
-				s_nx_state <= ST_BOOT2_WEN_NVWAIT;
-				else
-				s_nx_state <= ST_BOOT2_WEN_NONVOL;
-				end if;
-
-				when ST_BOOT2_WEN_NVWAIT => -- step 2 of 5 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-
-				if (i_spi_idle= '1') then
-				s_nx_state <= ST_BOOT2_WR_NVC_CMD;
-				else
-				s_nx_state <= ST_BOOT2_WEN_NVWAIT;
-				end if;
-
-				when ST_BOOT2_WR_NVC_CMD => -- step 3 of 5 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_cmd_write_nonvol_cfg_reg;
-				o_tx_enqueue    <= i_tx_ready;
-
-				if (i_tx_ready = '1') then
-				s_nx_state <= ST_BOOT2_WR_NVC_DAT1;
-				else
-				s_nx_state <= ST_BOOT2_WR_NVC_CMD;
-				end if;
-
-				when ST_BOOT2_WR_NVC_DAT1 => -- step 4 of 5 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_dat_nonvol_cfg_reg_as_pmod_sf3(15 downto 8);
-				o_tx_enqueue    <= i_tx_ready and i_spi_idle;
-
-				if ((i_tx_ready = '1') and (i_spi_idle = '1')) then
-				s_nx_state <= ST_BOOT2_WR_NVC_DAT0;
-				else
-				s_nx_state <= ST_BOOT2_WR_NVC_DAT1;
-				end if;
-
-				when ST_BOOT2_WR_NVC_DAT0 => -- step 5 of 5 to switch to Quad I/O SPI
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_dat_nonvol_cfg_reg_as_pmod_sf3(7 downto 0);
-				o_tx_len        <= std_logic_vector(to_unsigned(3, o_tx_len'length));
-				o_tx_enqueue    <= i_tx_ready and i_spi_idle;
-				o_go_quadio     <= i_tx_ready and i_spi_idle;
-
-				if ((i_tx_ready = '1') and (i_spi_idle = '1')) then
-				s_nx_state <= ST_BOOT2_IDLE_STWAIT;
-				else
-				s_nx_state <= ST_BOOT2_WR_NVC_DAT0;
-				end if;
-
-				when ST_BOOT2_IDLE_STWAIT =>
-				o_command_ready <= '0';
-
-				if (i_spi_idle = '1') then
-				s_nx_state <= ST_BOOT2_FLAGST_CMD;
-				else
-				s_nx_state <= ST_BOOT2_IDLE_STWAIT;
-				end if;
-
-				when ST_BOOT2_FLAGST_CMD =>
-				o_command_ready <= '0';
-				o_tx_data       <= c_n25q_cmd_read_flag_status_register;
-				o_tx_len        <= std_logic_vector(to_unsigned(1, o_tx_len'length));
-				o_rx_len        <= std_logic_vector(to_unsigned(1, o_rx_len'length));
-
-				if (i_tx_ready = '1') then
-				o_tx_enqueue <= '1';
-				o_go_stand   <= '1';
-				s_nx_state   <= ST_BOOT2_FLAGST_WAIT;
-				else
-				s_nx_state <= ST_BOOT2_FLAGST_CMD;
-				end if;
-
-				when ST_BOOT2_FLAGST_WAIT =>
-				o_command_ready <= '0';
-
-				if ((i_rx_avail = '1') and (i_spi_idle = '1')) then
-				o_rx_dequeue <= '1';
-				s_nx_state   <= ST_BOOT2_FLAGST_RX;
-				else
-				s_nx_state <= ST_BOOT2_FLAGST_WAIT;
-				end if;
-
-				when ST_BOOT2_FLAGST_RX =>
-				o_command_ready                 <= '0';
-				s_read_flag_status_register_val <= i_rx_data;
-
-				if (i_rx_valid = '1') then
-				s_nx_state <= ST_BOOT2_FLAGST_CHK0;
-				else
-				s_nx_state <= ST_BOOT2_FLAGST_RX;
-				end if;
-
-				when ST_BOOT2_FLAGST_CHK0 =>
-				o_command_ready <= '0';
-
-				if (i_spi_idle = '1') then
-				s_nx_state <= ST_BOOT2_FLAGST_CHK1;
-				else
-				s_nx_state <= ST_BOOT2_FLAGST_CHK0;
-				end if;
-
-				when ST_BOOT2_FLAGST_CHK1 =>
-				o_command_ready <= '0';
-
-				if (s_read_flag_status_register_aux(7) = '1') then
-				-- erase is done
-				s_nx_state <= ST_WAIT_IDLE;
-				elsE
-				-- erase is not done, so check again
-				s_nx_state <= ST_BOOT2_FLAGST_CMD;
-				end if;
-				*/
-
 			when ST_RD_CMD =>
 				o_command_ready <= '0';
 				o_tx_data       <= c_n25q_cmd_extend_read_memory_4byte_addr;
@@ -658,7 +416,7 @@ begin
 				o_command_ready       <= '0';
 				o_tx_data             <= i_address_of_cmd((8 * (s_addr_byte_index_aux + 1) - 1) downto (8 * s_addr_byte_index_aux));
 				o_tx_enqueue          <= i_tx_ready;
-				o_go_stand            <= '1'                         when (s_addr_byte_index_aux = 0) else '0';
+				o_go_enhan            <= '1'                         when (s_addr_byte_index_aux = 0) else '0';
 				s_addr_byte_index_val <= (s_addr_byte_index_aux - 1) when (i_tx_ready = '1') else s_addr_byte_index_aux;
 
 				o_tx_len <= std_logic_vector(
@@ -693,7 +451,7 @@ begin
 				o_tx_data       <= c_n25q_cmd_write_enable;
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enable, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_WEN_WAIT2;
@@ -728,7 +486,7 @@ begin
 				o_tx_data       <= i_address_of_cmd((8 * (s_addr_byte_index_aux + 1) - 1) downto (8 * s_addr_byte_index_aux));
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_any_erase_subsector, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= '1' when (s_addr_byte_index_aux = 0) else '0';
+				o_go_enhan      <= '1' when (s_addr_byte_index_aux = 0) else '0';
 
 				s_addr_byte_index_val <= (s_addr_byte_index_aux - 1) when (i_tx_ready = '1') else s_addr_byte_index_aux;
 
@@ -747,58 +505,13 @@ begin
 					s_nx_state <= ST_ERASE_WAIT;
 				end if;
 
-				--when ST_STATUS_CMD =>
-				--	o_command_ready <= '0';
-				--	o_tx_data       <= c_n25q_cmd_read_status_register;
-				--	o_tx_len        <= std_logic_vector(to_unsigned(1, o_tx_len'length));
-				--	o_rx_len        <= std_logic_vector(to_unsigned(1, o_rx_len'length));
-
-				--	if (i_tx_ready = '1') then
-				--		o_tx_enqueue <= '1';
-				--		o_go_quadio  <= '1';
-				--		s_nx_state   <= ST_STATUS_WAIT;
-				--	else
-				--		s_nx_state <= ST_STATUS_CMD;
-				--	end if;
-
-				--when ST_STATUS_WAIT =>
-				--	o_command_ready <= '0';
-
-				--	if ((i_rx_avail = '1') and (i_spi_idle = '1')) then
-				--		o_rx_dequeue <= '1';
-				--		s_nx_state   <= ST_STATUS_RX;
-				--	else
-				--		s_nx_state <= ST_STATUS_WAIT;
-				--	end if;
-
-				--when ST_STATUS_RX =>
-				--	o_command_ready            <= '0';
-				--	s_read_status_register_val <= i_rx_data;
-
-				--	if (i_rx_valid = '1') then
-				--		s_nx_state <= ST_STATUS_CHK;
-				--	else
-				--		s_nx_state <= ST_STATUS_RX;
-				--	end if;
-
-				--when ST_STATUS_CHK =>
-				--	o_command_ready <= '0';
-
-				--	if (s_read_status_register_aux(0) = '0') then
-				--		-- erase is done
-				--		s_nx_state <= ST_WAIT_IDLE;
-				--	else
-				--		-- erase is not done, so check again
-				--		s_nx_state <= ST_STATUS_CMD;
-				--	end if;
-
 			when ST_FLAGST_CMD =>
 				o_command_ready <= '0';
 				o_tx_data       <= c_n25q_cmd_read_flag_status_register;
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_read_flag_status_register, o_tx_len'length));
 				o_rx_len        <= std_logic_vector(to_unsigned(c_n25q_rxlen_cmd_read_flag_status_register, o_rx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_FLAGST_WAIT;
@@ -826,19 +539,6 @@ begin
 					s_nx_state <= ST_FLAGST_RX;
 				end if;
 
-				--when ST_FLAGST_CLEAR =>
-				--	o_command_ready <= '0';
-				--	o_tx_data       <= c_n25q_cmd_clear_flag_status_register;
-				--	o_tx_len        <= std_logic_vector(to_unsigned(1, o_tx_len'length));
-
-				--	if (i_tx_ready = '1') then
-				--		o_tx_enqueue <= '1';
-				--		o_go_stand  <= '1';
-				--		s_nx_state   <= ST_FLAGST_CHK0;
-				--	else
-				--		s_nx_state <= ST_FLAGST_CLEAR;
-				--	end if;
-
 			when ST_FLAGST_CHK0 =>
 				o_command_ready <= '0';
 
@@ -864,7 +564,7 @@ begin
 				o_tx_data       <= c_n25q_cmd_write_enable;
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_write_enable, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= i_tx_ready;
+				o_go_enhan      <= i_tx_ready;
 
 				if (i_tx_ready = '1') then
 					s_nx_state <= ST_WEN_WAIT3;
@@ -899,7 +599,7 @@ begin
 				o_tx_data       <= i_address_of_cmd((8 * (s_addr_byte_index_aux + 1) - 1) downto (8 * s_addr_byte_index_aux));
 				o_tx_len        <= std_logic_vector(to_unsigned(c_n25q_txlen_cmd_any_page_program + 256, o_tx_len'length));
 				o_tx_enqueue    <= i_tx_ready;
-				o_go_stand      <= '1' when (s_addr_byte_index_aux = 0) else '0';
+				o_go_enhan      <= '1' when (s_addr_byte_index_aux = 0) else '0';
 
 				s_addr_byte_index_val <= (s_addr_byte_index_aux - 1) when (i_tx_ready = '1') else s_addr_byte_index_aux;
 				s_wait_len_val        <= 256;
@@ -945,17 +645,6 @@ begin
 				else
 					s_nx_state <= ST_IDLE;
 				end if;
-
-/*
-			when ST_BOOT0_INIT => -- ST_BOOT0_INIT
-				o_command_ready <= '0';
-
-				if (s_t >= c_t_boot_init0 - 1) then
-					s_nx_state <= ST_BOOT0_WEN_STATUS;
-				else
-					s_nx_state <= ST_BOOT0_INIT;
-				end if;
-*/
 
 			when others => -- ST_BOOTA_INIT
 				o_command_ready <= '0';
