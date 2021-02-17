@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jan 27 15:23:27 2021
-| Host         : J1STUDY running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Feb 17 15:36:06 2021
+| Host         : l4study running 64-bit Ubuntu 18.04.5 LTS
 | Command      : report_utilization -file fpga_serial_mem_tester_utilization_synth.rpt -pb fpga_serial_mem_tester_utilization_synth.pb
 | Design       : fpga_serial_mem_tester
 | Device       : 7a100ticsg324-1L
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 3605 |     0 |     63400 |  5.69 |
-|   LUT as Logic          | 3605 |     0 |     63400 |  5.69 |
+| Slice LUTs*             | 3544 |     0 |     63400 |  5.59 |
+|   LUT as Logic          | 3544 |     0 |     63400 |  5.59 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 1780 |     0 |    126800 |  1.40 |
-|   Register as Flip Flop | 1780 |     0 |    126800 |  1.40 |
+| Slice Registers         | 1765 |     0 |    126800 |  1.39 |
+|   Register as Flip Flop | 1765 |     0 |    126800 |  1.39 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    7 |     0 |     31700 |  0.02 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 28    |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 229   |          Yes |         Set |            - |
-| 1523  |          Yes |       Reset |            - |
+| 1508  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,22 +148,22 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 1523 |        Flop & Latch |
-| LUT6       |  909 |                 LUT |
-| LUT4       |  818 |                 LUT |
-| LUT2       |  816 |                 LUT |
-| LUT3       |  737 |                 LUT |
-| LUT1       |  587 |                 LUT |
-| CARRY4     |  581 |          CarryLogic |
-| LUT5       |  511 |                 LUT |
+| FDRE       | 1508 |        Flop & Latch |
+| LUT6       |  872 |                 LUT |
+| LUT4       |  810 |                 LUT |
+| LUT2       |  807 |                 LUT |
+| LUT3       |  732 |                 LUT |
+| LUT1       |  590 |                 LUT |
+| CARRY4     |  580 |          CarryLogic |
+| LUT5       |  499 |                 LUT |
 | FDSE       |  229 |        Flop & Latch |
 | FDPE       |   28 |        Flop & Latch |
 | OBUF       |   22 |                  IO |
 | DSP48E1    |   16 |    Block Arithmetic |
-| IBUF       |   15 |                  IO |
+| IBUF       |   12 |                  IO |
 | MUXF7      |    7 |               MuxFx |
 | FIFO18E1   |    5 |        Block Memory |
-| OBUFT      |    4 |                  IO |
+| OBUFT      |    3 |                  IO |
 | MMCME2_ADV |    1 |               Clock |
 +------------+------+---------------------+
 

@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Jan 27 15:25:42 2021
-| Host         : J1STUDY running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Feb 17 15:37:14 2021
+| Host         : l4study running 64-bit Ubuntu 18.04.5 LTS
 | Command      : report_drc -file fpga_serial_mem_tester_drc_routed.rpt -pb fpga_serial_mem_tester_drc_routed.pb -rpx fpga_serial_mem_tester_drc_routed.rpx
 | Design       : fpga_serial_mem_tester
 | Device       : xc7a100ticsg324-1L
@@ -24,12 +24,33 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 4
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 4          |
++--------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+RPBF-3#1 Warning
+IO port buffering is incomplete  
+Device port eio_pmod_sf3_cipo_dq1 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#2 Warning
+IO port buffering is incomplete  
+Device port eio_pmod_sf3_copi_dq0 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#3 Warning
+IO port buffering is incomplete  
+Device port eio_pmod_sf3_hldn_dq3 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
+RPBF-3#4 Warning
+IO port buffering is incomplete  
+Device port eio_pmod_sf3_wrpn_dq2 expects both input and output buffering but the buffers are incomplete.
+Related violations: <none>
+
 
