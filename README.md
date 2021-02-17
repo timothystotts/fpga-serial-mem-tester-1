@@ -32,7 +32,7 @@ talk with board components, a N25Q SPI Flash 256Mbit, and a 16x2 character LCD p
 
 These two groupings of design provide equivalent functionality, excepting that the HDL design provides
 a much faster execution. Checkouts for the latest implementation should refer to tag
-Serial_Mem_Tester_All_Prerelease_9A .
+Serial_Mem_Tester_All_Release_A .
 
 ### Naming conventions notice
 The Pmod peripherals used in this project connect via a standard bus technology design called SPI.
