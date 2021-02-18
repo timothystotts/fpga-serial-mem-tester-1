@@ -61,6 +61,9 @@ standard terminology in engineering is a priority.
 #### Target device assembly: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
 ![Target device assembly](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-assembled-20200722.jpg)
 
+#### Target device execution: Arty-A7-100T with Pmod SF3, Pmod CLS on extension cable
+![Target device assembly executing](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/img_serial-flash-tester-executing-a_20210217.jpg)
+
 #### Block diagram architecture of the HDL design:
 ![SF3 Tester Architecture Diagram](https://github.com/timothystotts/fpga-serial-mem-tester-1/blob/main/SF-Tester-Design-Documents/SF-Tester-Design-Diagrams-Architecture%201.svg)
 
