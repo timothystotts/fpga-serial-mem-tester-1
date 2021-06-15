@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------
 -- MIT License
 --
--- Copyright (c) 2020 Timothy Stotts
+-- Copyright (c) 2020-2021 Timothy Stotts
 --
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,8 @@
 --------------------------------------------------------------------------------
 -- \file acl_tester_fsm.vhdl
 --
--- \brief A simple text byte feeder to the UART TX module.
+-- \brief A FSM for controlling the top functionality of the Serial Memory
+-- Tester.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -52,7 +53,7 @@ package sf_tester_fsm_pkg is
 			ST_CMD_READ_WAIT, ST_CMD_READ_NEXT, ST_CMD_READ_DONE, ST_DISPLAY_FINAL
 		);
 
-	-- system control of N25Q state machine
+	-- System control of N25Q state machine
 	--constant c_max_possible_byte_count  : natural := 67_108_864; -- 512 Mbit
 	constant c_max_possible_byte_count  : natural := 33_554_432; -- 256 Mbit
 	constant c_total_iteration_count    : natural := 32;

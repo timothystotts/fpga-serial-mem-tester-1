@@ -39,8 +39,8 @@ entity multi_input_debounce is
 	port(
 		i_clk_mhz  : in  std_logic;                    -- system clock
 		i_rst_mhz  : in  std_logic;                    -- synchronized reset
-		ei_buttons : in  std_logic_vector(3 downto 0); -- the raw buttons input
-		o_btns_deb : out std_logic_vector(3 downto 0)  -- logic level switch value indicator
+		ei_buttons : in  std_logic_vector(3 downto 0); -- the raw signals input
+		o_btns_deb : out std_logic_vector(3 downto 0)  -- logic level signals value indicator
 	);
 end entity multi_input_debounce;
 --------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ architecture moore_fsm of multi_input_debounce is
 	signal s_minp_pr_state : t_minp_state;
 	signal s_minp_nx_state : t_minp_state;
 
-	-- Xilinx FSM Encoding attribute:
+	-- Xilinx FSM Encoding attributes:
 	attribute fsm_encoding                      : string;
 	attribute fsm_encoding of s_minp_pr_state   : signal is "auto";
 	attribute fsm_safe_state                    : string;

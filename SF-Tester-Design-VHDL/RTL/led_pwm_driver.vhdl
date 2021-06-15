@@ -23,9 +23,12 @@
 --------------------------------------------------------------------------------
 -- \file led_pwm_driver.vhdl
 --
--- \brief A 24-bit palette interface to three-filament discrete color LEDs.
+-- \brief A 24-bit palette interface to three-filament discrete color LEDs, plus
+-- an 8-bit palette interface to one-filament discrete basic LEDs.
 --
--- \description A color-mixing solution for color LEDs.
+-- \description A color-mixing solution for color LEDs. Note that the color
+-- mixing palette causes more mixing of brightness than color, except at the
+-- lower brightness levels.
 --------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -61,7 +64,7 @@ entity led_pwm_driver is
 		-- clock and reset
 		i_clk  : in std_logic;
 		i_srst : in std_logic;
-		--pallete input values
+		-- palette input values
 		i_color_led_red_value   : in t_led_color_values((parm_color_led_count - 1) downto 0);
 		i_color_led_green_value : in t_led_color_values((parm_color_led_count - 1) downto 0);
 		i_color_led_blue_value  : in t_led_color_values((parm_color_led_count - 1) downto 0);

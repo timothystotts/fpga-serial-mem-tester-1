@@ -159,6 +159,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal sio_sf3_hldn_dq3_i : std_logic;
 	signal sio_sf3_hldn_dq3_t : std_logic;
 
+	-- Signals for communication with SF3 customer driver
 	signal s_sf3_command_ready       : std_logic;
 	signal s_sf3_address_of_cmd      : std_logic_vector(31 downto 0);
 	signal s_sf3_cmd_erase_subsector : std_logic;
@@ -179,7 +180,8 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_upd_pr_state : t_cls_update_state;
 	signal s_cls_upd_nx_state : t_cls_update_state;
 
-    -- CLS 
+    -- CLS Clock Enable speed for driving CE of CLS customer driver
+    -- and text feed.
     constant c_cls_display_ce_div_ratio : natural := (c_FCLK / 50000 / 4);
     
 	-- Signals for controlling the PMOD CLS custom driver.
@@ -190,15 +192,6 @@ architecture rtl of fpga_serial_mem_tester is
 	signal s_cls_txt_ascii_line1   : std_logic_vector((16*8-1) downto 0);
 	signal s_cls_txt_ascii_line2   : std_logic_vector((16*8-1) downto 0);
 	signal s_cls_feed_is_idle      : std_logic;
-
-
-	-- UART TX update FSM state declarations
-	type t_uarttx_feed_state is (ST_UARTFEED_IDLE, ST_UARTFEED_DATA, ST_UARTFEED_WAIT);
-
-	signal s_uartfeed_pr_state : t_uarttx_feed_state;
-	signal s_uartfeed_nx_state : t_uarttx_feed_state;
-
-	constant c_uart_k_preset : natural := 34;
 
 	-- Signals for inferring tri-state buffer for CLS SPI bus outputs.
 	signal so_pmod_cls_sck_o  : std_logic;
@@ -216,7 +209,7 @@ architecture rtl of fpga_serial_mem_tester is
 	signal si_buttons : std_logic_vector(3 downto 0);
 	signal s_btns_deb : std_logic_vector(3 downto 0);
 
-	-- SF3 division down from 40 MHz
+	-- SF3 clock enable division down from 40 MHz
 	constant c_sf3_tester_ce_div_ratio : natural := (c_FCLK / 5000000 / 4);
 
 	-- SF3 Tester FSM state outputs
@@ -328,7 +321,7 @@ begin
 			o_rst_mhz     => s_rst_7_37mhz
 		);
 
-	-- Color and Basic LED operation by 8-bit scalar per filament
+	-- Color and Basic LED operation by 8-bit scalar per emitter
 	u_led_pwm_driver : entity work.led_pwm_driver(rtl)
 		generic map (
 			parm_color_led_count         => 4,
@@ -362,7 +355,7 @@ begin
 		);
 
 	-- 4x spi clock enable divider for PMOD CLS SCK output. No
-	-- generated clock constraint. The 80 MHz or 20 MHz clock is divided
+	-- generated clock constraint. The 40 MHz clock is divided
 	-- down to 2.5 MHz; and later divided down to 625 KHz on
 	-- the PMOD CLS bus.
 	u_cls_ce_divider : entity work.clock_enable_divider(rtl)
@@ -376,6 +369,10 @@ begin
 			i_ce_mhz  => '1'
 		);
 
+	-- 4x spi clock enable divider for PMOD SF3 SCK output. No
+	-- generated clock constraint. The 40 MHz clock is divided
+	-- down to 20 MHz; and later divided down to 5 MHz on
+	-- the PMOD SF3 bus.
 	u_sf3_ce_divider : entity work.clock_enable_divider(rtl)
 		generic map(
 			par_ce_divisor => c_sf3_tester_ce_div_ratio
