@@ -26,9 +26,9 @@
 --
 -- \brief A package of definitions used by the SPI drivers.
 ------------------------------------------------------------------------------*/
-`begin_keywords "1800-2017"
+`begin_keywords "1800-2012"
 //------------------------------------------------------------------------------
-package pmod_stand_spi_solo_pkg;
+package sf_tester_fsm_pkg;
 	// The Tester FSM states definition
 	typedef enum logic [4:0] {ST_WAIT_BUTTON_DEP, ST_WAIT_BUTTON0_REL,
 		ST_WAIT_BUTTON1_REL, ST_WAIT_BUTTON2_REL, ST_WAIT_BUTTON3_REL,
@@ -73,6 +73,6 @@ package pmod_stand_spi_solo_pkg;
 	localparam [7:0] c_tester_pattern_startval_d = 8'h18;
 	localparam [7:0] c_tester_pattern_incrval_d = 8'h17;
 
-endpackage
+endpackage : sf_tester_fsm_pkg
 //------------------------------------------------------------------------------
 `end_keywords

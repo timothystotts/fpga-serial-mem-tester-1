@@ -22,43 +22,22 @@
 -- SOFTWARE.
 ------------------------------------------------------------------------------*/
 /**-----------------------------------------------------------------------------
--- \file arty_reset_synchronizer.sv
+-- \file lcd_text_functions_pkg.sv
 --
--- \brief A simple non-generic reset synchronizer for the Arty A7 board.
--- Credit is due to a non-copied examination of VHDL EXTRAS repo on GitHub, VHDL
--- reset_synchronizer.vhdl source at:
--- https://github.com/kevinpt/vhdl-extras/blob/master/rtl/extras/synchronizing.vhdl
--- The reference is MIT License Copyright 2010 Kevin Thibedeau
---
--- Note that this module does not track the clock locking of the MMCM.
+-- \brief A timed FSM to feed display updates to a two-line LCD.
 ------------------------------------------------------------------------------*/
 `begin_keywords "1800-2012"
-//Reset Synchronizer------------------------------------------------------------
+//Timed Moore Machine-----------------------------------------------------------
 //Part 1: Module header:--------------------------------------------------------
-module arty_reset_synchronizer(
-	input logic i_clk_mhz,
-	input logic i_rstn_global,
-	output logic o_rst_mhz);
-
-//Part 2: Declarations----------------------------------------------------------
-timeunit 1ns;
-timeprecision 1ps;
-
-localparam integer c_RESET_STAGES = 14;
-
-logic [(c_RESET_STAGES - 1):0] s_rst_shift;
-
-//Part 3: Statements------------------------------------------------------------
-always_ff @(posedge i_clk_mhz, negedge i_rstn_global)
-begin: p_sync_reset_shift
-	if (! i_rstn_global)
-		s_rst_shift <= { c_RESET_STAGES{1'b1} };
-	else
-		s_rst_shift <= {s_rst_shift[(c_RESET_STAGES - 2)-:(c_RESET_STAGES - 1)], 1'b0};
-end
-
-assign o_rst_mhz = s_rst_shift[c_RESET_STAGES - 1];
-
-endmodule : arty_reset_synchronizer
+package lcd_text_functions_pkg;
+	// A re-entrant function that converts a 4-bit vector to an 8-bit ASCII
+	// hexadecimal character.
+	function automatic [7:0] ascii_of_hdigit(input logic [3:0] bchex_val);
+		if (bchex_val < 8'h0A)
+			return (8'h30 + bchex_val);
+		else
+			return (8'h37 + bchex_val);
+	endfunction : ascii_of_hdigit
+endpackage : lcd_text_functions_pkg
 //------------------------------------------------------------------------------
 `end_keywords

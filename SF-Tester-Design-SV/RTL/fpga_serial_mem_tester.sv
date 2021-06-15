@@ -32,11 +32,11 @@
 -- motion detection.
 ------------------------------------------------------------------------------*/
 //------------------------------------------------------------------------------
-`begin_keywords "1800-2017"
+`begin_keywords "1800-2012"
 //Multiple Moore Machines
 //Part 1: Module header:--------------------------------------------------------
 module fpga_serial_mem_tester
-	import pmod_stand_spi_solo_pkg::*;
+  import pmod_stand_spi_solo_pkg::*;
   import pmod_quad_spi_solo_pkg::*;
   import sf_tester_fsm_pkg::*;
 	#(parameter
@@ -340,7 +340,7 @@ led_pwm_driver #(
 // 625 KHz on the PMOD CLS bus.
 clock_enable_divider #(
   .par_ce_divisor(c_cls_display_ce_div_ratio)
-  ) u_2_5mhz_ce_divider (
+  ) u_cls_ce_divider (
 	.o_ce_div(s_cls_ce_mhz),
 	.i_clk_mhz(s_clk_40mhz),
 	.i_rst_mhz(s_rst_40mhz),
@@ -352,7 +352,7 @@ clock_enable_divider #(
 // 5 MHz on the PMOD SF3 bus.
 clock_enable_divider #(
   .par_ce_divisor(c_sf3_tester_ce_div_ratio)
-  ) u_2_5mhz_ce_divider (
+  ) u_sf3_ce_divider (
   .o_ce_div(s_sf3_ce_div),
   .i_clk_mhz(s_clk_40mhz),
   .i_rst_mhz(s_rst_40mhz),
@@ -566,7 +566,7 @@ lcd_text_feed #(
   ) u_lcd_text_feed (
   .i_clk_40mhz(s_clk_40mhz),
   .i_rst_40mhz(s_rst_40mhz),
-  .i_ce_2_5mhz(s_cls_ce_mhz),
+  .i_ce_mhz(s_cls_ce_mhz),
   .i_lcd_command_ready(s_cls_command_ready),
   .o_lcd_wr_clear_display(s_cls_wr_clear_display),
   .o_lcd_wr_text_line1(s_cls_wr_text_line1),
