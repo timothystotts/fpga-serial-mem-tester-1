@@ -202,7 +202,9 @@ begin
 				o_rx_dequeue        <= '0';
 				o_go_stand          <= '0';
 				s_cls_cmd_len_val   <= 4;
-				s_cls_cmd_tx_val    <= x"000000" & ASCII_CLS_ESC & ASCII_CLS_BRACKET & ASCII_CLS_CHAR_ZERO & ASCII_CLS_DISP_CLR_CMD;
+				s_cls_cmd_tx_val    <= x"000000" & ASCII_CLS_ESC &
+					ASCII_CLS_BRACKET & ASCII_CLS_CHAR_ZERO &
+					ASCII_CLS_DISP_CLR_CMD;
 				s_cls_dat_len_val   <= 0;
 				s_cls_dat_tx_val    <= (others => '0');
 				s_cls_cmd_txlen_val <= 4;
@@ -223,7 +225,10 @@ begin
 				o_rx_dequeue        <= '0';
 				o_go_stand          <= '0';
 				s_cls_cmd_len_val   <= 7;
-				s_cls_cmd_tx_val    <= ASCII_CLS_ESC & ASCII_CLS_BRACKET & ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_SEMICOLON & ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_ZERO & ASCII_CLS_CURSOR_POS_CMD;
+				s_cls_cmd_tx_val    <= ASCII_CLS_ESC & ASCII_CLS_BRACKET &
+					ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_SEMICOLON &
+					ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_ZERO &
+					ASCII_CLS_CURSOR_POS_CMD;
 				s_cls_dat_len_val   <= 16;
 				s_cls_dat_tx_val    <= i_dat_ascii_line1;
 				s_cls_cmd_txlen_val <= 7;
@@ -244,7 +249,10 @@ begin
 				o_rx_dequeue        <= '0';
 				o_go_stand          <= '0';
 				s_cls_cmd_len_val   <= 7;
-				s_cls_cmd_tx_val    <= ASCII_CLS_ESC & ASCII_CLS_BRACKET & ASCII_CLS_CHAR_ONE & ASCII_CLS_CHAR_SEMICOLON & ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_ZERO & ASCII_CLS_CURSOR_POS_CMD;
+				s_cls_cmd_tx_val    <= ASCII_CLS_ESC & ASCII_CLS_BRACKET &
+					ASCII_CLS_CHAR_ONE & ASCII_CLS_CHAR_SEMICOLON &
+					ASCII_CLS_CHAR_ZERO & ASCII_CLS_CHAR_ZERO &
+					ASCII_CLS_CURSOR_POS_CMD;
 				s_cls_dat_len_val   <= 16;
 				s_cls_dat_tx_val    <= i_dat_ascii_line2;
 				s_cls_cmd_txlen_val <= 7;
@@ -311,7 +319,7 @@ begin
 				-- loading of the last byte, command the SPI operation to start.
 				o_command_ready     <= '0';
 				o_tx_data           <= s_cls_dat_tx_aux((s_cls_dat_len_aux * 8 - 1) downto ((s_cls_dat_len_aux - 1) * 8));
-				o_tx_enqueue <= i_tx_ready;
+				o_tx_enqueue        <= i_tx_ready;
 				o_tx_len            <= std_logic_vector(to_unsigned(s_cls_dat_txlen_aux, o_tx_len'length));
 				o_rx_len            <= (others => '0');
 				o_wait_cyc          <= (others => '0');
@@ -385,10 +393,11 @@ begin
 				end if;
 
 			when others => -- ST_CLS_BOOT0
-				           -- The datasheet for the PMOD CLS does not indicate the boot-up time
-				           -- required for the PMOD CLS microcontroller. At boot-up, wait a
-				           -- a time of \ref c_t_pmodcls_boot before accepting commands to operate
-				           -- the PMOD CLS display.
+
+				-- The datasheet for the PMOD CLS does not indicate the boot-up time
+				-- required for the PMOD CLS microcontroller. At boot-up, wait a
+				-- a time of \ref c_t_pmodcls_boot before accepting commands to operate
+				-- the PMOD CLS display.
 				o_command_ready     <= '0';
 				o_tx_data           <= x"00";
 				o_tx_enqueue        <= '0';

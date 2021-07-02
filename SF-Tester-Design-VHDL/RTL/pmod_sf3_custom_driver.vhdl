@@ -71,7 +71,7 @@ entity pmod_sf3_custom_driver is
 		eio_hldn_dq3_o : out std_logic;
 		eio_hldn_dq3_i : in  std_logic;
 		eio_hldn_dq3_t : out std_logic;
-		-- Command ready indication and possible commands to the driver
+		-- Command ready indication and three possible commands to the driver
 		o_command_ready       : out std_logic;
 		i_address_of_cmd      : in  std_logic_vector(31 downto 0);
 		i_cmd_erase_subsector : in  std_logic;

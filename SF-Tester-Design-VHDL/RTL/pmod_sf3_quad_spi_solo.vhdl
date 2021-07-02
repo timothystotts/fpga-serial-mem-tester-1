@@ -21,7 +21,7 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \file pmod_sf3_quad_spi_solo.vhd
+-- \file pmod_sf3_quad_spi_solo.vhdl
 --
 -- \brief Custom Interface to the PMOD SF3 N25Q flash chip via Ehanced SPI at
 -- boot-time and future implementation provision for Quad I/O SPI at run-time.
@@ -122,7 +122,7 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 	attribute fsm_safe_state of s_pr_state : signal is "default_state";
 
 	-- Timer 1 constants (strategy #1)
-	constant c_t_boot_init0 : natural := parm_FCLK * 2 / 10000; -- minimum of 200 us at 120 MHz
+	constant c_t_boot_init0 : natural := parm_FCLK * 2 / 10000; -- maximum of 200 us
 	constant c_t_boot_init1 : natural := 20;                    -- a small arbitrary delay, FIXME
 	constant c_t_boot_init2 : natural := 20;                    -- a small arbitrary delay, FIXME
 
@@ -130,6 +130,7 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 	constant c_tmax       : natural := c_t_boot_init0 - 1;
 	signal s_t            : natural range 0 to c_tmax;
 
+	-- N25Q Command and Data constants
 	constant c_n25q_cmd_write_enable                  : std_logic_vector(7 downto 0)  := x"06";
 	constant c_n25q_cmd_write_enh_vol_cfg_reg         : std_logic_vector(7 downto 0)  := x"61";
 	constant c_n25q_dat_enh_vol_cfg_reg_as_pmod_sf3   : std_logic_vector(7 downto 0)  := x"BF";
@@ -171,7 +172,7 @@ architecture hybrid_fsm of pmod_sf3_quad_spi_solo is
 
 	constant c_boot_in_quadio : boolean := false;
 begin
-	-- Strategy #1 timer
+	-- Strategy #1 timer reseting on change of \ref s_pr_state
 	p_fsm_timer1 : process(i_ext_spi_clk_x)
 	begin
 		if rising_edge(i_ext_spi_clk_x) then
@@ -209,6 +210,10 @@ begin
 		end if;
 	end process p_fsm_state_aux;
 
+	-- FSM combinatorial logic providing multiple outputs, assigned in every state,
+	-- as well as changes in auxiliary values, and calculation of the next FSM
+	-- state. Refer to the FSM state machine drawings in document:
+	-- \ref SF-Tester-Design-Diagrams.pdf .
 	p_fsm_comb : process(s_pr_state, i_tx_ready, s_t, i_rx_avail, i_spi_idle,
 			i_address_of_cmd, i_len_random_read, i_rx_data, i_rx_valid,
 			s_wait_len_aux, s_addr_byte_index_aux,

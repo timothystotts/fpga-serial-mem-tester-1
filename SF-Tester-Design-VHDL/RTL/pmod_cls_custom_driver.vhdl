@@ -52,11 +52,13 @@ entity pmod_cls_custom_driver is
 		parm_rx_len_bits : natural := 11
 	);
 	port(
-		-- Clock and reset, with clock at X*4 times the frequency of the SPI bus
+		-- Clock and reset, with clock at X times the frequency of the SPI bus,
+		-- with a clock enable that is 4 times the frequency of the SPI bus.
 		i_clk_40mhz : in std_logic;
 		i_rst_40mhz : in std_logic;
 		i_ce_mhz    : in std_logic; -- clock enable at 4 times the frequency of the SPI bus
-		                            -- Outputs and inputs from the single SPI peripheral
+		
+		-- Outputs and inputs from the single SPI peripheral
 		eo_sck_t  : out std_logic;
 		eo_sck_o  : out std_logic;
 		eo_csn_t  : out std_logic;

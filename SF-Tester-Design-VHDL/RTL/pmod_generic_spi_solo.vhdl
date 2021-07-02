@@ -21,7 +21,7 @@
 -- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 -- SOFTWARE.
 --------------------------------------------------------------------------------
--- \filepmod_generic_spi_solo.vhdl
+-- \file pmod_generic_spi_solo.vhdl
 --
 -- \brief A custom SPI driver for generic usage, implementing only Standard
 -- SPI operating in Mode 0, without Extended data transfer of more than the
@@ -59,8 +59,8 @@ entity pmod_generic_spi_solo is
 		eo_copi_o : out std_logic;
 		eo_copi_t : out std_logic;
 		ei_cipo_i : in  std_logic;
-		-- SPI state machine clock at 4x the SPI bus clock speed, with
-		-- synchronous reset
+		-- SPI state machine clock at least 4x the SPI bus clock speed, with
+		-- synchronous reset, and the clock enable at 4x the SPI bus clock speed.
 		i_ext_spi_clk_x : in std_logic;
 		i_srst          : in std_logic;
 		i_spi_ce_4x     : in std_logic;
@@ -85,7 +85,7 @@ end entity pmod_generic_spi_solo;
 
 --------------------------------------------------------------------------------
 architecture moore_fsm_recursive of pmod_generic_spi_solo is
-	-- SPI FSM statedeclarations
+	-- SPI FSM state declarations
 	type t_spi_state is (ST_STAND_IDLE, ST_STAND_START_D, ST_STAND_START_S,
 			ST_STAND_TX, ST_STAND_WAIT, ST_STAND_RX, ST_STAND_STOP_S,
 			ST_STAND_STOP_D);
@@ -95,7 +95,7 @@ architecture moore_fsm_recursive of pmod_generic_spi_solo is
 	signal s_spi_pr_state_delayed1 : t_spi_state := ST_STAND_IDLE;
 	signal s_spi_pr_state_delayed2 : t_spi_state := ST_STAND_IDLE;
 	signal s_spi_pr_state_delayed3 : t_spi_state := ST_STAND_IDLE;
-	-- Xilinx attributes for Gray encoding of the FSM and safe state isDefault
+	-- Xilinx attributes for Gray encoding of the FSM and safe state is Default
 	-- State.
 	attribute fsm_encoding                     : string;
 	attribute fsm_safe_state                   : string;
@@ -108,12 +108,12 @@ architecture moore_fsm_recursive of pmod_generic_spi_solo is
 
 	signal s_dat_pr_state : t_dat_state := ST_PULSE_WAIT;
 	signal s_dat_nx_state : t_dat_state := ST_PULSE_WAIT;
-	-- Xilinx attributes for Gray encoding of the FSM and safe state isDefault
-	-- State.
+	-- Xilinx attributes for Gray encoding of the FSM and safe state is
+	-- Default State.
 	attribute fsm_encoding of s_dat_pr_state   : signal is "gray";
 	attribute fsm_safe_state of s_dat_pr_state : signal is "default_state";
 
-	-- Timer signals andconstants
+	-- Timer signals and constants
 	constant c_t_stand_wait_ss  : natural := 4;
 	constant c_t_stand_max_tx   : natural := 4144;
 	constant c_t_stand_max_wait : natural := 31;
@@ -151,7 +151,7 @@ architecture moore_fsm_recursive of pmod_generic_spi_solo is
 	-- FSM outputstatus
 	signal s_spi_idle : std_logic;
 
-	-- Mapping for FIFORX
+	-- Mapping for FIFO RX
 	signal s_data_fifo_rx_in          : std_logic_vector(7 downto 0);
 	signal s_data_fifo_rx_out         : std_logic_vector(7 downto 0);
 	signal s_data_fifo_rx_re          : std_logic;
@@ -166,7 +166,7 @@ architecture moore_fsm_recursive of pmod_generic_spi_solo is
 	signal s_data_fifo_rx_wrerr       : std_logic;
 	signal s_data_fifo_rx_rderr       : std_logic;
 
-	-- Mapping for FIFOTX
+	-- Mapping for FIFO TX
 	signal s_data_fifo_tx_in          : std_logic_vector(7 downto 0);
 	signal s_data_fifo_tx_out         : std_logic_vector(7 downto 0);
 	signal s_data_fifo_tx_re          : std_logic;
@@ -257,7 +257,7 @@ begin
 	-- writing operations
 	s_data_fifo_tx_in <= i_tx_data;
 	s_data_fifo_tx_we <= i_tx_enqueue and s_spi_ce_4x;
-	o_tx_ready        <= not s_data_fifo_tx_full and s_spi_ce_4x;
+	o_tx_ready        <= (not s_data_fifo_tx_full) and s_spi_ce_4x;
 
 	--p_gen_fifo_tx_valid : process(i_ext_spi_clk_x)
 	--begin
@@ -375,9 +375,9 @@ begin
 		end if;
 	end process p_timer_1;
 
-	-- System Data GO data value holder and i_go_stand pulse stretcher forduration
-	-- of all four clock enables duration of the 4x clock, starting at aclock
-	-- enable position. State assignment and Auxiliary registerassignment.
+	-- System Data GO data value holder and i_go_stand pulse stretcher for duration
+	-- of all four clock enables duration of the 4x clock, starting at a clock
+	-- enable position. State assignment and Auxiliary register assignment.
 	p_dat_fsm_state_aux : process(i_ext_spi_clk_x)
 	begin
 		if rising_edge(i_ext_spi_clk_x) then
@@ -402,8 +402,8 @@ begin
 		end if;
 	end process p_dat_fsm_state_aux;
 
-	-- Pass the auxiliary signal that lasts for a single iteration of allfour
-	-- s_spi_clk_4x clock enables on to the \ref p_spi_fsm_combmachine.
+	-- Pass the auxiliary signal that lasts for a single iteration of all four
+	-- s_spi_clk_4x clock enables on to the \ref p_spi_fsm_comb machine.
 	s_go_stand <= s_go_stand_aux;
 
 	-- System Data GO data value holder and i_go_stand pulse stretcher for all
@@ -449,9 +449,10 @@ begin
 				s_dat_nx_state <= ST_PULSE_WAIT;
 
 			when others => -- ST_PULSE_WAIT
-				           -- If GO signal is 1, assign it and the auxiliary on the
-				           -- transition to the first HOLD state. Otherwise, hold
-				           -- the values already assigned.
+
+				-- If GO signal is 1, assign it and the auxiliary on the
+				-- transition to the first HOLD state. Otherwise, hold
+				-- the values already assigned.
 				if (i_go_stand = '1') then
 					s_go_stand_val <= i_go_stand;
 					s_tx_len_val   <= unsigned(i_tx_len);
@@ -468,7 +469,7 @@ begin
 		end case;
 	end process p_dat_fsm_comb;
 
-	-- SPI bus control state machine assignments for falling edge of 1xclock
+	-- SPI bus control state machine assignments for falling edge of 1x clock
 	-- assignment of state value, plus delayed state value for the RX capture
 	-- on the SPI rising edge of 1x clock in a different process.
 	p_spi_fsm_state : process(i_ext_spi_clk_x)
@@ -499,9 +500,9 @@ begin
 	end process p_spi_fsm_state;
 
 	-- SPI bus control state machine assignments for combinatorial assignmentto
-	-- SPI bus outputs, timing of chip select, transmission of TXdata,
-	-- holding for wait cycles, and timing for RX data where RX data iscaptured
-	-- in a different synchronous state machine delayed from the state ofthis
+	-- SPI bus outputs, timing of chip select, transmission of TX data,
+	-- holding for wait cycles, and timing for RX data where RX data is captured
+	-- in a different synchronous state machine delayed from the state of this
 	-- machine.
 	p_spi_fsm_comb : process(s_spi_pr_state, s_spi_clk_1x, s_go_stand,
 			s_tx_len_aux, s_rx_len_aux, s_wait_cyc_aux,
@@ -511,7 +512,7 @@ begin
 	begin
 		case (s_spi_pr_state) is
 			when ST_STAND_START_D =>
-				-- halt clock at Mode0
+				-- halt clock at Mode 0
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- no chipselect
@@ -520,12 +521,12 @@ begin
 				-- zero value for COPI
 				eo_copi_o <= '0';
 				eo_copi_t <= '0';
-				-- hold not reading the TXFIFO
+				-- hold not reading the TX FIFO
 				s_data_fifo_tx_re <= '0';
-				-- machine is notidle
+				-- machine is not idle
 				s_spi_idle <= '0';
 
-				-- time the chip not selected starttime
+				-- time the chip not selected start time
 				if (s_t = c_t_stand_wait_ss - c_t_inc) then
 					s_spi_nx_state <= ST_STAND_START_S;
 				else
@@ -541,7 +542,9 @@ begin
 				-- zero value for COPI
 				eo_copi_o <= '0';
 				eo_copi_t <= '0';
-				-- hold not reading the TX FIFO
+				-- begin reading from the TX FIFO after the
+				-- the correct wait time, and on the correct
+				-- 1/4 cycle of the SPI clock for Mode 0
 				s_data_fifo_tx_re <= s_spi_clk_ce3 when ((s_t = c_t_stand_wait_ss - c_t_inc) and 
 					(s_data_fifo_tx_empty = '0')) else '0';
 				-- machine is not idle
@@ -676,7 +679,8 @@ begin
 				end if;
 
 			when others => -- ST_STAND_IDLE
-				           -- halt clock at Mode 0
+
+				-- halt clock at Mode 0
 				eo_sck_o <= '0';
 				eo_sck_t <= '0';
 				-- no chip select
