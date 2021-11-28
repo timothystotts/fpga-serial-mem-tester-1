@@ -53,8 +53,8 @@ entity pmod_generic_qspi_solo is
 		parm_rx_len_bits : natural := 9
 	);
 	port(
-		-- system clock and reset, with clock being MMCM generated as 4x the
-		-- SPI bus speed
+		-- SPI state machine clock at least 4x the SPI bus clock speed, with
+		-- synchronous reset, and the clock enable at 4x the SPI bus clock speed.
 		i_ext_spi_clk_x : in std_logic;
 		i_srst          : in std_logic;
 		i_spi_ce_4x     : in std_logic;
