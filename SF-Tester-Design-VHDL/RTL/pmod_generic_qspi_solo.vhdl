@@ -250,8 +250,8 @@ begin
 	u_fifo_rx_0 : FIFO_SYNC_MACRO
 		generic map (
 			DEVICE              => "7SERIES",      -- Target Device: "VIRTEX5, "VIRTEX6", "7SERIES" 
-			ALMOST_FULL_OFFSET  => "0000" & x"80", -- Sets almost full threshold
-			ALMOST_EMPTY_OFFSET => "0000" & x"80", -- Sets the almost empty threshold
+			ALMOST_FULL_OFFSET  => "000" & x"80", -- Sets almost full threshold
+			ALMOST_EMPTY_OFFSET => "000" & x"80", -- Sets the almost empty threshold
 			DATA_WIDTH          => 8,              -- Valid values are 1-72 (37-72 only valid when FIFO_SIZE="36Kb")
 			FIFO_SIZE           => "18Kb")         -- Target BRAM, "18Kb" or "36Kb" 
 		port map (
@@ -383,7 +383,7 @@ begin
 				end if;
 
 				-- clock enable on falling SPIedge
-				-- for timerchange
+				-- for timer change
 				if (s_spi_clk_ce2 = '1') then
 					if (s_spi_pr_state /= s_spi_nx_state) then
 						s_t <= 0;
@@ -392,6 +392,7 @@ begin
 					end if;
 				end if;
 
+				-- The QSPI driver is incomplete and only operates in Enhanced SPI Mode 0
 				if (s_go_enhan = '1') then
 					s_t_inc <= 1;
 				end if;
@@ -537,10 +538,10 @@ begin
 				-- no chip select
 				eio_csn_o <= '1';
 				eio_csn_t <= '0';
-				-- zero MOSI
+				-- zero value for COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
-				-- High-Z MISO
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
@@ -550,7 +551,7 @@ begin
 				eio_hldn_dq3_o <= '1';
 				eio_hldn_dq3_t <= '0';
 
-				-- wait for time to hold chip select value
+				-- wait for time to hold chip select value low in next state
 				if (s_t = c_t_enhan_wait_ss - s_t_inc) then
 					s_spi_nx_state <= ST_START_S_ENHAN;
 				else
@@ -564,10 +565,10 @@ begin
 				-- assert chip select
 				eio_csn_o <= '0';
 				eio_csn_t <= '0';
-				-- zero MOSI
+				-- zero COPI
 				eio_copi_dq0_o <= '0';
 				eio_copi_dq0_t <= '0';
-				-- High-Z MISO
+				-- High-Z CIPO
 				eio_cipo_dq1_o <= '0';
 				eio_cipo_dq1_t <= '1';
 				-- Write Protect not asserted
